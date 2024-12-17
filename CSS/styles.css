@@ -1,0 +1,266 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Exo', sans-serif;
+}
+
+:root {
+  --headline-font-family: 'Bebas Neue', sans-serif;
+  --headline-font-size: 5rem;
+  --headline-font-weight: 900;
+  --headline-letter-spacing: 3px;
+}
+
+.container {
+  display: flex;
+  height: 100%;
+}
+
+/* LEFT SIDEBAR */
+.sidebar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  width: 40%; /* Ensure this is set to 40% */
+  height: 100%;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.sidebar::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 0; /* Lower the z-index */
+}
+
+.sidebar-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1; /* Lower the z-index */
+}
+
+.sidebar-content {
+  margin: 0 1rem;
+  top: -10%;
+  text-align: center;
+  position: relative;
+  z-index: 1; /* Ensure the content is above the ::before pseudo-element */
+  color: white; /* Add this to ensure text is visible */
+}
+
+.sidebar-content > * {
+  margin-bottom: 2rem; /* Add 2rem space between each item */
+}
+
+.sidebar-content > *:last-child {
+  margin-bottom: 0; /* Remove margin from the last item */
+}
+
+.sidebar-content .logo {
+  font-size: 8rem;
+  color: #5dade2;
+}
+
+.sidebar-content .company-name {
+  font-family: var(--headline-font-family);
+  font-size: var(--headline-font-size);
+  font-weight: var(--headline-font-weight);
+  letter-spacing: var(--headline-letter-spacing);
+}
+
+.sidebar-content .subheading {
+  font-size: 2rem;
+  font-weight: 200;
+}
+
+.sidebar-content .description {
+  font-size: 1rem;
+  font-weight: 200;
+  letter-spacing: 2px;
+}
+
+.sidebar-content .phone-number {
+  font-size: 2rem;
+  font-weight: 200;
+}
+
+/* RIGHT SIDE SCROLL CONTENT */
+.main-content {
+  margin-left: 40%;
+  width: 60%;
+  padding: 0; /* Remove padding */
+  box-sizing: border-box;
+  background-color: #f9f9f9;
+}
+
+.main-content .section {
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.main-content .section h1 {
+  font-family: var(--headline-font-family);
+  font-size: var(--headline-font-size);
+  font-weight: var(--headline-font-weight);
+  letter-spacing: var(--headline-letter-spacing);
+}
+
+.main-content .section h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  font-weight: 200;
+}
+
+.main-content .section p {
+  font-size: 1.2rem;
+  margin: 0 2rem 20px;
+}
+
+.main-content .core-principles {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.main-content .logos {
+  display: flex;
+  justify-content: space-between;
+}
+
+.main-content .logos i {
+  font-size: 40px;
+}
+
+/* SERVICES */
+/* Flipping cards */
+.services-section {
+  background: darkgray;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.services {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.services::-webkit-scrollbar {
+  display: none; /* WebKit: Hides scrollbar */
+}
+
+.service-icon {
+  text-align: center;
+  color: #5dade2;
+  font-size: 2rem;
+  margin-bottom: 10px;
+  z-index: 2;
+}
+
+.service-item {
+  flex: 1 1 calc(50% - 20px);
+  perspective: 1000px;
+  box-sizing: border-box;
+  height: 300px;
+  position: relative;
+}
+
+.service-item-inner {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform-style: preserve-3d;
+  transition: transform 0.45s; /* Adjust the duration as needed */
+}
+
+.service-item:hover .service-item-inner {
+  transform: rotateY(180deg);
+}
+
+.service-item-front,
+.service-item-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden; /* Hide the back face when flipped */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.service-item-front h3 {
+  font-size: 1.5rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 0;
+  z-index: 2;
+}
+
+.service-item-back {
+  background: #5dade2; /* Blue background */
+  color: white; /* White text for contrast */
+  transform: rotateY(180deg); /* Backside starts flipped */
+}
+
+.service-item-back p {
+  font-size: 1rem;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.service-item-front {
+  background: #333;
+  color: white;
+}
+
+.service-item-front::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Dark transparent overlay */
+  z-index: 1; /* Ensure overlay is above background */
+}
+
+.service-item:nth-child(1) .service-item-front {
+  background-image: url('https://i.postimg.cc/hvZpYHc7/custom-design.jpg');
+  background-size: cover; /* Ensure the image covers the entire container */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Prevent tiling */
+}
+
+.service-item:nth-child(2) .service-item-front {
+  background-image: url('path-to-your-image2.jpg');
+}
+
+.service-item:nth-child(3) .service-item-front {
+  background-image: url('path-to-your-image3.jpg');
+}
+
+.service-item:nth-child(4) .service-item-front {
+  background-image: url('path-to-your-image4.jpg');
+}
+
+.service-item:nth-child(5) .service-item-front {
+  background-image: url('path-to-your-image5.jpg');
+}
+
+.service-item:nth-child(6) .service-item-front {
+  background-image: url('path-to-your-image6.jpg');
+}
