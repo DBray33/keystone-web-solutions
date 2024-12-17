@@ -92,8 +92,18 @@ html {
 }
 
 .sidebar-content .phone-number {
+  color: white;
   font-size: 2rem;
   font-weight: 200;
+  text-decoration: none;
+  -webkit-appearance: none; /* Remove default styling on mobile */
+  -webkit-text-fill-color: white; /* Ensure the color remains white on mobile */
+}
+
+.sidebar-content .phone-number:link,
+.sidebar-content .phone-number:visited {
+  color: white; /* Ensure the color remains white */
+  text-decoration: none; /* Remove underline */
 }
 
 /* RIGHT SIDE SCROLL CONTENT */
@@ -130,11 +140,6 @@ html {
   margin: 0 2rem 20px;
 }
 
-.main-content .core-principles {
-  font-size: 2rem;
-  margin-bottom: 20px;
-}
-
 .main-content .logos {
   display: flex;
   justify-content: space-between;
@@ -164,7 +169,39 @@ html {
   flex-wrap: wrap;
 }
 
+.service-item-front,
+.service-item-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+  text-align: center;
+  flex-direction: column;
+  backface-visibility: hidden; /* Ensure the back face is hidden when flipped */
+}
+
+/* Ensure the back side is hidden initially */
+.service-item-back {
+  transform: rotateY(180deg);
+}
+
+/* Ensure the front side is visible initially */
 .service-item-front {
+  background: #333;
+  color: white;
+}
+
+/* Hide the front side when flipped */
+.service-item-inner.rotate .service-item-front {
+  visibility: hidden;
+}
+
+.service-item-back h3 {
+  display: none;
 }
 
 .service-icon {
@@ -185,6 +222,7 @@ html {
   box-sizing: border-box;
   height: 33.4vh;
   position: relative;
+  cursor: pointer; /* Ensure the service items are clickable */
 }
 
 .service-item-inner {
@@ -199,19 +237,8 @@ html {
   transform: rotateY(180deg);
 }
 
-.service-item-front,
-.service-item-back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  backface-visibility: hidden; /* Hide the back face when flipped */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-  box-sizing: border-box;
-  text-align: center;
-  flex-direction: column;
+.service-item-inner.rotate {
+  transform: rotateY(180deg);
 }
 
 .service-item-front h3 {
@@ -247,8 +274,8 @@ html {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5); /* Dark transparent overlay */
-  z-index: 1; /* Ensure overlay is above background */
+  background: rgba(0, 0, 0, 0.75);
+  z-index: 1;
 }
 
 .service-item:nth-child(1) .service-item-front {
