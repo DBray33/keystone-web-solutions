@@ -152,10 +152,23 @@ html {
   box-sizing: border-box;
 }
 
+.select-option {
+  display: none;
+  font-size: 1rem;
+  text-align: center;
+}
+
 .services {
   position: relative;
   display: flex;
   flex-wrap: wrap;
+}
+
+.service-item-front {
+}
+
+.service-icon {
+  margin-bottom: 10px; /* Adjust the spacing between the icon and the heading */
 }
 
 .service-icon {
@@ -198,6 +211,7 @@ html {
   padding: 20px;
   box-sizing: border-box;
   text-align: center;
+  flex-direction: column;
 }
 
 .service-item-front h3 {
@@ -306,5 +320,9 @@ html {
   .container {
     display: block; /* Stack content naturally (sidebar first, then main content) */
     height: auto; /* Allow natural height based on content */
+  }
+
+  .select-option {
+    display: block;
   }
 }
