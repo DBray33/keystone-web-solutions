@@ -218,7 +218,6 @@ html {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 20px;
   box-sizing: border-box;
   text-align: center;
   flex-direction: column;
@@ -226,6 +225,8 @@ html {
   background: #5dade2; /* Blue background */
   color: white; /* White text for contrast */
   transform: rotateY(180deg); /* Backside starts flipped */
+  height: 100%; /* Ensure the container takes the full height */
+  text-align: center; /* Optional: Center the text horizontally */
 }
 
 /* Hide the front side when flipped */
@@ -290,10 +291,18 @@ html {
   z-index: 2;
 }
 
-.service-item-back p {
-  font-size: 1rem;
+.service-item .service-item-back p {
+  font-size: 1.12rem;
   line-height: 1.4;
-  margin: 0;
+  margin-top: 1rem;
+}
+
+@media (max-width: 935px) {
+  .service-item .service-item-back p {
+    font-size: 1rem; /* Adjust the font size for smaller screens */
+    line-height: 1.2; /* Adjust the line height for smaller screens */
+    margin-top: 1rem;
+  }
 }
 
 .service-item-front::before {
@@ -380,5 +389,93 @@ html {
 
   .select-option {
     display: block;
+  }
+}
+
+/* CONTACT */
+/* ...existing code... */
+
+.contact {
+  padding: 2rem;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin: 2rem 0;
+}
+
+.contact h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.contact p {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  color: #666;
+}
+
+.contact form {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact form label {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.contact form input,
+.contact form select,
+.contact form textarea {
+  font-size: 1rem;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.contact form input::placeholder,
+.contact form select::placeholder,
+.contact form textarea::placeholder {
+  font-family: 'Exo', sans-serif;
+}
+
+#budget {
+  font-family: 'Exo';
+}
+
+.contact form button {
+  font-size: 1rem;
+  padding: 0.75rem;
+  background-color: #5dade2;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.contact form button:hover {
+  background-color: #4a90d6;
+}
+
+/* Responsive adjustments */
+@media (max-width: 935px) {
+  .contact {
+    padding: 1rem;
+  }
+
+  .contact form input,
+  .contact form select,
+  .contact form textarea {
+    font-size: 0.875rem;
+    padding: 0.5rem;
+  }
+
+  .contact form button {
+    font-size: 0.875rem;
+    padding: 0.5rem;
   }
 }
