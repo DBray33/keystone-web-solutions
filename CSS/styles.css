@@ -325,42 +325,42 @@ html {
 }
 
 .service-item:nth-child(1) .service-item-front {
-  background-image: url('https://i.postimg.cc/hvZpYHc7/custom-design.jpg');
+  background-image: url('../images/design.webp');
   background-size: cover; /* Ensure the image covers the entire container */
   background-position: center; /* Center the image */
   background-repeat: no-repeat;
 }
 
 .service-item:nth-child(2) .service-item-front {
-  background-image: url('https://i.postimg.cc/LX5J47jT/i-Stock-1061329208.jpg');
+  background-image: url('../images/responsive.webp');
   background-size: cover; /* Ensure the image covers the entire container */
   background-position: center; /* Center the image */
   background-repeat: no-repeat; /* Prevent tiling */
 }
 
 .service-item:nth-child(3) .service-item-front {
-  background-image: url('https://i.postimg.cc/HsDb3Yw1/i-Stock-1470221240.jpg');
+  background-image: url('../images/ecommerce.webp');
   background-size: cover; /* Ensure the image covers the entire container */
   background-position: center; /* Center the image */
   background-repeat: no-repeat; /* Prevent tiling */
 }
 
 .service-item:nth-child(4) .service-item-front {
-  background-image: url('https://i.postimg.cc/5twhYNS9/pexels-goumbik-590020.jpg');
+  background-image: url('../images/seo.webp');
   background-size: cover; /* Ensure the image covers the entire container */
   background-position: center; /* Center the image */
   background-repeat: no-repeat; /* Prevent tiling */
 }
 
 .service-item:nth-child(5) .service-item-front {
-  background-image: url('https://i.postimg.cc/8CNSb65f/pexels-pixabay-162553.jpg');
+  background-image: url('../images/marketing.webp');
   background-size: cover; /* Ensure the image covers the entire container */
   background-position: center; /* Center the image */
   background-repeat: no-repeat; /* Prevent tiling */
 }
 
 .service-item:nth-child(6) .service-item-front {
-  background-image: url('https://i.postimg.cc/660Y7Gs1/pexels-pixabay-265667.jpg');
+  background-image: url('../images/security.webp');
   background-size: cover; /* Ensure the image covers the entire container */
   background-position: center; /* Center the image */
   background-repeat: no-repeat; /* Prevent tiling */
