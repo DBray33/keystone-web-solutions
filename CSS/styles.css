@@ -251,6 +251,14 @@ html {
   z-index: 2;
 }
 
+.service-icon {
+  display: block; /* Ensure it's treated as a block for centering */
+  margin: 0 auto 10px; /* Center the SVG and add spacing below */
+  width: 2rem; /* Replace font-size */
+  height: 2rem; /* Match the size */
+  fill: #5dade2; /* Replace color */
+}
+
 .service-item {
   flex: 1 1 calc(50% - 20px);
   perspective: 1000px;
