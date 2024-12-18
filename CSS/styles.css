@@ -11,6 +11,8 @@ html {
   --headline-font-size: 5rem;
   --headline-font-weight: 900;
   --headline-letter-spacing: 3px;
+  /* Colors */
+  --primary-color: #5dade2;
 }
 
 .container {
@@ -60,10 +62,6 @@ html {
   color: white; /* Add this to ensure text is visible */
 }
 
-.sidebar-content > * {
-  margin-bottom: 2rem; /* Add 2rem space between each item */
-}
-
 .sidebar-content > *:last-child {
   margin-bottom: 0; /* Remove margin from the last item */
 }
@@ -86,28 +84,52 @@ html {
 }
 
 .sidebar-content .description {
+  margin-top: 2rem;
   font-size: 1rem;
-  font-weight: 200;
+  font-weight: 300;
   letter-spacing: 2px;
 }
 
-.sidebar-content .phone-number {
-  color: white;
-  font-size: 2rem;
+/* Phone Number */
+.phone-number {
+  position: relative;
+  display: inline-block;
+  margin-top: 2rem;
+  font-size: 1.5rem;
   font-weight: 200;
-  text-decoration: none;
-  -webkit-appearance: none; /* Remove default styling on mobile */
-  -webkit-text-fill-color: white; /* Ensure the color remains white on mobile */
+  color: white;
 }
 
-.sidebar-content .phone-number:link,
-.sidebar-content .phone-number:visited {
-  color: white; /* Ensure the color remains white */
-  text-decoration: none; /* Remove underline */
+.phone-number a {
+  padding: 0 5px;
+  text-decoration: none;
+  color: white;
+  transition: color 0.3s;
+  position: relative;
+  z-index: 1; /* Ensure the text is above the background */
+}
+
+.phone-number a::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 100%;
+  background-color: #5dade2; /* Primary color */
+  transition: width 0.3s ease;
+  z-index: -1; /* Ensure the background is behind the text */
+}
+
+.phone-number a:hover::before {
+  width: 100%;
+}
+
+.phone-number a:hover {
+  color: white; /* Ensure the text color remains white */
 }
 
 /* RIGHT SIDE SCROLL CONTENT */
-
 .main-content {
   margin-left: 40%;
   width: 60%;
@@ -157,6 +179,7 @@ html {
   box-sizing: border-box;
 }
 
+/* Header note */
 .select-option {
   display: none;
   font-size: 1rem;
@@ -169,7 +192,22 @@ html {
   flex-wrap: wrap;
 }
 
-.service-item-front,
+.service-item-front {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+  text-align: center;
+  flex-direction: column;
+  backface-visibility: hidden; /* Ensure the back face is hidden when flipped */
+  background: #333;
+  color: white;
+}
+
 .service-item-back {
   position: absolute;
   width: 100%;
@@ -182,22 +220,15 @@ html {
   text-align: center;
   flex-direction: column;
   backface-visibility: hidden; /* Ensure the back face is hidden when flipped */
-}
-
-/* Ensure the back side is hidden initially */
-.service-item-back {
-  transform: rotateY(180deg);
-}
-
-/* Ensure the front side is visible initially */
-.service-item-front {
-  background: #333;
-  color: white;
+  background: #5dade2; /* Blue background */
+  color: white; /* White text for contrast */
+  transform: rotateY(180deg); /* Backside starts flipped */
 }
 
 /* Hide the front side when flipped */
 .service-item-inner.rotate .service-item-front {
-  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
 }
 
 .service-item-back h3 {
@@ -230,11 +261,17 @@ html {
   height: 100%;
   position: absolute;
   transform-style: preserve-3d;
-  transition: transform 0.45s; /* Adjust the duration as needed */
+  transition: transform 0.45s;
 }
 
 .service-item:hover .service-item-inner {
   transform: rotateY(180deg);
+}
+
+@media (max-width: 935px) {
+  .service-item:hover .service-item-front {
+    display: none;
+  }
 }
 
 .service-item-inner.rotate {
@@ -250,21 +287,10 @@ html {
   z-index: 2;
 }
 
-.service-item-back {
-  background: #5dade2; /* Blue background */
-  color: white; /* White text for contrast */
-  transform: rotateY(180deg); /* Backside starts flipped */
-}
-
 .service-item-back p {
   font-size: 1rem;
   line-height: 1.4;
   margin: 0;
-}
-
-.service-item-front {
-  background: #333;
-  color: white;
 }
 
 .service-item-front::before {
@@ -282,7 +308,7 @@ html {
   background-image: url('https://i.postimg.cc/hvZpYHc7/custom-design.jpg');
   background-size: cover; /* Ensure the image covers the entire container */
   background-position: center; /* Center the image */
-  background-repeat: no-repeat; /* Prevent tiling */
+  background-repeat: no-repeat;
 }
 
 .service-item:nth-child(2) .service-item-front {
