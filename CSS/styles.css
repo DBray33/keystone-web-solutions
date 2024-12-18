@@ -325,42 +325,42 @@ html {
 }
 
 .service-item:nth-child(1) .service-item-front {
-  background-image: url('../images/design.webp');
+  background-image: url('https://storage.googleapis.com/background-vid/design.webp');
   background-size: cover; /* Ensure the image covers the entire container */
   background-position: center; /* Center the image */
   background-repeat: no-repeat;
 }
 
 .service-item:nth-child(2) .service-item-front {
-  background-image: url('../images/responsive.webp');
+  background-image: url('https://storage.googleapis.com/background-vid/responsive.webp');
   background-size: cover; /* Ensure the image covers the entire container */
   background-position: center; /* Center the image */
   background-repeat: no-repeat; /* Prevent tiling */
 }
 
 .service-item:nth-child(3) .service-item-front {
-  background-image: url('../images/ecommerce.webp');
+  background-image: url('https://storage.googleapis.com/background-vid/ecommerce.webp');
   background-size: cover; /* Ensure the image covers the entire container */
   background-position: center; /* Center the image */
   background-repeat: no-repeat; /* Prevent tiling */
 }
 
 .service-item:nth-child(4) .service-item-front {
-  background-image: url('../images/seo.webp');
+  background-image: url('https://storage.googleapis.com/background-vid/seo.webp');
   background-size: cover; /* Ensure the image covers the entire container */
   background-position: center; /* Center the image */
   background-repeat: no-repeat; /* Prevent tiling */
 }
 
 .service-item:nth-child(5) .service-item-front {
-  background-image: url('../images/marketing.webp');
+  background-image: url('https://storage.googleapis.com/background-vid/marketing.webp');
   background-size: cover; /* Ensure the image covers the entire container */
   background-position: center; /* Center the image */
   background-repeat: no-repeat; /* Prevent tiling */
 }
 
 .service-item:nth-child(6) .service-item-front {
-  background-image: url('../images/security.webp');
+  background-image: url('https://storage.googleapis.com/background-vid/security.webp');
   background-size: cover; /* Ensure the image covers the entire container */
   background-position: center; /* Center the image */
   background-repeat: no-repeat; /* Prevent tiling */
