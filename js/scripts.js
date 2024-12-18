@@ -14,3 +14,15 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 });
+
+// /////////////////////////////////
+document.querySelector('.sidebar').addEventListener('wheel', function (event) {
+  event.preventDefault(); // Prevent default scroll behavior
+
+  // Adjust scroll speed (increase the multiplier for faster scrolling)
+  const scrollSpeed = 1; // Change this value to control speed
+  document.querySelector('.main-content').scrollBy({
+    top: event.deltaY * scrollSpeed,
+    behavior: 'auto', // Use 'smooth' for smooth scrolling, or 'auto' for instant
+  });
+});
