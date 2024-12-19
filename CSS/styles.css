@@ -311,12 +311,23 @@ html {
   letter-spacing: 1px;
   margin: 0;
   z-index: 2;
+  background-color: rgba(93, 173, 226, 0.8); /* Add primary color background */
+  padding: 0.5rem; /* Add padding for better appearance */
+  color: white; /* Ensure text is readable */
+}
+
+.service-item-front .service-icon {
+  background-color: black; /* Add primary color background */
+  padding: 0.5rem; /* Add padding for better appearance */
+  border-radius: 50%; /* Optional: Add border radius for a circular icon background */
+  color: white; /* Ensure icon is readable */
 }
 
 .service-item .service-item-back p {
   font-size: 1.12rem;
   line-height: 1.4;
   margin-top: 1rem;
+  z-index: 2;
 }
 
 @media (max-width: 935px) {
@@ -328,6 +339,17 @@ html {
 }
 
 .service-item-front::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* background: rgba(0, 0, 0, 0.75); */
+  z-index: 1;
+}
+
+.service-item-back::before {
   content: '';
   position: absolute;
   top: 0;
@@ -379,6 +401,53 @@ html {
   background-position: center; /* Center the image */
   background-repeat: no-repeat; /* Prevent tiling */
 }
+
+/* /////////////////////////////////////////////////////////////////////// */
+/* /////////////////////////////////////////////////////////////////////// */
+.service-item:nth-child(1) .service-item-back {
+  background-image: url('https://storage.googleapis.com/background-vid/design.webp?v=1');
+  background-size: cover; /* Ensure the image covers the entire container */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat;
+}
+
+.service-item:nth-child(2) .service-item-back {
+  background-image: url('https://storage.googleapis.com/background-vid/responsive.webp?v=1');
+  background-size: cover; /* Ensure the image covers the entire container */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Prevent tiling */
+}
+
+.service-item:nth-child(3) .service-item-back {
+  background-image: url('https://storage.googleapis.com/background-vid/ecommerce.webp?v=1');
+  background-size: cover; /* Ensure the image covers the entire container */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Prevent tiling */
+}
+
+.service-item:nth-child(4) .service-item-back {
+  background-image: url('https://storage.googleapis.com/background-vid/seo.webp?v=1');
+  background-size: cover; /* Ensure the image covers the entire container */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Prevent tiling */
+}
+
+.service-item:nth-child(5) .service-item-back {
+  background-image: url('https://storage.googleapis.com/background-vid/marketing.webp?v=1');
+  background-size: cover; /* Ensure the image covers the entire container */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Prevent tiling */
+}
+
+.service-item:nth-child(6) .service-item-back {
+  background-image: url('https://storage.googleapis.com/background-vid/security.webp?v=1');
+  background-size: cover; /* Ensure the image covers the entire container */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Prevent tiling */
+}
+
+/* /////////////////////////////////////////////////////////////////////// */
+/* /////////////////////////////////////////////////////////////////////// */
 
 @media (max-width: 935px) {
   /* Sidebar takes full width */
