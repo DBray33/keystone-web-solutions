@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://freelance-template.netlify.app/sitemap.xml
