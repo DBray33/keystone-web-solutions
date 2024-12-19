@@ -45,6 +45,15 @@ html {
   z-index: 0; /* Lower the z-index */
 }
 
+.sidebar-content .logo {
+  fill: var(--primary-color);
+  width: 250px; /* Adjust the size as needed */
+  height: auto;
+  display: block;
+  margin: 6rem auto 2.5rem; /* Center the logo */
+  filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.5)); /* Add shadow */
+}
+
 .sidebar-video {
   position: absolute;
   top: 0;

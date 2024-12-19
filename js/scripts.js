@@ -30,8 +30,8 @@ function handleScroll(event) {
   });
 }
 
-// Add event listener for wheel events
-sidebarContent.addEventListener('wheel', handleScroll);
+// Add event listener for wheel events on the entire document
+document.addEventListener('wheel', handleScroll);
 
 // Handle touch events for scrolling on smaller screens
 let touchStartY = 0;
@@ -55,9 +55,9 @@ sidebarContent.addEventListener('touchmove', function (event) {
 // Add media query to handle scroll behavior for smaller screens
 function handleResize() {
   if (window.innerWidth <= 935) {
-    sidebarContent.removeEventListener('wheel', handleScroll);
+    document.removeEventListener('wheel', handleScroll);
   } else {
-    sidebarContent.addEventListener('wheel', handleScroll);
+    document.addEventListener('wheel', handleScroll);
   }
 }
 
