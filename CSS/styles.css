@@ -464,18 +464,27 @@ html {
 }
 
 .contact form button {
-  font-size: 1rem;
+  font-size: 1.5rem;
   padding: 0.75rem;
   background-color: #5dade2;
   color: #fff;
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.1s ease,
+    box-shadow 0.1s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .contact form button:hover {
-  background-color: #4a90d6;
+  background-color: var(--primary-color);
+  transform: translateY(2px); /* Simulates the button being pressed in */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Reduces the shadow for the pressed effect */
+}
+
+.contact form button:active {
+  transform: translateY(4px); /* Moves the button further down when clicked */
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3); /* Even smaller shadow for click effect */
 }
 
 /* Responsive adjustments */
