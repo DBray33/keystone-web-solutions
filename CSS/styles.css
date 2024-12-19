@@ -13,6 +13,7 @@ html {
   --headline-letter-spacing: 3px;
   /* Colors */
   --primary-color: #5dade2;
+  --secondary-color: #d3d3d3; /* Hexadecimal for gray */
 }
 
 .container {
@@ -147,7 +148,7 @@ html {
   width: 60%;
   padding: 0; /* Remove padding */
   box-sizing: border-box;
-  background-color: #f9f9f9;
+  background-color: var(--secondary-color);
   overflow-x: hidden;
 }
 
@@ -218,6 +219,7 @@ html {
   backface-visibility: hidden; /* Ensure the back face is hidden when flipped */
   background: #333;
   color: white;
+  z-index: 2; /* Ensure the front is above the back */
 }
 
 .service-item-back {
@@ -282,7 +284,7 @@ html {
   height: 100%;
   position: absolute;
   transform-style: preserve-3d;
-  transition: transform 0.45s;
+  transition: transform 1s;
 }
 
 .service-item:hover .service-item-inner {
@@ -290,7 +292,10 @@ html {
 }
 
 @media (max-width: 935px) {
-  .service-item:hover .service-item-front {
+  .service-item:hover .service-item-front h3 {
+    display: none;
+  }
+  .service-item:hover .service-item-front .service-icon {
     display: none;
   }
 }
