@@ -661,3 +661,16 @@ html {
     padding: 0.5rem;
   }
 }
+
+/* ////////////////////////////////////////////// */
+/* ////////////////////////////////////////////// */
+/* ////////////////////////////////////////////// */
+/* ////////////////////////////////////////////// */
+.welcome-section-devices {
+  width: 100%;
+  max-width: 800px; /* Adjust the max-width as needed */
+  height: auto;
+  margin-top: 3rem;
+  margin-bottom: -2rem;
+  margin-left: -1rem;
+}
