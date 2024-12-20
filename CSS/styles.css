@@ -110,7 +110,6 @@ html {
   margin-top: 2rem;
   font-size: 2.2rem;
   font-weight: 200;
-  color: white;
 }
 
 .phone-number a {
@@ -127,19 +126,37 @@ html {
   position: absolute;
   left: 0;
   bottom: 0;
-  width: 0;
+  width: 0; /* Start with zero width */
   height: 100%;
-  background-color: #5dade2; /* Primary color */
-  transition: width 0.3s ease;
+  background-color: #5dade2;
   z-index: -1; /* Ensure the background is behind the text */
+  animation: hideBackground 1s forwards; /* Initial animation to hide the background */
+}
+
+@keyframes hideBackground {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 0;
+  }
+}
+
+@keyframes showBackground {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
 }
 
 .phone-number a:hover::before {
-  width: 100%;
+  animation: showBackground 0.3s forwards; /* Reverse the animation on hover */
 }
 
 .phone-number a:hover {
-  color: white; /* Ensure the text color remains white */
+  color: black; /* Change text color on hover */
 }
 
 /* RIGHT SIDE SCROLL CONTENT */
@@ -306,14 +323,14 @@ html {
 
 .service-item-front h3 {
   font-size: 1.5rem;
-  font-weight: 300;
+  font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 1px;
   margin: 0;
   z-index: 2;
-  background-color: rgba(93, 173, 226, 0.8); /* Add primary color background */
+  background-color: rgba(93, 173, 226, 0.9); /* Add primary color background */
   padding: 0.5rem; /* Add padding for better appearance */
-  color: white; /* Ensure text is readable */
+  color: black; /* Ensure text is readable */
 }
 
 .service-item-front .service-icon {
