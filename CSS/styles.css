@@ -357,8 +357,8 @@ html {
 .service-item .service-item-back p {
   font-size: 1.12rem;
   line-height: 1.4;
-
   z-index: 2;
+  padding: 0 1rem 1rem;
 }
 
 @media (max-width: 1136px) and (min-width: 936px) {
@@ -385,7 +385,7 @@ html {
 
   .service-item-back .more-info-button {
     font-size: 0.8rem; /* Adjust the font size for smaller screens */
-    margin-top: -0.8rem;
+    margin: -0.8rem 1rem 0;
   }
 }
 
@@ -510,8 +510,8 @@ html {
 
 .more-info-button {
   display: inline-block;
-  padding: 0.5rem 1rem;
-  margin-top: 1rem;
+  padding: 0.5rem 0.3rem;
+  margin: 0 1rem 0;
   font-size: 1rem;
   font-weight: 600;
   text-transform: uppercase;
@@ -525,7 +525,7 @@ html {
 
 .more-info-button:hover {
   background-color: #4a90d6; /* Darker shade of primary color */
-  color: #fff; /* Ensure text color remains white */
+  color: black; /* Ensure text color remains white */
 }
 
 /* /////////////////////////////////////////////////////////////////////// */
