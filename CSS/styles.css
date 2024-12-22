@@ -47,7 +47,7 @@ html {
   z-index: 0; /* Lower the z-index */
 }
 
-.sidebar-content .logo {
+.logo {
   fill: var(--primary-color);
   width: 250px; /* Adjust the size as needed */
   height: auto;

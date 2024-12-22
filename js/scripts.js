@@ -54,13 +54,13 @@ sidebarContent.addEventListener(
 ); // Added passive: true
 
 // Add media query to handle scroll behavior for smaller screens
-function handleResize() {
-  if (window.innerWidth <= 935) {
-    document.removeEventListener('wheel', handleScroll);
-  } else {
-    document.addEventListener('wheel', handleScroll, { passive: false }); // Re-applied passive: false
-  }
-}
+// function handleResize() {
+//   if (window.innerWidth <= 935) {
+//     document.removeEventListener('wheel', handleScroll);
+//   } else {
+//     document.addEventListener('wheel', handleScroll, { passive: false });
+//   }
+// }
 
 // Initial check
 handleResize();
