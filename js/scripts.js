@@ -23,21 +23,6 @@ document.addEventListener('DOMContentLoaded', function () {
   ); // Added passive: true
 });
 
-// /////////////////////////////////
-const sidebarContent = document.querySelector('.sidebar-content');
-const mainContent = document.querySelector('.main-content');
-
-function handleScroll(event) {
-  event.preventDefault(); // Prevent default scroll behavior
-
-  // Adjust scroll speed (increase the multiplier for faster scrolling)
-  const scrollSpeed = 1; // Change this value to control speed
-  mainContent.scrollBy({
-    top: event.deltaY * scrollSpeed,
-    behavior: 'auto', // Use 'smooth' for smooth scrolling, or 'auto' for instant
-  });
-}
-
 // Add event listener for wheel events on the entire document
 document.addEventListener('wheel', handleScroll, { passive: false }); // PreventDefault requires passive: false
 

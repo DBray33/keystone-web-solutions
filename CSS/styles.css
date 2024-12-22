@@ -170,7 +170,6 @@ html {
 }
 
 .main-content .section {
-  margin-bottom: 40px;
   text-align: center;
 }
 
@@ -565,15 +564,27 @@ html {
   }
 }
 
-/* CONTACT */
-/* ...existing code... */
-
-.contact {
+/* /////////////////////////////////////////////////////////////////////// */
+/* PORTFOLIO ///////////////////////////////////////////////////////////// */
+.portfolio {
+  width: 100%;
+  box-sizing: border-box; /* Include padding and border in the element's total width */
+  z-index: 10; /* Ensure it appears in front of the fixed sidebar */
+  position: relative;
+  overflow: hidden; /* Prevent overflow */
   padding: 2rem;
-  background-color: #f9f9f9;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  margin: 2rem 0;
+  background-color: #f8f8f8;
+}
+
+/* CONTACT */
+.contact {
+  width: 100%;
+  box-sizing: border-box; /* Include padding and border in the element's total width */
+  z-index: 10; /* Ensure it appears in front of the fixed sidebar */
+  position: relative;
+  overflow: hidden; /* Prevent overflow */
+  padding: 2rem;
+  background-color: #f8f8f8;
 }
 
 .contact h2 {
@@ -682,6 +693,11 @@ html {
   flex-wrap: wrap;
   padding: 2rem;
   background-color: #f8f8f8;
+  width: 100%;
+  box-sizing: border-box; /* Include padding and border in the element's total width */
+  z-index: 10; /* Ensure it appears in front of the fixed sidebar */
+  position: relative;
+  overflow: hidden; /* Prevent overflow */
 }
 
 .footer-left,
@@ -689,6 +705,7 @@ html {
   flex: 1;
   min-width: 300px;
   margin-bottom: 2rem;
+  box-sizing: border-box; /* Include padding and border in the element's total width */
 }
 
 .footer-left {
@@ -724,6 +741,7 @@ html {
   margin-bottom: 1rem;
   border: 1px solid #ccc;
   border-radius: 4px;
+  box-sizing: border-box; /* Include padding and border in the element's total width */
 }
 
 .footer-contact-form button {
@@ -741,12 +759,14 @@ html {
   justify-content: space-between;
   width: 100%;
   margin-top: 2rem;
+  box-sizing: border-box; /* Include padding and border in the element's total width */
 }
 
 .footer-section {
   flex: 1;
   min-width: 200px;
   margin-bottom: 1rem;
+  box-sizing: border-box; /* Include padding and border in the element's total width */
 }
 
 .footer-section h3 {
@@ -772,8 +792,5 @@ html {
   margin-top: 2rem;
   border-top: 1px solid #ccc;
   padding-top: 1rem;
-}
-
-.footer-copyright p {
-  margin: 0.5rem 0;
+  box-sizing: border-box; /* Include padding and border in the element's total width */
 }
