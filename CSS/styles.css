@@ -715,9 +715,11 @@ html {
 }
 
 .footer-logo {
-  width: 150px;
-  height: auto;
-  margin-bottom: 1rem;
+  fill: var(--primary-color);
+  width: 250px; /* Adjust the size as needed */
+  display: block;
+  margin: 2rem auto 2.5rem; /* Center the logo */
+  filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.5)); /* Add shadow */
 }
 
 .footer-company-name,
@@ -725,11 +727,19 @@ html {
 .footer-phone,
 .footer-email {
   margin: 0.5rem 0;
+  text-align: center;
+}
+
+.footer-social-links {
+  display: flex; /* Use flexbox for alignment */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically, if necessary */
+  gap: 10px; /* Optional: Add space between the links */
 }
 
 .footer-social-links a {
   display: inline-block;
-  margin-right: 1rem;
+  text-align: center;
 }
 
 .footer-right h2 {
