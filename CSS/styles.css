@@ -204,8 +204,10 @@ html {
 /* Flipping cards */
 .services-section {
   background: var(--secondary-color);
-  width: 100%;
+  width: 60%;
+  margin-left: 40%;
   box-sizing: border-box;
+  overflow: hidden;
 }
 
 /* Header note */
@@ -574,10 +576,11 @@ html {
   overflow: hidden; /* Prevent overflow */
   padding: 2rem;
   background-color: #f8f8f8;
+  z-index: 10;
 }
 
 /* CONTACT */
-.contact {
+.quote {
   width: 100%;
   box-sizing: border-box; /* Include padding and border in the element's total width */
   z-index: 10; /* Ensure it appears in front of the fixed sidebar */
@@ -587,32 +590,32 @@ html {
   background-color: #f8f8f8;
 }
 
-.contact h2 {
+.quote h2 {
   font-size: 2rem;
   margin-bottom: 1rem;
   color: #333;
 }
 
-.contact p {
+.quote p {
   font-size: 1rem;
   margin-bottom: 1rem;
   color: #666;
 }
 
-.contact form {
+.quote form {
   display: flex;
   flex-direction: column;
 }
 
-.contact form label {
+.quote form label {
   font-size: 1rem;
   margin-bottom: 0.5rem;
   color: #333;
 }
 
-.contact form input,
-.contact form select,
-.contact form textarea {
+.quote form input,
+.quote form select,
+.quote form textarea {
   font-size: 1rem;
   padding: 0.5rem;
   margin-bottom: 1rem;
@@ -620,9 +623,9 @@ html {
   border-radius: 4px;
 }
 
-.contact form input::placeholder,
-.contact form select::placeholder,
-.contact form textarea::placeholder {
+.quote form input::placeholder,
+.quote form select::placeholder,
+.quote form textarea::placeholder {
   font-family: 'Exo', sans-serif;
 }
 
@@ -630,7 +633,7 @@ html {
   font-family: 'Exo';
 }
 
-.contact form button {
+.quote form button {
   font-size: 1.5rem;
   padding: 0.75rem;
   background-color: black;
@@ -643,31 +646,31 @@ html {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.contact form button:hover {
+.quote form button:hover {
   background-color: var(--primary-color);
   transform: translateY(2px); /* Simulates the button being pressed in */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Reduces the shadow for the pressed effect */
 }
 
-.contact form button:active {
+.quote form button:active {
   transform: translateY(4px); /* Moves the button further down when clicked */
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3); /* Even smaller shadow for click effect */
 }
 
 /* Responsive adjustments */
 @media (max-width: 935px) {
-  .contact {
+  .quote {
     padding: 1rem;
   }
 
-  .contact form input,
-  .contact form select,
-  .contact form textarea {
+  .quote form input,
+  .quote form select,
+  .quote form textarea {
     font-size: 0.875rem;
     padding: 0.5rem;
   }
 
-  .contact form button {
+  .quote form button {
     font-size: 0.875rem;
     padding: 0.5rem;
   }
