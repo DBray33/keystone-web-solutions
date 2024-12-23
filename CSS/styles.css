@@ -828,20 +828,14 @@ html {
   text-align: center;
 }
 
-.quote {
-  width: 100%;
-  box-sizing: border-box; /* Include padding and border in the element's total width */
-  z-index: 10; /* Ensure it appears in front of the fixed sidebar */
-  position: relative;
-  overflow: hidden; /* Prevent overflow */
-  padding: 2rem;
-  background-color: #f8f8f8;
-}
-
 .portfolio h2 {
-  font-size: 2.5rem;
+  font-size: var(--headline-font-size);
+  font-family: var(--headline-font-family);
+  font-weight: var(--headline-font-weight);
+  letter-spacing: var(--headline-letter-spacing);
   margin-bottom: 1rem;
   color: #333;
+  text-shadow: 2px 2px 1px black;
 }
 
 .portfolio p {
@@ -869,7 +863,7 @@ html {
 
 .portfolio-item:hover {
   /* transform: scale(1.05); */
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
 }
 
 .portfolio-overlay {
@@ -895,15 +889,16 @@ html {
 }
 
 .portfolio-overlay h3 {
-  font-size: 1.5rem;
+  font-size: 3rem;
   margin-bottom: 0.5rem;
   text-transform: uppercase;
 }
 
 .portfolio-overlay p {
-  font-size: 1rem;
+  font-size: 1.2rem;
   margin: 0;
   color: black;
+  font-weight: 500;
 }
 
 /* CONTACT */
