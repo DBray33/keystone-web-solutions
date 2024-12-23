@@ -603,7 +603,7 @@ html {
 .guide-heading {
   font-family: var(--headline-font-family);
   font-size: var(--headline-font-size);
-  letter-spacing: var(--headline-letter-spacing);
+
   font-weight: var(--headline-font-weight);
   color: #5dade2;
   margin-bottom: -2rem;
@@ -650,7 +650,7 @@ html {
   text-align: center;
   max-width: 100%; /* Adjust width to fit content */
   margin: 0 auto; /* Center each list item horizontally */
-  padding: 0 1rem 1rem; /* Add padding for better appearance */
+  padding: 0 1rem 0; /* Add padding for better appearance */
   background-color: lightgray;
 }
 
@@ -658,7 +658,7 @@ html {
   text-align: center;
   max-width: 100%; /* Adjust width to fit content */
   margin: 0 auto; /* Center each list item horizontally */
-  padding: 0 1rem 1rem; /* Add padding for better appearance */
+  padding: 0 1rem 0; /* Add padding for better appearance */
   background-color: white;
 }
 
@@ -688,53 +688,46 @@ html {
   box-sizing: border-box; /* Include padding in the width */
 }
 
+/* Guide Description */
 .website-guide .guide-description {
   text-align: center; /* Center-align text inside the element */
-  width: auto; /* Allow natural width or use max-width for constraints */
-  margin: 0 auto; /* Center the element horizontally */
-
-  padding: 1rem; /* Add padding for better spacing */
-  box-sizing: border-box; /* Include padding in the width */
+  width: 90%; /* Make it responsive within the viewport */
+  margin: 0 auto; /* Center horizontally */
+  max-height: 0; /* Initially hide content */
+  overflow: hidden; /* Prevent content overflow */
+  padding: 0; /* Remove padding when hidden */
+  transition: max-height 0.3s ease, padding 0.3s ease;
 }
 
-/* Call-to-Action */
-.guide-cta {
-  display: inline-block;
-  text-align: center;
-  margin: 2rem auto;
-  padding: 0.8rem 1.5rem;
-  background-color: #5dade2;
-  color: #fff;
-  font-size: 1rem;
-  text-decoration: none;
-  border-radius: 5px;
-  transition: background-color 0.3s ease;
-}
-
-.guide-cta:hover {
-  background-color: #4a9ed9;
+.website-guide .guide-description.show {
+  max-height: none; /* Allow the content to fit naturally */
+  padding: 1rem; /* Add padding when visible */
+  overflow: visible;
 }
 
 /* Wrapper for pricing options */
 .pricing-options {
-  display: flex;
-  justify-content: center; /* Center the options horizontally */
-  align-items: stretch; /* Make the boxes the same height */
+  display: flex; /* Arrange boxes horizontally */
+  flex-wrap: wrap; /* Allow items to wrap if necessary */
   gap: 1rem; /* Space between the boxes */
-  padding: 1rem 0;
-  list-style: none; /* Remove default list styles */
-  margin: 0 2rem; /* Remove default margin */
+  justify-content: center; /* Center-align boxes */
+  padding: 0; /* Remove extra padding */
+  margin: 1rem 0; /* Add vertical spacing */
+  width: 100%; /* Ensure it spans the container width */
+  box-sizing: border-box; /* Include padding in width calculation */
 }
 
 /* Individual pricing box styling */
 .pricing-options li {
-  flex: 1; /* Make both boxes equal in width */
-  border: 1px solid #ccc; /* Add a border around each box */
-  border-radius: 8px; /* Add rounded corners */
-  padding: 1rem; /* Add some padding inside the box */
-  background-color: #f9f9f9; /* Light background color for the boxes */
+  flex: 1 1 calc(50% - 1rem); /* Make boxes equal width and responsive */
+  border: 1px solid #ccc; /* Add a border */
+  border-radius: 8px; /* Rounded corners */
+  padding: 1rem; /* Inner padding */
+  background-color: #f9f9f9; /* Light background */
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
-  text-align: center; /* Center the text inside the box */
+  text-align: center; /* Center the text */
+  margin-bottom: 1rem; /* Space below each box */
+  box-sizing: border-box; /* Include padding/border in width */
 }
 
 /* Title styling */
@@ -756,7 +749,31 @@ html {
 @media (max-width: 768px) {
   .pricing-options {
     flex-direction: column; /* Stack boxes vertically */
+    gap: 1rem; /* Space between stacked boxes */
   }
+
+  .pricing-options li {
+    flex: 1 1 100%; /* Full-width boxes for smaller screens */
+    margin-bottom: 1rem; /* Ensure proper spacing between boxes */
+  }
+}
+
+/* Call-to-Action */
+.guide-cta {
+  display: inline-block;
+  text-align: center;
+  margin: 2rem auto;
+  padding: 0.8rem 1.5rem;
+  background-color: #5dade2;
+  color: #fff;
+  font-size: 1rem;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.guide-cta:hover {
+  background-color: #4a9ed9;
 }
 
 /* /////////////////////////////////////////////////////////////////////// */
