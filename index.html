@@ -300,6 +300,142 @@
       </div>
     </section>
 
+    <section class="website-guide">
+      <div class="container">
+        <h1 class="guide-heading">Simplifying Your Website Journey</h1>
+        <h2 class="guide-subheading">
+          FOR BEGINNERS: <br />Don't know where to start? This is the spot! If
+          you're not sure where to look first, this is the section for you.
+        </h2>
+        <p class="guide-paragraph">
+          This section is meant to take the guess work out of aimlessly
+          scrolling and clicking until you find where you need to be. Shopping
+          online for services—especially websites or niche products—can be
+          overwhelming, especially if you’re not sure what to look for or how to
+          start. That's why we've made it easy. Below, you’ll find answers to
+          common questions and guidance tailored to your needs. Whether you're a
+          small business owner, an entrepreneur, or just someone with an idea,
+          this section will help you navigate the process.
+        </p>
+        <ul class="guide-list">
+          <!-- 1 -->
+          <li class="guide-1">
+            <h2 class="guide-title title-1">
+              Are You a Business Looking for a Website?
+            </h2>
+            <p class="guide-description">
+              Starting fresh? We specialize in building custom websites that
+              reflect your brand and meet your business goals. From design to
+              deployment, we’ll guide you through every step. Plus, we offer a
+              monthly maintenance plan to handle updates, edits, and ongoing
+              upkeep, so your site stays fresh and functional without any
+              hassle.
+            </p>
+          </li>
+          <!-- 2 -->
+          <li class="guide-2">
+            <h2 class="guide-title title-2">
+              Flexible Payment Options for Your Website
+            </h2>
+            <p class="guide-description">
+              We understand every business has unique financial needs, so we
+              offer two payment programs to make having a website easier. Choose
+              an upfront lump sum with lower ongoing monthly fees, or opt for a
+              lower upfront cost—or even no upfront cost—and a larger monthly
+              fee. With either plan, your website stays with us, ensuring
+              seamless updates, maintenance, and cohesion, so you can focus on
+              growing your business while we handle the rest.
+            </p>
+            <ul class="pricing-options">
+              <li>
+                <h3 class="pricing-title">
+                  Option 1: Flat Fee + Monthly Retainer
+                </h3>
+                <p class="pricing-description">
+                  <strong>Initial Investment:</strong> $1,500 (one-time)<br />
+                  <strong>Ongoing Maintenance:</strong> $25/month<br />
+                  This plan is perfect for those looking for a high-quality
+                  website at a competitive upfront cost. It includes ongoing
+                  maintenance to ensure your website remains up-to-date, secure,
+                  and optimized.
+                </p>
+              </li>
+              <li>
+                <h3 class="pricing-title">
+                  Option 2: Monthly Subscription for Ongoing Growth
+                </h3>
+                <p class="pricing-description">
+                  <strong>Monthly Fee:</strong> $160 (with a 6-month commitment,
+                  paid upfront)<br />
+                  A strong online presence takes time to build and refine. This
+                  plan is designed for clients who prefer a lower initial cost,
+                  with ongoing SEO and site improvements included. The 6-month
+                  commitment ensures we have the time and resources to create
+                  and fine-tune your site for long-term success.
+                </p>
+              </li>
+            </ul>
+          </li>
+          <!-- 3 -->
+          <li class="guide-2">
+            <h2 class="guide-title title-2">
+              Not Happy With Your Current Website?
+            </h2>
+            <p class="guide-description">
+              If your current website isn’t performing or doesn’t represent your
+              business, let us take a look. We’ll analyze its functionality,
+              design, and speed to recommend or implement improvements.
+            </p>
+          </li>
+          <!-- 4 -->
+          <li class="guide-1">
+            <h2 class="guide-title title-1">
+              Unsure What Kind of Website You Need?
+            </h2>
+            <p class="guide-description">
+              Whether you need a simple 5-page static website, an extensive
+              multi-page platform, an eCommerce store, or a custom portfolio or
+              blog, we’ll help you figure out the best type of website for your
+              needs—and make it happen. Need more than 5 pages or have unique
+              requirements? Let’s talk!
+            </p>
+          </li>
+          <!-- 5 -->
+          <li class="guide-2">
+            <h2 class="guide-title title-2">
+              Are You Looking to Improve Your Website’s Speed or SEO?
+            </h2>
+            <p class="guide-description">
+              We use Google PageSpeed Insights and other tools to optimize
+              performance, ensuring fast load times and higher search engine
+              rankings.
+            </p>
+          </li>
+          <!-- 6 -->
+          <li class="guide-1">
+            <h2 class="guide-title title-1">
+              Need Help with Content or Updates?
+            </h2>
+            <p class="guide-description">
+              We offer services to create and update your website’s content so
+              it always looks fresh and professional.
+            </p>
+          </li>
+          <!-- 7 -->
+          <li class="guide-2">
+            <h2 class="guide-title title-2">Don’t Have a Clear Vision Yet?</h2>
+            <p class="guide-description">
+              No problem! Our consultation services will help you uncover your
+              goals and determine what your ideal website should look like.
+            </p>
+          </li>
+        </ul>
+        <a href="#contact" class="guide-cta"
+          >Contact Us for a Free Consultation</a
+        >
+      </div>
+    </section>
+
     <!-- Portfolio -->
     <section class="portfolio-section">
       <div class="portfolio">
@@ -325,10 +461,10 @@
     <!-- QUOTE -->
     <section>
       <div class="quote">
-        <h2>Contact</h2>
+        <h2>Get a quote</h2>
         <p>
-          If you have any questions or would like to discuss a project, feel
-          free to reach out to me.
+          Submmit your info here for a quote and we will get in touch with you
+          as soon as possible!
         </p>
         <p>Email: contact@mycompany.com</p>
         <p>Phone: (123) 456-7890</p>
@@ -457,10 +593,17 @@
         </div>
       </div>
       <div class="footer-copyright">
-        <p>&copy; Web Forge. All rights reserved.</p>
+        <p class="copyright">
+          &copy; <span id="year"></span> Web Forge Digital. All rights reserved.
+        </p>
         <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Use</a></p>
       </div>
     </footer>
+
+    <script>
+      // Automatically update the year
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
 
     <script src="js/scripts.js"></script>
   </body>
