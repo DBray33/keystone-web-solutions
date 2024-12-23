@@ -67,3 +67,23 @@ handleResize();
 
 // Add event listener for window resize
 window.addEventListener('resize', handleResize, { passive: true }); // Added passive: true
+
+// /////////////////////////////////////////////////////
+// CONSULTATION BUTTON HOVER ///////////////////////////
+document.addEventListener('DOMContentLoaded', () => {
+  const button1 = document.querySelector('.button-1');
+  const button2 = document.querySelector('.button-2');
+
+  // Add hover effect to button 2 when button 1 is hovered
+  button1.addEventListener('mouseenter', () => {
+    button2.classList.add('hover');
+  });
+
+  // Remove hover effect from button 2 when button 1 is no longer hovered
+  button1.addEventListener('mouseleave', () => {
+    button2.classList.remove('hover');
+  });
+});
+
+// /////////////////////////////////////////////////////
+// GUIDE HEADING ANIMATION /////////////////////////////

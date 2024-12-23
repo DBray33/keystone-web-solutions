@@ -404,11 +404,51 @@ html {
   }
 }
 
-@media (max-width: 932px) and (max-height: 430px) and (orientation: landscape) {
-  .services-section .service-item {
-    height: 70vh; /* Adjust the height for landscape orientation */
+@media (max-height: 765px) {
+  .services-section .service-item .service-item-back p {
+    font-size: 0.8rem; /* Adjust the font size for smaller screens */
+  }
+  .services-section .more-info-button {
+    font-size: 0.7rem; /* Adjust the font size for smaller screens */
+    margin-top: -1.5rem;
   }
 }
+
+@media (max-height: 525px) {
+  .services-section .service-item {
+    height: 100vh;
+  }
+  .services-section .service-item .service-item-back p {
+    font-size: 1rem; /* Adjust the font size for smaller screens */
+  }
+  .services-section .more-info-button {
+    font-size: 0.7rem; /* Adjust the font size for smaller screens */
+  }
+}
+
+/* @media (max-width: 932px) and (max-height: 430px) and (orientation: landscape) {
+  .services-section .service-item {
+    height: 70vh;
+  }
+} */
+
+@media (max-width: 430px) and (max-height: 932px) and (orientation: portrait) {
+  .services-section .service-item {
+    height: 33.6vh;
+  }
+}
+
+/* @media (max-width: 487px) and (max-height: 497px) {
+  .services-section .service-item {
+    height: 30vh;
+  }
+} */
+
+/* @media (max-width: 487px) and (max-height: 392px) {
+  .services-section .service-item {
+    height: 80vh;
+  }
+} */
 
 .service-item-front::before {
   content: '';
@@ -579,7 +619,6 @@ html {
 /* General Section Styling */
 .website-guide {
   width: 100%;
-  box-sizing: border-box;
   z-index: 10; /* Ensure it appears in front of the fixed sidebar */
   position: relative;
   overflow: hidden;
@@ -588,7 +627,6 @@ html {
   display: flex;
   flex-direction: column; /* Stack elements vertically */
   align-items: center; /* Center content horizontally */
-  gap: 1rem; /* Add space between stacked elements */
 }
 
 /* Container Styling */
@@ -603,11 +641,11 @@ html {
 .guide-heading {
   font-family: var(--headline-font-family);
   font-size: var(--headline-font-size);
-
   font-weight: var(--headline-font-weight);
   color: #5dade2;
   margin-bottom: -2rem;
   max-width: 90%;
+  text-shadow: 2px 2px 1px black; /* Adds a subtle black shadow */
 }
 
 @media (max-width: 1061px) {
@@ -650,7 +688,6 @@ html {
   text-align: center;
   max-width: 100%; /* Adjust width to fit content */
   margin: 0 auto; /* Center each list item horizontally */
-  padding: 0 1rem 0; /* Add padding for better appearance */
   background-color: lightgray;
 }
 
@@ -658,8 +695,30 @@ html {
   text-align: center;
   max-width: 100%; /* Adjust width to fit content */
   margin: 0 auto; /* Center each list item horizontally */
-  padding: 0 1rem 0; /* Add padding for better appearance */
   background-color: white;
+}
+.guide-list li {
+  opacity: 0;
+  transform: translateY(20px); /* Start slightly below */
+  transition: transform 0.6s ease, opacity 0.6s ease;
+  animation: none; /* Initially no animation */
+}
+
+.guide-list li.expand-up {
+  opacity: 1;
+  transform: translateY(0); /* Move to original position */
+  animation: expand 0.6s ease forwards; /* Apply animation */
+}
+
+@keyframes expand {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .title-1 {
@@ -688,94 +747,69 @@ html {
   box-sizing: border-box; /* Include padding in the width */
 }
 
-/* Guide Description */
+@media (max-width: 430px) and (max-height: 932px) and (orientation: portrait) {
+  .title-1,
+  .title-2 {
+    font-size: 0.9rem; /* Smaller font size for smaller screens */
+  }
+  .website-guide .guide-description {
+    font-size: 0rem; /* Smaller font size for smaller screens */
+  }
+}
+
+.guide-title:hover {
+  cursor: pointer;
+}
+
 .website-guide .guide-description {
   text-align: center; /* Center-align text inside the element */
   width: 90%; /* Make it responsive within the viewport */
-  margin: 0 auto; /* Center horizontally */
+  margin: 0 auto;
   max-height: 0; /* Initially hide content */
   overflow: hidden; /* Prevent content overflow */
-  padding: 0; /* Remove padding when hidden */
-  transition: max-height 0.3s ease, padding 0.3s ease;
+  box-sizing: border-box; /* Include padding in the width */
+  transition: max-height 0.3s ease, padding 0.3s ease; /* Smooth transition */
 }
 
 .website-guide .guide-description.show {
-  max-height: none; /* Allow the content to fit naturally */
-  padding: 1rem; /* Add padding when visible */
-  overflow: visible;
-}
-
-/* Wrapper for pricing options */
-.pricing-options {
-  display: flex; /* Arrange boxes horizontally */
-  flex-wrap: wrap; /* Allow items to wrap if necessary */
-  gap: 1rem; /* Space between the boxes */
-  justify-content: center; /* Center-align boxes */
-  padding: 0; /* Remove extra padding */
-  margin: 1rem 0; /* Add vertical spacing */
-  width: 100%; /* Ensure it spans the container width */
-  box-sizing: border-box; /* Include padding in width calculation */
-}
-
-/* Individual pricing box styling */
-.pricing-options li {
-  flex: 1 1 calc(50% - 1rem); /* Make boxes equal width and responsive */
-  border: 1px solid #ccc; /* Add a border */
-  border-radius: 8px; /* Rounded corners */
-  padding: 1rem; /* Inner padding */
-  background-color: #f9f9f9; /* Light background */
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
-  text-align: center; /* Center the text */
-  margin-bottom: 1rem; /* Space below each box */
-  box-sizing: border-box; /* Include padding/border in width */
-}
-
-/* Title styling */
-.pricing-title {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #5dade2; /* Primary color */
-  margin-bottom: 1rem; /* Space below the title */
-}
-
-/* Description styling */
-.pricing-description {
-  font-size: 1rem;
-  color: #555; /* Neutral text color */
-  line-height: 1.5; /* Improve readability */
-}
-
-/* Responsive adjustments for smaller screens */
-@media (max-width: 768px) {
-  .pricing-options {
-    flex-direction: column; /* Stack boxes vertically */
-    gap: 1rem; /* Space between stacked boxes */
-  }
-
-  .pricing-options li {
-    flex: 1 1 100%; /* Full-width boxes for smaller screens */
-    margin-bottom: 1rem; /* Ensure proper spacing between boxes */
-  }
+  margin: 0.5rem auto; /* Adjust margin for better spacing */
 }
 
 /* Call-to-Action */
-.guide-cta {
-  display: inline-block;
-  text-align: center;
-  margin: 2rem auto;
-  padding: 0.8rem 1.5rem;
-  background-color: #5dade2;
-  color: #fff;
-  font-size: 1rem;
-  text-decoration: none;
-  border-radius: 5px;
-  transition: background-color 0.3s ease;
+/* Base button styling */
+.btn {
+  margin: -1rem 0 2rem;
+  font-family: Arial, Helvetica, sans-serif;
+  text-transform: uppercase;
+  border-radius: 8px;
 }
-
-.guide-cta:hover {
-  background-color: #4a9ed9;
+.btn:hover .btn-slide-show-text1 {
+  margin-left: 65px;
 }
-
+.btn-shadow-drop {
+  position: relative;
+  margin-top: 2rem;
+  background: black;
+  padding: 10px;
+  font-size: 0.9em;
+  font-weight: 700;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  transition: 0.3s ease-in-out;
+  left: 0px;
+  top: 0px;
+  width: 180px;
+}
+.btn-shadow-drop:hover {
+  left: 4px;
+  top: 4px;
+  box-shadow: rgb(255, 255, 255) 0px 0px 0px 0px;
+}
+.btn-shadow-drop--blue {
+  border: 1px solid var(--primary-color);
+  color: var(--primary-color);
+  box-shadow: #5dade2 4px 4px 0px 0px;
+}
 /* /////////////////////////////////////////////////////////////////////// */
 /* PORTFOLIO ///////////////////////////////////////////////////////////// */
 .portfolio {
