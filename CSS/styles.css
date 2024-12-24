@@ -175,16 +175,27 @@ html {
 }
 
 .main-content .section h1 {
+  font-size: 7rem;
   font-family: var(--headline-font-family);
-  font-size: var(--headline-font-size);
   font-weight: var(--headline-font-weight);
   letter-spacing: var(--headline-letter-spacing);
-  margin: 2rem 2rem 0;
+  margin-bottom: 1rem;
+  margin-top: 0;
+  color: #333;
+  text-shadow: 2px 2px 1px black;
+}
+
+@media (max-width: 935px) {
+  .main-content .section h1 {
+    font-size: 7rem; /* Adjust the font size for smaller screens */
+    margin: 1rem 1rem 0;
+    letter-spacing: normal;
+  }
 }
 
 @media (max-width: 740px) {
   .main-content .section h1 {
-    font-size: 3rem; /* Adjust the font size for smaller screens */
+    font-size: 5rem; /* Adjust the font size for smaller screens */
     margin: 3rem 1rem 0;
     letter-spacing: normal;
   }
