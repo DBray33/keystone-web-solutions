@@ -509,14 +509,14 @@ html {
 }
 
 .service-item:nth-child(5) .service-item-front {
-  background-image: url('https://storage.googleapis.com/background-vid/marketing.webp?v=1');
+  background-image: url('https://storage.googleapis.com/background-vid/pexels-mikael-blomkvist-6476808.webp');
   background-size: cover; /* Ensure the image covers the entire container */
   background-position: center; /* Center the image */
   background-repeat: no-repeat; /* Prevent tiling */
 }
 
 .service-item:nth-child(6) .service-item-front {
-  background-image: url('https://storage.googleapis.com/background-vid/security.webp?v=1');
+  background-image: url('https://storage.googleapis.com/background-vid/pexels-goumbik-669621.webp');
   background-size: cover; /* Ensure the image covers the entire container */
   background-position: center; /* Center the image */
   background-repeat: no-repeat; /* Prevent tiling */
@@ -553,14 +553,14 @@ html {
 }
 
 .service-item:nth-child(5) .service-item-back {
-  background-image: url('https://storage.googleapis.com/background-vid/marketing.webp?v=1');
+  background-image: url('https://storage.googleapis.com/background-vid/pexels-mikael-blomkvist-6476808.webp');
   background-size: cover; /* Ensure the image covers the entire container */
   background-position: center; /* Center the image */
   background-repeat: no-repeat; /* Prevent tiling */
 }
 
 .service-item:nth-child(6) .service-item-back {
-  background-image: url('https://storage.googleapis.com/background-vid/security.webp?v=1');
+  background-image: url('https://storage.googleapis.com/background-vid/pexels-goumbik-669621.webp');
   background-size: cover; /* Ensure the image covers the entire container */
   background-position: center; /* Center the image */
   background-repeat: no-repeat; /* Prevent tiling */
