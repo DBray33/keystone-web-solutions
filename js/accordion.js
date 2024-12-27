@@ -71,8 +71,6 @@ document.addEventListener('DOMContentLoaded', function () {
       if (entry.isIntersecting) {
         entry.target.style.animationDelay = `${index * 0.4}s`;
         entry.target.classList.add('expand-up');
-      } else {
-        entry.target.classList.remove('expand-up');
       }
     });
   };

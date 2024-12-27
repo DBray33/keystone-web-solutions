@@ -322,9 +322,7 @@
         <ul class="guide-list">
           <!-- 1 -->
           <li class="guide-1">
-            <h2 class="guide-title title-1">
-              Are You a Business Looking for a Website?
-            </h2>
+            <h2 class="guide-title title-1">Looking for a Website?</h2>
             <p class="guide-description">
               Starting fresh? We specialize in building custom websites that
               reflect your brand and meet your business goals. From design to
@@ -336,9 +334,7 @@
           </li>
           <!-- 2 -->
           <li class="guide-2">
-            <h2 class="guide-title title-2">
-              Flexible Payment Options for Your Website
-            </h2>
+            <h2 class="guide-title title-2">Payment Plans</h2>
             <div class="guide-description">
               <p>
                 We know how frustrating it can be when pricing information isn’t
@@ -407,9 +403,7 @@
           </li>
           <!-- 4 -->
           <li class="guide-2">
-            <h2 class="guide-title title-2">
-              Unsure What Kind of Website You Need?
-            </h2>
+            <h2 class="guide-title title-2">Unsure What Your needs are?</h2>
             <p class="guide-description">
               Whether you need a simple 5-page static website, an extensive
               multi-page platform, an eCommerce store, or a custom portfolio or
@@ -421,7 +415,7 @@
           <!-- 5 -->
           <li class="guide-1">
             <h2 class="guide-title title-1">
-              Are You Looking to Improve Your Website’s Speed or SEO?
+              Do you want better SEO and PageSpeed?
             </h2>
             <p class="guide-description">
               We use Google PageSpeed Insights and other tools to optimize
@@ -432,7 +426,7 @@
           <!-- 6 -->
           <li class="guide-2">
             <h2 class="guide-title title-2">
-              Need Help with Content or Updates?
+              Need Content Updates/Maintenance?
             </h2>
             <p class="guide-description">
               We offer services to create and update your website’s content so
@@ -443,12 +437,57 @@
           <li class="guide-1">
             <h2 class="guide-title title-1">Don’t Have a Clear Vision Yet?</h2>
             <p class="guide-description">
-              No problem! Check out some our precious projects below. Our
+              No problem! Check out some our previous projects below. Our
               consultation services will help you uncover your goals and
               determine what your ideal website should look like.
             </p>
           </li>
         </ul>
+      </div>
+    </section>
+
+    <!-- QUOTE -->
+    <section class="quote-section">
+      <div class="quote">
+        <h2>
+          Get <br />
+          a <br />
+          quote
+        </h2>
+        <p>
+          Submmit your info here for a quote and we will get in touch with you
+          as soon as possible!
+        </p>
+        <p>Email: contact@mycompany.com</p>
+        <p>Phone: (123) 456-7890</p>
+
+        <form action="/submit-form" method="post">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required />
+
+          <label for="phone">Phone Number:</label>
+          <input type="tel" id="phone" name="phone" required />
+
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required />
+
+          <label for="budget">Budget:</label>
+          <select id="budget" name="budget" required>
+            <option value="" disabled selected>Select your budget</option>
+            <option value="under-1000">$0 - $1,000</option>
+            <option value="1000-5000">$1,000 - $5,000</option>
+            <option value="5000-10000">$5,000 - $10,000</option>
+            <option value="over-10000">Over $10,000</option>
+          </select>
+
+          <label for="message">Message:</label>
+          <textarea
+            id="message"
+            name="message"
+            rows="4"
+            required
+            placeholder="Please describe your project needs. For example: Website redesign, E-commerce functionality, SEO optimization, Mobile responsiveness, Custom features"></textarea>
+        </form>
         <button class="btn btn-shadow-drop btn-shadow-drop--blue">
           Get a quote
         </button>
@@ -495,49 +534,6 @@
             </div>
           </div>
         </div>
-      </div>
-    </section>
-
-    <!-- QUOTE -->
-    <section>
-      <div class="quote">
-        <h2>Get a quote</h2>
-        <p>
-          Submmit your info here for a quote and we will get in touch with you
-          as soon as possible!
-        </p>
-        <p>Email: contact@mycompany.com</p>
-        <p>Phone: (123) 456-7890</p>
-
-        <form action="/submit-form" method="post">
-          <label for="name">Name:</label>
-          <input type="text" id="name" name="name" required />
-
-          <label for="phone">Phone Number:</label>
-          <input type="tel" id="phone" name="phone" required />
-
-          <label for="email">Email:</label>
-          <input type="email" id="email" name="email" required />
-
-          <label for="budget">Budget:</label>
-          <select id="budget" name="budget" required>
-            <option value="" disabled selected>Select your budget</option>
-            <option value="under-1000">$0 - $1,000</option>
-            <option value="1000-5000">$1,000 - $5,000</option>
-            <option value="5000-10000">$5,000 - $10,000</option>
-            <option value="over-10000">Over $10,000</option>
-          </select>
-
-          <label for="message">Message:</label>
-          <textarea
-            id="message"
-            name="message"
-            rows="4"
-            required
-            placeholder="Please describe your project needs. For example: Website redesign, E-commerce functionality, SEO optimization, Mobile responsiveness, Custom features"></textarea>
-
-          <button type="submit">Submit</button>
-        </form>
       </div>
     </section>
 

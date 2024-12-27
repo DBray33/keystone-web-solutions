@@ -721,7 +721,7 @@ html {
   opacity: 0;
   transform: translateY(20px); /* Start slightly below */
   transition: transform 0.6s ease, opacity 0.6s ease;
-  animation: none; /* Initially no animation */
+  animation: none;
 }
 
 .guide-list li.expand-up {
@@ -770,10 +770,11 @@ html {
 @media (max-width: 430px) and (max-height: 932px) and (orientation: portrait) {
   .title-1,
   .title-2 {
-    font-size: 0.75rem;
+    font-size: 0.99rem;
   }
   .website-guide .guide-description {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
+    /* height: 120vh; */
   }
 }
 
@@ -793,6 +794,7 @@ html {
 
 .website-guide .guide-description.show {
   margin: 0.5rem auto; /* Adjust margin for better spacing */
+  max-height: 100%;
 }
 
 .accordion-arrow {
@@ -808,10 +810,109 @@ html {
   }
 
   .website-guide .guide-description {
-    font-size: 0.5rem;
+    font-size: 0.6rem;
   }
   .accordion-arrow {
     font-size: 0.4rem;
+  }
+}
+/* //////////////////////////////////////////////// */
+/* QUOTE/CONTACT ///////////////////////////////////*/
+.quote {
+  width: 100%;
+  box-sizing: border-box; /* Include padding and border in the element's total width */
+  z-index: 15; /* Ensure it appears in front of the fixed sidebar */
+  position: relative;
+  overflow: hidden; /* Prevent overflow */
+  padding: 2rem;
+  background-color: #f8f8f8;
+}
+
+.quote h2 {
+  width: 40%;
+  font-size: 8rem;
+  text-align: right;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.quote p {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  color: #666;
+}
+
+.quote form {
+  display: flex;
+  flex-direction: column;
+}
+
+.quote form label {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.quote form input,
+.quote form select,
+.quote form textarea {
+  font-size: 1rem;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.quote form input::placeholder,
+.quote form select::placeholder,
+.quote form textarea::placeholder {
+  font-family: 'Exo', sans-serif;
+}
+
+#budget {
+  font-family: 'Exo';
+}
+
+.quote form button {
+  font-size: 1.5rem;
+  padding: 0.75rem;
+  background-color: black;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.1s ease,
+    box-shadow 0.1s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.quote form button:hover {
+  background-color: var(--primary-color);
+  transform: translateY(2px); /* Simulates the button being pressed in */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Reduces the shadow for the pressed effect */
+}
+
+.quote form button:active {
+  transform: translateY(4px); /* Moves the button further down when clicked */
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3); /* Even smaller shadow for click effect */
+}
+
+/* Responsive adjustments */
+@media (max-width: 935px) {
+  .quote {
+    padding: 1rem;
+  }
+
+  .quote form input,
+  .quote form select,
+  .quote form textarea {
+    font-size: 0.875rem;
+    padding: 0.5rem;
+  }
+
+  .quote form button {
+    font-size: 0.875rem;
+    padding: 0.5rem;
   }
 }
 
@@ -955,105 +1056,6 @@ html {
   margin: 0;
   color: black;
   font-weight: 500;
-}
-
-/* CONTACT */
-.quote {
-  width: 100%;
-  box-sizing: border-box; /* Include padding and border in the element's total width */
-  z-index: 10; /* Ensure it appears in front of the fixed sidebar */
-  position: relative;
-  overflow: hidden; /* Prevent overflow */
-  padding: 2rem;
-  background-color: #f8f8f8;
-}
-
-.quote h2 {
-  font-family: var(--headline-font-family);
-  text-align: center;
-  font-size: var(--headline-font-size);
-  font-weight: var(--headline-font-weight);
-  letter-spacing: var(--headline-letter-spacing);
-}
-
-.quote p {
-  font-size: 1rem;
-  margin-bottom: 1rem;
-  color: #666;
-}
-
-.quote form {
-  display: flex;
-  flex-direction: column;
-}
-
-.quote form label {
-  font-size: 1rem;
-  margin-bottom: 0.5rem;
-  color: #333;
-}
-
-.quote form input,
-.quote form select,
-.quote form textarea {
-  font-size: 1rem;
-  padding: 0.5rem;
-  margin-bottom: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
-.quote form input::placeholder,
-.quote form select::placeholder,
-.quote form textarea::placeholder {
-  font-family: 'Exo', sans-serif;
-}
-
-#budget {
-  font-family: 'Exo';
-}
-
-.quote form button {
-  font-size: 1.5rem;
-  padding: 0.75rem;
-  background-color: black;
-  color: #fff;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.1s ease,
-    box-shadow 0.1s ease;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.quote form button:hover {
-  background-color: var(--primary-color);
-  transform: translateY(2px); /* Simulates the button being pressed in */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Reduces the shadow for the pressed effect */
-}
-
-.quote form button:active {
-  transform: translateY(4px); /* Moves the button further down when clicked */
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3); /* Even smaller shadow for click effect */
-}
-
-/* Responsive adjustments */
-@media (max-width: 935px) {
-  .quote {
-    padding: 1rem;
-  }
-
-  .quote form input,
-  .quote form select,
-  .quote form textarea {
-    font-size: 0.875rem;
-    padding: 0.5rem;
-  }
-
-  .quote form button {
-    font-size: 0.875rem;
-    padding: 0.5rem;
-  }
 }
 
 /* ////////////////////////////////////////////// */
