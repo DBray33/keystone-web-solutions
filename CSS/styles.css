@@ -5,6 +5,7 @@ html {
   height: 100%;
   font-family: 'Exo', sans-serif;
   overscroll-behavior: none; /* Prevents bounce effect */
+  background-color: var(--secondary-color);
 }
 
 :root {
@@ -22,6 +23,56 @@ html {
   height: 100%;
 }
 
+/* ///////////////////////////////////////////////// */
+/* NAVIGATION BAR ////////////////////////////////// */
+/* Navbar Styles */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%; /* Full width at the top of the page */
+  background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  padding: 2rem 0; /* Padding for height */
+  transition: all 0.3s ease-in-out; /* Smooth animation */
+  z-index: 1000;
+}
+
+.navbar.scrolled {
+  top: 10px; /* Slides down slightly */
+  left: auto;
+  margin: 0 1rem; /* Adds margin to sides */
+  width: calc(100% - 2rem); /* Slightly narrower */
+  border-radius: 10px; /* Rounded corners when scrolled */
+  padding: 2rem 0; /* Slightly smaller padding */
+  background-color: rgba(255, 255, 255, 0.95); /* More opaque when scrolled */
+  box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.2); /* Larger shadow */
+}
+
+/* Navbar Links */
+.navbar-links {
+  list-style: none;
+  display: flex;
+  justify-content: center; /* Center links horizontally */
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-links li {
+  margin: 0 1rem; /* Space between links */
+}
+
+.navbar-links a {
+  text-decoration: none;
+  font-size: 1.1rem;
+  color: #333; /* Text color */
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.navbar-links a:hover {
+  color: #5dade2; /* Primary hover color */
+}
 /* LEFT SIDEBAR */
 .sidebar {
   display: flex;
@@ -44,7 +95,7 @@ html {
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.5);
-  z-index: 0; /* Lower the z-index */
+  z-index: 0;
 }
 
 .logo {
@@ -74,6 +125,13 @@ html {
   z-index: 1;
   color: white;
   pointer-events: auto; /* Allow interaction with sidebar content */
+}
+
+/* Media query for max width 935px */
+@media (max-width: 935px) {
+  .sidebar {
+    padding-top: 60px; /* Adjust this value to make room for the navbar */
+  }
 }
 
 .sidebar-content > *:last-child {
@@ -172,6 +230,7 @@ html {
 
 .main-content .section {
   text-align: center;
+  margin-top: 7rem;
 }
 
 .main-content .section h1 {
@@ -647,6 +706,7 @@ html {
   display: flex;
   flex-direction: column; /* Stack elements vertically */
   align-items: center; /* Center content horizontally */
+  padding-top: 2rem;
 }
 
 /* Container Styling */
@@ -979,14 +1039,15 @@ html {
 }
 
 .portfolio h2 {
-  font-size: 9rem;
+  font-size: 12rem;
   font-family: var(--headline-font-family);
   font-weight: var(--headline-font-weight);
   letter-spacing: var(--headline-letter-spacing);
   margin-bottom: 1rem;
   margin-top: 0;
   color: #333;
-  text-shadow: 2px 2px 1px black;
+  text-shadow: 2px 2px 1px black,
+    /* Existing shadow */ -1px -1px 2px rgba(255, 255, 255, 0.5); /* Lighter overlay for 3D effect */
 }
 
 @media (max-width: 935px) {

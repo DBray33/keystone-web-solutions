@@ -109,3 +109,17 @@ document.addEventListener('DOMContentLoaded', function () {
   const observer = new IntersectionObserver(observerCallback, observerOptions);
   serviceItems.forEach((item) => observer.observe(item));
 });
+
+// /////////////////////////////////////////////////////
+// NAVBAR ////////////////////////////////
+document.addEventListener('DOMContentLoaded', function () {
+  const navbar = document.querySelector('.navbar');
+
+  window.addEventListener('scroll', function () {
+    if (window.scrollY > 0) {
+      navbar.classList.add('scrolled');
+    } else {
+      navbar.classList.remove('scrolled');
+    }
+  });
+});
