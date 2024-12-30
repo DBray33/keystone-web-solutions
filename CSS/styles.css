@@ -8,6 +8,11 @@ html {
   background-color: var(--secondary-color);
 }
 
+/* Enable smooth scrolling for the entire document */
+html {
+  scroll-behavior: smooth;
+}
+
 :root {
   --headline-font-family: 'Bebas Neue', sans-serif;
   --headline-font-size: 5rem;
@@ -38,6 +43,12 @@ html {
   z-index: 1000;
 }
 
+@media (max-width: 430px) {
+  .navbar .navbar-links a {
+    font-size: 0.8rem;
+  }
+}
+
 .navbar.scrolled {
   top: 10px; /* Slides down slightly */
   left: auto;
@@ -64,6 +75,7 @@ html {
 
 .navbar-links a {
   text-decoration: none;
+  text-transform: uppercase;
   font-size: 1.1rem;
   color: #333; /* Text color */
   font-weight: bold;
@@ -73,6 +85,103 @@ html {
 .navbar-links a:hover {
   color: #5dade2; /* Primary hover color */
 }
+
+@media (max-width: 843px) {
+  .navbar {
+    display: none;
+  }
+}
+
+/* Mobile Menu */
+.mobile-menu {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+/* Hamburger Icon */
+.hamburger-menu {
+  display: none;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+/* Dropdown Menu */
+.dropdown-menu {
+  position: fixed;
+  top: -100%; /* Initially hidden */
+  left: 0;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 0 0 12px 12px;
+  transition: top 0.3s ease;
+  z-index: 1000;
+}
+
+.dropdown-menu.active {
+  top: 0; /* Slide down into view */
+}
+
+.dropdown-links {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Two links per row */
+  gap: 1rem;
+  padding: 1rem;
+  list-style: none;
+  margin-top: 3rem;
+}
+
+.dropdown-links li {
+  text-align: center;
+}
+
+.dropdown-links a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dropdown-links a:hover {
+  background-color: #5dade2;
+  color: white;
+}
+
+.icon {
+  font-size: 2rem;
+}
+
+.title {
+  margin-top: 0.5rem;
+  font-size: 1rem;
+}
+
+@media (max-width: 843px) {
+  .hamburger-menu {
+    display: block; /* Visible on smaller screens */
+  }
+
+  .mobile-menu {
+    display: block;
+  }
+}
+
 /* LEFT SIDEBAR */
 .sidebar {
   display: flex;
@@ -1127,9 +1236,7 @@ html {
   width: 100%;
   max-width: 800px; /* Adjust the max-width as needed */
   height: auto;
-  margin-top: 3rem;
-  margin-bottom: -2rem;
-  margin-left: -1rem;
+  margin: 5rem auto -3rem;
   display: block;
 }
 

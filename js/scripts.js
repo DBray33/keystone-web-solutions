@@ -112,6 +112,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 // /////////////////////////////////////////////////////
 // NAVBAR ////////////////////////////////
+// Smooth transition to floating navbar
 document.addEventListener('DOMContentLoaded', function () {
   const navbar = document.querySelector('.navbar');
 
@@ -121,5 +122,50 @@ document.addEventListener('DOMContentLoaded', function () {
     } else {
       navbar.classList.remove('scrolled');
     }
+  });
+});
+
+// Scroll to section on link click with with space to account for navbar
+
+document.querySelectorAll('.navbar-links a').forEach((anchor) => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+
+    const targetId = this.getAttribute('href').substring(1);
+    const targetElement = document.getElementById(targetId);
+
+    window.scrollTo({
+      top: targetElement.offsetTop - 97, // Adjust the offset to 97px
+      behavior: 'smooth',
+    });
+  });
+});
+
+// MOBILE MENU
+document.addEventListener('DOMContentLoaded', () => {
+  const hamburgerMenu = document.querySelector('.hamburger-menu');
+  const dropdownMenu = document.querySelector('.dropdown-menu');
+  const links = document.querySelectorAll('.dropdown-links a');
+
+  // Toggle dropdown menu
+  hamburgerMenu.addEventListener('click', () => {
+    dropdownMenu.classList.toggle('active');
+  });
+
+  // Close dropdown when clicking outside
+  document.addEventListener('click', (event) => {
+    if (
+      !event.target.closest('.dropdown-menu') &&
+      !event.target.closest('.hamburger-menu')
+    ) {
+      dropdownMenu.classList.remove('active');
+    }
+  });
+
+  // Close dropdown when a link is clicked
+  links.forEach((link) => {
+    link.addEventListener('click', () => {
+      dropdownMenu.classList.remove('active');
+    });
   });
 });
