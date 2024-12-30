@@ -135,7 +135,7 @@ document.querySelectorAll('.navbar-links a').forEach((anchor) => {
     const targetElement = document.getElementById(targetId);
 
     window.scrollTo({
-      top: targetElement.offsetTop - 97, // Adjust the offset to 97px
+      top: targetElement.offsetTop - 80, // Adjust the offset to 97px
       behavior: 'smooth',
     });
   });
@@ -146,7 +146,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const hamburgerMenu = document.querySelector('.hamburger-menu');
   const dropdownMenu = document.querySelector('.dropdown-menu');
   const links = document.querySelectorAll('.dropdown-links a');
-  const offset = 20; // Adjust this value to match the height of your mobile menu
+  const offset = 30; // Adjust this value to match the height of your mobile menu
 
   // Toggle dropdown menu
   hamburgerMenu.addEventListener('click', () => {

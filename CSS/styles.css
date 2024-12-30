@@ -38,15 +38,76 @@ html {
   width: 100%; /* Full width at the top of the page */
   background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent */
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-  padding: 2rem 0; /* Padding for height */
+  padding: 1.5rem 0;
   transition: all 0.3s ease-in-out; /* Smooth animation */
   z-index: 1000;
 }
 
-@media (max-width: 430px) {
-  .navbar .navbar-links a {
-    font-size: 0.8rem;
-  }
+/* General Navbar Link Styling */
+.navbar .navbar-links a {
+  display: inline-block; /* Ensures consistent alignment */
+  padding: 0.5rem 1rem; /* Add consistent padding for all links */
+  text-decoration: none;
+  font-weight: bold;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+.navbar .navbar-links a:hover {
+  color: #5dade2; /* Hover color for regular links */
+}
+
+/* Styling for "Let's Get Started" Button */
+/* Styling for "Let's Get Started" Button */
+.navbar .started a {
+  position: relative; /* Needed for positioning pseudo-element */
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border-radius: 50px; /* Rounded corners */
+  background-color: black; /* Initial background color */
+  color: white; /* Initial text color */
+  text-decoration: none; /* Remove underline */
+  font-weight: bold;
+  border: 2px solid black; /* Border color same as background */
+  overflow: hidden; /* Confine pseudo-element to the button */
+  z-index: 1; /* Ensure content stays above pseudo-element */
+  transition: color 0.3s ease, border-color 0.3s ease; /* Smooth transitions */
+}
+
+.navbar .started a::before {
+  content: ''; /* Pseudo-element content */
+  position: absolute; /* Positioning */
+  top: 0;
+  left: -100%; /* Start completely off-screen to the left */
+  width: 250%; /* Wide enough to cover the button at an angle */
+  height: 100%; /* Full button height */
+  background-color: #5dade2; /* Hover background color */
+  transform: skewX(-45deg); /* Add slant */
+  z-index: -1; /* Ensure it's behind the text and border */
+  transition: transform 0.3s ease; /* Smooth slide effect */
+}
+
+.navbar .started a:hover::before {
+  transform: translateX(100%) skewX(-45deg); /* Slide in diagonally */
+}
+
+.navbar .started a:hover {
+  color: white; /* Font color on hover */
+  border-color: #5dade2; /* Keep border color same */
+}
+
+/* Ensure Consistent Alignment for All Links */
+.navbar-links {
+  list-style: none;
+  display: flex;
+  justify-content: center; /* Center the navbar links */
+  align-items: center; /* Align vertically */
+  padding: 0;
+  margin: 0;
+}
+
+.navbar-links li {
+  margin: 0 0.5rem; /* Add consistent spacing between links */
 }
 
 .navbar.scrolled {
@@ -55,7 +116,7 @@ html {
   margin: 0 1rem; /* Adds margin to sides */
   width: calc(100% - 2rem); /* Slightly narrower */
   border-radius: 10px; /* Rounded corners when scrolled */
-  padding: 2rem 0; /* Slightly smaller padding */
+  padding: 1rem 0; /* Slightly smaller padding */
   background-color: rgba(255, 255, 255, 0.95); /* More opaque when scrolled */
   box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.2); /* Larger shadow */
 }
@@ -952,7 +1013,7 @@ html {
   box-sizing: border-box; /* Include padding in the width */
 }
 
-@media (max-width: 430px) and (max-height: 932px) and (orientation: portrait) {
+@media (max-width: 560px) and (max-height: 932px) and (orientation: portrait) {
   .title-1,
   .title-2 {
     font-size: 0.99rem;
@@ -1003,101 +1064,103 @@ html {
 }
 /* //////////////////////////////////////////////// */
 /* QUOTE/CONTACT ///////////////////////////////////*/
-.quote {
-  width: 100%;
-  box-sizing: border-box; /* Include padding and border in the element's total width */
-  z-index: 15; /* Ensure it appears in front of the fixed sidebar */
+/* General Styling for the Quote Section */
+.quote-section {
   position: relative;
-  overflow: hidden; /* Prevent overflow */
+  max-width: 100%;
   padding: 2rem;
-  background-color: #f8f8f8;
+  background-color: #f8f8f8; /* Light background */
+  text-align: center;
+  z-index: 20;
 }
 
-.quote h2 {
-  width: 40%;
-  font-size: 8rem;
-  text-align: right;
+.quote {
+  display: flex;
+  flex-wrap: wrap; /* Enables responsive wrapping */
+  justify-content: space-between;
+  gap: 2rem; /* Adds space between the text and form */
+  align-items: flex-start;
+  max-width: 1200px;
+  margin: 0 auto; /* Center section */
+}
+
+.quote-container {
+  flex: 1 1 calc(50% - 2rem); /* Take up 50% width minus gap */
+  background-color: white; /* White background */
+  padding: 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  border-radius: 8px; /* Rounded corners */
+  /* text-align: left; */
+  box-sizing: border-box;
+}
+
+.contact-info {
+  text-align: left;
+}
+
+.quote-section-text h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #333; /* Darker color for contrast */
   text-transform: uppercase;
-  margin: 0;
 }
 
-.quote p {
+.quote-section-text p {
   font-size: 1rem;
   margin-bottom: 1rem;
-  color: #666;
+  color: #555; /* Medium gray for text */
 }
 
-.quote form {
+.quote-section-form form {
+  text-align: left;
   display: flex;
   flex-direction: column;
 }
 
-.quote form label {
+.quote-section-form label {
   font-size: 1rem;
   margin-bottom: 0.5rem;
-  color: #333;
+  color: #333; /* Darker text */
 }
 
-.quote form input,
-.quote form select,
-.quote form textarea {
+.quote-section-form input,
+.quote-section-form select,
+.quote-section-form textarea {
   font-size: 1rem;
   padding: 0.5rem;
   margin-bottom: 1rem;
   border: 1px solid #ccc;
   border-radius: 4px;
+  box-sizing: border-box; /* Include padding and border in total size */
 }
 
-.quote form input::placeholder,
-.quote form select::placeholder,
-.quote form textarea::placeholder {
-  font-family: 'Exo', sans-serif;
+.quote-section-form textarea {
+  resize: vertical; /* Allow vertical resizing */
 }
 
-#budget {
-  font-family: 'Exo';
+.quote-section-form button {
+  margin-top: 1rem;
+  display: inline-block;
 }
 
-.quote form button {
-  font-size: 1.5rem;
-  padding: 0.75rem;
-  background-color: black;
-  color: #fff;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.1s ease,
-    box-shadow 0.1s ease;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.quote form button:hover {
-  background-color: var(--primary-color);
-  transform: translateY(2px); /* Simulates the button being pressed in */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Reduces the shadow for the pressed effect */
-}
-
-.quote form button:active {
-  transform: translateY(4px); /* Moves the button further down when clicked */
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3); /* Even smaller shadow for click effect */
-}
-
-/* Responsive adjustments */
+/* Responsive Styles */
 @media (max-width: 935px) {
   .quote {
-    padding: 1rem;
+    flex-direction: column; /* Stack containers vertically */
+    align-items: center;
   }
 
-  .quote form input,
-  .quote form select,
-  .quote form textarea {
-    font-size: 0.875rem;
-    padding: 0.5rem;
+  .quote-container {
+    flex: 1 1 100%; /* Full width for stacking */
+    max-width: 100%;
   }
 
-  .quote form button {
-    font-size: 0.875rem;
-    padding: 0.5rem;
+  .quote-section-text h2 {
+    text-align: center;
+  }
+
+  .quote-section-form form {
+    text-align: center;
   }
 }
 
