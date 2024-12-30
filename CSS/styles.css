@@ -17,6 +17,7 @@ html {
   --headline-font-family: 'Bebas Neue', sans-serif;
   --headline-font-size: 5rem;
   --headline-font-weight: 900;
+  --headline-text-shadow: 2px 2px 1px black;
   --headline-letter-spacing: 3px;
   /* Colors */
   --primary-color: #5dade2;
@@ -46,11 +47,18 @@ html {
 /* General Navbar Link Styling */
 .navbar .navbar-links a {
   display: inline-block; /* Ensures consistent alignment */
-  padding: 0.5rem 1rem; /* Add consistent padding for all links */
+  padding: 0.5rem 1rem;
   text-decoration: none;
   font-weight: bold;
   color: #333;
   transition: color 0.3s ease;
+}
+
+@media (max-width: 1039px) {
+  .navbar .navbar-links a {
+    font-size: 0.8rem;
+    padding: 0.5rem 0.5rem;
+  }
 }
 
 .navbar .navbar-links a:hover {
@@ -1064,141 +1072,238 @@ html {
 }
 /* //////////////////////////////////////////////// */
 /* QUOTE/CONTACT ///////////////////////////////////*/
-/* General Styling for the Quote Section */
+/* General Styling for the Quote form  */
+.submission-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center content horizontally */
+  gap: 1rem;
+  max-width: 700px;
+  margin: 0 auto; /* Center the form on the page */
+  padding: 1.5rem;
+  background-color: #f8f8f8;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 100%; /* Make sure it takes up the available width */
+  box-sizing: border-box; /* Include padding in the width */
+}
+
+.form-row {
+  display: flex;
+  gap: 1rem; /* Space between columns */
+  width: 100%; /* Ensure rows are as wide as the form container */
+  justify-content: space-between; /* Distribute space evenly between form fields */
+}
+
+.form-group {
+  flex: 1; /* Equal width for each input in a row */
+  display: flex;
+  flex-direction: column;
+  min-width: 0; /* Prevent fields from overflowing */
+}
+
+label {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+input,
+select,
+textarea {
+  width: 100%; /* Fill the available width */
+  padding: 0.75rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box; /* Ensure padding and borders are included in the width */
+}
+
+/* Specific styling for the Budget dropdown */
+#budget {
+  font-size: 0.85rem; /* Adjust font size as needed */
+}
+
+/* Ensure option elements inherit the font size */
+#budget option {
+  font-size: inherit; /* Ensures consistency with the select element */
+}
+
+textarea {
+  width: 100%; /* Ensure it spans the full width of the container */
+  padding: 0.75rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box; /* Include padding in the total width */
+  resize: vertical; /* Allow vertical resizing only */
+  min-height: 120px; /* Slightly taller default height for readability */
+}
+
+button {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: white;
+  background-color: black;
+  border: none;
+  border-radius: 8px;
+  padding: 0.75rem 1.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  align-self: center; /* Center the button horizontally */
+}
+
+button:hover {
+  background-color: black;
+  color: #5dade2;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .form-row {
+    flex-direction: column; /* Stack fields vertically */
+  }
+}
+/* /////////////////////////////////////////////// */
+/* /////////////////////////////////////////////// */
+/* General Styling for the Quote contact Section */
+
 .quote-section {
   position: relative;
-  max-width: 100%;
+  z-index: 15;
   padding: 2rem;
-  background-color: #f8f8f8; /* Light background */
+  background-color: #f9f9f9;
   text-align: center;
-  z-index: 20;
 }
 
-.quote {
+.quote-section-heading {
+  font-family: var(--headline-font-family);
+  font-size: var(--headline-font-size);
+  font-weight: var(--headline-font-weight);
+  text-shadow: var(--headline-text-shadow);
+  letter-spacing: var(--headline-letter-spacing);
+  margin-bottom: 2rem;
+  color: #333;
+  text-transform: uppercase;
+}
+
+/* Cards Container */
+.quote-cards-container {
   display: flex;
-  flex-wrap: wrap; /* Enables responsive wrapping */
-  justify-content: space-between;
-  gap: 2rem; /* Adds space between the text and form */
-  align-items: flex-start;
-  max-width: 1200px;
-  margin: 0 auto; /* Center section */
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap; /* Allow wrapping */
 }
 
-.quote-container {
-  flex: 1 1 calc(50% - 2rem); /* Take up 50% width minus gap */
-  background-color: white; /* White background */
-  padding: 2rem;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-  border-radius: 8px; /* Rounded corners */
-  /* text-align: left; */
+/* Card Styling */
+.quote-card {
+  margin: 0 auto;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  flex: 1 1 calc(50% - 2rem); /* Equal space horizontally */
+  width: 450px;
   box-sizing: border-box;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.quote-card:hover {
+  transform: translateY(-5px); /* Lift on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Card Heading */
+.quote-card-heading {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 1rem;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+/* Card List */
+/* Gameplan List */
+.quote-card-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.quote-card-list li {
+  display: flex;
+  align-items: flex-start; /* Align icon and text vertically */
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  color: #333;
+}
+
+.quote-card-list .checkmark-icon {
+  width: 1rem;
+  height: auto;
+  margin-right: 0.5rem; /* Space between icon and text */
+  fill: #5dade2; /* Primary color for the icon */
 }
 
 .contact-info {
-  text-align: left;
+  text-align: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
-.quote-section-text h2 {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-  color: #333; /* Darker color for contrast */
-  text-transform: uppercase;
-}
-
-.quote-section-text p {
-  font-size: 1rem;
-  margin-bottom: 1rem;
-  color: #555; /* Medium gray for text */
-}
-
-.quote-section-form form {
-  text-align: left;
+.contact-info li {
+  text-align: center;
   display: flex;
-  flex-direction: column;
-}
-
-.quote-section-form label {
-  font-size: 1rem;
+  align-items: center; /* Align icon and text */
   margin-bottom: 0.5rem;
-  color: #333; /* Darker text */
-}
-
-.quote-section-form input,
-.quote-section-form select,
-.quote-section-form textarea {
   font-size: 1rem;
-  padding: 0.5rem;
-  margin-bottom: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box; /* Include padding and border in total size */
+  color: #333;
 }
 
-.quote-section-form textarea {
-  resize: vertical; /* Allow vertical resizing */
+.contact-info .icon {
+  width: 1.5rem;
+  height: auto;
+  margin-right: 0.5rem; /* Space between icon and text */
+  fill: #5dade2; /* Primary color for the icon */
 }
 
-.quote-section-form button {
-  margin-top: 1rem;
-  display: inline-block;
+.info-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
-/* Responsive Styles */
-@media (max-width: 935px) {
-  .quote {
-    flex-direction: column; /* Stack containers vertically */
-    align-items: center;
+.info-list li {
+  margin-bottom: 1.5rem;
+}
+
+.info-list h4 {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.info-list p {
+  font-size: 1rem;
+  color: #666;
+  margin: 0;
+}
+
+/* Responsive: Stack Cards Vertically */
+@media (max-width: 768px) {
+  .quote-cards-container {
+    flex-direction: column; /* Stack cards vertically */
+    align-items: center; /* Center cards */
   }
 
-  .quote-container {
-    flex: 1 1 100%; /* Full width for stacking */
-    max-width: 100%;
+  .quote-card {
+    flex: 1 1 100%; /* Full width */
+    max-width: 100%; /* Remove max-width constraint */
   }
-
-  .quote-section-text h2 {
-    text-align: center;
-  }
-
-  .quote-section-form form {
-    text-align: center;
-  }
-}
-
-/* Call-to-Action */
-/* Base button styling */
-.btn {
-  margin: -1rem 0 2rem;
-  font-family: Arial, Helvetica, sans-serif;
-  text-transform: uppercase;
-  border-radius: 8px;
-}
-.btn:hover .btn-slide-show-text1 {
-  margin-left: 65px;
-}
-.btn-shadow-drop {
-  position: relative;
-  margin-top: 2rem;
-  background: black;
-  padding: 10px;
-  font-size: 2rem;
-  font-weight: 700;
-  letter-spacing: 5px;
-  text-transform: uppercase;
-  transition: 0.3s ease-in-out;
-  left: 0px;
-  top: 0px;
-  width: 360px;
-  height: 100px;
-}
-.btn-shadow-drop:hover {
-  left: 4px;
-  top: 4px;
-  box-shadow: rgb(255, 255, 255) 0px 0px 0px 0px;
-}
-.btn-shadow-drop--blue {
-  border: 1px solid var(--primary-color);
-  color: var(--primary-color);
-  box-shadow: #5dade2 8px 8px 0px 0px;
 }
 
 /* /////////////////////////////////////////////////////////////////////// */
