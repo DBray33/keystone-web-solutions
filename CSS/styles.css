@@ -106,13 +106,29 @@ html {
 .hamburger-menu {
   display: none;
   position: absolute;
-  top: 1rem;
-  right: 1rem;
-  background: none;
-  border: none;
+  width: 100%;
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%); /* Offset for true centering */
+  background: rgba(255, 255, 255, 0.95); /* White with 80% opacity */
+  color: black; /* Ensure the text/icon is black */
+  border: none; /* Remove any border */
   font-size: 2rem;
   cursor: pointer;
   z-index: 1001;
+  padding: 0.5rem; /* Optional: Add some padding for better appearance */
+  border-radius: 8px; /* Optional: Rounded corners */
+  box-shadow: none; /* Remove default button shadow */
+  outline: none; /* Remove blue focus outline */
+}
+
+.hamburger-menu:focus,
+.hamburger-menu:active {
+  outline: none; /* Ensure focus styles don't show */
+  box-shadow: none; /* Remove active styles */
+}
+
+.hamburger-menu:visited {
+  color: black;
 }
 
 /* Dropdown Menu */
@@ -138,7 +154,7 @@ html {
   gap: 1rem;
   padding: 1rem;
   list-style: none;
-  margin-top: 3rem;
+  margin-top: 4rem;
 }
 
 .dropdown-links li {

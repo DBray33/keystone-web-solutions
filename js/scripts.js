@@ -146,6 +146,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const hamburgerMenu = document.querySelector('.hamburger-menu');
   const dropdownMenu = document.querySelector('.dropdown-menu');
   const links = document.querySelectorAll('.dropdown-links a');
+  const offset = 20; // Adjust this value to match the height of your mobile menu
 
   // Toggle dropdown menu
   hamburgerMenu.addEventListener('click', () => {
@@ -162,9 +163,27 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Close dropdown when a link is clicked
+  // Close dropdown when a link is clicked and adjust scroll position
   links.forEach((link) => {
-    link.addEventListener('click', () => {
+    link.addEventListener('click', (event) => {
+      event.preventDefault();
+
+      // Adjust scroll position
+      const targetId = link.getAttribute('href').slice(1);
+      const targetElement = document.getElementById(targetId);
+
+      if (targetElement) {
+        const elementPosition =
+          targetElement.getBoundingClientRect().top + window.scrollY;
+        const offsetPosition = elementPosition - offset;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth',
+        });
+      }
+
+      // Close the dropdown menu
       dropdownMenu.classList.remove('active');
     });
   });
