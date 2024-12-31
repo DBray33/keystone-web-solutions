@@ -489,11 +489,15 @@ textarea::placeholder {
   letter-spacing: 2px;
 }
 
+.call-now {
+  margin-bottom: 0;
+}
+
 /* Phone Number */
 .phone-number {
   position: relative;
   display: inline-block;
-  margin-top: 2rem;
+
   font-size: 2.2rem;
   font-weight: 200;
 }
