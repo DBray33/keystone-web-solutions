@@ -1060,6 +1060,18 @@ textarea::placeholder {
   transform: translateX(0); /* Slide into view */
 }
 
+.pricing-link {
+  color: inherit; /* Match the surrounding text color */
+  text-decoration: underline; /* Optional: underline to indicate a link */
+  font-weight: bold; /* Make the link stand out */
+  transition: color 0.3s ease; /* Smooth color transition on hover */
+}
+
+.pricing-link:hover {
+  color: #5dade2; /* Change color on hover */
+  text-decoration: none; /* Optional: remove underline on hover */
+}
+
 /* /////////////////////////////////////////////////// */
 /* PRICING STRUCTURE ///////////////////////////////// */
 /* Pricing Section Styling */

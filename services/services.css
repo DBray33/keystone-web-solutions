@@ -1,0 +1,138 @@
+/* General Section Styling */
+.custom-web-design {
+  margin-top: 3rem;
+  padding: 2rem;
+  background-color: #f8f8f8;
+  font-family: 'Exo', sans-serif;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column; /* Stack all elements vertically */
+  align-items: center; /* Center align all elements horizontally */
+}
+
+/* Header */
+.section-header h1 {
+  text-transform: uppercase;
+  font-size: 3rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.section-header p {
+  font-size: 1.25rem;
+  color: #555;
+  margin-bottom: 2rem;
+}
+
+/* Content Sections */
+/* General Styling for Content Section 1 */
+.content-section-1 {
+  margin-bottom: 2rem;
+  width: 100%; /* Default full width for smaller screens */
+  text-align: left; /* Align text to the left */
+}
+
+.content-section-2 {
+  margin-bottom: 2rem;
+  width: 100%; /* Default full width for smaller screens */
+  text-align: left; /* Align text to the left */
+}
+
+/* For Desktop Screens */
+@media (min-width: 992px) {
+  .content-section-1 {
+    width: 60%; /* Take up 60% of the viewport */
+    margin: 0 auto 2rem 0; /* Center it horizontally with extra space to the right */
+    float: left; /* Align it to the left side */
+  }
+  .content-section-2 {
+    width: 60%; /* Take up 60% of the viewport */
+    margin: 0 0 2rem auto; /* Push it to the right */
+    float: right; /* Align it to the right side */
+  }
+}
+
+.content-section h2 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.sub-section {
+  margin-bottom: 1.5rem;
+}
+
+.sub-section h3 {
+  font-size: 1.5rem;
+  color: #5dade2;
+  margin-bottom: 0.5rem;
+}
+
+.sub-section p {
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
+.sub-section a {
+  color: #5dade2;
+  text-decoration: none;
+}
+
+.sub-section a:hover {
+  text-decoration: underline;
+}
+
+/* Call-to-Action */
+.cta {
+  margin-top: 2rem;
+  text-align: center;
+  width: 100%;
+}
+
+.cta p {
+  font-size: 1.25rem;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  color: white;
+  background-color: #5dade2;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #333;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .section-header h1 {
+    font-size: 2rem;
+  }
+
+  .sub-section h3 {
+    font-size: 1.25rem;
+  }
+
+  .sub-section p {
+    font-size: 0.9rem;
+  }
+
+  .cta-button {
+    font-size: 0.9rem;
+  }
+}
