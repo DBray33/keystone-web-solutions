@@ -275,3 +275,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
   pricingCards.forEach((card) => observer.observe(card));
 });
+
+// //////////////////////////////////////////////
+// MOBILE MENU DROPDOWN SUBMENU ////////////////////////
+document.addEventListener('DOMContentLoaded', () => {
+  const closeBtn = document.querySelector('.submenu-close');
+  const submenu = document.querySelector('.dropdown-links .dropdown-submenu');
+
+  // Hide the submenu when the close button is clicked
+  closeBtn.addEventListener('click', (e) => {
+    e.preventDefault(); // Prevent default button behavior
+    submenu.style.display = 'none'; // Hide the submenu
+  });
+});

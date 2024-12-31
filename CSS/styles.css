@@ -293,6 +293,75 @@ textarea::placeholder {
   text-align: center;
 }
 
+/* Mobile Dropdown Parent Links */
+.dropdown-links .dropdown-parent {
+  position: relative;
+}
+
+.dropdown-links .dropdown-parent > a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+/* Submenu Styling */
+.dropdown-links .dropdown-submenu {
+  position: absolute;
+  top: 0; /* Adjust as needed */
+  left: -115%; /* Position it at the left of the viewport */
+  width: 90vw; /* Full width of the viewport */
+  list-style: none;
+  padding: 1rem; /* Add padding for inner spacing */
+  margin: 0; /* Remove any margin */
+  display: none; /* Hidden by default */
+  flex-direction: column;
+  background-color: rgba(255, 255, 255, 0.95); /* Background color */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  border-radius: 0; /* No rounded corners for fullscreen look */
+  z-index: 1000; /* Ensure it stays above other elements */
+  transform: translateY(50px); /* Optional: Adds a slight drop-down effect */
+}
+
+.dropdown-links .dropdown-submenu li {
+  padding: 0.5rem 1rem;
+  text-align: left;
+}
+
+.dropdown-links .dropdown-submenu li a {
+  color: #333;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.dropdown-links .dropdown-submenu li a:hover {
+  color: #5dade2;
+}
+
+/* Submenu Toggle on Hover */
+.dropdown-links .dropdown-parent:hover .dropdown-submenu {
+  display: flex;
+}
+
+.submenu-close {
+  display: block;
+  margin: 1rem auto 0; /* Center the button within the submenu */
+  padding: 0.5rem 1rem;
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  text-align: center;
+}
+
+.submenu-close:hover {
+  background-color: #5dade2;
+  color: white;
+}
+
+/* Links */
 .dropdown-links a {
   text-decoration: none;
   color: #333;
@@ -320,6 +389,7 @@ textarea::placeholder {
   font-size: 1rem;
 }
 
+/* Responsive Styling */
 @media (max-width: 843px) {
   .hamburger-menu {
     display: block; /* Visible on smaller screens */
