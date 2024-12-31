@@ -67,7 +67,7 @@ html {
 
 /* Styling for "Let's Get Started" Button */
 /* Styling for "Let's Get Started" Button */
-.navbar .started a {
+.navbar .submit-button a {
   position: relative; /* Needed for positioning pseudo-element */
   display: inline-block;
   padding: 0.5rem 1rem;
@@ -79,10 +79,10 @@ html {
   border: 2px solid black; /* Border color same as background */
   overflow: hidden; /* Confine pseudo-element to the button */
   z-index: 1; /* Ensure content stays above pseudo-element */
-  transition: color 0.3s ease, border-color 0.3s ease; /* Smooth transitions */
+  transition: color 0.3s ease, border-color 0.8s ease; /* Smooth transitions */
 }
 
-.navbar .started a::before {
+.navbar .submit-button a::before {
   content: ''; /* Pseudo-element content */
   position: absolute; /* Positioning */
   top: 0;
@@ -95,12 +95,12 @@ html {
   transition: transform 0.3s ease; /* Smooth slide effect */
 }
 
-.navbar .started a:hover::before {
+.navbar .submit-button a:hover::before {
   transform: translateX(100%) skewX(-45deg); /* Slide in diagonally */
 }
 
-.navbar .started a:hover {
-  color: white; /* Font color on hover */
+.navbar .submit-button a:hover {
+  color: var(--primary-color); /* Font color on hover */
   border-color: #5dade2; /* Keep border color same */
 }
 
@@ -198,6 +198,23 @@ html {
 
 .hamburger-menu:visited {
   color: black;
+}
+
+.hamburger-icon {
+  display: block;
+}
+
+.close-icon {
+  display: none;
+}
+
+/* Toggle visibility */
+.hamburger-menu.active .hamburger-icon {
+  display: none;
+}
+
+.mobile-menu .hamburger-menu.active .close-icon {
+  display: block;
 }
 
 /* Dropdown Menu */
@@ -432,8 +449,7 @@ html {
   font-family: var(--headline-font-family);
   font-weight: var(--headline-font-weight);
   letter-spacing: var(--headline-letter-spacing);
-  margin-bottom: 1rem;
-  margin-top: 0;
+  margin: 0 1rem 1rem;
   color: #333;
   text-shadow: 2px 2px 1px black;
 }
@@ -888,188 +904,151 @@ html {
 }
 
 /* /////////////////////////////////////////////////////////////////////// */
-/* WEBSITE GUIDE ///////////////////////////////////////////////////////// */
-/* General Section Styling */
-.website-guide {
-  width: 100%;
-  z-index: 10; /* Ensure it appears in front of the fixed sidebar */
+/* WEBSITE JOURNEY GUIDE ///////////////////////////////////////////////////////// */
+/* Section Styles */
+.journey-section {
+  z-index: 20;
   position: relative;
-  overflow: hidden;
-  background-color: #f8f8f8;
-  text-align: center; /* Center-align all content */
-  display: flex;
-  flex-direction: column; /* Stack elements vertically */
-  align-items: center; /* Center content horizontally */
-  padding-top: 2rem;
-}
-
-/* Container Styling */
-.container {
-  display: flex;
-  flex-direction: column; /* Stack child elements */
-  align-items: center; /* Center-align all child elements */
-  margin-top: -2rem;
-}
-
-/* Headings */
-.guide-heading {
-  font-family: var(--headline-font-family);
-  font-size: var(--headline-font-size);
-  font-weight: var(--headline-font-weight);
-  color: #5dade2;
-  margin-bottom: -2rem;
-  max-width: 90%;
-  text-shadow: 2px 2px 1px black; /* Adds a subtle black shadow */
-}
-
-@media (max-width: 1061px) {
-  .guide-heading {
-    font-size: 4rem; /* Adjust the font size for smaller screens */
-  }
-}
-
-@media (max-width: 864px) {
-  .guide-heading {
-    font-size: 3rem; /* Adjust the font size for smaller screens */
-    padding: 0 3rem;
-  }
-}
-
-.website-guide .guide-subheading {
-  font-size: 1.2rem;
-  margin: 2rem;
-  line-height: 1.6; /* Improve readability */
-}
-
-.website-guide .guide-paragraph {
-  font-size: 1rem;
-  color: #555;
-  margin: -1rem 3rem 2rem;
-  line-height: 1.5; /* Improve readability */
-}
-
-/* List Styling */
-.guide-list {
-  list-style: none;
-  padding: 0; /* Remove unnecessary padding */
-  margin: 0 auto; /* Center the list horizontally */
-  display: flex;
-  flex-direction: column; /* Stack list items vertically */
-  align-items: center; /* Center-align the list items within the container */
-}
-
-.guide-1 {
   text-align: center;
-  max-width: 100%; /* Adjust width to fit content */
-  margin: 0 auto; /* Center each list item horizontally */
-  background-color: lightgray;
-}
-
-.guide-2 {
-  text-align: center;
-  max-width: 100%; /* Adjust width to fit content */
-  margin: 0 auto; /* Center each list item horizontally */
+  padding: 2rem;
+  /* max-width: 1200px; */
+  margin: 0 auto;
   background-color: white;
 }
-.guide-list li {
-  opacity: 0;
-  transform: translateY(20px); /* Start slightly below */
-  transition: transform 0.6s ease, opacity 0.6s ease;
-  animation: none;
-}
 
-.guide-list li.expand-up {
-  opacity: 1;
-  transform: translateY(0); /* Move to original position */
-  animation: expand 0.6s ease forwards; /* Apply animation */
-}
-
-@keyframes expand {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.title-1 {
-  background-color: black;
-  font-size: 1.4rem;
-  color: #5dade2;
-  margin: 0; /* Remove default margin */
-  font-weight: bold;
-  text-align: center; /* Center the text within the element */
+.journey-heading {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #333;
   text-transform: uppercase;
-  padding: 1rem 0; /* Add vertical padding for spacing */
-  width: 100vw; /* Span the full width of the viewport */
-  box-sizing: border-box; /* Include padding in the width */
 }
 
-.title-2 {
-  background-color: var(--primary-color);
-  font-size: 1.4rem;
-  color: black;
-  margin: 0; /* Remove default margin */
-  font-weight: bold;
-  text-align: center; /* Center the text within the element */
-  text-transform: uppercase;
-  padding: 1rem 0; /* Add vertical padding for spacing */
-  width: 100vw; /* Span the full width of the viewport */
-  box-sizing: border-box; /* Include padding in the width */
+.journey-subheading {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #555;
 }
 
-@media (max-width: 560px) and (max-height: 932px) and (orientation: portrait) {
-  .title-1,
-  .title-2 {
-    font-size: 0.99rem;
-  }
-  .website-guide .guide-description {
-    font-size: 0.9rem;
-    /* height: 120vh; */
-  }
-}
-
-.guide-title:hover {
-  cursor: pointer;
-}
-
-.website-guide .guide-description {
-  text-align: center; /* Center-align text inside the element */
-  width: 90%; /* Make it responsive within the viewport */
-  margin: 0 auto;
-  max-height: 0; /* Initially hide content */
-  overflow: hidden; /* Prevent content overflow */
-  box-sizing: border-box; /* Include padding in the width */
-  transition: max-height 0.3s ease, padding 0.3s ease; /* Smooth transition */
-}
-
-.website-guide .guide-description.show {
-  margin: 0.5rem auto; /* Adjust margin for better spacing */
-  max-height: 100%;
-}
-
-.accordion-arrow {
-  margin-left: 15px;
+.journey-description {
   font-size: 1rem;
-  transition: transform 0.3s ease;
+  line-height: 1.6;
+  color: #666;
+  margin-bottom: 2rem;
 }
 
-@media (max-width: 932px) and (max-height: 430px) and (orientation: landscape) {
-  .title-1,
-  .title-2 {
-    font-size: 0.5rem;
-  }
+/* Grid Container */
+.journey-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
 
-  .website-guide .guide-description {
-    font-size: 0.6rem;
-  }
-  .accordion-arrow {
-    font-size: 0.4rem;
+/* Card Styles */
+.journey-card {
+  background-color: var(--secondary-color);
+  padding: 1.5rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.journey-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.card-title {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.card-description {
+  font-size: 1rem;
+  color: #555;
+}
+
+/* /////////////////////////////////////////////////// */
+/* PRICING STRUCTURE ///////////////////////////////// */
+/* Pricing Section Styling */
+.pricing-section {
+  position: relative;
+  text-align: center;
+  padding: 2rem;
+  background-color: #f9f9f9;
+  z-index: 15;
+}
+
+.pricing-heading {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.pricing-subheading {
+  font-size: 1rem;
+  margin-bottom: 2rem;
+  color: #666;
+}
+
+.pricing-cards-container {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.pricing-card {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 30%;
+  max-width: 320px;
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pricing-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  background: var(--primary-color);
+}
+
+.pricing-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.pricing-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.pricing-card ul li {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 0.5rem;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .pricing-card {
+    width: 45%;
   }
 }
+
+@media (max-width: 768px) {
+  .pricing-card {
+    width: 100%;
+  }
+}
+
 /* //////////////////////////////////////////////// */
 /* QUOTE/CONTACT ///////////////////////////////////*/
 /* General Styling for the Quote form  */
@@ -1078,10 +1057,10 @@ html {
   flex-direction: column;
   align-items: center; /* Center content horizontally */
   gap: 1rem;
-  max-width: 700px;
+  max-width: 1000px;
   margin: 0 auto; /* Center the form on the page */
   padding: 1.5rem;
-  background-color: #f8f8f8;
+  background-color: transparent;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   width: 100%; /* Make sure it takes up the available width */
@@ -1104,14 +1083,13 @@ html {
 
 label {
   font-size: 1rem;
-  color: #333;
+  color: white;
   margin-bottom: 0.5rem;
 }
 
 input,
-select,
-textarea {
-  width: 100%; /* Fill the available width */
+select {
+  width: 100%;
   padding: 0.75rem;
   font-size: 1rem;
   border: 1px solid #ccc;
@@ -1121,7 +1099,7 @@ textarea {
 
 /* Specific styling for the Budget dropdown */
 #budget {
-  font-size: 0.85rem; /* Adjust font size as needed */
+  font-size: 0.75rem; /* Adjust font size as needed */
 }
 
 /* Ensure option elements inherit the font size */
@@ -1129,51 +1107,98 @@ textarea {
   font-size: inherit; /* Ensures consistency with the select element */
 }
 
+.form-row {
+  display: flex;
+  gap: 1rem; /* Space between columns */
+  width: 100%; /* Ensure rows are as wide as the form container */
+  justify-content: space-between; /* Distribute space evenly between form fields */
+  flex-wrap: wrap; /* Allow wrapping for smaller screens */
+}
+
+.form-group {
+  flex: 1; /* Equal width for each input in a row */
+  display: flex;
+  flex-direction: column;
+  min-width: 0; /* Prevent fields from overflowing */
+}
+
 textarea {
-  width: 100%; /* Ensure it spans the full width of the container */
+  width: 100%; /* Ensure it spans the full width */
   padding: 0.75rem;
   font-size: 1rem;
   border: 1px solid #ccc;
   border-radius: 4px;
-  box-sizing: border-box; /* Include padding in the total width */
-  resize: vertical; /* Allow vertical resizing only */
-  min-height: 120px; /* Slightly taller default height for readability */
+  min-height: 120px;
+  box-sizing: border-box; /* Include padding and borders in the width */
 }
 
-button {
-  font-size: 1.25rem;
-  font-weight: bold;
-  color: white;
-  background-color: black;
-  border: none;
-  border-radius: 8px;
-  padding: 0.75rem 1.5rem;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  align-self: center; /* Center the button horizontally */
+@media (max-width: 580px) {
+  textarea {
+    min-height: 150px; /* Adjust the minimum height for smaller screens */
+  }
 }
 
-button:hover {
-  background-color: black;
-  color: #5dade2;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
+/* Responsive styling for smaller screens */
+@media (max-width: 730px) {
   .form-row {
     flex-direction: column; /* Stack fields vertically */
+    gap: 0.5rem; /* Adjust gap between stacked fields */
   }
+}
+
+.quote-section .submit-button {
+  position: relative; /* Needed for positioning pseudo-element */
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border-radius: 50px; /* Rounded corners */
+  background-color: black; /* Initial background color */
+  color: white; /* Initial text color */
+  font-weight: bold;
+  border: 2px solid black; /* Border color same as background */
+  overflow: hidden; /* Confine pseudo-element to the button */
+  z-index: 1; /* Ensure content stays above pseudo-element */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: color 0.3s ease, border-color 0.8s ease; /* Smooth transitions */
+  font-size: 1.2rem;
+  text-transform: uppercase;
+}
+
+.quote-section .submit-button::before {
+  content: ''; /* Pseudo-element content */
+  position: absolute; /* Positioning */
+  top: 0;
+  left: -100%; /* Start completely off-screen to the left */
+  width: 250%; /* Wide enough to cover the button at an angle */
+  height: 100%; /* Full button height */
+  background-color: #5dade2; /* Hover background color */
+  transform: skewX(-45deg); /* Add slant */
+  z-index: -1; /* Ensure it's behind the text and border */
+  transition: transform 0.3s ease; /* Smooth slide effect */
+}
+
+.quote-section .submit-button:hover::before {
+  transform: translateX(100%) skewX(-45deg); /* Slide in diagonally */
+}
+
+.quote-section .submit-button:hover {
+  color: white; /* Font color on hover */
+  border-color: #5dade2; /* Keep border color same */
 }
 /* /////////////////////////////////////////////// */
 /* /////////////////////////////////////////////// */
 /* General Styling for the Quote contact Section */
 
+/* Quote Section */
 .quote-section {
   position: relative;
   z-index: 15;
   padding: 2rem;
-  background-color: #f9f9f9;
+  background-color: var(--secondary-color);
   text-align: center;
+}
+
+.quote-section p {
+  color: white;
 }
 
 .quote-section-heading {
@@ -1187,6 +1212,12 @@ button:hover {
   text-transform: uppercase;
 }
 
+@media (max-width: 499px) {
+  .quote-section-heading {
+    font-size: 3rem; /* Adjust the font size for smaller screens */
+  }
+}
+
 /* Cards Container */
 .quote-cards-container {
   display: flex;
@@ -1197,56 +1228,96 @@ button:hover {
 
 /* Card Styling */
 .quote-card {
-  margin: 0 auto;
-  background-color: white;
+  margin: 0 auto; /* Center the cards */
+  background-color: black;
   border: 1px solid #ddd;
   border-radius: 8px;
-  padding: 1.5rem;
+  padding: 1rem;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  flex: 1 1 calc(50% - 2rem); /* Equal space horizontally */
-  width: 450px;
+  width: 450px; /* Default width for larger screens */
   box-sizing: border-box;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .quote-card:hover {
-  transform: translateY(-5px); /* Lift on hover */
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+}
+
+/* Adjust card styling for smaller screens */
+@media (max-width: 994px) {
+  .quote-cards-container {
+    flex-direction: column; /* Stack cards vertically */
+    align-items: center; /* Center cards */
+  }
+
+  .quote-card {
+    width: 100%; /* Make cards wider, relative to screen size */
+    margin: 1rem auto; /* Add margin to separate cards */
+    max-width: 700px; /* Limit the maximum width of the cards */
+  }
+}
+
+/* Adjust card width for larger screens */
+@media (min-width: 1200px) {
+  .quote-card {
+    width: 500px; /* Increase width for larger desktop screens */
+    margin: 0 1rem; /* Add a bit of horizontal margin */
+  }
+
+  .quote-cards-container {
+    gap: 2rem; /* Increase the gap between cards for wider layouts */
+  }
 }
 
 /* Card Heading */
 .quote-card-heading {
-  font-size: 1.5rem;
-  color: #333;
+  font-size: 3rem;
+  color: var(--primary-color);
   margin-bottom: 1rem;
   text-align: center;
   text-transform: uppercase;
   font-weight: bold;
+  margin: 0;
 }
 
 /* Card List */
-/* Gameplan List */
+/* Quote Card List */
 .quote-card-list {
   list-style: none;
   padding: 0;
-  margin: 0;
+  margin: 0 auto; /* Center the list horizontally */
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+  align-items: center; /* Center items horizontally */
+  gap: 1rem;
 }
 
 .quote-card-list li {
   display: flex;
-  align-items: flex-start; /* Align icon and text vertically */
-  margin-bottom: 1rem;
+  align-items: center; /* Align icon and text vertically */
+  justify-content: center; /* Center the icon and text horizontally */
+  gap: 0.5rem; /* Add spacing between the icon and text */
   font-size: 1rem;
   color: #333;
+  transition: color 0.3s ease; /* Smooth text color transition */
 }
 
-.quote-card-list .checkmark-icon {
-  width: 1rem;
-  height: auto;
-  margin-right: 0.5rem; /* Space between icon and text */
-  fill: #5dade2; /* Primary color for the icon */
+.quote-card-list li:hover {
+  color: var(--primary-color); /* Change text color on hover */
 }
 
+.icon {
+  width: 1.5rem; /* Set icon width */
+  height: auto; /* Maintain aspect ratio */
+  fill: #5dade2; /* Set icon color */
+  transition: fill 0.3s ease; /* Smooth icon color transition */
+}
+
+.quote-card-list li:hover .icon {
+  fill: white; /* Change icon color when hovering over the list item */
+}
+
+/* Contact Info */
 .contact-info {
   text-align: center;
   list-style: none;
@@ -1255,42 +1326,45 @@ button:hover {
 }
 
 .contact-info li {
-  text-align: center;
   display: flex;
-  align-items: center; /* Align icon and text */
-  margin-bottom: 0.5rem;
+  align-items: center; /* Ensure icon and text are vertically aligned */
+  justify-content: center;
+  gap: 0.5rem;
   font-size: 1rem;
-  color: #333;
+  color: white;
 }
 
 .contact-info .icon {
-  width: 1.5rem;
-  height: auto;
-  margin-right: 0.5rem; /* Space between icon and text */
-  fill: #5dade2; /* Primary color for the icon */
+  display: inline-block;
+  flex-shrink: 0; /* Prevent the icon from shrinking */
+  vertical-align: middle; /* Align icon with text */
 }
 
-.info-list {
+.contact-info li span {
+  line-height: 1.5; /* Adjust text vertical alignment */
+  display: flex;
+  align-items: center; /* Center text with the icon */
+}
+
+.quote-card .info-list {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-.info-list li {
-  margin-bottom: 1.5rem;
-}
-
-.info-list h4 {
-  font-size: 1.25rem;
+.quote-card .info-list h4 {
+  text-decoration: underline 3px solid var(--primary-color);
+  font-size: 1.2rem; /* Keep the heading size consistent */
   font-weight: bold;
-  color: #333;
-  margin-bottom: 0.5rem;
+  color: white;
+  margin: 0;
+  text-transform: uppercase;
 }
 
-.info-list p {
-  font-size: 1rem;
-  color: #666;
-  margin: 0;
+.quote-card .info-list p {
+  font-size: 1rem; /* Keep the description size consistent */
+  color: white;
+  margin: 0 0 0.9rem;
 }
 
 /* Responsive: Stack Cards Vertically */

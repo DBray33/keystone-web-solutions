@@ -47,7 +47,7 @@
 
   <!-- BODY -->
   <body>
-    <!-- Navigation -->
+    <!-- DESKTOP NAVBAR -->
     <nav class="navbar">
       <ul class="navbar-links">
         <li><a href="#main-content">HOME</a></li>
@@ -55,13 +55,19 @@
         <li><a href="#quote-section">Get a Quote</a></li>
         <li><a href="#about-us">About Us</a></li>
         <li><a href="#footer">Contact</a></li>
-        <li class="started"><a href="#website-guide">Let's Get Started</a></li>
+        <li class="submit-button">
+          <a href="#website-guide">Let's Get Started</a>
+        </li>
       </ul>
     </nav>
 
+    <!-- MOBILE NAV -->
     <nav class="mobile-menu">
       <!-- Hamburger Menu -->
-      <button class="hamburger-menu" aria-label="Toggle menu">&#9776;</button>
+      <button class="hamburger-menu" aria-label="Toggle menu">
+        <span class="hamburger-icon">&#9776;</span>
+        <span class="close-icon">&times;</span>
+      </button>
 
       <!-- Dropdown Menu -->
       <div class="dropdown-menu">
@@ -106,6 +112,7 @@
       </div>
     </nav>
 
+    <!-- FIXED VIDEO SIDEBAR -->
     <section class="fixed-sidebar">
       <!-- Background video fixed sidebar -->
       <div class="sidebar">
@@ -143,6 +150,7 @@
       </div>
     </section>
 
+    <!-- MAIN CONTENT -->
     <section class="main-content" id="main-content">
       <!-- Welcome Header -->
       <div class="section">
@@ -170,6 +178,7 @@
       </div>
     </section>
 
+    <!-- SERVICES SECTION -->
     <section class="services-section" id="services-section">
       <!-- Flipping Service Cards -->
       <h1 class="service-header">SERVICES WE OFFER</h1>
@@ -361,152 +370,174 @@
       </div>
     </section>
 
-    <section class="website-guide" id="website-guide">
-      <div class="container">
-        <h1 class="guide-heading">Simplifying Your Website Journey</h1>
-        <h2 class="guide-subheading">
-          FIRST STEPS: <br />Don't know where to start? This is the spot! If
-          you're not sure where to look first, this is the section for you.
-        </h2>
-        <p class="guide-paragraph">
-          This section is meant to take the guess work out of aimlessly
-          scrolling and clicking until you find where you need to be. Shopping
-          online for services—especially websites or niche products—can be
-          overwhelming, especially if you’re not sure what to look for or how to
-          start. That's why we've made it easy. Below, you’ll find answers to
-          common questions and guidance tailored to your needs. Whether you're a
-          small business owner, an entrepreneur, or just someone with an idea,
-          this section will help you navigate the process.
-        </p>
-        <ul class="guide-list">
-          <!-- 1 -->
-          <li class="guide-1">
-            <h2 class="guide-title title-1">Looking for a Website?</h2>
-            <p class="guide-description">
-              Starting fresh? We specialize in building custom websites that
-              reflect your brand and meet your business goals. From design to
-              deployment, we’ll guide you through every step. Plus, we offer a
-              monthly maintenance plan to handle updates, edits, and ongoing
-              upkeep, so your site stays fresh and functional without any
-              hassle.
-            </p>
-          </li>
-          <!-- 2 -->
-          <li class="guide-2">
-            <h2 class="guide-title title-2">Payment Plans</h2>
-            <div class="guide-description">
-              <p>
-                We know how frustrating it can be when pricing information isn’t
-                clear, leaving you to submit contact info so you can wait around
-                for a basic idea. That’s why we believe in transparency—it’s
-                always easier to make decisions when you have an idea of the
-                kind of investment required.
-              </p>
-              <p>
-                We offer two payment programs designed to simplify the process
-                of building and maintaining your website. Choose an upfront lump
-                sum with lower ongoing monthly fees, or opt for a lower upfront
-                cost—and a larger monthly fee. With either plan, your website
-                stays with us, ensuring seamless updates, maintenance, and
-                cohesion, so you can focus on growing your business while we
-                handle the rest.
-              </p>
-              <p>
-                This pricing is for a baseline 5-page static website. Additional
-                pages, advanced functionalities, and custom features will adjust
-                the rate accordingly. We’ll provide a detailed quote based on
-                your specific needs.
-              </p>
-              <div class="pricing-options">
-                <div class="pricing-box">
-                  <h3 class="pricing-title">
-                    Option 1: Flat Fee + Monthly Retainer
-                  </h3>
-                  <p class="pricing-description">
-                    <strong>Initial Investment:</strong> $1,500 (one-time)<br />
-                    <strong>Ongoing Maintenance:</strong> $25/month<br />
-                    This plan is perfect for those looking for a high-quality
-                    website at a competitive upfront cost. It includes ongoing
-                    maintenance to ensure your website remains up-to-date,
-                    secure, and optimized.
-                  </p>
-                </div>
+    <section class="journey-section">
+      <h2 class="journey-heading">SIMPLIFYING YOUR WEBSITE JOURNEY</h2>
+      <h3 class="journey-subheading">
+        FIRST STEPS: Don’t know where to start? This is the spot! If you're not
+        sure where to look first, this is the section for you.
+      </h3>
+      <p class="journey-description">
+        This section is meant to take the guesswork out of aimlessly scrolling
+        and clicking until you find where you need to be. Shopping online for
+        services—especially websites or niche products—can be overwhelming,
+        especially if you’re not sure what to look for or how to start. That's
+        why we've made it easy. Below, you’ll find answers to common questions
+        and guidance tailored to your needs. Whether you're a small business
+        owner, an entrepreneur, or just someone with an idea, this section will
+        help you navigate the process.
+      </p>
+      <div class="journey-grid">
+        <div class="journey-card">
+          <h4 class="card-title">LOOKING FOR A WEBSITE?</h4>
+          <p class="card-description">
+            Starting fresh? We specialize in building custom websites that
+            reflect your brand and meet your business goals. From design to
+            deployment, we’ll guide you through every step. Plus, we offer a
+            monthly maintenance plan to handle updates, edits, and ongoing
+            upkeep, so your site stays fresh and functional without any hassle.
+          </p>
+        </div>
+        <!-- <div class="journey-card">
+          <h4 class="card-title">PAYMENT PLANS</h4>
+          <p class="card-description">
+            We know how frustrating it can be when pricing information isn’t
+            clear, leaving you to submit contact info so you can wait around for
+            a basic idea. That’s why we believe in transparency—it’s always
+            easier to make decisions when you have an idea of the kind of
+            investment required. <br />
+            <br />We offer two payment programs designed to simplify the process
+            of building and maintaining your website. Choose an upfront lump sum
+            with lower ongoing monthly fees, or opt for a lower upfront cost—and
+            a larger monthly fee. With either plan, your website stays with us,
+            ensuring seamless updates, maintenance, and cohesion, so you can
+            focus on growing your business while we handle the rest.
+          </p>
+        </div> -->
+        <div class="journey-card">
+          <h4 class="card-title">NOT HAPPY WITH YOUR CURRENT WEBSITE?</h4>
+          <p class="card-description">
+            If your current website isn’t performing or doesn’t represent your
+            business, let us take a look. We’ll analyze its functionality,
+            design, and speed to recommend or implement improvements.
+          </p>
+        </div>
+        <div class="journey-card">
+          <h4 class="card-title">UNSURE WHAT YOUR NEEDS ARE?</h4>
+          <p class="card-description">
+            Whether you need a simple 5-page static website, an extensive
+            multi-page platform, an eCommerce store, or a custom portfolio or
+            blog, we’ll help you figure out the best type of website for your
+            needs—and make it happen. Need more than 5 pages or have unique
+            requirements? Let’s talk!
+          </p>
+        </div>
+        <div class="journey-card">
+          <h4 class="card-title">DO YOU WANT BETTER SEO AND PAGESPEED?</h4>
+          <p class="card-description">
+            We use Google PageSpeed Insights and other tools to optimize
+            performance, ensuring fast load times and higher search engine
+            rankings.
+          </p>
+        </div>
+        <div class="journey-card">
+          <h4 class="card-title">NEED CONTENT UPDATES/MAINTENANCE?</h4>
+          <p class="card-description">
+            We offer services to create and update your website’s content so it
+            always looks fresh and professional.
+          </p>
+        </div>
+        <div class="journey-card">
+          <h4 class="card-title">DON'T HAVE A CLEAR VISION YET?</h4>
+          <p class="card-description">
+            No problem! Check out some our previous projects below. Our
+            consultation services will help you uncover your goals and determine
+            what your ideal website should look like.
+          </p>
+        </div>
+      </div>
+    </section>
 
-                <div class="pricing-box">
-                  <h3 class="pricing-title">
-                    Option 2: Monthly Subscription for Ongoing Growth
-                  </h3>
-                  <p class="pricing-description">
-                    <strong>Monthly Fee:</strong> $160 (with a 6-month
-                    commitment, paid upfront)<br />
-                    A strong online presence takes time to build and refine.
-                    This plan is designed for clients who prefer a lower initial
-                    cost, with ongoing SEO and site improvements included. The
-                    6-month commitment ensures we have the time and resources to
-                    create and fine-tune your site for long-term success.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </li>
-          <!-- 3 -->
-          <li class="guide-1">
-            <h2 class="guide-title title-1">
-              Not Happy With Your Current Website?
-            </h2>
-            <p class="guide-description">
-              If your current website isn’t performing or doesn’t represent your
-              business, let us take a look. We’ll analyze its functionality,
-              design, and speed to recommend or implement improvements.
-            </p>
-          </li>
-          <!-- 4 -->
-          <li class="guide-2">
-            <h2 class="guide-title title-2">Unsure What Your needs are?</h2>
-            <p class="guide-description">
-              Whether you need a simple 5-page static website, an extensive
-              multi-page platform, an eCommerce store, or a custom portfolio or
-              blog, we’ll help you figure out the best type of website for your
-              needs—and make it happen. Need more than 5 pages or have unique
-              requirements? Let’s talk!
-            </p>
-          </li>
-          <!-- 5 -->
-          <li class="guide-1">
-            <h2 class="guide-title title-1">
-              Do you want better SEO and PageSpeed?
-            </h2>
-            <p class="guide-description">
-              We use Google PageSpeed Insights and other tools to optimize
-              performance, ensuring fast load times and higher search engine
-              rankings.
-            </p>
-          </li>
-          <!-- 6 -->
-          <li class="guide-2">
-            <h2 class="guide-title title-2">
-              Need ContentUpdates/Maintenance?
-            </h2>
-            <p class="guide-description">
-              We offer services to create and update your website’s content so
-              it always looks fresh and professional.
-            </p>
-          </li>
-          <!-- 7 -->
-          <li class="guide-1">
-            <h2 class="guide-title title-1">Don’t Have a Clear Vision Yet?</h2>
-            <p class="guide-description">
-              No problem! Check out some our previous projects below. Our
-              consultation services will help you uncover your goals and
-              determine what your ideal website should look like.
-            </p>
-          </li>
-        </ul>
+    <!-- PRICING -->
+    <section class="pricing-section">
+      <h2 class="pricing-heading">Our Pricing Plans</h2>
+      <p class="pricing-subheading">
+        Choose the plan that best suits your needs. Regardless of the pricing
+        structure, every plan includes top-notch services to ensure your
+        success. <br /><br />
+        We know how frustrating it can be when pricing information isn’t clear,
+        leaving you to submit contact info so you can wait around for a basic
+        idea. That’s why we believe in transparency—it’s always easier to make
+        decisions when you have an idea of the kind of investment required.
+        <br />
+        <br />We offer three payment programs designed to simplify the process
+        of building and maintaining your website. Choose an upfront lump sum
+        with lower ongoing monthly fees, or opt for a lower upfront cost—and a
+        larger monthly fee. With either plan, your website stays with us,
+        ensuring seamless updates, maintenance, and cohesion, so you can focus
+        on growing your business while we handle the rest.
+      </p>
+      <div class="pricing-cards-container">
+        <!-- Card 1 -->
+        <div class="pricing-card">
+          <h3>Flat Fee + Monthly Retainer</h3>
+          <ul>
+            <li><strong>Pricing:</strong> $1,500 + $25/month</li>
+            <li>Competitive upfront cost</li>
+            <li>Maintenance and security</li>
+          </ul>
+          <div class="core-services">
+            <h4>Core Services:</h4>
+            <ul>
+              <li>High-quality design</li>
+              <li>Ongoing SEO improvements</li>
+              <li>Custom website solutions</li>
+              <li>Responsive mobile design</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="pricing-card">
+          <h3>Monthly Subscription for Ongoing Growth</h3>
+          <ul>
+            <li><strong>Pricing:</strong> $160/month (6-month commitment)</li>
+            <li>Low initial cost</li>
+            <li>Continuous site improvements</li>
+          </ul>
+          <div class="core-services">
+            <h4>Core Services:</h4>
+            <ul>
+              <li>High-quality design</li>
+              <li>Ongoing SEO improvements</li>
+              <li>Custom website solutions</li>
+              <li>Responsive mobile design</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="pricing-card">
+          <h3>Pay-As-You-Go</h3>
+          <ul>
+            <li><strong>Pricing:</strong> $500 deposit + $750/milestone</li>
+            <li>Flexible payment structure</li>
+            <li>Milestone-based progress</li>
+          </ul>
+          <div class="core-services">
+            <h4>Core Services:</h4>
+            <ul>
+              <li>High-quality design</li>
+              <li>Ongoing SEO improvements</li>
+              <li>Custom website solutions</li>
+              <li>Responsive mobile design</li>
+            </ul>
+          </div>
+        </div>
       </div>
     </section>
 
     <!-- GET A QUOTE -->
-    <section class="quote-section">
+    <section class="quote-section" id="quote-section">
       <h2 class="quote-section-heading">Get a Quote</h2>
       <div class="quote-cards-container">
         <div class="quote-card">
@@ -538,46 +569,55 @@
                   <option value="over-10000">Over $10,000</option>
                 </select>
               </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="message">Message:</label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    rows="4"
+                    required
+                    placeholder="Please describe your project needs. For example: Website redesign, E-commerce functionality, SEO optimization, Mobile responsiveness, Custom features"></textarea>
+                </div>
+              </div>
             </div>
 
-            <div class="form-group">
-              <label for="message">Message:</label>
-              <textarea
-                id="message"
-                name="message"
-                rows="4"
-                required
-                placeholder="Please describe your project needs. For example: Website redesign, E-commerce functionality, SEO optimization, Mobile responsiveness, Custom features"></textarea>
-            </div>
-
-            <button
-              class="btn btn-shadow-drop btn-shadow-drop--blue"
-              type="submit">
-              Get a quote
-            </button>
+            <button class="submit-button" type="submit">Get a quote</button>
           </form>
           <h3 class="quote-card-heading">get in touch</h3>
-          <p>Drop a line and we'll get back to you within 24 hours.</p>
+          <p>
+            Please fill out the above form if it fits within the parameteres of
+            your inquiry. Otherwise, drop a line and we'll get back to you
+            within 24 hours.
+          </p>
           <ul class="quote-card-list contact-info">
             <li>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 512 512"
-                class="icon">
-                <path
-                  d="M164.9 24.6c-7.7-18.6-28-28.5-47.4-23.2l-88 24C12.1 30.2 0 46 0 64C0 311.4 200.6 512 448 512c18 0 33.8-12.1 38.6-29.5l24-88c5.3-19.4-4.6-39.7-23.2-47.4l-96-40c-16.3-6.8-35.2-2.1-46.3 11.6L304.7 368C234.3 334.7 177.3 277.7 144 207.3L193.3 167c13.7-11.2 18.4-30 11.6-46.3l-40-96z" />
-              </svg>
-              (610)-301-9351
+              <a
+                href="tel:6103019351"
+                style="text-decoration: none; color: inherit">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 512 512"
+                  class="icon">
+                  <path
+                    d="M164.9 24.6c-7.7-18.6-28-28.5-47.4-23.2l-88 24C12.1 30.2 0 46 0 64C0 311.4 200.6 512 448 512c18 0 33.8-12.1 38.6-29.5l24-88c5.3-19.4-4.6-39.7-23.2-47.4l-96-40c-16.3-6.8-35.2-2.1-46.3 11.6L304.7 368C234.3 334.7 177.3 277.7 144 207.3L193.3 167c13.7-11.2 18.4-30 11.6-46.3l-40-96z" />
+                </svg>
+                (610)-301-9351
+              </a>
             </li>
             <li>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 512 512"
-                class="icon">
-                <path
-                  d="M64 112c-8.8 0-16 7.2-16 16l0 22.1L220.5 291.7c20.7 17 50.4 17 71.1 0L464 150.1l0-22.1c0-8.8-7.2-16-16-16L64 112zM48 212.2L48 384c0 8.8 7.2 16 16 16l384 0c8.8 0 16-7.2 16-16l0-171.8L322 328.8c-38.4 31.5-93.7 31.5-132 0L48 212.2zM0 128C0 92.7 28.7 64 64 64l384 0c35.3 0 64 28.7 64 64l0 256c0 35.3-28.7 64-64 64L64 448c-35.3 0-64-28.7-64-64L0 128z" />
-              </svg>
-              d.bray33@gmail.com
+              <a
+                href="mailto:d.bray33@gmail.com"
+                style="text-decoration: none; color: inherit">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 512 512"
+                  class="icon">
+                  <path
+                    d="M64 112c-8.8 0-16 7.2-16 16l0 22.1L220.5 291.7c20.7 17 50.4 17 71.1 0L464 150.1l0-22.1c0-8.8-7.2-16-16-16L64 112zM48 212.2L48 384c0 8.8 7.2 16 16 16l384 0c8.8 0 16-7.2 16-16l0-171.8L322 328.8c-38.4 31.5-93.7 31.5-132 0L48 212.2zM0 128C0 92.7 28.7 64 64 64l384 0c35.3 0 64 28.7 64 64l0 256c0 35.3-28.7 64-64 64L64 448c-35.3 0-64-28.7-64-64L0 128z" />
+                </svg>
+                d.bray33@gmail.com
+              </a>
             </li>
           </ul>
         </div>
