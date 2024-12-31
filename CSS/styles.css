@@ -215,6 +215,9 @@ html {
 
 .mobile-menu .hamburger-menu.active .close-icon {
   display: block;
+  color: var(--primary-color);
+  background-color: black;
+  padding: 8px;
 }
 
 /* Dropdown Menu */
@@ -444,6 +447,26 @@ html {
   margin-top: 7rem;
 }
 
+.main-content .mobile-header {
+  display: none;
+  font-size: 1rem;
+}
+
+@media (max-width: 935px) {
+  .main-content .section {
+    text-align: center;
+    margin-top: 4rem;
+  }
+
+  .main-content .mobile-header {
+    display: block;
+    font-size: smaller;
+  }
+  .main-content .desktop-header {
+    display: none;
+  }
+}
+
 .main-content .section h1 {
   font-size: 7rem;
   font-family: var(--headline-font-family);
@@ -476,9 +499,37 @@ html {
   font-weight: 200;
 }
 
+.main-content .section-2 h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 10px;
+  font-weight: 200;
+}
+
+.welcome-section-devices {
+  width: 100%;
+  max-width: 800px; /* Adjust the max-width as needed */
+  height: auto;
+  margin: 1rem auto -3rem;
+  display: block;
+}
+
+.main-content .section-2 .about-us h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  font-weight: 200;
+}
+
 .main-content .section p {
+  text-align: center;
   font-size: 1.2rem;
-  margin: 0 2rem 20px;
+  margin: 0 3rem 2rem;
+}
+
+.main-content .section-2 p {
+  text-align: center;
+  font-size: 1.2rem;
+  margin: 0 3rem 2rem;
 }
 
 .main-content .logos {
@@ -1015,7 +1066,12 @@ html {
 .pricing-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-  background: var(--primary-color);
+  background: rgba(
+    93,
+    173,
+    226,
+    0.2
+  ); /* Lightened version of --primary-color */
 }
 
 .pricing-card h3 {
@@ -1193,7 +1249,7 @@ textarea {
   position: relative;
   z-index: 15;
   padding: 2rem;
-  background-color: var(--secondary-color);
+  background-color: BLACK;
   text-align: center;
 }
 
@@ -1208,7 +1264,8 @@ textarea {
   text-shadow: var(--headline-text-shadow);
   letter-spacing: var(--headline-letter-spacing);
   margin-bottom: 2rem;
-  color: #333;
+  color: WHITE;
+  text-shadow: var(--primary-color);
   text-transform: uppercase;
 }
 
@@ -1230,7 +1287,7 @@ textarea {
 .quote-card {
   margin: 0 auto; /* Center the cards */
   background-color: black;
-  border: 1px solid #ddd;
+  /* border: 1px solid #ddd; */
   border-radius: 8px;
   padding: 1rem;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -1490,13 +1547,6 @@ textarea {
 /* ////////////////////////////////////////////// */
 /* ////////////////////////////////////////////// */
 /* ////////////////////////////////////////////// */
-.welcome-section-devices {
-  width: 100%;
-  max-width: 800px; /* Adjust the max-width as needed */
-  height: auto;
-  margin: 5rem auto -3rem;
-  display: block;
-}
 
 /* FOOTER ////////////////////////////////////////*/
 /* ////////////////////////////////////////////// */
