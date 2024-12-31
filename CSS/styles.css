@@ -29,6 +29,11 @@ html {
   height: 100%;
 }
 
+input::placeholder,
+textarea::placeholder {
+  font-size: 14px; /* Set placeholder font size */
+}
+
 /* ///////////////////////////////////////////////// */
 /* NAVIGATION BAR ////////////////////////////////// */
 /* Navbar Styles */
@@ -444,7 +449,7 @@ html {
 
 .main-content .section {
   text-align: center;
-  margin-top: 7rem;
+  margin-top: 8rem;
 }
 
 .main-content .mobile-header {
@@ -560,9 +565,6 @@ html {
 
 /* Header note */
 .service-header {
-  font-family: var(--headline-font-family);
-  font-weight: var(--headline-font-weight);
-  letter-spacing: normal;
   font-size: 3rem;
   margin-bottom: -1rem;
   text-align: center;
@@ -969,9 +971,9 @@ html {
 }
 
 .journey-heading {
-  font-size: 2.5rem;
+  font-size: 3rem;
   margin-bottom: 1rem;
-  color: #333;
+  color: black;
   text-transform: uppercase;
 }
 
@@ -1070,7 +1072,7 @@ html {
 }
 
 .pricing-heading {
-  font-size: 2rem;
+  font-size: 3rem;
   font-weight: bold;
   margin-bottom: 1rem;
   color: #333;
@@ -1141,6 +1143,18 @@ html {
   .pricing-card {
     width: 100%;
   }
+}
+
+/* Initial state for pricing cards */
+.pricing-card {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease var(--delay), transform 0.6s ease var(--delay);
+}
+
+.pricing-card.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* //////////////////////////////////////////////// */
@@ -1436,11 +1450,12 @@ textarea {
 }
 
 .contact-info li span {
-  line-height: 1.5; /* Adjust text vertical alignment */
+  line-height: 1.5;
   display: flex;
   align-items: center; /* Center text with the icon */
 }
 
+/* gameplan */
 .quote-card .info-list {
   list-style: none;
   padding: 0;
@@ -1459,7 +1474,7 @@ textarea {
 .quote-card .info-list p {
   font-size: 1rem; /* Keep the description size consistent */
   color: white;
-  margin: 0 0 0.9rem;
+  margin: 0 0 2.5rem;
 }
 
 /* Responsive: Stack Cards Vertically */

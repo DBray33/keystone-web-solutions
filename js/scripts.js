@@ -71,26 +71,6 @@ document.addEventListener('DOMContentLoaded', function () {
   handleResize();
   window.addEventListener('resize', handleResize, { passive: true });
 
-  // Service item scroll transition
-  const observerOptions = {
-    root: null,
-    threshold: 0.2,
-  };
-
-  const observerCallback = (entries) => {
-    entries.forEach((entry, index) => {
-      if (entry.isIntersecting) {
-        entry.target.style.animationDelay = `${index * 0.4}s`;
-        entry.target.classList.add('expand-up');
-      } else {
-        entry.target.classList.remove('expand-up');
-      }
-    });
-  };
-
-  const observer = new IntersectionObserver(observerCallback, observerOptions);
-  serviceItems.forEach((item) => observer.observe(item));
-
   // Navbar scroll effect
   const navbar = document.querySelector('.navbar');
 
@@ -256,4 +236,37 @@ document.addEventListener('DOMContentLoaded', () => {
 
   card1Elements.forEach((card) => observer.observe(card)); // Observe card-1 elements
   card2Elements.forEach((card) => observer.observe(card)); // Observe card-2 elements
+});
+
+// //////////////////////////////////////////////
+// PRICING SECTION //////////////////////////////
+document.addEventListener('DOMContentLoaded', () => {
+  const pricingCards = document.querySelectorAll('.pricing-card');
+
+  const observerOptions = {
+    root: null, // Use the viewport as the container
+    threshold: [0, 0.3], // Trigger at 0% and 30% visibility
+  };
+
+  const observerCallback = (entries) => {
+    entries.forEach((entry) => {
+      if (entry.intersectionRatio >= 0.3) {
+        // Add a custom CSS variable for staggered delay
+        if (entry.target.classList.contains('pricing-card-1')) {
+          entry.target.style.setProperty('--delay', '0s');
+        } else if (entry.target.classList.contains('pricing-card-2')) {
+          entry.target.style.setProperty('--delay', '0.2s');
+        } else if (entry.target.classList.contains('pricing-card-3')) {
+          entry.target.style.setProperty('--delay', '0.4s');
+        }
+        entry.target.classList.add('visible'); // Add the 'visible' class
+      } else if (entry.intersectionRatio === 0) {
+        entry.target.classList.remove('visible'); // Remove the 'visible' class
+      }
+    });
+  };
+
+  const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+  pricingCards.forEach((card) => observer.observe(card));
 });
