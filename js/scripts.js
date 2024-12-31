@@ -85,15 +85,20 @@ document.addEventListener('DOMContentLoaded', function () {
   // Smooth scroll for navbar links
   document.querySelectorAll('.navbar-links a').forEach((anchor) => {
     anchor.addEventListener('click', function (e) {
-      e.preventDefault();
+      // Check if the href starts with "#" (internal link)
+      if (this.getAttribute('href').startsWith('#')) {
+        e.preventDefault();
 
-      const targetId = this.getAttribute('href').substring(1);
-      const targetElement = document.getElementById(targetId);
+        const targetId = this.getAttribute('href').substring(1);
+        const targetElement = document.getElementById(targetId);
 
-      window.scrollTo({
-        top: targetElement.offsetTop - 80,
-        behavior: 'smooth',
-      });
+        if (targetElement) {
+          window.scrollTo({
+            top: targetElement.offsetTop - 80,
+            behavior: 'smooth',
+          });
+        }
+      }
     });
   });
 

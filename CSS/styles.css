@@ -71,7 +71,6 @@ textarea::placeholder {
 }
 
 /* Styling for "Let's Get Started" Button */
-/* Styling for "Let's Get Started" Button */
 .navbar .submit-button a {
   position: relative; /* Needed for positioning pseudo-element */
   display: inline-block;
@@ -160,6 +159,45 @@ textarea::placeholder {
   color: #5dade2; /* Primary hover color */
 }
 
+/* Navbar Dropdown Styles */
+.navbar-dropdown {
+  position: relative;
+}
+
+.navbar-dropdown-menu {
+  list-style: none;
+  position: absolute;
+  top: 100%; /* Align below the main link */
+  left: 0;
+  padding: 0;
+  margin: 0;
+  background-color: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: none;
+  flex-direction: column;
+  border-radius: 8px;
+}
+
+.navbar-dropdown-menu li {
+  padding: 0.5rem 1rem;
+  white-space: nowrap; /* Prevent wrapping */
+}
+
+.navbar-dropdown-menu li a {
+  color: #333;
+  font-weight: normal;
+}
+
+.navbar-dropdown-menu li a:hover {
+  background-color: #f5f5f5;
+}
+
+/* Show the dropdown menu on hover */
+.navbar-dropdown:hover .navbar-dropdown-menu {
+  display: flex;
+}
+
+/* Responsive for smaller screens */
 @media (max-width: 843px) {
   .navbar {
     display: none;
