@@ -965,6 +965,7 @@ html {
   /* max-width: 1200px; */
   margin: 0 auto;
   background-color: white;
+  overflow: hidden;
 }
 
 .journey-heading {
@@ -1020,6 +1021,43 @@ html {
   color: #555;
 }
 
+/* journey section javascript */
+/* Default state */
+.journey-section-intro {
+  opacity: 0;
+  transform: translateZ(-100px); /* Start from "further back" */
+  transition: transform 0.6s ease, opacity 0.6s ease; /* Smooth transition */
+}
+
+/* Visible state */
+.journey-section-intro.visible {
+  opacity: 1;
+  transform: translateZ(0); /* Move to normal position */
+}
+/* Card 1 Animation */
+.card-1 {
+  opacity: 0;
+  transform: translateX(-100px); /* Start off-screen to the left */
+  transition: transform 0.6s ease, opacity 0.6s ease;
+}
+
+.card-1.visible {
+  opacity: 1;
+  transform: translateX(0); /* Slide into view */
+}
+
+/* Card 2 Animation */
+.card-2 {
+  opacity: 0;
+  transform: translateX(100px); /* Start off-screen to the right */
+  transition: transform 0.6s ease, opacity 0.6s ease;
+}
+
+.card-2.visible {
+  opacity: 1;
+  transform: translateX(0); /* Slide into view */
+}
+
 /* /////////////////////////////////////////////////// */
 /* PRICING STRUCTURE ///////////////////////////////// */
 /* Pricing Section Styling */
@@ -1027,7 +1065,7 @@ html {
   position: relative;
   text-align: center;
   padding: 2rem;
-  background-color: #f9f9f9;
+  background-color: var(--secondary-color);
   z-index: 15;
 }
 

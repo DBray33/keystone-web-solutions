@@ -161,3 +161,99 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 });
+
+// //////////////////////////////////////////////
+// JOURNEY SECTION
+// Journey intro text phasing in
+document.addEventListener('DOMContentLoaded', () => {
+  const journeyIntro = document.querySelector('.journey-section-intro');
+
+  const observerOptions = {
+    root: null, // Use the viewport as the container
+    threshold: 0.4, // Trigger when 40% of the element is visible
+  };
+
+  const observerCallback = (entries, observer) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target); // Stop observing after animation triggers
+      }
+    });
+  };
+
+  const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+  if (journeyIntro) {
+    observer.observe(journeyIntro);
+  }
+});
+// Journey cards sliding in and out
+document.addEventListener('DOMContentLoaded', () => {
+  const card1Elements = document.querySelectorAll('.card-1'); // Select only card-1 elements
+
+  const observerOptions = {
+    root: null, // Use the viewport as the container
+    threshold: 0.2, // Trigger when 20% of the card is visible
+  };
+
+  const observerCallback = (entries, observer) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target); // Stop observing once the animation has triggered
+      }
+    });
+  };
+
+  const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+  card1Elements.forEach((card) => observer.observe(card)); // Observe only card-1 elements
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+  const card2Elements = document.querySelectorAll('.card-2'); // Select only card-2 elements
+
+  const observerOptions = {
+    root: null, // Use the viewport as the container
+    threshold: 0.2, // Trigger when 20% of the card is visible
+  };
+
+  const observerCallback = (entries, observer) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target); // Stop observing once the animation has triggered
+      }
+    });
+  };
+
+  const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+  card2Elements.forEach((card) => observer.observe(card)); // Observe only card-2 elements
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+  const card1Elements = document.querySelectorAll('.card-1'); // Select only card-1 elements
+  const card2Elements = document.querySelectorAll('.card-2'); // Select only card-2 elements
+
+  const observerOptions = {
+    root: null, // Use the viewport as the container
+    threshold: 0.2, // Trigger when 20% of the card is visible
+  };
+
+  const observerCallback = (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible'); // Add the visible class when entering the viewport
+      } else {
+        entry.target.classList.remove('visible'); // Remove the visible class when exiting the viewport
+      }
+    });
+  };
+
+  const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+  card1Elements.forEach((card) => observer.observe(card)); // Observe card-1 elements
+  card2Elements.forEach((card) => observer.observe(card)); // Observe card-2 elements
+});
