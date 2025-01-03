@@ -277,14 +277,39 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // //////////////////////////////////////////////
-// MOBILE MENU DROPDOWN SUBMENU ////////////////////////
+// MOBILE MENU DROPDOWN SUBMENU //////////////////////////
 document.addEventListener('DOMContentLoaded', () => {
-  const closeBtn = document.querySelector('.submenu-close');
-  const submenu = document.querySelector('.dropdown-links .dropdown-submenu');
+  const dropdownParents = document.querySelectorAll('.dropdown-parent');
 
-  // Hide the submenu when the close button is clicked
-  closeBtn.addEventListener('click', (e) => {
-    e.preventDefault(); // Prevent default button behavior
-    submenu.style.display = 'none'; // Hide the submenu
+  dropdownParents.forEach((parent) => {
+    const submenu = parent.querySelector('.dropdown-submenu');
+    const closeButton = submenu.querySelector('.submenu-close');
+
+    parent.addEventListener('click', (event) => {
+      event.preventDefault();
+
+      // Toggle the clicked submenu
+      submenu.classList.toggle('active');
+    });
+
+    // Close submenu when close button is clicked
+    closeButton.addEventListener('click', (event) => {
+      event.stopPropagation(); // Prevent the click from bubbling up to parent
+      submenu.classList.remove('active');
+    });
+  });
+
+  // Optional: Close submenu if user clicks outside
+  document.addEventListener('click', (event) => {
+    if (
+      !event.target.closest('.dropdown-submenu') &&
+      !event.target.closest('.dropdown-parent')
+    ) {
+      document
+        .querySelectorAll('.dropdown-submenu.active')
+        .forEach((openSubmenu) => {
+          openSubmenu.classList.remove('active');
+        });
+    }
   });
 });
