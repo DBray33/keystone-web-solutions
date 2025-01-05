@@ -250,12 +250,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const observerOptions = {
     root: null, // Use the viewport as the container
-    threshold: [0, 0.3], // Trigger at 0% and 30% visibility
+    threshold: [0, 0.2], // Trigger at 0% and 20% visibility
   };
 
   const observerCallback = (entries) => {
     entries.forEach((entry) => {
-      if (entry.intersectionRatio >= 0.3) {
+      if (entry.intersectionRatio >= 0.2) {
         // Add a custom CSS variable for staggered delay
         if (entry.target.classList.contains('pricing-card-1')) {
           entry.target.style.setProperty('--delay', '0s');

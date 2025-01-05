@@ -473,6 +473,13 @@ textarea::placeholder {
   }
 }
 
+/* Media query for max width 935px */
+@media (min-width: 936px) {
+  .sidebar {
+    padding-top: 90px; /* Adjust this value to make room for the navbar */
+  }
+}
+
 .sidebar-content > *:last-child {
   margin-bottom: 0; /* Remove margin from the last item */
 }
@@ -495,7 +502,7 @@ textarea::placeholder {
 }
 
 .sidebar-content .description {
-  margin-top: 2rem;
+  margin: 2rem 0;
   font-size: 1rem;
   font-weight: 300;
   letter-spacing: 2px;
@@ -509,7 +516,6 @@ textarea::placeholder {
 .phone-number {
   position: relative;
   display: inline-block;
-
   font-size: 2.2rem;
   font-weight: 200;
 }
@@ -690,7 +696,7 @@ textarea::placeholder {
 /* Header note */
 .service-header {
   font-size: 3rem;
-  margin-bottom: -1rem;
+  margin-bottom: 0.7rem;
   text-align: center;
 }
 
@@ -784,7 +790,7 @@ textarea::placeholder {
   height: 100%;
   position: absolute;
   transform-style: preserve-3d;
-  transition: transform 1s;
+  transition: transform 0.5s;
 }
 
 .service-item:hover .service-item-inner {
