@@ -687,6 +687,12 @@ textarea::placeholder {
   overflow: hidden;
 }
 
+/* Add padding to the top of the target section */
+#services-section {
+  padding-top: 50px; /* Adjust the value based on the height of your navbar */
+  margin-top: -50px;
+}
+
 @media (max-width: 935px) {
   .services-section {
     width: 100%; /* Adjust the width for smaller screens */
