@@ -1386,6 +1386,7 @@ textarea::placeholder {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   width: 100%; /* Make sure it takes up the available width */
   box-sizing: border-box; /* Include padding in the width */
+  overflow: hidden;
 }
 
 .form-row {
@@ -1517,6 +1518,7 @@ textarea {
   padding: 2rem;
   background-color: BLACK;
   text-align: center;
+  overflow: hidden;
 }
 
 .quote-section p {
