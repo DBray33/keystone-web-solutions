@@ -341,3 +341,28 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
+
+// //////////////////////////////////////////////
+// QUOTE CARD //////////////////////////////
+// Quote card phasing in
+document.addEventListener('DOMContentLoaded', () => {
+  const observerOptions = {
+    root: null, // Use the viewport as the container
+    threshold: 0.15, // Trigger when 15% of the section is visible
+  };
+
+  const observerCallback = (entries, observer) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible'); // Add the visible class
+        observer.unobserve(entry.target); // Stop observing after animation triggers
+      }
+    });
+  };
+
+  const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+  // Select the quote cards to observe
+  const quoteCards = document.querySelectorAll('.quote-card');
+  quoteCards.forEach((card) => observer.observe(card));
+});

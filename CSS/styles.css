@@ -12,6 +12,7 @@ html {
   font-family: 'Exo', sans-serif;
   overscroll-behavior: none; /* Prevents bounce effect */
   background-color: var(--secondary-color);
+  /* overflow: hidden;  breaks the page */
 }
 
 /* Enable smooth scrolling for the entire document */
@@ -632,14 +633,14 @@ textarea::placeholder {
 .main-content .section h2 {
   font-size: 2rem;
   margin-bottom: 10px;
-  font-weight: 200;
+  font-weight: 500;
 }
 
 .main-content .section-2 h2 {
   text-align: center;
   font-size: 2rem;
   margin-bottom: 10px;
-  font-weight: 200;
+  font-weight: 500;
 }
 
 .welcome-section-devices {
@@ -1529,7 +1530,6 @@ textarea {
   font-weight: var(--headline-font-weight);
   text-shadow: var(--headline-text-shadow);
   letter-spacing: var(--headline-letter-spacing);
-  margin-bottom: 2rem;
   color: WHITE;
   text-shadow: var(--primary-color);
   text-transform: uppercase;
@@ -1589,6 +1589,29 @@ textarea {
 
   .quote-cards-container {
     gap: 2rem; /* Increase the gap between cards for wider layouts */
+  }
+}
+
+/* Initial hidden state for wider screens */
+@media (min-width: 936px) {
+  .quote-card {
+    opacity: 0;
+    transform: translateX(0);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+
+  .quote-card-1 {
+    transform: translateX(-100%); /* Start off-screen to the left */
+  }
+
+  .quote-card-2 {
+    transform: translateX(100%); /* Start off-screen to the right */
+  }
+
+  /* Visible state for wider screens */
+  .quote-card.visible {
+    opacity: 1;
+    transform: translateX(0); /* Reset position */
   }
 }
 
@@ -1838,7 +1861,19 @@ textarea {
 }
 
 .footer-left {
-  padding-right: 2rem;
+  /* padding-right: 2rem; */
+  text-align: center;
+}
+
+.footer-left a {
+  display: inline-block; /* Shrink-wrap the link around the logo */
+}
+
+@media (min-width: 936px) {
+  .footer-right {
+    margin-right: 2rem;
+    margin-top: 2rem;
+  }
 }
 
 /* Stack .footer-left and .footer-right vertically for small screens */
@@ -1901,6 +1936,10 @@ textarea {
   display: inline-block;
   text-align: center;
   margin: 0 1rem;
+}
+
+.footer-social-links a:hover {
+  color: var(--primary-color);
 }
 
 .footer-social-links svg {
@@ -1997,6 +2036,7 @@ textarea {
 }
 
 .footer-section h3 {
+  text-transform: uppercase;
   text-align: center;
   font-size: 1.5rem;
   color: var(--primary-color);
@@ -2008,6 +2048,7 @@ textarea {
   text-align: center;
   color: black;
   margin: 0.25rem 0;
+  padding: 0 1rem;
 }
 
 .footer-section a {
@@ -2027,4 +2068,12 @@ textarea {
   border-top: 1px solid #ccc;
   padding-top: 1rem;
   box-sizing: border-box; /* Include padding and border in the element's total width */
+}
+
+.footer-copyright a {
+  color: white;
+}
+
+.footer-copyright a:visited {
+  color: inherit !important;
 }
