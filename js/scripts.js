@@ -313,3 +313,31 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
+
+// //////////////////////////////////////////////
+// PRICING LINK SCROLL DISTANCE //////////////////////////////
+document.addEventListener('DOMContentLoaded', () => {
+  const pricingLink = document.querySelector('.pricing-link');
+
+  pricingLink.addEventListener('click', (event) => {
+    event.preventDefault(); // Prevent the default jump behavior
+
+    const targetId = pricingLink.getAttribute('href').substring(1);
+    const targetElement = document.getElementById(targetId);
+
+    if (targetElement) {
+      const elementPosition =
+        targetElement.getBoundingClientRect().top + window.scrollY;
+
+      // Dynamically calculate offset based on viewport width
+      const offset = window.innerWidth <= 843 ? 80 : 70;
+
+      const offsetPosition = elementPosition - offset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth',
+      });
+    }
+  });
+});

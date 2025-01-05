@@ -1,3 +1,9 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body,
 html {
   margin: 0;
@@ -80,7 +86,7 @@ textarea::placeholder {
   color: white; /* Initial text color */
   text-decoration: none; /* Remove underline */
   font-weight: bold;
-  border: 2px solid black; /* Border color same as background */
+  border: 4px solid black; /* Border color same as background */
   overflow: hidden; /* Confine pseudo-element to the button */
   z-index: 1; /* Ensure content stays above pseudo-element */
   transition: color 0.3s ease, border-color 0.8s ease; /* Smooth transitions */
@@ -321,6 +327,20 @@ textarea::placeholder {
 
 .dropdown-links a:hover {
   background-color: #5dade2;
+  color: white;
+}
+
+.down-arrow {
+  display: inline-block;
+  margin-left: 5px; /* Space between text and arrow */
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid #000; /* Half the height of a standard arrow */
+}
+
+.down-arrow:hover {
   color: white;
 }
 
@@ -1211,12 +1231,14 @@ textarea::placeholder {
   background-color: white;
   border: 1px solid #ddd;
   border-radius: 8px;
-  padding: 1.5rem;
+  padding: 0 1.5rem 4.5rem;
+  padding-bottom: 4.5rem; /* Increased bottom padding to account for button height */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   width: 30%;
   max-width: 320px;
   text-align: left;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative; /* Ensures the button is positioned relative to the card */
 }
 
 .pricing-card:hover {
@@ -1230,10 +1252,21 @@ textarea::placeholder {
   ); /* Lightened version of --primary-color */
 }
 
+.pricing-section .pricing-card h2 {
+  font-size: 3rem;
+  color: BLACK;
+  margin-top: 1rem;
+}
+
 .pricing-card h3 {
   font-size: 1.5rem;
   margin-bottom: 1rem;
+  margin-top: 0.5rem;
   color: #333;
+}
+
+.pricing-card h4 {
+  margin-bottom: 0.35rem;
 }
 
 .pricing-card ul {
@@ -1271,6 +1304,56 @@ textarea::placeholder {
 .pricing-card.visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* Pricing Button */
+.pricing-button {
+  position: relative; /* Needed for positioning pseudo-element */
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border-radius: 50px; /* Rounded corners */
+  background-color: black; /* Initial background color */
+  color: white; /* Initial text color */
+  font-weight: bold;
+  border: 4px solid black; /* Border color same as background */
+  overflow: hidden; /* Confine pseudo-element to the button */
+  z-index: 1; /* Ensure content stays above pseudo-element */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: color 0.3s ease, border-color 0.8s ease; /* Smooth transitions */
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  text-align: center;
+  text-decoration: none; /* Remove underline for links */
+}
+
+.pricing-button::before {
+  content: ''; /* Pseudo-element content */
+  position: absolute; /* Positioning */
+  top: 0;
+  left: -100%; /* Start completely off-screen to the left */
+  width: 250%; /* Wide enough to cover the button at an angle */
+  height: 100%; /* Full button height */
+  background-color: #5dade2; /* Hover background color */
+  transform: skewX(-45deg); /* Add slant */
+  z-index: -1; /* Ensure it's behind the text and border */
+  transition: transform 0.3s ease; /* Smooth slide effect */
+}
+
+.pricing-button:hover::before {
+  transform: translateX(100%) skewX(-45deg); /* Slide in diagonally */
+}
+
+.pricing-button:hover {
+  color: white; /* Font color on hover */
+  border-color: #5dade2; /* Keep border color same */
+}
+
+/* Positioning the pricing button in the bottom-right of its container */
+.pricing-card .pricing-button {
+  position: absolute; /* Position relative to the .pricing-card */
+  bottom: 15px; /* Space from the bottom */
+  right: 15px; /* Space from the right */
+  margin: 0; /* Remove any default margin */
 }
 
 /* //////////////////////////////////////////////// */
@@ -1370,6 +1453,7 @@ textarea {
   }
 }
 
+/* Quote SUBMIT button */
 .quote-section .submit-button {
   position: relative; /* Needed for positioning pseudo-element */
   display: inline-block;
@@ -1378,7 +1462,7 @@ textarea {
   background-color: black; /* Initial background color */
   color: white; /* Initial text color */
   font-weight: bold;
-  border: 2px solid black; /* Border color same as background */
+  border: 4px solid black; /* Border color same as background */
   overflow: hidden; /* Confine pseudo-element to the button */
   z-index: 1; /* Ensure content stays above pseudo-element */
   cursor: pointer; /* Pointer cursor on hover */
