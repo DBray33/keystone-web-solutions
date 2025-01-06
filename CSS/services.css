@@ -41,8 +41,7 @@ html {
 }
 
 .container {
-  max-width: 1200px;
-  margin: 0 auto;
+  margin: 0 1rem;
   text-align: center;
   display: flex;
   flex-direction: column; /* Stack all elements vertically */
@@ -66,30 +65,65 @@ html {
 
 /* Content Sections */
 /* General Styling for Content Section 1 */
-.content-section-1 {
-  margin-bottom: 2rem;
-  width: 100%; /* Default full width for smaller screens */
-  text-align: left; /* Align text to the left */
+.content-wrapper-1 {
+  position: relative;
+  display: flex;
+  gap: 2rem; /* Add spacing between the content and video */
+  flex-wrap: wrap; /* Allow items to wrap for smaller screens */
+  align-items: flex-start; /* Ensure alignment at the top */
 }
+
+.content-section-1 {
+  flex: 0 0 60%;
+  text-align: left;
+}
+
+.video-wrapper {
+  flex: 1; /* Take up the remaining width */
+}
+
+.video-wrapper video {
+  width: 100%; /* Make the video responsive */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 8px; /* Optional: Add rounded corners */
+  display: block; /* Ensure proper behavior */
+}
+
+/* Ensure .content-wrapper-1 contains its children properly */
+.content-wrapper-1::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+/* Adjust layout for smaller screens */
+@media (max-width: 1300px) {
+  .content-wrapper-1 {
+    flex-direction: column; /* Stack items vertically */
+  }
+
+  .video-wrapper {
+    flex: 0 0 auto; /* Remove width restriction */
+    width: 80%; /* Optional: Set a specific width */
+    margin: 0 auto; /* Center the video horizontally */
+    text-align: center; /* Ensure text alignment doesn't interfere */
+  }
+
+  .content-section-1 {
+    flex: 0 0 100%; /* Content takes full width */
+  }
+}
+
+/* /////////////////////////////////////////////////// */
+/* /////////////////////////////////////////////////// */
+/* /////////////////////////////////////////////////// */
+/* /////////////////////////////////////////////////// */
 
 .content-section-2 {
+  position: relative;
   margin-bottom: 2rem;
   width: 100%; /* Default full width for smaller screens */
   text-align: left; /* Align text to the left */
-}
-
-/* For Desktop Screens */
-@media (min-width: 992px) {
-  .content-section-1 {
-    width: 60%; /* Take up 60% of the viewport */
-    margin: 0 auto 2rem 0; /* Center it horizontally with extra space to the right */
-    float: left; /* Align it to the left side */
-  }
-  .content-section-2 {
-    width: 60%; /* Take up 60% of the viewport */
-    margin: 0 0 2rem auto; /* Push it to the right */
-    float: right; /* Align it to the right side */
-  }
 }
 
 .content-section h2 {
