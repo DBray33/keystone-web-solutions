@@ -155,7 +155,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const observerOptions = {
     root: null, // Use the viewport as the container
-    threshold: 0.4, // Trigger when 40% of the element is visible
+    threshold: 0.2, // Trigger when 20% of the element is visible
   };
 
   const observerCallback = (entries, observer) => {

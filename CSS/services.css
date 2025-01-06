@@ -1,8 +1,42 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Exo', sans-serif;
+  overscroll-behavior-y: none;
+  background-color: var(--secondary-color);
+  background: var(--secondary-color);
+  /* overflow: hidden;  breaks the page */
+}
+
+/* Enable smooth scrolling for the entire document */
+html {
+  scroll-behavior: smooth;
+}
+
+:root {
+  --headline-font-family: 'Bebas Neue', sans-serif;
+  --headline-font-size: 5rem;
+  --headline-font-weight: 900;
+  --headline-text-shadow: 2px 2px 1px black;
+  --headline-letter-spacing: 3px;
+  /* Colors */
+  --primary-color: #5dade2;
+  --secondary-color: #d3d3d3;
+}
+
 /* General Section Styling */
 .custom-web-design {
-  margin-top: 3rem;
+  margin-top: 5rem;
   padding: 2rem;
-  background-color: #f8f8f8;
+  background-color: var(--secondary-color);
   font-family: 'Exo', sans-serif;
 }
 
