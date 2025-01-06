@@ -675,7 +675,7 @@ textarea::placeholder {
 }
 
 .main-content .logos i {
-  font-size: 40px;
+  font-size: 50px;
 }
 
 /* SERVICES */
@@ -769,19 +769,13 @@ textarea::placeholder {
 }
 
 .service-icon {
-  text-align: center;
-  color: #5dade2;
-  font-size: 2rem;
-  margin-bottom: 10px;
-  z-index: 2;
-}
-
-.service-icon {
   display: block; /* Ensure it's treated as a block for centering */
   margin: 0 auto 10px; /* Center the SVG and add spacing below */
-  width: 2rem; /* Replace font-size */
-  height: 2rem; /* Match the size */
-  fill: #5dade2; /* Replace color */
+  width: 3rem; /* Replace font-size */
+  height: 3rem;
+  fill: #5dade2;
+  text-align: center;
+  z-index: 2;
 }
 
 .service-item {
@@ -915,6 +909,11 @@ textarea::placeholder {
 
   .services-section .service-item .service-item-back p {
     font-size: 0.9rem;
+    margin-top: -2rem;
+    margin-bottom: 1rem;
+  }
+  .services-section .service-item .service-item-back {
+    margin-top: 1rem;
   }
 }
 
@@ -1043,9 +1042,9 @@ textarea::placeholder {
   margin: 0 1rem 0;
   font-size: 1rem;
   font-weight: 600;
+  letter-spacing: 1.5px;
   text-transform: uppercase;
-  text-decoration: none;
-  color: white;
+  color: black;
   background-color: var(--primary-color);
   border-radius: 4px;
   transition: background-color 0.3s ease, color 0.3s ease;
@@ -1053,7 +1052,7 @@ textarea::placeholder {
 }
 
 .more-info-button:hover {
-  background-color: #4a90d6; /* Darker shade of primary color */
+  background-color: white; /* Darker shade of primary color */
   color: black; /* Ensure text color remains white */
 }
 
