@@ -63,102 +63,45 @@ html {
   margin-bottom: 2rem;
 }
 
-/* Content Sections */
-/* General Styling for Content Section 1 */
-.content-wrapper-1 {
-  position: relative;
-  display: flex;
-  gap: 2rem; /* Add spacing between the content and video */
-  flex-wrap: wrap; /* Allow items to wrap for smaller screens */
-  align-items: flex-start; /* Ensure alignment at the top */
+/* General Grid Styling */
+.content-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Two equal-width columns */
+  gap: 2rem; /* Add space between grid items */
+  margin: 2rem 0; /* Add vertical spacing for the grid */
 }
 
-.content-section-1 {
-  flex: 0 0 60%;
-  text-align: left;
+/* Card Styling */
+.content-card {
+  background-color: var(
+    --secondary-color
+  ); /* Optional: Add a background for card effect */
+  padding: 1.5rem; /* Add padding for spacing */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow for card effect */
+  border-radius: 8px; /* Optional: Add rounded corners */
 }
 
-.video-wrapper {
-  flex: 1; /* Take up the remaining width */
-}
-
-.video-wrapper video {
+/* Video Card Specific Styling */
+.video-card video {
   width: 100%; /* Make the video responsive */
   height: auto; /* Maintain aspect ratio */
   border-radius: 8px; /* Optional: Add rounded corners */
-  display: block; /* Ensure proper behavior */
-}
-
-/* Ensure .content-wrapper-1 contains its children properly */
-.content-wrapper-1::after {
-  content: '';
   display: block;
-  clear: both;
 }
 
-/* Adjust layout for smaller screens */
-@media (max-width: 1300px) {
-  .content-wrapper-1 {
-    flex-direction: column; /* Stack items vertically */
+/* Responsive Design for Smaller Screens */
+@media (max-width: 991px) {
+  .content-grid {
+    grid-template-columns: 1fr; /* Switch to a single column layout */
   }
 
-  .video-wrapper {
-    flex: 0 0 auto; /* Remove width restriction */
-    width: 80%; /* Optional: Set a specific width */
-    margin: 0 auto; /* Center the video horizontally */
-    text-align: center; /* Ensure text alignment doesn't interfere */
-  }
-
-  .content-section-1 {
-    flex: 0 0 100%; /* Content takes full width */
+  .content-card {
+    width: 100%; /* Ensure each card takes full width */
+    margin: 0 auto; /* Center the cards horizontally */
   }
 }
 
-/* /////////////////////////////////////////////////// */
-/* /////////////////////////////////////////////////// */
-/* /////////////////////////////////////////////////// */
-/* /////////////////////////////////////////////////// */
-
-.content-section-2 {
-  position: relative;
-  margin-bottom: 2rem;
-  width: 100%; /* Default full width for smaller screens */
-  text-align: left; /* Align text to the left */
-}
-
-.content-section h2 {
-  font-size: 2rem;
-  color: #333;
-  margin-bottom: 1rem;
-}
-
-.sub-section {
-  margin-bottom: 1.5rem;
-}
-
-.sub-section h3 {
-  font-size: 1.5rem;
-  color: #5dade2;
-  margin-bottom: 0.5rem;
-}
-
-.sub-section p {
-  font-size: 1rem;
-  color: #666;
-  line-height: 1.5;
-  margin-bottom: 1rem;
-}
-
-.sub-section a {
-  color: #5dade2;
-  text-decoration: none;
-}
-
-.sub-section a:hover {
-  text-decoration: underline;
-}
-
-/* Call-to-Action */
+/* Call-to-Action Section */
 .cta {
   margin-top: 2rem;
   text-align: center;
@@ -186,18 +129,10 @@ html {
   background-color: #333;
 }
 
-/* Responsive Design */
+/* Responsive Design for Smaller Text */
 @media (max-width: 768px) {
   .section-header h1 {
     font-size: 2rem;
-  }
-
-  .sub-section h3 {
-    font-size: 1.25rem;
-  }
-
-  .sub-section p {
-    font-size: 0.9rem;
   }
 
   .cta-button {
