@@ -1506,16 +1506,14 @@ textarea {
   color: white; /* Font color on hover */
   border-color: #5dade2; /* Keep border color same */
 }
-/* /////////////////////////////////////////////// */
-/* /////////////////////////////////////////////// */
-/* General Styling for the Quote contact Section */
+/* General Styling for the Quote / contact Section */
 
 /* Quote Section */
 .quote-section {
   position: relative;
   z-index: 15;
   padding: 2rem;
-  background-color: BLACK;
+  background-color: black;
   text-align: center;
   overflow: hidden;
 }
@@ -1529,17 +1527,10 @@ textarea {
   font-family: var(--headline-font-family);
   font-size: var(--headline-font-size);
   font-weight: var(--headline-font-weight);
-  text-shadow: var(--headline-text-shadow);
   letter-spacing: var(--headline-letter-spacing);
-  color: WHITE;
-  text-shadow: var(--primary-color);
+  color: white;
+  text-shadow: var(--headline-text-shadow);
   text-transform: uppercase;
-}
-
-@media (max-width: 499px) {
-  .quote-section-heading {
-    font-size: 3rem; /* Adjust the font size for smaller screens */
-  }
 }
 
 /* Cards Container */
@@ -1551,74 +1542,47 @@ textarea {
 }
 
 /* Card Styling */
+/* Quote Card Styling */
 .quote-card {
-  margin: 0 auto; /* Center the cards */
+  margin: 1rem; /* Add spacing around cards */
   background-color: black;
-  /* border: 1px solid #ddd; */
   border-radius: 8px;
   padding: 1rem;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  width: 450px; /* Default width for larger screens */
+  box-shadow: 0 0 20px white;
+  width: 100%; /* Default full width for responsiveness */
+  max-width: 480px; /* Limit width for larger screens */
   box-sizing: border-box;
+
+  /* Initial state for animation */
+  opacity: 0;
+  transform: translateY(50px); /* Start below the viewport */
+  transition: opacity 0.5s ease, transform 0.5s ease; /* Smooth animation */
+}
+
+/* Visible state for animation */
+.quote-card.visible {
   opacity: 1;
-  transform: translateX(0);
-  transition: opacity 0.5s ease, transform 0.5s ease;
+  transform: translateY(0); /* Return to original position */
+}
+
+/* Adjust styling when cards stack vertically */
+@media (max-width: 1118px) {
+  .quote-cards-container {
+    flex-direction: column; /* Stack cards vertically */
+    align-items: center; /* Center cards horizontally */
+  }
+
+  .quote-card {
+    width: 80vw; /* Set width to 60% of viewport width */
+    max-width: none; /* Remove max-width restriction */
+  }
 }
 
 .quote-card:hover {
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 20px var(--primary-color);
 }
 
-/* Adjust card styling for smaller screens */
-@media (max-width: 994px) {
-  .quote-cards-container {
-    flex-direction: column; /* Stack cards vertically */
-    align-items: center; /* Center cards */
-  }
-
-  .quote-card {
-    width: 100%; /* Make cards wider, relative to screen size */
-    margin: 1rem auto; /* Add margin to separate cards */
-    max-width: 700px; /* Limit the maximum width of the cards */
-  }
-}
-
-/* Adjust card width for larger screens */
-@media (min-width: 1200px) {
-  .quote-card {
-    width: 500px; /* Increase width for larger desktop screens */
-    margin: 0 1rem; /* Add a bit of horizontal margin */
-  }
-
-  .quote-cards-container {
-    gap: 2rem; /* Increase the gap between cards for wider layouts */
-  }
-}
-
-/* Initial hidden state for wider screens */
-@media (min-width: 936px) {
-  .quote-card {
-    opacity: 0;
-    transform: translateX(0);
-    transition: opacity 0.5s ease, transform 0.5s ease;
-  }
-
-  .quote-card-1 {
-    transform: translateX(-100%); /* Start off-screen to the left */
-  }
-
-  .quote-card-2 {
-    transform: translateX(100%); /* Start off-screen to the right */
-  }
-
-  /* Visible state for wider screens */
-  .quote-card.visible {
-    opacity: 1;
-    transform: translateX(0); /* Reset position */
-  }
-}
-
-/* Card Heading */
+/* Quote Card Heading */
 .quote-card-heading {
   font-size: 3rem;
   color: var(--primary-color);
@@ -1629,7 +1593,6 @@ textarea {
   margin: 0;
 }
 
-/* Card List */
 /* Quote Card List */
 .quote-card-list {
   list-style: none;
@@ -1695,7 +1658,7 @@ textarea {
   align-items: center; /* Center text with the icon */
 }
 
-/* gameplan */
+/* Info List Styling */
 .quote-card .info-list {
   list-style: none;
   padding: 0;
@@ -1716,18 +1679,98 @@ textarea {
   color: white;
   margin: 0 0 2.5rem;
 }
+/* Card Heading */
+.quote-card-heading {
+  font-size: 3rem;
+  color: var(--primary-color);
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin: 0 0 1rem;
+}
 
-/* Responsive: Stack Cards Vertically */
-@media (max-width: 768px) {
-  .quote-cards-container {
-    flex-direction: column; /* Stack cards vertically */
-    align-items: center; /* Center cards */
-  }
+/* Quote Card List */
+.quote-card-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
 
-  .quote-card {
-    flex: 1 1 100%; /* Full width */
-    max-width: 100%; /* Remove max-width constraint */
-  }
+.quote-card-list li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-size: 1rem;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+.quote-card-list li:hover {
+  color: var(--primary-color);
+}
+
+.icon {
+  width: 1.5rem;
+  height: auto;
+  fill: #5dade2;
+  transition: fill 0.3s ease;
+}
+
+.quote-card-list li:hover .icon {
+  fill: white;
+}
+
+/* Contact Info */
+.contact-info {
+  text-align: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.contact-info li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-size: 1rem;
+  color: white;
+}
+
+.contact-info .icon {
+  flex-shrink: 0;
+}
+
+.contact-info li span {
+  line-height: 1.5;
+  display: flex;
+  align-items: center;
+}
+
+/* Info List */
+.quote-card .info-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.quote-card .info-list h4 {
+  text-decoration: underline 3px solid var(--primary-color);
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: white;
+  text-transform: uppercase;
+}
+
+.quote-card .info-list p {
+  font-size: 1rem;
+  color: white;
+  margin: 0 0 2.5rem;
 }
 
 /* /////////////////////////////////////////////////////////////////////// */

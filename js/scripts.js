@@ -189,48 +189,27 @@ document.addEventListener('DOMContentLoaded', () => {
 // //////////////////////////////////////////////
 // QUOTE SECTION //////////////////////////
 document.addEventListener('DOMContentLoaded', () => {
-  // Observe visibility of quote cards for animations
   const quoteCards = document.querySelectorAll('.quote-card');
 
+  // Observer options
   const observerOptions = {
     root: null, // Use the viewport as the container
-    threshold: 0.1, // Trigger when 10% of the card is visible
+    threshold: 0.2, // Trigger when 20% of the card is visible
   };
 
   const observerCallback = (entries) => {
     entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible'); // Add the 'visible' class to slide in the card
+      if (entry.intersectionRatio > 0.2) {
+        // Add class to slide up when in view
+        entry.target.classList.add('visible');
+      } else {
+        // Remove class to slide away when out of view
+        entry.target.classList.remove('visible');
       }
-      // The following functionality to remove the visible class has been removed:
-      // else {
-      //   entry.target.classList.remove('visible');
-      // }
     });
   };
 
   const observer = new IntersectionObserver(observerCallback, observerOptions);
 
   quoteCards.forEach((card) => observer.observe(card));
-});
-
-// Submission Form Interactivity
-document.addEventListener('DOMContentLoaded', () => {
-  const form = document.querySelector('.submission-form');
-  const submitButton = form.querySelector('.submit-button');
-
-  // Form validation (basic example)
-  form.addEventListener('submit', (event) => {
-    event.preventDefault(); // Prevent the default form submission for now
-    alert('Form submitted successfully!'); // Placeholder action
-  });
-
-  // Enhance hover effects on submit button
-  submitButton.addEventListener('mouseover', () => {
-    submitButton.style.cursor = 'pointer';
-  });
-
-  submitButton.addEventListener('mouseout', () => {
-    submitButton.style.cursor = 'default';
-  });
 });
