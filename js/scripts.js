@@ -102,7 +102,9 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 
-// Journey Section: Intro text phasing in
+// //////////////////////////////////////////////
+// JOURNEY SECTION
+// Journey intro text phasing in
 document.addEventListener('DOMContentLoaded', () => {
   const journeyIntro = document.querySelector('.journey-section-intro');
 
@@ -127,7 +129,53 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
-// Pricing Section: Cards visibility
+// Journey cards sliding in and out
+document.addEventListener('DOMContentLoaded', () => {
+  const card1Elements = document.querySelectorAll('.card-1');
+
+  const observerOptions = {
+    root: null,
+    threshold: 0.2,
+  };
+
+  const observerCallback = (entries, observer) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  };
+
+  const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+  card1Elements.forEach((card) => observer.observe(card));
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+  const card2Elements = document.querySelectorAll('.card-2');
+
+  const observerOptions = {
+    root: null,
+    threshold: 0.2,
+  };
+
+  const observerCallback = (entries, observer) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  };
+
+  const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+  card2Elements.forEach((card) => observer.observe(card));
+});
+
+// //////////////////////////////////////////////
+// PRICING SECTION //////////////////////////////
 document.addEventListener('DOMContentLoaded', () => {
   const pricingCards = document.querySelectorAll('.pricing-card');
 

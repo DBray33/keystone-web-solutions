@@ -3,7 +3,53 @@ document.addEventListener('DOMContentLoaded', () => {
   const dropdownMenu = document.querySelector('.dropdown-menu');
   const hamburgerMenu = document.querySelector('.hamburger-menu');
   const menuLinks = document.querySelectorAll('.dropdown-links a');
+  const offset = 30;
 
+  // Hamburger menu toggle
+  hamburgerMenu.addEventListener('click', () => {
+    dropdownMenu.classList.toggle('active');
+    hamburgerMenu.classList.toggle('active');
+  });
+
+  // Close dropdown menu when clicking outside
+  document.addEventListener('click', (event) => {
+    if (
+      !event.target.closest('.dropdown-menu') &&
+      !event.target.closest('.hamburger-menu')
+    ) {
+      dropdownMenu.classList.remove('active');
+      hamburgerMenu.classList.remove('active');
+    }
+  });
+
+  // Handle link clicks within the dropdown menu
+  menuLinks.forEach((link) => {
+    link.addEventListener('click', (event) => {
+      const href = link.getAttribute('href');
+      if (href.startsWith('#') || href === '') {
+        event.preventDefault();
+        const targetId = href.slice(1); // Remove the "#" character
+        const targetElement = document.getElementById(targetId);
+
+        if (targetElement) {
+          const elementPosition =
+            targetElement.getBoundingClientRect().top + window.scrollY;
+          const offsetPosition = elementPosition - offset;
+
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth',
+          });
+        }
+      }
+
+      // Close the menu after a link is clicked
+      dropdownMenu.classList.remove('active');
+      hamburgerMenu.classList.remove('active');
+    });
+  });
+
+  // Dropdown submenu functionality
   dropdownParents.forEach((parent) => {
     const submenu = parent.querySelector('.dropdown-submenu');
     const closeButton = submenu.querySelector('.submenu-close');
@@ -25,14 +71,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Close dropdown menu when a link is clicked
-  menuLinks.forEach((link) => {
-    link.addEventListener('click', () => {
-      dropdownMenu.classList.remove('active');
-      hamburgerMenu.classList.remove('active');
-    });
-  });
-
   // Close submenus when clicking outside
   document.addEventListener('click', (event) => {
     if (
@@ -45,11 +83,5 @@ document.addEventListener('DOMContentLoaded', () => {
           openSubmenu.classList.remove('active');
         });
     }
-  });
-
-  // Handle hamburger menu toggle
-  hamburgerMenu.addEventListener('click', () => {
-    dropdownMenu.classList.toggle('active');
-    hamburgerMenu.classList.toggle('active');
   });
 });
