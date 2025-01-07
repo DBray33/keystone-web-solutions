@@ -1197,16 +1197,19 @@ textarea::placeholder {
   transform: translateX(0); /* Slide into view */
 }
 
-.pricing-link {
+.page-link {
   color: inherit; /* Match the surrounding text color */
   text-decoration: underline; /* Optional: underline to indicate a link */
   font-weight: bold; /* Make the link stand out */
   transition: color 0.3s ease; /* Smooth color transition on hover */
 }
 
-.pricing-link:hover {
+.page-link:hover {
   color: #5dade2; /* Change color on hover */
   text-decoration: none; /* Optional: remove underline on hover */
+  text-shadow: -1px -1px 0 #000, /* Top-left shadow */ 1px -1px 0 #000,
+    /* Top-right shadow */ -1px 1px 0 #000,
+    /* Bottom-left shadow */ 1px 1px 0 #000; /* Bottom-right shadow */
 }
 
 /* /////////////////////////////////////////////////// */

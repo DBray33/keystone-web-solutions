@@ -73,24 +73,82 @@ html {
 
 /* Card Styling */
 .content-card {
-  background-color: var(
-    --secondary-color
-  ); /* Optional: Add a background for card effect */
+  background-color: var(--secondary-color); /* Add background for card effect */
   padding: 1.5rem; /* Add padding for spacing */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow for card effect */
-  border-radius: 8px; /* Optional: Add rounded corners */
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.6); /* Add a shadow for card effect */
+  border-radius: 8px; /* Add rounded corners */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects */
+  text-align: left; /* Align text to the left */
+  max-width: 100%; /* Ensure cards are fully responsive */
+  display: flex; /* Allow for flexible layout */
+  flex-direction: column; /* Stack content vertically */
+  gap: 1.5rem; /* Add spacing between child elements */
+}
+
+/* Hover effects for a more interactive feel */
+.content-card:hover {
+  transform: translateY(-5px); /* Lift card slightly on hover */
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Enhance shadow on hover */
+}
+
+/* Styling for h2 elements within the content card */
+.content-card h2 {
+  text-transform: uppercase; /* Capitalize all letters */
+}
+
+/* Adjust spacing between h3 and the paragraphs above */
+.content-card h3 {
+  margin-bottom: 0.75rem; /* Add space below h3 */
+}
+
+/* Ensure consistency for text within the card */
+.content-card p {
+  margin: 0; /* Remove default margins for better control */
+}
+
+/* Responsive styling for smaller screens */
+@media (max-width: 768px) {
+  .content-card {
+    padding: 1rem; /* Adjust padding for smaller devices */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for smaller screens */
+  }
 }
 
 /* Video Card Specific Styling */
+/* Video Card Styling */
+/* Video Card Styling */
 .video-card {
-  padding: 0; /* Remove padding for the video card */
+  position: relative;
+  overflow: hidden; /* Ensure no overflow outside the container */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%; /* Default to fill the container */
+  border-radius: 8px; /* Add rounded corners if desired */
+  background-color: var(--secondary-color); /* Fallback background color */
 }
 
+/* Video Styling */
 .video-card video {
-  width: 100%; /* Make the video responsive */
-  height: auto; /* Maintain aspect ratio */
-  border-radius: 8px; /* Optional: Add rounded corners */
-  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%; /* Make the video cover the container's width */
+  height: 100%; /* Make the video cover the container's height */
+  object-fit: cover; /* Ensures the video fills the container without distortion */
+  border-radius: inherit; /* Match the card's rounded corners */
+}
+
+/* Responsive Video Height Adjustment */
+@media (max-width: 991px) {
+  .video-card {
+    height: 300px; /* Set a fixed responsive height */
+  }
+
+  .video-card video {
+    height: 300px; /* Match the height of the container */
+  }
 }
 
 /* Responsive Design for Smaller Screens */
