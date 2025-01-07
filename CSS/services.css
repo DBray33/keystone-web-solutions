@@ -82,6 +82,10 @@ html {
 }
 
 /* Video Card Specific Styling */
+.video-card {
+  padding: 0; /* Remove padding for the video card */
+}
+
 .video-card video {
   width: 100%; /* Make the video responsive */
   height: auto; /* Maintain aspect ratio */

@@ -85,7 +85,6 @@ document.addEventListener('DOMContentLoaded', function () {
   // Smooth scroll for navbar links
   document.querySelectorAll('.navbar-links a').forEach((anchor) => {
     anchor.addEventListener('click', function (e) {
-      // Check if the href starts with "#" (internal link)
       if (this.getAttribute('href').startsWith('#')) {
         e.preventDefault();
 
@@ -123,22 +122,26 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 
+  // Handle link clicks within the dropdown
   links.forEach((link) => {
     link.addEventListener('click', (event) => {
-      event.preventDefault();
+      const href = link.getAttribute('href');
+      if (href.startsWith('#') || href === '') {
+        event.preventDefault();
+        const targetId = href.slice(1); // Remove the "#" character
+        const targetElement = document.getElementById(targetId);
+        if (targetElement) {
+          const elementPosition =
+            targetElement.getBoundingClientRect().top + window.scrollY;
+          const offsetPosition = elementPosition - offset;
 
-      const targetId = link.getAttribute('href').slice(1);
-      const targetElement = document.getElementById(targetId);
-
-      if (targetElement) {
-        const elementPosition =
-          targetElement.getBoundingClientRect().top + window.scrollY;
-        const offsetPosition = elementPosition - offset;
-
-        window.scrollTo({
-          top: offsetPosition,
-          behavior: 'smooth',
-        });
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth',
+          });
+        }
+      } else {
+        return;
       }
 
       dropdownMenu.classList.remove('active');
@@ -154,15 +157,15 @@ document.addEventListener('DOMContentLoaded', () => {
   const journeyIntro = document.querySelector('.journey-section-intro');
 
   const observerOptions = {
-    root: null, // Use the viewport as the container
-    threshold: 0.2, // Trigger when 20% of the element is visible
+    root: null,
+    threshold: 0.2,
   };
 
   const observerCallback = (entries, observer) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
         entry.target.classList.add('visible');
-        observer.unobserve(entry.target); // Stop observing after animation triggers
+        observer.unobserve(entry.target);
       }
     });
   };
@@ -173,74 +176,50 @@ document.addEventListener('DOMContentLoaded', () => {
     observer.observe(journeyIntro);
   }
 });
+
 // Journey cards sliding in and out
 document.addEventListener('DOMContentLoaded', () => {
-  const card1Elements = document.querySelectorAll('.card-1'); // Select only card-1 elements
+  const card1Elements = document.querySelectorAll('.card-1');
 
   const observerOptions = {
-    root: null, // Use the viewport as the container
-    threshold: 0.2, // Trigger when 20% of the card is visible
+    root: null,
+    threshold: 0.2,
   };
 
   const observerCallback = (entries, observer) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
         entry.target.classList.add('visible');
-        observer.unobserve(entry.target); // Stop observing once the animation has triggered
+        observer.unobserve(entry.target);
       }
     });
   };
 
   const observer = new IntersectionObserver(observerCallback, observerOptions);
 
-  card1Elements.forEach((card) => observer.observe(card)); // Observe only card-1 elements
+  card1Elements.forEach((card) => observer.observe(card));
 });
 
 document.addEventListener('DOMContentLoaded', () => {
-  const card2Elements = document.querySelectorAll('.card-2'); // Select only card-2 elements
+  const card2Elements = document.querySelectorAll('.card-2');
 
   const observerOptions = {
-    root: null, // Use the viewport as the container
-    threshold: 0.2, // Trigger when 20% of the card is visible
+    root: null,
+    threshold: 0.2,
   };
 
   const observerCallback = (entries, observer) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
         entry.target.classList.add('visible');
-        observer.unobserve(entry.target); // Stop observing once the animation has triggered
+        observer.unobserve(entry.target);
       }
     });
   };
 
   const observer = new IntersectionObserver(observerCallback, observerOptions);
 
-  card2Elements.forEach((card) => observer.observe(card)); // Observe only card-2 elements
-});
-
-document.addEventListener('DOMContentLoaded', () => {
-  const card1Elements = document.querySelectorAll('.card-1'); // Select only card-1 elements
-  const card2Elements = document.querySelectorAll('.card-2'); // Select only card-2 elements
-
-  const observerOptions = {
-    root: null, // Use the viewport as the container
-    threshold: 0.2, // Trigger when 20% of the card is visible
-  };
-
-  const observerCallback = (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible'); // Add the visible class when entering the viewport
-      } else {
-        entry.target.classList.remove('visible'); // Remove the visible class when exiting the viewport
-      }
-    });
-  };
-
-  const observer = new IntersectionObserver(observerCallback, observerOptions);
-
-  card1Elements.forEach((card) => observer.observe(card)); // Observe card-1 elements
-  card2Elements.forEach((card) => observer.observe(card)); // Observe card-2 elements
+  card2Elements.forEach((card) => observer.observe(card));
 });
 
 // //////////////////////////////////////////////
@@ -249,14 +228,13 @@ document.addEventListener('DOMContentLoaded', () => {
   const pricingCards = document.querySelectorAll('.pricing-card');
 
   const observerOptions = {
-    root: null, // Use the viewport as the container
-    threshold: [0, 0.2], // Trigger at 0% and 20% visibility
+    root: null,
+    threshold: [0, 0.2],
   };
 
   const observerCallback = (entries) => {
     entries.forEach((entry) => {
       if (entry.intersectionRatio >= 0.2) {
-        // Add a custom CSS variable for staggered delay
         if (entry.target.classList.contains('pricing-card-1')) {
           entry.target.style.setProperty('--delay', '0s');
         } else if (entry.target.classList.contains('pricing-card-2')) {
@@ -264,9 +242,9 @@ document.addEventListener('DOMContentLoaded', () => {
         } else if (entry.target.classList.contains('pricing-card-3')) {
           entry.target.style.setProperty('--delay', '0.4s');
         }
-        entry.target.classList.add('visible'); // Add the 'visible' class
+        entry.target.classList.add('visible');
       } else if (entry.intersectionRatio === 0) {
-        entry.target.classList.remove('visible'); // Remove the 'visible' class
+        entry.target.classList.remove('visible');
       }
     });
   };
@@ -276,26 +254,39 @@ document.addEventListener('DOMContentLoaded', () => {
   pricingCards.forEach((card) => observer.observe(card));
 });
 
-// //////////////////////////////////////////////
-// MOBILE MENU DROPDOWN SUBMENU //////////////////////////
 document.addEventListener('DOMContentLoaded', () => {
   const dropdownParents = document.querySelectorAll('.dropdown-parent');
+  const dropdownMenu = document.querySelector('.dropdown-menu');
+  const hamburgerMenu = document.querySelector('.hamburger-menu');
+  const menuLinks = document.querySelectorAll('.dropdown-links a');
 
   dropdownParents.forEach((parent) => {
     const submenu = parent.querySelector('.dropdown-submenu');
     const closeButton = submenu.querySelector('.submenu-close');
+    const parentLink = parent.querySelector('a');
 
-    parent.addEventListener('click', (event) => {
-      event.preventDefault();
-
-      // Toggle the clicked submenu
-      submenu.classList.toggle('active');
+    // Toggle submenu on click
+    parentLink.addEventListener('click', (event) => {
+      // Check if the link is "#" or empty
+      const href = parentLink.getAttribute('href');
+      if (href === '' || href === '#') {
+        event.preventDefault(); // Prevent navigation if the href is not a valid link
+        submenu.classList.toggle('active');
+      }
     });
 
     // Close submenu when close button is clicked
     closeButton.addEventListener('click', (event) => {
-      event.stopPropagation(); // Prevent the click from bubbling up to parent
+      event.stopPropagation();
       submenu.classList.remove('active');
+    });
+  });
+
+  // Close dropdown menu when a link is clicked
+  menuLinks.forEach((link) => {
+    link.addEventListener('click', () => {
+      dropdownMenu.classList.remove('active'); // Close the dropdown menu
+      hamburgerMenu.classList.remove('active'); // Reset hamburger menu state
     });
   });
 
@@ -312,57 +303,4 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
   });
-});
-
-// //////////////////////////////////////////////
-// PRICING LINK SCROLL DISTANCE //////////////////////////////
-document.addEventListener('DOMContentLoaded', () => {
-  const pricingLink = document.querySelector('.pricing-link');
-
-  pricingLink.addEventListener('click', (event) => {
-    event.preventDefault(); // Prevent the default jump behavior
-
-    const targetId = pricingLink.getAttribute('href').substring(1);
-    const targetElement = document.getElementById(targetId);
-
-    if (targetElement) {
-      const elementPosition =
-        targetElement.getBoundingClientRect().top + window.scrollY;
-
-      // Dynamically calculate offset based on viewport width
-      const offset = window.innerWidth <= 843 ? 80 : 70;
-
-      const offsetPosition = elementPosition - offset;
-
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth',
-      });
-    }
-  });
-});
-
-// //////////////////////////////////////////////
-// QUOTE CARD //////////////////////////////
-// Quote card phasing in
-document.addEventListener('DOMContentLoaded', () => {
-  const observerOptions = {
-    root: null, // Use the viewport as the container
-    threshold: 0.15, // Trigger when 15% of the section is visible
-  };
-
-  const observerCallback = (entries, observer) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible'); // Add the visible class
-        observer.unobserve(entry.target); // Stop observing after animation triggers
-      }
-    });
-  };
-
-  const observer = new IntersectionObserver(observerCallback, observerOptions);
-
-  // Select the quote cards to observe
-  const quoteCards = document.querySelectorAll('.quote-card');
-  quoteCards.forEach((card) => observer.observe(card));
 });
