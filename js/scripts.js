@@ -100,59 +100,9 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     });
   });
-
-  // Mobile menu functionality
-  const hamburgerMenu = document.querySelector('.hamburger-menu');
-  const dropdownMenu = document.querySelector('.dropdown-menu');
-  const links = document.querySelectorAll('.dropdown-links a');
-  const offset = 30;
-
-  hamburgerMenu.addEventListener('click', () => {
-    dropdownMenu.classList.toggle('active');
-    hamburgerMenu.classList.toggle('active');
-  });
-
-  document.addEventListener('click', (event) => {
-    if (
-      !event.target.closest('.dropdown-menu') &&
-      !event.target.closest('.hamburger-menu')
-    ) {
-      dropdownMenu.classList.remove('active');
-      hamburgerMenu.classList.remove('active');
-    }
-  });
-
-  // Handle link clicks within the dropdown
-  links.forEach((link) => {
-    link.addEventListener('click', (event) => {
-      const href = link.getAttribute('href');
-      if (href.startsWith('#') || href === '') {
-        event.preventDefault();
-        const targetId = href.slice(1); // Remove the "#" character
-        const targetElement = document.getElementById(targetId);
-        if (targetElement) {
-          const elementPosition =
-            targetElement.getBoundingClientRect().top + window.scrollY;
-          const offsetPosition = elementPosition - offset;
-
-          window.scrollTo({
-            top: offsetPosition,
-            behavior: 'smooth',
-          });
-        }
-      } else {
-        return;
-      }
-
-      dropdownMenu.classList.remove('active');
-      hamburgerMenu.classList.remove('active');
-    });
-  });
 });
 
-// //////////////////////////////////////////////
-// JOURNEY SECTION
-// Journey intro text phasing in
+// Journey Section: Intro text phasing in
 document.addEventListener('DOMContentLoaded', () => {
   const journeyIntro = document.querySelector('.journey-section-intro');
 
@@ -177,53 +127,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
-// Journey cards sliding in and out
-document.addEventListener('DOMContentLoaded', () => {
-  const card1Elements = document.querySelectorAll('.card-1');
-
-  const observerOptions = {
-    root: null,
-    threshold: 0.2,
-  };
-
-  const observerCallback = (entries, observer) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
-      }
-    });
-  };
-
-  const observer = new IntersectionObserver(observerCallback, observerOptions);
-
-  card1Elements.forEach((card) => observer.observe(card));
-});
-
-document.addEventListener('DOMContentLoaded', () => {
-  const card2Elements = document.querySelectorAll('.card-2');
-
-  const observerOptions = {
-    root: null,
-    threshold: 0.2,
-  };
-
-  const observerCallback = (entries, observer) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
-      }
-    });
-  };
-
-  const observer = new IntersectionObserver(observerCallback, observerOptions);
-
-  card2Elements.forEach((card) => observer.observe(card));
-});
-
-// //////////////////////////////////////////////
-// PRICING SECTION //////////////////////////////
+// Pricing Section: Cards visibility
 document.addEventListener('DOMContentLoaded', () => {
   const pricingCards = document.querySelectorAll('.pricing-card');
 
@@ -252,55 +156,4 @@ document.addEventListener('DOMContentLoaded', () => {
   const observer = new IntersectionObserver(observerCallback, observerOptions);
 
   pricingCards.forEach((card) => observer.observe(card));
-});
-
-document.addEventListener('DOMContentLoaded', () => {
-  const dropdownParents = document.querySelectorAll('.dropdown-parent');
-  const dropdownMenu = document.querySelector('.dropdown-menu');
-  const hamburgerMenu = document.querySelector('.hamburger-menu');
-  const menuLinks = document.querySelectorAll('.dropdown-links a');
-
-  dropdownParents.forEach((parent) => {
-    const submenu = parent.querySelector('.dropdown-submenu');
-    const closeButton = submenu.querySelector('.submenu-close');
-    const parentLink = parent.querySelector('a');
-
-    // Toggle submenu on click
-    parentLink.addEventListener('click', (event) => {
-      // Check if the link is "#" or empty
-      const href = parentLink.getAttribute('href');
-      if (href === '' || href === '#') {
-        event.preventDefault(); // Prevent navigation if the href is not a valid link
-        submenu.classList.toggle('active');
-      }
-    });
-
-    // Close submenu when close button is clicked
-    closeButton.addEventListener('click', (event) => {
-      event.stopPropagation();
-      submenu.classList.remove('active');
-    });
-  });
-
-  // Close dropdown menu when a link is clicked
-  menuLinks.forEach((link) => {
-    link.addEventListener('click', () => {
-      dropdownMenu.classList.remove('active'); // Close the dropdown menu
-      hamburgerMenu.classList.remove('active'); // Reset hamburger menu state
-    });
-  });
-
-  // Optional: Close submenu if user clicks outside
-  document.addEventListener('click', (event) => {
-    if (
-      !event.target.closest('.dropdown-submenu') &&
-      !event.target.closest('.dropdown-parent')
-    ) {
-      document
-        .querySelectorAll('.dropdown-submenu.active')
-        .forEach((openSubmenu) => {
-          openSubmenu.classList.remove('active');
-        });
-    }
-  });
 });
