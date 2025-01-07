@@ -11,7 +11,7 @@ html {
   height: 100%;
   font-family: 'Exo', sans-serif;
   overscroll-behavior-y: none;
-  background-color: var(--secondary-color);
+  /* background-color: var(--secondary-color); */
   /* overflow: hidden;  breaks the page */
 }
 
@@ -49,7 +49,7 @@ textarea::placeholder {
   top: 0;
   left: 0;
   width: 100%; /* Full width at the top of the page */
-  background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent */
+  background-color: rgba(255, 255, 255, 1); /* Slightly transparent */
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
   padding: 1.5rem 0;
   transition: all 0.3s ease-in-out; /* Smooth animation */
@@ -239,12 +239,14 @@ textarea::placeholder {
   border-radius: 8px; /* Optional: Rounded corners */
   box-shadow: none; /* Remove default button shadow */
   outline: none; /* Remove blue focus outline */
+  border: 2px solid black; /* Light border */
 }
 
 .hamburger-menu:focus,
 .hamburger-menu:active {
   outline: none; /* Ensure focus styles don't show */
   box-shadow: none; /* Remove active styles */
+  border: none;
 }
 
 .hamburger-menu:visited {
@@ -645,9 +647,11 @@ textarea::placeholder {
 
 .welcome-section-devices {
   width: 100%;
-  max-width: 800px; /* Adjust the max-width as needed */
+  max-width: 800px;
   height: auto;
-  margin: 1rem auto -3rem;
+  margin-top: 1rem;
+  margin-bottom: -3rem;
+  margin-left: -0.8rem;
   display: block;
 }
 
@@ -1523,7 +1527,7 @@ textarea {
 
 .quote-section p {
   color: white;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 
 .quote-section-heading {
@@ -1773,7 +1777,7 @@ textarea {
 .quote-card .info-list p {
   font-size: 1rem;
   color: white;
-  margin: 0 0 2.5rem;
+  margin: 0 0 2rem;
 }
 
 /* /////////////////////////////////////////////////////////////////////// */

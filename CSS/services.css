@@ -1,9 +1,4 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
+/* Reset and Global Styles */
 body,
 html {
   margin: 0;
@@ -11,12 +6,29 @@ html {
   height: 100%;
   font-family: 'Exo', sans-serif;
   overscroll-behavior-y: none;
-  background-color: var(--secondary-color);
-  background: var(--secondary-color);
-  /* overflow: hidden;  breaks the page */
+  background: url('https://storage.googleapis.com/background-vid/bluewave-optimized.svg')
+    no-repeat center top;
+  background-size: cover; /* Adjust as needed (e.g., `contain` or specific percentages) */
+  background-attachment: fixed; /* Keeps it fixed during scrolling */
 }
 
-/* Enable smooth scrolling for the entire document */
+/* SVG Background Styling */
+.wave-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Push SVG to the background */
+  overflow: hidden; /* Prevent waves from overflowing */
+}
+
+.wave-bg svg {
+  width: 100%;
+  height: 100%; /* Ensure waves fill the viewport */
+  object-fit: cover; /* Maintain proportions */
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -36,7 +48,6 @@ html {
 .custom-web-design {
   margin-top: 5rem;
   padding: 2rem;
-  background-color: var(--secondary-color);
   font-family: 'Exo', sans-serif;
 }
 
@@ -73,7 +84,7 @@ html {
 
 /* Card Styling */
 .content-card {
-  background-color: var(--secondary-color); /* Add background for card effect */
+  background-color: var(--secondary-color);
   padding: 1.5rem; /* Add padding for spacing */
   box-shadow: 0 0 6px rgba(0, 0, 0, 0.6); /* Add a shadow for card effect */
   border-radius: 8px; /* Add rounded corners */
