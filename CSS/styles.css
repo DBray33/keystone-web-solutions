@@ -58,7 +58,7 @@ textarea::placeholder {
 
 /* General Navbar Link Styling */
 .navbar .navbar-links a {
-  display: inline-block; /* Ensures consistent alignment */
+  display: inline-block;
   padding: 0.5rem 1rem;
   text-decoration: none;
   font-weight: bold;
@@ -209,6 +209,33 @@ textarea::placeholder {
 @media (max-width: 843px) {
   .navbar {
     display: none;
+  }
+}
+
+/* Enable Navbar for Short Viewport Heights */
+@media (max-height: 675px) {
+  .mobile-menu {
+    display: none !important; /* Completely hide mobile menu */
+  }
+
+  .hamburger-menu {
+    display: none !important; /* Hide the hamburger menu */
+  }
+
+  .navbar {
+    display: flex !important; /* Ensure the navbar is visible */
+  }
+
+  .navbar .navbar-links a {
+    font-size: 0.5rem;
+    padding: 0.5rem 0.5rem;
+  }
+}
+
+/* Keep Navbar Hidden for Small Widths Unless Height is Also Small */
+@media (max-width: 843px) and (min-height: 676px) {
+  .navbar {
+    display: none; /* Keep navbar hidden for typical mobile viewports */
   }
 }
 
@@ -414,6 +441,22 @@ textarea::placeholder {
 /* Open state for the submenu */
 .dropdown-submenu.active {
   top: 3rem; /* Slide down into view */
+}
+
+/* Disable Mobile Menu for Small Heights */
+@media (max-height: 675px) {
+  .mobile-menu {
+    display: none !important; /* Completely hide the mobile menu */
+  }
+
+  .hamburger-menu {
+    display: none !important; /* Hide the hamburger menu */
+  }
+
+  .dropdown-menu,
+  .dropdown-submenu {
+    display: none !important; /* Ensure dropdowns are also hidden */
+  }
 }
 
 /* LEFT SIDEBAR */
