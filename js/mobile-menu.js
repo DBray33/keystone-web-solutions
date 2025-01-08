@@ -43,9 +43,14 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       }
 
-      // Close the menu after a link is clicked
+      // Close the menu and any open submenus after a link is clicked
       dropdownMenu.classList.remove('active');
       hamburgerMenu.classList.remove('active');
+      document
+        .querySelectorAll('.dropdown-submenu.active')
+        .forEach((openSubmenu) => {
+          openSubmenu.classList.remove('active');
+        });
     });
   });
 

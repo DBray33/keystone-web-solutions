@@ -6,10 +6,34 @@ html {
   height: 100%;
   font-family: 'Exo', sans-serif;
   overscroll-behavior-y: none;
+}
+
+/* Specific background for the custom-web-design.html page */
+body.custom-web-design-page {
   background: url('https://storage.googleapis.com/background-vid/bluewave-optimized.svg')
     no-repeat center top;
-  background-size: cover; /* Adjust as needed (e.g., `contain` or specific percentages) */
+  background-size: cover; /* Adjust as needed */
   background-attachment: fixed; /* Keeps it fixed during scrolling */
+}
+
+/* Specific Background for Responsive Design Page */
+.responsive-design-page {
+  background: url('https://storage.googleapis.com/background-vid/responsiveness-devices.svg')
+    no-repeat center top;
+  background-size: cover; /* Adjust as needed */
+  /* background-attachment: fixed;  */
+}
+
+.page-content {
+  margin-top: 5rem;
+  padding: 2rem;
+  font-family: 'Exo', sans-serif;
+}
+
+.responsive-design-page .page-content {
+  margin-top: 5rem;
+  padding: 2rem;
+  font-family: 'Exo', sans-serif;
 }
 
 /* SVG Background Styling */
@@ -46,7 +70,7 @@ html {
 
 /* General Section Styling */
 .custom-web-design {
-  margin-top: 5rem;
+  /* margin-top: 5rem; */
   padding: 2rem;
   font-family: 'Exo', sans-serif;
 }

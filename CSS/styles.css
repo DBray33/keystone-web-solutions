@@ -622,11 +622,27 @@ textarea::placeholder {
   box-sizing: border-box;
   background-color: var(--secondary-color);
   overflow-x: hidden;
+
+  /* Background image styles */
+  background-image: url('https://storage.googleapis.com/background-vid/light-blue-bg.webp');
+  background-size: cover; /* Ensures the image fills the width and height */
+  background-repeat: no-repeat; /* Prevents the image from repeating */
+  background-position: center; /* Centers the image both vertically and horizontally */
+  min-height: 100vh; /* Ensures the section is at least the full viewport height */
+}
+
+/* Add padding to the next section */
+.next-section {
+  margin-top: 100px; /* Adds spacing between sections */
 }
 
 .main-content .section {
   text-align: center;
   margin-top: 8rem;
+}
+
+.main-content .section-2 {
+  margin-top: 6rem;
 }
 
 .main-content .mobile-header {
@@ -694,7 +710,7 @@ textarea::placeholder {
   height: auto;
   margin-top: 1rem;
   margin-bottom: -3rem;
-  margin-left: -0.8rem;
+
   display: block;
 }
 
@@ -738,7 +754,7 @@ textarea::placeholder {
 /* Add padding to the top of the target section */
 #services-section {
   padding-top: 50px; /* Adjust the value based on the height of your navbar */
-  margin-top: -50px;
+  /* margin-top: -50px; */
 }
 
 @media (max-width: 935px) {
@@ -1567,7 +1583,10 @@ textarea {
   position: relative;
   z-index: 15;
   padding: 2rem;
-  background-color: black;
+  background-image: url('https://storage.googleapis.com/background-vid/quote-bg.webp'); /* Replace with your actual image URL */
+  background-size: cover; /* Ensures the background covers the section */
+  background-repeat: no-repeat; /* Prevents background tiling */
+  background-position: center; /* Centers the background image */
   text-align: center;
   overflow: hidden;
 }
