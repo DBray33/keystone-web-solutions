@@ -1266,7 +1266,10 @@ textarea::placeholder {
   position: relative;
   text-align: center;
   padding: 2rem;
-  background-color: var(--secondary-color);
+  background-image: url('https://storage.googleapis.com/background-vid/pricing-bg.svg');
+  background-size: cover; /* Ensures the background covers the section */
+  background-repeat: no-repeat; /* Prevents background tiling */
+  background-position: center; /* Centers the background */
   z-index: 15;
 }
 
