@@ -66,7 +66,7 @@ textarea::placeholder {
   transition: color 0.3s ease;
 }
 
-@media (max-width: 1039px) {
+@media (max-width: 1048px) {
   .navbar .navbar-links a {
     font-size: 0.8rem;
     padding: 0.5rem 0.5rem;
@@ -132,7 +132,7 @@ textarea::placeholder {
 .navbar.scrolled {
   top: 10px; /* Slides down slightly */
   left: auto;
-  margin: 0 1rem; /* Adds margin to sides */
+  margin: 0 1rem;
   width: calc(100% - 2rem); /* Slightly narrower */
   border-radius: 10px; /* Rounded corners when scrolled */
   padding: 1rem 0; /* Slightly smaller padding */
@@ -151,7 +151,7 @@ textarea::placeholder {
 }
 
 .navbar-links li {
-  margin: 0 1rem; /* Space between links */
+  margin: 0 1rem;
 }
 
 .navbar-links a {
