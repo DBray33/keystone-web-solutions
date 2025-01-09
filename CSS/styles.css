@@ -31,8 +31,6 @@ html {
 .dropdown-submenu li,
 .main-content .section,
 .main-content .section-2 h2,
-.select-option,
-.service-header,
 .sidebar-content {
   text-align: center;
 }
@@ -512,17 +510,17 @@ textarea::placeholder {
 .main-content {
   width: 60%;
   padding: 0;
-  background-color: var(--secondary-color);
+  background-color: transparent;
   overflow-x: hidden;
 
   /* Background image styles */
   background-image: url('https://storage.googleapis.com/background-vid/light-blue-bg.webp');
-  background-size: cover; /* Ensures the image covers the section */
-  background-repeat: no-repeat; /* Prevents repetition */
-  background-position: center; /* Centers the background */
-  min-height: 100vh; /* Full viewport height */
-  background-attachment: fixed; /* Fixes the background */
-  position: relative; /* Keeps the background tied to the section */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  min-height: 100vh;
+  background-attachment: fixed;
+  position: relative;
 }
 .next-section {
   margin-top: 100px;
@@ -604,16 +602,7 @@ textarea::placeholder {
   width: 60%;
   overflow: hidden;
 }
-#services-section {
-  padding-top: 50px;
-}
-.service-header {
-  font-size: 3rem;
-  margin-bottom: 0.7rem;
-}
-.select-option {
-  font-size: 1rem;
-}
+
 .services {
   position: relative;
   display: flex;
@@ -635,7 +624,6 @@ textarea::placeholder {
   align-items: center;
   padding: 20px;
   flex-direction: column;
-  background: #333;
   z-index: 2;
 }
 .service-item-back {
@@ -644,6 +632,7 @@ textarea::placeholder {
   flex-direction: column;
   background: #5dade2;
 }
+
 .service-item-inner.rotate .service-item-front {
   opacity: 0;
   pointer-events: none;
@@ -740,8 +729,7 @@ textarea::placeholder {
     background-position: center;
     z-index: -1; /* Ensures it's behind the content */
   }
-  .container,
-  .select-option {
+  .container {
     display: block;
   }
   .sidebar {
@@ -798,7 +786,7 @@ textarea::placeholder {
 }
 @media (max-width: 430px) and (max-height: 932px) and (orientation: portrait) {
   .services-section .service-item {
-    height: 33.6vh;
+    height: 40vh;
   }
   .service-item-back .more-info-button {
     font-size: 0.8rem;
@@ -809,10 +797,8 @@ textarea::placeholder {
     margin-top: -2rem;
     margin-bottom: 1rem;
   }
-  .services-section .service-item .service-item-back {
-    margin-top: 1rem;
-  }
 }
+
 .service-item-back::before,
 .service-item-front::before {
   content: '';
