@@ -207,17 +207,23 @@
       </div>
     </nav>
 
-    <!-- FIXED VIDEO SIDEBAR -->
     <section class="fixed-sidebar">
       <!-- Background video fixed sidebar -->
       <div class="sidebar">
         <picture>
+          <!-- Smaller video for screens 500px or less -->
           <source
             srcset="
               https://storage.googleapis.com/background-vid/background-vid-compressed-mobile.mp4
             "
             type="video/mp4"
-            media="(max-width: 935px)" />
+            media="(max-width: 500px)" />
+          <!-- Default larger video for other screens -->
+          <source
+            srcset="
+              https://storage.googleapis.com/background-vid/background-vid-compressed.mp4
+            "
+            type="video/mp4" />
           <video
             autoplay
             muted
@@ -226,9 +232,6 @@
             loading="lazy"
             class="sidebar-video"
             poster="https://storage.googleapis.com/background-vid/poster.webp">
-            <source
-              src="https://storage.googleapis.com/background-vid/background-vid-compressed.mp4"
-              type="video/mp4" />
             Your browser does not support the video tag.
           </video>
         </picture>
