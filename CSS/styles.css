@@ -808,42 +808,42 @@ textarea::placeholder {
 }
 .service-item:first-child .service-item-back,
 .service-item:first-child .service-item-front {
-  background-image: url('https://storage.googleapis.com/background-vid/design.webp?v=1');
+  background-image: url('https://storage.googleapis.com/background-vid/services-design.webp?v=1');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
 .service-item:nth-child(2) .service-item-back,
 .service-item:nth-child(2) .service-item-front {
-  background-image: url('https://storage.googleapis.com/background-vid/responsive.webp?v=1');
+  background-image: url('https://storage.googleapis.com/background-vid/services-responsive.webp?v=1');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
 .service-item:nth-child(3) .service-item-back,
 .service-item:nth-child(3) .service-item-front {
-  background-image: url('https://storage.googleapis.com/background-vid/ecommerce.webp?v=1');
+  background-image: url('https://storage.googleapis.com/background-vid/services-ecommerce.webp?v=1');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
 .service-item:nth-child(4) .service-item-back,
 .service-item:nth-child(4) .service-item-front {
-  background-image: url('https://storage.googleapis.com/background-vid/seo.webp?v=1');
+  background-image: url('https://storage.googleapis.com/background-vid/services-seo.webp?v=1');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
 .service-item:nth-child(5) .service-item-back,
 .service-item:nth-child(5) .service-item-front {
-  background-image: url('https://storage.googleapis.com/background-vid/pexels-mikael-blomkvist-6476808.webp');
+  background-image: url('https://storage.googleapis.com/background-vid/services-digital-marketing.webp');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
 .service-item:nth-child(6) .service-item-back,
 .service-item:nth-child(6) .service-item-front {
-  background-image: url('https://storage.googleapis.com/background-vid/pexels-goumbik-669621.webp');
+  background-image: url('https://storage.googleapis.com/background-vid/services-pagespeed.webp');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
