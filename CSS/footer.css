@@ -94,15 +94,69 @@
   width: 35px;
   height: 35px;
 }
-.footer-bottom,
-.footer-copyright {
+.footer-bottom {
+  display: flex;
+  flex-wrap: wrap; /* Allow items to wrap to the next line */
+  justify-content: center; /* Center items on both rows */
+  gap: 1rem; /* Add consistent spacing between items */
+  margin-top: 2rem;
+  text-align: center;
   width: 100%;
   box-sizing: border-box;
 }
-.footer-right h2 {
-  color: #fff;
-  margin-bottom: 1rem;
+.footer-section {
+  flex: 1 1 calc(50% - 1rem); /* Each section takes up half the width minus the gap */
+  max-width: 300px; /* Optional: Set a maximum width for items */
+  min-width: 200px; /* Ensure items don't get too small */
+  margin: 0.5rem;
+  box-sizing: border-box;
+  background-color: #fff;
   text-align: center;
+  border-radius: 8px;
+}
+@media (max-width: 542px) {
+  .footer-bottom {
+    flex-direction: column; /* Stack items vertically on smaller screens */
+    align-items: center; /* Center items */
+  }
+  .footer-section {
+    width: 100%; /* Make each section take full width */
+    max-width: none; /* Remove maximum width for stacked layout */
+  }
+}
+.footer-section h3 {
+  font-size: 1.5rem;
+  color: var(--primary-color);
+  margin: 0.5rem;
+}
+.footer-section p {
+  font-weight: 500;
+  text-align: center;
+  color: #000;
+  margin: 0.25rem 0;
+  padding: 0 1rem;
+}
+.footer-section a {
+  color: #000;
+  text-decoration: none;
+}
+.footer-section a:hover {
+  text-decoration: underline;
+}
+.footer-copyright {
+  color: #fff;
+  text-align: center; /* Ensures the text is centered */
+  margin-top: 2rem;
+  border-top: 1px solid #ccc;
+  padding-top: 1rem;
+  width: 100%; /* Ensures it spans the full width */
+  box-sizing: border-box; /* Ensures padding and border are included in the total width */
+}
+.footer-copyright a {
+  color: #fff;
+}
+.footer-copyright a:visited {
+  color: inherit !important;
 }
 .footer-contact-form input,
 .footer-contact-form textarea {
@@ -145,61 +199,4 @@
 .footer .submit-button:hover {
   color: #fff;
   border-color: #5dade2;
-}
-.footer-bottom {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  margin-top: 2rem;
-}
-@media (max-width: 542px) {
-  .footer-bottom {
-    flex-wrap: wrap;
-    justify-content: center;
-    width: 100%;
-    margin-top: 2rem;
-    box-sizing: border-box;
-  }
-  .footer-section {
-    width: 100%;
-  }
-}
-.footer-section {
-  border-radius: 8px;
-  min-width: 200px;
-  margin: 1rem;
-  box-sizing: border-box;
-  background-color: #fff;
-}
-.footer-section h3 {
-  font-size: 1.5rem;
-  color: var(--primary-color);
-  margin: 0.5rem;
-}
-.footer-section p {
-  font-weight: 500;
-  text-align: center;
-  color: #000;
-  margin: 0.25rem 0;
-  padding: 0 1rem;
-}
-.footer-section a {
-  color: #000;
-  text-decoration: none;
-}
-.footer-section a:hover {
-  text-decoration: underline;
-}
-.footer-copyright {
-  color: #fff;
-  text-align: center;
-  margin-top: 2rem;
-  border-top: 1px solid #ccc;
-  padding-top: 1rem;
-}
-.footer-copyright a {
-  color: #fff;
-}
-.footer-copyright a:visited {
-  color: inherit !important;
 }
