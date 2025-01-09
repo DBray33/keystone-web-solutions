@@ -514,13 +514,15 @@ textarea::placeholder {
   padding: 0;
   background-color: var(--secondary-color);
   overflow-x: hidden;
+
+  /* Background image styles */
   background-image: url('https://storage.googleapis.com/background-vid/light-blue-bg.webp');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  min-height: 100vh;
-  background-attachment: fixed;
-  position: relative;
+  background-size: cover; /* Ensures the image covers the section */
+  background-repeat: no-repeat; /* Prevents repetition */
+  background-position: center; /* Centers the background */
+  min-height: 100vh; /* Full viewport height */
+  background-attachment: fixed; /* Fixes the background */
+  position: relative; /* Keeps the background tied to the section */
 }
 .next-section {
   margin-top: 100px;
