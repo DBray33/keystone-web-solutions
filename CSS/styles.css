@@ -629,6 +629,12 @@ textarea::placeholder {
   background-repeat: no-repeat; /* Prevents the image from repeating */
   background-position: center; /* Centers the image both vertically and horizontally */
   min-height: 100vh; /* Ensures the section is at least the full viewport height */
+  background-attachment: fixed; /* Keeps the background fixed initially */
+  position: relative;
+}
+
+.journey-section {
+  /* height: 100vh; */
 }
 
 /* Add padding to the next section */
@@ -744,7 +750,7 @@ textarea::placeholder {
 /* SERVICES */
 /* Flipping cards */
 .services-section {
-  background: var(--secondary-color);
+  /* background: var(--secondary-color); */
   width: 60%;
   margin-left: 40%;
   box-sizing: border-box;

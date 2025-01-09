@@ -213,3 +213,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
   quoteCards.forEach((card) => observer.observe(card));
 });
+
+// //////////////////////////////////////////////
+// FIXED INTRO BACKGROUND UNTIL JOURNEY SECTION //////////////////////////
+document.addEventListener('scroll', () => {
+  const mainContent = document.querySelector('.main-content');
+  const journeySection = document.querySelector('.journey-section');
+  const journeyPosition = journeySection.getBoundingClientRect().top;
+
+  if (journeyPosition <= 0) {
+    mainContent.style.backgroundAttachment = 'scroll'; // Change to normal scroll
+  } else {
+    mainContent.style.backgroundAttachment = 'fixed'; // Keep it fixed
+  }
+});
