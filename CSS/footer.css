@@ -1,118 +1,109 @@
-/* FOOTER ////////////////////////////////////////*/
-/* ////////////////////////////////////////////// */
+.footer,
+.footer .submit-button {
+  position: relative;
+  background-color: #000;
+  overflow: hidden;
+}
+.footer .submit-button,
+.footer-section h3 {
+  text-transform: uppercase;
+  text-align: center;
+}
 .footer {
   display: flex;
   flex-wrap: wrap;
   padding: 2rem;
-  background-color: black;
   width: 100%;
-  box-sizing: border-box; /* Include padding and border in the element's total width */
-  z-index: 10; /* Ensure it appears in front of the fixed sidebar */
-  position: relative;
-  overflow: hidden; /* Prevent overflow */
+  box-sizing: border-box;
+  z-index: 10;
 }
-
 .footer-left,
 .footer-right {
   flex: 1;
   min-width: 300px;
   margin-bottom: 2rem;
-  box-sizing: border-box; /* Include padding and border in the element's total width */
+  box-sizing: border-box;
 }
-
 .footer-left {
-  /* padding-right: 2rem; */
   text-align: center;
 }
-
 .footer-left a {
-  display: inline-block; /* Shrink-wrap the link around the logo */
+  display: inline-block;
 }
-
 @media (min-width: 936px) {
   .footer-right {
     margin-right: 2rem;
     margin-top: 2rem;
   }
 }
-
-/* Stack .footer-left and .footer-right vertically for small screens */
 @media (max-width: 935px) {
   .footer {
-    flex-direction: column; /* Stack items vertically */
-    align-items: center; /* Center-align the stacked items */
+    flex-direction: column;
+    align-items: center;
   }
-
   .footer-left,
   .footer-right {
-    width: 100%; /* Make them take full width */
-    padding: 0; /* Reset any side padding */
+    width: 100%;
+    padding: 0;
   }
-
   .footer-left {
-    margin-bottom: 1.5rem; /* Add spacing between stacked sections */
+    margin-bottom: 1.5rem;
   }
 }
-
 .footer-logo {
   fill: var(--primary-color);
-  width: 250px; /* Adjust the size as needed */
+  width: 250px;
   display: block;
-  margin: 2rem auto 2.5rem; /* Center the logo */
-  filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.5)); /* Add shadow */
+  margin: 2rem auto 2.5rem;
+  filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.5));
 }
-
-.footer-company-name,
 .footer-address,
-.footer-phone,
-.footer-email {
-  color: white;
+.footer-company-name,
+.footer-email,
+.footer-phone {
+  color: #fff;
   margin: 0.5rem 0;
   text-align: center;
 }
-
 .footer-company-name {
   font-size: 2rem;
-  font-weight: bold;
+  font-weight: 700;
 }
-
 .footer-address {
   font-size: 1rem;
 }
-
 #footer .contact-info {
   margin: 2rem 0;
 }
-
 .footer-social-links {
-  display: flex; /* Use flexbox for alignment */
-  justify-content: center; /* Center horizontally */
-  align-items: center; /* Center vertically, if necessary */
-  gap: 10px; /* Optional: Add space between the links */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
 }
-
 .footer-social-links a {
-  color: white;
+  color: #fff;
   display: inline-block;
   text-align: center;
   margin: 0 1rem;
 }
-
 .footer-social-links a:hover {
   color: var(--primary-color);
 }
-
 .footer-social-links svg {
-  width: 35px; /* Double the current width (24px * 2) */
-  height: 35px; /* Double the current height (24px * 2) */
+  width: 35px;
+  height: 35px;
 }
-
+.footer-bottom,
+.footer-copyright {
+  width: 100%;
+  box-sizing: border-box;
+}
 .footer-right h2 {
-  color: white;
+  color: #fff;
   margin-bottom: 1rem;
   text-align: center;
 }
-
 .footer-contact-form input,
 .footer-contact-form textarea {
   width: 100%;
@@ -120,60 +111,47 @@
   margin-bottom: 1rem;
   border: 1px solid #ccc;
   border-radius: 4px;
-  box-sizing: border-box; /* Include padding and border in the element's total width */
+  box-sizing: border-box;
 }
-
 .footer .submit-button {
-  position: relative; /* Needed for positioning pseudo-element */
-  display: block; /* Changes to block for centering */
-  padding: 0.75rem 2rem; /* Increase padding for a wider button */
-  border-radius: 50px; /* Rounded corners */
-  background-color: black; /* Initial background color */
-  color: white; /* Initial text color */
-  font-weight: bold;
-  border: 4px solid black; /* Border color same as background */
-  overflow: hidden; /* Confine pseudo-element to the button */
-  z-index: 1; /* Ensure content stays above pseudo-element */
-  cursor: pointer; /* Pointer cursor on hover */
-  transition: color 0.3s ease, border-color 0.8s ease; /* Smooth transitions */
+  display: block;
+  padding: 0.75rem 2rem;
+  border-radius: 50px;
+  color: #fff;
+  font-weight: 700;
+  border: 4px solid #000;
+  z-index: 1;
+  cursor: pointer;
+  transition: color 0.3s, border-color 0.8s;
   font-size: 1.2rem;
-  text-transform: uppercase;
-  margin: 0 auto; /* Centers the button horizontally */
-  width: 60%; /* Makes the button wider */
-  text-align: center; /* Ensures text is centered inside the button */
+  margin: 0 auto;
+  width: 60%;
 }
-
 .footer .submit-button::before {
-  content: ''; /* Pseudo-element content */
-  position: absolute; /* Positioning */
+  content: '';
+  position: absolute;
   top: 0;
-  left: -100%; /* Start completely off-screen to the left */
-  width: 250%; /* Wide enough to cover the button at an angle */
-  height: 100%; /* Full button height */
-  background-color: #5dade2; /* Hover background color */
-  transform: skewX(-45deg); /* Add slant */
-  z-index: -1; /* Ensure it's behind the text and border */
-  transition: transform 0.3s ease; /* Smooth slide effect */
+  left: -100%;
+  width: 250%;
+  height: 100%;
+  background-color: #5dade2;
+  transform: skewX(-45deg);
+  z-index: -1;
+  transition: transform 0.3s;
 }
-
 .footer .submit-button:hover::before {
-  transform: translateX(100%) skewX(-45deg); /* Slide in diagonally */
+  transform: translateX(100%) skewX(-45deg);
 }
-
 .footer .submit-button:hover {
-  color: white; /* Font color on hover */
-  border-color: #5dade2; /* Keep border color same */
+  color: #fff;
+  border-color: #5dade2;
 }
-
 .footer-bottom {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  width: 100%;
   margin-top: 2rem;
-  box-sizing: border-box; /* Include padding and border in the element's total width */
 }
-
 @media (max-width: 542px) {
   .footer-bottom {
     flex-wrap: wrap;
@@ -186,54 +164,42 @@
     width: 100%;
   }
 }
-
 .footer-section {
   border-radius: 8px;
   min-width: 200px;
   margin: 1rem;
-  box-sizing: border-box; /* Include padding and border in the element's total width */
-  background-color: white;
+  box-sizing: border-box;
+  background-color: #fff;
 }
-
 .footer-section h3 {
-  text-transform: uppercase;
-  text-align: center;
   font-size: 1.5rem;
   color: var(--primary-color);
-  margin: 0.5rem 0.5rem;
+  margin: 0.5rem;
 }
-
 .footer-section p {
   font-weight: 500;
   text-align: center;
-  color: black;
+  color: #000;
   margin: 0.25rem 0;
   padding: 0 1rem;
 }
-
 .footer-section a {
-  color: black;
+  color: #000;
   text-decoration: none;
 }
-
 .footer-section a:hover {
   text-decoration: underline;
 }
-
 .footer-copyright {
-  color: white;
-  width: 100%;
+  color: #fff;
   text-align: center;
   margin-top: 2rem;
   border-top: 1px solid #ccc;
   padding-top: 1rem;
-  box-sizing: border-box; /* Include padding and border in the element's total width */
 }
-
 .footer-copyright a {
-  color: white;
+  color: #fff;
 }
-
 .footer-copyright a:visited {
   color: inherit !important;
 }
