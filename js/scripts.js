@@ -161,18 +161,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const observerOptions = {
     root: null,
-    threshold: [0, 0.2],
+    threshold: [0, 0.1],
   };
 
   const observerCallback = (entries) => {
     entries.forEach((entry) => {
-      if (entry.intersectionRatio >= 0.2) {
+      if (entry.intersectionRatio >= 0.1) {
         if (entry.target.classList.contains('pricing-card-1')) {
           entry.target.style.setProperty('--delay', '0s');
         } else if (entry.target.classList.contains('pricing-card-2')) {
           entry.target.style.setProperty('--delay', '0.2s');
         } else if (entry.target.classList.contains('pricing-card-3')) {
-          entry.target.style.setProperty('--delay', '0.4s');
+          entry.target.style.setProperty('--delay', '0.3s');
         }
         entry.target.classList.add('visible');
       } else if (entry.intersectionRatio === 0) {
@@ -194,17 +194,21 @@ document.addEventListener('DOMContentLoaded', () => {
   // Observer options
   const observerOptions = {
     root: null, // Use the viewport as the container
-    threshold: 0.2, // Trigger when 20% of the card is visible
+    threshold: 0, // Trigger when any part of the card intersects
   };
 
   const observerCallback = (entries) => {
     entries.forEach((entry) => {
-      if (entry.intersectionRatio > 0.2) {
+      if (entry.isIntersecting) {
         // Add class to slide up when in view
         entry.target.classList.add('visible');
       } else {
-        // Remove class to slide away when out of view
-        entry.target.classList.remove('visible');
+        const bounding = entry.boundingClientRect;
+
+        // Ensure the card is fully off-screen before removing the visible class
+        if (bounding.top > window.innerHeight || bounding.bottom < 0) {
+          entry.target.classList.remove('visible');
+        }
       }
     });
   };
