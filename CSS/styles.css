@@ -1229,6 +1229,7 @@ textarea {
 }
 .quote-card:hover {
   box-shadow: 0 0 20px var(--primary-color);
+  background-color: rgba(0, 0, 0, 0.2); /* Transparent black */
 }
 .quote-card-heading {
   text-transform: uppercase;
