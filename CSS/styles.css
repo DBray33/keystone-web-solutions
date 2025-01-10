@@ -264,8 +264,7 @@ textarea::placeholder {
 }
 .close-icon,
 .hamburger-menu.active .hamburger-icon,
-.portfolio-section .mobile-message,
-.service-item-back h3 {
+.portfolio-section .mobile-message {
   display: none;
 }
 .mobile-menu .hamburger-menu.active .close-icon {
@@ -533,6 +532,20 @@ textarea::placeholder {
   z-index: 1;
   /* Lower z-index */
 }
+.main-content::before {
+  content: '';
+  position: fixed;
+  top: 0; /* Align to the top of the viewport */
+  left: 40%; /* Start at 40% from the left, leaving the left 40% empty */
+  width: 60%; /* Cover the right 60% of the viewport */
+  height: 100%; /* Full height */
+  background-image: url('https://storage.googleapis.com/background-vid/light-blue-bg.webp');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: -1; /* Keep it behind other content */
+}
+
 .next-section {
   margin-top: 100px;
 }
@@ -613,14 +626,25 @@ textarea::placeholder {
 .main-content .logos i {
   font-size: 50px;
 }
+.p-mobile {
+  display: none; /* Hide by default */
+}
+
+@media (max-width: 500px) {
+  .p-mobile {
+    display: block; /* Show only on small screens */
+  }
+  .p-hover {
+    display: none;
+  }
+}
 .services-section {
   position: relative;
   z-index: 3;
-  /* Higher z-index */
+
   width: 60%;
   overflow: hidden;
   background: transparent !important;
-  /* Ensure no background */
 }
 .services {
   position: relative;
@@ -666,7 +690,7 @@ textarea::placeholder {
 }
 .service-item {
   flex: 1 1 calc(50% - 20px);
-  perspective: 1000px;
+  perspective: 2000px;
   box-sizing: border-box;
   height: 33.4vh;
   position: relative;
@@ -732,7 +756,6 @@ textarea::placeholder {
   .main-content {
     position: relative;
     z-index: 1;
-    /* Ensures content appears above the background */
   }
   .main-content::before {
     content: '';
@@ -746,7 +769,6 @@ textarea::placeholder {
     background-repeat: no-repeat;
     background-position: center;
     z-index: -1;
-    /* Ensures it's behind the content */
   }
   .container {
     display: block;
