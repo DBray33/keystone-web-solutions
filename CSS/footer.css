@@ -200,3 +200,15 @@
   color: #fff;
   border-color: #5dade2;
 }
+
+/* for services pages */
+.page-content .footer {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 2rem;
+  width: calc(100% - 3rem); /* Account for the left and right margin */
+  margin: 0 auto 1.5rem; /* Adds 1.5rem bottom margin */
+  box-sizing: border-box;
+  z-index: 10;
+  border-radius: 8px;
+}

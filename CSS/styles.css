@@ -522,7 +522,7 @@ textarea::placeholder {
   background-color: transparent;
   overflow-x: hidden;
   /* Background image styles */
-  background-image: url('https://storage.googleapis.com/background-vid/light-blue-bg.webp');
+  /* background-image: url('https://storage.googleapis.com/background-vid/light-blue-bg.webp'); */
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -539,11 +539,13 @@ textarea::placeholder {
   left: 40%; /* Start at 40% from the left, leaving the left 40% empty */
   width: 60%; /* Cover the right 60% of the viewport */
   height: 100%; /* Full height */
-  background-image: url('https://storage.googleapis.com/background-vid/light-blue-bg.webp');
+  /* background-image: url('https://storage.googleapis.com/background-vid/light-blue-bg.webp'); */
+  background-image: url('https://storage.googleapis.com/background-vid/bluewave-optimized.svg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   z-index: -1; /* Keep it behind other content */
+  opacity: 0.6; /* Make the background transparent */
 }
 
 .next-section {
@@ -764,11 +766,13 @@ textarea::placeholder {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('https://storage.googleapis.com/background-vid/light-blue-bg.webp');
+    background-image: url('https://storage.googleapis.com/background-vid/bluewave-optimized.svg');
+    /* background-image: url('https://storage.googleapis.com/background-vid/light-blue-bg.webp'); */
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     z-index: -1;
+    opacity: 0.5;
   }
   .container {
     display: block;

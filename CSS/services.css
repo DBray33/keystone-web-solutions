@@ -28,27 +28,42 @@ html {
 .section-header h1 {
   text-transform: uppercase;
 }
+
+/* BACKGROUNDS */
 .custom-web-design-page {
   background: url('https://storage.googleapis.com/background-vid/bluewave-optimized.svg')
     center top/cover no-repeat fixed;
 }
 .responsive-design-page {
   background: url('https://storage.googleapis.com/background-vid/bluewave-optimized.svg')
-    center top/cover no-repeat;
+    center top/cover no-repeat fixed;
 }
+.ecommerce-solutions-page {
+  background: url('https://storage.googleapis.com/background-vid/bluewave-optimized.svg')
+    center top/cover no-repeat fixed;
+}
+.seo-page {
+  background: url('https://storage.googleapis.com/background-vid/bluewave-optimized.svg')
+    center top/cover no-repeat fixed;
+}
+.digital-marketing-page {
+  background: url('https://storage.googleapis.com/background-vid/bluewave-optimized.svg')
+    center top/cover no-repeat fixed;
+}
+.pagespeed-page {
+  background: url('https://storage.googleapis.com/background-vid/bluewave-optimized.svg')
+    center top/cover no-repeat fixed;
+}
+.content-creation-page {
+  background: url('https://storage.googleapis.com/background-vid/bluewave-optimized.svg')
+    center top/cover no-repeat fixed;
+}
+
 .page-content {
   margin-top: 7rem;
   font-family: Exo, sans-serif;
 }
-.wave-bg {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-  overflow: hidden;
-}
+
 .custom-web-design {
   /* padding: 2rem; */
   font-family: Exo, sans-serif;
@@ -95,6 +110,13 @@ html {
 .content-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+  background: rgba(
+    211,
+    211,
+    211,
+    0.7
+  ); /* Light gray (#d3d3d3) with 80% opacity */
+  outline: 1px solid #5dade2;
 }
 .content-card h3 {
   margin-bottom: 0.75rem;

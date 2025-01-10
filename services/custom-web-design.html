@@ -43,23 +43,87 @@
 
   <!-- BODY -->
   <body class="custom-web-design-page">
-    <div class="page-content">
-      <!-- WAVY BACKGROUND -->
+    <!-- DESKTOP NAVBAR -->
+    <nav class="navbar">
+      <ul class="navbar-links">
+        <li><a href="../index.html">HOME</a></li>
 
-      <!-- DESKTOP NAVBAR -->
-      <nav class="navbar">
-        <ul class="navbar-links">
-          <li><a href="../index.html">HOME</a></li>
+        <!-- Services Dropdown -->
+        <li class="navbar-dropdown">
+          <a href="../../index.html#services-section">Our Services</a>
+          <ul class="navbar-dropdown-menu">
+            <li>
+              <a href="../../index.html#services-section">Services Summary</a>
+            </li>
+            <li>
+              <a href="custom-web-design.html">Custom Web Design</a>
+            </li>
+            <li><a href="responsive-design.html">Responsive Design</a></li>
+            <li>
+              <a href="ecommerce-solutions.html">E-commerce Solutions</a>
+            </li>
+            <li><a href="seo.html">SEO Optimization</a></li>
+            <li><a href="digital-marketing.html">Digital Marketing</a></li>
+            <li><a href="pagespeed.html">PageSpeed Analytics</a></li>
+            <li><a href="content-creation.html">Content Creation</a></li>
+          </ul>
+        </li>
+
+        <!-- About Us Dropdown -->
+        <li class="navbar-dropdown">
+          <a href="">About</a>
+          <ul class="navbar-dropdown-menu">
+            <li><a href="../about/about-us.html">About Us</a></li>
+            <li><a href="../about/faq.html">FAQs</a></li>
+            <li><a href="../about/blog.html">Blog</a></li>
+            <li>
+              <a href="../about/testimonials.html">Client Testimonials</a>
+            </li>
+            <li><a href="../about/jobs.html">Jobs</a></li>
+          </ul>
+        </li>
+
+        <li><a href="#footer">Contact</a></li>
+        <li><a href="../../index.html#quote-section">Get a Quote</a></li>
+        <li class="submit-button">
+          <a href="../../index.html#website-guide">Let's Get Started</a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- MOBILE NAV -->
+    <nav class="mobile-menu">
+      <!-- Hamburger Menu -->
+      <button class="hamburger-menu" aria-label="Toggle menu">
+        <span class="hamburger-icon">&#9776;</span>
+        <span class="close-icon">&times;</span>
+      </button>
+
+      <!-- Dropdown Menu -->
+      <div class="dropdown-menu">
+        <ul class="dropdown-links">
+          <li>
+            <a href="../index.html">
+              <span class="icon">🏠</span>
+              <span class="title">Home</span>
+            </a>
+          </li>
 
           <!-- Services Dropdown -->
-          <li class="navbar-dropdown">
-            <a href="../../index.html#services-section">Our Services</a>
-            <ul class="navbar-dropdown-menu">
+          <li class="dropdown-parent">
+            <a href="">
+              <span class="icon">🛠️</span>
+              <span class="title">Services</span>
+              <span class="down-arrow"></span>
+            </a>
+            <ul class="dropdown-submenu">
               <li>
-                <a href="../../index.html#services-section">Services Summary</a>
+                <a href="../../index.html#services-section"
+                  ><strong>Services Summary</strong></a
+                >
               </li>
               <li>
-                <a href="custom-web-design.html">Custom Web Design</a>
+                <a href="custom-web-design.html"> Custom Web Design </a>
               </li>
               <li><a href="responsive-design.html">Responsive Design</a></li>
               <li>
@@ -67,15 +131,24 @@
               </li>
               <li><a href="seo.html">SEO Optimization</a></li>
               <li><a href="digital-marketing.html">Digital Marketing</a></li>
-              <li><a href="pagespeed.html">PageSpeed Analytics</a></li>
+              <li>
+                <a href="pagespeed.html">PageSpeed Analytics</a>
+              </li>
               <li><a href="content-creation.html">Content Creation</a></li>
+              <li>
+                <button class="submenu-close">Close</button>
+              </li>
             </ul>
           </li>
 
           <!-- About Us Dropdown -->
-          <li class="navbar-dropdown">
-            <a href="">About</a>
-            <ul class="navbar-dropdown-menu">
+          <li class="dropdown-parent">
+            <a href="">
+              <span class="icon">👨‍💼</span>
+              <span class="title">About Us</span>
+              <span class="down-arrow"></span>
+            </a>
+            <ul class="dropdown-submenu">
               <li><a href="../about/about-us.html">About Us</a></li>
               <li><a href="../about/faq.html">FAQs</a></li>
               <li><a href="../about/blog.html">Blog</a></li>
@@ -83,110 +156,35 @@
                 <a href="../about/testimonials.html">Client Testimonials</a>
               </li>
               <li><a href="../about/jobs.html">Jobs</a></li>
+              <li>
+                <button class="submenu-close">Close</button>
+              </li>
             </ul>
           </li>
 
-          <li><a href="#footer">Contact</a></li>
-          <li><a href="../../index.html#quote-section">Get a Quote</a></li>
-          <li class="submit-button">
-            <a href="../../index.html#website-guide">Let's Get Started</a>
+          <li>
+            <a href="../../index.html#website-guide">
+              <span class="icon">📘</span>
+              <span class="title">Get Started</span>
+            </a>
+          </li>
+          <li>
+            <a href="../../index.html#quote-section">
+              <span class="icon">💰</span>
+              <span class="title">Quote</span>
+            </a>
+          </li>
+          <li>
+            <a href="#footer">
+              <span class="icon">📞</span>
+              <span class="title">Contact</span>
+            </a>
           </li>
         </ul>
-      </nav>
+      </div>
+    </nav>
 
-      <!-- MOBILE NAV -->
-      <nav class="mobile-menu">
-        <!-- Hamburger Menu -->
-        <button class="hamburger-menu" aria-label="Toggle menu">
-          <span class="hamburger-icon">&#9776;</span>
-          <span class="close-icon">&times;</span>
-        </button>
-
-        <!-- Dropdown Menu -->
-        <div class="dropdown-menu">
-          <ul class="dropdown-links">
-            <li>
-              <a href="../index.html">
-                <span class="icon">🏠</span>
-                <span class="title">Home</span>
-              </a>
-            </li>
-
-            <!-- Services Dropdown -->
-            <li class="dropdown-parent">
-              <a href="">
-                <span class="icon">🛠️</span>
-                <span class="title">Services</span>
-                <span class="down-arrow"></span>
-              </a>
-              <ul class="dropdown-submenu">
-                <li>
-                  <a href="../../index.html#services-section"
-                    ><strong>Services Summary</strong></a
-                  >
-                </li>
-                <li>
-                  <a href="custom-web-design.html"> Custom Web Design </a>
-                </li>
-                <li><a href="responsive-design.html">Responsive Design</a></li>
-                <li>
-                  <a href="ecommerce-solutions.html">E-commerce Solutions</a>
-                </li>
-                <li><a href="seo.html">SEO Optimization</a></li>
-                <li><a href="digital-marketing.html">Digital Marketing</a></li>
-                <li>
-                  <a href="pagespeed.html">PageSpeed Analytics</a>
-                </li>
-                <li><a href="content-creation.html">Content Creation</a></li>
-                <li>
-                  <button class="submenu-close">Close</button>
-                </li>
-              </ul>
-            </li>
-
-            <!-- About Us Dropdown -->
-            <li class="dropdown-parent">
-              <a href="">
-                <span class="icon">👨‍💼</span>
-                <span class="title">About Us</span>
-                <span class="down-arrow"></span>
-              </a>
-              <ul class="dropdown-submenu">
-                <li><a href="../about/about-us.html">About Us</a></li>
-                <li><a href="../about/faq.html">FAQs</a></li>
-                <li><a href="../about/blog.html">Blog</a></li>
-                <li>
-                  <a href="../about/testimonials.html">Client Testimonials</a>
-                </li>
-                <li><a href="../about/jobs.html">Jobs</a></li>
-                <li>
-                  <button class="submenu-close">Close</button>
-                </li>
-              </ul>
-            </li>
-
-            <li>
-              <a href="../../index.html#website-guide">
-                <span class="icon">📘</span>
-                <span class="title">Get Started</span>
-              </a>
-            </li>
-            <li>
-              <a href="../../index.html#quote-section">
-                <span class="icon">💰</span>
-                <span class="title">Quote</span>
-              </a>
-            </li>
-            <li>
-              <a href="#footer">
-                <span class="icon">📞</span>
-                <span class="title">Contact</span>
-              </a>
-            </li>
-          </ul>
-        </div>
-      </nav>
-
+    <div class="page-content">
       <!-- Custom Web Design Details -->
       <section class="custom-web-design">
         <div class="container">
@@ -582,7 +580,6 @@
         // Automatically update the year
         document.getElementById('year').textContent = new Date().getFullYear();
       </script>
-
       <script src="../js/scripts.js" defer></script>
       <script src="../js/mobile-menu.js" defer></script>
     </div>
