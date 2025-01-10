@@ -28,18 +28,16 @@ html {
 .section-header h1 {
   text-transform: uppercase;
 }
-body.custom-web-design-page {
+.custom-web-design-page {
   background: url('https://storage.googleapis.com/background-vid/bluewave-optimized.svg')
     center top/cover no-repeat fixed;
 }
-body.responsive-design-page {
+.responsive-design-page {
   background: url('https://storage.googleapis.com/background-vid/bluewave-optimized.svg')
     center top/cover no-repeat;
 }
-.page-content,
-.responsive-design-page,
-.custom-web-design-page {
-  margin-top: 5rem;
+.page-content {
+  margin-top: 7rem;
   font-family: Exo, sans-serif;
 }
 .wave-bg {
@@ -52,7 +50,7 @@ body.responsive-design-page {
   overflow: hidden;
 }
 .custom-web-design {
-  padding: 2rem;
+  /* padding: 2rem; */
   font-family: Exo, sans-serif;
 }
 .container {

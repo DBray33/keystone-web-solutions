@@ -34,7 +34,6 @@ html {
 .sidebar-content {
   text-align: center;
 }
-
 .journey-heading,
 .more-info-button,
 .navbar-links a,
@@ -371,12 +370,14 @@ textarea::placeholder {
   cursor: pointer;
 }
 .dropdown-submenu li {
-  text-align: center; /* Centers inline elements like buttons */
+  text-align: center;
+  /* Centers inline elements like buttons */
 }
-
 .submenu-close {
-  display: inline-block; /* Ensures the button behaves like text */
-  margin: 0 auto; /* Optional, for consistency */
+  display: inline-block;
+  /* Ensures the button behaves like text */
+  margin: 0 auto;
+  /* Optional, for consistency */
 }
 .sidebar,
 .sidebar::before {
@@ -521,7 +522,6 @@ textarea::placeholder {
   padding: 0;
   background-color: transparent;
   overflow-x: hidden;
-
   /* Background image styles */
   background-image: url('https://storage.googleapis.com/background-vid/light-blue-bg.webp');
   background-size: cover;
@@ -530,6 +530,8 @@ textarea::placeholder {
   min-height: 100vh;
   background-attachment: fixed;
   position: relative;
+  z-index: 1;
+  /* Lower z-index */
 }
 .next-section {
   margin-top: 100px;
@@ -582,12 +584,16 @@ textarea::placeholder {
   }
 }
 .welcome-section-devices {
-  width: 100%;
+  width: 50%;
   max-width: 800px;
   height: auto;
-  margin-top: 1rem;
-  margin-bottom: -3rem;
+  margin: 1rem auto -3rem auto; /* Center horizontally with auto left and right margins */
   display: block;
+}
+@media (max-width: 500px) {
+  .welcome-section-devices {
+    width: 80%;
+  }
 }
 .main-content .section-2 .about-us h2 {
   font-size: 2rem;
@@ -608,10 +614,14 @@ textarea::placeholder {
   font-size: 50px;
 }
 .services-section {
+  position: relative;
+  z-index: 3;
+  /* Higher z-index */
   width: 60%;
   overflow: hidden;
+  background: transparent !important;
+  /* Ensure no background */
 }
-
 .services {
   position: relative;
   display: flex;
@@ -633,7 +643,7 @@ textarea::placeholder {
   align-items: center;
   padding: 20px;
   flex-direction: column;
-  z-index: 2;
+  z-index: 999;
 }
 .service-item-back {
   justify-content: center;
@@ -641,7 +651,6 @@ textarea::placeholder {
   flex-direction: column;
   background: #5dade2;
 }
-
 .service-item-inner.rotate .service-item-front {
   opacity: 0;
   pointer-events: none;
@@ -722,9 +731,9 @@ textarea::placeholder {
   }
   .main-content {
     position: relative;
-    z-index: 1; /* Ensures content appears above the background */
+    z-index: 1;
+    /* Ensures content appears above the background */
   }
-
   .main-content::before {
     content: '';
     position: fixed;
@@ -736,7 +745,8 @@ textarea::placeholder {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    z-index: -1; /* Ensures it's behind the content */
+    z-index: -1;
+    /* Ensures it's behind the content */
   }
   .container {
     display: block;
@@ -807,7 +817,6 @@ textarea::placeholder {
     margin-bottom: 1rem;
   }
 }
-
 .service-item-back::before,
 .service-item-front::before {
   content: '';
@@ -888,6 +897,8 @@ textarea::placeholder {
   margin: 0 auto;
   background-color: #fff;
   overflow: hidden;
+  z-index: 2;
+  /* Lower than services-section but higher than main-content */
 }
 .journey-heading {
   font-size: 3rem;
@@ -1003,7 +1014,8 @@ label {
   border-radius: 8px;
   padding: 0 1.5rem 4.5rem;
   width: 30%;
-  /* max-width: 320px; */
+  /* max-width: 320px;
+     */
   text-align: left;
   transition: transform 0.3s, box-shadow 0.3s;
   position: relative;
@@ -1229,7 +1241,8 @@ textarea {
 }
 .quote-card:hover {
   box-shadow: 0 0 20px var(--primary-color);
-  background-color: rgba(0, 0, 0, 0.2); /* Transparent black */
+  background-color: rgba(0, 0, 0, 0.2);
+  /* Transparent black */
 }
 .quote-card-heading {
   text-transform: uppercase;
