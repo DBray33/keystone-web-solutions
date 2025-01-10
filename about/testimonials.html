@@ -6,15 +6,27 @@
     <meta
       name="description"
       content="Web Forge Digital Solutions offers custom website design, responsive web development, e-commerce solutions, SEO optimization, and digital marketing services to help businesses establish a strong online presence." />
+    <!-- Preload for Desktop Video -->
+    <link
+      rel="preload"
+      href="https://storage.googleapis.com/background-vid/background-vid-compressed.mp4"
+      as="video"
+      type="video/mp4" />
+
+    <!-- Preload for Mobile Video -->
+    <link
+      rel="preload"
+      href="https://storage.googleapis.com/background-vid/background-vid-compressed-mobile.mp4"
+      as="video"
+      type="video/mp4" />
     <!-- Preload Largest Contentful Paint Image -->
     <link
       rel="preload"
-      href="https://storage.googleapis.com/background-vid/design.webp?v=1"
+      href="https://storage.googleapis.com/background-vid/light-blue-bg.webp"
       as="image"
       type="image/webp" />
 
     <!-- CSS Styling -->
-    <link rel="stylesheet" href="../css/services.css" />
     <link rel="stylesheet" href="../CSS/styles.css" />
     <link rel="stylesheet" href="../CSS/mobile.css" />
     <link rel="stylesheet" href="../CSS/footer.css" />
@@ -46,49 +58,59 @@
 
     <title>Web Forge Digital Solutions</title>
   </head>
-
   <!-- BODY -->
-  <body class="responsive-design-page">
+  <body>
     <!-- DESKTOP NAVBAR -->
     <nav class="navbar">
       <ul class="navbar-links">
-        <li><a href="../index.html">HOME</a></li>
+        <li><a href="index.html">HOME</a></li>
 
         <!-- Services Dropdown -->
         <li class="navbar-dropdown">
           <a href="#services-section">Our Services</a>
           <ul class="navbar-dropdown-menu">
             <li>
-              <a href="custom-web-design.html">Custom Web Design</a>
+              <a href="services/custom-web-design.html">Custom Web Design</a>
             </li>
-            <li><a href="responsive-design.html">Responsive Design</a></li>
             <li>
-              <a href="ecommerce-solutions.html">E-commerce Solutions</a>
+              <a href="services/responsive-design.html">Responsive Design</a>
             </li>
-            <li><a href="seo.html">SEO Optimization</a></li>
-            <li><a href="digital-marketing.html">Digital Marketing</a></li>
-            <li><a href="pagespeed.html">PageSpeed Analytics</a></li>
-            <li><a href="content-creation.html">Content Creation</a></li>
+            <li>
+              <a href="services/ecommerce-solutions.html"
+                >E-commerce Solutions</a
+              >
+            </li>
+            <li>
+              <a href="services/seo.html">SEO Optimization</a>
+            </li>
+            <li>
+              <a href="services/digital-marketing.html">Digital Marketing</a>
+            </li>
+            <li>
+              <a href="services/pagespeed.html">PageSpeed Analytics</a>
+            </li>
+            <li>
+              <a href="services/content-creation.html">Content Creation</a>
+            </li>
           </ul>
         </li>
 
         <!-- About Us Dropdown -->
         <li class="navbar-dropdown">
-          <a href="#about-us">About Us</a>
+          <a href="#about-us">About</a>
           <ul class="navbar-dropdown-menu">
-            <li><a href="our-team.html">Our Team</a></li>
+            <li><a href="our-team.html">About Us</a></li>
             <li><a href="our-mission.html">Our Mission</a></li>
-            <li>
-              <a href="client-testimonials.html">Client Testimonials</a>
-            </li>
-            <li><a href="careers.html">Careers</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="blog.html">Client Testimonials</a></li>
+            <li><a href="jobs.html">Jobs</a></li>
           </ul>
         </li>
 
         <li><a href="#footer">Contact</a></li>
         <li><a href="#quote-section">Get a Quote</a></li>
         <li class="submit-button">
-          <a href="../../index.html#website-guide">Let's Get Started</a>
+          <a href="#website-guide">Let's Get Started</a>
         </li>
       </ul>
     </nav>
@@ -105,7 +127,7 @@
       <div class="dropdown-menu">
         <ul class="dropdown-links">
           <li>
-            <a href="../index.html">
+            <a href="index.html">
               <span class="icon">🏠</span>
               <span class="title">Home</span>
             </a>
@@ -120,22 +142,34 @@
             </a>
             <ul class="dropdown-submenu">
               <li>
-                <a href="../../index.html#services-section">Services Summary</a>
+                <a href="#services-section">Services Summary</a>
               </li>
               <li>
-                <a href="custom-web-design.html"> Custom Web Design </a>
+                <a href="services/custom-web-design.html">
+                  Custom Web Design
+                </a>
               </li>
-              <li><a href="responsive-design.html">Responsive Design</a></li>
               <li>
-                <a href="ecommerce-solutions.html">E-commerce Solutions</a>
+                <a href="services/responsive-design.html">Responsive Design</a>
               </li>
-              <li><a href="seo.html">SEO Optimization</a></li>
-              <li><a href="digital-marketing.html">Digital Marketing</a></li>
               <li>
-                <a href="pagespeed.html">PageSpeed Analytics</a>
+                <a href="services/ecommerce-solutions.html"
+                  >E-commerce Solutions</a
+                >
               </li>
-              <li><a href="content-creation.html">Content Creation</a></li>
-              <button class="submenu-close">Close</button>
+              <li><a href="services/seo.html">SEO Optimization</a></li>
+              <li>
+                <a href="services/digital-marketing.html">Digital Marketing</a>
+              </li>
+              <li>
+                <a href="services/pagespeed.html">PageSpeed Analytics</a>
+              </li>
+              <li>
+                <a href="services/content-creation.html">Content Creation</a>
+              </li>
+              <li>
+                <button class="submenu-close">Close</button>
+              </li>
             </ul>
           </li>
 
@@ -149,11 +183,14 @@
             <ul class="dropdown-submenu">
               <li><a href="our-team.html">Our Team</a></li>
               <li><a href="our-mission.html">Our Mission</a></li>
+              <li><a href="blog.html">Blog</a></li>
               <li>
                 <a href="client-testimonials.html">Client Testimonials</a>
               </li>
-              <li><a href="careers.html">Careers</a></li>
-              <button class="submenu-close">Close</button>
+              <li><a href="jobs.html">Jobs</a></li>
+              <li>
+                <button class="submenu-close">Close</button>
+              </li>
             </ul>
           </li>
 
@@ -178,221 +215,6 @@
         </ul>
       </div>
     </nav>
-
-    <!-- UNIQUE CONTENT STARTS -->
-    <div class="page-content">
-      <!-- RESPONSIVE Design Details -->
-      <section class="responsive-design">
-        <div class="container">
-          <header class="section-header">
-            <h1>RESPONSIVE DESIGN</h1>
-            <p>
-              Websites that look stunning and work seamlessly on any device.
-            </p>
-          </header>
-
-          <div class="content-grid">
-            <article class="content-card">
-              <h2>Why Responsive Design Matters</h2>
-              <div class="sub-section">
-                <h3>Adaptability to Any Screen</h3>
-                <p>
-                  Whether your audience is browsing on a smartphone, tablet, or
-                  desktop, a responsive design ensures your website looks
-                  flawless and functions perfectly. No more zooming or awkward
-                  navigation—just an experience tailored to any screen size.
-                </p>
-              </div>
-              <div class="sub-section">
-                <h3>Enhanced User Experience</h3>
-                <p>
-                  Users expect a smooth and intuitive experience, no matter
-                  their device. Responsive websites reduce bounce rates and keep
-                  visitors engaged with a consistent, user-friendly interface
-                  across platforms.
-                </p>
-              </div>
-              <div class="sub-section">
-                <h3>SEO Benefits</h3>
-                <p>
-                  Search engines prioritize mobile-friendly websites in
-                  rankings. Responsive design not only enhances usability but
-                  also boosts visibility, helping you reach more potential
-                  customers.
-                </p>
-              </div>
-            </article>
-
-            <article class="content-card">
-              <h2>How We Ensure Responsiveness</h2>
-              <div class="sub-section">
-                <h3>Mobile-First Approach</h3>
-                <p>
-                  We start by designing for smaller screens and scale up,
-                  ensuring an optimized experience for all devices. Your website
-                  will always look and perform its best, regardless of screen
-                  size.
-                </p>
-              </div>
-              <div class="sub-section">
-                <h3>Comprehensive Testing</h3>
-                <p>
-                  Every design is rigorously tested across various devices and
-                  browsers to guarantee compatibility and performance. No detail
-                  is overlooked in delivering a seamless user experience.
-                </p>
-              </div>
-              <div class="sub-section">
-                <h3>Fluid Grid and Flexible Media</h3>
-                <p>
-                  Our designs are built on fluid grids and utilize flexible
-                  images and media queries to adapt effortlessly to different
-                  resolutions and orientations.
-                </p>
-              </div>
-            </article>
-
-            <div class="content-card video-card">
-              <video autoplay muted loop playsinline>
-                <source
-                  src="https://storage.googleapis.com/background-vid/responsive-design.mp4"
-                  type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
-            </div>
-
-            <article class="content-card">
-              <h2>The Future of Web Design</h2>
-              <div class="sub-section">
-                <h3>Progressive Enhancement</h3>
-                <p>
-                  As technology evolves, your website will remain future-proof
-                  with scalable, adaptable design principles built into its
-                  foundation.
-                </p>
-              </div>
-              <div class="sub-section">
-                <h3>Global Accessibility</h3>
-                <p>
-                  Responsive design ensures your website is accessible to users
-                  worldwide, including those with slower internet connections or
-                  older devices.
-                </p>
-              </div>
-              <div class="sub-section">
-                <h3>Innovation at Its Core</h3>
-                <p>
-                  We integrate cutting-edge practices to keep your site at the
-                  forefront of design trends, ensuring it remains fresh and
-                  engaging.
-                </p>
-              </div>
-            </article>
-          </div>
-
-          <footer class="cta">
-            <p>Ready to make your website responsive?</p>
-            <a href="#contact" class="cta-button">Contact Us</a>
-          </footer>
-        </div>
-      </section>
-    </div>
-
-    <!-- STUFF YOU SHOULD KNOW -->
-    <section class="stuff-you-should-know">
-      <div class="stuff-you-should-know-box">
-        <h2 class="stuff-you-should-know-heading">Stuff You Should Know</h2>
-        <h3 class="stuff-you-should-know-subheading">Please Read</h3>
-        <p>
-          Statistics about how users behave when websites take too long to load
-          highlight the critical importance of fast loading times for user
-          retention and conversion rates. Here are some key findings from
-          studies and surveys:
-        </p>
-
-        <h3>Impact on User Behavior</h3>
-        <ul>
-          <li>
-            <strong>User Abandonment:</strong> 53% of mobile users will abandon
-            a website if it takes longer than 3 seconds (Google, 2021).
-          </li>
-          <li>
-            <strong>1-Second Delay:</strong> A 1-second delay in page load time
-            can reduce conversions by 7% (Akamai, 2022).
-          </li>
-          <li>
-            <strong>Bounce Rates:</strong> Websites that load within 2 seconds
-            experience a bounce rate (percentage of visitors leaving after
-            viewing only one page.) of 9%, while those taking 5 seconds or more
-            see bounce rates jump to 38% (Pingdom, 2023).
-          </li>
-          <li>
-            <strong>Customer Dissatisfaction:</strong> 79% of shoppers
-            dissatisfied with website performance are less likely to buy from
-            the same site again (Neil Patel, 2023).
-          </li>
-        </ul>
-
-        <h3>Revenue and Conversions</h3>
-        <ul>
-          <li>
-            <strong>Revenue Loss:</strong> A 2-second delay in load time during
-            a transaction can result in abandonment rates up to 87% (Akamai,
-            2022).
-          </li>
-          <li>
-            <strong>eCommerce Impact:</strong> For a site making $100,000 per
-            day, a 1-second page delay could potentially cost $2.5 million in
-            lost sales per year (Kissmetrics, 2023).
-          </li>
-          <li>
-            <strong>Conversion Rates:</strong> Pages that load in 2 seconds or
-            less have an average conversion rate of 4.8%, compared to 2.4% for
-            slower pages (Portent, 2022).
-          </li>
-        </ul>
-
-        <h3>User Expectations</h3>
-        <ul>
-          <li>
-            <strong>Speed Expectations:</strong> 47% of users expect a webpage
-            to load in 2 seconds or less (Akamai, 2022).
-          </li>
-          <li>
-            <strong>Mobile vs. Desktop:</strong> Mobile users are 2x more likely
-            than desktop users to abandon a slow-loading site (Google, 2021).
-          </li>
-        </ul>
-
-        <h3>SEO and Search Rankings</h3>
-        <ul>
-          <li>
-            <strong>SEO Impact:</strong> Page speed is a ranking factor in
-            Google’s algorithm for desktop and mobile searches (Google, 2020).
-          </li>
-          <li>
-            <strong>Visibility:</strong> Slow-loading websites are penalized in
-            search rankings, reducing organic traffic.
-          </li>
-        </ul>
-
-        <h3>Key Takeaways</h3>
-        <ul>
-          <li>
-            Faster loading times lead to better user experience, higher
-            conversions, and improved retention.
-          </li>
-          <li>
-            Modern users expect speed, efficiency, and a seamless experience,
-            especially on mobile devices.
-          </li>
-          <li>
-            Investing in tools like PageSpeed Insights, lazy loading, and image
-            optimization significantly reduces loading times.
-          </li>
-        </ul>
-      </div>
-    </section>
 
     <!-- Footer -->
     <footer class="footer" id="footer">
@@ -534,7 +356,7 @@
       document.getElementById('year').textContent = new Date().getFullYear();
     </script>
 
-    <script src="../js/scripts.js" defer></script>
-    <script src="../js/mobile-menu.js" defer></script>
+    <script src="js/scripts.js" defer></script>
+    <script src="js/mobile-menu.js" defer></script>
   </body>
 </html>

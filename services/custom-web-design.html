@@ -13,8 +13,8 @@
     <link rel="stylesheet" href="../css/mobile.css" />
     <link rel="stylesheet" href="../css/footer.css" />
 
-    <!-- Google Fonts -->
-    <!-- Preloading Fonts -->
+    <!-- Google Fonts Optimization -->
+    <!-- Preload Google Fonts -->
     <link
       rel="preload"
       href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Fira+Mono:wght@400;500;700&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Oswald:wght@200..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Yeseva+One&display=swap"
@@ -23,6 +23,18 @@
     <noscript>
       <link
         href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Fira+Mono:wght@400;500;700&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Oswald:wght@200..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Yeseva+One&display=swap"
+        rel="stylesheet" />
+    </noscript>
+
+    <!-- Second Font Family -->
+    <link
+      rel="preload"
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Exo:ital,wght@0,100..900;1,100..900&family=Fira+Mono:wght@400;500;700&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Oswald:wght@200..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Yeseva+One&display=swap"
+      as="style"
+      onload="this.rel='stylesheet'" />
+    <noscript>
+      <link
+        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Exo:ital,wght@0,100..900;1,100..900&family=Fira+Mono:wght@400;500;700&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Oswald:wght@200..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Yeseva+One&display=swap"
         rel="stylesheet" />
     </noscript>
 
@@ -41,8 +53,11 @@
 
           <!-- Services Dropdown -->
           <li class="navbar-dropdown">
-            <a href="#services-section">Our Services</a>
+            <a href="../../index.html#services-section">Our Services</a>
             <ul class="navbar-dropdown-menu">
+              <li>
+                <a href="../../index.html#services-section">Services Summary</a>
+              </li>
               <li>
                 <a href="custom-web-design.html">Custom Web Design</a>
               </li>
@@ -59,19 +74,20 @@
 
           <!-- About Us Dropdown -->
           <li class="navbar-dropdown">
-            <a href="#about-us">About Us</a>
+            <a href="">About</a>
             <ul class="navbar-dropdown-menu">
-              <li><a href="our-team.html">Our Team</a></li>
-              <li><a href="our-mission.html">Our Mission</a></li>
+              <li><a href="../about/about-us.html">About Us</a></li>
+              <li><a href="../about/faq.html">FAQs</a></li>
+              <li><a href="../about/blog.html">Blog</a></li>
               <li>
-                <a href="client-testimonials.html">Client Testimonials</a>
+                <a href="../about/testimonials.html">Client Testimonials</a>
               </li>
-              <li><a href="careers.html">Careers</a></li>
+              <li><a href="../about/jobs.html">Jobs</a></li>
             </ul>
           </li>
 
           <li><a href="#footer">Contact</a></li>
-          <li><a href="#quote-section">Get a Quote</a></li>
+          <li><a href="../../index.html#quote-section">Get a Quote</a></li>
           <li class="submit-button">
             <a href="../../index.html#website-guide">Let's Get Started</a>
           </li>
@@ -106,7 +122,7 @@
               <ul class="dropdown-submenu">
                 <li>
                   <a href="../../index.html#services-section"
-                    >Services Summary</a
+                    ><strong>Services Summary</strong></a
                   >
                 </li>
                 <li>
@@ -122,7 +138,9 @@
                   <a href="pagespeed.html">PageSpeed Analytics</a>
                 </li>
                 <li><a href="content-creation.html">Content Creation</a></li>
-                <button class="submenu-close">Close</button>
+                <li>
+                  <button class="submenu-close">Close</button>
+                </li>
               </ul>
             </li>
 
@@ -134,24 +152,27 @@
                 <span class="down-arrow"></span>
               </a>
               <ul class="dropdown-submenu">
-                <li><a href="our-team.html">Our Team</a></li>
-                <li><a href="our-mission.html">Our Mission</a></li>
+                <li><a href="../about/about-us.html">About Us</a></li>
+                <li><a href="../about/faq.html">FAQs</a></li>
+                <li><a href="../about/blog.html">Blog</a></li>
                 <li>
-                  <a href="client-testimonials.html">Client Testimonials</a>
+                  <a href="../about/testimonials.html">Client Testimonials</a>
                 </li>
-                <li><a href="careers.html">Careers</a></li>
-                <button class="submenu-close">Close</button>
+                <li><a href="../about/jobs.html">Jobs</a></li>
+                <li>
+                  <button class="submenu-close">Close</button>
+                </li>
               </ul>
             </li>
 
             <li>
-              <a href="#website-guide">
+              <a href="../../index.html#website-guide">
                 <span class="icon">📘</span>
                 <span class="title">Get Started</span>
               </a>
             </li>
             <li>
-              <a href="#quote-section">
+              <a href="../../index.html#quote-section">
                 <span class="icon">💰</span>
                 <span class="title">Quote</span>
               </a>
@@ -527,10 +548,11 @@
           </div>
           <div class="footer-section">
             <h3>Company</h3>
-            <p><a href="#">Our Story</a></p>
-            <p><a href="#">FAQs</a></p>
-            <p><a href="#">Blog</a></p>
-            <p><a href="#">Jobs</a></p>
+            <p><a href="../about/about-us.html">About Us</a></p>
+            <p><a href="../about/faq.html">FAQs</a></p>
+            <p><a href="../about/blog.html">Blog</a></p>
+            <p><a href="../about/testimonials.html">Testimonials</a></p>
+            <p><a href="../about/jobs.html">Jobs</a></p>
           </div>
           <div class="footer-section">
             <h3>Current Clients</h3>
@@ -550,8 +572,8 @@
             reserved.
           </p>
           <p>
-            <a href="footer/privacy.html">Privacy Policy</a> |
-            <a href="footer/terms.html">Terms of Use</a>
+            <a href="../footer/privacy.html">Privacy Policy</a> |
+            <a href="../footer/terms.html">Terms of Use</a>
           </p>
         </div>
       </footer>
