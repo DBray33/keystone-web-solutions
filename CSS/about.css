@@ -1,7 +1,7 @@
 /* General Styles */
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
+  font-family: Exo, sans-serif;
 }
 
 .about-us-page {
@@ -19,7 +19,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 1rem;
+  /* padding: 1rem; */
 }
 
 .text-box {
@@ -27,15 +27,14 @@ body {
   flex-direction: column; /* Stack elements vertically */
   justify-content: center;
   align-items: center;
-  text-align: center;
-  background-color: var(--secondary-color);
+  background-color: #f3e1c6;
 }
 
-.text-box h1,
-.text-box h2 {
+.text-box h1 {
+  text-transform: uppercase;
   margin-bottom: 1rem;
-  font-size: 2rem;
-  color: #333;
+  font-size: 3rem;
+  color: black;
 }
 
 .text-box p {
@@ -45,8 +44,8 @@ body {
 }
 
 /* Ensure spacing between heading and paragraph */
-.text-box h1 + p,
-.text-box h2 + p {
+.text-box h1 + p {
+  text-align: left;
   margin-top: 0.5rem;
 }
 
@@ -59,26 +58,33 @@ body {
 
 /* Scrolling Banner */
 .scroll-banner {
-  background-color: var(--primary-color);
-  color: #fff;
+  background-color: black;
+  color: white;
+  font-weight: 800;
   height: 50px;
   display: flex;
   align-items: center;
-  justify-content: center;
   overflow: hidden;
   position: relative;
 }
 
+.scroll-banner .scroll-content {
+  display: flex;
+  animation: scroll-left 200s linear infinite; /* Adjust speed as needed */
+  white-space: nowrap; /* Prevent line breaks */
+}
+
 .scroll-banner span {
-  position: absolute;
-  animation: scroll-left 10s linear infinite;
+  flex-shrink: 0; /* Prevent shrinking */
+  margin-right: 70px; /* Space between phrases */
+  font-size: 1.2rem;
 }
 
 @keyframes scroll-left {
   from {
-    transform: translateX(100%);
+    transform: translateX(0); /* Start at the beginning */
   }
   to {
-    transform: translateX(-100%);
+    transform: translateX(-50%); /* Move by half the content width */
   }
 }
