@@ -2,6 +2,17 @@
 body {
   margin: 0;
   font-family: Exo, sans-serif;
+  background-color: var(--secondary-color);
+}
+
+:root {
+  --headline-font-family: 'Bebas Neue', sans-serif;
+  --headline-font-size: 5rem;
+  --headline-font-weight: 900;
+  --headline-text-shadow: 2px 2px 1px black;
+  --headline-letter-spacing: 3px;
+  --primary-color: #5dade2;
+  --secondary-color: #d3d3d3;
 }
 
 .about-us-page {
@@ -14,46 +25,98 @@ body {
   height: 65vh;
 }
 
+.row-1 {
+  height: 80vh;
+}
+
 .box {
   flex: 1;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  /* padding: 1rem; */
+  align-items: center; /* Center content vertically */
+  justify-content: center; /* Center content horizontally */
+}
+
+/* Text Box */
+.row-1 .text-box {
+  margin-top: 5rem;
 }
 
 .text-box {
   display: flex;
-  flex-direction: column; /* Stack elements vertically */
-  justify-content: center;
-  align-items: center;
-  background-color: #f3e1c6;
+  justify-content: center; /* Center the text-container horizontally */
+  align-items: center; /* Center the text-container vertically */
+  background-color: #f8f1dd;
+  padding: 0; /* No padding applied directly to the text-box */
 }
 
-.text-box h1 {
+/* Text Container */
+.text-container {
+  max-width: 80%; /* Limit the width of the text content */
+  text-align: left; /* Align text to the left */
+  padding: 2rem;
+  box-sizing: border-box; /* Ensure padding is included in width calculations */
+}
+
+/* Heading Styles */
+.text-container h1 {
   text-transform: uppercase;
-  margin-bottom: 1rem;
-  font-size: 3rem;
+  margin-bottom: 1rem; /* Add space below the heading */
+  font-size: 2.5rem; /* Adjust font size */
   color: black;
 }
 
-.text-box p {
-  font-size: 1.2rem;
+/* Paragraph Styles */
+.text-container p {
+  font-size: 1.1rem;
   color: #555;
-  max-width: 80%;
+  line-height: 1.6; /* Improve readability */
+  margin: 0; /* Remove default margin */
 }
 
-/* Ensure spacing between heading and paragraph */
-.text-box h1 + p {
-  text-align: left;
-  margin-top: 0.5rem;
+@media (max-width: 1000px) {
+  .text-container p {
+    font-size: 1rem;
+  }
 }
 
 /* Image Box */
 .image-box img {
   max-width: 100%;
   max-height: 100%;
-  object-fit: cover;
+  object-fit: cover; /* Ensure the image fits nicely within the container */
+}
+
+.image-box-1 {
+  display: flex;
+  justify-content: center; /* Center the image horizontally */
+  align-items: center; /* Center the image vertically */
+  background: #f8f1dd;
+  padding: 2rem 0; /* Add 2rem margin inside the container for top and bottom spacing */
+  height: auto; /* Let the height adjust dynamically based on content */
+  flex: 1; /* Share space equally with other .box elements */
+  margin: 2rem;
+}
+
+.image-box-1 img {
+  max-width: 100%; /* Ensure the image scales responsively */
+  height: auto; /* Maintain the aspect ratio */
+  margin: 2rem 0; /* Add 2rem margin on top and bottom */
+  display: block; /* Prevent extra spacing from inline images */
+}
+
+.image-box-3 {
+  position: relative; /* Enable positioning for the image */
+  background: #f8f1dd;
+  height: 65vh; /* Maintain a consistent height for the container */
+  flex: 1; /* Share space equally with .text-box */
+}
+
+.image-box-3 img {
+  position: absolute;
+  bottom: 0; /* Fix to the bottom of the container */
+  right: 0; /* Fix to the right of the container */
+  height: 550px; /* Set a fixed height for the image */
+  width: auto; /* Adjust width proportionally to maintain aspect ratio */
 }
 
 /* Scrolling Banner */
@@ -86,5 +149,48 @@ body {
   }
   to {
     transform: translateX(-50%); /* Move by half the content width */
+  }
+}
+
+/* Responsive Layout for Rows */
+@media (max-width: 935px) {
+  .row {
+    flex-direction: column; /* Stack items vertically */
+    height: auto; /* Allow height to adjust dynamically */
+  }
+
+  .box {
+    width: 100%; /* Ensure each box takes up full width */
+    height: auto; /* Adjust height for content */
+  }
+
+  .image-box-3 {
+    position: relative; /* Positioning for the image */
+    height: 500px; /* Maintain fixed height for the image container */
+    width: 100%; /* Allow the container to take the full width */
+    display: flex;
+    justify-content: flex-end; /* Align content to the right */
+    align-items: flex-end; /* Align content to the bottom */
+  }
+
+  .image-box-3 img {
+    position: relative; /* Relative to the image-box-3 container */
+    height: 500px; /* Keep the image at a fixed height */
+    width: auto; /* Maintain aspect ratio */
+    max-width: none; /* Allow the image to extend beyond its container if necessary */
+  }
+
+  .text-box {
+    margin-top: 2rem; /* Add spacing between stacked rows */
+  }
+
+  .text-container {
+    text-align: center;
+  }
+}
+
+@media (max-width: 843px) {
+  .row-1 .text-box {
+    margin-top: 3.7rem;
   }
 }
