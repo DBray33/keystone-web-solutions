@@ -225,35 +225,27 @@
     <section class="fixed-sidebar">
       <!-- Background video fixed sidebar -->
       <div class="sidebar">
-        <picture>
-          <!-- Mobile video -->
-          <source
-            srcset="
-              https://storage.googleapis.com/background-vid/background-vid-compressed-mobile.mp4
-            "
+        <video
+          autoplay
+          muted
+          loop
+          playsinline
+          class="sidebar-video"
+          poster="https://storage.googleapis.com/background-vid/poster.webp">
+          <!-- Source for mobile video -->
+          <!-- <source
+            src="https://storage.googleapis.com/background-vid/background-vid-compressed-mobile.mp4"
             type="video/mp4"
-            media="(max-width: 500px)"
-            poster="https://storage.googleapis.com/background-vid/poster.webp" />
-          <!-- Desktop video -->
-          <video
-            autoplay
-            muted
-            loop
-            playsinline
-            loading="lazy"
-            class="sidebar-video"
-            poster="https://storage.googleapis.com/background-vid/poster.webp">
-            <!-- Source for desktop -->
-            <source
-              src="https://storage.googleapis.com/background-vid/background-vid-compressed.mp4"
-              type="video/mp4" />
-            <!-- Source for mobile -->
-            <source
-              src="https://storage.googleapis.com/background-vid/background-vid-compressed-mobile.mp4"
-              type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
-        </picture>
+            media="(max-width: 500px)" /> -->
+
+          <!-- Source for desktop video -->
+          <source
+            src="https://storage.googleapis.com/background-vid/background-vid-compressed.mp4"
+            type="video/mp4"
+            media="(min-width: 501px)" />
+
+          Your browser does not support the video tag.
+        </video>
         <div class="sidebar-content">
           <svg
             class="logo"
