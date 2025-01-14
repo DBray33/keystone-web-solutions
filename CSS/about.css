@@ -2,7 +2,7 @@
 body {
   margin: 0;
   font-family: Exo, sans-serif;
-  background-color: var(--secondary-color);
+  background-color: #f8f1dd;
 }
 
 :root {
@@ -13,20 +13,12 @@ body {
   --headline-letter-spacing: 3px;
   --primary-color: #5dade2;
   --secondary-color: #d3d3d3;
+  --tertiary-color: #efb7aa;
+  --light-tan: #f8f1dd;
 }
 
 .about-us-page {
   width: 100%;
-}
-
-/* Rows */
-.row {
-  display: flex;
-  height: 65vh;
-}
-
-.row-1 {
-  height: 80vh;
 }
 
 .box {
@@ -35,30 +27,16 @@ body {
   align-items: center; /* Center content vertically */
   justify-content: center; /* Center content horizontally */
 }
-
-/* Text Box */
-.row-1 .text-box {
-  margin-top: 5rem;
-}
-
-.text-box {
-  display: flex;
-  justify-content: center; /* Center the text-container horizontally */
-  align-items: center; /* Center the text-container vertically */
-  background-color: #f8f1dd;
-  padding: 0; /* No padding applied directly to the text-box */
-}
-
 /* Text Container */
 .text-container {
-  max-width: 80%; /* Limit the width of the text content */
-  text-align: left; /* Align text to the left */
+  max-width: 80%;
+  text-align: left;
   padding: 2rem;
-  box-sizing: border-box; /* Ensure padding is included in width calculations */
+  box-sizing: border-box;
 }
 
 /* Heading Styles */
-.text-container h1 {
+h1 {
   text-transform: uppercase;
   margin-bottom: 1rem; /* Add space below the heading */
   font-size: 2.5rem; /* Adjust font size */
@@ -66,57 +44,295 @@ body {
 }
 
 /* Paragraph Styles */
-.text-container p {
+p {
   font-size: 1.1rem;
-  color: #555;
+  color: black;
+  font-weight: 600;
   line-height: 1.6; /* Improve readability */
   margin: 0; /* Remove default margin */
 }
 
-@media (max-width: 1000px) {
-  .text-container p {
-    font-size: 1rem;
+/* /////////////// */
+/* ROW 1 */
+.row-1 {
+  display: flex; /* Enable Flexbox for the row */
+  height: 80vh; /* Set the height of the row */
+  width: 100%; /* Ensure the row spans the full width */
+  overflow: hidden; /* Prevent content overflow */
+}
+
+.box-1 {
+  display: flex; /* Enable Flexbox for the text and image containers */
+  width: 100%; /* Full width of the row */
+}
+
+.text-container-1,
+.image-container-1 {
+  flex: 0 0 50%; /* Ensure each container is exactly 50% of the width */
+  width: 50%; /* Explicitly set width to 50% */
+  display: flex;
+  align-items: center; /* Center content vertically */
+  justify-content: center; /* Center content horizontally */
+  box-sizing: border-box; /* Include padding in width calculations */
+}
+
+/* Text Container Styling */
+.text-container-1 {
+  background: white;
+  display: flex;
+  flex-direction: column; /* Stack heading and paragraph vertically */
+  align-items: flex-start; /* Align text to the left */
+  justify-content: center; /* Center content vertically */
+  padding: 2rem; /* Add padding inside the text container */
+  text-align: left; /* Align text content to the left */
+}
+
+.text-container-1 h1 {
+  text-transform: uppercase;
+  margin-bottom: 1rem; /* Space below heading */
+  font-size: 2.5rem; /* Adjust font size */
+  color: black;
+}
+
+.text-container-1 p {
+  font-size: 1.1rem;
+  color: black;
+  font-weight: 600;
+  line-height: 1.6; /* Improve readability */
+  margin: 0; /* Remove default margin */
+}
+
+/* Image Container Styling */
+.image-container-1 {
+  background: #f8f1dd; /* Optional background for visibility */
+}
+
+.image-container-1 img {
+  max-width: 100%; /* Ensure the image fills its container */
+  height: auto; /* Maintain aspect ratio */
+  object-fit: cover; /* Prevent distortion */
+  border-radius: 16px; /* Add rounded corners */
+}
+
+/* Responsive Design */
+@media (max-width: 935px) {
+  .box-1 {
+    flex-direction: column; /* Stack text and image vertically */
+  }
+
+  .text-container-1,
+  .image-container-1 {
+    width: 100%; /* Full width for stacked items */
+    height: auto; /* Adjust height dynamically */
+  }
+
+  .image-container-1 img {
+    max-width: 80%; /* Adjust image size for smaller screens */
+  }
+
+  .text-container-1 {
+    text-align: center; /* Center text for smaller screens */
+    align-items: center; /* Center-align content horizontally */
   }
 }
 
-/* Image Box */
-.image-box img {
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: cover; /* Ensure the image fits nicely within the container */
+/* /////////////// */
+/* ROW 2 */
+.row-2 {
+  display: flex; /* Enable Flexbox for the row */
+  height: auto;
+  width: 100%; /* Ensure the row spans the full width */
+  overflow: hidden; /* Prevent content overflow */
 }
 
-.image-box-1 {
+.box-2 {
+  display: flex; /* Enable Flexbox for the text and image containers */
+  width: 100%; /* Full width of the row */
+}
+
+.text-container-2,
+.image-container-2 {
+  flex: 0 0 50%; /* Occupy 50% of the width by default */
+  width: 50%;
+  height: auto; /* Adjust height dynamically */
   display: flex;
-  justify-content: center; /* Center the image horizontally */
-  align-items: center; /* Center the image vertically */
-  background: #f8f1dd;
-  padding: 2rem 0; /* Add 2rem margin inside the container for top and bottom spacing */
-  height: auto; /* Let the height adjust dynamically based on content */
-  flex: 1; /* Share space equally with other .box elements */
-  margin: 2rem;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box; /* Include padding in width/height */
 }
 
-.image-box-1 img {
-  max-width: 100%; /* Ensure the image scales responsively */
-  height: auto; /* Maintain the aspect ratio */
-  margin: 2rem 0; /* Add 2rem margin on top and bottom */
-  display: block; /* Prevent extra spacing from inline images */
+/* Text Container Styling */
+.text-container-2 {
+  background: var(--tertiary-color);
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column; /* Stack heading and paragraph vertically */
+  align-items: flex-start; /* Align text to the left */
+  justify-content: center; /* Center content vertically */
+  padding: 2rem; /* Add padding inside the text container */
+  text-align: left; /* Align text content to the left */
 }
 
-.image-box-3 {
-  position: relative; /* Enable positioning for the image */
-  background: #f8f1dd;
-  height: 65vh; /* Maintain a consistent height for the container */
-  flex: 1; /* Share space equally with .text-box */
+.text-container-2 h1 {
+  text-transform: uppercase;
+  margin-bottom: 1rem; /* Space below heading */
+  font-size: 2.5rem; /* Adjust font size */
+  color: black;
 }
 
-.image-box-3 img {
+.text-container-2 p {
+  font-size: 1.1rem;
+  color: black;
+  font-weight: 600;
+  line-height: 1.6; /* Improve readability */
+  margin: 0; /* Remove default margin */
+}
+
+/* Image Container Styling */
+.image-container-2 {
+  position: relative; /* Allow precise control over child image positioning */
+  background-image: url('https://storage.googleapis.com/background-vid/about-problem-illustration.svg');
+  background-size: contain; /* Resize the image to fit within the container */
+  background-position: center calc(100% + 30px);
+  background-repeat: no-repeat;
+}
+
+.image-container-2 img {
+  display: none;
+}
+
+.text-box-2 {
+  background: var(--primary-color);
+  padding: 2rem;
+  border-radius: 16px;
+}
+
+/* Responsive Design */
+@media (max-width: 935px) {
+  .box-2 {
+    flex-direction: column; /* Stack text and image vertically */
+  }
+
+  .text-container-2,
+  .image-container-2 {
+    width: 100%; /* Full width for stacked items */
+    height: auto; /* Adjust height dynamically */
+  }
+
+  .image-container-2 {
+    background: none;
+  }
+
+  .image-container-2 img {
+    display: block;
+    position: relative; /* Keeps the image within its normal flow */
+    left: 0;
+    transform: translateY(6.2%); /* Moves the image down by 10% of its height */
+    max-width: 90%;
+    width: 100%; /* Allow the image to scale responsively */
+    height: auto; /* Maintain aspect ratio */
+  }
+
+  .text-container-2 {
+    text-align: center; /* Center text for smaller screens */
+    align-items: center; /* Center-align content horizontally */
+  }
+}
+
+/* ROW 3 */
+.row-3 {
+  display: flex; /* Enable Flexbox for the row */
+  height: 80vh; /* Set the height of the row */
+  width: 100%; /* Ensure the row spans the full width */
+  overflow: hidden; /* Prevent content overflow */
+}
+
+.box-3 {
+  display: flex; /* Enable Flexbox for the text and image containers */
+  width: 100%; /* Full width of the row */
+}
+
+.text-container-3,
+.image-container-3 {
+  flex: 0 0 50%; /* Each container takes up 50% of the viewport width */
+  width: 50%;
+  display: flex;
+  align-items: center; /* Center content vertically */
+  justify-content: center; /* Center content horizontally */
+  box-sizing: border-box; /* Include padding in width calculations */
+}
+
+/* Text Container Styling */
+.text-container-3 {
+  background: var(--tertiary-color);
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column; /* Stack heading and paragraph vertically */
+  align-items: flex-start; /* Align text to the left */
+  justify-content: center; /* Center content vertically */
+  padding: 2rem;
+  text-align: left; /* Align text content to the left */
+}
+
+.text-container-3 h1 {
+  text-transform: uppercase;
+  margin-bottom: 1rem; /* Space below heading */
+  font-size: 2.5rem; /* Adjust font size */
+  color: black;
+}
+
+.text-container-3 p {
+  font-size: 1.1rem;
+  color: black;
+  font-weight: 600;
+  line-height: 1.6; /* Improve readability */
+  margin: 0; /* Remove default margin */
+}
+
+.text-box-3 {
+  background: var(--secondary-color);
+  border-radius: 16px;
+  padding: 2rem;
+}
+
+/* Image Container Styling */
+.image-container-3 {
+  position: relative; /* Allow precise control over child image positioning */
+  overflow: hidden; /* Hide any overflowing content */
+  background: #f8f1dd; /* Optional background for visibility */
+}
+
+.image-container-3 img {
   position: absolute;
-  bottom: 0; /* Fix to the bottom of the container */
-  right: 0; /* Fix to the right of the container */
-  height: 550px; /* Set a fixed height for the image */
-  width: auto; /* Adjust width proportionally to maintain aspect ratio */
+  left: -10%; /* Align the left edge of the image with the left edge of the container */
+  height: 100%; /* Match the height of the container */
+  object-fit: cover; /* Maintain the aspect ratio */
+  transform: scaleX(-1); /* Flip the image horizontally */
+}
+
+/* Responsive Design */
+@media (max-width: 935px) {
+  .box-3 {
+    flex-direction: column; /* Stack text and image vertically */
+  }
+
+  .text-container-3,
+  .image-container-3 {
+    width: 100%; /* Full width for stacked items */
+    height: auto; /* Adjust height dynamically */
+  }
+
+  .image-container-3 img {
+    position: relative; /* Reset positioning for smaller screens */
+    width: 100%; /* Allow the image to scale responsively */
+    height: auto; /* Maintain aspect ratio */
+    transform: scaleX(-1); /* Keep the image flipped */
+  }
+
+  .text-container-3 {
+    text-align: center; /* Center text for smaller screens */
+    align-items: center; /* Center-align content horizontally */
+  }
 }
 
 /* Scrolling Banner */
@@ -160,8 +376,8 @@ body {
   }
 
   .box {
-    width: 100%; /* Ensure each box takes up full width */
-    height: auto; /* Adjust height for content */
+    width: 100%;
+    height: auto;
   }
 
   .image-box-3 {
@@ -173,24 +389,40 @@ body {
     align-items: flex-end; /* Align content to the bottom */
   }
 
-  .image-box-3 img {
+  .image-container-3 img {
     position: relative; /* Relative to the image-box-3 container */
     height: 500px; /* Keep the image at a fixed height */
     width: auto; /* Maintain aspect ratio */
     max-width: none; /* Allow the image to extend beyond its container if necessary */
   }
 
-  .text-box {
+  .text-container-3 {
     margin-top: 2rem; /* Add spacing between stacked rows */
   }
 
-  .text-container {
+  .text-container-3 {
     text-align: center;
+    padding: 2rem;
+  }
+
+  .row-1 {
+    flex-direction: column; /* Stack text and image vertically */
+  }
+
+  .text-container-3 {
+    text-align: center; /* Center text for smaller screens */
   }
 }
 
-@media (max-width: 843px) {
-  .row-1 .text-box {
-    margin-top: 3.7rem;
+@media (max-width: 935px) {
+  .image-container-3 img {
+    display: none;
+  }
+
+  .row-3 p {
+    text-align: center;
+  }
+  .row-3 h1 {
+    text-align: center;
   }
 }
