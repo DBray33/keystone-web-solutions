@@ -54,88 +54,148 @@ p {
 
 /* /////////////// */
 /* ROW 1 */
+/* Section Styling */
 .row-1 {
-  display: flex; /* Enable Flexbox for the row */
-  height: 80vh; /* Set the height of the row */
-  width: 100%; /* Ensure the row spans the full width */
-  overflow: hidden; /* Prevent content overflow */
-}
-
-.box-1 {
-  display: flex; /* Enable Flexbox for the text and image containers */
-  width: 100%; /* Full width of the row */
-}
-
-.text-container-1,
-.image-container-1 {
-  flex: 0 0 50%; /* Ensure each container is exactly 50% of the width */
-  width: 50%; /* Explicitly set width to 50% */
+  background: linear-gradient(
+    to bottom,
+    var(--primary-color) 50%,
+    var(--secondary-color) 50%
+  );
   display: flex;
-  align-items: center; /* Center content vertically */
-  justify-content: center; /* Center content horizontally */
-  box-sizing: border-box; /* Include padding in width calculations */
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem 0;
+  position: relative;
 }
 
-/* Text Container Styling */
-.text-container-1 {
-  background: white;
+/* Content Wrapper */
+.content-wrapper {
+  position: relative;
+  width: 60%; /* Adjust as needed */
+  height: 70%; /* Adjust as needed */
   display: flex;
-  flex-direction: column; /* Stack heading and paragraph vertically */
-  align-items: flex-start; /* Align text to the left */
+  align-items: center;
+  justify-content: flex-start;
+  margin: 0 auto;
+}
+
+/* Large Box (Image) */
+.image-box {
+  position: relative;
+  width: 80%; /* Square width */
+  aspect-ratio: 1; /* Ensure square */
+  border-radius: 25px;
+  overflow: hidden;
+  margin-top: 6rem;
+  margin-left: -5rem;
+  z-index: 1;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
+}
+
+.image-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Smaller Box (Text) */
+.text-box {
+  position: absolute;
+  top: 30%; /* Adjusted position */
+  left: 60%;
+  width: 50%; /* Adjust width */
+  height: auto; /* Ensure height grows with content */
+  max-width: 500px; /* Prevent the box from growing too wide */
+  background: var(--light-tan); /* Set background color */
+  border-radius: 25px; /* Rounded corners */
+  z-index: 2; /* Ensure it overlaps the image */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Add subtle shadow */
+  display: flex;
+  flex-direction: column; /* Stack content vertically */
   justify-content: center; /* Center content vertically */
-  padding: 2rem; /* Add padding inside the text container */
-  text-align: left; /* Align text content to the left */
+  padding: 1rem; /* Add padding for spacing */
+  text-align: left; /* Align text to the left */
+  box-sizing: border-box; /* Include padding in width and height calculations */
+  overflow: hidden; /* Prevent text from overflowing */
 }
 
-.text-container-1 h1 {
-  text-transform: uppercase;
-  margin-bottom: 1rem; /* Space below heading */
-  font-size: 2.5rem; /* Adjust font size */
-  color: black;
+/* Text Box Heading */
+.text-box h2 {
+  margin: 0 0 0.5rem; /* Space below heading */
+  font-size: 1.5rem; /* Adjust font size */
+  color: var(--headline-font-color, black);
+  word-wrap: break-word; /* Ensure long words wrap properly */
 }
 
-.text-container-1 p {
-  font-size: 1.1rem;
+/* Text Box Paragraph */
+.text-box p {
+  font-size: 1rem;
   color: black;
-  font-weight: 600;
-  line-height: 1.6; /* Improve readability */
+  line-height: 1.5; /* Improve readability */
   margin: 0; /* Remove default margin */
+  word-wrap: break-word; /* Prevent text overflow */
 }
 
-/* Image Container Styling */
-.image-container-1 {
-  background: #f8f1dd; /* Optional background for visibility */
-}
-
-.image-container-1 img {
-  max-width: 100%; /* Ensure the image fills its container */
-  height: auto; /* Maintain aspect ratio */
-  object-fit: cover; /* Prevent distortion */
-  border-radius: 16px; /* Add rounded corners */
-}
-
-/* Responsive Design */
-@media (max-width: 935px) {
-  .box-1 {
-    flex-direction: column; /* Stack text and image vertically */
-  }
-
-  .text-container-1,
-  .image-container-1 {
-    width: 100%; /* Full width for stacked items */
+/* Responsive Layout */
+@media (max-width: 1100px) {
+  .content-wrapper {
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center elements horizontally */
+    justify-content: center; /* Center elements vertically */
+    width: 100%; /* Use full width */
     height: auto; /* Adjust height dynamically */
   }
 
-  .image-container-1 img {
-    max-width: 80%; /* Adjust image size for smaller screens */
+  .image-box {
+    margin-top: 6rem; /* Reset margin */
+    margin-left: 0; /* Center on the viewport */
+    width: 60%; /* Reduce size for smaller screens */
+    aspect-ratio: 1; /* Maintain square aspect ratio */
   }
 
-  .text-container-1 {
-    text-align: center; /* Center text for smaller screens */
-    align-items: center; /* Center-align content horizontally */
+  .text-box {
+    position: relative; /* Reset position */
+    top: -2rem; /* Reset top */
+    left: 0; /* Reset left */
+    width: 50%; /* Reduce size for smaller screens */
+    max-width: none; /* Allow full width */
+    margin-top: 1rem; /* Add spacing above the text box */
+    text-align: center; /* Center-align text */
+    align-items: center; /* Center-align text inside */
   }
 }
 
+@media (max-width: 680px) {
+  .text-box p {
+    font-size: 0.8rem; /* Adjust font size */
+  }
+
+  .image-box {
+    width: 80%; /* Reduce size for smaller screens */
+  }
+
+  .text-box {
+    left: 0; /* Reset left */
+    width: 70%; /* Reduce size for smaller screens */
+  }
+}
+
+/* Icons Row */
+.icons-row {
+  width: 60%; /* Adjust width for icon row */
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.icons-row img {
+  width: 50px; /* Icon size */
+  height: 50px;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
 /* /////////////// */
 /* ROW 2 */
 .row-2 {
