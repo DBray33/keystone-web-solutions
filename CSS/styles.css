@@ -9,6 +9,7 @@ body,
 html {
   height: 100%;
 }
+
 .navbar .navbar-links a,
 .navbar-links a {
   transition: color 0.3s;
@@ -45,7 +46,7 @@ html {
 }
 body,
 html {
-  font-family: Exo, sans-serif;
+  font-family: 'Exo', sans-serif;
   overscroll-behavior-y: none;
 }
 html {
@@ -102,9 +103,9 @@ textarea::placeholder {
 }
 .main-content .section h1,
 .sidebar-content .company-name {
-  font-family: var(--headline-font-family);
-  font-weight: var(--headline-font-weight);
-  letter-spacing: var(--headline-letter-spacing);
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: larger;
+  font-weight: 400;
 }
 .navbar .submit-button a::before,
 .pricing-button::before,

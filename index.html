@@ -25,11 +25,11 @@
       type="video/mp4" />
 
     <!-- Preload for Mobile Video -->
-    <link
+    <!-- <link
       rel="preload"
       href="https://storage.googleapis.com/background-vid/background-vid-compressed-mobile.mp4"
       as="video"
-      type="video/mp4" />
+      type="video/mp4" /> -->
     <!-- Preload Largest Contentful Paint Image -->
     <link
       rel="preload"
@@ -42,28 +42,15 @@
     <link rel="stylesheet" href="CSS/mobile.css" />
     <link rel="stylesheet" href="CSS/footer.css" />
 
-    <!-- Google Fonts Optimization -->
-    <!-- Preload Google Fonts -->
+    <!-- Preload Specific Fonts -->
     <link
       rel="preload"
-      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Fira+Mono:wght@400;500;700&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Oswald:wght@200..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Yeseva+One&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue:wght@400&family=Exo:wght@200;300;400;500;600;700&display=swap"
       as="style"
       onload="this.rel='stylesheet'" />
     <noscript>
       <link
-        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Fira+Mono:wght@400;500;700&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Oswald:wght@200..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Yeseva+One&display=swap"
-        rel="stylesheet" />
-    </noscript>
-
-    <!-- Second Font Family -->
-    <link
-      rel="preload"
-      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Exo:ital,wght@0,100..900;1,100..900&family=Fira+Mono:wght@400;500;700&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Oswald:wght@200..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Yeseva+One&display=swap"
-      as="style"
-      onload="this.rel='stylesheet'" />
-    <noscript>
-      <link
-        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Exo:ital,wght@0,100..900;1,100..900&family=Fira+Mono:wght@400;500;700&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Oswald:wght@200..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Yeseva+One&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Bebas+Neue:wght@400&family=Exo:wght@200;300;400;500;600;700&display=swap"
         rel="stylesheet" />
     </noscript>
 
@@ -244,16 +231,16 @@
           class="sidebar-video"
           poster="https://storage.googleapis.com/background-vid/poster.webp">
           <!-- Source for mobile video -->
-          <source
+          <!-- <source
             src="https://storage.googleapis.com/background-vid/background-vid-compressed-mobile.mp4"
             type="video/mp4"
-            media="(max-width: 500px)" />
+            media="(max-width: 500px)" /> -->
 
           <!-- Source for desktop video -->
           <source
             src="https://storage.googleapis.com/background-vid/background-vid-compressed.mp4"
             type="video/mp4"
-            media="(min-width: 501px)" />
+            media="(min-width: 520px)" />
 
           Your browser does not support the video tag.
         </video>
