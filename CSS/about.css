@@ -253,7 +253,7 @@ p {
   position: relative; /* Allow precise control over child image positioning */
   background-image: url('https://storage.googleapis.com/background-vid/about-problem-illustration.svg');
   background-size: contain; /* Resize the image to fit within the container */
-  background-position: center calc(100% + 30px);
+  background-position: center calc(100% + 5px);
   background-repeat: no-repeat;
 }
 
@@ -287,7 +287,7 @@ p {
     display: block;
     position: relative; /* Keeps the image within its normal flow */
     left: 0;
-    transform: translateY(8%); /* Moves the image down by 10% of its height */
+    transform: translateY(2%); /* Moves the image down by 10% of its height */
     max-width: 90%;
     width: 100%; /* Allow the image to scale responsively */
     height: auto; /* Maintain aspect ratio */
@@ -373,11 +373,11 @@ p {
 
 .overlay-image {
   position: absolute;
-  left: 20; /* Align the left edge of the image with the left edge of the container */
-  width: 50%; /* Fit the image to the container's width */
-  height: auto; /* Maintain the aspect ratio */
+  left: 20%;
+  width: 50%;
+  height: auto;
   max-height: 90%;
-  object-fit: contain; /* Ensure the image scales proportionally within the container */
+  object-fit: contain;
 }
 
 /* Responsive Design */
@@ -392,33 +392,22 @@ p {
     height: auto; /* Adjust height dynamically */
   }
 
-  .image-container-3 img {
-    position: relative; /* Reset positioning for smaller screens */
-    width: 100%; /* Allow the image to scale responsively */
-    height: auto; /* Maintain aspect ratio */
-    transform: scaleX(-1); /* Keep the image flipped */
-  }
-
-  .overlay-image {
-    width: 80%; /* Adjust size for smaller screens */
-    top: 10%; /* Adjust vertical position */
-    left: 10%; /* Adjust horizontal position */
-  }
-  .image-container-3 .base-image {
-    left: 0;
-  }
-
   .text-container-3 {
     text-align: center; /* Center text for smaller screens */
     align-items: center; /* Center-align content horizontally */
   }
-}
 
+  .overlay-image {
+    width: 80%;
+    top: 15%;
+    left: 15%;
+  }
+}
 @media (max-width: 1100px) {
   .overlay-image {
-    width: 80%; /* Adjust size for smaller screens */
-    top: 15%; /* Adjust vertical position */
-    left: 15%; /* Adjust horizontal position */
+    width: 80%;
+    top: 15%;
+    left: 15%;
   }
 }
 @media (max-width: 1500px) and (min-width: 1101px) {
