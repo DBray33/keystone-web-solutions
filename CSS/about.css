@@ -183,18 +183,42 @@ p {
 
 /* Icons Row */
 .icons-row {
-  width: 60%; /* Adjust width for icon row */
+  width: 90%; /* Adjust width for icon row */
   display: flex;
   justify-content: space-around;
   align-items: center;
   margin-top: 2rem;
+  flex-wrap: wrap; /* Ensure icons wrap on smaller screens */
+  text-align: center; /* Center-align content within each icon item */
 }
 
-.icons-row img {
+.icon-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem; /* Space between elements */
+  max-width: 150px; /* Limit the width of each icon section */
+}
+
+.icon-item img {
   width: 50px; /* Icon size */
   height: 50px;
   object-fit: contain;
   filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+.icon-item h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #333;
+  margin: 0;
+}
+
+.icon-item p {
+  font-size: 0.9rem;
+  color: #555;
+  margin: 0;
+  line-height: 1.4;
 }
 /* /////////////// */
 /* ROW 2 */
