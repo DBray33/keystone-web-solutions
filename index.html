@@ -30,7 +30,8 @@
       href="https://storage.googleapis.com/background-vid/background-vid-compressed-mobile.mp4"
       as="video"
       type="video/mp4" />
-    <!-- Preload Largest Contentful Paint Image -->
+
+    <!-- Preload Main Content BG for LCP Image -->
     <link
       rel="preload"
       href="https://storage.googleapis.com/background-vid/light-blue-bg.webp"
@@ -42,17 +43,22 @@
     <link rel="stylesheet" href="CSS/mobile.css" />
     <link rel="stylesheet" href="CSS/footer.css" />
 
-    <!-- Preload Specific Fonts -->
+    <!-- Preload Specific Fonts for LCP -->
     <link
       rel="preload"
-      href="https://fonts.googleapis.com/css2?family=Bebas+Neue:wght@400&family=Exo:wght@200;300;400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue:wght@400&family=Exo:wght@200;300;500&display=swap"
       as="style"
       onload="this.rel='stylesheet'" />
     <noscript>
       <link
-        href="https://fonts.googleapis.com/css2?family=Bebas+Neue:wght@400&family=Exo:wght@200;300;400;500;600;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Bebas+Neue:wght@400&family=Exo:wght@200;300;500&display=swap"
         rel="stylesheet" />
     </noscript>
+
+    <!-- Non-preloaded Google Fonts for Entire Website -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue:wght@400&family=Exo:wght@200;300;400;500;600;700&display=swap"
+      rel="stylesheet" />
 
     <title>Web Forge Digital Solutions</title>
   </head>

@@ -55,7 +55,6 @@ html {
 :root {
   --headline-font-family: 'Bebas Neue', sans-serif;
   --headline-font-size: 5rem;
-  --headline-font-weight: 900;
   --headline-text-shadow: 2px 2px 1px black;
   --headline-letter-spacing: 3px;
   --primary-color: #5dade2;
