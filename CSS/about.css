@@ -3,6 +3,10 @@ body {
   margin: 0;
   font-family: Exo, sans-serif;
   background-color: #f8f1dd;
+  padding: 0;
+  height: 100%;
+  font-family: 'Exo', sans-serif;
+  overscroll-behavior-y: none;
 }
 
 :root {
@@ -36,7 +40,7 @@ body {
 }
 
 /* Heading Styles */
-h1 {
+.text-box h1 {
   text-transform: uppercase;
   margin-bottom: 1rem; /* Add space below the heading */
   font-size: 2.5rem; /* Adjust font size */
@@ -44,10 +48,10 @@ h1 {
 }
 
 /* Paragraph Styles */
-p {
+.text-box p {
   font-size: 1.1rem;
   color: black;
-  font-weight: 600;
+  font-weight: 700;
   line-height: 1.6; /* Improve readability */
   margin: 0; /* Remove default margin */
 }
@@ -58,7 +62,7 @@ p {
 .row-1 {
   background: linear-gradient(
     to bottom,
-    var(--primary-color) 50%,
+    var(--light-tan) 50%,
     var(--secondary-color) 50%
   );
   display: flex;
@@ -107,7 +111,7 @@ p {
   width: 50%; /* Adjust width */
   height: auto; /* Ensure height grows with content */
   max-width: 500px; /* Prevent the box from growing too wide */
-  background: var(--light-tan); /* Set background color */
+  background: white; /* Set background color */
   border-radius: 25px; /* Rounded corners */
   z-index: 2; /* Ensure it overlaps the image */
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Add subtle shadow */
@@ -183,13 +187,14 @@ p {
 
 /* Icons Row */
 .icons-row {
-  width: 90%; /* Adjust width for icon row */
+  width: 90%; /* Adjust width for the row */
   display: flex;
   justify-content: space-around;
-  align-items: center;
-  margin-top: 2rem;
-  flex-wrap: wrap; /* Ensure icons wrap on smaller screens */
-  text-align: center; /* Center-align content within each icon item */
+  align-items: flex-start; /* Align items to the top */
+  margin-top: 4rem;
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+  text-align: center;
+  gap: 1rem;
 }
 
 .icon-item {
@@ -197,28 +202,86 @@ p {
   flex-direction: column;
   align-items: center;
   gap: 0.5rem; /* Space between elements */
-  max-width: 150px; /* Limit the width of each icon section */
+  max-width: 275px; /* Limit the width of each icon section */
 }
 
-.icon-item img {
-  width: 50px; /* Icon size */
-  height: 50px;
-  object-fit: contain;
-  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+/* Wrapper for Icons */
+.icon-wrapper {
+  width: 100px; /* Fixed width for uniformity */
+  height: 100px; /* Fixed height to make all icons square */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px; /* Optional: Add rounded corners */
+  overflow: hidden; /* Prevent content overflow */
+}
+
+.icon-wrapper img {
+  width: 100%; /* Scale the icon to fit */
+  height: 100%; /* Scale the icon to fit */
+  object-fit: contain; /* Maintain aspect ratio */
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2)); /* Add subtle shadow */
 }
 
 .icon-item h3 {
+  text-transform: uppercase;
   font-size: 1rem;
   font-weight: 600;
-  color: #333;
+  color: black;
   margin: 0;
 }
 
 .icon-item p {
   font-size: 0.9rem;
-  color: #555;
+  color: black;
   margin: 0;
   line-height: 1.4;
+  font-weight: 500;
+}
+
+/* Responsive Design for Small Viewports */
+@media (max-width: 643px) {
+  .icons-row {
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items */
+  }
+
+  .icon-item {
+    width: 100%; /* Ensure each icon item spans the full width */
+    max-width: 80vw; /* Limit to 80% of the viewport width */
+    margin: 0 auto 2rem; /* Center and add spacing between rows */
+    text-align: center; /* Center-align text within the icon item */
+  }
+
+  .icon-wrapper {
+    width: 150px; /* Reduce the size of the icon wrapper */
+    height: 150px; /* Maintain square aspect ratio */
+    margin: 0 auto; /* Center the icon wrapper horizontally */
+  }
+
+  .icon-wrapper img {
+    width: 100%; /* Ensure the icon fits the wrapper */
+    height: 100%; /* Maintain aspect ratio */
+  }
+
+  .icon-item h3 {
+    font-size: 1rem; /* Adjust heading size for smaller screens */
+    margin-top: 0.5rem; /* Add spacing above the heading */
+  }
+
+  .icon-item p {
+    font-size: 0.9rem; /* Adjust paragraph size for better readability */
+    width: 80vw; /* 80% of the viewport width */
+    margin: 0 auto; /* Center-align the paragraph horizontally */
+  }
+
+  .row-1 {
+    background: linear-gradient(
+      to bottom,
+      var(--light-tan) 30%,
+      var(--secondary-color) 70%
+    );
+  }
 }
 /* /////////////// */
 /* ROW 2 */

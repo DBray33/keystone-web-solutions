@@ -106,9 +106,9 @@
   box-sizing: border-box;
 }
 .footer-section {
-  flex: 1 1 calc(50% - 1rem); /* Each section takes up half the width minus the gap */
-  max-width: 300px; /* Optional: Set a maximum width for items */
-  min-width: 200px; /* Ensure items don't get too small */
+  flex: 1 1 calc(50% - 1rem);
+  max-width: 300px;
+  min-width: 200px;
   margin: 0.5rem;
   box-sizing: border-box;
   background-color: #fff;
@@ -120,8 +120,8 @@
     align-items: center; /* Center items */
   }
   .footer-section {
-    width: 100%; /* Make each section take full width */
-    max-width: none; /* Remove maximum width for stacked layout */
+    width: 100%;
+    max-width: none;
   }
 }
 .footer-section h3 {
@@ -201,13 +201,13 @@
   border-color: #5dade2;
 }
 
-/* for services pages */
+/* for services / about pages */
 .page-content .footer {
   display: flex;
   flex-wrap: wrap;
   padding: 2rem;
-  width: calc(100% - 3rem); /* Account for the left and right margin */
-  margin: 0 auto 1.5rem; /* Adds 1.5rem bottom margin */
+  width: calc(100% - 3rem);
+  margin: 0 auto 1.5rem;
   box-sizing: border-box;
   z-index: 10;
   border-radius: 8px;
