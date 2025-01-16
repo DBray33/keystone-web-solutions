@@ -62,8 +62,8 @@ body {
 .row-1 {
   background: linear-gradient(
     to bottom,
-    var(--light-tan) 50%,
-    var(--secondary-color) 50%
+    var(--light-tan) 30%,
+    var(--secondary-color) 70%
   );
   display: flex;
   flex-direction: column;

@@ -135,11 +135,10 @@ textarea::placeholder {
   border-color: #5dade2;
 }
 .navbar-links {
-  justify-content: center;
+  justify-content: right;
   align-items: center;
   list-style: none;
-  justify-content: center;
-  margin: 0;
+  margin-right: 2rem;
   padding: 0;
 }
 .navbar.scrolled {
@@ -523,6 +522,9 @@ textarea::placeholder {
 .phone-number a:hover::before {
   animation: 0.3s forwards showBackground;
 }
+
+/* /////////////////////////////////////////////////////// */
+/* MAIN CONTENT/////////////////////////////////////////// */
 .main-content {
   width: 60%;
   padding: 0;
@@ -530,6 +532,7 @@ textarea::placeholder {
   overflow-x: hidden;
   /* Background image styles */
   /* background-image: url('https://storage.googleapis.com/background-vid/light-blue-bg.webp'); */
+  background-color: black;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -537,22 +540,21 @@ textarea::placeholder {
   background-attachment: fixed;
   position: relative;
   z-index: 1;
-  /* Lower z-index */
 }
 .main-content::before {
   content: '';
   position: fixed;
-  top: 0; /* Align to the top of the viewport */
-  left: 40%; /* Start at 40% from the left, leaving the left 40% empty */
-  width: 60%; /* Cover the right 60% of the viewport */
-  height: 100%; /* Full height */
-  /* background-image: url('https://storage.googleapis.com/background-vid/light-blue-bg.webp'); */
+  top: 0;
+  left: 40%;
+  width: 60%;
+  height: 100%;
   background-image: url('https://storage.googleapis.com/background-vid/bluewave-optimized.svg');
+  background: black;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  z-index: -1; /* Keep it behind other content */
-  opacity: 0.6; /* Make the background transparent */
+  z-index: -1;
+  /* opacity: 0.6; */
 }
 
 .next-section {
@@ -562,7 +564,7 @@ textarea::placeholder {
   margin-top: 8rem;
 }
 .main-content .section-2 {
-  margin-top: 6rem;
+  margin-top: 12rem;
 }
 .main-content .mobile-header {
   display: none;
@@ -571,9 +573,11 @@ textarea::placeholder {
 
 .main-content .section h2,
 .main-content .section-2 h2 {
+  color: white;
+  font-family: 'bebas neue';
   text-transform: uppercase;
-  font-weight: 500;
-  font-size: 3rem;
+  font-weight: 400;
+  font-size: 5rem;
   margin: 0 16px 10px;
 }
 @media (max-width: 935px) {
@@ -620,6 +624,7 @@ textarea::placeholder {
 }
 .main-content .section p,
 .main-content .section-2 p {
+  color: white;
   text-align: center;
   font-size: 1.2rem;
   margin: 0 3rem 2rem;
@@ -769,8 +774,8 @@ textarea::placeholder {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('https://storage.googleapis.com/background-vid/bluewave-optimized.svg');
-    /* background-image: url('https://storage.googleapis.com/background-vid/light-blue-bg.webp'); */
+    /* background-image: url('https://storage.googleapis.com/background-vid/bluewave-optimized.svg'); */
+    background: black;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
