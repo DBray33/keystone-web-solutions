@@ -82,7 +82,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 
-  // Smooth scroll for navbar links
+  // Smooth scroll for navbar link clicks
   document.querySelectorAll('.navbar-links a').forEach((anchor) => {
     anchor.addEventListener('click', function (e) {
       if (this.getAttribute('href').startsWith('#')) {
@@ -293,4 +293,15 @@ document.addEventListener('DOMContentLoaded', () => {
       popup.style.display = 'none'; // Fully hide the popup after animation ends
     }, 500); // Match the CSS animation duration
   });
+});
+
+// //////////////////////////////////////////////
+// STANDALONE LOGO //////////////////////////////
+document.addEventListener('scroll', () => {
+  const logo = document.querySelector('.standalone-logo');
+  if (window.scrollY > 0) {
+    document.body.classList.add('scrolled');
+  } else {
+    document.body.classList.remove('scrolled');
+  }
 });

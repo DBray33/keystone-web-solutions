@@ -1374,9 +1374,7 @@ label {
 /* Additional Fees Section */
 .added-fees {
   padding: 2rem;
-
   border-radius: 8px;
-
   margin-top: 2rem;
 }
 
@@ -1384,7 +1382,7 @@ label {
   font-size: 1.8rem;
   font-weight: bold;
   margin-bottom: 1.5rem;
-  color: #333;
+  color: #000; /* Black */
   text-transform: none;
   text-align: center;
 }
@@ -1393,7 +1391,7 @@ label {
   font-size: 1.4rem;
   font-weight: bold;
   margin: 2rem 0 1rem;
-  color: #444;
+  color: #000; /* Black */
   border-bottom: 2px solid #ddd;
   padding-bottom: 0.5rem;
 }
@@ -1420,14 +1418,14 @@ label {
 
 .fee-item strong {
   font-size: 1.1rem;
-  color: #333;
+  color: #000; /* Black */
   display: block;
   margin-bottom: 0.5rem;
 }
 
 .fee-item p {
   font-size: 0.95rem;
-  color: #555;
+  color: #000; /* Black */
   line-height: 1.5;
   margin: 0;
 }
@@ -1439,7 +1437,12 @@ label {
 
 .fee-item ul li {
   font-size: 0.9rem;
-  color: #666;
+  color: #000; /* Black */
+}
+
+.overages li {
+  text-decoration: none;
+  color: #000; /* Black */
 }
 
 @media (max-width: 768px) {
@@ -1860,4 +1863,46 @@ textarea {
 
 #close-popup:hover {
   background-color: #990000;
+}
+
+/* //////////////////////////////////////// */
+/* LOGO ////////////////////////////////// */
+/* Standalone Logo Section */
+.standalone-logo {
+  position: fixed;
+  top: 1.5rem; /* Adjust spacing from the top */
+  left: 1rem; /* Adjust spacing from the left */
+  z-index: 9999; /* Ensure it stays above other elements */
+  transition: transform 0.3s ease, font-size 0.3s ease; /* Smooth transition for scroll effect */
+}
+
+.standalone-logo a {
+  font-family: 'Bebas Neue', sans-serif; /* Bebas Neue font */
+  font-size: 3rem; /* Initial font size */
+  color: black; /* Text color */
+  text-decoration: none; /* Remove underline */
+  transition: color 0.3s; /* Smooth hover effect */
+}
+
+.standalone-logo a:hover {
+  text-shadow: 1px 0 var(--primary-color),
+    /* Right */ -1px 0 var(--primary-color),
+    /* Left */ 0 1px var(--primary-color),
+    /* Bottom */ 0 -1px var(--primary-color); /* Top */
+}
+
+/* Shrink and reposition the logo when scrolling */
+.scrolled .standalone-logo {
+  transform: translate(10px, 5px);
+}
+
+.scrolled .standalone-logo a {
+  /* font-size: 2rem;  */
+}
+
+/* Only show this section on wider screens */
+@media (max-width: 900px) {
+  .standalone-logo {
+    display: none; /* Hide on smaller screens */
+  }
 }
