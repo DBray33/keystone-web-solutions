@@ -674,12 +674,29 @@ textarea::placeholder {
   margin: 1rem auto; /* Center the image horizontally and add spacing above and below */
 }
 
+/* Animation for the cards */
+@keyframes swipeIn {
+  0% {
+    transform: scaleX(0); /* Start with no width */
+    transform-origin: right; /* Expand from the right */
+    opacity: 0; /* Fully transparent */
+  }
+  100% {
+    transform: scaleX(1); /* Full width */
+    opacity: 1; /* Fully visible */
+  }
+}
+
 .card {
   background-color: #f8f8f8; /* Light background color */
   padding: 1.5rem; /* Inner spacing */
   border-radius: 8px; /* Rounded corners */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
   transition: transform 0.3s, box-shadow 0.3s; /* Smooth hover effect */
+  transform-origin: right; /* Expand from the right */
+  transform: scaleX(0); /* Start collapsed */
+  opacity: 0; /* Start invisible */
+  animation: swipeIn 0.2s ease-in-out forwards; /* Apply the swipe-in animation */
 }
 
 .card h2 {
@@ -700,6 +717,19 @@ textarea::placeholder {
   box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Slightly deeper shadow on hover */
 }
 
+/* Add delay to each card */
+.card:nth-child(1) {
+  animation-delay: 0.2s; /* First card */
+}
+
+.card:nth-child(2) {
+  animation-delay: 0.4s; /* Second card */
+}
+
+.card:nth-child(3) {
+  animation-delay: 0.6s; /* Third card */
+}
+
 /* Standards Row */
 .standards-row {
   display: flex;
@@ -714,6 +744,13 @@ textarea::placeholder {
   display: flex;
   flex-direction: column; /* Stack number and label vertically */
   align-items: center; /* Center-align content */
+}
+
+.pagespeed-scores {
+  width: 99%; /* Set width to 60% of the container */
+  height: auto; /* Maintain aspect ratio */
+  display: block; /* Ensure the image is a block-level element */
+  margin: 1rem auto; /* Center the image horizontally and add spacing above and below */
 }
 
 .circle {
