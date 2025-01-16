@@ -250,3 +250,42 @@ document.querySelectorAll('.circle .counter').forEach((counter) => {
 
   updateNumber();
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+  const popup = document.getElementById('popup');
+  const closePopup = document.getElementById('close-popup');
+
+  let popupShown = false; // Ensure the popup shows only once
+
+  function showPopup() {
+    if (!popupShown) {
+      popup.style.display = 'block';
+      popupShown = true;
+    }
+  }
+
+  // Detect mouse movement for specific areas near the edges
+  document.addEventListener('mousemove', (e) => {
+    const { clientX, clientY } = e;
+    const viewportWidth = window.innerWidth;
+    const viewportHeight = window.innerHeight;
+
+    const topBoundaryHeight = viewportHeight * 0.001; // 0.1% thickness
+    const leftBoundaryWidth = viewportWidth * 0.001; // 0.1% thickness
+    const topBoundaryWidth = viewportWidth * 0.15; // 5% of the width
+    const leftBoundaryHeight = viewportHeight * 0.1; // 5% of the height
+
+    // Trigger the popup only for specific regions
+    if (
+      (clientX <= leftBoundaryWidth && clientY <= leftBoundaryHeight) || // Left 5% of the top boundary
+      (clientY <= topBoundaryHeight && clientX <= topBoundaryWidth) // Top 5% of the left boundary
+    ) {
+      showPopup();
+    }
+  });
+
+  // Close the popup
+  closePopup.addEventListener('click', () => {
+    popup.style.display = 'none';
+  });
+});
