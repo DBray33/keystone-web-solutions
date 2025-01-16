@@ -528,11 +528,8 @@ textarea::placeholder {
 .main-content {
   width: 60%;
   padding: 0;
-  background-color: transparent;
   overflow-x: hidden;
-  /* Background image styles */
-  /* background-image: url('https://storage.googleapis.com/background-vid/light-blue-bg.webp'); */
-  background-color: black;
+  background-image: url('https://storage.googleapis.com/background-vid/black-texture-bg.webp');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -540,6 +537,9 @@ textarea::placeholder {
   background-attachment: fixed;
   position: relative;
   z-index: 1;
+  /* Add overlay effect */
+  background-color: rgba(0, 0, 0, 0.5);
+  background-blend-mode: multiply;
 }
 .main-content::before {
   content: '';
@@ -548,13 +548,31 @@ textarea::placeholder {
   left: 40%;
   width: 60%;
   height: 100%;
-  background-image: url('https://storage.googleapis.com/background-vid/bluewave-optimized.svg');
-  background: black;
+  background-image: url('https://storage.googleapis.com/background-vid/black-texture-bg.webp');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   z-index: -1;
-  /* opacity: 0.6; */
+  /* Add a black overlay */
+  background-color: rgba(0, 0, 0, 0.5);
+  background-blend-mode: multiply;
+}
+
+.section h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1rem; /* Add spacing between the heading and the border */
+  position: relative;
+  text-align: center;
+}
+
+.section h2::after {
+  content: '';
+  display: block;
+  width: 50%; /* Adjust width as needed */
+  height: 2px; /* Thickness of the border line */
+  background-color: #5dade2; /* Set the border color */
+  margin: 0.5rem auto 1rem; /* Center the line and add spacing */
 }
 
 .next-section {
@@ -635,6 +653,87 @@ textarea::placeholder {
 }
 .main-content .logos i {
   font-size: 50px;
+}
+
+/* Main Content Cards */
+.section-cards {
+  display: flex;
+  flex-direction: column; /* Stack cards vertically */
+  justify-content: flex-start; /* Align cards to the top */
+  gap: 1.5rem; /* Space between cards */
+  padding: 2rem;
+  text-align: left; /* Align text inside cards to the left */
+}
+
+.pagespeed-scores {
+  width: 99%; /* Set width to 60% of the container */
+  height: auto; /* Maintain aspect ratio */
+  display: block; /* Ensure the image is a block-level element */
+  margin: 1rem auto; /* Center the image horizontally and add spacing above and below */
+}
+
+.card {
+  background-color: #f8f8f8; /* Light background color */
+  padding: 1.5rem; /* Inner spacing */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  transition: transform 0.3s, box-shadow 0.3s; /* Smooth hover effect */
+}
+
+.card h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  color: #333;
+}
+
+.card p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6; /* Improve readability */
+}
+
+.card:hover {
+  transform: translateY(-5px); /* Slight lift on hover */
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Slightly deeper shadow on hover */
+}
+
+/* Standards Row */
+.standards-row {
+  display: flex;
+  justify-content: space-around; /* Space items evenly across the row */
+  align-items: center;
+  margin-top: 1.5rem; /* Add spacing above the row */
+  text-align: center; /* Center-align text */
+  gap: 1rem; /* Space between items */
+}
+
+.standard-item {
+  display: flex;
+  flex-direction: column; /* Stack number and label vertically */
+  align-items: center; /* Center-align content */
+}
+
+.circle {
+  width: 60px; /* Set circle width */
+  height: 60px; /* Set circle height */
+  background-color: #ebf9f0; /* Light green background */
+  border: 3px solid #00cc66; /* Darker green border */
+  border-radius: 50%; /* Make it a perfect circle */
+  display: flex;
+  align-items: center; /* Center number vertically */
+  justify-content: center; /* Center number horizontally */
+  font-size: 1.2rem; /* Number size */
+  font-weight: bold; /* Make the number bold */
+  color: #008800; /* Dark green number color */
+  margin-bottom: 0.5rem; /* Space between circle and label */
+}
+
+.standard-item p {
+  font-size: 0.9rem; /* Label text size */
+  font-weight: 700;
+  color: black; /* Black text for labels */
+  margin: 0; /* Remove default margin */
 }
 
 /* ///////////////////////////////////////////////// */
@@ -777,13 +876,12 @@ textarea::placeholder {
     left: 0;
     width: 100%;
     height: 100%;
-    /* background-image: url('https://storage.googleapis.com/background-vid/bluewave-optimized.svg'); */
-    background: black;
+    background-image: url('https://storage.googleapis.com/background-vid/black-texture-bg.webp');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    z-index: -1;
-    opacity: 0.5;
+    background-color: rgba(0, 0, 0, 0.5);
+    background-blend-mode: multiply;
   }
   .container {
     display: block;
