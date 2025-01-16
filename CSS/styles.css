@@ -1210,6 +1210,8 @@ label {
   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
     1px 1px 0 #000;
 }
+/* /////////////////////////////////////// */
+/* PRICING SECTION /////////////////////// */
 .pricing-section {
   position: relative;
   text-align: center;
@@ -1317,6 +1319,136 @@ label {
   text-align: center;
   text-decoration: none;
 }
+
+/* Checklist Styling with Checkmarks */
+.checklist {
+  list-style: none; /* Remove default bullets */
+  padding: 0; /* Remove default padding */
+  margin: 0; /* Remove default margin */
+}
+
+.checklist li {
+  position: relative; /* Enable pseudo-element positioning */
+  padding-left: 2rem; /* Add space for the checkmark */
+  margin-bottom: 0.75rem; /* Space between items */
+  font-size: 1rem; /* Adjust font size */
+  color: #333; /* Text color */
+  line-height: 1.5; /* Improve readability */
+}
+
+.checklist li::before {
+  content: '✔'; /* Checkmark symbol */
+  position: absolute; /* Position it in the padding space */
+  left: 0; /* Align it to the left edge */
+  top: 50%; /* Center it vertically */
+  transform: translateY(-50%); /* Center alignment adjustment */
+  color: #008800; /* Green color for the checkmark */
+  font-size: 1.2rem; /* Adjust checkmark size */
+  font-weight: bold; /* Make the checkmark bold */
+}
+
+/* No Symbol Styling */
+.checklist .no-symbol::before {
+  content: '🚫'; /* No symbol */
+  color: #cc0000; /* Red color for the no symbol */
+  font-size: 1.2rem; /* Match size with the checkmarks */
+  font-weight: bold; /* Match weight with the checkmarks */
+}
+
+/* Media Query Adjustments for Checklist */
+@media (max-width: 768px) {
+  .checklist li {
+    font-size: 0.9rem; /* Adjust font size for smaller screens */
+  }
+
+  .checklist li::before {
+    font-size: 1rem; /* Adjust checkmark size for smaller screens */
+  }
+
+  .checklist .no-symbol::before {
+    font-size: 1rem; /* Adjust no symbol size for smaller screens */
+  }
+}
+
+/* Additional fees */
+/* Additional Fees Section */
+.added-fees {
+  padding: 2rem;
+
+  border-radius: 8px;
+
+  margin-top: 2rem;
+}
+
+.added-fees h4 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  color: #333;
+  text-transform: none;
+  text-align: center;
+}
+
+.added-fees h5 {
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin: 2rem 0 1rem;
+  color: #444;
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 0.5rem;
+}
+
+.added-fees .fees-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.fee-item {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.fee-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.fee-item strong {
+  font-size: 1.1rem;
+  color: #333;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.fee-item p {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.fee-item ul {
+  padding-left: 1.5rem;
+  margin-top: 0.5rem;
+}
+
+.fee-item ul li {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+@media (max-width: 768px) {
+  .fees-grid {
+    grid-template-columns: 1fr;
+  }
+}
+/* ////////////////////////////////// */
+/* ////////////////////////////////// */
 .contact-info li,
 .contact-info li span,
 .form-group,
