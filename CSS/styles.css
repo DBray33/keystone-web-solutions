@@ -636,6 +636,9 @@ textarea::placeholder {
 .main-content .logos i {
   font-size: 50px;
 }
+
+/* ///////////////////////////////////////////////// */
+/* SERVICES //////////////////////////////////////// */
 .p-mobile {
   display: none; /* Hide by default */
 }
