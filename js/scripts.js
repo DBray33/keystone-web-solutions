@@ -272,8 +272,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const viewportWidth = window.innerWidth;
     const viewportHeight = window.innerHeight;
 
-    const topBoundaryHeight = viewportHeight * 0.001; // Top 0.1% thickness
-    const leftBoundaryWidth = viewportWidth * 0.001; // Left 0.1% thickness
+    const topBoundaryHeight = viewportHeight * 0.01; // Top 0.1% thickness
+    const leftBoundaryWidth = viewportWidth * 0.01; // Left 0.1% thickness
     const topBoundaryWidth = viewportWidth * 0.2; // Left 5% of the width
     const leftBoundaryHeight = viewportHeight * 0.15; // Top 5% of the height
 
