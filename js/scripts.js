@@ -231,3 +231,22 @@ document.addEventListener('scroll', () => {
     mainContent.style.backgroundAttachment = 'fixed'; // Keep it fixed
   }
 });
+
+// //////////////////////////////////////////////
+// PAGESPEED SCORE CIRCLES //////////////////////////
+document.querySelectorAll('.circle .counter').forEach((counter) => {
+  let currentNumber = 0;
+  const targetNumber = 100; // Final number
+  const duration = 4000; // Total duration in milliseconds
+  const interval = duration / targetNumber; // Time per increment
+
+  const updateNumber = () => {
+    if (currentNumber < targetNumber) {
+      currentNumber++;
+      counter.textContent = currentNumber;
+      setTimeout(updateNumber, interval);
+    }
+  };
+
+  updateNumber();
+});

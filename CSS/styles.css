@@ -713,8 +713,7 @@ textarea::placeholder {
 }
 
 .card:hover {
-  transform: translateY(-5px); /* Slight lift on hover */
-  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Slightly deeper shadow on hover */
+  box-shadow: 0 0px 10px 10px var(--primary-color); /* Larger offset, blur, and spread */
 }
 
 /* Add delay to each card */
@@ -733,46 +732,92 @@ textarea::placeholder {
 /* Standards Row */
 .standards-row {
   display: flex;
+  flex-wrap: wrap; /* Allow items to wrap to the next row */
   justify-content: space-around; /* Space items evenly across the row */
-  align-items: center;
+  align-items: flex-start; /* Align items at the start of their container */
   margin-top: 1.5rem; /* Add spacing above the row */
   text-align: center; /* Center-align text */
   gap: 1rem; /* Space between items */
 }
 
+/* Individual Standard Item */
 .standard-item {
   display: flex;
   flex-direction: column; /* Stack number and label vertically */
   align-items: center; /* Center-align content */
+  flex: 1 1 100px; /* Ensure items shrink and grow while maintaining minimum size */
+  max-width: 150px; /* Optional: Restrict maximum width */
 }
 
-.pagespeed-scores {
-  width: 99%; /* Set width to 60% of the container */
-  height: auto; /* Maintain aspect ratio */
-  display: block; /* Ensure the image is a block-level element */
-  margin: 1rem auto; /* Center the image horizontally and add spacing above and below */
+/* Circle Container */
+.circle-container {
+  position: relative;
+  width: 60px; /* Circle width */
+  height: 60px; /* Circle height */
 }
 
+/* Circle with Counter and Animated Border */
 .circle {
+  position: relative; /* Ensure positioning for pseudo-elements */
   width: 60px; /* Set circle width */
   height: 60px; /* Set circle height */
   background-color: #ebf9f0; /* Light green background */
-  border: 3px solid #00cc66; /* Darker green border */
   border-radius: 50%; /* Make it a perfect circle */
   display: flex;
   align-items: center; /* Center number vertically */
   justify-content: center; /* Center number horizontally */
   font-size: 1.2rem; /* Number size */
   font-weight: bold; /* Make the number bold */
-  color: #008800; /* Dark green number color */
+  color: #008800; /* Text color */
   margin-bottom: 0.5rem; /* Space between circle and label */
+  overflow: hidden; /* Ensure animation stays within bounds */
 }
 
+/* Border Animation */
+.circle::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 3px solid #00cc66; /* Border color */
+  border-radius: 50%; /* Keep it circular */
+  box-sizing: border-box; /* Include border in dimensions */
+  clip-path: circle(50% at 50% 50%); /* Keep within bounds */
+  transform: rotate(0deg);
+  animation: rotate-border 4s linear forwards;
+}
+
+/* Rotate Border Keyframes */
+@keyframes rotate-border {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Label Text */
 .standard-item p {
   font-size: 0.9rem; /* Label text size */
   font-weight: 700;
   color: black; /* Black text for labels */
   margin: 0; /* Remove default margin */
+}
+
+/* Responsive Adjustments for Narrow Viewports */
+@media (max-width: 600px) {
+  .standards-row {
+    justify-content: center; /* Center the row on smaller screens */
+    gap: 1.5rem; /* Increase spacing between items */
+  }
+
+  .standard-item {
+    flex: 1 1 45%; /* Each item takes up nearly half of the row */
+    max-width: none; /* Remove max-width for flexibility */
+  }
 }
 
 /* ///////////////////////////////////////////////// */
