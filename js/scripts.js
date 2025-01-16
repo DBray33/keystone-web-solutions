@@ -251,6 +251,8 @@ document.querySelectorAll('.circle .counter').forEach((counter) => {
   updateNumber();
 });
 
+// //////////////////////////////////////////////
+// POPUP //////////////////////////
 document.addEventListener('DOMContentLoaded', () => {
   const popup = document.getElementById('popup');
   const closePopup = document.getElementById('close-popup');
@@ -259,7 +261,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function showPopup() {
     if (!popupShown) {
-      popup.style.display = 'block';
+      popup.classList.add('show'); // Add the 'show' class to trigger CSS animation
       popupShown = true;
     }
   }
@@ -270,15 +272,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const viewportWidth = window.innerWidth;
     const viewportHeight = window.innerHeight;
 
-    const topBoundaryHeight = viewportHeight * 0.001; // 0.1% thickness
-    const leftBoundaryWidth = viewportWidth * 0.001; // 0.1% thickness
-    const topBoundaryWidth = viewportWidth * 0.15; // 5% of the width
-    const leftBoundaryHeight = viewportHeight * 0.1; // 5% of the height
+    const topBoundaryHeight = viewportHeight * 0.001; // Top 0.1% thickness
+    const leftBoundaryWidth = viewportWidth * 0.001; // Left 0.1% thickness
+    const topBoundaryWidth = viewportWidth * 0.2; // Left 5% of the width
+    const leftBoundaryHeight = viewportHeight * 0.15; // Top 5% of the height
 
     // Trigger the popup only for specific regions
     if (
-      (clientX <= leftBoundaryWidth && clientY <= leftBoundaryHeight) || // Left 5% of the top boundary
-      (clientY <= topBoundaryHeight && clientX <= topBoundaryWidth) // Top 5% of the left boundary
+      (clientX <= leftBoundaryWidth && clientY <= leftBoundaryHeight) || // Top 5% of left boundary
+      (clientY <= topBoundaryHeight && clientX <= topBoundaryWidth) // Left 5% of top boundary
     ) {
       showPopup();
     }
@@ -286,6 +288,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Close the popup
   closePopup.addEventListener('click', () => {
-    popup.style.display = 'none';
+    popup.classList.remove('show'); // Remove the 'show' class to hide the popup
+    setTimeout(() => {
+      popup.style.display = 'none'; // Fully hide the popup after animation ends
+    }, 500); // Match the CSS animation duration
   });
 });
