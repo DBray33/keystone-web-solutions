@@ -1,0 +1,35 @@
+.navbar .navbar-links a,
+.navbar-links a {
+  transition: color 0.3s;
+  color: #333;
+  text-decoration: none;
+  font-weight: 700;
+}
+.container,
+.navbar-dropdown:hover .navbar-dropdown-menu,
+.navbar-links {
+  display: flex;
+}
+.mobile-menu,
+.navbar {
+  left: 0;
+  z-index: 1000;
+  width: 100%;
+}
+
+.dropdown-links li,
+.dropdown-submenu li {
+  text-align: center;
+}
+
+.navbar-links a {
+  text-transform: uppercase;
+}
+
+.dropdown-links li,
+.dropdown-submenu li {
+  text-align: center;
+}
+.navbar-links a {
+  text-transform: uppercase;
+}

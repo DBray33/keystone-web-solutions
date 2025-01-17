@@ -1,3 +1,6 @@
+* {
+  box-sizing: border-box;
+}
 *,
 body,
 html {
@@ -10,41 +13,6 @@ html {
   height: 100%;
 }
 
-.navbar .navbar-links a,
-.navbar-links a {
-  transition: color 0.3s;
-  color: #333;
-  text-decoration: none;
-  font-weight: 700;
-}
-.container,
-.navbar-dropdown:hover .navbar-dropdown-menu,
-.navbar-links {
-  display: flex;
-}
-.mobile-menu,
-.navbar {
-  left: 0;
-  z-index: 1000;
-  width: 100%;
-}
-.dropdown-links li,
-.dropdown-submenu li,
-.main-content .section,
-.main-content .section-2 h2,
-.main-content .section-3 h2,
-.sidebar-content {
-  text-align: center;
-}
-.journey-heading,
-.more-info-button,
-.navbar-links a,
-.service-item-front h3 {
-  text-transform: uppercase;
-}
-* {
-  box-sizing: border-box;
-}
 body,
 html {
   font-family: 'Exo', sans-serif;
@@ -65,6 +33,27 @@ input::placeholder,
 textarea::placeholder {
   font-size: 14px;
 }
+
+.container {
+  display: flex;
+}
+
+.dropdown-links li,
+.dropdown-submenu li,
+.main-content .section,
+.main-content .section-2 h2,
+.main-content .section-3 h2,
+.sidebar-content {
+  text-align: center;
+}
+
+.journey-heading,
+.more-info-button,
+.navbar-links a,
+.service-item-front h3 {
+  text-transform: uppercase;
+}
+
 .navbar {
   position: fixed;
   top: 0;
@@ -77,7 +66,7 @@ textarea::placeholder {
   display: inline-block;
   padding: 0.5rem 1rem;
 }
-@media (max-width: 1048px) {
+@media (max-width: 1130px) {
   .navbar .navbar-links a {
     font-size: 0.8rem;
     padding: 0.5rem;
@@ -184,6 +173,11 @@ textarea::placeholder {
 }
 .navbar-dropdown-menu li a:hover {
   background-color: #f5f5f5;
+}
+@media (max-width: 1240px) and (min-width: 930px) {
+  .nav-home {
+    display: none;
+  }
 }
 @media (max-width: 843px) {
   .navbar {
@@ -561,23 +555,6 @@ textarea::placeholder {
   background-blend-mode: multiply; */
 }
 
-.section h2 {
-  font-size: 2rem;
-  font-weight: bold;
-  margin-bottom: 1rem; /* Add spacing between the heading and the border */
-  position: relative;
-  text-align: center;
-}
-
-.section h2::after {
-  content: '';
-  display: block;
-  width: 50%; /* Adjust width as needed */
-  height: 2px; /* Thickness of the border line */
-  background-color: #5dade2; /* Set the border color */
-  margin: 0.5rem auto 1rem; /* Center the line and add spacing */
-}
-
 .next-section {
   margin-top: 100px;
 }
@@ -603,6 +580,13 @@ textarea::placeholder {
   margin: 0 16px 10px;
 }
 
+@media (max-width: 512px) {
+  .main-content .section h2 {
+    font-size: 4rem;
+    margin: 0 8px 10px;
+  }
+}
+
 @media (max-width: 935px) {
   .main-content .section {
     text-align: center;
@@ -615,19 +599,8 @@ textarea::placeholder {
   .main-content .desktop-header {
     display: none;
   }
-  .main-content .section h1 {
-    font-size: 7rem;
-    margin: 1rem 1rem 0;
-    letter-spacing: normal;
-  }
 }
-@media (max-width: 740px) {
-  .main-content .section h1 {
-    font-size: 5rem;
-    margin: 3rem 1rem 0;
-    letter-spacing: normal;
-  }
-}
+
 .welcome-section-devices {
   width: 50%;
   max-width: 800px;
@@ -1373,7 +1346,7 @@ label {
 /* Additional fees */
 /* Additional Fees Section */
 .added-fees {
-  padding: 2rem;
+  /* padding: 2rem; */
   border-radius: 8px;
   margin-top: 2rem;
 }
@@ -1901,7 +1874,7 @@ textarea {
 }
 
 /* Only show this section on wider screens */
-@media (max-width: 900px) {
+@media (max-width: 930px) {
   .standalone-logo {
     display: none; /* Hide on smaller screens */
   }
