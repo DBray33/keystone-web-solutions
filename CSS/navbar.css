@@ -320,7 +320,7 @@
 /* Standalone Logo Section */
 .standalone-logo {
   position: fixed;
-  top: 1.5rem; /* Adjust spacing from the top */
+  top: 21.5px; /* Adjust spacing from the top */
   left: 1rem; /* Adjust spacing from the left */
   z-index: 9999; /* Ensure it stays above other elements */
   transition: transform 0.3s ease, font-size 0.3s ease; /* Smooth transition for scroll effect */
