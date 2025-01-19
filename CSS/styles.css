@@ -359,7 +359,7 @@ html {
   display: flex;
   flex-direction: column; /* Stack cards vertically */
   justify-content: flex-start; /* Align cards to the top */
-  gap: 1.5rem; /* Space between cards */
+  gap: 2rem; /* Space between cards */
   padding: 2rem;
   text-align: left; /* Align text inside cards to the left */
 }
@@ -388,12 +388,49 @@ html {
   background-color: #f8f8f8; /* Light background color */
   padding: 1.5rem; /* Inner spacing */
   border-radius: 8px; /* Rounded corners */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-  transition: transform 0.3s, box-shadow 0.3s; /* Smooth hover effect */
+  box-shadow: 0 0px 0px 0px var(--primary-color); /* No shadow initially */
+  transition: transform 0.2s; /* Smooth hover effect */
   transform-origin: right; /* Expand from the right */
   transform: scaleX(0); /* Start collapsed */
   opacity: 0; /* Start invisible */
-  animation: swipeIn 0.2s ease-in-out forwards; /* Apply the swipe-in animation */
+  animation: swipeIn 0.2s ease-in-out forwards, flickerBoxShadow 3s 3s forwards; /* Two animations */
+}
+
+@keyframes swipeIn {
+  to {
+    transform: scaleX(1); /* Expand fully */
+    opacity: 1; /* Make visible */
+  }
+}
+
+@keyframes flickerBoxShadow {
+  0% {
+    box-shadow: 0 0px 0px 0px var(--primary-color); /* No shadow */
+  }
+  10% {
+    box-shadow: 0 0px 10px 6px var(--primary-color); /* Shadow appears */
+  }
+  20% {
+    box-shadow: 0 0px 0px 0px var(--primary-color); /* Shadow disappears */
+  }
+  30% {
+    box-shadow: 0 0px 10px 6px var(--primary-color); /* Shadow appears */
+  }
+  50% {
+    box-shadow: 0 0px 0px 0px var(--primary-color); /* Shadow disappears */
+  }
+  60% {
+    box-shadow: 0 0px 10px 6px var(--primary-color); /* Shadow appears */
+  }
+  75% {
+    box-shadow: 0 0px 0px 0px var(--primary-color); /* Shadow disappears */
+  }
+  85% {
+    box-shadow: 0 0px 10px 6px var(--primary-color); /* Shadow appears */
+  }
+  100% {
+    box-shadow: 0 0px 10px 8px var(--primary-color); /* Final shadow remains */
+  }
 }
 
 .card h2 {
@@ -410,7 +447,7 @@ html {
 }
 
 .card:hover {
-  box-shadow: 0 0px 10px 10px var(--primary-color); /* Larger offset, blur, and spread */
+  box-shadow: 0 0px 10px 10px var(--primary-color);
 }
 
 /* Add delay to each card */
