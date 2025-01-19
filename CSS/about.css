@@ -599,6 +599,7 @@ body {
 .faq {
   padding: 3rem 1rem;
   background-color: #f8f8f8;
+  overflow: hidden;
 }
 
 .section-header {
@@ -617,106 +618,113 @@ body {
   color: #666;
 }
 
-/* FAQ Cards Grid */
-/* FAQ Cards Grid */
-.faq-cards {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 columns of equal width */
-  gap: 0; /* Remove gaps between cards */
-  width: 100%; /* Ensure the grid spans the full container width */
-  height: 100%; /* Optional: Adjust height for the container */
-  overflow-x: hidden; /* Prevent horizontal overflow */
+/* FAQ Accordion Styles */
+.faq-accordion {
+  width: 90%;
+  margin: 0 auto;
+  max-width: 800px;
 }
 
-/* Individual FAQ Card */
-.faq-card {
-  width: 100%; /* Take full width of the grid cell */
-  aspect-ratio: 1 / 1; /* Ensure the card is a perfect square */
-  background-color: white;
+.faq-item {
+  margin-bottom: 1rem;
   border: 1px solid #ddd;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  overflow: hidden; /* Prevent text overflow */
-
-  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth hover effect */
+  border-radius: 5px;
+  overflow: hidden;
+  opacity: 0; /* Initially hidden */
+  transform: translateX(0); /* Neutral transform to reset after animation */
+  transition: transform 0.8s ease, opacity 0.8s ease;
 }
 
-.faq-card:hover {
-  background-color: var(--primary-color); /* Change background on hover */
+/* Slide-in Animations */
+.faq-item.faq-item-1 {
+  transform: translateX(-100%); /* Start off-screen to the left */
 }
 
-/* Question Text */
-.faq-card p {
-  font-size: 3rem; /* Larger font for question text */
+.faq-item.faq-item-2 {
+  transform: translateX(100%); /* Start off-screen to the right */
+}
+
+.faq-item.visible {
+  opacity: 1; /* Fade in */
+  transform: translateX(0); /* Move to its original position */
+}
+
+.faq-question {
+  width: 100%;
+  padding: 1rem;
+  background-color: #fff;
+  border: none;
+  font-size: 1.2rem;
   font-weight: bold;
-  color: black;
-  margin: 0 1rem;
-  opacity: 1; /* Ensure it's visible by default */
+  text-align: left;
+  cursor: pointer;
+  color: #000 !important; /* Force text color to black */
+  transition: background-color 0.3s;
+  text-decoration: none; /* Prevent underline on some devices */
+}
+
+.faq-question:hover {
+  background-color: var(--primary-color);
+  color: #000 !important; /* Ensure hover state also stays black */
+}
+
+.faq-question:focus {
+  color: #000 !important; /* Remove focus state color changes */
+  outline: none; /* Optional: Remove focus outline if undesired */
+}
+
+.faq-question:visited {
+  color: #000 !important; /* Prevent visited links from changing color */
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  padding: 0 1rem;
+  background-color: #f9f9f9;
+  font-size: 1rem;
+  color: #333;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+  text-align: left; /* Ensures content is left-aligned */
+}
+
+.faq-answer ul {
+  list-style-type: none; /* Removes the bullet points */
+  padding: 0; /* Removes padding around the list */
+  margin: 0; /* Removes margin around the list */
+}
+
+.faq-answer li {
+  padding: 0.5rem 0; /* Optional: Add spacing between list items for readability */
+}
+
+/* Open Answer Styling */
+.faq-item.open .faq-answer {
+  max-height: 500px;
+  padding: 1rem;
+}
+
+/* Search Bar */
+.faq-search {
   text-align: center;
-  transition: none; /* Remove fade-out effect */
+  margin-bottom: 2rem;
+  width: 100%; /* Ensure the parent container spans full width */
 }
 
-/* Hover Content */
-.faq-card .hover-content {
-  opacity: 0; /* Start fully hidden */
-  font-size: 1.2rem; /* Larger font for hover content */
-  font-weight: bold;
-  color: white;
-  position: absolute;
-  text-align: center;
-  transition: opacity 0.1s ease 0.1s; /* Smooth fade-in */
-  padding: 0 1rem; /* Add padding for readability */
+.faq-search input {
+  display: block;
+  width: 60%; /* Set input width relative to the viewport */
+  max-width: 700px; /* Increase max width for larger screens */
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  outline: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin: 0 auto; /* Center the input horizontally */
 }
 
-/* Hover Effect */
-.faq-card:hover p {
-  opacity: 0; /* Hide the original question immediately */
-}
-
-.faq-card:hover .hover-content {
-  opacity: 1; /* Fade in the hover content */
-  transition: opacity 0.1s ease; /* Smooth fade-in */
-}
-
-/* Back to original when hover ends */
-.faq-card:not(:hover) p {
-  opacity: 1; /* Show the original question again instantly */
-}
-
-.faq-card:not(:hover) .hover-content {
-  opacity: 0; /* Hide the hover content */
-  transition: none; /* Remove fade-out effect */
-}
-
-/* Responsive Adjustments */
-@media (max-width: 1300px) {
-  .faq-cards {
-    grid-template-columns: repeat(2, 1fr); /* 2 columns for medium screens */
-  }
-}
-
-@media (max-width: 768px) {
-  .faq-cards {
-    grid-template-columns: 1fr; /* 1 column for smaller screens */
-  }
-
-  .faq-card p,
-  .faq-card .hover-content {
-    font-size: 1.4rem; /* Adjust text size for smaller screens */
-  }
-}
-
-@media (max-width: 930px) and (min-width: 769px) {
-  .faq-card .hover-content {
-    font-size: 1rem; /* Adjust text size for very small screens */
-  }
-}
-
-@media (max-width: 480px) {
-  .faq-card p,
-  .faq-card .hover-content {
-    font-size: 1rem; /* Adjust text size for very small screens */
-  }
+.faq-search input:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
 }

@@ -305,3 +305,59 @@ document.addEventListener('scroll', () => {
     document.body.classList.remove('scrolled');
   }
 });
+
+// //////////////////////////////////////////////
+// FAQ ACCORDION //////////////////////////////
+// Accordion functionality
+document.addEventListener('click', (event) => {
+  const allFaqs = document.querySelectorAll('.faq-item');
+  let clickedInsideFaq = false;
+
+  allFaqs.forEach((faq) => {
+    const question = faq.querySelector('.faq-question');
+    if (faq.contains(event.target)) {
+      // Toggle the clicked FAQ item
+      if (event.target === question) {
+        faq.classList.toggle('open');
+      }
+      clickedInsideFaq = true;
+    } else {
+      // Close any other open FAQ item
+      faq.classList.remove('open');
+    }
+  });
+
+  // If the click was outside any FAQ, close all FAQs
+  if (!clickedInsideFaq) {
+    allFaqs.forEach((faq) => faq.classList.remove('open'));
+  }
+});
+
+// Search functionality
+document.getElementById('faq-search-input').addEventListener('input', (e) => {
+  const searchTerm = e.target.value.toLowerCase();
+  const faqItems = document.querySelectorAll('.faq-item');
+
+  faqItems.forEach((item) => {
+    const question = item
+      .querySelector('.faq-question')
+      .textContent.toLowerCase();
+    const answer = item.querySelector('.faq-answer').textContent.toLowerCase();
+
+    if (question.includes(searchTerm) || answer.includes(searchTerm)) {
+      item.style.display = 'block';
+    } else {
+      item.style.display = 'none';
+    }
+  });
+});
+// Slide in from sides animation
+document.addEventListener('DOMContentLoaded', () => {
+  const faqItems = document.querySelectorAll('.faq-item');
+
+  faqItems.forEach((item, index) => {
+    setTimeout(() => {
+      item.classList.add('visible');
+    }, index * 200); // Stagger the animations for a cascading effect
+  });
+});
