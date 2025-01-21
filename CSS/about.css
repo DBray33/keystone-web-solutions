@@ -728,3 +728,98 @@ body {
   border-color: var(--primary-color);
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
 }
+
+/* BLOG PAGE ///////////////////////// */
+.blog {
+  padding: 2rem 1rem;
+}
+
+.section-header h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.section-header p {
+  text-align: center;
+  font-size: 1rem;
+  color: #555;
+}
+
+.blog-content-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(3, 1fr); /* Default: 3 per row */
+}
+
+@media (max-width: 1374px) {
+  .blog-content-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 per row for medium screens */
+  }
+}
+
+@media (max-width: 934px) {
+  .blog-content-grid {
+    grid-template-columns: 1fr; /* 1 per row for small screens */
+  }
+  .blog-preview {
+    height: auto;
+  }
+}
+
+.blog-preview-link {
+  display: block;
+  text-decoration: none;
+  color: inherit; /* Ensure text inside inherits the color styling */
+}
+
+.blog-preview {
+  background: white;
+  height: 400px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: pointer; /* Indicate interactivity */
+}
+
+.blog-preview:hover {
+  background: #e6f2ff;
+  transform: scale(1.005);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Add shadow on hover */
+}
+
+.blog-preview img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.blog-content {
+  padding: 1rem;
+}
+
+.blog-content h2 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.blog-content h2 a {
+  text-decoration: none;
+  color: #333;
+}
+
+.blog-content h2 a:hover {
+  color: #007bff;
+}
+
+.blog-content .date {
+  font-size: 0.875rem;
+  color: black;
+  margin-bottom: 0.5rem;
+}
+
+.blog-content .description {
+  font-size: 1rem;
+  color: black;
+}

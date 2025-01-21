@@ -37,6 +37,10 @@ html {
   display: flex;
 }
 
+html {
+  scroll-padding-top: 130px; /* Matches the fixed header height */
+}
+
 .main-content .section,
 .main-content .section-2 h2,
 .main-content .section-3 h2,

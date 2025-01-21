@@ -158,6 +158,10 @@
 .footer-copyright a:visited {
   color: inherit !important;
 }
+.footer-right h2 {
+  color: #fff;
+  margin-bottom: 1rem;
+}
 .footer-contact-form input,
 .footer-contact-form textarea {
   width: 100%;

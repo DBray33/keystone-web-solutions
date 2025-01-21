@@ -248,9 +248,24 @@ document.querySelectorAll('.circle .counter').forEach((counter) => {
     }
   };
 
-  updateNumber();
-});
+  // Intersection Observer to detect when the counter is in view
+  const observer = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          // Trigger the counter animation when the element comes into view
+          updateNumber();
+          observer.unobserve(counter); // Stop observing once the animation starts
+        }
+      });
+    },
+    {
+      threshold: 0.5, // Trigger when 50% of the element is visible
+    }
+  );
 
+  observer.observe(counter);
+});
 // //////////////////////////////////////////////
 // POPUP //////////////////////////
 document.addEventListener('DOMContentLoaded', () => {
@@ -361,3 +376,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }, index * 200); // Stagger the animations for a cascading effect
   });
 });
+
+// //////////////////////////////////////////////
+// //////////////////////////////////////////////
+// //////////////////////////////////////////////
+// //////////////////////////////////////////////
