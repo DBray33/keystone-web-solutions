@@ -1688,14 +1688,18 @@ textarea {
 }
 
 .testimonial-text {
-  background: rgba(255, 255, 255, 0.9);
+  background: #e6f2ff; /* Background for readability */
   width: 90%; /* Adjusted width for responsiveness */
   max-width: 800px; /* Restrict max width */
   padding: 20px;
   box-sizing: border-box;
   text-align: center;
   border-radius: 20px;
-  margin: 5rem auto 0;
+  margin: 0 auto 2rem;
+  position: relative; /* Ensure proper containment */
+  z-index: 1; /* Keep the text above the background */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Subtle shadow */
+  border: 2px solid black;
 }
 
 .stars {
@@ -1705,14 +1709,8 @@ textarea {
 
 .testimonial-paragraph {
   font-size: 1rem;
-  margin: 10px 0;
+  margin: 10px 0 20px; /* Add spacing between paragraph and name */
   color: #333;
-}
-
-.testimonial-name {
-  font-size: 1rem;
-  font-weight: bold;
-  margin-top: 5px;
 }
 
 .testimonial-name a {
@@ -1837,7 +1835,7 @@ textarea {
   .testimonial-text {
     width: 100%; /* Ensure the text takes full width */
     padding: 20px;
-    background: rgba(255, 255, 255, 0.9); /* White background for readability */
+
     border-radius: 0 0 20px 20px; /* Bottom corners rounded */
     text-align: center;
     margin: 0; /* Remove additional spacing from the text */
