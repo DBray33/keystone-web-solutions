@@ -775,7 +775,7 @@ body {
 
 .blog-preview {
   background: white;
-  height: 400px;
+  height: 475px;
   border: 1px solid #ddd;
   border-radius: 8px;
   overflow: hidden;
@@ -791,7 +791,7 @@ body {
 
 .blog-preview img {
   width: 100%;
-  height: 200px;
+  height: 250px;
   object-fit: cover;
 }
 
@@ -820,6 +820,6 @@ body {
 }
 
 .blog-content .description {
-  font-size: 1rem;
+  font-size: 14px;
   color: black;
 }
