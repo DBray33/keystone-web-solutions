@@ -704,29 +704,10 @@ body {
   padding: 1rem;
 }
 
-/* Search Bar */
+/* Search Bar Container */
 .faq-search {
   text-align: center;
   margin-bottom: 2rem;
-  width: 100%; /* Ensure the parent container spans full width */
-}
-
-.faq-search input {
-  display: block;
-  width: 60%; /* Set input width relative to the viewport */
-  max-width: 700px; /* Increase max width for larger screens */
-  padding: 0.75rem 1rem;
-  font-size: 1rem;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  outline: none;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  margin: 0 auto; /* Center the input horizontally */
-}
-
-.faq-search input:focus {
-  border-color: var(--primary-color);
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
 }
 
 /* BLOG PAGE ///////////////////////// */

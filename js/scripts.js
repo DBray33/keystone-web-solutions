@@ -349,22 +349,31 @@ document.addEventListener('click', (event) => {
 });
 
 // Search functionality
-document.getElementById('faq-search-input').addEventListener('input', (e) => {
-  const searchTerm = e.target.value.toLowerCase();
-  const faqItems = document.querySelectorAll('.faq-item');
+document.addEventListener('DOMContentLoaded', () => {
+  const searchInput = document.getElementById('faq-search-input');
+  if (searchInput) {
+    searchInput.addEventListener('input', (e) => {
+      const searchTerm = e.target.value.toLowerCase();
+      const faqItems = document.querySelectorAll('.faq-item');
 
-  faqItems.forEach((item) => {
-    const question = item
-      .querySelector('.faq-question')
-      .textContent.toLowerCase();
-    const answer = item.querySelector('.faq-answer').textContent.toLowerCase();
+      faqItems.forEach((item) => {
+        const question = item
+          .querySelector('.faq-question')
+          .textContent.toLowerCase();
+        const answer = item
+          .querySelector('.faq-answer')
+          .textContent.toLowerCase();
 
-    if (question.includes(searchTerm) || answer.includes(searchTerm)) {
-      item.style.display = 'block';
-    } else {
-      item.style.display = 'none';
-    }
-  });
+        if (question.includes(searchTerm) || answer.includes(searchTerm)) {
+          item.style.display = 'block';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    });
+  } else {
+    console.warn('Search input not found on this page.');
+  }
 });
 // Slide in from sides animation
 document.addEventListener('DOMContentLoaded', () => {
@@ -376,8 +385,3 @@ document.addEventListener('DOMContentLoaded', () => {
     }, index * 200); // Stagger the animations for a cascading effect
   });
 });
-
-// //////////////////////////////////////////////
-// //////////////////////////////////////////////
-// //////////////////////////////////////////////
-// //////////////////////////////////////////////
