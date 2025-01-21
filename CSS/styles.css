@@ -1640,3 +1640,215 @@ textarea {
     display: none; /* Hide on smaller screens */
   }
 }
+
+/* //////////////////////////////////////// */
+/* Testimonials Section */
+.testimonials {
+  width: 100%;
+  background: black;
+  position: relative;
+  padding: 2rem 0;
+  overflow: hidden;
+  z-index: 999;
+}
+
+.carousel {
+  display: flex;
+  justify-content: flex-start; /* Allow items to flow horizontally */
+  align-items: center;
+  gap: 2rem; /* Add space between items */
+  width: 100%; /* Full width of the viewport */
+  overflow-x: auto; /* Enable horizontal scrolling */
+  overflow-y: hidden; /* Disable vertical overflow within carousel */
+  scroll-behavior: smooth; /* Smooth scroll */
+  -webkit-overflow-scrolling: touch; /* Improve iOS touch scrolling */
+  touch-action: pan-y; /* Allow vertical scrolling while enabling horizontal swiping */
+}
+
+.carousel-item {
+  flex: 0 0 auto; /* Items do not stretch */
+  width: 90%; /* Responsive width relative to the viewport */
+  max-width: 970px; /* Maximum width of each card */
+  margin: 0 5rem; /* Space between items */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.testimonial-card {
+  width: 100%; /* Take full width of the container */
+  height: 750px; /* Fixed height */
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
+}
+
+.testimonial-text {
+  background: rgba(255, 255, 255, 0.9);
+  width: 90%; /* Adjusted width for responsiveness */
+  max-width: 800px; /* Restrict max width */
+  padding: 20px;
+  box-sizing: border-box;
+  text-align: center;
+  border-radius: 20px;
+  margin: 5rem auto 0;
+}
+
+.stars {
+  font-size: 1.5rem;
+  color: gold;
+}
+
+.testimonial-paragraph {
+  font-size: 1rem;
+  margin: 10px 0;
+  color: #333;
+}
+
+.testimonial-name {
+  font-size: 1rem;
+  font-weight: bold;
+  margin-top: 5px;
+}
+
+.testimonial-name a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.testimonial-name a:hover {
+  text-decoration: underline;
+}
+
+/* Carousel Navigation */
+.carousel-prev,
+.carousel-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.carousel-prev {
+  left: 10px;
+}
+
+.carousel-next {
+  right: 10px;
+}
+
+.carousel-prev:hover,
+.carousel-next:hover {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 1200px) {
+  .testimonial-card {
+    height: 600px;
+  }
+
+  .testimonial-text {
+    width: 95%;
+  }
+}
+
+@media (max-width: 768px) {
+  .testimonial-card {
+    height: 500px;
+  }
+
+  .testimonial-text {
+    padding: 15px;
+    font-size: 0.9rem;
+  }
+
+  .stars {
+    font-size: 1.2rem;
+  }
+}
+
+/* Custom styles for dragging and scrolling */
+.carousel.dragging {
+  cursor: grabbing;
+  scroll-behavior: auto; /* Disable smooth scroll during drag */
+}
+
+.carousel:hover {
+  cursor: grab;
+}
+
+/* Desktop carousel scrollbar */
+/* Custom Scrollbar Styling */
+.carousel::-webkit-scrollbar {
+  width: 12px; /* Width of the scrollbar */
+  height: 12px; /* Height of the scrollbar (for horizontal scrollbars) */
+}
+
+.carousel::-webkit-scrollbar-track {
+  background: black; /* Background of the scrollbar track */
+}
+
+.carousel::-webkit-scrollbar-thumb {
+  background: black; /* Color of the scrollbar thumb */
+  border-radius: 6px; /* Rounded corners for the thumb */
+}
+
+.carousel::-webkit-scrollbar-thumb:hover {
+  background: #333; /* Slightly lighter shade on hover */
+}
+
+/* Firefox Scrollbar */
+.carousel {
+  scrollbar-color: black black; /* Thumb color, track color */
+  scrollbar-width: thin; /* Thin scrollbar */
+}
+
+@media (max-width: 685px) {
+  .testimonial-card {
+    height: auto; /* Allow the height to adjust dynamically */
+    display: flex;
+    flex-direction: column; /* Stack the image and text vertically */
+    align-items: center; /* Center align contents */
+    background: none; /* Remove the background image from the card */
+    margin: 10px 0; /* Reduce vertical spacing between cards */
+  }
+
+  .testimonial-card::before {
+    content: ''; /* Pseudo-element for the background image */
+    width: 100%; /* Full width of the card */
+    height: 300px; /* Set a fixed height for the background image */
+    background-image: inherit; /* Inherit the image from the card */
+    background-size: cover;
+    background-position: center;
+    border-radius: 20px 20px 0 0; /* Top corners rounded */
+    display: block;
+  }
+
+  .testimonial-text {
+    width: 100%; /* Ensure the text takes full width */
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.9); /* White background for readability */
+    border-radius: 0 0 20px 20px; /* Bottom corners rounded */
+    text-align: center;
+    margin: 0; /* Remove additional spacing from the text */
+  }
+
+  .carousel {
+    gap: 1rem; /* Reduce the gap between carousel items */
+    padding: 0 10px; /* Add some padding for alignment */
+  }
+
+  .carousel-item {
+    margin: 0; /* Remove excess margins between items */
+  }
+}

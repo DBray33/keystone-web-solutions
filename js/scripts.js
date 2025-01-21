@@ -385,3 +385,100 @@ document.addEventListener('DOMContentLoaded', () => {
     }, index * 200); // Stagger the animations for a cascading effect
   });
 });
+
+// //////////////////////////////////////////////
+// CAROUSEL /////////////////////////////////////
+document.addEventListener('DOMContentLoaded', () => {
+  const carousel = document.querySelector('.carousel');
+  let isDragging = false;
+  let startX, startY;
+  let scrollLeft;
+  let autoScrollInterval;
+  let isInteracting = false;
+  let scrollDirection = 1; // 1 for right, -1 for left
+
+  // Mouse & Touch Start
+  const startDragging = (e) => {
+    isDragging = true;
+    isInteracting = true;
+    carousel.classList.add('dragging');
+    startX = e.pageX || e.touches[0].pageX;
+    startY = e.pageY || e.touches[0].pageY;
+    scrollLeft = carousel.scrollLeft;
+
+    // Pause auto-scroll during interaction
+    clearInterval(autoScrollInterval);
+  };
+
+  // Mouse & Touch Move
+  const drag = (e) => {
+    if (!isDragging) return;
+
+    const x = e.pageX || e.touches[0].pageX;
+    const y = e.pageY || e.touches[0].pageY;
+    const deltaX = x - startX;
+    const deltaY = y - startY;
+
+    // Horizontal scrolling takes precedence
+    if (Math.abs(deltaX) > Math.abs(deltaY)) {
+      e.preventDefault(); // Prevent vertical scrolling
+      carousel.scrollLeft = scrollLeft - deltaX;
+    }
+  };
+
+  // Mouse & Touch End
+  const stopDragging = () => {
+    isDragging = false;
+    carousel.classList.remove('dragging');
+    isInteracting = false;
+
+    // Restart auto-scroll after a delay
+    setTimeout(() => {
+      if (!isInteracting) startAutoScroll();
+    }, 1000); // Delay auto-scroll by 1 second
+  };
+
+  // Auto-Scroll Functionality
+  const startAutoScroll = () => {
+    autoScrollInterval = setInterval(() => {
+      if (!isInteracting) {
+        const scrollMax = carousel.scrollWidth - carousel.clientWidth;
+
+        // Reverse direction if at the edges
+        if (carousel.scrollLeft >= scrollMax) {
+          scrollDirection = -1; // Switch to scrolling left
+        } else if (carousel.scrollLeft <= 0) {
+          scrollDirection = 1; // Switch to scrolling right
+        }
+
+        // Incrementally scroll in the current direction
+        carousel.scrollLeft += scrollDirection; // Adjust speed by modifying this value
+      }
+    }, 20); // Adjust interval for smoothness
+  };
+
+  // Pause auto-scroll when the user interacts with the carousel
+  const pauseAutoScroll = () => {
+    clearInterval(autoScrollInterval);
+  };
+
+  // Start auto-scroll on page load
+  startAutoScroll();
+
+  // Event Listeners
+  carousel.addEventListener('mousedown', startDragging);
+  carousel.addEventListener('mousemove', drag);
+  carousel.addEventListener('mouseup', stopDragging);
+  carousel.addEventListener('mouseleave', stopDragging);
+  carousel.addEventListener('touchstart', startDragging, { passive: true });
+  carousel.addEventListener('touchmove', drag, { passive: false });
+  carousel.addEventListener('touchend', stopDragging);
+
+  // Pause auto-scroll when manually scrolling
+  carousel.addEventListener('scroll', () => {
+    pauseAutoScroll();
+    setTimeout(() => {
+      if (!isInteracting) startAutoScroll();
+    }, 1000); // Delay auto-scroll resumption after manual scrolling
+  });
+});
