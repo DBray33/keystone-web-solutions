@@ -123,3 +123,7 @@
 .back-to-blog-button:hover {
   background-color: #333;
 }
+
+.blog-post-list li {
+  list-style: none;
+}
