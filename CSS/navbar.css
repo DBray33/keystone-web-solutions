@@ -336,7 +336,7 @@
 .standalone-logo a {
   font-family: 'Bebas Neue', sans-serif;
   font-size: 3rem; /* Initial font size */
-  color: green; /* Text color */
+  color: black; /* Text color */
   text-decoration: none; /* Remove underline */
   transition: color 0.3s; /* Smooth color transitions */
   outline: none; /* Remove default outline */
