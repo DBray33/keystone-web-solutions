@@ -36,7 +36,6 @@ html {
 } */
 /* BACKGROUNDS */
 .custom-web-design-page,
-.responsive-design-page,
 .ecommerce-solutions-page,
 .seo-page,
 .digital-marketing-page,
@@ -47,7 +46,6 @@ html {
 }
 
 .custom-web-design-page::before,
-.responsive-design-page::before,
 .ecommerce-solutions-page::before,
 .seo-page::before,
 .digital-marketing-page::before,
@@ -241,4 +239,166 @@ html {
 }
 .stuff-you-should-know li strong {
   color: #333;
+}
+
+/* ////////////////////////////////// */
+/* RESPONSIVE DESIGN //////////////// */
+/* General Page Styling */
+.respinsive-design-page {
+  font-family: 'Exo', sans-serif;
+  color: white;
+  background: black;
+}
+
+/* Hero Section */
+.responsive-design {
+  margin-top: -4rem;
+  position: relative;
+  width: 100%;
+  height: 90vh;
+  background-image: url('https://storage.googleapis.com/background-vid/Responsive%20Design%20Page/device-responsive-hero.webp'); /* Replace with your hero image URL */
+  background-size: cover;
+  background-position: center; /* Default position for larger screens */
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+}
+
+/* Hero Content */
+.hero-content {
+  position: relative;
+  width: 50%;
+  padding: 2rem;
+  background: rgba(
+    0,
+    0,
+    0,
+    0.8
+  ); /* Semi-transparent background for text contrast */
+  border-radius: 10px; /* Rounded corners for the text block */
+}
+
+/* Hero Title Styling */
+.hero-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 5rem;
+  font-weight: bold;
+  margin: 0;
+  line-height: 0.8; /* Ensure tight spacing between words */
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Text shadow for better readability */
+}
+
+/* Individual Words Styling */
+.hero-title .hero-word {
+  color: white;
+  display: block; /* Force each word to its own line */
+}
+
+.hero-title .hero-word.responsive {
+  font-size: 6rem; /* Increase size for width matching */
+  letter-spacing: 3.5px; /* Adjust spacing to match width of 'DESIGN' */
+}
+
+.hero-title .hero-word.design {
+  font-size: 9rem; /* Larger font for 'DESIGN' */
+  letter-spacing: 15px;
+}
+
+/* Hero Subheading */
+.hero-subheading {
+  color: white;
+  font-size: 1.4rem;
+  margin-top: 1rem;
+  line-height: 1.5;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Text shadow for better readability */
+}
+
+.hero-description {
+  color: black;
+  text-align: center;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 930px) {
+  .responsive-design {
+    background-position: right center;
+    height: 70vh;
+    display: flex; /* Add flexbox for alignment */
+    flex-direction: column; /* Ensure vertical stacking */
+    justify-content: flex-end; /* Align items to the bottom */
+    align-items: center; /* Center horizontally */
+  }
+
+  .hero-content {
+    width: 100%; /* Adjust width for smaller screens */
+    padding: 1.5rem;
+    text-align: center; /* Center all text inside this container */
+  }
+
+  .hero-title {
+    display: inline-block; /* Make the title container shrink to fit the content */
+  }
+
+  .hero-title .hero-word {
+    display: block; /* Each word on its own line */
+  }
+
+  .hero-title .hero-word.responsive {
+    font-size: 3.18rem; /* Adjust size for smaller screens */
+    letter-spacing: 3px; /* Add some spacing for balance */
+  }
+
+  .hero-title .hero-word.design {
+    font-size: 6rem;
+    letter-spacing: 3px; /* Match spacing with "RESPONSIVE" */
+  }
+
+  .hero-subheading {
+    margin-top: 0;
+    font-size: 1rem;
+  }
+}
+/* Details Section */
+.responsive-details {
+  padding: 2rem;
+  background: none;
+  color: black;
+  text-align: left;
+}
+
+.details-title {
+  font-size: 1.875rem;
+  margin-bottom: 1rem;
+  color: #007bff;
+}
+
+.details-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.details-list li {
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.details-list strong {
+  color: #007bff;
+}
+
+/* Details Section Adjustments for Smaller Screens */
+@media (max-width: 768px) {
+  .responsive-details {
+    padding: 1rem;
+  }
+
+  .details-title {
+    font-size: 1.5rem;
+  }
+
+  .details-list li {
+    font-size: 0.9rem;
+  }
 }

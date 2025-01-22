@@ -320,26 +320,31 @@
 /* Standalone Logo Section */
 .standalone-logo {
   position: fixed;
-  top: 25px; /* Adjust spacing from the top */
+  top: 25px;
   left: 1rem; /* Adjust spacing from the left */
   z-index: 9999; /* Ensure it stays above other elements */
   transition: transform 0.3s ease, font-size 0.3s ease; /* Smooth transition for scroll effect */
 }
 
+@media (max-width: 1415px) {
+  .standalone-logo {
+    top: 22px;
+    left: 1rem;
+  }
+}
+
 .standalone-logo a {
-  font-family: 'Bebas Neue', sans-serif; /* Bebas Neue font */
+  font-family: 'Bebas Neue', sans-serif;
   font-size: 3rem; /* Initial font size */
-  color: black; /* Text color */
+  color: green; /* Text color */
   text-decoration: none; /* Remove underline */
   transition: color 0.3s; /* Smooth hover effect */
 }
 
-.standalone-logo a:hover {
-  text-shadow: 1px 0 var(--primary-color),
-    /* Right */ -1px 0 var(--primary-color),
-    /* Left */ 0 1px var(--primary-color),
-    /* Bottom */ 0 -1px var(--primary-color); /* Top */
-}
+/* .standalone-logo a:hover {
+  text-shadow: 1px 0 var(--primary-color), -1px 0 var(--primary-color),
+    0 1px var(--primary-color), 0 -1px var(--primary-color);
+} */
 
 /* Shrink and reposition the logo when scrolling */
 .scrolled .standalone-logo {
