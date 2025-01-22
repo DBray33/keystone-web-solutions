@@ -320,26 +320,45 @@
 /* Standalone Logo Section */
 .standalone-logo {
   position: fixed;
-  top: 25px;
-  left: 1rem; /* Adjust spacing from the left */
+  top: 15px;
+  left: 1.6rem; /* Adjust spacing from the left */
   z-index: 9999; /* Ensure it stays above other elements */
   transition: transform 0.3s ease, font-size 0.3s ease; /* Smooth transition for scroll effect */
+  text-align: left; /* Align text to the left */
 }
 
 @media (max-width: 1415px) {
   .standalone-logo {
-    top: 22px;
-    left: 1rem;
+    top: 11px;
+    left: 1.6rem;
   }
 }
 
 .standalone-logo a {
   font-family: 'Bebas Neue', sans-serif;
-  font-size: 3rem; /* Initial font size */
+  font-size: 3rem; /* Initial font size for "KEYSTONE" */
   color: black; /* Text color */
   text-decoration: none; /* Remove underline */
   transition: color 0.3s; /* Smooth color transitions */
   outline: none; /* Remove default outline */
+  display: inline-block; /* Ensure proper alignment of spans */
+}
+
+.standalone-logo .logo-primary {
+  font-size: 3rem;
+  font-weight: bold;
+  line-height: 1; /* Tighten vertical spacing */
+  letter-spacing: 10px;
+}
+
+.standalone-logo .logo-secondary {
+  font-size: 1rem;
+  font-weight: normal;
+  letter-spacing: 4px;
+  color: #555;
+  display: block;
+  line-height: 1; /* Matches "KEYSTONE" */
+  margin-top: -5px;
 }
 
 /* Shrink and reposition the logo when scrolling */
@@ -357,7 +376,6 @@
     display: none; /* Hide on smaller screens */
   }
 }
-
 /* Icons */
 .mobile-menu .icon {
   font-size: 0; /* Reset font size to prevent interference */
