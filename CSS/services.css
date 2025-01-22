@@ -388,17 +388,93 @@ html {
   color: #007bff;
 }
 
-/* Details Section Adjustments for Smaller Screens */
+/* Layout for "Why Device Responsiveness Matters" Section */
+.responsive-matters {
+  width: 55%; /* Take up the left 55% of the viewport */
+  float: left; /* Align section to the left */
+  text-align: left; /* Ensure text alignment within the section */
+  padding: 2rem; /* Add spacing around content */
+  box-sizing: border-box; /* Include padding in width calculations */
+}
+
+/* Layout for "Devices We Optimize For" Section */
+.optimized-devices {
+  width: 55%; /* Take up the right 55% of the viewport */
+  float: right; /* Align section to the right */
+  text-align: left; /* Ensure text alignment within the section */
+  padding: 2rem; /* Add spacing around content */
+  box-sizing: border-box; /* Include padding in width calculations */
+}
+
+/* Clearfix to Avoid Overflow Issues */
+.clearfix::after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+/* Adjustments for Smaller Screens */
 @media (max-width: 768px) {
-  .responsive-details {
-    padding: 1rem;
+  .responsive-matters,
+  .optimized-devices {
+    width: 100%; /* Full-width for smaller screens */
+    float: none; /* Reset floating */
+    padding: 1rem; /* Reduce padding */
   }
 
   .details-title {
-    font-size: 1.5rem;
+    font-size: 1.5rem; /* Adjust title size */
   }
 
   .details-list li {
-    font-size: 0.9rem;
+    font-size: 0.9rem; /* Adjust font size for list items */
+  }
+}
+
+/* Optimized Devices Section */
+.optimized-devices {
+  position: relative;
+  width: 55%; /* Occupies the right 55% of the viewport */
+  margin-left: auto; /* Pushes the section to the right */
+  padding: 2rem; /* Adds padding for spacing */
+  text-align: left; /* Left-align the content within this section */
+  color: black; /* Text color */
+}
+
+.optimized-devices .details-title {
+  font-size: 1.875rem; /* Title font size */
+  margin-bottom: 1rem; /* Spacing below the title */
+  color: #007bff; /* Accent color */
+}
+
+.optimized-devices .details-list {
+  list-style: none; /* Removes default list styles */
+  padding: 0; /* Removes padding */
+  margin: 0; /* Removes margin */
+}
+
+.optimized-devices .details-list li {
+  margin-bottom: 1rem; /* Adds spacing between list items */
+  font-size: 1rem; /* Font size for list items */
+  line-height: 1.5; /* Line height for better readability */
+}
+
+.optimized-devices .details-list strong {
+  color: #007bff; /* Highlighted color for strong elements */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .optimized-devices {
+    width: 100%; /* Full width on smaller screens */
+    padding: 1rem; /* Adjusted padding for smaller screens */
+  }
+
+  .optimized-devices .details-title {
+    font-size: 1.5rem; /* Adjusted title font size */
+  }
+
+  .optimized-devices .details-list li {
+    font-size: 0.9rem; /* Smaller font size for list items */
   }
 }
