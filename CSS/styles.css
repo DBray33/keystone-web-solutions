@@ -1600,48 +1600,6 @@ textarea {
 }
 
 /* //////////////////////////////////////// */
-/* LOGO ////////////////////////////////// */
-/* Standalone Logo Section */
-.standalone-logo {
-  position: fixed;
-  top: 1.5rem; /* Adjust spacing from the top */
-  left: 1rem; /* Adjust spacing from the left */
-  z-index: 9999; /* Ensure it stays above other elements */
-  transition: transform 0.3s ease, font-size 0.3s ease; /* Smooth transition for scroll effect */
-}
-
-.standalone-logo a {
-  font-family: 'Bebas Neue', sans-serif; /* Bebas Neue font */
-  font-size: 3rem; /* Initial font size */
-  color: black; /* Text color */
-  text-decoration: none; /* Remove underline */
-  transition: color 0.3s; /* Smooth hover effect */
-}
-
-.standalone-logo a:hover {
-  text-shadow: 1px 0 var(--primary-color),
-    /* Right */ -1px 0 var(--primary-color),
-    /* Left */ 0 1px var(--primary-color),
-    /* Bottom */ 0 -1px var(--primary-color); /* Top */
-}
-
-/* Shrink and reposition the logo when scrolling */
-.scrolled .standalone-logo {
-  transform: translate(10px, 5px);
-}
-
-.scrolled .standalone-logo a {
-  /* font-size: 2rem;  */
-}
-
-/* Only show this section on wider screens */
-@media (max-width: 930px) {
-  .standalone-logo {
-    display: none; /* Hide on smaller screens */
-  }
-}
-
-/* //////////////////////////////////////// */
 /* Testimonials Section */
 .testimonials {
   width: 100%;

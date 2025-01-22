@@ -338,13 +338,9 @@
   font-size: 3rem; /* Initial font size */
   color: green; /* Text color */
   text-decoration: none; /* Remove underline */
-  transition: color 0.3s; /* Smooth hover effect */
+  transition: color 0.3s; /* Smooth color transitions */
+  outline: none; /* Remove default outline */
 }
-
-/* .standalone-logo a:hover {
-  text-shadow: 1px 0 var(--primary-color), -1px 0 var(--primary-color),
-    0 1px var(--primary-color), 0 -1px var(--primary-color);
-} */
 
 /* Shrink and reposition the logo when scrolling */
 .scrolled .standalone-logo {
@@ -352,7 +348,7 @@
 }
 
 .scrolled .standalone-logo a {
-  /* font-size: 2rem;  */
+  /* font-size: 2rem; */
 }
 
 /* Only show this section on wider screens */
@@ -379,6 +375,6 @@
   display: block; /* Prevent inline spacing */
   margin: 0; /* Ensure no extra margin */
   width: 3.5rem; /* Ensure consistent size */
-  height: 3.5; /* Ensure consistent size */
+  height: 3.5rem; /* Ensure consistent size */
   object-fit: contain; /* Maintain aspect ratio */
 }
