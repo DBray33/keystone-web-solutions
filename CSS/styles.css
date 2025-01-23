@@ -115,13 +115,15 @@ html {
 .sidebar {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start; /* Align content at the top initially */
   position: fixed;
   width: 40%;
   overflow: hidden;
   pointer-events: none;
   z-index: 1;
+  padding-top: 120px; /* Push down the content on larger screens */
 }
+
 .sidebar::before {
   content: '';
   position: absolute;
@@ -130,6 +132,7 @@ html {
   width: 100%;
   z-index: 0;
 }
+
 .logo {
   fill: var(--primary-color);
   width: 250px;
@@ -138,13 +141,15 @@ html {
   margin: 6rem auto 2.5rem;
   filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.5));
 }
+
 .sidebar .logo-image {
-  width: 60%;
+  width: 50%;
   height: auto;
   display: block;
-  margin: 3rem auto 2.5rem;
+  margin: 0 auto;
   filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.5));
 }
+
 .phone-number a::before,
 .sidebar-video {
   position: absolute;
@@ -152,61 +157,83 @@ html {
   z-index: -1;
   left: 0;
 }
+
 .sidebar-video {
   top: 0;
   width: 100%;
   object-fit: cover;
 }
+
 .phone-number a,
 .sidebar-content {
   color: #fff;
   z-index: 1;
   position: relative;
 }
+
 .sidebar-content {
   margin: 0 1rem;
-  /* top: -10%; */
   pointer-events: auto;
 }
+
 .main-content,
 .services-section {
   margin-left: 40%;
   box-sizing: border-box;
 }
+
 @media (max-width: 935px) {
   .sidebar {
-    padding-top: 130px;
+    padding-top: 150px; /* Push content further down */
   }
-}
-@media (max-width: 500px) {
-  .sidebar {
-    min-height: 125vh;
-  }
+
   .sidebar-content {
-    padding-top: 8rem;
+    top: 0;
+    min-height: 90vh;
+  }
+
+  .phone-number {
+    padding-bottom: 30rem; /* Adjust to keep phone number from overlapping */
   }
 }
+
+@media (max-width: 480px) {
+  .sidebar {
+    min-height: 110vh;
+    padding-top: 180px; /* Push content further for very small screens */
+  }
+
+  .sidebar-content {
+    padding-top: 1rem;
+  }
+}
+
 @media (min-width: 936px) {
   .sidebar {
-    padding-top: 90px;
+    padding-top: 120px; /* Adjust for larger screens */
   }
 }
+
 .call-now,
 .sidebar-content > :last-child {
   margin-bottom: 0;
 }
+
 .sidebar-content .logo {
   font-size: 8rem;
   color: #5dade2;
 }
+
 .sidebar-content .company-name {
   font-size: 7rem;
 }
+
 .sidebar-content .subheading {
   margin: 0 1rem;
   font-size: 2rem;
   font-weight: 200;
 }
+
 .sidebar-content {
   margin: 2rem 0;
   font-size: 1rem;
@@ -220,6 +247,7 @@ html {
   font-weight: 300;
   letter-spacing: 2px;
 }
+
 .phone-number {
   position: relative;
   display: inline-block;
@@ -227,11 +255,13 @@ html {
   font-weight: 200;
   padding-bottom: 12rem;
 }
+
 .phone-number a {
   padding: 0 5px;
   text-decoration: none;
   transition: color 0.3s;
 }
+
 .phone-number a::before {
   content: '';
   bottom: 0;
