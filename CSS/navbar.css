@@ -323,8 +323,10 @@
   top: 15px;
   left: 1.6rem; /* Adjust spacing from the left */
   z-index: 9999; /* Ensure it stays above other elements */
+  display: flex; /* Align logo image and text horizontally */
+  align-items: center; /* Vertically center-align the logo and text */
+  gap: 0.8rem; /* Space between the logo image and text */
   transition: transform 0.3s ease, font-size 0.3s ease; /* Smooth transition for scroll effect */
-  text-align: left; /* Align text to the left */
 }
 
 @media (max-width: 1415px) {
@@ -335,30 +337,38 @@
 }
 
 .standalone-logo a {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 3rem; /* Initial font size for "KEYSTONE" */
-  color: black; /* Text color */
   text-decoration: none; /* Remove underline */
-  transition: color 0.3s; /* Smooth color transitions */
-  outline: none; /* Remove default outline */
-  display: inline-block; /* Ensure proper alignment of spans */
+  color: inherit; /* Keep the text color */
+  display: flex;
+  align-items: center;
 }
 
-.standalone-logo .logo-primary {
-  font-size: 3rem;
-  font-weight: bold;
+.logo-image {
+  height: 3rem; /* Match the height of "KEYSTONE" */
+  width: auto; /* Maintain aspect ratio */
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column; /* Stack "KEYSTONE" and "WEB SOLUTIONS" vertically */
   line-height: 1; /* Tighten vertical spacing */
+  margin-top: 0.3rem;
+  margin-left: 0.8rem;
+}
+
+.logo-primary {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 3rem; /* Match size with image height */
+  font-weight: bold;
   letter-spacing: 10px;
 }
 
-.standalone-logo .logo-secondary {
+.logo-secondary {
+  font-family: 'Bebas Neue', sans-serif;
   font-size: 1rem;
-  font-weight: normal;
   letter-spacing: 4px;
   color: #555;
-  display: block;
-  line-height: 1; /* Matches "KEYSTONE" */
-  margin-top: -5px;
+  margin-top: -15px;
 }
 
 /* Shrink and reposition the logo when scrolling */
@@ -375,24 +385,4 @@
   .standalone-logo {
     display: none; /* Hide on smaller screens */
   }
-}
-/* Icons */
-.mobile-menu .icon {
-  font-size: 0; /* Reset font size to prevent interference */
-  line-height: 0; /* Remove extra vertical spacing */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 3.5rem; /* Match image dimensions */
-  height: 3.5rem; /* Match image dimensions */
-  margin: 0; /* Remove any margin */
-  padding: 0; /* Remove any padding */
-}
-
-.mobile-menu .icon img {
-  display: block; /* Prevent inline spacing */
-  margin: 0; /* Ensure no extra margin */
-  width: 3.5rem; /* Ensure consistent size */
-  height: 3.5rem; /* Ensure consistent size */
-  object-fit: contain; /* Maintain aspect ratio */
 }
