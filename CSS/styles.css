@@ -188,6 +188,7 @@ html {
   font-size: var(--headline-font-size);
 }
 .sidebar-content .subheading {
+  margin: 0 1rem;
   font-size: 2rem;
   font-weight: 200;
 }
@@ -199,7 +200,7 @@ html {
 }
 
 .description {
-  margin: 2rem 0;
+  margin: 2rem;
   font-size: 1rem;
   font-weight: 300;
   letter-spacing: 2px;
@@ -407,36 +408,6 @@ html {
   }
 }
 
-@keyframes flickerBoxShadow {
-  0% {
-    box-shadow: 0 0px 0px 0px var(--primary-color); /* No shadow */
-  }
-  10% {
-    box-shadow: 0 0px 10px 6px var(--primary-color); /* Shadow appears */
-  }
-  20% {
-    box-shadow: 0 0px 0px 0px var(--primary-color); /* Shadow disappears */
-  }
-  30% {
-    box-shadow: 0 0px 10px 6px var(--primary-color); /* Shadow appears */
-  }
-  50% {
-    box-shadow: 0 0px 0px 0px var(--primary-color); /* Shadow disappears */
-  }
-  60% {
-    box-shadow: 0 0px 10px 6px var(--primary-color); /* Shadow appears */
-  }
-  75% {
-    box-shadow: 0 0px 0px 0px var(--primary-color); /* Shadow disappears */
-  }
-  85% {
-    box-shadow: 0 0px 10px 6px var(--primary-color); /* Shadow appears */
-  }
-  100% {
-    box-shadow: 0 0px 10px 8px var(--primary-color); /* Final shadow remains */
-  }
-}
-
 .card h2 {
   font-size: 1.5rem;
   margin-bottom: 1rem;
@@ -451,7 +422,7 @@ html {
 }
 
 .card:hover {
-  box-shadow: 0 0px 10px 10px var(--primary-color);
+  box-shadow: 0 0px 10px 7px var(--primary-color);
 }
 
 /* Add delay to each card */
