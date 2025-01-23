@@ -142,7 +142,7 @@ html {
   width: 60%;
   height: auto;
   display: block;
-  margin: 9rem auto 2.5rem;
+  margin: 3rem auto 2.5rem;
   filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.5));
 }
 .phone-number a::before,
@@ -180,7 +180,7 @@ html {
 }
 @media (max-width: 500px) {
   .sidebar {
-    min-height: 110vh;
+    min-height: 125vh;
   }
   .sidebar-content {
     padding-top: 8rem;
