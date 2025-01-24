@@ -1,5 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
-  // Service item hover effect
+  // ----------------------------------------
+  // Service item hover effect for touch devices
+  // ----------------------------------------
   const serviceItems = document.querySelectorAll('.service-item');
 
   serviceItems.forEach((item) => {
@@ -23,13 +25,18 @@ document.addEventListener('DOMContentLoaded', function () {
     { passive: true }
   );
 
-  // Handle scroll events
+  // ----------------------------------------
+  // Handle scroll events (example: log scroll events)
+  // ----------------------------------------
   function handleScroll(event) {
     console.log('Scroll event detected');
   }
 
   document.addEventListener('wheel', handleScroll, { passive: false });
 
+  // ----------------------------------------
+  // Sidebar touch-based scrolling for mobile
+  // ----------------------------------------
   let touchStartY = 0;
   const sidebarContent = document.querySelector('.sidebar-content');
   const mainContent = document.querySelector('.main-content');
@@ -60,6 +67,9 @@ document.addEventListener('DOMContentLoaded', function () {
     );
   }
 
+  // ----------------------------------------
+  // Handle resize events (remove or re-add scroll events)
+  // ----------------------------------------
   function handleResize() {
     if (window.innerWidth <= 935) {
       document.removeEventListener('wheel', handleScroll);
@@ -71,7 +81,9 @@ document.addEventListener('DOMContentLoaded', function () {
   handleResize();
   window.addEventListener('resize', handleResize, { passive: true });
 
-  // Navbar scroll effect
+  // ----------------------------------------
+  // Navbar scroll effect (add 'scrolled' class on scroll)
+  // ----------------------------------------
   const navbar = document.querySelector('.navbar');
 
   window.addEventListener('scroll', function () {
@@ -82,7 +94,9 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 
+  // ----------------------------------------
   // Smooth scroll for navbar link clicks
+  // ----------------------------------------
   document.querySelectorAll('.navbar-links a').forEach((anchor) => {
     anchor.addEventListener('click', function (e) {
       if (this.getAttribute('href').startsWith('#')) {
@@ -99,6 +113,26 @@ document.addEventListener('DOMContentLoaded', function () {
         }
       }
     });
+  });
+});
+
+// Navbar dropdown functionality
+document.querySelectorAll('.navbar-dropdown > a').forEach((dropdownLink) => {
+  dropdownLink.addEventListener('click', function (e) {
+    e.preventDefault(); // Prevent default link behavior
+    const dropdownMenu = this.nextElementSibling;
+
+    if (dropdownMenu.style.display === 'block') {
+      dropdownMenu.style.display = 'none';
+      dropdownMenu.style.opacity = 0;
+      dropdownMenu.style.visibility = 'hidden';
+      dropdownMenu.style.transform = 'translateY(-20px)';
+    } else {
+      dropdownMenu.style.display = 'block';
+      dropdownMenu.style.opacity = 1;
+      dropdownMenu.style.visibility = 'visible';
+      dropdownMenu.style.transform = 'translateY(0)';
+    }
   });
 });
 
