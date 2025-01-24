@@ -106,6 +106,9 @@ html {
   display: none;
 }
 
+/* ///////////////////////////////////// */
+/* SIDEBAR ///////////////////////////// */
+
 .sidebar,
 .sidebar::before {
   height: 100%;
@@ -113,15 +116,14 @@ html {
 }
 
 .sidebar {
-  display: flex;
+  /* display: flex; */
   justify-content: center;
-  align-items: flex-start; /* Align content at the top initially */
+  align-items: center;
   position: fixed;
   width: 40%;
   overflow: hidden;
   pointer-events: none;
   z-index: 1;
-  padding-top: 120px; /* Push down the content on larger screens */
 }
 
 .sidebar::before {
@@ -173,7 +175,13 @@ html {
 
 .sidebar-content {
   margin: 0 1rem;
+  top: 11%;
   pointer-events: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 .main-content,
@@ -182,41 +190,67 @@ html {
   box-sizing: border-box;
 }
 
+/* Adjustments for smaller screens */
 @media (max-width: 935px) {
   .sidebar {
-    padding-top: 150px; /* Push content further down */
+    position: relative; /* Switch to relative positioning */
+    width: 100%; /* Sidebar takes up full width */
+    padding: 4rem 1rem; /* Increased padding to push the content down */
+    min-height: 120vh;
+    box-sizing: border-box; /* Include padding in height calculation */
   }
 
   .sidebar-content {
-    top: 0;
-    min-height: 90vh;
+    position: relative; /* Ensure it adjusts dynamically */
+    display: flex; /* Use flexbox for alignment */
+    flex-direction: column; /* Stack content vertically */
+    justify-content: flex-start; /* Align content to the top, will adjust with padding */
+    align-items: center; /* Center content horizontally */
+    padding: 4rem 1rem; /* Push content further down */
+  }
+
+  .sidebar .logo-image {
+    width: 40%; /* Scale the logo size */
+    max-width: 200px; /* Prevent the logo from becoming too large */
+    margin-bottom: 2rem; /* Space between logo and next element */
   }
 
   .phone-number {
-    padding-bottom: 30rem; /* Adjust to keep phone number from overlapping */
+    padding-bottom: 4rem; /* Prevent cutoff at the bottom */
+    text-align: center; /* Center-align phone number */
+  }
+
+  .phone-number a {
+    font-size: 1.8rem; /* Adjust font size */
   }
 }
 
-@media (max-width: 480px) {
+/* @media (max-width: 480px) {
   .sidebar {
-    min-height: 110vh;
-    padding-top: 180px; /* Push content further for very small screens */
+    min-height: auto;
   }
 
   .sidebar-content {
     padding-top: 1rem;
   }
-}
-
-@media (min-width: 936px) {
-  .sidebar {
-    padding-top: 120px; /* Adjust for larger screens */
-  }
-}
+} */
 
 .call-now,
 .sidebar-content > :last-child {
   margin-bottom: 0;
+}
+
+.sidebar-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center vertically */
+  align-items: center; /* Center horizontally */
+  text-align: center; /* Ensure child elements are centered */
+
+  margin: 2rem 0;
+  font-size: 1rem;
+  font-weight: 300;
+  letter-spacing: 2px;
 }
 
 .sidebar-content .logo {
@@ -225,20 +259,15 @@ html {
 }
 
 .sidebar-content .company-name {
+  text-align: center;
   font-size: 7rem;
+  margin: 2rem;
 }
 
 .sidebar-content .subheading {
   margin: 0 1rem;
   font-size: 2rem;
   font-weight: 200;
-}
-
-.sidebar-content {
-  margin: 2rem 0;
-  font-size: 1rem;
-  font-weight: 300;
-  letter-spacing: 2px;
 }
 
 .description {
@@ -269,6 +298,7 @@ html {
   background-color: #5dade2;
   animation: 1s forwards hideBackground;
 }
+
 @keyframes hideBackground {
   from {
     width: 100%;
@@ -277,6 +307,7 @@ html {
     width: 0;
   }
 }
+
 @keyframes showBackground {
   from {
     width: 0;
@@ -285,10 +316,10 @@ html {
     width: 100%;
   }
 }
+
 .phone-number a:hover::before {
   animation: 0.3s forwards showBackground;
 }
-
 /* /////////////////////////////////////////////////////// */
 /* MAIN CONTENT/////////////////////////////////////////// */
 .main-content {
