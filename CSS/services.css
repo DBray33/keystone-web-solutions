@@ -322,6 +322,7 @@ html {
 
   .hero-title {
     display: inline-block; /* Make the title container shrink to fit the content */
+    font-size: 4rem;
   }
 
   .hero-subheading {
@@ -540,13 +541,42 @@ html {
   height: 90vh;
   background-image: url('https://storage.googleapis.com/background-vid/Custom%20Web%20Design%20Page/ui-ux-representations-with-laptop.webp');
   background-size: cover;
-  background-position: center;
+  background-position: center; /* Default for larger screens */
   background-repeat: no-repeat;
   display: flex;
   align-items: center;
 }
 
+/* Adjust background position for screens 700px or narrower */
+@media (max-width: 700px) {
+  .intro-section.custom-design-intro {
+    background-position: 70% center; /* Push image to the left to show more of the right side */
+  }
+}
+
 .custom-web-design .details-description {
   color: black;
   font-weight: 500;
+}
+
+.hero-divider {
+  width: 50%; /* Adjust the width as needed */
+  height: 2px; /* Adjust the thickness */
+  background-color: white; /* Change to match your theme */
+  margin: 1rem 0; /* Add spacing above and below the line */
+  border: none; /* Remove default border styling */
+}
+
+/* For screens wider than 930px */
+@media (min-width: 931px) {
+  .hero-divider {
+    margin-left: 0; /* Align to the left */
+  }
+}
+
+/* For screens 930px or narrower */
+@media (max-width: 930px) {
+  .hero-divider {
+    margin: 1rem auto; /* Center the line */
+  }
 }
