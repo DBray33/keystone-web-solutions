@@ -516,3 +516,39 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 1000); // Delay auto-scroll resumption after manual scrolling
   });
 });
+
+// //////////////////////////////////////////////
+// MAIN CONTENT /////////////////////////////////
+// Cards slide in from side when section is scrolled to
+
+document.addEventListener('DOMContentLoaded', () => {
+  const cards = document.querySelectorAll('.card');
+  const sectionCards = document.querySelector('.section-cards'); // Target the section containing the cards
+
+  const observerOptions = {
+    root: null, // Observe within the viewport
+    threshold: 0.1, // Trigger when 10% of the section is visible
+  };
+
+  const observerCallback = (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        cards.forEach((card, index) => {
+          setTimeout(() => {
+            card.classList.add('swipe-in'); // Add the class to animate in
+          }, index * 150); // Stagger the animation
+        });
+      } else {
+        cards.forEach((card) => {
+          card.classList.remove('swipe-in'); // Remove the class when out of view
+        });
+      }
+    });
+  };
+
+  const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+  if (sectionCards) {
+    observer.observe(sectionCards);
+  }
+});

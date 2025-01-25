@@ -116,7 +116,15 @@
 
         <!-- Services Dropdown -->
         <li class="navbar-dropdown">
-          <a href="#services-section">Our Services</a>
+          <a
+            href="#services-section"
+            style="
+              text-decoration: underline;
+              text-decoration-thickness: 2px;
+              text-underline-offset: 3px;
+            "
+            >Our Services</a
+          >
           <ul class="navbar-dropdown-menu">
             <li>
               <a href="#services-section">Services Summary</a>
@@ -151,7 +159,15 @@
 
         <!-- About Us Dropdown -->
         <li class="navbar-dropdown">
-          <a href="#about-us">About</a>
+          <a
+            href="#about-us"
+            style="
+              text-decoration: underline;
+              text-decoration-thickness: 2px;
+              text-underline-offset: 3px;
+            "
+            >About</a
+          >
           <ul class="navbar-dropdown-menu">
             <li><a href="about/about-us.html">About Us</a></li>
             <li><a href="about/faq.html">FAQs</a></li>
@@ -374,10 +390,24 @@
           Your browser does not support the video tag.
         </video>
         <div class="sidebar-content">
+          <style>
+            @media (max-width: 935px) {
+              .responsive-logo {
+                display: block !important;
+              }
+            }
+            @media (min-width: 936px) {
+              .responsive-logo {
+                display: none !important;
+              }
+            }
+          </style>
+
           <img
             src="https://storage.googleapis.com/background-vid/kws.png?v=8"
             alt="Keystone Logo"
-            class="logo-image" />
+            class="logo-image responsive-logo"
+            style="display: none" />
           <!-- <svg
             class="logo"
             xmlns="http://www.w3.org/2000/svg"
@@ -410,7 +440,7 @@
         </p>
       </div>
 
-      <!-- New Cards Section -->
+      <!-- Cards Section -->
       <div class="section-cards">
         <!-- Value Proposition -->
         <div class="card">
@@ -431,8 +461,8 @@
             establish a strong online presence that withstands industry changes
             and fosters long-term growth. A professionally designed website is
             an investment that pays you back by attracting more customers,
-            boosting credibility, and driving measurable results. Let us help
-            you achieve your online ambitions and set your business up for
+            boosting credibility, and driving measurable results. Together, we
+            will achieve your online ambitions and set your business up for
             sustained success.
           </p>
         </div>

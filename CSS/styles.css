@@ -471,18 +471,15 @@ html {
   padding: 1.5rem; /* Inner spacing */
   border-radius: 8px; /* Rounded corners */
   box-shadow: 0 0px 0px 0px var(--primary-color); /* No shadow initially */
-  transition: transform 0.2s; /* Smooth hover effect */
   transform-origin: right; /* Expand from the right */
   transform: scaleX(0); /* Start collapsed */
   opacity: 0; /* Start invisible */
-  animation: swipeIn 0.2s ease-in-out forwards, flickerBoxShadow 3s 3s forwards; /* Two animations */
+  transition: transform 0.5s ease, opacity 0.5s ease; /* Smooth animation */
 }
 
-@keyframes swipeIn {
-  to {
-    transform: scaleX(1); /* Expand fully */
-    opacity: 1; /* Make visible */
-  }
+.card.swipe-in {
+  transform: scaleX(1); /* Expand fully */
+  opacity: 1; /* Make visible */
 }
 
 .card h2 {
@@ -493,9 +490,20 @@ html {
 }
 
 .card p {
-  font-size: 1rem;
+  font-size: 1.2rem;
   color: #555;
   line-height: 1.6; /* Improve readability */
+}
+@media (max-width: 500px) {
+  .card h2 {
+    font-size: 1.2rem;
+  }
+  .card p {
+    font-size: 0.8rem;
+  }
+  .card {
+    padding: 1rem;
+  }
 }
 
 .card:hover {
