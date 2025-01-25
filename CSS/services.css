@@ -294,16 +294,6 @@ html {
   display: block; /* Force each word to its own line */
 }
 
-.hero-title .hero-word.top {
-  font-size: 6rem; /* Increase size for width matching */
-  letter-spacing: 3.5px; /* Adjust spacing to match width of 'DESIGN' */
-}
-
-.hero-title .hero-word.bottom {
-  font-size: 9rem; /* Larger font for 'DESIGN' */
-  letter-spacing: 15px;
-}
-
 /* Hero Subheading */
 .hero-subheading {
   color: white;
@@ -332,20 +322,6 @@ html {
 
   .hero-title {
     display: inline-block; /* Make the title container shrink to fit the content */
-  }
-
-  .hero-title .hero-word {
-    display: block; /* Each word on its own line */
-  }
-
-  .hero-title .hero-word.responsive {
-    font-size: 3.18rem; /* Adjust size for smaller screens */
-    letter-spacing: 3px; /* Add some spacing for balance */
-  }
-
-  .hero-title .hero-word.design {
-    font-size: 6rem;
-    letter-spacing: 3px; /* Match spacing with "RESPONSIVE" */
   }
 
   .hero-subheading {
@@ -379,6 +355,11 @@ html {
   color: white; /* Neutral text color */
   margin: 1rem 0 0; /* Add 1rem of space above, maintain default below */
   padding: 0; /* Remove default padding */
+}
+@media (max-width: 600px) {
+  .details-description {
+    font-size: 1rem;
+  }
 }
 
 /* Card Styling */
@@ -480,18 +461,6 @@ html {
   display: flex;
   align-items: center;
 }
-.hero-word.top.seo {
-  font-size: 12rem;
-  letter-spacing: 3rem;
-  margin-bottom: -2rem;
-}
-.hero-word.bottom.optimization {
-  font-size: 2.5rem;
-  display: inline-block; /* Ensures proper scaling for inline elements */
-  transform: scaleY(1.5); /* Scale vertically by 1.5 times */
-  line-height: normal; /* Adjust line-height if necessary */
-  letter-spacing: 0.8rem;
-}
 
 @media (max-width: 930px) {
   .hero-content {
@@ -505,21 +474,6 @@ html {
     text-align: center; /* Center text */
     margin: 0 auto 1rem; /* Ensure full centering */
     width: 100%; /* Allow the title to span the container */
-  }
-
-  .hero-word.top.seo {
-    font-size: 8rem; /* Ensure the font size remains consistent */
-    letter-spacing: 0; /* Remove extra spacing for centering */
-    transform: scaleY(0.7); /* Scale vertically */
-    margin: 0 auto -1rem; /* Center within the container */
-    text-align: center; /* Center the word */
-  }
-
-  .hero-word.bottom.optimization {
-    font-size: 2.5rem; /* Adjust size for optimization */
-    transform: scaleY(1.5); /* Stretch vertically */
-    letter-spacing: 0.8rem; /* Keep spacing as desired */
-    margin: 0; /* Remove offsets */
   }
 }
 
@@ -544,15 +498,6 @@ html {
   .intro-section.marketing-intro {
     background-position: 100% center; /* Push the image further left */
   }
-  .hero-word.bottom.marketing {
-    font-size: 2.5rem;
-    margin-left: 0.7rem;
-  }
-}
-@media (max-width: 660px) {
-  .intro-section.marketing-intro {
-    background-position: 85% center; /* Push the image further left */
-  }
 }
 
 /* ---------------------------------------- */
@@ -571,36 +516,36 @@ html {
   align-items: center;
 }
 
-.hero-word.top.pagespeed {
-  font-size: 10rem;
-  /* letter-spacing: 3rem; */
-  margin-bottom: -1rem;
-}
-.hero-word.bottom.performance {
-  font-size: 3rem;
-  display: inline-block; /* Ensures proper scaling for inline elements */
-  transform: scaleY(1.5); /* Scale vertically by 1.5 times */
-  line-height: normal; /* Adjust line-height if necessary */
-  letter-spacing: 1rem;
-}
-
 /* Adjust background position for smaller viewports */
-@media (max-width: 930px) {
-  .hero-word.top.pagespeed {
-    font-size: 7rem;
-    margin-bottom: 0.7rem;
-  }
-  .hero-word.bottom.performance {
-    /* font-size: 7rem; */
-    margin-left: 0.7rem;
-  }
-}
+
 @media (max-width: 660px) {
   .intro-section.pagespeed-intro {
     background-position: 85% center; /* Push the image further left */
   }
 }
 
+/* Green circles (pagespeed page) */
 .pagespeed-standards .standard-item p {
   color: white !important; /* Forces the color change */
+}
+
+/* ---------------------------------------- */
+/* CUSTOM DESIGN ////////////////////////// */
+/* ---------------------------------------- */
+.intro-section.custom-design-intro {
+  margin-top: -4rem;
+  position: relative;
+  width: 100%;
+  height: 90vh;
+  background-image: url('https://storage.googleapis.com/background-vid/Pagespeed%20Page/pagespeed.webp?=v2');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+}
+
+.custom-web-design .details-description {
+  color: black;
+  font-weight: 500;
 }
