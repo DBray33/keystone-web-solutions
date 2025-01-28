@@ -932,7 +932,7 @@ html {
 .journey-description {
   font-size: 1rem;
   line-height: 1.6;
-  color: #666;
+  color: black;
   margin-bottom: 2rem;
 }
 .card-title,
@@ -966,11 +966,11 @@ label {
 }
 .card-title {
   font-size: 1.25rem;
-  color: #333;
+  color: black;
 }
 .card-description {
   font-size: 1rem;
-  color: #555;
+  color: black;
 }
 .journey-section-intro {
   transform: translateZ(-100px);
@@ -1019,12 +1019,12 @@ label {
   font-size: 3rem;
   font-weight: 700;
   margin-bottom: 1rem;
-  color: #333;
+  color: black;
 }
 .pricing-subheading {
   font-size: 1rem;
   margin-bottom: 2rem;
-  color: #666;
+  color: black;
 }
 .pricing-cards-container {
   display: flex;
