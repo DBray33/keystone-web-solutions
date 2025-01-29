@@ -588,8 +588,19 @@
 }
 
 /* Only show this section on wider screens */
-@media (max-width: 1140px) {
+@media (max-width: 1180px) {
+  .logo-primary,
+  .logo-secondary {
+    display: none;
+  }
   .standalone-logo {
+    height: 70px; /* Adjust based on actual size */
+    display: flex;
+    align-items: center; /* Keeps image vertically centered */
+  }
+}
+@media (max-width: 950px) {
+  .standalone-logo img {
     display: none; /* Hide on smaller screens */
   }
 }
