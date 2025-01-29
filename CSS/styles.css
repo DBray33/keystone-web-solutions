@@ -135,21 +135,16 @@ html {
   z-index: 0;
 }
 
-.logo {
-  fill: var(--primary-color);
-  width: 250px;
+.responsive-logo {
+  max-width: 250px; /* Prevents it from becoming too large */
   height: auto;
-  display: block;
-  margin: 6rem auto 2.5rem;
-  filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.5));
+  display: block; /* Prevents inline restrictions */
 }
 
-.sidebar .logo-image {
-  width: 50%;
-  height: auto;
-  display: block;
-  margin: 0 auto;
-  filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.5));
+@media (max-width: 500px) {
+  .responsive-logo {
+    width: 40%; /* Adjust for smaller screens if needed */
+  }
 }
 
 .phone-number a::before,
