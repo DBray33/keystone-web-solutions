@@ -1,5 +1,5 @@
 // ---------------------------------------------------
-// 🚀 Load the navbar dynamically using JavaScript
+// 🚀 Load the navbar/mobile menu dynamically using JavaScript
 // ---------------------------------------------------
 
 async function loadNavbar() {
@@ -17,17 +17,30 @@ async function loadNavbar() {
     // Insert the navbar content into the page
     document.getElementById('navbar-container').innerHTML = content;
 
-    // 🚀 Re-run scripts after navbar is loaded
+    console.log('✅ Navbar inserted successfully');
+
+    // ✅ Ensure navbar scripts run **after** navbar loads
     setTimeout(() => {
-      initializeMobileMenu();
-      initializeNavbarScroll();
-    }, 50); // Small delay ensures elements are present
+      if (typeof initializeNavbarScroll === 'function') {
+        initializeNavbarScroll();
+        console.log('✅ Navbar scroll effect initialized');
+      } else {
+        console.error('⚠ navbarScrollEffect function not found.');
+      }
+
+      if (typeof initializeMobileMenu === 'function') {
+        initializeMobileMenu();
+        console.log('✅ Mobile menu initialized');
+      } else {
+        console.error('⚠ mobileMenuInit function not found.');
+      }
+    }, 100);
   } catch (error) {
-    console.error('Failed to load navbar:', error);
+    console.error('❌ Failed to load navbar:', error);
   }
 }
 
-// Load the navbar when the page loads
+// ✅ Load navbar when the page loads
 window.addEventListener('DOMContentLoaded', loadNavbar);
 
 // ✅ Function to reinitialize the mobile menu script

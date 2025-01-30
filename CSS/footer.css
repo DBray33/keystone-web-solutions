@@ -217,3 +217,40 @@
   z-index: 10;
   border-radius: 8px;
 }
+
+/* ///////////////////////////// */
+/* Ensure the footer-left stays aligned properly */
+.footer-left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Ensure footer-right aligns properly */
+.footer-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  width: 100%;
+}
+
+/* Adjusts form width & spacing inside footer-right */
+.footer-contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  width: 100%;
+}
+
+/* Fix alignment issue on smaller screens */
+@media (max-width: 935px) {
+  .footer-right {
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-contact-form {
+    align-items: center;
+  }
+}
