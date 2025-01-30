@@ -102,8 +102,15 @@
   border: 2px solid #000;
 }
 
-.navbar-links li {
-  /* margin: 0 1rem; */
+/* Add spacing between ONLY the main navbar links */
+.navbar-links > li {
+  margin: 0 10px; /* Adjust horizontal spacing */
+}
+
+/* Ensure dropdown menu items are NOT affected */
+.navbar-dropdown-menu li {
+  margin: 0; /* Prevent extra spacing from affecting dropdown links */
+  padding: 0.5rem 1rem; /* Keep dropdown spacing consistent */
 }
 
 .navbar-links a {
@@ -142,9 +149,7 @@
 }
 
 .navbar-dropdown-menu li {
-  /* padding: 0.5rem 1rem; */
   display: block;
-
   white-space: nowrap;
   width: 100%; /* Make sure it fills the dropdown width */
 }
