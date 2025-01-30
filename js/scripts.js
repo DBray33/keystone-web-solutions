@@ -552,3 +552,33 @@ document.addEventListener('DOMContentLoaded', () => {
     observer.observe(sectionCards);
   }
 });
+
+// //////////////////////////////////////////////
+// //////////////////////////////////////////////
+// //////////////////////////////////////////////
+// //////////////////////////////////////////////
+function navbarScrollEffect() {
+  const navbar = document.querySelector('.navbar');
+
+  if (!navbar) {
+    console.error('⚠ Navbar not found.');
+    return;
+  }
+
+  // Clear any previous scroll event listeners (prevents duplication)
+  window.removeEventListener('scroll', handleScroll);
+
+  function handleScroll() {
+    if (window.scrollY > 50) {
+      navbar.classList.add('scrolled');
+    } else {
+      navbar.classList.remove('scrolled');
+    }
+  }
+
+  // Attach new scroll event listener
+  window.addEventListener('scroll', handleScroll);
+}
+
+// 🚀 Run navbar scroll effect on script load
+navbarScrollEffect();
