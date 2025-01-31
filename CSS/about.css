@@ -937,3 +937,46 @@ body {
     font-size: 1rem;
   }
 }
+
+/* === JOBS PAGE ICON ROW STYLING === */
+.jobs-icons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 icons per row */
+  gap: 40px; /* Increased gap for more spacing */
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 40px; /* Increased top margin for more spacing */
+}
+
+.job-icon-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px; /* Increased padding for more spacing */
+}
+
+/* Ensure icons scale properly */
+.job-icon-item svg {
+  width: 100px; /* Doubled size */
+  height: 100px; /* Doubled size */
+  fill: white; /* Change as needed to match your design */
+}
+
+/* === Responsive Layout: 2 Icons Per Row on Smaller Screens === */
+@media (max-width: 768px) {
+  .jobs-icons {
+    grid-template-columns: repeat(2, 1fr); /* 2 icons per row */
+    gap: 50px; /* Increase spacing between icons on smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .jobs-icons {
+    grid-template-columns: repeat(
+      1,
+      1fr
+    ); /* 1 icon per row on very small screens */
+    gap: 60px; /* Extra spacing for single column layout */
+  }
+}
