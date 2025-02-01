@@ -813,6 +813,7 @@ body {
 .jobs-page {
   background-color: black;
 }
+
 .jobs-container {
   position: relative;
   width: 100%;
@@ -827,6 +828,7 @@ body {
   overflow: hidden;
   z-index: 1;
   padding: 40px 20px;
+  padding-top: 100px; /* Added padding to prevent overlap */
 }
 
 /* === Background & Overlay === */
@@ -903,7 +905,7 @@ body {
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 950px) {
   .jobs-heading {
     font-size: 3rem; /* Reduce heading size for mobile */
   }
@@ -942,7 +944,7 @@ body {
 .jobs-icons {
   display: grid;
   grid-template-columns: repeat(4, 1fr); /* 4 icons per row */
-  gap: 40px; /* Increased gap for more spacing */
+  gap: 80px; /* Increased gap for more spacing */
   justify-content: center;
   align-items: center;
   text-align: center;
@@ -953,7 +955,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 20px; /* Increased padding for more spacing */
+  padding: 40px; /* Increased padding for more spacing */
 }
 
 /* Ensure icons scale properly */
@@ -964,7 +966,7 @@ body {
 }
 
 /* === Responsive Layout: 2 Icons Per Row on Smaller Screens === */
-@media (max-width: 768px) {
+@media (max-width: 950px) {
   .jobs-icons {
     grid-template-columns: repeat(2, 1fr); /* 2 icons per row */
     gap: 50px; /* Increase spacing between icons on smaller screens */
@@ -973,10 +975,6 @@ body {
 
 @media (max-width: 480px) {
   .jobs-icons {
-    grid-template-columns: repeat(
-      1,
-      1fr
-    ); /* 1 icon per row on very small screens */
     gap: 60px; /* Extra spacing for single column layout */
   }
 }
