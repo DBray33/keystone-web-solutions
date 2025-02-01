@@ -1496,6 +1496,13 @@ textarea {
   color: #000;
 }
 
+.portfolio-section .desktop-message {
+  display: block;
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 0.5rem;
+}
+
 .portfolio-section .mobile-message {
   display: none;
 }
@@ -1505,6 +1512,9 @@ textarea {
     font-size: 0.9rem;
     color: #555;
     margin-bottom: 0.5rem;
+  }
+  .portfolio-section .desktop-message {
+    display: none;
   }
 }
 .portfolio p {
@@ -1518,7 +1528,7 @@ textarea {
 .portfolio-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1rem;
+
   justify-content: center;
 }
 
@@ -1562,30 +1572,51 @@ textarea {
   justify-content: center;
   align-items: center;
   opacity: 0;
-  transition: opacity 0.3s;
+  transform: scale(0.8); /* Start smaller */
+  transition: opacity 0.3s ease, transform 0.3s ease;
   color: #fff;
   text-align: center;
   padding: 1rem;
 }
+
 .portfolio-item:hover .portfolio-overlay {
   opacity: 1;
+  transform: scale(1); /* Grows to full size */
+}
+
+/* Animating the Text */
+.portfolio-overlay h3,
+.portfolio-overlay p {
+  transform: scale(0.8); /* Start smaller */
+  transition: transform 0.5s ease;
+}
+
+.portfolio-item:hover .portfolio-overlay h3,
+.portfolio-item:hover .portfolio-overlay p {
+  transform: scale(1); /* Expand to normal size */
 }
 .portfolio-overlay h3 {
   font-size: 1.2rem;
   margin-bottom: 0.5rem;
   text-transform: uppercase;
 }
+
 .portfolio-overlay p {
   font-size: 1rem;
-  margin: 0;
+  margin-bottom: 1rem; /* Add spacing below paragraph */
   color: #000;
-  font-weight: 500;
+  font-weight: 600;
 }
 
-@media (max-width: 1175px) and (min-width: 1030px) {
-  .portfolio-overlay p {
-    font-size: 1.2rem; /* Adjust for readability */
-  }
+.portfolio-link {
+  font-size: 0.7rem;
+  padding: 0.5rem 1rem;
+  background-color: #000;
+  color: #fff;
+  border: 2px solid #000;
+  border-radius: 4px;
+  text-transform: uppercase;
+  transition: background-color 0.3s, transform 0.2s;
 }
 
 @media (max-width: 1300px) and (min-width: 1176px) {
@@ -1594,12 +1625,29 @@ textarea {
   }
 
   .portfolio-overlay p {
-    font-size: 0.9rem; /* Adjust for readability */
+    font-size: 0.8rem; /* Adjust for readability */
     line-height: 1.4;
   }
 
   .portfolio-link {
-    font-size: 0.9rem; /* Smaller button text */
+    font-size: 0.7rem; /* Smaller button text */
+  }
+}
+
+@media (max-width: 1175px) and (min-width: 1030px) {
+  .portfolio-overlay p {
+    font-size: 1.2rem; /* Adjust for readability */
+  }
+  .portfolio-link {
+    font-size: 0.7rem; /* Smaller button text */
+  }
+}
+@media (max-width: 1029px) and (min-width: 851px) {
+  .portfolio-overlay p {
+    font-size: 0.9rem; /* Adjust for readability */
+  }
+  .portfolio-link {
+    font-size: 0.7rem; /* Smaller button text */
   }
 }
 
@@ -1611,6 +1659,10 @@ textarea {
   .portfolio-overlay p {
     font-size: 0.8rem; /* Adjust for readability */
     line-height: 1.4;
+  }
+
+  .portfolio-link {
+    font-size: 0.7rem; /* Smaller button text */
   }
 }
 
@@ -1625,7 +1677,7 @@ textarea {
   }
 
   .portfolio-link {
-    font-size: 0.9rem; /* Smaller button text */
+    font-size: 0.7rem; /* Smaller button text */
   }
 }
 
@@ -1635,12 +1687,12 @@ textarea {
   }
 
   .portfolio-overlay p {
-    font-size: 0.9rem; /* Adjust for readability */
+    font-size: 0.86rem; /* Adjust for readability */
     line-height: 1.4;
   }
 
   .portfolio-link {
-    font-size: 0.9rem; /* Smaller button text */
+    font-size: 0.7rem; /* Smaller button text */
   }
 }
 
