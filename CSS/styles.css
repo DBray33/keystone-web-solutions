@@ -102,10 +102,6 @@ html {
   color: #000;
 }
 
-.portfolio-section .mobile-message {
-  display: none;
-}
-
 /* ///////////////////////////////////// */
 /* SIDEBAR ///////////////////////////// */
 
@@ -1257,7 +1253,7 @@ label {
   display: flex;
   display: flex;
 }
-.portfolio h2,
+
 .quote-section-heading {
   font-family: var(--headline-font-family);
   font-weight: var(--headline-font-weight);
@@ -1480,6 +1476,11 @@ textarea {
   color: #fff;
   margin: 0 0 2rem;
 }
+
+/* --------------------------------------- */
+/* PORTFOLIO SECTION */
+/* --------------------------------------- */
+
 .portfolio-section {
   position: relative;
   max-width: 100%;
@@ -1488,12 +1489,15 @@ textarea {
   background-color: #d3d3d3;
   text-align: center;
 }
-.portfolio h2 {
-  font-size: 12rem;
+.portfolio-section h2 {
+  font-family: exo;
+  font-size: 3rem;
   margin-bottom: 1rem;
-  margin-top: 0;
-  color: #333;
-  text-shadow: 2px 2px 1px #000, -1px -1px 2px rgba(255, 255, 255, 0.5);
+  color: #000;
+}
+
+.portfolio-section .mobile-message {
+  display: none;
 }
 @media (max-width: 935px) {
   .portfolio-section .mobile-message {
@@ -1501,9 +1505,6 @@ textarea {
     font-size: 0.9rem;
     color: #555;
     margin-bottom: 0.5rem;
-  }
-  .portfolio h2 {
-    font-size: 6rem;
   }
 }
 .portfolio p {
@@ -1514,14 +1515,14 @@ textarea {
 .portfolio-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1rem;
+  /* gap: 1rem; */
 }
 .portfolio-item {
   position: relative;
   aspect-ratio: 1/1;
   background-size: cover;
   background-position: center;
-  border-radius: 8px;
+  /* border-radius: 8px; */
   overflow: hidden;
   cursor: pointer;
   transition: transform 0.3s, box-shadow 0.3s;
