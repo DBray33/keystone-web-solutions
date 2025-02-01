@@ -1588,7 +1588,7 @@ textarea {
 .portfolio-overlay h3,
 .portfolio-overlay p {
   transform: scale(0.8); /* Start smaller */
-  transition: transform 0.5s ease;
+  transition: transform 0.2s ease;
 }
 
 .portfolio-item:hover .portfolio-overlay h3,
