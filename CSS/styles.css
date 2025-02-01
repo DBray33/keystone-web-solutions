@@ -1512,10 +1512,30 @@ textarea {
   color: #555;
   margin-bottom: 2rem;
 }
+/* === Responsive Portfolio Grid === */
+
+/* Default: 3 items per row */
 .portfolio-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  /* gap: 1rem; */
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  justify-content: center;
+}
+
+/* 2 items per row at 935px */
+@media (max-width: 1175px) {
+  .portfolio-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* 1 item per row at 620px */
+@media (max-width: 750px) {
+  .portfolio-grid {
+    grid-template-columns: repeat(1, 1fr);
+    max-width: 500px;
+    margin: 0 auto; /* Keeps it centered */
+  }
 }
 .portfolio-item {
   position: relative;
@@ -1551,15 +1571,77 @@ textarea {
   opacity: 1;
 }
 .portfolio-overlay h3 {
-  font-size: 3rem;
+  font-size: 1.2rem;
   margin-bottom: 0.5rem;
   text-transform: uppercase;
 }
 .portfolio-overlay p {
-  font-size: 1.2rem;
+  font-size: 1rem;
   margin: 0;
   color: #000;
   font-weight: 500;
+}
+
+@media (max-width: 1175px) and (min-width: 1030px) {
+  .portfolio-overlay p {
+    font-size: 1.2rem; /* Adjust for readability */
+  }
+}
+
+@media (max-width: 1300px) and (min-width: 1176px) {
+  .portfolio-overlay h3 {
+    font-size: 1.2rem; /* Adjust as needed */
+  }
+
+  .portfolio-overlay p {
+    font-size: 0.9rem; /* Adjust for readability */
+    line-height: 1.4;
+  }
+
+  .portfolio-link {
+    font-size: 0.9rem; /* Smaller button text */
+  }
+}
+
+@media (max-width: 850px) {
+  .portfolio-overlay h3 {
+    font-size: 1.2rem; /* Adjust as needed */
+  }
+
+  .portfolio-overlay p {
+    font-size: 0.8rem; /* Adjust for readability */
+    line-height: 1.4;
+  }
+}
+
+@media (max-width: 750px) {
+  .portfolio-overlay h3 {
+    font-size: 1.2rem; /* Adjust as needed */
+  }
+
+  .portfolio-overlay p {
+    font-size: 1.2rem; /* Adjust for readability */
+    line-height: 1.4;
+  }
+
+  .portfolio-link {
+    font-size: 0.9rem; /* Smaller button text */
+  }
+}
+
+@media (max-width: 600px) {
+  .portfolio-overlay h3 {
+    font-size: 1.2rem; /* Adjust as needed */
+  }
+
+  .portfolio-overlay p {
+    font-size: 0.9rem; /* Adjust for readability */
+    line-height: 1.4;
+  }
+
+  .portfolio-link {
+    font-size: 0.9rem; /* Smaller button text */
+  }
 }
 
 /* //////////////////////////////////////// */
