@@ -2006,3 +2006,58 @@ textarea {
     margin: 0; /* Remove excess margins between items */
   }
 }
+
+/* -------------------------------------- */
+/* Back to top button */
+/* -------------------------------------- */
+/* Back to Top Button Styles */
+/* Back to Top Button Styles */
+.back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 50px; /* Adjust size as needed */
+  height: 50px;
+  background-color: rgba(0, 0, 0, 0.6);
+  border: 1px solid white;
+  border-radius: 50%;
+  cursor: pointer;
+  display: none; /* Hidden by default */
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.3s, transform 0.3s;
+  z-index: 9999;
+}
+
+/* SVG Icon Styling */
+.back-to-top svg {
+  width: 24px; /* Adjust size as needed */
+  height: 24px;
+  fill: #5dade2; /* Icon color */
+  transition: transform 0.2s ease-in-out;
+}
+
+/* Hover Effect */
+.back-to-top:hover svg {
+  transform: scale(1.4);
+}
+
+/* Show Button When Scrolling */
+.back-to-top.show {
+  display: flex;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Adjust for Smaller Screens */
+@media (max-width: 620px) {
+  .back-to-top {
+    width: 60px;
+    height: 60px;
+  }
+
+  .back-to-top svg {
+    width: 40px;
+    height: 40px;
+  }
+}
