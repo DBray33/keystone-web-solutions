@@ -21,18 +21,25 @@ async function loadNavbar() {
 
     // ✅ Ensure navbar scripts run **after** navbar loads
     setTimeout(() => {
-      if (typeof initializeNavbarScroll === 'function') {
-        initializeNavbarScroll();
+      if (typeof navbarScrollEffect === 'function') {
+        navbarScrollEffect();
         console.log('✅ Navbar scroll effect initialized');
       } else {
-        console.error('⚠ navbarScrollEffect function not found.');
+        console.warn('⚠ navbarScrollEffect function not found.');
       }
 
-      if (typeof initializeMobileMenu === 'function') {
-        initializeMobileMenu();
-        console.log('✅ Mobile menu initialized');
+      if (typeof mobileMenuInit === 'function') {
+        setTimeout(() => {
+          mobileMenuInit();
+          console.log('✅ Mobile menu initialized after navbar load.');
+        }, 200); // Small delay ensures elements exist before initializing
       } else {
-        console.error('⚠ mobileMenuInit function not found.');
+        console.warn('⚠ mobileMenuInit function not found.');
+      }
+
+      // ✅ Trigger scripts.js functions after navbar is present
+      if (typeof loadScripts === 'function') {
+        loadScripts();
       }
     }, 100);
   } catch (error) {
@@ -43,12 +50,40 @@ async function loadNavbar() {
 // ✅ Load navbar when the page loads
 window.addEventListener('DOMContentLoaded', loadNavbar);
 
-// ✅ Function to reinitialize the mobile menu script
+// ------------------------------------------------
+// MOBILE MENU SCRIPT
+// ------------------------------------------------
+// ✅ Function to initialize the mobile menu with retry logic
 function initializeMobileMenu() {
-  if (typeof mobileMenuInit === 'function') {
-    mobileMenuInit();
-  } else {
-    console.error('⚠ mobileMenuInit function not found.');
+  const dropdownMenu = document.querySelector('.navbar-dropdown');
+  const hamburgerMenu = document.querySelector('.hamburger-menu');
+
+  if (!dropdownMenu || !hamburgerMenu) {
+    console.warn('⚠ Mobile menu elements not found. Retrying in 100ms...');
+    setTimeout(initializeMobileMenu, 100); // Retry in 100ms
+    return;
+  }
+
+  console.log('✅ Mobile menu elements found, initializing.');
+
+  // ✅ Prevent duplicate event listeners
+  if (!hamburgerMenu.dataset.listenerAdded) {
+    hamburgerMenu.addEventListener('click', function () {
+      dropdownMenu.classList.toggle('open');
+    });
+
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', function (event) {
+      if (
+        !dropdownMenu.contains(event.target) &&
+        !hamburgerMenu.contains(event.target)
+      ) {
+        dropdownMenu.classList.remove('open');
+      }
+    });
+
+    // Mark as initialized to prevent duplicate listeners
+    hamburgerMenu.dataset.listenerAdded = true;
   }
 }
 
@@ -57,27 +92,36 @@ function initializeNavbarScroll() {
   if (typeof navbarScrollEffect === 'function') {
     navbarScrollEffect();
   } else {
-    console.error('⚠ navbarScrollEffect function not found.');
+    console.warn('⚠ navbarScrollEffect function not found.');
   }
+}
+
+// ✅ Function to load additional scripts after navbar/footer loads
+function loadScripts() {
+  const navbar = document.querySelector('.navbar');
+  if (!navbar) {
+    console.error('⚠ Navbar not found. Retrying...');
+    setTimeout(loadScripts, 100); // Retry after 100ms
+    return;
+  }
+  console.log('✅ Navbar detected, running scripts.js functions.');
 }
 
 // -----------------------------------------------
 // 🚀 Load the footer dynamically using JavaScript
 // -----------------------------------------------
 document.addEventListener('DOMContentLoaded', function () {
-  // Load Navbar
-  fetch('navbar.html')
-    .then((response) => response.text())
-    .then((data) => {
-      document.querySelector('#navbar-container').innerHTML = data;
-    })
-    .catch((error) => console.error('Error loading navbar:', error));
-
   // Load Footer
   fetch('footer.html')
     .then((response) => response.text())
     .then((data) => {
       document.querySelector('#footer-container').innerHTML = data;
+
+      // ✅ Ensure year updates **after** footer loads
+      const yearElement = document.getElementById('year');
+      if (yearElement) {
+        yearElement.textContent = new Date().getFullYear();
+      }
     })
     .catch((error) => console.error('Error loading footer:', error));
 });

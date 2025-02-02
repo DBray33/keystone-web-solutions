@@ -145,7 +145,7 @@
 /* Button Background Animation */
 .footer-contact-form .submit-button::before {
   content: '';
-  position: absolute;
+  position: relative;
   top: 0;
   left: -100%;
   width: 250%;
@@ -216,7 +216,7 @@
   fill: white;
 }
 
-/* Footer Cards Section */
+/* FOOTER CARDS SECTION */
 .footer-cards-container {
   display: grid;
   grid-template-columns: repeat(4, 1fr); /* 4 cards per row */

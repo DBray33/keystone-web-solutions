@@ -124,12 +124,13 @@
 
   <div class="footer-divider"></div>
 
-  <!-- Copyright Section -->
-  <div class="footer-copyright">
-    <p>
-      <a href="../footer/privacy.html">Privacy Policy</a> |
-      <a href="../footer/terms.html">Terms of Use</a>
-    </p>
-    <p>&copy; 2024 Keystone Web Solutions. All rights reserved.</p>
-  </div>
+  <!-- Year Update Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const yearElement = document.getElementById('year');
+      if (yearElement) {
+        yearElement.textContent = new Date().getFullYear();
+      }
+    });
+  </script>
 </footer>

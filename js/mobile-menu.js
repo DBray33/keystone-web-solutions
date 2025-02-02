@@ -115,5 +115,13 @@ function initializeDropdownSubmenus() {
   });
 }
 
-// 🚀 Run on script load
-mobileMenuInit();
+document.addEventListener('DOMContentLoaded', function () {
+  setTimeout(() => {
+    if (typeof mobileMenuInit === 'function') {
+      mobileMenuInit();
+      console.log('✅ Mobile menu script initialized.');
+    } else {
+      console.error('❌ mobileMenuInit function not found.');
+    }
+  }, 300); // Ensure navbar loads before running
+});

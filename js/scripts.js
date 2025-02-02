@@ -1,7 +1,7 @@
+// ----------------------------------------
+// Service item hover effect for touch devices
+// ----------------------------------------
 document.addEventListener('DOMContentLoaded', function () {
-  // ----------------------------------------
-  // Service item hover effect for touch devices
-  // ----------------------------------------
   const serviceItems = document.querySelectorAll('.service-item');
 
   serviceItems.forEach((item) => {
@@ -80,43 +80,31 @@ document.addEventListener('DOMContentLoaded', function () {
 
   handleResize();
   window.addEventListener('resize', handleResize, { passive: true });
+});
+// ----------------------------------------
+// Smooth scroll for navbar link clicks
+// ----------------------------------------
+document.querySelectorAll('.navbar-links a').forEach((anchor) => {
+  anchor.addEventListener('click', function (e) {
+    if (this.getAttribute('href').startsWith('#')) {
+      e.preventDefault();
 
-  // ----------------------------------------
-  // Navbar scroll effect (add 'scrolled' class on scroll)
-  // ----------------------------------------
-  const navbar = document.querySelector('.navbar');
+      const targetId = this.getAttribute('href').substring(1);
+      const targetElement = document.getElementById(targetId);
 
-  window.addEventListener('scroll', function () {
-    if (window.scrollY > 0) {
-      navbar.classList.add('scrolled');
-    } else {
-      navbar.classList.remove('scrolled');
-    }
-  });
-
-  // ----------------------------------------
-  // Smooth scroll for navbar link clicks
-  // ----------------------------------------
-  document.querySelectorAll('.navbar-links a').forEach((anchor) => {
-    anchor.addEventListener('click', function (e) {
-      if (this.getAttribute('href').startsWith('#')) {
-        e.preventDefault();
-
-        const targetId = this.getAttribute('href').substring(1);
-        const targetElement = document.getElementById(targetId);
-
-        if (targetElement) {
-          window.scrollTo({
-            top: targetElement.offsetTop - 80,
-            behavior: 'smooth',
-          });
-        }
+      if (targetElement) {
+        window.scrollTo({
+          top: targetElement.offsetTop - 80,
+          behavior: 'smooth',
+        });
       }
-    });
+    }
   });
 });
 
+// ----------------------------------------
 // Navbar dropdown functionality
+// ----------------------------------------
 document.querySelectorAll('.navbar-dropdown > a').forEach((dropdownLink) => {
   dropdownLink.addEventListener('click', function (e) {
     e.preventDefault(); // Prevent default link behavior
@@ -136,13 +124,19 @@ document.querySelectorAll('.navbar-dropdown > a').forEach((dropdownLink) => {
   });
 });
 
+// ----------------------------------------
+// Navbar scroll effect (runs only after navbar loads)
+// ----------------------------------------
 function navbarScrollEffect() {
   const navbar = document.querySelector('.navbar');
 
   if (!navbar) {
-    console.error('⚠ Navbar not found.');
+    console.error('⚠ Navbar not found. Retrying...');
+    setTimeout(navbarScrollEffect, 100); // Retry after 100ms
     return;
   }
+
+  console.log('✅ Navbar detected, initializing scroll effect.');
 
   // Clear any previous scroll event listeners (prevents duplication)
   window.removeEventListener('scroll', handleScroll);
@@ -158,9 +152,6 @@ function navbarScrollEffect() {
   // Attach new scroll event listener
   window.addEventListener('scroll', handleScroll);
 }
-
-// 🚀 Run navbar scroll effect on script load
-navbarScrollEffect();
 
 // /////////////////////////////////////////////////////////////////
 // WEBSITE GUIDE / JOURNEY SECTION /////////////////////////////////
@@ -408,33 +399,6 @@ document.addEventListener('click', (event) => {
   }
 });
 
-// Search functionality
-document.addEventListener('DOMContentLoaded', () => {
-  const searchInput = document.getElementById('faq-search-input');
-  if (searchInput) {
-    searchInput.addEventListener('input', (e) => {
-      const searchTerm = e.target.value.toLowerCase();
-      const faqItems = document.querySelectorAll('.faq-item');
-
-      faqItems.forEach((item) => {
-        const question = item
-          .querySelector('.faq-question')
-          .textContent.toLowerCase();
-        const answer = item
-          .querySelector('.faq-answer')
-          .textContent.toLowerCase();
-
-        if (question.includes(searchTerm) || answer.includes(searchTerm)) {
-          item.style.display = 'block';
-        } else {
-          item.style.display = 'none';
-        }
-      });
-    });
-  } else {
-    console.warn('Search input not found on this page.');
-  }
-});
 // Slide in from sides animation
 document.addEventListener('DOMContentLoaded', () => {
   const faqItems = document.querySelectorAll('.faq-item');
