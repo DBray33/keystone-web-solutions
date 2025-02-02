@@ -1,4 +1,289 @@
-.footer,
+/* Footer Styles */
+.site-footer {
+  position: relative;
+  background-color: black;
+  color: white;
+  text-align: center;
+  padding: 40px 20px;
+  font-size: 14px;
+  z-index: 999;
+}
+
+/* Footer Container - Flexbox Layout */
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-bottom: 20px;
+}
+
+/* Left Side - Business Info */
+.footer-left {
+  width: 50%;
+  text-align: center;
+}
+
+.footer-logo {
+  width: 100px;
+  margin-bottom: 10px;
+}
+
+.footer-business-name {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.footer-location {
+  font-size: 1rem;
+  margin-bottom: 15px;
+}
+
+/* Footer Contact Styling - phone number and email */
+.footer-contact a {
+  font-size: 1rem;
+  display: inline-flex; /* Restricts size to content */
+  flex-direction: column; /* Stack icon above text */
+  align-items: center; /* Center-align the items */
+  justify-content: center; /* Keep them vertically centered */
+  padding: 5px 2rem; /* Adjust padding as needed */
+  text-decoration: none; /* Removes underline */
+  color: white;
+  transition: color 0.3s ease, text-decoration 0.3s ease;
+  width: fit-content; /* Ensures link does not expand beyond content */
+}
+
+/* Adds spacing between the icon and the text */
+.footer-icon {
+  margin-bottom: 5px;
+  transition: fill 0.3s ease; /* Smooth transition for icon color */
+}
+
+/* Hover effect - changes icon to white & text to #5dade2 */
+.footer-contact a:hover {
+  color: #5dade2; /* Changes text color */
+  font-weight: 600;
+  text-decoration: underline; /* Underline only on hover */
+}
+
+/* Default icon color */
+.footer-icon path {
+  fill: #5dade2; /* Default light blue */
+  transition: fill 0.3s ease; /* Smooth transition */
+}
+
+/* Change icon color to white on hover */
+.footer-contact a:hover .footer-icon path {
+  fill: white;
+}
+/* Social Media Icons */
+.footer-social {
+  margin-top: 15px;
+}
+
+.footer-social a {
+  margin: 0 8px;
+}
+
+.footer-social img {
+  width: 30px;
+  transition: opacity 0.3s;
+}
+
+.footer-social img:hover {
+  opacity: 0.7;
+}
+
+/* --------------------------------------- */
+/* Right Side - Contact Form */
+.footer-right {
+  width: 50%;
+  text-align: center;
+}
+
+.footer-right h2 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+
+.footer-contact-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer-contact-form input,
+.footer-contact-form textarea {
+  width: 80%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: none;
+  font-size: 1rem;
+}
+
+.footer-contact-form textarea {
+  height: 80px;
+}
+
+/* Footer Submit Button Styling */
+.footer-contact-form .submit-button {
+  position: relative;
+  overflow: hidden;
+  background: none;
+  color: white;
+  font-size: 1rem;
+  padding: 10px 20px;
+  border: 2px solid #5dade2;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: color 0.3s, border-color 0.3s;
+}
+
+/* Button Background Animation */
+.footer-contact-form .submit-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 250%;
+  height: 100%;
+  background-color: #5dade2;
+  transform: skewX(-45deg);
+  z-index: -1;
+  transition: transform 0.3s;
+}
+
+/* Hover Effect */
+.footer-contact-form .submit-button:hover::before {
+  transform: translateX(100%) skewX(-45deg);
+}
+
+.footer-contact-form .submit-button:hover {
+  color: var(--primary-color);
+  border-color: #5dade2;
+}
+
+/* Divider Line Above Copyright */
+.footer-divider {
+  width: 100%;
+  height: 2px;
+  background-color: #333;
+  margin: 30px 0;
+}
+
+/* Copyright Section */
+.footer-copyright {
+  text-align: center;
+  margin-top: 30px;
+}
+
+/* Style the Privacy Policy and Terms of Use links */
+.footer-copyright a {
+  color: white;
+  text-decoration: underline; /* Ensures underline is always visible */
+}
+
+/* Optional: Change color on hover */
+.footer-copyright a:hover {
+  color: #5dade2; /* Light blue on hover for a subtle effect */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-left,
+  .footer-right {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .footer-contact-form input,
+  .footer-contact-form textarea {
+    width: 90%;
+  }
+}
+
+.footer-contact svg {
+  width: 30px;
+  height: 30px;
+  fill: white;
+}
+
+/* Footer Cards Section */
+.footer-cards-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 cards per row */
+  gap: 20px;
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Individual Footer Card */
+.footer-card {
+  background-color: #333;
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.footer-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Footer Card Headings */
+.footer-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+/* Footer Card List */
+.footer-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-card li {
+  font-size: 1rem;
+  margin-bottom: 8px;
+}
+
+/* Footer Card Links */
+.footer-card a {
+  color: #5dade2;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-card a:hover {
+  color: #ffffff;
+}
+
+/* Responsive Layout */
+@media (max-width: 900px) {
+  .footer-cards-container {
+    grid-template-columns: repeat(2, 1fr); /* 2 cards per row */
+  }
+}
+
+@media (max-width: 600px) {
+  .footer-cards-container {
+    grid-template-columns: repeat(1, 1fr); /* 1 card per row */
+  }
+}
+
+/* .footer,
 .footer .submit-button {
   position: relative;
   background-color: #000;
@@ -98,9 +383,9 @@
 }
 .footer-bottom {
   display: flex;
-  flex-wrap: wrap; /* Allow items to wrap to the next line */
-  justify-content: center; /* Center items on both rows */
-  gap: 1rem; /* Add consistent spacing between items */
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
   margin-top: 2rem;
   text-align: center;
   width: 100%;
@@ -118,7 +403,7 @@
 }
 @media (max-width: 542px) {
   .footer-bottom {
-    align-items: center; /* Center items */
+    align-items: center;
   }
   .footer-section {
     width: 100%;
@@ -146,12 +431,12 @@
 }
 .footer-copyright {
   color: #fff;
-  text-align: center; /* Ensures the text is centered */
+  text-align: center;
   margin-top: 2rem;
   border-top: 1px solid #ccc;
   padding-top: 1rem;
-  width: 100%; /* Ensures it spans the full width */
-  box-sizing: border-box; /* Ensures padding and border are included in the total width */
+  width: 100%;
+  box-sizing: border-box;
 }
 .footer-copyright a {
   color: #fff;
@@ -206,7 +491,6 @@
   border-color: #5dade2;
 }
 
-/* for services / about pages */
 .page-content .footer {
   display: flex;
   flex-wrap: wrap;
@@ -218,15 +502,12 @@
   border-radius: 8px;
 }
 
-/* ///////////////////////////// */
-/* Ensure the footer-left stays aligned properly */
 .footer-left {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-/* Ensure footer-right aligns properly */
 .footer-right {
   display: flex;
   flex-direction: column;
@@ -235,7 +516,6 @@
   width: 100%;
 }
 
-/* Adjusts form width & spacing inside footer-right */
 .footer-contact-form {
   display: flex;
   flex-direction: column;
@@ -243,7 +523,6 @@
   width: 100%;
 }
 
-/* Fix alignment issue on smaller screens */
 @media (max-width: 935px) {
   .footer-right {
     align-items: center;
@@ -253,4 +532,4 @@
   .footer-contact-form {
     align-items: center;
   }
-}
+} */

@@ -60,3 +60,24 @@ function initializeNavbarScroll() {
     console.error('⚠ navbarScrollEffect function not found.');
   }
 }
+
+// -----------------------------------------------
+// 🚀 Load the footer dynamically using JavaScript
+// -----------------------------------------------
+document.addEventListener('DOMContentLoaded', function () {
+  // Load Navbar
+  fetch('navbar.html')
+    .then((response) => response.text())
+    .then((data) => {
+      document.querySelector('#navbar-container').innerHTML = data;
+    })
+    .catch((error) => console.error('Error loading navbar:', error));
+
+  // Load Footer
+  fetch('footer.html')
+    .then((response) => response.text())
+    .then((data) => {
+      document.querySelector('#footer-container').innerHTML = data;
+    })
+    .catch((error) => console.error('Error loading footer:', error));
+});
