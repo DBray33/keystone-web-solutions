@@ -470,7 +470,7 @@ html {
   display: flex;
   overflow: hidden; /* Prevents content overflow */
   border-radius: 45px;
-  border: 2px solid white;
+  border: 2px solid #5dade2;
   box-shadow: 0 0px 0px 0px var(--primary-color);
   transform-origin: right;
   transform: scaleX(0);
