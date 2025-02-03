@@ -1,5 +1,6 @@
 /* Footer Styles */
 .site-footer {
+  clear: both;
   position: relative;
   background-color: black;
   color: white;
@@ -7,6 +8,7 @@
   padding: 40px 20px;
   font-size: 14px;
   z-index: 999;
+  min-height: 200px; /* Ensures footer has enough height */
 }
 
 /* Footer Container - Flexbox Layout */
