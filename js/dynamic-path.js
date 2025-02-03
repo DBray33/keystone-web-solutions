@@ -107,27 +107,40 @@ function loadScripts() {
   console.log('✅ Navbar detected, running scripts.js functions.');
 }
 
-// -----------------------------------------------
-// 🚀 Load the footer dynamically using JavaScript
-// -----------------------------------------------
 document.addEventListener('DOMContentLoaded', function () {
-  // Detect if the page is inside a folder
-  let footerPath = window.location.pathname.includes('/')
-    ? '../footer.html'
-    : 'footer.html';
+  // Detect how deep the page is in the directory structure
+  let depth = window.location.pathname.split('/').filter(Boolean).length;
+  let basePath = depth > 0 ? '../'.repeat(depth) : './';
 
-  // Ensure the top-level pages load correctly
-  if (window.location.pathname.split('/').filter(Boolean).length === 1) {
-    footerPath = 'footer.html';
-  }
+  // Define the correct path to load footer.html dynamically
+  let footerPath = `${basePath}footer.html`;
 
   // Dynamically load the footer
   fetch(footerPath)
     .then((response) => response.text())
     .then((data) => {
+      // Insert footer content into the page
       document.querySelector('#footer-container').innerHTML = data;
 
-      // ✅ Ensure year updates **after** footer loads
+      // ✅ Replace [[base]] for standard links (about, blog, etc.)
+      document.querySelector('#footer-container').innerHTML = document
+        .querySelector('#footer-container')
+        .innerHTML.replace(/\[\[base\]\]/g, basePath);
+
+      // ✅ Adjust internal section links (e.g., #testimonials, #portfolio-section)
+      document
+        .querySelectorAll('#footer-container a[href*="#"]')
+        .forEach((link) => {
+          let href = link.getAttribute('href');
+          if (href.startsWith('[[base]]#')) {
+            link.setAttribute(
+              'href',
+              `${basePath}index.html${href.replace('[[base]]', '')}`
+            );
+          }
+        });
+
+      // ✅ Ensure the copyright year updates after footer loads
       const yearElement = document.getElementById('year');
       if (yearElement) {
         yearElement.textContent = new Date().getFullYear();
