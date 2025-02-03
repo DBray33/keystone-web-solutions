@@ -168,21 +168,54 @@
 
 /* Copyright Section */
 .footer-copyright {
+  display: flex;
+  flex-direction: column; /* Stack elements vertically */
+  align-items: center; /* Center content horizontally */
+  justify-content: center; /* Ensure proper centering */
   text-align: center;
+  width: 100%; /* Full width */
   margin-top: 30px;
+  padding: 15px 0;
+  font-size: 14px;
+  color: white;
 }
 
 /* Style the Privacy Policy and Terms of Use links */
+.footer-copyright p {
+  margin: 5px 0; /* Adds spacing between paragraphs */
+  width: 100%;
+}
+
 .footer-copyright a {
   color: white;
   text-decoration: underline; /* Ensures underline is always visible */
+  font-weight: 500;
+  padding: 0 5px; /* Adds spacing between links */
+  transition: color 0.3s ease-in-out;
 }
 
 /* Optional: Change color on hover */
 .footer-copyright a:hover {
-  color: #5dade2; /* Light blue on hover for a subtle effect */
+  color: #5dade2;
+  text-decoration: none;
 }
 
+/* Responsive Adjustment for Small Screens */
+@media (max-width: 600px) {
+  .footer-copyright {
+    font-size: 12px;
+    padding: 10px 0;
+  }
+
+  .footer-copyright p {
+    text-align: center; /* Ensure text is centered */
+  }
+
+  .footer-copyright a {
+    display: inline-block; /* Ensures links stay inline on mobile */
+    margin: 5px 0;
+  }
+}
 /* Responsive Design */
 @media (max-width: 768px) {
   .footer-container {
