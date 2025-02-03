@@ -8,8 +8,7 @@
   padding: 40px 20px;
   font-size: 14px;
   z-index: 999;
-  min-height: 500px; /* Temporary large height */
-  overflow: visible !important; /* Ensures content is not being clipped */
+  overflow: visible !important;
 }
 
 /* Footer Container - Flexbox Layout */
@@ -17,7 +16,6 @@
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  max-width: 1200px;
   margin: 0 auto;
   padding-bottom: 20px;
 }
@@ -47,40 +45,45 @@
 /* Footer Contact Styling - phone number and email */
 .footer-contact a {
   font-size: 1rem;
-  display: inline-flex; /* Restricts size to content */
-  flex-direction: column; /* Stack icon above text */
-  align-items: center; /* Center-align the items */
-  justify-content: center; /* Keep them vertically centered */
-  padding: 5px 2rem; /* Adjust padding as needed */
-  text-decoration: none; /* Removes underline */
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 5px 2rem;
+  text-decoration: none;
   color: white;
   transition: color 0.3s ease, text-decoration 0.3s ease;
-  width: fit-content; /* Ensures link does not expand beyond content */
+  width: fit-content;
 }
 
 /* Adds spacing between the icon and the text */
 .footer-icon {
+  width: 40px;
   margin-bottom: 5px;
-  transition: fill 0.3s ease; /* Smooth transition for icon color */
+  transition: fill 0.3s ease;
 }
 
 /* Hover effect - changes icon to white & text to #5dade2 */
 .footer-contact a:hover {
-  color: #5dade2; /* Changes text color */
+  color: #5dade2;
   font-weight: 600;
-  text-decoration: underline; /* Underline only on hover */
+  text-decoration: underline;
 }
 
-/* Default icon color */
-.footer-icon path {
-  fill: #5dade2; /* Default light blue */
-  transition: fill 0.3s ease; /* Smooth transition */
+/* Hide the white-circle icons by default */
+.hover-icon {
+  display: none;
 }
 
-/* Change icon color to white on hover */
-.footer-contact a:hover .footer-icon path {
-  fill: white;
+/* On hover, show white-circle icons & hide the regular ones */
+.footer-contact a:hover .default-icon {
+  display: none;
 }
+
+.footer-contact a:hover .hover-icon {
+  display: inline-block;
+}
+
 /* Social Media Icons */
 .footer-social {
   margin-top: 15px;
@@ -143,20 +146,6 @@
   border-radius: 5px;
   cursor: pointer;
   transition: color 0.3s, border-color 0.3s;
-}
-
-/* Button Background Animation */
-.footer-contact-form .submit-button::before {
-  content: '';
-  position: relative;
-  top: 0;
-  left: -100%;
-  width: 250%;
-  height: 100%;
-  background-color: #5dade2;
-  transform: skewX(-45deg);
-  z-index: -1;
-  transition: transform 0.3s;
 }
 
 /* Hover Effect */

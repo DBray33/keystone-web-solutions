@@ -111,8 +111,18 @@ function loadScripts() {
 // 🚀 Load the footer dynamically using JavaScript
 // -----------------------------------------------
 document.addEventListener('DOMContentLoaded', function () {
-  // Load Footer
-  fetch('footer.html')
+  // Detect if the page is inside a folder
+  let footerPath = window.location.pathname.includes('/')
+    ? '../footer.html'
+    : 'footer.html';
+
+  // Ensure the top-level pages load correctly
+  if (window.location.pathname.split('/').filter(Boolean).length === 1) {
+    footerPath = 'footer.html';
+  }
+
+  // Dynamically load the footer
+  fetch(footerPath)
     .then((response) => response.text())
     .then((data) => {
       document.querySelector('#footer-container').innerHTML = data;
