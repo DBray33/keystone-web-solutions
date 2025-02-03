@@ -2,13 +2,14 @@
 .site-footer {
   clear: both;
   position: relative;
-  background-color: green;
+  background-color: black;
   color: white;
   text-align: center;
   padding: 40px 20px;
   font-size: 14px;
   z-index: 999;
-  min-height: 200px; /* Ensures footer has enough height */
+  min-height: 500px; /* Temporary large height */
+  overflow: visible !important; /* Ensures content is not being clipped */
 }
 
 /* Footer Container - Flexbox Layout */

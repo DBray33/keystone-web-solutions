@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Test Footer</title>
+    <link rel="stylesheet" href="styles.css" />
+    <!-- Make sure your CSS file is correctly linked -->
+  </head>
+  <body>
+    <div id="footer-container"></div>
+
+    <script>
+      fetch('footer.html')
+        .then((response) => response.text())
+        .then((data) => {
+          document.querySelector('#footer-container').innerHTML += data;
+        })
+        .catch((error) => console.error('Error loading footer:', error));
+    </script>
+  </body>
+</html>
