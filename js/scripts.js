@@ -319,47 +319,53 @@ document.querySelectorAll('.circle .counter').forEach((counter) => {
 });
 // //////////////////////////////////////////////
 // POPUP //////////////////////////
-document.addEventListener('DOMContentLoaded', () => {
-  const popup = document.getElementById('popup');
-  const closePopup = document.getElementById('close-popup');
+document.addEventListener('DOMContentLoaded', function () {
+  // ✅ Determine the correct path for nav.html dynamically
+  let basePath = window.location.pathname.includes('/')
+    ? '../nav.html'
+    : 'nav.html';
 
-  let popupShown = false; // Ensure the popup shows only once
-
-  function showPopup() {
-    if (!popupShown) {
-      popup.classList.add('show'); // Add the 'show' class to trigger CSS animation
-      popupShown = true;
-    }
+  if (window.location.pathname.split('/').filter(Boolean).length === 1) {
+    basePath = 'nav.html';
   }
 
-  // Detect mouse movement for specific areas near the edges
-  document.addEventListener('mousemove', (e) => {
-    const { clientX, clientY } = e;
-    const viewportWidth = window.innerWidth;
-    const viewportHeight = window.innerHeight;
+  // ✅ Load Navbar Dynamically with Correct Path
+  fetch(basePath)
+    .then((response) => response.text())
+    .then((data) => {
+      document.querySelector('#navbar-container').innerHTML = data;
 
-    const topBoundaryHeight = viewportHeight * 0.01; // Top 0.1% thickness
-    const leftBoundaryWidth = viewportWidth * 0.01; // Left 0.1% thickness
-    const topBoundaryWidth = viewportWidth * 0.2; // Left 5% of the width
-    const leftBoundaryHeight = viewportHeight * 0.15; // Top 5% of the height
-
-    // Trigger the popup only for specific regions
-    if (
-      (clientX <= leftBoundaryWidth && clientY <= leftBoundaryHeight) || // Top 5% of left boundary
-      (clientY <= topBoundaryHeight && clientX <= topBoundaryWidth) // Left 5% of top boundary
-    ) {
-      showPopup();
-    }
-  });
-
-  // Close the popup
-  closePopup.addEventListener('click', () => {
-    popup.classList.remove('show'); // Remove the 'show' class to hide the popup
-    setTimeout(() => {
-      popup.style.display = 'none'; // Fully hide the popup after animation ends
-    }, 500); // Match the CSS animation duration
-  });
+      // ✅ Ensure all JavaScript runs after navbar loads
+      requestAnimationFrame(() => {
+        initializeProgressBar();
+        initializePopup();
+      });
+    })
+    .catch((error) => console.error('Error loading navbar:', error));
 });
+
+// ✅ Function to Initialize the Popup
+function initializePopup() {
+  const popup = document.getElementById('popup');
+  const closePopupBtn = document.getElementById('close-popup');
+
+  if (!popup || !closePopupBtn) {
+    console.error('⚠ Popup elements not found!');
+    return;
+  }
+
+  // ✅ Show popup after a delay (e.g., 5 seconds)
+  setTimeout(() => {
+    popup.style.display = 'block';
+  }, 5000);
+
+  // ✅ Close button functionality
+  closePopupBtn.addEventListener('click', () => {
+    popup.style.display = 'none';
+  });
+
+  console.log('✅ Popup initialized successfully.');
+}
 
 // //////////////////////////////////////////////
 // STANDALONE LOGO //////////////////////////////
