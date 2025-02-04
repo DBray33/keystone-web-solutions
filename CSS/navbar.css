@@ -552,3 +552,23 @@
     padding: 0;
   }
 }
+
+/* PROGRESS BAR */
+/* Progress Bar Container (Inside Navbar) */
+.progress-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background-color: #ddd; /* Light gray background */
+  z-index: 1000; /* Keeps it on top */
+}
+
+/* Progress Bar (Fills as Page Scrolls) */
+.progress-bar {
+  height: 100%;
+  width: 0%;
+  background-color: #5dade2; /* Blue color */
+  transition: width 0.1s linear;
+}

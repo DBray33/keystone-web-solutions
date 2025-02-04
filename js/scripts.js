@@ -543,10 +543,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
-// //////////////////////////////////////////////
-// //////////////////////////////////////////////
-// //////////////////////////////////////////////
-// //////////////////////////////////////////////
+// BACK TO TOP /////////////////////////////////
 // Show button when scrolling down
 window.onscroll = function () {
   let button = document.getElementById('backToTop');
@@ -563,4 +560,51 @@ window.onscroll = function () {
 // Smooth scroll to top
 function scrollToTop() {
   window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+// //////////////////////////////////////////////
+// //////////////////////////////////////////////
+// //////////////////////////////////////////////
+document.addEventListener('DOMContentLoaded', function () {
+  // ✅ Determine the correct path to `nav.html` dynamically
+  let basePath = window.location.pathname.includes('/')
+    ? '../nav.html'
+    : 'nav.html';
+
+  // ✅ Ensure top-level pages still load correctly
+  if (window.location.pathname.split('/').filter(Boolean).length === 1) {
+    basePath = 'nav.html';
+  }
+
+  // ✅ Load Navbar Dynamically with Correct Path
+  fetch(basePath)
+    .then((response) => response.text())
+    .then((data) => {
+      document.querySelector('#navbar-container').innerHTML = data;
+
+      // ✅ Run progress bar initialization AFTER navbar loads
+      requestAnimationFrame(() => {
+        initializeProgressBar();
+      });
+    })
+    .catch((error) => console.error('Error loading navbar:', error));
+});
+
+// ✅ Function to Initialize the Progress Bar
+function initializeProgressBar() {
+  const progressBar = document.getElementById('progressBar');
+
+  if (!progressBar) {
+    console.error('⚠ Progress Bar not found in the DOM!');
+    return;
+  }
+
+  window.addEventListener('scroll', function () {
+    const scrollPosition = window.scrollY;
+    const documentHeight =
+      document.documentElement.scrollHeight - window.innerHeight;
+    const scrollPercentage = (scrollPosition / documentHeight) * 100;
+    progressBar.style.width = scrollPercentage + '%';
+  });
+
+  console.log('✅ Progress Bar initialized successfully.');
 }
