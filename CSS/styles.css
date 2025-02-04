@@ -431,16 +431,6 @@ html {
   font-size: 50px;
 }
 
-/* Main Content Cards */
-.section-cards {
-  display: flex;
-  flex-direction: column; /* Stack cards vertically */
-  justify-content: flex-start; /* Align cards to the top */
-  gap: 2rem; /* Space between cards */
-  padding: 2rem;
-  text-align: left; /* Align text inside cards to the left */
-}
-
 .pagespeed-scores {
   width: 99%; /* Set width to 60% of the container */
   height: auto; /* Maintain aspect ratio */
@@ -465,7 +455,15 @@ html {
   transform: scaleX(1); /* Expand fully */
   opacity: 1; /* Make visible */
 }
-
+/* Main Content Cards */
+.section-cards {
+  display: flex;
+  flex-direction: column; /* Stack cards vertically */
+  justify-content: flex-start; /* Align cards to the top */
+  gap: 2rem; /* Space between cards */
+  padding: 2rem;
+  text-align: left; /* Align text inside cards to the left */
+}
 .card {
   display: flex;
   overflow: hidden; /* Prevents content overflow */
@@ -533,14 +531,27 @@ html {
   line-height: 1.6;
 }
 @media (max-width: 500px) {
+  .card {
+    flex-direction: column; /* Stack h2 and p vertically */
+    border-radius: 45px; /* Maintain rounded corners */
+  }
+
   .card h2 {
     font-size: 1.2rem;
+    border-radius: 35px 35px 0 0; /* Rounded top only */
+    width: 100%; /* Ensure full width */
+    background: linear-gradient(
+      to bottom,
+      black,
+      #5dade2
+    ); /* Vertical gradient */
   }
+
   .card p {
     font-size: 0.8rem;
-  }
-  .card {
-    padding: 1rem;
+    text-align: center;
+    border-radius: 0 0 45px 45px; /* Rounded bottom only */
+    width: 100%; /* Ensure full width */
   }
 }
 
@@ -565,6 +576,7 @@ html {
   animation-delay: 0.8s; /* Third card */
 }
 
+/* Pagespeed Circles */
 /* Standards Row */
 .standards-row {
   display: flex;
@@ -655,6 +667,7 @@ html {
     max-width: none; /* Remove max-width for flexibility */
   }
 }
+/* End Pagespeed Circles */
 
 /* ///////////////////////////////////////////////// */
 /* SERVICES //////////////////////////////////////// */
