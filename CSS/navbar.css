@@ -447,6 +447,7 @@
   font-size: 3rem; /* Match size with image height */
   font-weight: bold;
   letter-spacing: 10px;
+  color: black;
 }
 
 .logo-secondary {
