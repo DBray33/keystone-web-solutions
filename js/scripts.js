@@ -320,53 +320,102 @@ document.querySelectorAll('.circle .counter').forEach((counter) => {
 // //////////////////////////////////////////////
 // POPUP //////////////////////////
 document.addEventListener('DOMContentLoaded', function () {
-  // ✅ Determine the correct path for nav.html dynamically
   let basePath = window.location.pathname.includes('/')
     ? '../nav.html'
     : 'nav.html';
 
-  if (window.location.pathname.split('/').filter(Boolean).length === 1) {
-    basePath = 'nav.html';
-  }
-
-  // ✅ Load Navbar Dynamically with Correct Path
   fetch(basePath)
     .then((response) => response.text())
     .then((data) => {
       document.querySelector('#navbar-container').innerHTML = data;
 
-      // ✅ Ensure all JavaScript runs after navbar loads
+      // ✅ Ensure all interactive elements are initialized AFTER `nav.html` loads
       requestAnimationFrame(() => {
         initializeProgressBar();
         initializePopup();
       });
     })
-    .catch((error) => console.error('Error loading navbar:', error));
+    .catch((error) => console.error('⚠ Error loading navbar:', error));
 });
 
-// ✅ Function to Initialize the Popup
+// ✅ Initialize Progress Bar (Scroll-Based)
+function initializeProgressBar() {
+  const progressBar = document.getElementById('progressBar');
+
+  if (!progressBar) {
+    console.error('⚠ Progress Bar not found in the DOM!');
+    return;
+  }
+
+  window.addEventListener('scroll', function () {
+    const scrollPosition = window.scrollY;
+    const documentHeight =
+      document.documentElement.scrollHeight - window.innerHeight;
+    const scrollPercentage = (scrollPosition / documentHeight) * 100;
+
+    progressBar.style.width = scrollPercentage + '%';
+  });
+
+  console.log('✅ Progress Bar initialized.');
+}
+
+// ✅ Initialize Popup (Only Mouse Movement-Based)
 function initializePopup() {
   const popup = document.getElementById('popup');
-  const closePopupBtn = document.getElementById('close-popup');
+  const closePopup = document.getElementById('close-popup');
 
-  if (!popup || !closePopupBtn) {
+  if (!popup || !closePopup) {
     console.error('⚠ Popup elements not found!');
     return;
   }
 
-  // ✅ Show popup after a delay (e.g., 5 seconds)
-  setTimeout(() => {
-    popup.style.display = 'block';
-  }, 5000);
+  let popupShown = false; // Ensure the popup shows only once
 
-  // ✅ Close button functionality
-  closePopupBtn.addEventListener('click', () => {
-    popup.style.display = 'none';
+  function showPopup() {
+    if (!popupShown) {
+      popup.classList.add('show'); // Add the 'show' class to trigger CSS animation
+      popupShown = true;
+      console.log('✅ Popup shown.');
+    }
+  }
+
+  // ❌ Removed Scroll Trigger (Popup No Longer Appears on Scroll)
+  // window.addEventListener('scroll', function () {
+  //   if (window.scrollY > 500) {
+  //     showPopup();
+  //   }
+  // });
+
+  // ✅ Detect mouse movement for specific areas near the edges
+  document.addEventListener('mousemove', (e) => {
+    const { clientX, clientY } = e;
+    const viewportWidth = window.innerWidth;
+    const viewportHeight = window.innerHeight;
+
+    const topBoundaryHeight = viewportHeight * 0.01; // Top 0.1% thickness
+    const leftBoundaryWidth = viewportWidth * 0.01; // Left 0.1% thickness
+    const topBoundaryWidth = viewportWidth * 0.2; // Left 20% of the width
+    const leftBoundaryHeight = viewportHeight * 0.15; // Top 15% of the height
+
+    // Trigger the popup only for specific regions
+    if (
+      (clientX <= leftBoundaryWidth && clientY <= leftBoundaryHeight) || // Top left corner
+      (clientY <= topBoundaryHeight && clientX <= topBoundaryWidth) // Top 20% of the screen
+    ) {
+      showPopup();
+    }
   });
 
-  console.log('✅ Popup initialized successfully.');
-}
+  // ✅ Close the popup
+  closePopup.addEventListener('click', () => {
+    popup.classList.remove('show'); // Remove the 'show' class to hide the popup
+    setTimeout(() => {
+      popup.style.display = 'none'; // Fully hide the popup after animation ends
+    }, 500); // Match the CSS animation duration
+  });
 
+  console.log('✅ Popup initialized (Mouse movement only).');
+}
 // //////////////////////////////////////////////
 // STANDALONE LOGO //////////////////////////////
 document.addEventListener('scroll', () => {
