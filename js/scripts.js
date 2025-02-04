@@ -359,7 +359,7 @@ function initializeProgressBar() {
   console.log('✅ Progress Bar initialized.');
 }
 
-// ✅ Initialize Popup (Only Mouse Movement-Based)
+// ✅ Initialize Popup with 5-Minute Delay on Reappearance
 function initializePopup() {
   const popup = document.getElementById('popup');
   const closePopup = document.getElementById('close-popup');
@@ -370,16 +370,32 @@ function initializePopup() {
     return;
   }
 
-  let popupShown = false; // Ensure the popup shows only once
+  function getLastPopupTime() {
+    return localStorage.getItem('popupLastShown') || 0;
+  }
+
+  function setLastPopupTime() {
+    localStorage.setItem('popupLastShown', Date.now());
+  }
+
+  function canShowPopup() {
+    const lastShown = parseInt(getLastPopupTime(), 10);
+    const now = Date.now();
+    const fiveMinutes = 5 * 60 * 1000; // 5 minutes in milliseconds
+
+    return now - lastShown > fiveMinutes;
+  }
 
   function showPopup() {
-    if (!popupShown) {
+    if (canShowPopup()) {
       popup.classList.add('show');
       popup.style.display = 'block'; // ✅ Ensure it appears
       popup.style.opacity = '1'; // ✅ Make visible
       popup.style.visibility = 'visible';
-      popupShown = true;
+      setLastPopupTime();
       console.log('✅ Popup shown.');
+    } else {
+      console.log('⏳ Popup blocked: Waiting for 5-minute cooldown.');
     }
   }
 
