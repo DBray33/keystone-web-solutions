@@ -1,32 +1,78 @@
 <!-- This file is dynamically loaded into other pages, so no head or body tags are included. -->
 <!-- ---------------------------------------------------------- -->
 
-<!-- DESKTOP NAVBAR -->
-<!-- LOGO TOP LEFT -->
-<!-- Progress Bar (Inside Navbar) -->
-
-<!-- PROGRESS SCROLL BAR -->
-<div class="progress-container">
-  <div class="progress-bar" id="progressBar"></div>
-</div>
-
-<!-- LOGO -->
-<div class="standalone-logo">
-  <a href="[[base]]index.html">
-    <img
-      src="https://storage.googleapis.com/background-vid/keystone-futuristic-logo.webp"
-      alt="Keystone Logo"
-      class="logo-image"
-      style="filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.5))" />
-    <div class="logo-text">
-      <span class="logo-primary">KEYSTONE</span><br />
-      <span class="logo-secondary">WEB SOLUTIONS</span>
-    </div>
-  </a>
-</div>
-
-<!-- NAVBAR -->
 <nav class="navbar">
+  <!-- DESKTOP NAVBAR -->
+
+  <!-- PROGRESS SCROLL BAR -->
+  <div class="progress-container">
+    <div class="progress-bar" id="progressBar"></div>
+  </div>
+
+  <!-- POPUP -->
+  <div class="popup" id="popup">
+    <p>
+      Before you leave, be sure to submit your info for a free instant quote!
+    </p>
+    <form id="info-form">
+      <!-- Name -->
+      <label for="name">Name:</label>
+      <input
+        type="text"
+        id="name"
+        name="name"
+        placeholder="Your Name"
+        required />
+
+      <!-- Email -->
+      <label for="email">Email:</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        placeholder="Your Email"
+        required />
+
+      <!-- Phone Number -->
+      <label for="phone">Phone Number:</label>
+      <input
+        type="tel"
+        id="phone"
+        name="phone"
+        placeholder="Your Phone Number"
+        required />
+
+      <!-- Message -->
+      <label for="message">Message:</label>
+      <textarea
+        id="message"
+        name="message"
+        placeholder="Your Message"
+        rows="4"
+        required></textarea>
+
+      <!-- Submit Button -->
+      <button type="submit">GET QUOTE</button>
+    </form>
+    <button id="close-popup">Close</button>
+  </div>
+
+  <!-- LOGO -->
+  <div class="standalone-logo">
+    <a href="[[base]]index.html">
+      <img
+        src="https://storage.googleapis.com/background-vid/keystone-futuristic-logo.webp"
+        alt="Keystone Logo"
+        class="logo-image"
+        style="filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.5))" />
+      <div class="logo-text">
+        <span class="logo-primary">KEYSTONE</span><br />
+        <span class="logo-secondary">WEB SOLUTIONS</span>
+      </div>
+    </a>
+  </div>
+
+  <!-- NAVBAR -->
   <ul class="navbar-links">
     <li class="nav-home"><a href="[[base]]index.html">HOME</a></li>
 
