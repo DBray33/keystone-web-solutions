@@ -365,7 +365,8 @@ function initializePopup() {
   const closePopup = document.getElementById('close-popup');
 
   if (!popup || !closePopup) {
-    console.error('⚠ Popup elements not found!');
+    console.error('⚠ Popup elements not found! Retrying...');
+    setTimeout(initializePopup, 100); // Retry after 100ms if not found
     return;
   }
 
@@ -373,18 +374,14 @@ function initializePopup() {
 
   function showPopup() {
     if (!popupShown) {
-      popup.classList.add('show'); // Add the 'show' class to trigger CSS animation
+      popup.classList.add('show');
+      popup.style.display = 'block'; // ✅ Ensure it appears
+      popup.style.opacity = '1'; // ✅ Make visible
+      popup.style.visibility = 'visible';
       popupShown = true;
       console.log('✅ Popup shown.');
     }
   }
-
-  // ❌ Removed Scroll Trigger (Popup No Longer Appears on Scroll)
-  // window.addEventListener('scroll', function () {
-  //   if (window.scrollY > 500) {
-  //     showPopup();
-  //   }
-  // });
 
   // ✅ Detect mouse movement for specific areas near the edges
   document.addEventListener('mousemove', (e) => {
@@ -392,15 +389,14 @@ function initializePopup() {
     const viewportWidth = window.innerWidth;
     const viewportHeight = window.innerHeight;
 
-    const topBoundaryHeight = viewportHeight * 0.01; // Top 0.1% thickness
-    const leftBoundaryWidth = viewportWidth * 0.01; // Left 0.1% thickness
-    const topBoundaryWidth = viewportWidth * 0.2; // Left 20% of the width
-    const leftBoundaryHeight = viewportHeight * 0.15; // Top 15% of the height
+    const topBoundaryHeight = viewportHeight * 0.01;
+    const leftBoundaryWidth = viewportWidth * 0.01;
+    const topBoundaryWidth = viewportWidth * 0.2;
+    const leftBoundaryHeight = viewportHeight * 0.15;
 
-    // Trigger the popup only for specific regions
     if (
-      (clientX <= leftBoundaryWidth && clientY <= leftBoundaryHeight) || // Top left corner
-      (clientY <= topBoundaryHeight && clientX <= topBoundaryWidth) // Top 20% of the screen
+      (clientX <= leftBoundaryWidth && clientY <= leftBoundaryHeight) ||
+      (clientY <= topBoundaryHeight && clientX <= topBoundaryWidth)
     ) {
       showPopup();
     }
@@ -408,13 +404,15 @@ function initializePopup() {
 
   // ✅ Close the popup
   closePopup.addEventListener('click', () => {
-    popup.classList.remove('show'); // Remove the 'show' class to hide the popup
+    popup.classList.remove('show');
+    popup.style.opacity = '0'; // ✅ Fade out
     setTimeout(() => {
-      popup.style.display = 'none'; // Fully hide the popup after animation ends
-    }, 500); // Match the CSS animation duration
+      popup.style.display = 'none'; // ✅ Fully hide after fade
+    }, 300); // Match CSS animation duration
+    console.log('❌ Popup closed.');
   });
 
-  console.log('✅ Popup initialized (Mouse movement only).');
+  console.log('✅ Popup initialized.');
 }
 // //////////////////////////////////////////////
 // STANDALONE LOGO //////////////////////////////
