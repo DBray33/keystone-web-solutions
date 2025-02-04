@@ -142,7 +142,7 @@ function navbarScrollEffect() {
   window.removeEventListener('scroll', handleScroll);
 
   function handleScroll() {
-    if (window.scrollY > 50) {
+    if (window.scrollY > 5) {
       navbar.classList.add('scrolled');
     } else {
       navbar.classList.remove('scrolled');
