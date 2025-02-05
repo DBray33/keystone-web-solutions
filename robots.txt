@@ -1,4 +1,4 @@
 User-agent: *
-Disallow: /proposals/
+Disallow:
 
-Sitemap: https://keystonewebsolutions.com/sitemap.xml
+Sitemap: https://freelance-template.netlify.app/sitemap.xml
