@@ -2266,7 +2266,7 @@ a.icon.alt:before {
 }
 
 a.icon.alt:hover:before {
-  background-color: #6fc3df;
+  background-color: #8a5da1;
 }
 
 a.icon.alt:active:before {
@@ -2479,6 +2479,18 @@ ul.icons li:last-child {
   ul.icons li {
     padding: 0 0.75em 0 0;
   }
+}
+
+.icon-white svg {
+  color: white; /* Makes the SVG icon white */
+  width: 60px; /* Adjust size if needed */
+  height: 60px;
+}
+
+.icon-white svg:hover {
+  color: #8a5da1; /* Makes the SVG icon white */
+  width: 60px; /* Adjust size if needed */
+  height: 60px;
 }
 
 /* Pagination */
