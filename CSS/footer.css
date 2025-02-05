@@ -308,6 +308,18 @@
   }
 }
 
+.footer-social a img {
+  width: 40px; /* Adjust icon size */
+  height: 40px;
+  transition: filter 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+/* White overlay effect on hover */
+.footer-social a:hover img {
+  filter: brightness(0) invert(1); /* Converts to white */
+  opacity: 1;
+}
+
 /* .footer,
 .footer .submit-button {
   position: relative;
