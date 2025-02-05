@@ -39,8 +39,22 @@ function mobileMenuInit() {
   menuLinks.forEach((link) => {
     link.addEventListener('click', (event) => {
       const href = link.getAttribute('href');
+
       if (href.startsWith('#') || href === '') {
         event.preventDefault();
+
+        // Close the menu first
+        newDropdownMenu.classList.remove('active');
+        newHamburgerMenu.classList.remove('active');
+
+        // Close any open submenus
+        document
+          .querySelectorAll('.dropdown-submenu.active')
+          .forEach((openSubmenu) => {
+            openSubmenu.classList.remove('active');
+          });
+
+        // Scroll to the target section
         const targetId = href.slice(1); // Remove the "#" character
         const targetElement = document.getElementById(targetId);
 
@@ -49,21 +63,14 @@ function mobileMenuInit() {
             targetElement.getBoundingClientRect().top + window.scrollY;
           const offsetPosition = elementPosition - offset;
 
-          window.scrollTo({
-            top: offsetPosition,
-            behavior: 'smooth',
-          });
+          setTimeout(() => {
+            window.scrollTo({
+              top: offsetPosition,
+              behavior: 'smooth',
+            });
+          }, 100); // Delay scrolling slightly to ensure the menu is closed first
         }
       }
-
-      // Close the menu and any open submenus after a link is clicked
-      newDropdownMenu.classList.remove('active');
-      newHamburgerMenu.classList.remove('active');
-      document
-        .querySelectorAll('.dropdown-submenu.active')
-        .forEach((openSubmenu) => {
-          openSubmenu.classList.remove('active');
-        });
     });
   });
 
