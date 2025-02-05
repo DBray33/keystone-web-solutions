@@ -278,10 +278,6 @@ p {
   margin: 0 0 2em 0;
 }
 
-p:hover {
-  background: black;
-}
-
 h1,
 h2,
 h3,
@@ -1895,12 +1891,31 @@ header.major > :first-child:after {
 header.major > p {
   font-size: 0.7em;
   font-weight: 600;
-  letter-spacing: 0.25em;
+  letter-spacing: 0.1em;
   margin-bottom: 0;
   text-transform: uppercase;
   background: white;
   color: black;
   padding: 0 1rem;
+}
+header.major > p:hover {
+  font-size: 0.7em;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  margin-bottom: 0;
+  text-transform: uppercase;
+  background: black;
+  color: white;
+  padding: 0 1rem;
+}
+@media (max-width: 500px) {
+  header.major > p {
+    font-size: 0.8em;
+  }
+
+  header.major > p:hover {
+    font-size: 0.8em;
+  }
 }
 
 body.is-ie header.major > :first-child:after {
