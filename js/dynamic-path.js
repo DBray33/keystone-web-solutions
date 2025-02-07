@@ -19,6 +19,11 @@ async function loadNavbar() {
 
     console.log('✅ Navbar inserted successfully');
 
+    // ✅ Debug: Check if [[base]] is properly replaced
+    document.querySelectorAll('#navbar-container a').forEach((link) => {
+      console.log('🔗 Link:', link.href);
+    });
+
     // ✅ Ensure navbar scripts run **after** navbar loads
     setTimeout(() => {
       if (typeof navbarScrollEffect === 'function') {
