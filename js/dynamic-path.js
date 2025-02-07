@@ -1,5 +1,5 @@
 // ---------------------------------------------------
-// 🚀 Load the navbar/mobile menu dynamically using JavaScript
+// 🚀 Load the navbar dynamically using JavaScript
 // ---------------------------------------------------
 
 async function loadNavbar() {
@@ -7,42 +7,24 @@ async function loadNavbar() {
     const response = await fetch('/nav.html'); // Fetch navbar file
     let content = await response.text();
 
-    // Determine how deep the current page is in the directory structure
-    const depth = window.location.pathname.split('/').length - 2;
-    const basePath = depth > 0 ? '../'.repeat(depth) : './';
-
-    // Replace [[base]] with the correct relative path
-    content = content.replace(/\[\[base\]\]/g, basePath);
-
     // Insert the navbar content into the page
     document.getElementById('navbar-container').innerHTML = content;
-
     console.log('✅ Navbar inserted successfully');
-
-    // ✅ Debug: Check if [[base]] is properly replaced
-    document.querySelectorAll('#navbar-container a').forEach((link) => {
-      console.log('🔗 Link:', link.href);
-    });
 
     // ✅ Ensure navbar scripts run **after** navbar loads
     setTimeout(() => {
       if (typeof navbarScrollEffect === 'function') {
         navbarScrollEffect();
         console.log('✅ Navbar scroll effect initialized');
-      } else {
-        console.warn('⚠ navbarScrollEffect function not found.');
       }
 
       if (typeof mobileMenuInit === 'function') {
         setTimeout(() => {
           mobileMenuInit();
           console.log('✅ Mobile menu initialized after navbar load.');
-        }, 200); // Small delay ensures elements exist before initializing
-      } else {
-        console.warn('⚠ mobileMenuInit function not found.');
+        }, 200);
       }
 
-      // ✅ Trigger scripts.js functions after navbar is present
       if (typeof loadScripts === 'function') {
         loadScripts();
       }
