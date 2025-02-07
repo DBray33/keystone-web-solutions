@@ -2865,6 +2865,47 @@ button:disabled,
   }
 }
 
+/* About Section */
+.about-section {
+  display: flex;
+  justify-content: space-between; /* Align text and image in one row */
+  align-items: center; /* Keep content aligned */
+  gap: 20px; /* Space between text and image */
+}
+
+/* Text Container */
+.about-text {
+  flex: 1; /* Allows text to take available space */
+}
+
+/* Image Container */
+.about-image-container {
+  flex: 0 0 auto; /* Keeps image container fixed */
+}
+
+.about-image {
+  max-width: 250px; /* Adjust image width */
+  height: auto;
+  border-radius: 10px; /* Optional rounded corners */
+}
+
+/* Responsive: Stack text and image on smaller screens */
+@media (max-width: 768px) {
+  .about-section {
+    flex-direction: column; /* Stack text and image */
+    text-align: center;
+  }
+
+  .about-image-container {
+    margin-top: -2rem; /* Adds space when stacked */
+    margin-bottom: 2rem; /* Adds space when stacked */
+  }
+
+  .about-image {
+    max-width: 60%; /* Make image larger for small screens */
+  }
+}
+
 /* FOOTER ------------------------ */
 #footer .copyright {
   color: #9fa3a6;
