@@ -1430,7 +1430,7 @@ textarea {
   background-color: #000;
   border-radius: 8px;
   padding: 1rem;
-  box-shadow: 0 0 20px #fff;
+  /* box-shadow: 0 0 20px #fff; */
   width: 100%;
   max-width: 480px;
   box-sizing: border-box;
