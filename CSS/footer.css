@@ -26,10 +26,36 @@
   text-align: center;
 }
 
+.footer-logo-wrapper {
+  width: 100px; /* Ensures the correct width */
+  aspect-ratio: 2 / 1; /* Prevents layout shift */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-left {
+  text-align: center; /* Centers inline elements */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer-logo-wrapper {
+  display: flex;
+  justify-content: center; /* Centers the logo */
+  align-items: center; /* Centers vertically */
+  width: 100%; /* Ensures it spans the container */
+  height: auto; /* Prevents unwanted height expansion */
+  padding-bottom: 0; /* Ensures no extra padding */
+  margin-bottom: -10px; /* Slightly nudges the logo up */
+}
+
 .footer-logo {
-  width: 100px;
+  width: 100px; /* Adjust as needed */
   height: auto;
-  margin-bottom: 10px;
+  display: block; /* Fixes inline spacing issues */
+  margin-bottom: 2rem; /* Adds space below the logo */
 }
 
 .footer-business-name {
