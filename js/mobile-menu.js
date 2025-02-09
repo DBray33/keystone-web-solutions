@@ -1,84 +1,61 @@
 function mobileMenuInit() {
-  const dropdownParents = document.querySelectorAll('.dropdown-parent');
-  const dropdownMenu = document.querySelector('.dropdown-menu');
   const hamburgerMenu = document.querySelector('.hamburger-menu');
-  const menuLinks = document.querySelectorAll('.dropdown-links a');
-  const offset = 30;
+  const dropdownMenu = document.querySelector('.dropdown-menu');
 
   if (!dropdownMenu || !hamburgerMenu) {
     console.error('⚠ Mobile menu elements not found.');
     return;
   }
 
-  // Clear previous event listeners (prevents duplication)
-  hamburgerMenu.replaceWith(hamburgerMenu.cloneNode(true));
-  dropdownMenu.replaceWith(dropdownMenu.cloneNode(true));
+  // Clear previous event listeners and clone elements
+  const newHamburgerMenu = hamburgerMenu.cloneNode(true);
+  const newDropdownMenu = dropdownMenu.cloneNode(true);
+  hamburgerMenu.replaceWith(newHamburgerMenu);
+  dropdownMenu.replaceWith(newDropdownMenu);
 
   // Re-select elements after cloning
-  const newHamburgerMenu = document.querySelector('.hamburger-menu');
-  const newDropdownMenu = document.querySelector('.dropdown-menu');
+  const menuContainer = document.querySelector('.dropdown-menu');
+  const hamburgerButton = document.querySelector('.hamburger-menu');
 
-  // Hamburger menu toggle
-  newHamburgerMenu.addEventListener('click', () => {
-    newDropdownMenu.classList.toggle('active');
-    newHamburgerMenu.classList.toggle('active');
+  // Toggle dropdown menu when clicking hamburger icon
+  hamburgerButton.addEventListener('click', () => {
+    menuContainer.classList.toggle('active');
+    hamburgerButton.classList.toggle('active');
   });
 
-  // Close dropdown menu when clicking outside
+  // ✅ Close menu & submenus when clicking a menu link
+  document.querySelectorAll('.dropdown-menu a').forEach((link) => {
+    link.addEventListener('click', () => {
+      menuContainer.classList.remove('active');
+      hamburgerButton.classList.remove('active');
+      document
+        .querySelectorAll('.dropdown-submenu.active')
+        .forEach((submenu) => {
+          submenu.classList.remove('active');
+        });
+    });
+  });
+
+  // ✅ Close menu when clicking outside
   document.addEventListener('click', (event) => {
     if (
       !event.target.closest('.dropdown-menu') &&
       !event.target.closest('.hamburger-menu')
     ) {
-      newDropdownMenu.classList.remove('active');
-      newHamburgerMenu.classList.remove('active');
+      menuContainer.classList.remove('active');
+      hamburgerButton.classList.remove('active');
+      document
+        .querySelectorAll('.dropdown-submenu.active')
+        .forEach((submenu) => {
+          submenu.classList.remove('active');
+        });
     }
   });
 
-  // Handle link clicks within the dropdown menu
-  menuLinks.forEach((link) => {
-    link.addEventListener('click', (event) => {
-      const href = link.getAttribute('href');
-
-      if (href.startsWith('#') || href === '') {
-        event.preventDefault();
-
-        // Close the menu first
-        newDropdownMenu.classList.remove('active');
-        newHamburgerMenu.classList.remove('active');
-
-        // Close any open submenus
-        document
-          .querySelectorAll('.dropdown-submenu.active')
-          .forEach((openSubmenu) => {
-            openSubmenu.classList.remove('active');
-          });
-
-        // Scroll to the target section
-        const targetId = href.slice(1); // Remove the "#" character
-        const targetElement = document.getElementById(targetId);
-
-        if (targetElement) {
-          const elementPosition =
-            targetElement.getBoundingClientRect().top + window.scrollY;
-          const offsetPosition = elementPosition - offset;
-
-          setTimeout(() => {
-            window.scrollTo({
-              top: offsetPosition,
-              behavior: 'smooth',
-            });
-          }, 100); // Delay scrolling slightly to ensure the menu is closed first
-        }
-      }
-    });
-  });
-
-  // ✅ Initialize Dropdown Submenus (Fix)
+  // ✅ Initialize Dropdown Submenus
   initializeDropdownSubmenus();
 }
 
-// ✅ New function to initialize dropdown submenus
 function initializeDropdownSubmenus() {
   const dropdownParents = document.querySelectorAll('.dropdown-parent');
 
@@ -91,10 +68,12 @@ function initializeDropdownSubmenus() {
 
     if (!submenu || !closeButton || !parentLink) return;
 
-    // Toggle submenu on click
+    // Toggle submenu on parent click
     parentLink.addEventListener('click', (event) => {
-      const href = parentLink.getAttribute('href');
-      if (href === '' || href === '#') {
+      if (
+        parentLink.getAttribute('href') === '' ||
+        parentLink.getAttribute('href') === '#'
+      ) {
         event.preventDefault();
         submenu.classList.toggle('active');
       }
@@ -107,7 +86,7 @@ function initializeDropdownSubmenus() {
     });
   });
 
-  // Close submenus when clicking outside
+  // ✅ Close submenus when clicking outside
   document.addEventListener('click', (event) => {
     if (
       !event.target.closest('.dropdown-submenu') &&
@@ -115,14 +94,15 @@ function initializeDropdownSubmenus() {
     ) {
       document
         .querySelectorAll('.dropdown-submenu.active')
-        .forEach((openSubmenu) => {
-          openSubmenu.classList.remove('active');
+        .forEach((submenu) => {
+          submenu.classList.remove('active');
         });
     }
   });
 }
 
-document.addEventListener('DOMContentLoaded', function () {
+// ✅ Run script when DOM is loaded
+document.addEventListener('DOMContentLoaded', () => {
   setTimeout(() => {
     if (typeof mobileMenuInit === 'function') {
       mobileMenuInit();
@@ -130,5 +110,5 @@ document.addEventListener('DOMContentLoaded', function () {
     } else {
       console.error('❌ mobileMenuInit function not found.');
     }
-  }, 300); // Ensure navbar loads before running
+  }, 300);
 });
