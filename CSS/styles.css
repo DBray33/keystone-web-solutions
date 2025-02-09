@@ -128,12 +128,26 @@ html {
   z-index: 0;
 }
 
+/* Fade-In Keyframes */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Apply Animation to Logo */
 .responsive-logo {
   max-width: 250px; /* Prevents it from becoming too large */
   height: auto;
   display: block; /* Prevents inline restrictions */
+  opacity: 0; /* Start invisible */
+  animation: fadeIn 1s ease-in-out forwards; /* Apply animation */
 }
 
+/* Mobile Adjustments */
 @media (max-width: 500px) {
   .responsive-logo {
     width: 40%; /* Adjust for smaller screens if needed */
