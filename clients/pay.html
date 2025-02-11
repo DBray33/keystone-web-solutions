@@ -1,61 +1,177 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>Subscribe to a cool new product</title>
-    <link rel="stylesheet" href="styles.css" />
-    <link rel="stylesheet" href="../css/pay.css" />
-    <link rel="stylesheet" href="../css/footer.css" />
-    <link rel="stylesheet" href="../css/navbar.css" />
-    <script src="https://js.stripe.com/v3/"></script>
+    <!-- Standard Favicon -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="https://storage.googleapis.com/background-vid/Favicon/32x32.png" />
+
+    <!-- Alternative for Older Browsers (ICO format) -->
+    <link
+      rel="shortcut icon"
+      href="https://storage.googleapis.com/background-vid/favicon.ico" />
+
+    <!-- Apple Touch Icon (For iOS Devices) -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="https://storage.googleapis.com/background-vid/Favicon/180x180.png" />
+
+    <!-- Android Chrome (High Resolution) -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="https://storage.googleapis.com/background-vid/Favicon/192x192.png" />
+    <!-- Google Tag Manager -->
+    <!-- Initialize dataLayer -->
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+        event: 'pageview',
+        page_url: window.location.href,
+      });
+    </script>
+
+    <!-- Lazy Load Google Tag Manager -->
+    <script>
+      setTimeout(function () {
+        (function (w, d, s, l, i) {
+          w[l] = w[l] || [];
+          w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+          var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s),
+            dl = l != 'dataLayer' ? '&l=' + l : '';
+          j.async = true;
+          j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+          f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-MBN9LQQQ');
+      }, 1500); // Lazy load after 1.5 seconds
+    </script>
+    <!-- End Google Tag Manager -->
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="KEYSTONE Digital Solutions offers custom website design, responsive web development, e-commerce solutions, SEO optimization, and digital marketing services to help businesses establish a strong online presence." />
+
+    <!-- Inline Critical CSS -->
+    <style>
+      .description {
+        margin: 2rem 0;
+        font-size: 1rem;
+        font-weight: 300;
+        letter-spacing: 2px;
+      }
+    </style>
+
+    <!-- CSS Styling -->
+    <link rel="stylesheet" href="../CSS/styles.css" />
+    <link rel="stylesheet" href="../CSS/navbar.css" />
+    <link rel="stylesheet" href="../CSS/mobile.css" />
+    <link rel="stylesheet" href="../CSS/footer.css" />
+
+    <!-- Preload Specific Fonts for LCP -->
+    <link
+      rel="preload"
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue:wght@400&family=Exo:wght@200;300;500;800&display=swap"
+      as="style"
+      onload="this.rel='stylesheet'" />
+    <noscript>
+      <link
+        href="https://fonts.googleapis.com/css2?family=Bebas+Neue:wght@400&family=Exo:wght@200;300;500&display=swap"
+        rel="stylesheet" />
+    </noscript>
+
+    <!-- Non-preloaded Google Fonts for Entire Website -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue:wght@400&family=Exo:wght@200;300;400;500;600;700&display=swap"
+      rel="stylesheet" />
+
+    <title>
+      Keystone Web Solutions | Pennsylvania Web Design & Development
+    </title>
   </head>
+
   <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+      <iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-MBN9LQQQ"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager -->
+
     <!-- NAVBAR / MOBILE MENU PLACEHOLDER (dynamically loaded via Javascript) -->
     <div id="navbar-container"></div>
-    <section>
-      <div class="product">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          xmlns:xlink="http://www.w3.org/1999/xlink"
-          width="14px"
-          height="16px"
-          viewBox="0 0 14 16"
-          version="1.1">
-          <defs />
-          <g
-            id="Flow"
-            stroke="none"
-            stroke-width="1"
-            fill="none"
-            fill-rule="evenodd">
-            <g
-              id="0-Default"
-              transform="translate(-121.000000, -40.000000)"
-              fill="#E184DF">
-              <path
-                d="M127,50 L126,50 C123.238576,50 121,47.7614237 121,45 C121,42.2385763 123.238576,40 126,40 L135,40 L135,56 L133,56 L133,42 L129,42 L129,56 L127,56 L127,50 Z M127,48 L127,42 L126,42 C124.343146,42 123,43.3431458 123,45 C123,46.6568542 124.343146,48 126,48 L127,48 Z"
-                id="Pilcrow" />
-            </g>
-          </g>
-        </svg>
-        <div class="description">
-          <h3>Website SEO/Support/Maintenance</h3>
-          <h5>$40.00 / month</h5>
-        </div>
-      </div>
-      <form action="/create-checkout-session" method="POST">
-        <!-- Add a hidden field with the lookup_key of your Price -->
-        <input type="hidden" name="lookup_key" value="{{PRICE_LOOKUP_KEY}}" />
-        <button id="checkout-and-portal-button" type="submit">
-          This page is under construction
-        </button>
+
+    <!-- PROGRESS SCROLL BAR -->
+    <div class="progress-container">
+      <div class="progress-bar" id="progressBar"></div>
+    </div>
+
+    <!-- POPUP -->
+    <div class="popup" id="popup">
+      <p style="color: black">
+        Before you leave, be sure to submit your info for a free instant quote!
+      </p>
+      <form
+        id="info-form"
+        action="https://formspree.io/f/xbldynko"
+        method="POST">
+        <!-- Name -->
+        <label for="name">Name:</label>
+        <input
+          type="text"
+          id="name-1"
+          name="name"
+          placeholder="Your Name"
+          required />
+
+        <!-- Email -->
+        <label for="email">Email:</label>
+        <input
+          type="email"
+          id="email-1"
+          name="email"
+          placeholder="Your Email"
+          required />
+
+        <!-- Phone Number -->
+        <label for="phone">Phone Number:</label>
+        <input
+          type="tel"
+          id="phone-1"
+          name="phone"
+          placeholder="Your Phone Number"
+          required />
+
+        <!-- Message -->
+        <label for="message">Message:</label>
+        <textarea
+          id="message-1"
+          name="message"
+          placeholder="Your Message"
+          rows="4"
+          required></textarea>
+
+        <!-- Submit Button -->
+        <button type="submit">GET QUOTE</button>
       </form>
-    </section>
+      <button id="close-popup">Close</button>
+    </div>
+
     <!-- New Footer -->
     <div id="footer-container"></div>
 
     <!-- Scripts -->
     <script src="../js/dynamic-path.js"></script>
-    <script src="../js/mobile-menu.js"></script>
-    <script src="../js/scripts.js"></script>
+    <script src="../js/scripts.js" defer></script>
+    <script src="../js/mobile-menu.js" defer></script>
   </body>
 </html>
