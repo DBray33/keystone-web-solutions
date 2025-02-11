@@ -1,91 +1,97 @@
-/* Global Styles */
-body {
-  font-family: Exo, sans-serif;
-  background-color: #f4f4f4;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 0;
-  padding: 0;
-}
-
-/* Payment Section Container */
-section {
-  background: #fff;
-  padding: 2rem;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+/* Payment Section Styling */
+.payment-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background: #f9f9f9;
+  border-radius: 8px;
   text-align: center;
-  max-width: 400px;
-  width: 90%;
-  margin-top: 130px; /* Pushes the section down to avoid navbar */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  margin-top: 130px; /* Push content below navbar */
 }
 
-/* Product Info */
-.product {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  margin-bottom: 1rem;
+/* Adjust for smaller screens (navbar height 55px) */
+@media (max-width: 910px) {
+  .payment-container {
+    margin-top: 70px; /* Adjust spacing for smaller navbar */
+  }
 }
 
-/* SVG Icon */
-.product svg {
-  width: 20px;
-  height: 20px;
-  fill: #e184df;
-}
-
-/* Subscription Details */
-.description h3 {
-  font-size: 1.5rem;
-  margin: 0;
+/* Headings */
+.payment-container h1 {
+  font-size: 2rem;
+  font-weight: 600;
   color: #333;
+  margin-bottom: 20px;
 }
 
-.description h5 {
+.payment-container h2 {
+  font-size: 1.5rem;
+  color: #444;
+  margin-top: 20px;
+  font-weight: 500;
+}
+
+.payment-container p {
   font-size: 1rem;
-  margin: 5px 0 0;
-  color: #777;
+  color: #666;
+  margin-bottom: 20px;
 }
 
-/* Checkout Button */
-button {
+/* Button Styling */
+.payment-container form {
+  margin: 15px 0;
+}
+
+.payment-container button {
+  display: inline-block;
+  width: 100%;
+  max-width: 250px;
+  padding: 12px 20px;
   background: #7ea532;
   color: white;
   font-size: 1rem;
-  padding: 12px 18px;
+  font-weight: 600;
   border: none;
-  border-radius: 5px;
+  border-radius: 6px;
   cursor: pointer;
-  width: 100%;
-  font-weight: bold;
-  transition: background 0.3s ease, transform 0.2s ease;
+  transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
 }
 
-button:hover {
-  background: #6c8f29;
+.payment-container button:hover {
+  background: #6a922d;
   transform: scale(1.05);
 }
 
-button:active {
+.payment-container button:active {
+  background: #5a8028;
   transform: scale(0.98);
 }
 
-/* Mobile Optimization */
-@media (max-width: 500px) {
-  section {
-    padding: 1.5rem;
-    max-width: 95%;
-    margin-top: 110px; /* Adjusted for smaller screens */
+/* Responsive Design */
+@media (max-width: 768px) {
+  .payment-container {
+    width: 90%;
+    padding: 15px;
   }
 
-  .description h3 {
+  .payment-container h1 {
+    font-size: 1.75rem;
+  }
+
+  .payment-container h2 {
     font-size: 1.3rem;
   }
 
-  .description h5 {
-    font-size: 0.9rem;
+  .payment-container button {
+    max-width: 100%;
   }
+}
+
+/* Divider for Payment Options */
+.package-divider {
+  width: 100%;
+  height: 2px;
+  background: #ccc;
+  margin: 30px 0;
 }

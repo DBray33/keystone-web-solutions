@@ -7,26 +7,20 @@
       type="image/png"
       sizes="32x32"
       href="https://storage.googleapis.com/background-vid/Favicon/32x32.png" />
-
-    <!-- Alternative for Older Browsers (ICO format) -->
     <link
       rel="shortcut icon"
       href="https://storage.googleapis.com/background-vid/favicon.ico" />
-
-    <!-- Apple Touch Icon (For iOS Devices) -->
     <link
       rel="apple-touch-icon"
       sizes="180x180"
       href="https://storage.googleapis.com/background-vid/Favicon/180x180.png" />
-
-    <!-- Android Chrome (High Resolution) -->
     <link
       rel="icon"
       type="image/png"
       sizes="192x192"
       href="https://storage.googleapis.com/background-vid/Favicon/192x192.png" />
+
     <!-- Google Tag Manager -->
-    <!-- Initialize dataLayer -->
     <script>
       window.dataLayer = window.dataLayer || [];
       window.dataLayer.push({
@@ -35,7 +29,6 @@
       });
     </script>
 
-    <!-- Lazy Load Google Tag Manager -->
     <script>
       setTimeout(function () {
         (function (w, d, s, l, i) {
@@ -48,52 +41,21 @@
           j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
           f.parentNode.insertBefore(j, f);
         })(window, document, 'script', 'dataLayer', 'GTM-MBN9LQQQ');
-      }, 1500); // Lazy load after 1.5 seconds
+      }, 1500);
     </script>
-    <!-- End Google Tag Manager -->
 
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="KEYSTONE Digital Solutions offers custom website design, responsive web development, e-commerce solutions, SEO optimization, and digital marketing services to help businesses establish a strong online presence." />
-
-    <!-- Inline Critical CSS -->
-    <style>
-      .description {
-        margin: 2rem 0;
-        font-size: 1rem;
-        font-weight: 300;
-        letter-spacing: 2px;
-      }
-    </style>
-
-    <!-- CSS Styling -->
+      content="Keystone Web Solutions - Custom web development and digital solutions." />
     <link rel="stylesheet" href="../CSS/styles.css" />
+    <link rel="stylesheet" href="../CSS/pay.css" />
     <link rel="stylesheet" href="../CSS/navbar.css" />
     <link rel="stylesheet" href="../CSS/mobile.css" />
     <link rel="stylesheet" href="../CSS/footer.css" />
-
-    <!-- Preload Specific Fonts for LCP -->
-    <link
-      rel="preload"
-      href="https://fonts.googleapis.com/css2?family=Bebas+Neue:wght@400&family=Exo:wght@200;300;500;800&display=swap"
-      as="style"
-      onload="this.rel='stylesheet'" />
-    <noscript>
-      <link
-        href="https://fonts.googleapis.com/css2?family=Bebas+Neue:wght@400&family=Exo:wght@200;300;500&display=swap"
-        rel="stylesheet" />
-    </noscript>
-
-    <!-- Non-preloaded Google Fonts for Entire Website -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Bebas+Neue:wght@400&family=Exo:wght@200;300;400;500;600;700&display=swap"
-      rel="stylesheet" />
-
-    <title>
-      Keystone Web Solutions | Pennsylvania Web Design & Development
-    </title>
+    <title>Make a Payment | Keystone Web Solutions</title>
+    <script src="https://js.stripe.com/v3/"></script>
   </head>
 
   <body>
@@ -105,66 +67,66 @@
         width="0"
         style="display: none; visibility: hidden"></iframe>
     </noscript>
-    <!-- End Google Tag Manager -->
 
-    <!-- NAVBAR / MOBILE MENU PLACEHOLDER (dynamically loaded via Javascript) -->
+    <!-- NAVBAR / MOBILE MENU PLACEHOLDER -->
     <div id="navbar-container"></div>
 
-    <!-- PROGRESS SCROLL BAR -->
-    <div class="progress-container">
-      <div class="progress-bar" id="progressBar"></div>
-    </div>
-
-    <!-- POPUP -->
-    <div class="popup" id="popup">
-      <p style="color: black">
-        Before you leave, be sure to submit your info for a free instant quote!
+    <!-- Payment Section -->
+    <section class="payment-container">
+      <h1>Choose Your Payment Plan</h1>
+      <p>
+        For either package, both payments, Payment #1 and Payment #2, must be
+        completed before the website is live. Please ensure you have read all
+        details and select the correct option before completing your payments.
       </p>
-      <form
-        id="info-form"
-        action="https://formspree.io/f/xbldynko"
-        method="POST">
-        <!-- Name -->
-        <label for="name">Name:</label>
-        <input
-          type="text"
-          id="name-1"
-          name="name"
-          placeholder="Your Name"
-          required />
 
-        <!-- Email -->
-        <label for="email">Email:</label>
-        <input
-          type="email"
-          id="email-1"
-          name="email"
-          placeholder="Your Email"
-          required />
-
-        <!-- Phone Number -->
-        <label for="phone">Phone Number:</label>
-        <input
-          type="tel"
-          id="phone-1"
-          name="phone"
-          placeholder="Your Phone Number"
-          required />
-
-        <!-- Message -->
-        <label for="message">Message:</label>
-        <textarea
-          id="message-1"
-          name="message"
-          placeholder="Your Message"
-          rows="4"
-          required></textarea>
-
-        <!-- Submit Button -->
-        <button type="submit">GET QUOTE</button>
+      <!-- SILVER PACKAGE -->
+      <div class="package-divider"></div>
+      <h2>
+        <strong>SILVER PACKAGE</strong><br />$1,500 one time + $42.50/mo
+        <br />Flat Fee + Monthly Subscription <br /><br />
+        Payment #1 - $750
+      </h2>
+      <p>(Down Payment, 1st 50% of $1,500 flat fee)</p>
+      <form action="https://buy.stripe.com/test_XXXXXXXX" method="GET">
+        <button type="submit">Complete Payment #1 Now</button>
       </form>
-      <button id="close-popup">Close</button>
-    </div>
+
+      <h2>Payment #2 - $750 + $42.50/mo</h2>
+      <p>(2nd 50% of $1,500 flat fee + membership)</p>
+      <form action="https://buy.stripe.com/test_ZZZZZZZZ" method="GET">
+        <button type="submit">Complete Payment #2 & Subscribe</button>
+      </form>
+      <p>
+        When you complete Silver Package Payment #2, your up front fee will be
+        completed, and you will be subscribed to our $42.50 monthly website
+        SEO/support/maintenance/update membership. Billing will take place on
+        the 1st of each month, and the current month will be prorated.
+      </p>
+
+      <!-- GOLD PACKAGE -->
+      <div class="package-divider"></div>
+      <h2>
+        <strong>GOLD PACKAGE</strong><br />$175/month <br />Less up front,
+        higher monthly <br />6-Month Commitment ($1,050 total) <br /><br />
+        Payment #1 - $525
+      </h2>
+      <p>(Down Payment, 1st 50% of 6-month commitment)</p>
+      <form action="https://buy.stripe.com/test_YYYYYYYY" method="GET">
+        <button type="submit">Complete Payment #1 Now</button>
+      </form>
+
+      <h2>Payment #2 - $525 + $175/mo</h2>
+      <p>(2nd 50% of 6-month commitment + ongoing monthly subscription)</p>
+      <form action="https://buy.stripe.com/test_AAAAAAAA" method="GET">
+        <button type="submit">Complete Payment #2 & Subscribe</button>
+      </form>
+      <p>
+        When you complete Gold Package Payment #2, your 6-month commitment will
+        be fully paid, and your $175/month website subscription will begin, set
+        to start billing 6 months from now.
+      </p>
+    </section>
 
     <!-- New Footer -->
     <div id="footer-container"></div>
