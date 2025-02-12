@@ -88,13 +88,13 @@
         Payment #1 - $750
       </h2>
       <p>(Down Payment, 1st 50% of $1,500 flat fee)</p>
-      <form action="https://buy.stripe.com/test_XXXXXXXX" method="GET">
+      <form id="silver-deposit-form">
         <button type="submit">Complete Payment #1 Now</button>
       </form>
 
       <h2>Payment #2 - $750 + $42.50/mo</h2>
       <p>(2nd 50% of $1,500 flat fee + membership)</p>
-      <form action="https://buy.stripe.com/test_ZZZZZZZZ" method="GET">
+      <form id="silver-final-form">
         <button type="submit">Complete Payment #2 & Subscribe</button>
       </form>
       <p>
@@ -112,13 +112,13 @@
         Payment #1 - $525
       </h2>
       <p>(Down Payment, 1st 50% of 6-month commitment)</p>
-      <form action="https://buy.stripe.com/test_YYYYYYYY" method="GET">
+      <form id="gold-deposit-form">
         <button type="submit">Complete Payment #1 Now</button>
       </form>
 
       <h2>Payment #2 - $525 + $175/mo</h2>
       <p>(2nd 50% of 6-month commitment + ongoing monthly subscription)</p>
-      <form action="https://buy.stripe.com/test_AAAAAAAA" method="GET">
+      <form id="gold-final-form">
         <button type="submit">Complete Payment #2 & Subscribe</button>
       </form>
       <p>
@@ -133,6 +133,7 @@
 
     <!-- Scripts -->
     <script src="../js/dynamic-path.js"></script>
+    <script src="../js/checkout.js"></script>
     <script src="../js/scripts.js" defer></script>
     <script src="../js/mobile-menu.js" defer></script>
   </body>
