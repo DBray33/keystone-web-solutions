@@ -1,6 +1,8 @@
 <?php
 require '../vendor/autoload.php'; // Load Stripe's PHP library
 
+error_log('Stripe Secret Key from PHP: ' . getenv('STRIPE_SECRET_KEY'));
+
 // ✅ Set your Stripe Secret Key
 \Stripe\Stripe::setApiKey(getenv('STRIPE_SECRET_KEY'));
 
