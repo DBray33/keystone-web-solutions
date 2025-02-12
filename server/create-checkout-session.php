@@ -1,17 +1,25 @@
 <?php
 require '../vendor/autoload.php'; // Load Stripe's PHP library
 
-error_log('Stripe Secret Key from PHP: ' . getenv('STRIPE_SECRET_KEY'));
-
-// ✅ Set your Stripe Secret Key
-\Stripe\Stripe::setApiKey(getenv('STRIPE_SECRET_KEY'));
-
 header('Content-Type: application/json');
 
-// ✅ Set your business details
+// ✅ Retrieve and Set Stripe Secret Key
+$stripeSecretKey = getenv('STRIPE_SECRET_KEY');
+
+if (!$stripeSecretKey) {
+    error_log('❌ ERROR: Stripe Secret Key is missing.');
+    http_response_code(500);
+    echo json_encode(['error' => 'Stripe Secret Key is not set.']);
+    exit;
+}
+
+\Stripe\Stripe::setApiKey($stripeSecretKey);
+error_log('✅ Stripe Secret Key successfully retrieved.');
+
+// ✅ Define business details
 $YOUR_DOMAIN = 'https://keystonewebsolutions.com'; // Your actual website domain
 
-// ✅ Define Stripe Price IDs for each package
+// ✅ Define Stripe Price IDs
 $priceIds = [
     'silver_deposit' => 'price_1QrRkIJXGPtgK9Fkl94Wiy4k', // Silver Package - Payment #1 (Deposit)
     'silver_final' => 'price_1QrS0dJXGPtgK9Fk1mZ65bsR',   // Silver Package - Payment #2 (Final Installment)
@@ -22,22 +30,27 @@ $priceIds = [
     'gold_subscription' => 'price_1QrSHTJXGPtgK9FkXIvU9DqH', // Gold Package - Subscription (Monthly)
 ];
 
-// ✅ Get the package type from the frontend request
+// ✅ Receive JSON input from frontend
 $input = json_decode(file_get_contents("php://input"), true);
 $packageType = $input['packageType'] ?? null;
 
-// 🔍 Debugging: Log received package type
-error_log("Received package type from frontend: " . json_encode($input));
+// ✅ Debugging: Log received package type
+error_log("📦 Received package type: " . json_encode($input));
 
-// ✅ Validate the selected package
+// ✅ Validate package selection
 if (!isset($priceIds[$packageType])) {
+    error_log("❌ ERROR: Invalid package type received - " . $packageType);
     http_response_code(400);
-    echo json_encode(['error' => 'Invalid package type', 'received' => $packageType]);
+    echo json_encode([
+        'error' => 'Invalid package type',
+        'received' => $packageType,
+        'valid_options' => array_keys($priceIds)
+    ]);
     exit;
 }
 
 try {
-    // ✅ Create a Stripe Checkout Session
+    // ✅ Create Stripe Checkout Session
     $checkout_session = \Stripe\Checkout\Session::create([
         'payment_method_types' => ['card'],
         'line_items' => [[
@@ -45,13 +58,16 @@ try {
             'quantity' => 1,
         ]],
         'mode' => strpos($packageType, 'subscription') !== false ? 'subscription' : 'payment',
-        'success_url' => $YOUR_DOMAIN . '/success.html',
+        'success_url' => $YOUR_DOMAIN . '/success.html?session_id={CHECKOUT_SESSION_ID}',
         'cancel_url' => $YOUR_DOMAIN . '/cancel.html',
     ]);
 
+    error_log("✅ Checkout Session Created: " . json_encode($checkout_session));
+
     echo json_encode(['id' => $checkout_session->id]);
 } catch (Exception $e) {
+    error_log("❌ Stripe API Error: " . $e->getMessage());
     http_response_code(500);
-    echo json_encode(['error' => $e->getMessage()]);
+    echo json_encode(['error' => 'Stripe API error: ' . $e->getMessage()]);
 }
 ?>
