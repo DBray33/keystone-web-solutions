@@ -52,15 +52,15 @@ html {
 .pagespeed-page::before,
 .content-creation-page::before {
   content: '';
-  position: fixed; /* Keeps the background fixed */
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   background: url('https://storage.googleapis.com/background-vid/bluewave-optimized.svg')
     center top / cover no-repeat;
-  z-index: -9999; /* Push it far back in stacking context */
-  pointer-events: none; /* Ensures it doesn't block interactions */
+  z-index: -9999;
+  pointer-events: none;
 }
 
 .page-content {
@@ -258,7 +258,7 @@ html {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  /* background-attachment: fixed; */
+  background-attachment: fixed;
   display: flex;
   align-items: center;
   height: 90vh;
@@ -461,10 +461,17 @@ html {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  /* background-attachment: fixed; */
-
+  background-attachment: fixed;
   display: flex;
   align-items: center;
+}
+
+/* Adjust background position and scroll behavior for screens 700px or narrower */
+@media (max-width: 700px) {
+  .intro-section.seo-intro {
+    background-position: 70% center; /* Adjust the positioning for mobile */
+    background-attachment: scroll; /* Ensure the background scrolls with content on mobile */
+  }
 }
 
 @media (max-width: 930px) {
@@ -494,16 +501,16 @@ html {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  /* background-attachment: fixed; */
-
+  background-attachment: fixed;
   display: flex;
   align-items: center;
 }
 
-/* Adjust background position for smaller viewports */
-@media (max-width: 930px) {
+/* Adjust background position and scroll behavior for screens 930px or narrower */
+@media (max-width: 700px) {
   .intro-section.marketing-intro {
-    background-position: 100% center; /* Push the image further left */
+    background-position: 70% center; /* Adjust the positioning for mobile */
+    background-attachment: scroll; /* Ensure the background scrolls with content on mobile */
   }
 }
 
@@ -519,12 +526,16 @@ html {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  /* background-attachment: fixed; */
+  background-attachment: fixed;
   display: flex;
   align-items: center;
 }
 
-/* Adjust background position for smaller viewports */
+@media (max-width: 700px) {
+  .intro-section.pagespeed-intro {
+    background-attachment: scroll;
+  }
+}
 
 /* Green circles (pagespeed page) */
 .pagespeed-standards .standard-item p {
@@ -541,18 +552,21 @@ html {
   height: 90vh;
   background-image: url('https://storage.googleapis.com/background-vid/Custom%20Web%20Design%20Page/ui-ux-representations-with-laptop.webp');
   background-size: cover;
-  background-position: center; /* Default for larger screens */
+  background-position: center;
   background-repeat: no-repeat;
-  /* background-attachment: fixed; */
-
+  background-attachment: fixed;
   display: flex;
   align-items: center;
+  /* Optional: Add a color overlay for better text contrast */
+  background-color: rgba(0, 0, 0, 0.4); /* Adjust if needed */
 }
 
-/* Adjust background position for screens 700px or narrower */
+/* Adjust background position and disable fixed attachment for screens 700px or narrower */
 @media (max-width: 700px) {
   .intro-section.custom-design-intro {
-    background-position: 70% center; /* Push image to the left to show more of the right side */
+    background-attachment: scroll; /* Disable fixed attachment for mobile */
+    background-position: center center; /* Adjust positioning for mobile */
+    background-size: cover; /* Ensure the image is still responsive and covers the section */
   }
 }
 
@@ -592,12 +606,20 @@ html {
   width: 100%;
   height: 90vh;
   background-image: url('https://storage.googleapis.com/background-vid/Content%20Creation%20Page/content.webp');
-  background-size: cover;
+  background-size: cover; /* Ensures the background covers the entire container */
   background-position: center; /* Default for larger screens */
   background-repeat: no-repeat;
-
   display: flex;
   align-items: center;
+  background-attachment: fixed;
+}
+
+/* Adjust background position for screens 700px or narrower */
+@media (max-width: 700px) {
+  .intro-section.content-creation-intro {
+    background-position: 70% center; /* Adjust the positioning for mobile */
+    background-attachment: scroll;
+  }
 }
 /* Offerings Page Cards Styling */
 .info-cards-container.offerings-cards .info-card {
