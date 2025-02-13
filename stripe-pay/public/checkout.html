@@ -10,8 +10,26 @@
     <script src="checkout.js" defer></script>
   </head>
   <body>
-    <!-- Payment Button -->
-    <button id="checkout-button">Pay Now</button>
+    <!-- Container for the buttons, displaying two per row -->
+    <div class="button-container">
+      <!-- Payment #1 Button for Silver Package -->
+      <button id="silver-deposit-btn">
+        Pay Now (Silver Package - Payment #1)
+      </button>
+
+      <!-- Payment #2 + Subscription Button for Silver Package -->
+      <button id="silver-final-btn">
+        Pay Now (Silver Package - Payment #2 + Subscription)
+      </button>
+
+      <!-- Payment #1 Button for Gold Package -->
+      <button id="gold-deposit-btn">Pay Now (Gold Package - Payment #1)</button>
+
+      <!-- Payment #2 + Subscription Button for Gold Package -->
+      <button id="gold-final-btn">
+        Pay Now (Gold Package - Payment #2 + Subscription)
+      </button>
+    </div>
 
     <!-- Stripe Checkout form will be inserted here -->
     <div id="checkout"></div>
