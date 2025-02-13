@@ -265,6 +265,13 @@ html {
   margin-top: -4rem;
 }
 
+@media (max-width: 700px) {
+  .intro-section.responsive-design-intro {
+    background-position: 70% center; /* Adjust the positioning for mobile */
+    background-attachment: scroll; /* Ensure the background scrolls with content on mobile */
+  }
+}
+
 /* Hero Content */
 .hero-content {
   position: relative;

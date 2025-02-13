@@ -28,14 +28,15 @@ section {
 p {
   font-style: normal;
   font-weight: 500;
-  font-size: 14px;
+  font-size: 70px;
   line-height: 20px;
   letter-spacing: -0.154px;
-  color: black;
+  color: WHITE;
   height: 100%;
   width: 100%;
   padding: 0 20px;
   box-sizing: border-box;
+  text-align: center;
 }
 
 #checkout {
