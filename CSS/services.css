@@ -258,17 +258,18 @@ html {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-attachment: fixed;
   display: flex;
   align-items: center;
   height: 90vh;
   margin-top: -4rem;
 }
 
-@media (max-width: 700px) {
+/* For screens with min-width of 701px (tablet and larger screens) */
+@media (min-width: 931px) {
   .intro-section.responsive-design-intro {
-    background-position: 70% center; /* Adjust the positioning for mobile */
-    background-attachment: scroll; /* Ensure the background scrolls with content on mobile */
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
   }
 }
 
@@ -468,9 +469,17 @@ html {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-attachment: fixed;
   display: flex;
   align-items: center;
+}
+
+/* For screens with min-width of 701px (tablet and larger screens) */
+@media (min-width: 931px) {
+  .intro-section.seo-intro {
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+  }
 }
 
 /* Adjust background position and scroll behavior for screens 700px or narrower */
@@ -508,9 +517,17 @@ html {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-attachment: fixed;
   display: flex;
   align-items: center;
+}
+
+/* For screens with min-width of 701px (tablet and larger screens) */
+@media (min-width: 931px) {
+  .intro-section.marketing-intro {
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+  }
 }
 
 /* Adjust background position and scroll behavior for screens 930px or narrower */
@@ -533,14 +550,16 @@ html {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-attachment: fixed;
   display: flex;
   align-items: center;
 }
 
-@media (max-width: 700px) {
+/* For screens with min-width of 701px (tablet and larger screens) */
+@media (min-width: 931px) {
   .intro-section.pagespeed-intro {
-    background-attachment: scroll;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
   }
 }
 
@@ -561,19 +580,17 @@ html {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-attachment: fixed;
   display: flex;
   align-items: center;
-  /* Optional: Add a color overlay for better text contrast */
-  background-color: rgba(0, 0, 0, 0.4); /* Adjust if needed */
+  background-color: rgba(0, 0, 0, 0.4); /* Optional color overlay */
 }
 
-/* Adjust background position and disable fixed attachment for screens 700px or narrower */
-@media (max-width: 700px) {
+/* For screens with min-width of 701px (tablet and larger screens) */
+@media (min-width: 931px) {
   .intro-section.custom-design-intro {
-    background-attachment: scroll; /* Disable fixed attachment for mobile */
-    background-position: center center; /* Adjust positioning for mobile */
-    background-size: cover; /* Ensure the image is still responsive and covers the section */
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
   }
 }
 
@@ -618,7 +635,14 @@ html {
   background-repeat: no-repeat;
   display: flex;
   align-items: center;
-  background-attachment: fixed;
+}
+
+@media (min-width: 931px) {
+  .intro-section.content-creation-intro {
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+  }
 }
 
 /* Adjust background position for screens 700px or narrower */
