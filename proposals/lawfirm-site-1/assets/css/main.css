@@ -2901,10 +2901,11 @@ button:disabled,
   height: auto;
   border-radius: 10px; /* Optional rounded corners */
   margin-left: 2rem;
+  margin-right: -2rem;
 }
 
 /* Responsive: Stack text and image on smaller screens */
-@media (max-width: 768px) {
+@media (max-width: 850px) {
   .about-section {
     flex-direction: column; /* Stack text and image */
     text-align: center;
@@ -2916,7 +2917,8 @@ button:disabled,
   }
 
   .about-image {
-    max-width: 60%; /* Make image larger for small screens */
+    max-width: 90%; /* Make image larger for small screens */
+    margin: 0 auto; /* Center image */
   }
 }
 
