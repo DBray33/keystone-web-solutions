@@ -140,17 +140,17 @@ html {
 
 /* Apply Animation to Logo */
 .responsive-logo {
-  max-width: 250px; /* Prevents it from becoming too large */
-  height: auto;
-  display: block; /* Prevents inline restrictions */
+  max-width: 185px; /* Prevents it from exceeding its natural size */
+  height: auto; /* Maintains aspect ratio */
+  display: block;
   opacity: 0; /* Start invisible */
-  animation: fadeIn 1s ease-in-out forwards; /* Apply animation */
+  animation: fadeIn 1s ease-in-out forwards; /* Fade-in animation */
 }
 
 /* Mobile Adjustments */
 @media (max-width: 500px) {
   .responsive-logo {
-    width: 40%; /* Adjust for smaller screens if needed */
+    max-width: 40vw; /* Adjust for smaller screens if needed */
   }
 }
 
@@ -211,12 +211,6 @@ html {
     padding: 4rem 1rem; /* Push content further down */
   }
 
-  .sidebar .logo-image {
-    width: 40%; /* Scale the logo size */
-    max-width: 200px; /* Prevent the logo from becoming too large */
-    margin-bottom: 2rem; /* Space between logo and next element */
-  }
-
   .phone-number {
     padding-bottom: 4rem; /* Prevent cutoff at the bottom */
     text-align: center; /* Center-align phone number */
@@ -253,11 +247,6 @@ html {
   font-size: 1rem;
   font-weight: 300;
   letter-spacing: 2px;
-}
-
-.sidebar-content .logo {
-  font-size: 8rem;
-  color: #5dade2;
 }
 
 .sidebar-content .company-name {
