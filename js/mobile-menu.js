@@ -3,7 +3,7 @@ function mobileMenuInit() {
   const dropdownMenu = document.querySelector('.dropdown-menu');
 
   if (!dropdownMenu || !hamburgerMenu) {
-    console.error('⚠ Mobile menu elements not found.');
+    console.error('\u26A0 Mobile menu elements not found.');
     return;
   }
 
