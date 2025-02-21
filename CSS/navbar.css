@@ -270,19 +270,6 @@
   border-radius: 8px;
   box-shadow: none;
   outline: 0;
-
-  min-width: 48px; /* Ensures a larger touch area */
-  min-height: 48px; /* Ensures a minimum clickable size */
-}
-
-/* Expand touch area without changing layout */
-.hamburger-menu::before {
-  content: '';
-  position: absolute;
-  top: -10px; /* Expands touch area above */
-  bottom: -10px; /* Expands touch area below */
-  left: -10px; /* Expands touch area to the left */
-  right: -10px; /* Expands touch area to the right */
 }
 .dropdown-menu,
 .dropdown-submenu {
@@ -437,20 +424,9 @@
 
 .standalone-logo a {
   text-decoration: none; /* Remove underline */
-  color: inherit; /* Keep text color */
+  color: inherit; /* Keep the text color */
   display: flex;
   align-items: center;
-  position: relative; /* Needed for pseudo-element */
-}
-
-/* Expands touch area without moving logo */
-.standalone-logo a::before {
-  content: '';
-  position: absolute;
-  top: -10px; /* Expands touch area above */
-  bottom: -10px; /* Expands touch area below */
-  left: -10px; /* Expands touch area to the left */
-  right: -10px; /* Expands touch area to the right */
 }
 
 .logo-image {
