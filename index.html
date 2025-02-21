@@ -88,16 +88,16 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-    <!-- Preload Specific Fonts for LCP -->
+    <!-- Load Google Fonts Asynchronously -->
     <link
       rel="preload"
       href="https://fonts.googleapis.com/css2?family=Bebas+Neue:wght@400&family=Exo:wght@200;300;500;800&display=swap"
       as="style"
-      onload="this.rel='stylesheet'" />
+      onload="this.onload=null;this.rel='stylesheet'" />
     <noscript>
       <link
-        href="https://fonts.googleapis.com/css2?family=Bebas+Neue:wght@400&family=Exo:wght@200;300;500&display=swap"
-        rel="stylesheet" />
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Bebas+Neue:wght@400&family=Exo:wght@200;300;500&display=swap" />
     </noscript>
 
     <!-- Non-preloaded Google Fonts for Entire Website -->
