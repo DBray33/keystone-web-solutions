@@ -128,29 +128,31 @@ html {
   z-index: 0;
 }
 
-/* Fade-In Keyframes */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
 /* Apply Animation to Logo */
 .responsive-logo {
-  max-width: 185px; /* Prevents it from exceeding its natural size */
-  height: auto; /* Maintains aspect ratio */
+  max-width: 185px; /* Ensures it doesn’t exceed its natural size */
+  height: auto; /* Maintains correct aspect ratio */
   display: block;
-  opacity: 0; /* Start invisible */
-  animation: fadeIn 1s ease-in-out forwards; /* Fade-in animation */
+  animation: fadeIn 1s ease-in-out forwards; /* Keep smooth fade-in */
 }
 
 /* Mobile Adjustments */
 @media (max-width: 500px) {
   .responsive-logo {
     max-width: 40vw; /* Adjust for smaller screens if needed */
+    height: auto; /* Maintain aspect ratio */
+  }
+}
+
+/* Fade-In Keyframes */
+@keyframes fadeIn {
+  from {
+    transform: scale(0.95); /* Adds a slight zoom effect */
+    opacity: 0.5; /* Instead of fully invisible */
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
   }
 }
 
