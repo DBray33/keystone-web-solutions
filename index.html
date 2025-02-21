@@ -25,6 +25,7 @@
       type="image/png"
       sizes="192x192"
       href="https://storage.googleapis.com/background-vid/Favicon/192x192.png" />
+
     <!-- Google Tag Manager -->
     <!-- Initialize dataLayer -->
     <script>
@@ -33,22 +34,24 @@
         event: 'pageview',
         page_url: window.location.href,
       });
-    </script>
 
-    <!-- Lazy Load Google Tag Manager -->
-    <script>
+      // Delayed GTM Load (3 seconds for better performance)
       setTimeout(function () {
-        (function (w, d, s, l, i) {
-          w[l] = w[l] || [];
-          w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
-          var f = d.getElementsByTagName(s)[0],
-            j = d.createElement(s),
-            dl = l != 'dataLayer' ? '&l=' + l : '';
-          j.async = true;
-          j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
-          f.parentNode.insertBefore(j, f);
-        })(window, document, 'script', 'dataLayer', 'GTM-MBN9LQQQ');
-      }, 1500); // Lazy load after 1.5 seconds
+        if (!window.gtmLoaded) {
+          // Prevents multiple GTM loads
+          (function (w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+            var f = d.getElementsByTagName(s)[0],
+              j = d.createElement(s),
+              dl = l !== 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+            window.gtmLoaded = true; // Prevents duplicate loading
+          })(window, document, 'script', 'dataLayer', 'GTM-MBN9LQQQ');
+        }
+      }, 3000); // Delay GTM by 3 seconds
     </script>
     <!-- End Google Tag Manager -->
 
