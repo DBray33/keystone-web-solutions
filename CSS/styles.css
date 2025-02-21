@@ -7,6 +7,10 @@ html {
 * {
   box-sizing: border-box;
 }
+body {
+  font-family: 'Exo', sans-serif;
+  font-display: swap; /* Ensures smoother font loading */
+}
 body,
 html {
   font-family: 'Exo', sans-serif;
