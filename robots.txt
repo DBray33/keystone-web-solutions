@@ -1,5 +1,5 @@
 User-agent: *
 Disallow: /proposals/
-Disallow: /services/ecommerce-solutions.html
+
 
 Sitemap: https://keystonewebsolutions.com/sitemap.xml
