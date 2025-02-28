@@ -166,7 +166,9 @@ html {
 .sidebar,
 .sidebar::before {
   height: 100%;
-  background: rgba(0, 0, 0, 1);
+  background: url('https://storage.googleapis.com/background-vid/sidebar-bg.webp')
+    no-repeat center center;
+  background-size: cover;
 }
 
 .sidebar {
@@ -187,6 +189,7 @@ html {
   left: 0;
   width: 100%;
   z-index: 0;
+  background: rgba(0, 0, 0, 0.7); /* Optional dark overlay */
 }
 
 /* Apply Animation to Logo */
