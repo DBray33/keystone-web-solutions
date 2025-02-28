@@ -583,3 +583,29 @@ function initializeProgressBar() {
 
   console.log('✅ Progress Bar initialized successfully.');
 }
+
+// ----------------------------------------
+// ----------------------------------------
+// ----------------------------------------
+// ----------------------------------------
+document.addEventListener('DOMContentLoaded', () => {
+  const subheadings = document.querySelectorAll('.subheading');
+  let index = 0;
+
+  function showNextSubheading() {
+    // Remove 'active' class from all subheadings
+    subheadings.forEach((sub) => sub.classList.remove('active'));
+
+    // Set 'active' class on the current subheading
+    subheadings[index].classList.add('active');
+
+    // Increment index for the next iteration
+    index = (index + 1) % subheadings.length;
+  }
+
+  // Show first subheading immediately
+  showNextSubheading();
+
+  // Set interval to change subheading every 3 seconds
+  setInterval(showNextSubheading, 1000);
+});
