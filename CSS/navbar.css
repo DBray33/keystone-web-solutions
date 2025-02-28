@@ -371,6 +371,7 @@
 }
 
 .dropdown-submenu {
+  margin-top: -3rem;
   width: 100%;
   background-color: #fff;
   display: flex;
@@ -381,7 +382,7 @@
   list-style-type: none;
 }
 .dropdown-submenu li {
-  width: 100%;
+  width: 60%;
   padding: 10px 0;
 }
 .dropdown-submenu a {
@@ -402,15 +403,12 @@
   font-size: 16px;
   cursor: pointer;
 }
-.dropdown-submenu li {
-  text-align: center;
-  /* Centers inline elements like buttons */
-}
 .submenu-close {
   display: inline-block;
-  /* Ensures the button behaves like text */
   margin: 0 auto;
-  /* Optional, for consistency */
+}
+.dropdown-submenu li {
+  text-align: center;
 }
 .dropdown-submenu.active {
   top: 3rem;
@@ -579,3 +577,5 @@
   background-color: #5dade2; /* Blue color */
   transition: width 0.1s linear;
 }
+
+/* ---------------------------------- */

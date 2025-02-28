@@ -112,3 +112,13 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }, 300);
 });
+
+// ----------------------------------------------
+document.addEventListener('DOMContentLoaded', function () {
+  const submenuClose = document.querySelector('.submenu-close');
+  const dropdownMenu = document.querySelector('.dropdown-menu');
+
+  submenuClose.addEventListener('click', function () {
+    dropdownMenu.classList.toggle('open'); // Toggle visibility
+  });
+});
