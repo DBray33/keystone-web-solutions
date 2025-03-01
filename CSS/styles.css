@@ -399,6 +399,35 @@ html {
 .phone-number a:hover::before {
   animation: 0.3s forwards showBackground;
 }
+
+/* Logo row */
+.logo-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Default: 3 columns */
+  gap: 20px; /* Adjust spacing */
+  justify-items: center;
+  margin-top: -8rem; /* Moves row up */
+}
+
+/* Ensures all logos have the same width while maintaining aspect ratio */
+.logo {
+  width: 120px; /* Set a consistent width for all logos */
+  height: auto; /* Maintain aspect ratio */
+  object-fit: contain;
+}
+
+/* Responsive layout: Switch to 2 columns for smaller screens */
+@media screen and (max-width: 600px) {
+  .logo-row {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on small screens */
+    gap: 15px;
+    margin-top: -6rem; /* Adjust for mobile */
+  }
+
+  .logo {
+    width: 100px; /* Slightly smaller on mobile */
+  }
+}
 /* /////////////////////////////////////////////////////// */
 /* MAIN CONTENT/////////////////////////////////////////// */
 .main-content {
@@ -1394,9 +1423,10 @@ label {
 }
 
 .quote-section-heading {
-  font-family: var(--headline-font-family);
-  font-weight: var(--headline-font-weight);
-  letter-spacing: var(--headline-letter-spacing);
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: white;
 }
 .pricing-button:hover,
 .quote-section .submit-button:hover {
@@ -1495,12 +1525,7 @@ textarea {
   color: #fff;
   margin-bottom: 1rem;
 }
-.quote-section-heading {
-  font-size: var(--headline-font-size);
-  color: #fff;
-  text-shadow: var(--headline-text-shadow);
-  text-transform: uppercase;
-}
+
 .quote-card-heading,
 .quote-card-list li:hover {
   color: var(--primary-color);
@@ -1540,7 +1565,7 @@ textarea {
 }
 .quote-card-heading {
   text-transform: uppercase;
-  font-size: 3rem;
+  font-size: 2rem;
   text-align: center;
   text-transform: uppercase;
   font-weight: 700;
