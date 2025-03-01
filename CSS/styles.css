@@ -1100,6 +1100,11 @@ html {
   color: black;
   margin-bottom: 2rem;
 }
+.journey-subheading,
+.journey-description {
+  max-width: 1000px;
+  margin: 1rem auto;
+}
 .card-title,
 .pricing-card ul li,
 label {
