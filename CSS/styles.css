@@ -1234,10 +1234,60 @@ label {
 .pricing-card:hover {
   transform: translateY(-5px);
 }
+
+.pricing-card-1 {
+  position: relative;
+  overflow: hidden; /* Ensures the effect stays within the card */
+  background: #d3d3d3;
+  transition: background 0.1s ease-in-out, box-shadow 0.3s ease-in-out;
+  z-index: 1; /* Ensure the card stays above the sliver */
+}
+
 .pricing-card-1:hover {
-  background: #fff;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
+
+/* First Sliver */
+.pricing-card-1::before,
+.pricing-card-1::after {
+  content: '';
+  position: absolute;
+  width: 160%;
+  height: 85%; /* Reduced height to create a gap */
+  background: rgba(255, 255, 255, 0.6); /* Semi-transparent white */
+  transform: rotate(45deg);
+  transition: transform 0.15s ease-out;
+  z-index: 0; /* Push the slivers behind all text */
+}
+
+/* First Sliver - Upper Part */
+.pricing-card-1::before {
+  top: -110%; /* Move it down slightly (was -120%) */
+  left: -100%;
+}
+
+/* Second Sliver - Lower Part */
+.pricing-card-1::after {
+  top: -10%; /* Move it down slightly (was -20%) */
+  left: -100%;
+}
+
+.pricing-card-1:hover::before {
+  transform: translate(90%, 90%) rotate(45deg); /* Moves first sliver */
+}
+
+.pricing-card-1:hover::after {
+  transform: translate(90%, 90%) rotate(45deg); /* Moves second sliver */
+}
+.checklist li,
+.pricing-card-1 h2,
+.pricing-card-1 h3,
+.pricing-card-1 h4,
+.pricing-card-1 ul {
+  position: relative; /* Ensure all text is above the sliver */
+  z-index: 2;
+}
+/* ---------------------------------------------- */
 .pricing-card-2 {
   position: relative;
   overflow: hidden; /* Ensures the effect stays within the card */
@@ -1265,13 +1315,13 @@ label {
 
 /* First Sliver - Upper Part */
 .pricing-card-2::before {
-  top: -120%;
+  top: -110%; /* Move it down slightly (was -120%) */
   left: -100%;
 }
 
 /* Second Sliver - Lower Part */
 .pricing-card-2::after {
-  top: -20%; /* Creates a gap between the two slivers */
+  top: -10%; /* Move it down slightly (was -20%) */
   left: -100%;
 }
 
