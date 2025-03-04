@@ -345,6 +345,7 @@ html {
 
 @media screen and (max-width: 768px) {
   .sidebar-content .subheading {
+    font-size: 1.5rem;
     top: 27rem; /* Adjust this value to move subheadings up */
   }
 }
