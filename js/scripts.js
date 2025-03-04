@@ -237,6 +237,27 @@ document.addEventListener('DOMContentLoaded', () => {
   pricingCards.forEach((card) => observer.observe(card));
 });
 
+// Pricing heading/subheading fade in
+document.addEventListener('DOMContentLoaded', () => {
+  const elements = document.querySelectorAll(
+    '.pricing-heading, .pricing-subheading'
+  );
+
+  const observer = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+          observer.unobserve(entry.target); // Stop observing once shown
+        }
+      });
+    },
+    { threshold: 0.3 }
+  );
+
+  elements.forEach((element) => observer.observe(element));
+});
+
 // //////////////////////////////////////////////
 // QUOTE SECTION //////////////////////////
 document.addEventListener('DOMContentLoaded', () => {

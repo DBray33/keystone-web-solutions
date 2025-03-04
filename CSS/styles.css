@@ -1180,7 +1180,7 @@ label {
   text-align: center;
   padding: 2rem;
   /* background-image: url('https://storage.googleapis.com/background-vid/pricing-bg.webp'); */
-  background-color: var(--secondary-color);
+  background-color: #fff;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -1197,6 +1197,21 @@ label {
   margin-bottom: 2rem;
   color: black;
 }
+
+/* Initial state: hidden and moved down */
+.pricing-heading,
+.pricing-subheading {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* Active state: visible and moved to original position */
+.pricing-heading.show,
+.pricing-subheading.show {
+  opacity: 1;
+  transform: translateY(0);
+}
 .pricing-cards-container {
   display: flex;
   justify-content: center;
@@ -1204,13 +1219,11 @@ label {
   flex-wrap: wrap;
 }
 .pricing-card {
-  background-color: #fff;
+  background-color: #d3d3d3;
   border: 1px solid #ddd;
   border-radius: 8px;
   padding: 0 1.5rem 4.5rem;
   width: 30%;
-  /* max-width: 320px;
-     */
   text-align: left;
   transition: transform 0.3s, box-shadow 0.3s;
   position: relative;
@@ -1220,11 +1233,65 @@ label {
 }
 .pricing-card:hover {
   transform: translateY(-5px);
+}
+.pricing-card-1:hover {
+  background: #fff;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-  background: rgba(93, 173, 226, 0.2);
+}
+.pricing-card-2 {
+  position: relative;
+  overflow: hidden; /* Ensures the effect stays within the card */
+  background: #e6be8a;
+  transition: background 0.1s ease-in-out, box-shadow 0.3s ease-in-out;
+  z-index: 1; /* Ensure the card stays above the sliver */
+}
+
+.pricing-card-2:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* First Sliver */
+.pricing-card-2::before,
+.pricing-card-2::after {
+  content: '';
+  position: absolute;
+  width: 160%;
+  height: 85%; /* Reduced height to create a gap */
+  background: rgba(255, 255, 255, 0.6); /* Semi-transparent white */
+  transform: rotate(45deg);
+  transition: transform 0.15s ease-out;
+  z-index: 0; /* Push the slivers behind all text */
+}
+
+/* First Sliver - Upper Part */
+.pricing-card-2::before {
+  top: -120%;
+  left: -100%;
+}
+
+/* Second Sliver - Lower Part */
+.pricing-card-2::after {
+  top: -20%; /* Creates a gap between the two slivers */
+  left: -100%;
+}
+
+.pricing-card-2:hover::before {
+  transform: translate(90%, 90%) rotate(45deg); /* Moves first sliver */
+}
+
+.pricing-card-2:hover::after {
+  transform: translate(90%, 90%) rotate(45deg); /* Moves second sliver */
+}
+.checklist li,
+.pricing-card-2 h2,
+.pricing-card-2 h3,
+.pricing-card-2 h4,
+.pricing-card-2 ul {
+  position: relative; /* Ensure all text is above the sliver */
+  z-index: 2;
 }
 .pricing-section .pricing-card h2 {
-  font-size: 3rem;
+  font-size: 2.5rem;
   color: #000;
   margin-top: 1rem;
 }
@@ -1367,7 +1434,7 @@ label {
 }
 
 .fee-item {
-  background-color: white;
+  background-color: #d3d3d3;
   border: 1px solid #ddd;
   border-radius: 8px;
   padding: 1.5rem;
