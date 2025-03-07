@@ -231,6 +231,34 @@ document.addEventListener('DOMContentLoaded', () => {
   pricingCards.forEach((card) => observer.observe(card));
 });
 
+// Fee item cards transition
+// /////////////////////////////////////////////////////////////////
+// FEES SECTION - Animations ///////////////////////////////////////
+document.addEventListener('DOMContentLoaded', () => {
+  const feeItems = document.querySelectorAll(
+    '.fee-item-1, .fee-item-2, .fee-item-3'
+  );
+
+  const observerOptions = {
+    root: null,
+    threshold: 0.3, // Trigger animation when 30% visible
+  };
+
+  const observerCallback = (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      } else {
+        entry.target.classList.remove('visible');
+      }
+    });
+  };
+
+  const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+  feeItems.forEach((item) => observer.observe(item));
+});
+
 // //////////////////////////////////////////////
 // QUOTE SECTION //////////////////////////
 document.addEventListener('DOMContentLoaded', () => {
@@ -240,13 +268,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const quoteObserverOptions = {
     root: null,
-    threshold: [0, 0.3], // 0 = fully off-screen, 0.30 = 30% visible
+    threshold: [0, 0.2], // 0 = fully off-screen, 0.20 = 20% visible
   };
 
   const quoteObserverCallback = (entries) => {
     entries.forEach((entry) => {
-      if (entry.intersectionRatio >= 0.3) {
-        entry.target.classList.add('fade-in-quote'); // Fade in when 30% visible
+      if (entry.intersectionRatio >= 0.2) {
+        entry.target.classList.add('fade-in-quote'); // Fade in when 20% visible
       } else if (entry.intersectionRatio === 0) {
         entry.target.classList.remove('fade-in-quote'); // Fade out only when fully off-screen
       }

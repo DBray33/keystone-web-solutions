@@ -1585,6 +1585,39 @@ label {
   transition: transform 0.3s, box-shadow 0.3s;
 }
 
+/* Transition Effects for Fee Items */
+.fee-item {
+  opacity: 0;
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* Fee Item 1 (Slide in from Left) */
+.fee-item-1 {
+  transform: translateX(-100px);
+}
+.fee-item-1.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Fee Item 2 (Slide in from Right) */
+.fee-item-2 {
+  transform: translateX(100px);
+}
+.fee-item-2.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Fee Item 3 (Slide in from Bottom) */
+.fee-item-3 {
+  transform: translateY(100px);
+}
+.fee-item-3.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 .fee-item:hover {
   transform: translateY(-5px);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
