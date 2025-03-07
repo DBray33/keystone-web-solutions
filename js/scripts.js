@@ -155,13 +155,16 @@ function navbarScrollEffect() {
 
 // /////////////////////////////////////////////////////////////////
 // WEBSITE GUIDE / JOURNEY SECTION /////////////////////////////////
-// Journey intro text phasing in
+// Journey elements sliding in and out
+
 document.addEventListener('DOMContentLoaded', () => {
-  const journeyIntro = document.querySelector('.journey-section-intro');
+  const journeyElements = document.querySelectorAll(
+    '.journey-heading, .journey-subheading, .journey-description, .card-1, .card-2'
+  );
 
   const observerOptions = {
     root: null,
-    threshold: 0.2,
+    threshold: 0.2, // 20% visibility to trigger animation
   };
 
   const observerCallback = (entries) => {
@@ -176,120 +179,87 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const observer = new IntersectionObserver(observerCallback, observerOptions);
 
-  if (journeyIntro) {
-    observer.observe(journeyIntro);
-  }
+  journeyElements.forEach((element) => observer.observe(element));
 });
-
-// Journey cards sliding in and out
-document.addEventListener('DOMContentLoaded', () => {
-  const journeyCards = document.querySelectorAll('.card-1, .card-2');
-
-  const observerOptions = {
-    root: null,
-    threshold: 0.2,
-  };
-
-  const observerCallback = (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-      } else {
-        entry.target.classList.remove('visible');
-      }
-    });
-  };
-
-  const observer = new IntersectionObserver(observerCallback, observerOptions);
-
-  journeyCards.forEach((card) => observer.observe(card));
-});
-
 // //////////////////////////////////////////////
 // PRICING SECTION //////////////////////////////
+document.addEventListener('DOMContentLoaded', () => {
+  const pricingElements = document.querySelectorAll(
+    '.pricing-heading, .pricing-description'
+  );
+
+  const observerOptions = {
+    root: null,
+    threshold: 0.2, // Adjusted threshold for smoother detection
+  };
+
+  const observerCallback = (entries, observer) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      } else {
+        entry.target.classList.remove('visible'); // Ensures fade-out when scrolled out
+      }
+    });
+  };
+
+  const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+  pricingElements.forEach((element) => observer.observe(element));
+});
+
+// Pricing cards transition
 document.addEventListener('DOMContentLoaded', () => {
   const pricingCards = document.querySelectorAll('.pricing-card');
 
   const observerOptions = {
     root: null,
-    threshold: [0, 0.1],
+    threshold: [0, 0.3], // 0 = fully off-screen, 0.30 = 30% visible
   };
 
   const observerCallback = (entries) => {
     entries.forEach((entry) => {
-      if (entry.intersectionRatio >= 0.1) {
-        if (entry.target.classList.contains('pricing-card-1')) {
-          entry.target.style.setProperty('--delay', '0s');
-        } else if (entry.target.classList.contains('pricing-card-2')) {
-          entry.target.style.setProperty('--delay', '0.2s');
-        } else if (entry.target.classList.contains('pricing-card-3')) {
-          entry.target.style.setProperty('--delay', '0.3s');
-        }
-        entry.target.classList.add('visible');
+      if (entry.intersectionRatio >= 0.3) {
+        entry.target.classList.add('fade-in'); // Fade in when 30% visible
       } else if (entry.intersectionRatio === 0) {
-        entry.target.classList.remove('visible');
+        entry.target.classList.remove('fade-in'); // Fade out only when fully off-screen
       }
     });
   };
 
   const observer = new IntersectionObserver(observerCallback, observerOptions);
-
   pricingCards.forEach((card) => observer.observe(card));
-});
-
-// Pricing heading/subheading fade in
-document.addEventListener('DOMContentLoaded', () => {
-  const elements = document.querySelectorAll(
-    '.pricing-heading, .pricing-subheading'
-  );
-
-  const observer = new IntersectionObserver(
-    (entries, observer) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('show');
-          observer.unobserve(entry.target); // Stop observing once shown
-        }
-      });
-    },
-    { threshold: 0.3 }
-  );
-
-  elements.forEach((element) => observer.observe(element));
 });
 
 // //////////////////////////////////////////////
 // QUOTE SECTION //////////////////////////
 document.addEventListener('DOMContentLoaded', () => {
-  const quoteCards = document.querySelectorAll('.quote-card');
+  const quoteElements = document.querySelectorAll(
+    '.quote-section-heading, .quote-card'
+  );
 
-  // Observer options
-  const observerOptions = {
-    root: null, // Use the viewport as the container
-    threshold: 0, // Trigger when any part of the card intersects
+  const quoteObserverOptions = {
+    root: null,
+    threshold: [0, 0.3], // 0 = fully off-screen, 0.30 = 30% visible
   };
 
-  const observerCallback = (entries) => {
+  const quoteObserverCallback = (entries) => {
     entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        // Add class to slide up when in view
-        entry.target.classList.add('visible');
-      } else {
-        const bounding = entry.boundingClientRect;
-
-        // Ensure the card is fully off-screen before removing the visible class
-        if (bounding.top > window.innerHeight || bounding.bottom < 0) {
-          entry.target.classList.remove('visible');
-        }
+      if (entry.intersectionRatio >= 0.3) {
+        entry.target.classList.add('fade-in-quote'); // Fade in when 30% visible
+      } else if (entry.intersectionRatio === 0) {
+        entry.target.classList.remove('fade-in-quote'); // Fade out only when fully off-screen
       }
     });
   };
 
-  const observer = new IntersectionObserver(observerCallback, observerOptions);
+  const quoteObserver = new IntersectionObserver(
+    quoteObserverCallback,
+    quoteObserverOptions
+  );
 
-  quoteCards.forEach((card) => observer.observe(card));
+  quoteElements.forEach((element) => quoteObserver.observe(element));
 });
-
 // //////////////////////////////////////////////
 // FIXED INTRO BACKGROUND UNTIL JOURNEY SECTION //////////////////////////
 document.addEventListener('scroll', () => {

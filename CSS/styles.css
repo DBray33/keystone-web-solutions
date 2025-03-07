@@ -1074,6 +1074,10 @@ html {
   background-color: #fff;
   color: #000;
 }
+
+/* -------------------------------- */
+/* JOURNEY SECTION */
+/* -------------------------------- */
 .journey-section {
   z-index: 20;
   position: relative;
@@ -1085,31 +1089,17 @@ html {
   z-index: 2;
   /* Lower than services-section but higher than main-content */
 }
-.journey-heading {
-  font-size: 3rem;
-  margin-bottom: 1rem;
-  color: #000;
-}
-.journey-subheading {
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
-  color: #555;
-}
-.journey-description {
-  font-size: 1rem;
-  line-height: 1.6;
-  color: black;
-  margin-bottom: 2rem;
-}
-.journey-subheading,
-.journey-description {
-  max-width: 1000px;
-  margin: 1rem auto;
-}
+
 .card-title,
 .pricing-card ul li,
 label {
   margin-bottom: 0.5rem;
+}
+
+.journey-subheading,
+.journey-description {
+  max-width: 1000px;
+  margin: 1rem auto;
 }
 .journey-grid {
   margin: 0 auto;
@@ -1118,6 +1108,39 @@ label {
   grid-template-columns: 1fr;
   gap: 1.5rem;
 }
+
+/* Heading */
+.journey-heading {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: #000;
+  transform: translateX(100px); /* Moves in like card-2 */
+  opacity: 0;
+  transition: transform 0.6s ease-out, opacity 0.6s ease-out;
+}
+
+/* Subheading */
+.journey-subheading {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #555;
+  transform: translateX(-100px); /* Moves in like card-1 */
+  opacity: 0;
+  transition: transform 0.6s ease-out, opacity 0.6s ease-out;
+}
+
+/* Description */
+.journey-description {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: black;
+  margin-bottom: 2rem;
+  transform: translateX(100px); /* Moves in like card-2 */
+  opacity: 0;
+  transition: transform 0.6s ease-out, opacity 0.6s ease-out;
+}
+
+/* Cards */
 .journey-card {
   background-color: var(--secondary-color);
   padding: 1.5rem;
@@ -1127,9 +1150,31 @@ label {
 }
 .card-1,
 .card-2,
-.journey-section-intro {
-  transition: transform 0.6s, opacity 0.6s;
+.journey-heading,
+.journey-subheading,
+.journey-description {
   opacity: 0;
+}
+
+/* Card 1 */
+.card-1 {
+  transform: translateX(-100px);
+}
+.card-1.visible,
+.journey-subheading.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Card 2 */
+.card-2 {
+  transform: translateX(100px);
+}
+.card-2.visible,
+.journey-heading.visible,
+.journey-description.visible {
+  opacity: 1;
+  transform: translateX(0);
 }
 .journey-card:hover {
   transform: translateY(-5px);
@@ -1143,24 +1188,7 @@ label {
   font-size: 1rem;
   color: black;
 }
-.journey-section-intro {
-  transform: translateZ(-100px);
-}
-.journey-section-intro.visible {
-  opacity: 1;
-  transform: translateZ(0);
-}
-.card-1 {
-  transform: translateX(-100px);
-}
-.card-1.visible,
-.card-2.visible {
-  opacity: 1;
-  transform: translateX(0);
-}
-.card-2 {
-  transform: translateX(100px);
-}
+
 .page-link {
   color: inherit;
   text-decoration: underline;
@@ -1179,45 +1207,97 @@ label {
   position: relative;
   text-align: center;
   padding: 2rem;
-  /* background-image: url('https://storage.googleapis.com/background-vid/pricing-bg.webp'); */
   background-color: #fff;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   z-index: 15;
 }
+
+/* Heading */
 .pricing-heading {
   font-size: 3rem;
   font-weight: 700;
   margin-bottom: 1rem;
   color: black;
 }
-.pricing-subheading {
+
+/* Description */
+.pricing-description {
   font-size: 1rem;
   margin-bottom: 2rem;
   color: black;
+  width: 1000px; /* Set fixed width */
+  max-width: 100%; /* Prevent overflow on smaller screens */
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-/* Initial state: hidden and moved down */
+/* /////////////////////////////////////// */
+/* PRICING SECTION /////////////////////// */
+.pricing-section {
+  position: relative;
+  text-align: center;
+  padding: 2rem;
+  background-color: #fff;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: 15;
+}
+
+/* Heading */
+.pricing-heading {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: black;
+}
+
+/* Description */
+.pricing-description {
+  font-size: 1rem;
+  margin-bottom: 2rem;
+  color: black;
+  width: 1000px;
+  max-width: 100%;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Heading, Description, and Cards - Initial State */
 .pricing-heading,
-.pricing-subheading {
+.pricing-description {
   opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  transform: translateY(100px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 
-/* Active state: visible and moved to original position */
-.pricing-heading.show,
-.pricing-subheading.show {
+/* Fade-in effect when element becomes visible */
+.pricing-heading.visible,
+.pricing-description.visible {
   opacity: 1;
   transform: translateY(0);
 }
+
+/* Fade-out effect when element is scrolled out of view */
+.pricing-heading:not(.visible),
+.pricing-description:not(.visible) {
+  opacity: 0;
+  transform: translateY(100px);
+}
+
+/* Pricing Cards Container */
 .pricing-cards-container {
   display: flex;
   justify-content: center;
   gap: 1.5rem;
   flex-wrap: wrap;
 }
+
+/* Individual Pricing Cards */
 .pricing-card {
   background-color: #d3d3d3;
   border: 1px solid #ddd;
@@ -1225,141 +1305,152 @@ label {
   padding: 0 1.5rem 4.5rem;
   width: 30%;
   text-align: left;
-  transition: transform 0.3s, box-shadow 0.3s;
   position: relative;
   opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.6s ease var(--delay), transform 0.6s ease var(--delay);
-}
-.pricing-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(
+    120px
+  ); /* Increased movement for a more noticeable fade-in */
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 
+/* Fade-in when visible */
+.pricing-card.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* PRICING CARD 1 */
 .pricing-card-1 {
   position: relative;
-  overflow: hidden; /* Ensures the effect stays within the card */
+  overflow: hidden;
   background: #d3d3d3;
-  transition: background 0.1s ease-in-out, box-shadow 0.3s ease-in-out;
-  z-index: 1; /* Ensure the card stays above the sliver */
+  z-index: 1;
 }
 
-.pricing-card-1:hover {
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+/* PRICING CARD 2 */
+.pricing-card-2 {
+  position: relative;
+  overflow: hidden;
+  background: #e6be8a;
+  z-index: 1;
 }
 
+/* Pricing Cards Hover */
 /* First Sliver */
 .pricing-card-1::before,
 .pricing-card-1::after {
   content: '';
   position: absolute;
   width: 160%;
-  height: 85%; /* Reduced height to create a gap */
-  background: rgba(255, 255, 255, 0.6); /* Semi-transparent white */
+  height: 85%;
+  background: rgba(255, 255, 255, 0.6);
   transform: rotate(45deg);
   transition: transform 0.15s ease-out;
-  z-index: 0; /* Push the slivers behind all text */
+  z-index: 0;
+}
+
+/* Second Sliver */
+.pricing-card-2::before,
+.pricing-card-2::after {
+  content: '';
+  position: absolute;
+  width: 160%;
+  height: 85%;
+  background: rgba(255, 255, 255, 0.6);
+  transform: rotate(45deg);
+  transition: transform 0.15s ease-out;
+  z-index: 0;
 }
 
 /* First Sliver - Upper Part */
 .pricing-card-1::before {
-  top: -110%; /* Move it down slightly (was -120%) */
+  top: -110%;
+  left: -100%;
+}
+
+/* First Sliver - Lower Part */
+.pricing-card-1::after {
+  top: -10%;
+  left: -100%;
+}
+
+/* Second Sliver - Upper Part */
+.pricing-card-2::before {
+  top: -110%;
   left: -100%;
 }
 
 /* Second Sliver - Lower Part */
-.pricing-card-1::after {
-  top: -10%; /* Move it down slightly (was -20%) */
+.pricing-card-2::after {
+  top: -10%;
   left: -100%;
 }
 
+.pricing-card-1:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
 .pricing-card-1:hover::before {
-  transform: translate(90%, 90%) rotate(45deg); /* Moves first sliver */
+  transform: translate(90%, 90%) rotate(45deg);
 }
 
 .pricing-card-1:hover::after {
-  transform: translate(90%, 90%) rotate(45deg); /* Moves second sliver */
-}
-.checklist li,
-.pricing-card-1 h2,
-.pricing-card-1 h3,
-.pricing-card-1 h4,
-.pricing-card-1 ul {
-  position: relative; /* Ensure all text is above the sliver */
-  z-index: 2;
-}
-/* ---------------------------------------------- */
-.pricing-card-2 {
-  position: relative;
-  overflow: hidden; /* Ensures the effect stays within the card */
-  background: #e6be8a;
-  transition: background 0.1s ease-in-out, box-shadow 0.3s ease-in-out;
-  z-index: 1; /* Ensure the card stays above the sliver */
+  transform: translate(90%, 90%) rotate(45deg);
 }
 
 .pricing-card-2:hover {
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
-/* First Sliver */
-.pricing-card-2::before,
-.pricing-card-2::after {
-  content: '';
-  position: absolute;
-  width: 160%;
-  height: 85%; /* Reduced height to create a gap */
-  background: rgba(255, 255, 255, 0.6); /* Semi-transparent white */
-  transform: rotate(45deg);
-  transition: transform 0.15s ease-out;
-  z-index: 0; /* Push the slivers behind all text */
-}
-
-/* First Sliver - Upper Part */
-.pricing-card-2::before {
-  top: -110%; /* Move it down slightly (was -120%) */
-  left: -100%;
-}
-
-/* Second Sliver - Lower Part */
-.pricing-card-2::after {
-  top: -10%; /* Move it down slightly (was -20%) */
-  left: -100%;
-}
-
 .pricing-card-2:hover::before {
-  transform: translate(90%, 90%) rotate(45deg); /* Moves first sliver */
+  transform: translate(90%, 90%) rotate(45deg);
 }
 
 .pricing-card-2:hover::after {
-  transform: translate(90%, 90%) rotate(45deg); /* Moves second sliver */
+  transform: translate(90%, 90%) rotate(45deg);
 }
+
+/* Ensure text remains above slivers */
 .checklist li,
+.pricing-card-1 h2,
+.pricing-card-1 h3,
+.pricing-card-1 h4,
+.pricing-card-1 ul,
 .pricing-card-2 h2,
 .pricing-card-2 h3,
 .pricing-card-2 h4,
 .pricing-card-2 ul {
-  position: relative; /* Ensure all text is above the sliver */
+  position: relative;
   z-index: 2;
 }
+
+/* Card Titles */
 .pricing-section .pricing-card h2 {
   font-size: 2.5rem;
   color: #000;
   margin-top: 1rem;
 }
+
 .pricing-card h3 {
   font-size: 1.5rem;
   margin-bottom: 1rem;
   margin-top: 0.5rem;
   color: #333;
 }
+
 .pricing-card h4 {
   margin-bottom: 0.35rem;
 }
+
+/* List Styling */
 .pricing-card ul,
 .quote-card .info-list {
   list-style: none;
   padding: 0;
   margin: 0;
 }
+
+/* Button Styling */
 .pricing-button,
 .quote-section .submit-button {
   padding: 0.5rem 1rem;
@@ -1373,25 +1464,27 @@ label {
   cursor: pointer;
   text-transform: uppercase;
 }
+
+/* List Items */
 .pricing-card ul li {
   font-size: 1rem;
   color: #555;
 }
+
+/* Responsive Adjustments */
 @media (max-width: 1024px) {
   .pricing-card {
     width: 45%;
   }
 }
+
 @media (max-width: 768px) {
   .pricing-card {
     width: 100%;
   }
 }
-.pricing-card.visible,
-.quote-card.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
+
+/* Pricing Button */
 .pricing-button {
   position: relative;
   border-radius: 50px;
@@ -1531,8 +1624,9 @@ label {
     grid-template-columns: 1fr;
   }
 }
-/* ////////////////////////////////// */
-/* ////////////////////////////////// */
+/* ---------------------------------- */
+/* QUOTE SECTION */
+/* ---------------------------------- */
 .contact-info li,
 .contact-info li span,
 .form-group,
@@ -1653,23 +1747,50 @@ textarea {
 .quote-card-list li:hover {
   color: var(--primary-color);
 }
+/* Quote Section Heading */
+.quote-section-heading {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: white;
+  opacity: 0; /* Initially hidden */
+  transform: translateY(80px); /* Moves further down before appearing */
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* Quote Cards Container */
 .quote-cards-container {
   justify-content: center;
   gap: 1rem;
   flex-wrap: wrap;
+  margin-bottom: 5rem;
 }
+
+/* Quote Cards */
 .quote-card {
   margin: 1rem;
   background-color: #000;
   border-radius: 8px;
   padding: 1rem;
-  /* box-shadow: 0 0 20px #fff; */
   width: 100%;
   max-width: 480px;
   box-sizing: border-box;
+  transform: translateY(80px); /* Moves further down before appearing */
+  opacity: 0; /* Initially hidden */
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* Fade-in effect when element becomes visible */
+.fade-in-quote {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Fade-out effect when element is fully off-screen */
+.quote-section-heading:not(.fade-in-quote),
+.quote-card:not(.fade-in-quote) {
   opacity: 0;
-  transform: translateY(50px);
-  transition: opacity 0.5s, transform 0.5s;
+  transform: translateY(80px);
 }
 @media (max-width: 1118px) {
   .quote-cards-container {
@@ -1684,7 +1805,6 @@ textarea {
 .quote-card:hover {
   box-shadow: 0 0 20px var(--primary-color);
   background-color: rgba(0, 0, 0, 0.2);
-  /* Transparent black */
 }
 .quote-card-heading {
   text-transform: uppercase;
@@ -2355,8 +2475,6 @@ textarea {
 /* -------------------------------------- */
 /* Back to top button */
 /* -------------------------------------- */
-/* Back to Top Button Styles */
-/* Back to Top Button Styles */
 .back-to-top {
   position: fixed;
   bottom: 20px;
