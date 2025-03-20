@@ -828,7 +828,7 @@ body {
   overflow: hidden;
   z-index: 1;
   padding: 40px 20px;
-  padding-top: 100px; /* Added padding to prevent overlap */
+  padding-top: 150px; /* Added padding to prevent overlap */
 }
 
 /* === Background & Overlay === */
