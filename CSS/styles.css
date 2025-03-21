@@ -118,6 +118,7 @@ html {
   font-family: 'Bebas Neue', sans-serif;
   font-size: larger;
   font-weight: 400;
+  color: red;
 }
 /* BUTTON STYLING */
 .navbar .submit-button a::before,
