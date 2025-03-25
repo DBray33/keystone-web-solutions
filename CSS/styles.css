@@ -197,7 +197,8 @@ html {
 
 /* Apply Animation to Logo */
 .responsive-logo {
-  max-width: 185px; /* Ensures it doesn’t exceed its natural size */
+  margin-top: 5rem;
+  max-width: 400px; /* Ensures it doesn’t exceed its natural size */
   height: auto; /* Maintains correct aspect ratio */
   display: block;
   animation: fadeIn 1s ease-in-out forwards; /* Keep smooth fade-in */
@@ -206,8 +207,10 @@ html {
 /* Mobile Adjustments */
 @media (max-width: 500px) {
   .responsive-logo {
-    max-width: 40vw; /* Adjust for smaller screens if needed */
+    margin-top: 1rem;
+    max-width: 300px; /* Adjust for smaller screens if needed */
     height: auto; /* Maintain aspect ratio */
+    margin-bottom: 2rem;
   }
 }
 
@@ -290,16 +293,6 @@ html {
   }
 }
 
-/* @media (max-width: 480px) {
-  .sidebar {
-    min-height: auto;
-  }
-
-  .sidebar-content {
-    padding-top: 1rem;
-  }
-} */
-
 .call-now,
 .sidebar-content > :last-child {
   margin-bottom: 0;
@@ -331,7 +324,7 @@ html {
 }
 
 .sidebar-content .subheading {
-  margin: -6rem 0 auto;
+  margin: -2rem 0 auto;
   font-size: 2rem;
   font-weight: 200;
   position: absolute;
@@ -348,7 +341,25 @@ html {
 @media screen and (max-width: 768px) {
   .sidebar-content .subheading {
     font-size: 1.5rem;
-    top: 27rem; /* Adjust this value to move subheadings up */
+    top: 22rem; /* Adjust this value to move subheadings up */
+  }
+}
+@media screen and (max-width: 1100px) {
+  .sidebar-content .subheading {
+    font-size: 1.5rem;
+    top: 22rem; /* Adjust this value to move subheadings up */
+  }
+}
+@media screen and (max-width: 935px) {
+  .sidebar-content .subheading {
+    font-size: 1.5rem;
+    top: 26rem; /* Adjust this value to move subheadings up */
+  }
+}
+@media screen and (max-width: 500px) {
+  .sidebar-content .subheading {
+    font-size: 1.5rem;
+    top: 22rem; /* Adjust this value to move subheadings up */
   }
 }
 
@@ -403,34 +414,6 @@ html {
   animation: 0.3s forwards showBackground;
 }
 
-/* Logo row */
-.logo-row {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Default: 3 columns */
-  gap: 20px; /* Adjust spacing */
-  justify-items: center;
-  margin-top: -8rem; /* Moves row up */
-}
-
-/* Ensures all logos have the same width while maintaining aspect ratio */
-.logo {
-  width: 120px; /* Set a consistent width for all logos */
-  height: auto; /* Maintain aspect ratio */
-  object-fit: contain;
-}
-
-/* Responsive layout: Switch to 2 columns for smaller screens */
-@media screen and (max-width: 600px) {
-  .logo-row {
-    grid-template-columns: repeat(2, 1fr); /* 2 columns on small screens */
-    gap: 15px;
-    margin-top: -6rem; /* Adjust for mobile */
-  }
-
-  .logo {
-    width: 100px; /* Slightly smaller on mobile */
-  }
-}
 /* /////////////////////////////////////////////////////// */
 /* MAIN CONTENT/////////////////////////////////////////// */
 .main-content {
