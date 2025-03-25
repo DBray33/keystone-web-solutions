@@ -198,10 +198,11 @@ html {
 /* Apply Animation to Logo */
 .responsive-logo {
   margin-top: 5rem;
-  max-width: 400px; /* Ensures it doesn’t exceed its natural size */
+  max-width: 400px; /* Ensures it doesn't exceed its natural size */
   height: auto; /* Maintains correct aspect ratio */
   display: block;
   animation: fadeIn 1s ease-in-out forwards; /* Keep smooth fade-in */
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.9));
 }
 
 /* Mobile Adjustments */
