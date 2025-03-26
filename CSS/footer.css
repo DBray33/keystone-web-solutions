@@ -96,7 +96,7 @@
 }
 
 .footer-logo {
-  width: 100px; /* Adjust as needed */
+  width: 200px; /* Adjust as needed */
   height: auto;
   display: block; /* Fixes inline spacing issues */
   margin-bottom: 2rem; /* Adds space below the logo */
