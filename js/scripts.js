@@ -231,7 +231,6 @@ document.addEventListener('DOMContentLoaded', () => {
   pricingCards.forEach((card) => observer.observe(card));
 });
 
-// Fee item cards transition
 // /////////////////////////////////////////////////////////////////
 // FEES SECTION - Animations ///////////////////////////////////////
 document.addEventListener('DOMContentLoaded', () => {
@@ -499,42 +498,61 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // //////////////////////////////////////////////
-// CAROUSEL /////////////////////////////////////
-
-// //////////////////////////////////////////////
 // MAIN CONTENT /////////////////////////////////
 // Cards slide in from side when section is scrolled to
-
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', function () {
+  const navItems = document.querySelectorAll('.nav-item');
   const cards = document.querySelectorAll('.card');
-  const sectionCards = document.querySelector('.section-cards'); // Target the section containing the cards
+  let currentCard = document.querySelector('.card.active');
 
-  const observerOptions = {
-    root: null, // Observe within the viewport
-    threshold: 0.1, // Trigger when 10% of the section is visible
-  };
+  navItems.forEach((item) => {
+    item.addEventListener('click', function () {
+      const targetId = this.getAttribute('data-target');
+      const targetCard = document.getElementById(targetId);
 
-  const observerCallback = (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        cards.forEach((card, index) => {
-          setTimeout(() => {
-            card.classList.add('swipe-in'); // Add the class to animate in
-          }, index * 150); // Stagger the animation
-        });
+      // Don't do anything if clicking the already active item
+      if (this.classList.contains('active')) {
+        return;
+      }
+
+      // Update navigation active states
+      navItems.forEach((navItem) => navItem.classList.remove('active'));
+      this.classList.add('active');
+
+      // Animate current card out
+      if (currentCard) {
+        // First, animate the current card sliding up and fading out
+        currentCard.style.transform = 'translateY(-20px)';
+        currentCard.style.opacity = '0';
+
+        // After animation completes, hide it and prepare new card
+        setTimeout(() => {
+          currentCard.classList.remove('active');
+
+          // Prepare the new card for entrance animation
+          targetCard.classList.add('active');
+          targetCard.style.transform = 'translateY(20px)';
+          targetCard.style.opacity = '0';
+
+          // Force a reflow to ensure the styles are applied before the animation
+          void targetCard.offsetWidth;
+
+          // Animate the new card in
+          targetCard.style.transform = 'translateY(0)';
+          targetCard.style.opacity = '1';
+
+          // Update the current card reference
+          currentCard = targetCard;
+        }, 300); // This matches your CSS transition time
       } else {
-        cards.forEach((card) => {
-          card.classList.remove('swipe-in'); // Remove the class when out of view
-        });
+        // If there's no current card, just show the target (first load)
+        targetCard.classList.add('active');
+        targetCard.style.transform = 'translateY(0)';
+        targetCard.style.opacity = '1';
+        currentCard = targetCard;
       }
     });
-  };
-
-  const observer = new IntersectionObserver(observerCallback, observerOptions);
-
-  if (sectionCards) {
-    observer.observe(sectionCards);
-  }
+  });
 });
 
 // BACK TO TOP /////////////////////////////////

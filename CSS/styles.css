@@ -47,6 +47,49 @@ html {
   scroll-padding-top: 130px; /* Matches the fixed header height */
 }
 
+/* BUTTON STYLING */
+.navbar .submit-button a::before,
+.pricing-button::before,
+.quote-section .submit-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 250%;
+  height: 100%;
+  background-color: #5dade2;
+  transform: skewX(-45deg);
+  z-index: -1;
+  transition: transform 0.3s;
+}
+
+.navbar .submit-button a:hover::before,
+.pricing-button:hover::before,
+.quote-section .submit-button:hover::before {
+  transform: translateX(100%) skewX(-45deg);
+}
+.navbar .submit-button a:hover {
+  color: var(--primary-color);
+  border-color: #5dade2;
+}
+/* End Button Styling */
+
+.service-item-back,
+.service-item-inner.rotate,
+.service-item:hover .service-item-inner {
+  transform: rotateY(180deg);
+}
+
+.journey-card,
+.pricing-card,
+.submission-form {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.phone-number a:hover {
+  color: #000;
+}
+
 /* Bebas Neue */
 @font-face {
   font-family: 'Bebas Neue';
@@ -104,24 +147,256 @@ html {
   font-display: swap;
 }
 
-.sidebar-content {
-  text-align: center;
-}
-
 .more-info-button,
 .service-item-front h3 {
   text-transform: uppercase;
 }
 
-.sidebar-content .company-name {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: larger;
-  font-weight: 400;
-}
-
 /* Hide the mobile background by default */
 .mobile-background {
   display: none;
+}
+
+/* ///////////////////////////////////// */
+/* SIDEBAR ///////////////////////////// */
+.sidebar,
+.sidebar::before {
+  height: 100%;
+  background: url('https://storage.googleapis.com/background-vid/sidebar-bg.webp')
+    no-repeat left center;
+  background-size: cover;
+  background-position: left center;
+}
+
+.sidebar {
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  width: 40%;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.sidebar::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 0;
+  background: rgba(0, 0, 0, 0.7);
+}
+
+/* Apply Animation to Logo */
+.responsive-logo {
+  margin-top: 5rem;
+  max-width: 400px;
+  height: auto;
+  display: block;
+  animation: fadeIn 1s ease-in-out forwards;
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.9));
+}
+
+/* Mobile Adjustments */
+@media (max-width: 500px) {
+  .responsive-logo {
+    margin-top: 1rem;
+    max-width: 300px;
+    height: auto;
+    margin-bottom: 2rem;
+  }
+}
+
+/* Fade-In Keyframes */
+@keyframes fadeIn {
+  from {
+    transform: scale(0.95);
+    opacity: 0.5;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.phone-number a::before,
+.sidebar-video {
+  position: absolute;
+  height: 100%;
+  z-index: -1;
+  left: 0;
+}
+
+.sidebar-video {
+  top: 0;
+  width: 100%;
+  object-fit: cover;
+}
+
+.phone-number a,
+.sidebar-content,
+.sidebar-content > * {
+  color: #fff;
+  z-index: 1;
+  position: relative;
+}
+
+.sidebar-content {
+  margin: 0 1rem;
+  top: 11%;
+  pointer-events: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* Adjustments for smaller screens */
+@media (max-width: 935px) {
+  .sidebar {
+    position: relative;
+    width: 100%;
+    padding: 4rem 1rem;
+    min-height: 120vh;
+    box-sizing: border-box;
+  }
+
+  .sidebar-content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 4rem 1rem;
+  }
+
+  .phone-number {
+    padding-bottom: 4rem;
+    text-align: center;
+  }
+
+  .phone-number a {
+    font-size: 1.8rem;
+  }
+}
+
+.call-now,
+.sidebar-content > :last-child {
+  margin-bottom: 0;
+}
+
+.sidebar-content {
+  margin: 2rem 0;
+  font-size: 1rem;
+  font-weight: 300;
+  letter-spacing: 2px;
+}
+
+.sidebar-content .company-name {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 7rem;
+  font-weight: 400;
+  text-align: center;
+  margin: 0 2rem;
+}
+
+@media (max-width: 1100px) {
+  .sidebar-content .company-name {
+    font-size: 5rem;
+  }
+}
+
+.sidebar-content .subheading {
+  margin: -2rem 0 auto;
+  font-size: 2rem;
+  font-weight: 200;
+  position: absolute;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.sidebar-content .subheading.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media screen and (max-width: 768px) {
+  .sidebar-content .subheading {
+    font-size: 1.5rem;
+    top: 22rem;
+  }
+}
+@media screen and (max-width: 1100px) {
+  .sidebar-content .subheading {
+    font-size: 1.5rem;
+    top: 22rem;
+  }
+}
+@media screen and (max-width: 935px) {
+  .sidebar-content .subheading {
+    font-size: 1.5rem;
+    top: 26rem;
+  }
+}
+@media screen and (max-width: 500px) {
+  .sidebar-content .subheading {
+    font-size: 1.5rem;
+    top: 22rem;
+  }
+}
+
+.description {
+  margin: 4rem 2rem 2rem;
+  font-size: 1rem;
+  font-weight: 300;
+  letter-spacing: 2px;
+}
+
+.phone-number {
+  position: relative;
+  display: inline-block;
+  font-size: 2.2rem;
+  font-weight: 200;
+  padding-bottom: 12rem;
+}
+
+.phone-number a {
+  padding: 0 5px;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.phone-number a::before {
+  content: '';
+  bottom: 0;
+  width: 0;
+  background-color: #5dade2;
+  animation: 1s forwards hideBackground;
+}
+
+@keyframes hideBackground {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 0;
+  }
+}
+
+@keyframes showBackground {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+.phone-number a:hover::before {
+  animation: 0.3s forwards showBackground;
 }
 
 /* MAIN CONTENT/////////////////////////////////////////// */
@@ -165,7 +440,11 @@ html {
 }
 
 .main-content .section h2 {
-  color: white;
+  background: linear-gradient(to top, #333333, #ffffff 45%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
   font-family: 'Bebas Neue', sans-serif;
   text-transform: uppercase;
   font-weight: 400;
@@ -216,7 +495,16 @@ html {
   text-align: center;
   width: 100%;
   position: relative;
-  animation: float 3s ease-in-out infinite, slide 10s linear infinite;
+  animation: float 3s ease-in-out infinite, slide 5s linear infinite;
+}
+
+@keyframes slide {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 200% 50%;
+  }
 }
 
 @keyframes float {
@@ -231,16 +519,6 @@ html {
   }
 }
 
-@keyframes slide {
-  0% {
-    background-position: 0% 50%;
-  }
-  100% {
-    background-position: 200% 50%;
-  }
-}
-
-/* Rest of the existing CSS remains the same */
 .main-content,
 .services-section {
   margin-left: 40%;
@@ -361,338 +639,55 @@ html {
   font-size: 50px;
 }
 
-/* BUTTON STYLING */
-.navbar .submit-button a::before,
-.pricing-button::before,
-.quote-section .submit-button::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 250%;
-  height: 100%;
-  background-color: #5dade2;
-  transform: skewX(-45deg);
-  z-index: -1;
-  transition: transform 0.3s;
-}
-
-.navbar .submit-button a:hover::before,
-.pricing-button:hover::before,
-.quote-section .submit-button:hover::before {
-  transform: translateX(100%) skewX(-45deg);
-}
-.navbar .submit-button a:hover {
-  color: var(--primary-color);
-  border-color: #5dade2;
-}
-/* End Button Styling */
-
-.service-item-back,
-.service-item-inner.rotate,
-.service-item:hover .service-item-inner {
-  transform: rotateY(180deg);
-}
-
-.journey-card,
-.pricing-card,
-.submission-form {
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.phone-number a:hover {
-  color: #000;
-}
-
-.next-section {
-  margin-top: 100px;
-}
-
-.welcome-section-devices {
-  width: 50%;
-  max-width: 800px;
-  height: auto;
-  margin: 1rem auto -3rem auto; /* Center horizontally with auto left and right margins */
-  display: block;
-}
-
-@media (max-width: 500px) {
-  .welcome-section-devices {
-    width: 80%;
-  }
-}
-
-.pagespeed-scores {
-  width: 99%; /* Set width to 60% of the container */
-  height: auto; /* Maintain aspect ratio */
-  display: block; /* Ensure the image is a block-level element */
-  margin: 1rem auto; /* Center the image horizontally and add spacing above and below */
-}
-
-/* ///////////////////////////////////// */
-/* SIDEBAR ///////////////////////////// */
-
-.sidebar,
-.sidebar::before {
-  height: 100%;
-  background: url('https://storage.googleapis.com/background-vid/sidebar-bg.webp')
-    no-repeat left center; /* Fix image to the left */
-  background-size: cover;
-  background-position: left center; /* Ensures left side remains visible */
-}
-
-.sidebar {
-  /* display: flex; */
-  justify-content: center;
-  align-items: center;
-  position: fixed;
-  width: 40%;
-  overflow: hidden;
-  pointer-events: none;
-  z-index: 1;
-}
-
-.sidebar::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 0;
-  background: rgba(0, 0, 0, 0.7); /* Optional dark overlay */
-}
-
-/* Apply Animation to Logo */
-.responsive-logo {
-  margin-top: 5rem;
-  max-width: 400px; /* Ensures it doesn't exceed its natural size */
-  height: auto; /* Maintains correct aspect ratio */
-  display: block;
-  animation: fadeIn 1s ease-in-out forwards; /* Keep smooth fade-in */
-  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.9));
-}
-
-/* Mobile Adjustments */
-@media (max-width: 500px) {
-  .responsive-logo {
-    margin-top: 1rem;
-    max-width: 300px; /* Adjust for smaller screens if needed */
-    height: auto; /* Maintain aspect ratio */
-    margin-bottom: 2rem;
-  }
-}
-
-/* Fade-In Keyframes */
-@keyframes fadeIn {
-  from {
-    transform: scale(0.95); /* Adds a slight zoom effect */
-    opacity: 0.5; /* Instead of fully invisible */
-  }
-  to {
-    transform: scale(1);
-    opacity: 1;
-  }
-}
-
-.phone-number a::before,
-.sidebar-video {
-  position: absolute;
-  height: 100%;
-  z-index: -1;
-  left: 0;
-}
-
-.sidebar-video {
-  top: 0;
-  width: 100%;
-  object-fit: cover;
-}
-
-.phone-number a,
-.sidebar-content {
-  color: #fff;
-  z-index: 1;
-  position: relative;
-}
-
-.sidebar-content {
-  margin: 0 1rem;
-  top: 11%;
-  pointer-events: auto;
+/* cards menu */
+/* Navigation Menu Styling */
+.card-navigation {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+  width: 100%;
 }
 
-/* Adjustments for smaller screens */
-@media (max-width: 935px) {
-  .sidebar {
-    position: relative; /* Switch to relative positioning */
-    width: 100%; /* Sidebar takes up full width */
-    padding: 4rem 1rem; /* Increased padding to push the content down */
-    min-height: 120vh;
-    box-sizing: border-box; /* Include padding in height calculation */
-  }
-
-  .sidebar-content {
-    position: relative; /* Ensure it adjusts dynamically */
-    display: flex; /* Use flexbox for alignment */
-    flex-direction: column; /* Stack content vertically */
-    justify-content: flex-start; /* Align content to the top, will adjust with padding */
-    align-items: center; /* Center content horizontally */
-    padding: 4rem 1rem; /* Push content further down */
-  }
-
-  .phone-number {
-    padding-bottom: 4rem; /* Prevent cutoff at the bottom */
-    text-align: center; /* Center-align phone number */
-  }
-
-  .phone-number a {
-    font-size: 1.8rem; /* Adjust font size */
-  }
-}
-
-.call-now,
-.sidebar-content > :last-child {
-  margin-bottom: 0;
-}
-
-.sidebar-content {
+.nav-menu {
   display: flex;
-  flex-direction: column;
-  justify-content: center; /* Center vertically */
-  align-items: center; /* Center horizontally */
-  text-align: center; /* Ensure child elements are centered */
-
-  margin: 2rem 0;
-  font-size: 1rem;
-  font-weight: 300;
-  letter-spacing: 2px;
+  justify-content: center;
+  gap: 2rem;
+  padding: 1rem;
+  border-top: 1px solid #eee;
 }
 
-.sidebar-content .company-name {
-  text-align: center;
-  font-size: 7rem;
-  margin: 0 2rem;
-}
-
-@media (max-width: 1100px) {
-  .sidebar-content .company-name {
-    font-size: 5rem;
-  }
-}
-
-.sidebar-content .subheading {
-  margin: -2rem 0 auto;
-  font-size: 2rem;
-  font-weight: 200;
-  position: absolute;
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
-}
-
-.sidebar-content .subheading.active {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-@media screen and (max-width: 768px) {
-  .sidebar-content .subheading {
-    font-size: 1.5rem;
-    top: 22rem; /* Adjust this value to move subheadings up */
-  }
-}
-@media screen and (max-width: 1100px) {
-  .sidebar-content .subheading {
-    font-size: 1.5rem;
-    top: 22rem; /* Adjust this value to move subheadings up */
-  }
-}
-@media screen and (max-width: 935px) {
-  .sidebar-content .subheading {
-    font-size: 1.5rem;
-    top: 26rem; /* Adjust this value to move subheadings up */
-  }
-}
-@media screen and (max-width: 500px) {
-  .sidebar-content .subheading {
-    font-size: 1.5rem;
-    top: 22rem; /* Adjust this value to move subheadings up */
-  }
-}
-
-.description {
-  margin: 4rem 2rem 2rem;
-  font-size: 1rem;
-  font-weight: 300;
-  letter-spacing: 2px;
-}
-
-.phone-number {
+.nav-item {
   position: relative;
-  display: inline-block;
-  font-size: 2.2rem;
-  font-weight: 200;
-  padding-bottom: 12rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-weight: 600;
+  color: white; /* Changed from #333 to white */
+  transition: color 0.3s ease;
 }
 
-.phone-number a {
-  padding: 0 5px;
-  text-decoration: none;
-  transition: color 0.3s;
+.nav-item:hover {
+  color: #5dade2;
 }
 
-.phone-number a::before {
+/* Active indicator - underline */
+.nav-item::after {
   content: '';
-  bottom: 0;
+  position: absolute;
+  bottom: -2px;
+  left: 0;
   width: 0;
+  height: 3px;
   background-color: #5dade2;
-  animation: 1s forwards hideBackground;
+  transition: width 0.3s ease;
 }
 
-@keyframes hideBackground {
-  from {
-    width: 100%;
-  }
-  to {
-    width: 0;
-  }
+.nav-item.active {
+  color: #5dade2;
 }
 
-@keyframes showBackground {
-  from {
-    width: 0;
-  }
-  to {
-    width: 100%;
-  }
+.nav-item.active::after {
+  width: 100%;
 }
 
-.phone-number a:hover::before {
-  animation: 0.3s forwards showBackground;
-}
-
-/* Animation for the cards */
-@keyframes swipeIn {
-  0% {
-    transform: scaleX(0); /* Start with no width */
-    transform-origin: right; /* Expand from the right */
-    opacity: 0; /* Fully transparent */
-  }
-  100% {
-    transform: scaleX(1); /* Full width */
-    opacity: 1; /* Fully visible */
-  }
-}
-
-.card.swipe-in {
-  transform: scaleX(1); /* Expand fully */
-  opacity: 1; /* Make visible */
-}
 /* Main Content Cards */
 .section-cards {
   display: flex;
@@ -702,128 +697,109 @@ html {
   padding: 2rem;
   text-align: left; /* Align text inside cards to the left */
 }
+
+/* card styles */
+/* Card base styles with navigation show/hide */
 .card {
-  display: flex;
+  display: none; /* Hide all cards by default */
   overflow: hidden; /* Prevents content overflow */
-  border-radius: 45px;
-  border: 2px solid #5dade2;
-  box-shadow: 0 0px 0px 0px var(--primary-color);
-  transform-origin: right;
-  transform: scaleX(0);
+  border-radius: 8px; /* Changed from 45px to 8px */
+  border: 1px solid #5dade2; /* Thin border */
+  box-shadow: none; /* No box shadow */
   opacity: 0;
-  transition: transform 0.5s ease, opacity 0.5s ease;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  background: linear-gradient(
+    to bottom,
+    #121827,
+    #010101
+  ); /* Gradient background */
 }
 
-/* Left section: h2 */
+.card.active {
+  display: flex; /* Show only active card */
+  flex-direction: column; /* Changed to column for card-4 with standards-row */
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Card header (h2) */
 .card h2 {
-  flex: 1; /* Takes up 1/3 of the card */
-  background: linear-gradient(to right, black, #5dade2);
+  width: 100%;
+  background: transparent; /* Changed to transparent to show gradient */
   color: white; /* Ensure text is readable on dark background */
   font-size: 1.5rem;
   font-weight: 400;
   margin: 0;
-  padding: 1.5rem;
-  border-radius: 45px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  padding: 1.5rem 1.5rem 0.75rem 1.5rem;
   text-align: center;
 }
 
-/* Right section: p */
+/* Card paragraph (p) */
 .card p {
-  flex: 2; /* Takes up 2/3 of the card */
-  background-color: black;
+  width: 100%;
+  background-color: transparent; /* Changed to transparent to show gradient */
   color: white;
   font-size: 14px;
   line-height: 1.6;
   margin: 0;
-  padding: 1.5rem;
-  border-radius: 0 45px 45px 0; /* Rounded only on the right side */
-  display: flex;
-  align-items: center;
+  padding: 0.75rem 1.5rem 1.5rem 1.5rem;
 }
 
-/* Pagespeed card */
-.card-2 {
-  background-color: #f8f8f8;
-  padding: 1.5rem;
-  border-radius: 45px;
-  box-shadow: 0 0px 0px 0px var(--primary-color);
-  transform-origin: right;
-  transform: scaleX(0);
-  opacity: 0;
-  transition: transform 0.5s ease, opacity 0.5s ease;
+/* Responsive styling for navigation */
+@media (max-width: 768px) {
+  .nav-menu {
+    gap: 1rem;
+  }
+
+  .nav-item {
+    padding: 0.5rem;
+    font-size: 0.9rem;
+  }
 }
 
-.card-2 h2 {
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
-  font-weight: 700;
-  color: #333;
-}
-
-.card-2 p {
-  font-size: 14px;
-  color: #555;
-  line-height: 1.6;
-}
+/* Responsive cards */
 @media (max-width: 500px) {
   .card {
     flex-direction: column; /* Stack h2 and p vertically */
-    border-radius: 45px; /* Maintain rounded corners */
+    border-radius: 8px; /* Updated border radius */
   }
 
   .card h2 {
     font-size: 1.2rem;
-    border-radius: 35px 35px 0 0; /* Rounded top only */
+    border-radius: 8px 8px 0 0; /* Updated border radius */
     width: 100%; /* Ensure full width */
-    background: linear-gradient(
-      to bottom,
-      black,
-      #5dade2
-    ); /* Vertical gradient */
+    background: transparent; /* Allow gradient to show */
   }
 
   .card p {
     font-size: 0.8rem;
     text-align: center;
-    border-radius: 0 0 45px 45px; /* Rounded bottom only */
+    border-radius: 0 0 8px 8px; /* Updated border radius */
     width: 100%; /* Ensure full width */
   }
 }
 
-.card:hover {
-  box-shadow: 0 0px 10px 7px var(--primary-color);
+/* pagespeed scores card */
+.pagespeed-scores {
+  width: 99%; /* Set width to 99% of the container */
+  height: auto; /* Maintain aspect ratio */
+  display: block; /* Ensure the image is a block-level element */
+  margin: 1rem auto; /* Center the image horizontally and add spacing above and below */
 }
 
-/* Add delay to each card */
-.card:nth-child(1) {
-  animation-delay: 0.2s; /* First card */
-}
-
-.card:nth-child(2) {
-  animation-delay: 0.4s; /* Second card */
-}
-
-.card:nth-child(3) {
-  animation-delay: 0.6s; /* Third card */
-}
-
-.card:nth-child(4) {
-  animation-delay: 0.8s; /* Third card */
-}
-
-/* Pagespeed Circles */
-/* Standards Row */
+/* Standards Row - updated to have no background */
 .standards-row {
   display: flex;
   flex-wrap: wrap; /* Allow items to wrap to the next row */
   justify-content: space-around; /* Space items evenly across the row */
   align-items: flex-start; /* Align items at the start of their container */
-  margin-top: 1.5rem; /* Add spacing above the row */
+  width: 100%;
+  margin-top: 0.5rem; /* Reduced top margin */
   text-align: center; /* Center-align text */
   gap: 1rem; /* Space between items */
+  background: transparent; /* Removed background to use card gradient */
+  padding: 0 1rem 1.5rem 1rem;
 }
 
 /* Individual Standard Item */
@@ -847,14 +823,14 @@ html {
   position: relative; /* Ensure positioning for pseudo-elements */
   width: 60px; /* Set circle width */
   height: 60px; /* Set circle height */
-  background-color: #ebf9f0; /* Light green background */
+  background-color: rgba(11, 22, 44, 0.7); /* Darker blue to match theme */
   border-radius: 50%; /* Make it a perfect circle */
   display: flex;
   align-items: center; /* Center number vertically */
   justify-content: center; /* Center number horizontally */
   font-size: 1.2rem; /* Number size */
   font-weight: bold; /* Make the number bold */
-  color: #008800; /* Text color */
+  color: #5dade2; /* Blue to match theme */
   margin-bottom: 0.5rem; /* Space between circle and label */
   overflow: hidden; /* Ensure animation stays within bounds */
 }
@@ -867,12 +843,20 @@ html {
   left: 0;
   width: 100%;
   height: 100%;
-  border: 3px solid #00cc66;
+  border: 3px solid #5dade2; /* Blue to match theme */
   border-radius: 50%;
   box-sizing: border-box;
   clip-path: circle(50% at 50% 50%);
   transform: rotate(0deg);
   animation: rotate-border 4s linear forwards;
+}
+
+/* Label Text */
+.standard-item p {
+  font-size: 0.9rem; /* Label text size */
+  font-weight: 700;
+  color: white; /* Match card text color */
+  margin: 0; /* Remove default margin */
 }
 
 /* Rotate Border Keyframes */
@@ -885,15 +869,7 @@ html {
   }
 }
 
-/* Label Text */
-.standard-item p {
-  font-size: 0.9rem; /* Label text size */
-  font-weight: 700;
-  color: black; /* Black text for labels */
-  margin: 0; /* Remove default margin */
-}
-
-/* Responsive Adjustments for Narrow Viewports */
+/* Responsive Pagespeed Circles */
 @media (max-width: 600px) {
   .standards-row {
     justify-content: center; /* Center the row on smaller screens */
@@ -904,9 +880,17 @@ html {
     flex: 1 1 45%; /* Each item takes up nearly half of the row */
     max-width: none; /* Remove max-width for flexibility */
   }
-}
-/* End Pagespeed Circles */
 
+  .circle-container,
+  .circle {
+    width: 50px;
+    height: 50px;
+  }
+
+  .circle {
+    font-size: 1rem;
+  }
+}
 /* ///////////////////////////////////////////////// */
 /* SERVICES //////////////////////////////////////// */
 .p-mobile {
