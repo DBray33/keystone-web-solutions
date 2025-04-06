@@ -156,6 +156,14 @@ html {
   background-repeat: no-repeat;
 }
 
+.main-content .section .title-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+}
+
 .main-content .section h2 {
   color: white;
   font-family: 'Bebas Neue', sans-serif;
@@ -169,6 +177,7 @@ html {
 
 .main-content .section .title-wrapper .web-dev {
   position: relative;
+  margin: 0 16px 10px;
 }
 
 .main-content .section .title-wrapper .web-dev::before {
@@ -202,7 +211,6 @@ html {
   text-transform: uppercase;
   font-weight: 400;
   font-size: 5rem;
-  margin: 0 16px 10px;
   display: inline-block;
   letter-spacing: 1px;
   text-align: center;
@@ -232,12 +240,7 @@ html {
   }
 }
 
-/* Add a wrapper to handle text centering */
-.main-content .section .title-wrapper {
-  text-align: center;
-  width: 100%;
-}
-
+/* Rest of the existing CSS remains the same */
 .main-content,
 .services-section {
   margin-left: 40%;
@@ -301,7 +304,6 @@ html {
 }
 
 @media (max-width: 935px) {
-  /* Create a dedicated mobile background */
   .mobile-background {
     display: block;
     position: fixed;
@@ -313,19 +315,18 @@ html {
     background-size: cover;
     background-position: top center;
     background-repeat: no-repeat;
-    z-index: -1; /* Ensure it's behind the content */
-    pointer-events: none; /* Allow interaction with content underneath */
+    z-index: -1;
+    pointer-events: none;
   }
 
   .main-content {
     margin-left: 0;
     width: 100%;
-    background: none; /* Remove background from main-content */
+    background: none;
     position: relative;
-    z-index: 1; /* Ensure content is above the background */
+    z-index: 1;
   }
 
-  /* Hide the ::before element on mobile as it's no longer needed */
   .main-content::before {
     display: none;
   }
