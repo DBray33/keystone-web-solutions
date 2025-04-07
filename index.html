@@ -187,13 +187,13 @@
       <!-- Background video fixed sidebar -->
       <div class="sidebar">
         <div class="sidebar-content">
-          <img
+          <!-- <img
             src="https://storage.googleapis.com/background-vid/Logo/bgwb-lines-logo.webp"
             alt="Keystone Logo"
             class="responsive-logo"
             width="185"
             height="240"
-            style="width: 90% !important" />
+            style="width: 90% !important" /> -->
 
           <h1 class="company-name">KEYSTONE</h1>
           <h2 class="subheading">WEB SOLUTIONS</h2>
@@ -363,16 +363,15 @@
           </div>
         </div>
       </div>
-
-      <div class="section-3">
-        <h2 class="our-services">OUR SERVICES</h2>
-        <p class="p-hover">(Hover over a card below for more info)</p>
-        <p class="p-mobile">(Tap a card for more info)</p>
-      </div>
     </section>
 
     <!-- SERVICES SECTION -->
     <section class="services-section" id="services-section">
+      <div class="section-3">
+        <h1 class="services-heading">OUR SERVICES</h1>
+        <p class="p-hover">(Hover over a card below for more info)</p>
+        <p class="p-mobile">(Tap a card for more info)</p>
+      </div>
       <!-- Flipping Service Cards -->
       <div class="services">
         <!-- Service item 1 -->
@@ -1188,9 +1187,10 @@
           .append('svg')
           .attr('width', width)
           .attr('height', height)
+          .attr('viewBox', `0 0 ${width} ${height}`)
           .append('g');
 
-        // Set up scales
+        // Set up scales with minimal padding
         const x = d3
           .scaleLinear()
           .domain([0, data.length - 1])
@@ -1198,8 +1198,15 @@
 
         const y = d3
           .scaleLinear()
-          .domain([0, 100])
-          .range([height * 0.9, height * 0.1]); // Expanded range for visibility
+          .domain([
+            Math.min(
+              0,
+              d3.min(data, (d) => d.y)
+            ),
+            d3.max(data, (d) => d.y),
+          ])
+          .nice() // This helps to remove unnecessary padding
+          .range([height, 0]);
 
         // Create line generator with linear segments
         const line = d3
@@ -1313,11 +1320,20 @@
           // Update SVG size
           d3.select('#line-graph-container svg')
             .attr('width', width)
-            .attr('height', height);
+            .attr('height', height)
+            .attr('viewBox', `0 0 ${width} ${height}`);
 
-          // Update scales
+          // Update scales with minimal padding
           x.domain([0, newData.length - 1]).range([0, width]);
-          y.range([height * 0.9, height * 0.1]);
+          y.domain([
+            Math.min(
+              0,
+              d3.min(newData, (d) => d.y)
+            ),
+            d3.max(newData, (d) => d.y),
+          ])
+            .nice()
+            .range([height, 0]);
 
           // Update line with new data
           svg.select('.chart-line').datum(newData).attr('d', line);

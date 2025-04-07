@@ -504,7 +504,7 @@
 /* End Logo------------------------------------ */
 
 /* Navbar Desktop Menu ------------------------ */
-@media (max-width: 910px) {
+@media (max-width: 935px) {
   .navbar {
     display: none;
   }
@@ -527,7 +527,7 @@
     display: none !important;
   }
 }
-@media (max-width: 910px) {
+@media (max-width: 935px) {
   .hamburger-menu,
   .mobile-menu {
     display: block;
