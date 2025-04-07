@@ -499,7 +499,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // //////////////////////////////////////////////
 // MAIN CONTENT /////////////////////////////////
-// Cards slide in from side when section is scrolled to
+
 document.addEventListener('DOMContentLoaded', function () {
   const navItems = document.querySelectorAll('.nav-item');
   const cards = document.querySelectorAll('.card');

@@ -159,6 +159,11 @@ html {
 
 /* ///////////////////////////////////// */
 /* SIDEBAR ///////////////////////////// */
+@media (max-width: 500px) {
+  .fixed-sidebar {
+    display: none;
+  }
+}
 .sidebar,
 .sidebar::before {
   height: 100%;
@@ -645,39 +650,57 @@ html {
   display: flex;
   flex-direction: column;
   width: 100%;
+  overflow: visible; /* Ensure overflow doesn't cut off the glow */
 }
 
+/* Adjusted navigation to align active indicator perfectly with dividing line */
 .nav-menu {
   display: flex;
   justify-content: center;
   gap: 2rem;
   padding: 1rem;
-  border-top: 1px solid #eee;
+  position: relative; /* Added to position the line properly */
+  padding-top: 1.5rem; /* Increased top padding to make room for the line */
+  overflow: visible; /* Ensure overflow doesn't cut off the glow */
+}
+
+/* Dividing line that spans the entire menu */
+.nav-menu::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #eee;
 }
 
 .nav-item {
   position: relative;
-  padding: 0.5rem 1rem;
+  padding: 0 1rem;
   cursor: pointer;
   font-weight: 600;
-  color: white; /* Changed from #333 to white */
+  color: white;
   transition: color 0.3s ease;
+}
+
+/* Modified active indicator with enhanced glow effect */
+.nav-item::after {
+  content: '';
+  position: absolute;
+  top: -1.5rem; /* Adjusted to match the nav-menu padding-top */
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: #5dade2;
+  box-shadow: 0 0 10px 1px rgba(93, 173, 226, 0.9),
+    0 0 20px 2px rgba(93, 173, 226, 0.7), 0 0 30px 3px rgba(93, 173, 226, 0.5); /* Triple-layered glow for extended reach */
+  transition: width 0.3s ease, box-shadow 0.3s ease;
+  z-index: 1; /* Ensure the glow appears above other elements */
 }
 
 .nav-item:hover {
   color: #5dade2;
-}
-
-/* Active indicator - underline */
-.nav-item::after {
-  content: '';
-  position: absolute;
-  bottom: -2px;
-  left: 0;
-  width: 0;
-  height: 3px;
-  background-color: #5dade2;
-  transition: width 0.3s ease;
 }
 
 .nav-item.active {
@@ -687,7 +710,6 @@ html {
 .nav-item.active::after {
   width: 100%;
 }
-
 /* Main Content Cards */
 .section-cards {
   display: flex;
@@ -755,6 +777,7 @@ html {
   .nav-item {
     padding: 0.5rem;
     font-size: 0.9rem;
+    text-align: center;
   }
 }
 
