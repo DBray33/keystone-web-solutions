@@ -194,7 +194,7 @@
         padding: 5px 8px;
         border-radius: 4px;
         font-weight: 400;
-        font-size: 16px !important;
+        font-size: 18px !important;
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
         z-index: 1000;
         display: none;
@@ -206,7 +206,7 @@
           text-decoration: none;
           display: flex;
           align-items: center;
-          font-size: 16px !important;
+          font-size: 18px !important;
         ">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -317,7 +317,13 @@
           <!-- Value Proposition -->
           <div class="card active" id="nav-card-1">
             <h2>Fast-Loading Websites for Businesses</h2>
-
+            <p>
+              Navigating the digital landscape shouldn't be complicated or
+              expensive. We specialize in crafting user-friendly websites with
+              lightning-fast performance and flawless responsiveness. Let us
+              streamline your online presence, freeing you to focus on the
+              aspects of your business that matter most.
+            </p>
             <!-- Site Health Gauges -->
             <div class="site-health-container">
               <h3 class="meter-title">Site Health (via Semrush)</h3>
@@ -328,18 +334,10 @@
                 </div>
                 <div class="gauge-item">
                   <div id="competitor-chart" class="gauge-chart"></div>
-                  <div class="gauge-label">Top 10% Sites</div>
+                  <div class="gauge-label">Top 10% of Semrush Sites</div>
                 </div>
               </div>
             </div>
-
-            <p>
-              Navigating the digital landscape shouldn't be complicated or
-              expensive. We specialize in crafting user-friendly websites with
-              lightning-fast performance and flawless responsiveness. Let us
-              streamline your online presence, freeing you to focus on the
-              aspects of your business that matter most.
-            </p>
           </div>
 
           <div class="card" id="nav-card-2">
@@ -427,7 +425,7 @@
       <style>
         /* Gauge Styles */
         .site-health-container {
-          margin: 25px 0;
+          margin: 25px 0 0;
           text-align: center;
           width: 100%;
         }
@@ -466,18 +464,19 @@
 
         .gauge-label {
           position: absolute;
-          bottom: 5px; /* Position near the bottom of the gauge */
+          bottom: 5px;
           width: 100%;
           text-align: center;
           font-size: 14px;
           color: #aaa;
-          margin-top: 0; /* Remove top margin */
+          margin-top: 0;
+          white-space: nowrap; /* Prevents text from wrapping */
         }
 
         /* Responsive styles - adjust size but maintain layout */
         @media (max-width: 600px) {
           .gauges-wrapper {
-            gap: 15px; /* Reduce gap on smaller screens */
+            gap: 10px; /* Reduce gap on smaller screens */
           }
 
           .gauge-chart {

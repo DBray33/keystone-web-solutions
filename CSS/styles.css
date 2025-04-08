@@ -502,29 +502,6 @@ html {
 .main-content .section .title-wrapper .web-dev {
   position: relative;
   margin: 0 16px 10px;
-}
-
-.main-content .section .title-wrapper .web-dev::before {
-  content: attr(data-text);
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;
-  color: white;
-  font-family: 'Bebas Neue', sans-serif;
-  text-transform: uppercase;
-  font-weight: 400;
-  font-size: 5rem;
-  margin: 0 16px 10px;
-  display: inline-block;
-  letter-spacing: 1px;
-  text-align: center;
-  width: 100%;
-  opacity: 0.3;
-  transform: translate(1px, 1px);
-}
-
-.main-content .section .title-wrapper .web-dev {
   background: linear-gradient(to right, #5dade2, #daf19c, #bf77f6);
   background-size: 400% auto;
   -webkit-background-clip: text;
@@ -541,6 +518,8 @@ html {
   width: 100%;
   position: relative;
   animation: float 3s ease-in-out infinite, slide 5s linear infinite;
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.15), 2px 2px 0 rgba(0, 0, 0, 0.1),
+    3px 3px 0 rgba(0, 0, 0, 0.05);
 }
 
 @keyframes slide {
