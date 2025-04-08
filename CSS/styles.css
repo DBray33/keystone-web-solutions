@@ -728,6 +728,16 @@ html {
   text-align: left; /* Align text inside cards to the left */
 }
 
+/* Shimmer animation keyframes */
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
 /* card styles */
 /* Card base styles with navigation show/hide */
 .card {
@@ -744,6 +754,26 @@ html {
     #121827,
     #010101
   ); /* Gradient background */
+  position: relative; /* Required for absolute positioning of shimmer */
+}
+
+/* Add this shimmer pseudo-element to each card */
+.card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.05) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: translateX(-100%);
+  animation: shimmer 3s infinite;
+  pointer-events: none; /* Ensures clicks pass through to the card */
 }
 
 .card.active {
@@ -751,6 +781,15 @@ html {
   flex-direction: column; /* Changed to column for card-4 with standards-row */
   opacity: 1;
   transform: translateY(0);
+}
+
+/* Ensure content stays above the shimmer effect */
+.card h2,
+.card p,
+.card .site-health-container,
+.card .standards-row {
+  position: relative;
+  z-index: 1;
 }
 
 /* Card header (h2) */
