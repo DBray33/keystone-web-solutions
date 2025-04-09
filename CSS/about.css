@@ -1040,7 +1040,7 @@ body {
 }
 
 .partner-card {
-  background: #d3d3d3;
+  background: darkgray;
   border-radius: 12px;
   padding: 20px;
   width: 300px;
@@ -1050,7 +1050,7 @@ body {
   align-items: center;
   box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
   text-decoration: none;
-  color: inherit;
+  color: black;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
@@ -1077,5 +1077,5 @@ body {
 
 .partner-description {
   font-size: 1rem;
-  color: #333;
+  color: black;
 }
