@@ -147,8 +147,7 @@ html {
   font-display: swap;
 }
 
-.more-info-button,
-.service-item-front h3 {
+.more-info-button {
   text-transform: uppercase;
 }
 
@@ -1056,7 +1055,7 @@ html {
   transform-style: preserve-3d;
   transition: transform 0.5s;
 }
-.service-item-front h3 {
+.service-item-front h2 {
   font-size: 1rem;
   font-weight: 700;
   letter-spacing: 1px;
@@ -1098,7 +1097,7 @@ html {
     line-height: 1.4;
     margin-top: 1rem;
   }
-  .services-section .service-item h3 {
+  .services-section .service-item h2 {
     font-size: 0.8rem;
   }
   .main-content,
