@@ -411,7 +411,7 @@ html {
   position: relative;
   z-index: 1;
   background-color: black;
-  background-image: url('https://storage.googleapis.com/background-vid/Main%20Content/grid-spotlight-bg.webp');
+  background-image: url('https://storage.googleapis.com/background-vid/Main%20Content/grid-spotlight-bg%20copy.webp');
   background-size: cover;
   background-position: top center;
   background-repeat: no-repeat;
@@ -427,8 +427,7 @@ html {
   width: 100%; /* Changed from 60% to 100% */
   height: 100%;
   z-index: -1;
-  background-color: black;
-  background-image: url('https://storage.googleapis.com/background-vid/Main%20Content/grid-spotlight-bg.webp');
+  background-image: url('https://storage.googleapis.com/background-vid/Main%20Content/grid-spotlight-bg%20copy.webp');
   background-size: cover;
   background-position: top center;
   background-repeat: no-repeat;
@@ -605,7 +604,7 @@ html {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('https://storage.googleapis.com/background-vid/Main%20Content/grid-spotlight-bg.webp');
+    background-image: url('https://storage.googleapis.com/background-vid/Main%20Content/grid-spotlight-bg%20copy.webp');
     background-size: cover;
     background-position: top center;
     background-repeat: no-repeat;
@@ -1149,7 +1148,7 @@ html {
   position: relative;
   z-index: 3;
   width: 100%;
-  overflow: visible; /* Changed from hidden to allow overflow during animation */
+  overflow: visible; /* Keep this as visible to allow the full 3D effect */
   background: transparent !important;
 }
 
@@ -1160,7 +1159,7 @@ html {
   flex-wrap: wrap;
   justify-content: center; /* Center service cards horizontally */
   margin: 0 auto 3rem; /* Center the entire services container */
-  overflow: visible; /* Allow full visibility of card flip */
+  overflow: visible; /* Keep this as visible to allow the full 3D effect */
 }
 
 @media (max-width: 700px) {
@@ -1169,17 +1168,61 @@ html {
   }
 }
 
+/* The key part that fixes the border radius issue */
+.service-item {
+  flex: 1 1 calc(50% - 20px);
+  perspective: 1000px;
+  box-sizing: border-box;
+  height: 40vh;
+  position: relative;
+  cursor: pointer;
+  max-width: 550px; /* Limit maximum width of each service item */
+  margin: 10px;
+  border-radius: 12px;
+  overflow: visible; /* This must remain visible for the 3D effect */
+  box-shadow: 0 0px 20px rgba(0, 0, 0, 0.9); /* Add shadow to the cards */
+}
+
+.service-item-inner {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform-style: preserve-3d;
+  transition: transform 0.5s;
+}
+
 .service-item-back,
 .service-item-front {
   position: absolute;
   width: 100%;
-  display: flex;
-  backface-visibility: hidden;
   height: 100%;
+  display: flex;
+  -webkit-backface-visibility: hidden; /* For Safari */
+  backface-visibility: hidden;
   color: #fff;
   text-align: center;
   box-sizing: border-box;
-  border-radius: 12px; /* Adding border radius to front and back faces */
+  border-radius: 12px; /* Keep the border radius */
+  overflow: hidden; /* This is crucial for hiding the corners */
+  background-clip: padding-box; /* This helps prevent edge bleed */
+  transform: translateZ(
+    0
+  ); /* Force GPU acceleration and fixes edge rendering */
+  border: 2px solid #5dade2; /* Add the requested border color */
+}
+
+/* Fix for the background images */
+.service-item-back::before,
+.service-item-front::before {
+  content: '';
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  position: absolute;
+  left: 0;
+  border-radius: 12px; /* Add border radius to pseudo-elements */
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.1); /* Adds a subtle internal border to mask edge artifacts */
 }
 
 .service-item-front {
@@ -1198,6 +1241,10 @@ html {
   transform: rotateY(180deg); /* Ensure back face is properly positioned */
 }
 
+.service-item-inner.rotate {
+  transform: rotateY(180deg); /* Properly rotate the inner container */
+}
+
 .service-item-inner.rotate .service-item-front {
   opacity: 0;
   pointer-events: none;
@@ -1213,19 +1260,6 @@ html {
   z-index: 2;
 }
 
-.service-item {
-  flex: 1 1 calc(50% - 20px);
-  perspective: 1000px; /* Modified perspective for better 3D effect */
-  box-sizing: border-box;
-  height: 40vh;
-  position: relative;
-  cursor: pointer;
-  max-width: 550px; /* Limit maximum width of each service item */
-  margin: 10px;
-  border-radius: 12px; /* Adding border radius to service item */
-  overflow: visible; /* Changed from hidden to allow the full flip animation */
-}
-
 @media (max-width: 700px) {
   .service-item {
     margin: 0;
@@ -1233,21 +1267,11 @@ html {
   }
 
   .service-item-back,
-  .service-item-front {
-    border-radius: 0; /* Remove border radius from front and back faces at 700px */
+  .service-item-front,
+  .service-item-back::before,
+  .service-item-front::before {
+    border-radius: 0; /* Remove border radius from all elements at 700px */
   }
-}
-
-.service-item-inner {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  transform-style: preserve-3d;
-  transition: transform 0.5s;
-}
-
-.service-item-inner.rotate {
-  transform: rotateY(180deg); /* Properly rotate the inner container */
 }
 
 .service-item-front h2 {
@@ -1279,6 +1303,12 @@ html {
   z-index: 2;
   padding: 0 1rem 1rem;
 }
+
+.service-item-back::before {
+  background: rgba(0, 0, 0, 0.75);
+}
+
+/* Keep all the rest of your media queries and background image styles */
 @media (max-width: 1136px) and (min-width: 936px) {
   .services-section .service-item .service-item-back p {
     font-size: 0.9rem;
@@ -1387,25 +1417,15 @@ html {
     margin-bottom: 1rem;
   }
 }
-.service-item-back::before,
-.service-item-front::before {
-  content: '';
-  top: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
-  position: absolute;
-  left: 0;
-}
-.service-item-back::before {
-  background: rgba(0, 0, 0, 0.75);
-}
+
 .service-item:first-child .service-item-back,
 .service-item:first-child .service-item-front {
   background-image: url('https://storage.googleapis.com/background-vid/services-design.webp?v=1');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  background-origin: border-box; /* Ensures the background extends to the edge of the border */
+  background-clip: border-box; /* Ensures the background extends to the edge of the border */
 }
 .service-item:nth-child(2) .service-item-back,
 .service-item:nth-child(2) .service-item-front {
@@ -1413,6 +1433,8 @@ html {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  background-origin: border-box;
+  background-clip: border-box;
 }
 .service-item:nth-child(3) .service-item-back,
 .service-item:nth-child(3) .service-item-front {
@@ -1420,6 +1442,8 @@ html {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  background-origin: border-box;
+  background-clip: border-box;
 }
 .service-item:nth-child(4) .service-item-back,
 .service-item:nth-child(4) .service-item-front {
@@ -1427,6 +1451,8 @@ html {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  background-origin: border-box;
+  background-clip: border-box;
 }
 .service-item:nth-child(5) .service-item-back,
 .service-item:nth-child(5) .service-item-front {
@@ -1434,6 +1460,8 @@ html {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  background-origin: border-box;
+  background-clip: border-box;
 }
 .service-item:nth-child(6) .service-item-back,
 .service-item:nth-child(6) .service-item-front {
@@ -1441,6 +1469,8 @@ html {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  background-origin: border-box;
+  background-clip: border-box;
 }
 .more-info-button {
   display: inline-block;
