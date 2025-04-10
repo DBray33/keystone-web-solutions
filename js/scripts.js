@@ -38,12 +38,15 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 
-  // Initialize the Intersection Observer
+  // Initialize the Intersection Observer with more sensitive settings
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          entry.target.classList.add('animate');
+          // Add animate class immediately with no delay
+          setTimeout(() => {
+            entry.target.classList.add('animate');
+          }, 10); // Tiny timeout to ensure proper execution
           // Once animated, no need to observe it anymore
           observer.unobserve(entry.target);
         }
@@ -51,8 +54,8 @@ document.addEventListener('DOMContentLoaded', function () {
     },
     {
       root: null, // Use the viewport as the root
-      threshold: 0.2, // Trigger when 20% of the element is visible
-      rootMargin: '-50px', // Offset when the animation triggers
+      threshold: 0.1, // Reduced from 0.2 - trigger when only 10% is visible
+      rootMargin: '-20px', // Changed from -50px for earlier triggering
     }
   );
 

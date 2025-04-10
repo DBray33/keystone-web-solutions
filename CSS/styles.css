@@ -1492,23 +1492,24 @@ html {
   color: #000;
 }
 
-/* Animation styles for service items */
-
+/* Animation styles for service items - UPDATED FOR FASTER ANIMATIONS */
 /* Base styles for the slide animations */
 .service-item {
   opacity: 0;
-  transition: transform 0.8s ease-out, opacity 0.8s ease-out;
+  transition: transform 0.5s ease-out, opacity 0.5s ease-out; /* Changed from 0.8s to 0.5s */
   will-change: transform, opacity;
 }
 
 /* Slide from left animation (1st, 3rd, 5th) */
 .slide-from-left {
-  transform: translateX(-100px);
+  transform: translateX(
+    -70px
+  ); /* Reduced from -100px for faster visual effect */
 }
 
 /* Slide from right animation (2nd, 4th, 6th) */
 .slide-from-right {
-  transform: translateX(100px);
+  transform: translateX(70px); /* Reduced from 100px for faster visual effect */
 }
 
 /* Animation triggered by Intersection Observer */
@@ -1517,29 +1518,29 @@ html {
   transform: translateX(0);
 }
 
-/* Add staggered delay based on item position */
+/* Reduced staggered delay based on item position */
 .service-item:nth-child(1) {
-  transition-delay: 0.1s;
+  transition-delay: 0.05s; /* Changed from 0.1s */
 }
 
 .service-item:nth-child(2) {
-  transition-delay: 0.2s;
+  transition-delay: 0.1s; /* Changed from 0.2s */
 }
 
 .service-item:nth-child(3) {
-  transition-delay: 0.3s;
+  transition-delay: 0.15s; /* Changed from 0.3s */
 }
 
 .service-item:nth-child(4) {
-  transition-delay: 0.4s;
+  transition-delay: 0.2s; /* Changed from 0.4s */
 }
 
 .service-item:nth-child(5) {
-  transition-delay: 0.5s;
+  transition-delay: 0.25s; /* Changed from 0.5s */
 }
 
 .service-item:nth-child(6) {
-  transition-delay: 0.6s;
+  transition-delay: 0.3s; /* Changed from 0.6s */
 }
 
 /* Disable animations for users who prefer reduced motion */
