@@ -1,5 +1,5 @@
 // ----------------------------------------
-// Service item hover effect for touch devices
+// Service item hover effect for touch devices and scroll animations
 // ----------------------------------------
 document.addEventListener('DOMContentLoaded', function () {
   const serviceItems = document.querySelectorAll('.service-item');
@@ -24,6 +24,42 @@ document.addEventListener('DOMContentLoaded', function () {
     },
     { passive: true }
   );
+
+  // ----------------------------------------
+  // Add slide-in animation classes to service items
+  // ----------------------------------------
+  serviceItems.forEach((item, index) => {
+    if (index % 2 === 0) {
+      // 1st, 3rd, 5th (index 0, 2, 4)
+      item.classList.add('slide-from-left');
+    } else {
+      // 2nd, 4th, 6th (index 1, 3, 5)
+      item.classList.add('slide-from-right');
+    }
+  });
+
+  // Initialize the Intersection Observer
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate');
+          // Once animated, no need to observe it anymore
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    {
+      root: null, // Use the viewport as the root
+      threshold: 0.2, // Trigger when 20% of the element is visible
+      rootMargin: '-50px', // Offset when the animation triggers
+    }
+  );
+
+  // Observe all service items
+  serviceItems.forEach((item) => {
+    observer.observe(item);
+  });
 
   // ----------------------------------------
   // Handle scroll events (example: log scroll events)

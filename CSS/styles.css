@@ -411,7 +411,7 @@ html {
   position: relative;
   z-index: 1;
   background-color: black;
-  background-image: url('https://storage.googleapis.com/background-vid/Main%20Content/grid-spotlight-bg%20copy.webp');
+  background-image: url('https://storage.googleapis.com/background-vid/Main%20Content/gridbg3.webp');
   background-size: cover;
   background-position: top center;
   background-repeat: no-repeat;
@@ -427,7 +427,7 @@ html {
   width: 100%; /* Changed from 60% to 100% */
   height: 100%;
   z-index: -1;
-  background-image: url('https://storage.googleapis.com/background-vid/Main%20Content/grid-spotlight-bg%20copy.webp');
+  background-image: url('https://storage.googleapis.com/background-vid/Main%20Content/gridbg3.webp');
   background-size: cover;
   background-position: top center;
   background-repeat: no-repeat;
@@ -604,7 +604,7 @@ html {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('https://storage.googleapis.com/background-vid/Main%20Content/grid-spotlight-bg%20copy.webp');
+    background-image: url('https://storage.googleapis.com/background-vid/Main%20Content/gridbg3.webp');
     background-size: cover;
     background-position: top center;
     background-repeat: no-repeat;
@@ -1144,12 +1144,12 @@ html {
 }
 
 .services-section {
-  /* margin-top: -5rem; */
   position: relative;
   z-index: 3;
   width: 100%;
   overflow: visible; /* Keep this as visible to allow the full 3D effect */
   background: transparent !important;
+  overflow-x: hidden;
 }
 
 .services {
@@ -1180,7 +1180,7 @@ html {
   margin: 10px;
   border-radius: 12px;
   overflow: visible; /* This must remain visible for the 3D effect */
-  box-shadow: 0 0px 20px rgba(0, 0, 0, 0.9); /* Add shadow to the cards */
+  /* Removed box-shadow from here */
 }
 
 .service-item-inner {
@@ -1209,6 +1209,7 @@ html {
     0
   ); /* Force GPU acceleration and fixes edge rendering */
   border: 2px solid #5dade2; /* Add the requested border color */
+  box-shadow: 0 0px 20px rgba(0, 0, 0, 0.9); /* Moved shadow here */
 }
 
 /* Fix for the background images */
@@ -1230,7 +1231,7 @@ html {
   align-items: center;
   padding: 20px;
   flex-direction: column;
-  z-index: 999;
+  z-index: 2; /* Higher z-index when visible */
 }
 
 .service-item-back {
@@ -1248,6 +1249,7 @@ html {
 .service-item-inner.rotate .service-item-front {
   opacity: 0;
   pointer-events: none;
+  z-index: 1; /* Lower z-index when flipped */
 }
 
 .service-icon {
@@ -1488,6 +1490,72 @@ html {
 .more-info-button:hover {
   background-color: #fff;
   color: #000;
+}
+
+/* Animation styles for service items */
+
+/* Base styles for the slide animations */
+.service-item {
+  opacity: 0;
+  transition: transform 0.8s ease-out, opacity 0.8s ease-out;
+  will-change: transform, opacity;
+}
+
+/* Slide from left animation (1st, 3rd, 5th) */
+.slide-from-left {
+  transform: translateX(-100px);
+}
+
+/* Slide from right animation (2nd, 4th, 6th) */
+.slide-from-right {
+  transform: translateX(100px);
+}
+
+/* Animation triggered by Intersection Observer */
+.service-item.animate {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Add staggered delay based on item position */
+.service-item:nth-child(1) {
+  transition-delay: 0.1s;
+}
+
+.service-item:nth-child(2) {
+  transition-delay: 0.2s;
+}
+
+.service-item:nth-child(3) {
+  transition-delay: 0.3s;
+}
+
+.service-item:nth-child(4) {
+  transition-delay: 0.4s;
+}
+
+.service-item:nth-child(5) {
+  transition-delay: 0.5s;
+}
+
+.service-item:nth-child(6) {
+  transition-delay: 0.6s;
+}
+
+/* Disable animations for users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .service-item {
+    opacity: 1;
+    transform: translateX(0);
+    transition: none;
+  }
+}
+
+/* Ensure animations don't interfere with card flipping */
+.service-item.animate .service-item-inner,
+.service-item.animate .service-item-back,
+.service-item.animate .service-item-front {
+  transition: transform 0.5s;
 }
 
 /* -------------------------------- */
