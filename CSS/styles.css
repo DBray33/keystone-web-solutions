@@ -4,23 +4,29 @@ html {
   padding: 0;
   margin: 0;
 }
+
 * {
   box-sizing: border-box;
 }
+
 body {
   font-family: 'Exo', sans-serif;
   font-display: swap; /* Ensures smoother font loading */
   overflow-x: hidden;
 }
+
 body,
 html {
   font-family: 'Exo', sans-serif;
   overscroll-behavior: none;
+  height: 100%;
 }
+
 html {
   scroll-behavior: smooth;
-  /* overflow-x: hidden; */
+  scroll-padding-top: 130px; /* Matches the fixed header height */
 }
+
 :root {
   --headline-font-family: 'Bebas Neue', sans-serif;
   --headline-font-size: 5rem;
@@ -29,22 +35,15 @@ html {
   --primary-color: #5dade2;
   --secondary-color: #d3d3d3;
 }
+
 input::placeholder,
 textarea::placeholder {
   font-size: 14px;
 }
-.container,
-body,
-html {
-  height: 100%;
-}
 
 .container {
   display: flex;
-}
-
-html {
-  scroll-padding-top: 130px; /* Matches the fixed header height */
+  height: 100%;
 }
 
 /* BUTTON STYLING */
@@ -402,35 +401,31 @@ html {
 .phone-number a:hover::before {
   animation: 0.3s forwards showBackground;
 }
-/* MAIN CONTENT */
 .main-content {
-  width: 100%; /* Changed from 60% to 100% */
+  --scroll-offset: 0;
+  width: 100%;
   padding: 0;
   overflow-x: hidden;
   min-height: 100vh;
   position: relative;
   z-index: 1;
   background-color: black;
-  background-image: url('https://storage.googleapis.com/background-vid/Main%20Content/gridbg3.webp');
-  background-size: cover;
-  background-position: top center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  overflow-x: hidden;
 }
 
 .main-content::before {
   content: '';
   position: fixed;
   top: 0;
-  left: 0; /* Changed from 40% to 0 */
-  width: 100%; /* Changed from 60% to 100% */
+  left: 0;
+  width: 100%;
   height: 100%;
   z-index: -1;
   background-image: url('https://storage.googleapis.com/background-vid/Main%20Content/gridbg3.webp');
   background-size: cover;
   background-position: top center;
   background-repeat: no-repeat;
+  transform: translateY(calc(var(--scroll-offset) * 0.4));
+  will-change: transform;
 }
 
 .section-container {
@@ -1568,16 +1563,26 @@ html {
   text-align: center;
   padding: 2rem;
   margin: 0 auto;
-  background-color: #fff;
+  background-color: #000; /* Changed from #fff to #000 (black) */
   overflow: hidden;
   z-index: 2;
   /* Lower than services-section but higher than main-content */
 }
 
+.journey-section h1 {
+  color: white;
+}
+
+@media (max-width: 619px) {
+  .journey-section h1 {
+    font-size: 1rem; /* Adjusted for smaller screens */
+  }
+}
+
 .journey-divider {
   width: 10%;
   height: 2px;
-  background: black; /* Light gray */
+  background: #fff; /* Changed from black to white */
   border: none;
   margin: 1rem auto;
 }
@@ -1593,6 +1598,7 @@ label {
   max-width: 1000px;
   margin: 1rem auto;
 }
+
 .journey-grid {
   margin: 0 auto;
   max-width: 1200px;
@@ -1605,8 +1611,8 @@ label {
 .journey-heading {
   font-size: 2rem;
   margin-bottom: 1rem;
-  color: #000;
-  transform: translateX(100px); /* Moves in like card-2 */
+  color: white;
+  transform: translateX(100px);
   opacity: 0;
   transition: transform 0.6s ease-out, opacity 0.6s ease-out;
 }
@@ -1615,7 +1621,7 @@ label {
 .journey-subheading {
   font-size: 1.2rem;
   margin-bottom: 1rem;
-  color: #555;
+  color: #fff; /* Changed from #555 to #bbb (lighter gray) */
   transform: translateX(-100px); /* Moves in like card-1 */
   opacity: 0;
   transition: transform 0.6s ease-out, opacity 0.6s ease-out;
@@ -1625,7 +1631,7 @@ label {
 .journey-description {
   font-size: 1rem;
   line-height: 1.6;
-  color: black;
+  color: #ddd; /* Changed from black to #ddd (light gray) */
   margin-bottom: 2rem;
   transform: translateX(100px); /* Moves in like card-2 */
   opacity: 0;
@@ -1634,12 +1640,13 @@ label {
 
 /* Cards */
 .journey-card {
-  background-color: var(--secondary-color);
+  background-color: #222; /* Changed from var(--secondary-color) to #222 (dark gray) */
   padding: 1.5rem;
-  border: 1px solid #ddd;
+  border: 1px solid #444; /* Changed from #ddd to #444 (darker gray) */
   border-radius: 8px;
   transition: transform 0.3s, box-shadow 0.3s;
 }
+
 .card-1,
 .card-2,
 .journey-heading,
@@ -1652,6 +1659,7 @@ label {
 .card-1 {
   transform: translateX(-100px);
 }
+
 .card-1.visible,
 .journey-subheading.visible {
   opacity: 1;
@@ -1662,6 +1670,7 @@ label {
 .card-2 {
   transform: translateX(100px);
 }
+
 .card-2.visible,
 .journey-heading.visible,
 .journey-description.visible {
@@ -1671,24 +1680,25 @@ label {
 
 .card-title {
   font-size: 1.25rem;
-  color: black;
+  color: #eee; /* Changed from black to #eee (very light gray) */
 }
+
 .card-description {
   font-size: 1rem;
-  color: black;
+  color: #ccc; /* Changed from black to #ccc (light gray) */
 }
 
 .page-link {
-  color: inherit;
+  color: #5dade2; /* Changed from inherit to #5dade2 (light blue) */
   text-decoration: underline;
   font-weight: 700;
   transition: color 0.3s;
 }
+
 .page-link:hover {
-  color: #5dade2;
+  color: #8bc4e9; /* Changed from #5dade2 to a lighter blue */
   text-decoration: none;
-  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
-    1px 1px 0 #000;
+  text-shadow: none; /* Removed text shadow as it's less needed on dark background */
 }
 /* /////////////////////////////////////// */
 /* PRICING SECTION /////////////////////// */
