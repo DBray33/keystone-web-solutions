@@ -5,9 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Stay updated with the latest in web design, SEO, and digital marketing. Explore expert tips, industry insights, and strategies to improve your website and online presence." />
+      content="Discover why custom-coded web design outperforms WordPress, Wix, and Squarespace. Get better performance, flexibility, and SEO with a fully tailored website." />
+
+    <title>Why Choose Custom-Coded Web Design? | Benefits & Advantages</title>
+
+    <link rel="canonical" href="https://keystonewebsolutions.com/blogs/blog1" />
 
     <!-- CSS Files -->
+    <link rel="stylesheet" href="../css/blogs.css" />
     <link rel="stylesheet" href="../css/about.css" />
     <link rel="stylesheet" href="../css/services.css" />
     <link rel="stylesheet" href="../css/styles.css" />
@@ -40,8 +45,6 @@
         rel="stylesheet" />
     </noscript>
 
-    <title>Web Development & SEO Blog | Keystone Web Solutions</title>
-
     <!-- Standard Favicon -->
     <link
       rel="icon"
@@ -69,7 +72,7 @@
   </head>
 
   <!-- BODY -->
-  <body>
+  <body class="blog-page">
     <!-- BACK TO TOP BUTTON -->
     <button id="backToTop" class="back-to-top" onclick="scrollToTop()">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
@@ -80,7 +83,7 @@
       </svg>
     </button>
 
-    <!-- NAVBAR / MOBILE MENU PLACEHOLDER (dynamically loaded via Javascript) -->
+    <!-- Dynamically loaded Nav/mobile menu -->
     <div id="navbar-container"></div>
 
     <!-- PROGRESS SCROLL BAR -->
@@ -88,193 +91,96 @@
       <div class="progress-bar" id="progressBar"></div>
     </div>
 
-    <!-- POPUP -->
-    <div class="popup" id="popup">
-      <p style="color: black">
-        Before you leave, be sure to submit your info for a free instant quote!
-      </p>
-      <form
-        id="info-form"
-        action="https://formspree.io/f/xbldynko"
-        method="POST">
-        <!-- Name -->
-        <label for="name">Name:</label>
-        <input
-          type="text"
-          id="name"
-          name="name"
-          placeholder="Your Name"
-          required />
-
-        <!-- Email -->
-        <label for="email">Email:</label>
-        <input
-          type="email"
-          id="email"
-          name="email"
-          placeholder="Your Email"
-          required />
-
-        <!-- Phone Number -->
-        <label for="phone">Phone Number:</label>
-        <input
-          type="tel"
-          id="phone"
-          name="phone"
-          placeholder="Your Phone Number"
-          required />
-
-        <!-- Message -->
-        <label for="message">Message:</label>
-        <textarea
-          id="message"
-          name="message"
-          placeholder="Your Message"
-          rows="4"
-          required></textarea>
-
-        <!-- Submit Button -->
-        <button type="submit">GET QUOTE</button>
-      </form>
-      <button id="close-popup">Close</button>
-    </div>
-
     <div class="page-content">
       <!-- BLOG PAGE -->
       <section class="blog">
         <div class="container">
-          <header class="section-header">
-            <h1>BLOG</h1>
-            <p>
-              Bringing Your Vision to Life: Expert Insights and Creative
-              Solutions for Your Digital Journey.
-            </p>
-          </header>
-
-          <div class="blog-content-grid">
-            <!-- Blog Post 1 -->
-            <a
-              href="../blogs/custom-coded-website-benefits"
-              class="blog-preview-link">
-              <article class="blog-preview">
-                <img
-                  src="https://storage.googleapis.com/background-vid/blog%20photos/blog1.webp"
-                  alt="Code in text editor" />
-                <div class="blog-content">
-                  <h2>Why Choose Custom-Coded Web Design?</h2>
-                  <p class="date">Published: January 20, 2025</p>
-                  <p class="description">
-                    Discover the freedom, performance, and security benefits of
-                    custom-coded websites, designed to stand out and deliver
-                    unmatched SEO potential.
-                  </p>
-                </div>
-              </article>
-            </a>
-
-            <!-- Blog Post 2 -->
-            <a
-              href="../blogs/cms-platform-limitations-performance-security"
-              class="blog-preview-link">
-              <article class="blog-preview">
-                <img
-                  src="https://storage.googleapis.com/background-vid/blog%20photos/blog2.webp?v=2"
-                  alt="Thumbs down icon highlighting CMS platform issues" />
-                <div class="blog-content">
-                  <h2>The Limitations of CMS Platforms</h2>
-                  <p class="date">Published: January 18, 2025</p>
-                  <p class="description">
-                    Learn how Content Management Systems (CMS) like WordPress
-                    and Wix fall short in delivering the customization,
-                    performance, and security that your business needs.
-                  </p>
-                </div>
-              </article>
-            </a>
-
-            <!-- Blog Post 3 -->
-            <a
-              href="../blogs/web-development-trends-2024-predictions-2025"
-              class="blog-preview-link">
-              <article class="blog-preview">
-                <img
-                  src="https://storage.googleapis.com/background-vid/blog%20photos/blog3.webp"
-                  alt="Robot and human hand touching, representing AI in web development trends" />
-                <div class="blog-content">
-                  <h2>2024 Web Development Trends and Predictions for 2025</h2>
-                  <p class="date">Published: January 15, 2025</p>
-                  <p class="description">
-                    A look back at 2024’s top web development trends, including
-                    AI, sustainability, and immersive experiences, and
-                    predictions for what’s ahead in 2025.
-                  </p>
-                </div>
-              </article>
-            </a>
-
-            <!-- Blog Post 4 -->
-            <a
-              href="../blogs/small-business-website-design-principles"
-              class="blog-preview-link">
-              <article class="blog-preview">
-                <img
-                  src="https://storage.googleapis.com/background-vid/blog%20photos/blog4.webp"
-                  alt="Small busines restaurant" />
-                <div class="blog-content">
-                  <h2>
-                    Website Principles and Styling Keys for Small Businesses
-                  </h2>
-                  <p class="date">Published: January 15, 2025</p>
-                  <p class="description">
-                    Create effective websites for small businesses by aligning
-                    design, functionality, and styling with industry-specific
-                    needs.
-                  </p>
-                </div>
-              </article>
-            </a>
-
-            <!-- Blog Post 5 -->
-            <a
-              href="../blogs/responsive-design-benefits-modern-websites"
-              class="blog-preview-link">
-              <article class="blog-preview">
-                <img
-                  src="https://storage.googleapis.com/background-vid/blog%20photos/blog5.webp"
-                  alt="Multiple different devices with different screen sizes" />
-                <div class="blog-content">
-                  <h2>The Role of Responsive Design in Modern Websites</h2>
-                  <p class="date">Published: January 15, 2025</p>
-                  <p class="description">
-                    Discover how responsive design enhances accessibility, user
-                    engagement, and future-proofs your website for all devices.
-                  </p>
-                </div>
-              </article>
-            </a>
-
-            <!-- Blog Post 6 -->
-            <a
-              href="../blogs/professional-web-designer-business-benefits"
-              class="blog-preview-link">
-              <article class="blog-preview">
-                <img
-                  src="https://storage.googleapis.com/background-vid/blog%20photos/blog6.webp"
-                  alt="hand reaching out for handshake to make a deal" />
-                <div class="blog-content">
-                  <h2>
-                    The Benefits of Partnering with a Professional Web Designer
-                  </h2>
-                  <p class="date">Published: January 22, 2025</p>
-                  <p class="description">
-                    Discover how working with a professional web designer saves
-                    time, enhances strategy, and drives long-term growth for
-                    your business.
-                  </p>
-                </div>
-              </article>
-            </a>
+          <div class="back-to-blog">
+            <a href="../about/blog" class="back-to-blog-button"
+              >&larr; Back to Blog</a
+            >
           </div>
+
+          <!-- Blog Post 1 -->
+          <article class="blog-post">
+            <img
+              src="https://storage.googleapis.com/background-vid/blog%20photos/Individual%20Blog%20Pages/blog1-large.webp"
+              alt="Custom-Coded Web Design"
+              class="blog-post-image" />
+            <div class="blog-post-content">
+              <h2 class="blog-post-title">
+                Why Choose Custom-Coded Web Design?
+              </h2>
+              <p class="blog-post-date">Published: January 20, 2025</p>
+              <p class="blog-post-description">
+                In today’s digital world, your website is the cornerstone of
+                your online presence. While platforms like WordPress, Wix, and
+                Squarespace provide quick and easy solutions, they come with
+                limitations that can stifle creativity, performance, and growth.
+                Custom-coded web design, on the other hand, offers a level of
+                freedom and functionality that templated solutions simply cannot
+                match.
+              </p>
+              <h3 class="blog-post-subtitle">Freedom from Limitations</h3>
+              <p class="blog-post-paragraph">
+                Template-based platforms often box you into predefined
+                structures and features, limiting how much you can tailor your
+                site to fit your brand’s unique identity. Custom-coded websites,
+                however, allow for a completely bespoke design. From layout and
+                animations to unique functionalities, your website becomes a
+                true representation of your vision without compromise.
+              </p>
+              <h3 class="blog-post-subtitle">Enhanced Performance</h3>
+              <p class="blog-post-paragraph">
+                Pre-built platforms frequently include bloated code and
+                unnecessary plugins, which can significantly slow down your
+                website. In contrast, custom-coded sites are streamlined to
+                include only the features you need. This results in faster load
+                times, better user experiences, and improved search engine
+                rankings. When hosted on platforms like Netlify, custom sites
+                also benefit from cutting-edge hosting technology, delivering
+                exceptional uptime and speed.
+              </p>
+              <h3 class="blog-post-subtitle">Unparalleled Security</h3>
+              <p class="blog-post-paragraph">
+                CMS platforms are popular targets for hackers due to their
+                widespread use and reliance on plugins. Custom-coded websites,
+                on the other hand, are far less vulnerable because they don’t
+                rely on generic third-party components. With tailored security
+                measures built directly into your site, you can safeguard
+                sensitive data and ensure uninterrupted online operations.
+              </p>
+              <h3 class="blog-post-subtitle">SEO Built In</h3>
+              <p class="blog-post-paragraph">
+                Custom-coded websites are designed with search engine
+                optimization (SEO) in mind from the start. Unlike templated
+                platforms, which often require additional plugins to optimize
+                performance, custom websites integrate SEO best practices
+                directly into their structure. Additionally, hosting on
+                platforms with globally distributed servers improves load times
+                for users everywhere, giving your site an edge in search
+                rankings.
+              </p>
+              <h3 class="blog-post-subtitle">
+                Is Custom-Coded Web Design Right for You?
+              </h3>
+              <p class="blog-post-paragraph">
+                If you’re looking to create a website that stands out, performs
+                exceptionally, and grows with your business, custom-coded web
+                design is the ideal solution. While it may require a greater
+                initial investment, the long-term benefits far outweigh the
+                costs. From enhanced branding opportunities to measurable
+                improvements in performance and security, a custom-coded website
+                is built to help your business succeed.
+              </p>
+              <p class="blog-post-call-to-action">
+                Let’s bring your vision to life.
+                <a href="#contact" class="blog-post-link">Contact us today</a>
+                to explore how custom-coded web design can elevate your online
+                presence.
+              </p>
+            </div>
+          </article>
 
           <footer class="cta">
             <p>Ready to create something unique?</p>
@@ -287,7 +193,7 @@
       <section class="stuff-you-should-know">
         <div class="stuff-you-should-know-box">
           <h2 class="stuff-you-should-know-heading">Stuff You Should Know</h2>
-          <h3 class="stuff-you-should-know-subheading">Please Read</h3>
+
           <p>
             Statistics about how users behave when websites take too long to
             load highlight the critical importance of fast loading times for
@@ -381,7 +287,7 @@
         </div>
       </section>
 
-      <!-- New Footer -->
+      <!-- Dynamically Loading Footer -->
       <div id="footer-container"></div>
 
       <script>
@@ -389,7 +295,6 @@
         document.getElementById('year').textContent = new Date().getFullYear();
       </script>
       <script src="../js/dynamic-path.js"></script>
-
       <script src="../js/scripts.js" defer></script>
       <script src="../js/mobile-menu.js" defer></script>
     </div>
