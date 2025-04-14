@@ -144,7 +144,7 @@
       <section class="blog">
         <div class="container">
           <header class="section-header">
-            <h1>BLOG</h1>
+            <h1>Custom Coded Website Insights & Web Design Resources</h1>
             <p>
               Bringing Your Vision to Life: Expert Insights and Creative
               Solutions for Your Digital Journey.
@@ -284,7 +284,7 @@
                   alt="hand reaching out for handshake to make a deal" />
                 <div class="blog-content">
                   <h2>Improving User Experience for Local Searches</h2>
-                  <p class="date">Published: January 22, 2025</p>
+                  <p class="date">Published: April, 14 2025</p>
                   <p class="description">
                     Explore how to optimize your website to better serve local
                     searchers and convert them into customers.
@@ -410,6 +410,44 @@
 
       <script src="../js/scripts.js" defer></script>
       <script src="../js/mobile-menu.js" defer></script>
+      <script>
+        document.addEventListener('DOMContentLoaded', function () {
+          // Get the container with all blog posts
+          const blogContainer = document.querySelector('.blog-content-grid');
+
+          // Get all blog preview articles
+          const blogPosts = Array.from(
+            document.querySelectorAll('.blog-preview')
+          );
+
+          // Sort blog posts by date (most recent first)
+          blogPosts.sort(function (a, b) {
+            // Extract dates from each blog post
+            const dateA = new Date(
+              a.querySelector('.date').textContent.replace('Published: ', '')
+            );
+            const dateB = new Date(
+              b.querySelector('.date').textContent.replace('Published: ', '')
+            );
+
+            // Sort in descending order (newest first)
+            return dateB - dateA;
+          });
+
+          // Clear the container
+          blogContainer.innerHTML = '';
+
+          // Re-append the sorted blog posts
+          blogPosts.forEach(function (post) {
+            // We need to get the parent link element that wraps the article
+            const linkElement = post.parentElement;
+            // Clone the link with the post inside to avoid reference issues
+            const clonedLink = linkElement.cloneNode(true);
+            // Append the cloned link with post to the container
+            blogContainer.appendChild(clonedLink);
+          });
+        });
+      </script>
     </div>
   </body>
 </html>
