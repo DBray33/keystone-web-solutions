@@ -730,7 +730,7 @@ body {
 .blog-content-grid {
   display: grid;
   gap: 1.5rem;
-  grid-template-columns: repeat(3, 1fr); /* Default: 3 per row */
+  grid-template-columns: repeat(4, 1fr); /* Default: 3 per row */
 }
 
 @media (max-width: 1374px) {
@@ -739,7 +739,7 @@ body {
   }
 }
 
-@media (max-width: 934px) {
+@media (max-width: 760px) {
   .blog-content-grid {
     grid-template-columns: 1fr; /* 1 per row for small screens */
   }
@@ -801,7 +801,7 @@ body {
 }
 
 .blog-content .description {
-  font-size: 14px;
+  font-size: 12px;
   color: black;
   margin: 1rem 0 0;
 }

@@ -537,8 +537,6 @@ textarea::placeholder {
   width: 100%;
   position: relative;
   animation: float 3s ease-in-out infinite, slide 5s linear infinite;
-  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.15), 2px 2px 0 rgba(0, 0, 0, 0.1),
-    3px 3px 0 rgba(0, 0, 0, 0.05);
 }
 
 @keyframes slide {
