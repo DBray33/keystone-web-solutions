@@ -803,6 +803,7 @@ body {
 .blog-content .description {
   font-size: 14px;
   color: black;
+  margin: 1rem 0 0;
 }
 
 /* ------------------------------------- */
