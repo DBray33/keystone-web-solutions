@@ -486,54 +486,85 @@
       <!-- Logo banner -->
       <div class="logo-banner-container">
         <div class="logo-banner">
-          <!-- First set of logos -->
-          <div class="logo-group">
-            <div class="logo-item">
-              <img
-                src="https://storage.googleapis.com/background-vid/Main%20Content/banner%20tools%20logos/gmp-logo.png"
-                alt="Google Marketing Platform" />
-            </div>
-            <div class="logo-item">
-              <img
-                src="https://storage.googleapis.com/background-vid/Main%20Content/banner%20tools%20logos/netlify.png"
-                alt="Netlify" />
-            </div>
-            <div class="logo-item">
-              <img
-                src="https://storage.googleapis.com/background-vid/Main%20Content/banner%20tools%20logos/semrushlogo.png?v=1"
-                alt="SEMrush" />
-            </div>
-            <div class="logo-item">
-              <img
-                src="https://storage.googleapis.com/background-vid/Main%20Content/banner%20tools%20logos/stripe.png"
-                alt="Stripe" />
-            </div>
-          </div>
-          <!-- Duplicate logos for seamless scrolling -->
-          <div class="logo-group">
-            <div class="logo-item">
-              <img
-                src="https://storage.googleapis.com/background-vid/Main%20Content/banner%20tools%20logos/gmp-logo.png"
-                alt="Google Marketing Platform" />
-            </div>
-            <div class="logo-item">
-              <img
-                src="https://storage.googleapis.com/background-vid/Main%20Content/banner%20tools%20logos/netlify.png"
-                alt="Netlify" />
-            </div>
-            <div class="logo-item">
-              <img
-                src="https://storage.googleapis.com/background-vid/Main%20Content/banner%20tools%20logos/semrushlogo.png?v=1"
-                alt="SEMrush" />
-            </div>
-            <div class="logo-item">
-              <img
-                src="https://storage.googleapis.com/background-vid/Main%20Content/banner%20tools%20logos/stripe.png"
-                alt="Stripe" />
-            </div>
-          </div>
+          <!-- Logos will be added by JavaScript -->
         </div>
       </div>
+
+      <!-- Infinitely scrolling banner -->
+      <script>
+        document.addEventListener('DOMContentLoaded', function () {
+          // Array of logo information
+          const logos = [
+            {
+              src: 'https://storage.googleapis.com/background-vid/Main%20Content/banner%20tools%20logos/gmp-logo.png',
+              alt: 'Google Marketing Platform',
+            },
+            {
+              src: 'https://storage.googleapis.com/background-vid/Main%20Content/banner%20tools%20logos/netlify.png',
+              alt: 'Netlify',
+            },
+            {
+              src: 'https://storage.googleapis.com/background-vid/Main%20Content/banner%20tools%20logos/semrushlogo.png?v=1',
+              alt: 'SEMrush',
+            },
+            {
+              src: 'https://storage.googleapis.com/background-vid/Main%20Content/banner%20tools%20logos/stripe.png',
+              alt: 'Stripe',
+            },
+          ];
+
+          const bannerElement = document.querySelector('.logo-banner');
+
+          // Function to create a logo group
+          function createLogoGroup() {
+            const logoGroup = document.createElement('div');
+            logoGroup.className = 'logo-group';
+
+            logos.forEach((logo) => {
+              const logoItem = document.createElement('div');
+              logoItem.className = 'logo-item';
+
+              const img = document.createElement('img');
+              img.src = logo.src;
+              img.alt = logo.alt;
+
+              logoItem.appendChild(img);
+              logoGroup.appendChild(logoItem);
+            });
+
+            return logoGroup;
+          }
+
+          // Calculate number of groups needed to fill the banner
+          // We need at least 2 copies for the infinite scrolling to work
+          const minGroups = 2;
+
+          // Add logo groups
+          for (let i = 0; i < minGroups; i++) {
+            bannerElement.appendChild(createLogoGroup());
+          }
+
+          // Check if we need more groups to fill the viewport width
+          function addMoreGroupsIfNeeded() {
+            const bannerWidth = bannerElement.offsetWidth;
+            const viewportWidth = window.innerWidth;
+
+            // If the banner is not wide enough to create a seamless scroll,
+            // add more logo groups
+            if (bannerWidth < viewportWidth * 2) {
+              bannerElement.appendChild(createLogoGroup());
+              // Recursively check if we need even more
+              addMoreGroupsIfNeeded();
+            }
+          }
+
+          // Initial check
+          addMoreGroupsIfNeeded();
+
+          // Also check when window is resized
+          window.addEventListener('resize', addMoreGroupsIfNeeded);
+        });
+      </script>
 
       <!-- Logo Banner Styles -->
       <style>
@@ -550,7 +581,7 @@
 
         .logo-banner {
           display: flex;
-          animation: scroll 30s linear infinite;
+          animation: scroll 60s linear infinite;
           width: max-content;
         }
 
