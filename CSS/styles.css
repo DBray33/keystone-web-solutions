@@ -76,7 +76,7 @@ textarea::placeholder {
 .service-item-back,
 .service-item-inner.rotate,
 .service-item:hover .service-item-inner {
-  transform: rotateY(180deg);
+  transform: rotatex(180deg);
 }
 
 .journey-card,
@@ -1150,8 +1150,9 @@ textarea::placeholder {
   max-width: 550px; /* Limit maximum width of each service item */
   margin: 10px;
   border-radius: 12px;
-  overflow: visible; /* This must remain visible for the 3D effect */
+  /* overflow: visible;  */
   /* Removed box-shadow from here */
+  isolation: isolate;
 }
 
 .service-item-inner {
@@ -1210,11 +1211,11 @@ textarea::placeholder {
   align-items: center;
   flex-direction: column;
   background: #5dade2;
-  transform: rotateY(180deg); /* Ensure back face is properly positioned */
+  transform: rotatex(180deg); /* Ensure back face is properly positioned */
 }
 
 .service-item-inner.rotate {
-  transform: rotateY(180deg); /* Properly rotate the inner container */
+  transform: rotatex(180deg); /* Properly rotate the inner container */
 }
 
 .service-item-inner.rotate .service-item-front {
