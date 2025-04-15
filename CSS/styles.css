@@ -147,7 +147,7 @@ textarea::placeholder {
 }
 
 .more-info-button {
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
 }
 
 /* Hide the mobile background by default */
@@ -1133,12 +1133,6 @@ textarea::placeholder {
   overflow: visible; /* Keep this as visible to allow the full 3D effect */
 }
 
-@media (max-width: 700px) {
-  .services {
-    margin-bottom: 0;
-  }
-}
-
 /* The key part that fixes the border radius issue */
 .service-item {
   flex: 1 1 calc(50% - 20px);
@@ -1236,7 +1230,7 @@ textarea::placeholder {
 
 @media (max-width: 700px) {
   .service-item {
-    margin: 0;
+    /* margin: 0; */
     border-radius: 0; /* Remove border radius at 700px viewport width */
   }
 
