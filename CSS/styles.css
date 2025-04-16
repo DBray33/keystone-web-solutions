@@ -510,7 +510,7 @@ textarea::placeholder {
   background-clip: text;
   text-fill-color: transparent;
   font-family: 'Geist Sans', sans-serif;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
   font-weight: 800;
   font-size: 4rem;
   margin: 0 16px 10px;
@@ -528,7 +528,7 @@ textarea::placeholder {
   background-clip: text;
   text-fill-color: transparent;
   font-family: 'Geist Sans', sans-serif;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
   font-weight: 800;
   font-size: 4rem;
   display: inline-block;
