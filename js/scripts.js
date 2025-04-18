@@ -1,9 +1,35 @@
-// ----------------------------------------
-// Service item hover effect for touch devices and scroll animations
-// ----------------------------------------
+/**
+ * TABLE OF CONTENTS
+ * ----------------
+ * 1. Service Item Functionality
+ * 2. Navbar & Navigation
+ * 3. Scroll Effects & Animations
+ * 4. Section-Specific Animations
+ *    - Journey Section
+ *    - Pricing Section
+ *    - Fees Section
+ *    - Quote Section
+ * 5. Background Effects
+ * 6. Visual Elements
+ *    - PageSpeed Score Circles
+ *    - Progress Bar
+ * 7. Interactive Components
+ *    - Popup System
+ *    - FAQ Accordion
+ *    - Main Content Card System
+ * 8. Utility Functions
+ *    - Back to Top Button
+ *    - Dynamic Content Loading
+ *    - Animated Subheadings
+ */
+
+// ==========================================================================
+// 1. SERVICE ITEM FUNCTIONALITY
+// ==========================================================================
 document.addEventListener('DOMContentLoaded', function () {
   const serviceItems = document.querySelectorAll('.service-item');
 
+  // Touch device hover effect for service items
   serviceItems.forEach((item) => {
     item.addEventListener(
       'touchstart',
@@ -15,6 +41,7 @@ document.addEventListener('DOMContentLoaded', function () {
     );
   });
 
+  // Remove hover effect when touching outside service items
   document.addEventListener(
     'touchstart',
     function (event) {
@@ -25,9 +52,7 @@ document.addEventListener('DOMContentLoaded', function () {
     { passive: true }
   );
 
-  // ----------------------------------------
   // Add slide-in animation classes to service items
-  // ----------------------------------------
   serviceItems.forEach((item, index) => {
     if (index % 2 === 0) {
       // 1st, 3rd, 5th (index 0, 2, 4)
@@ -38,7 +63,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 
-  // Initialize the Intersection Observer with more sensitive settings
+  // Initialize the Intersection Observer for service items
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
@@ -63,66 +88,13 @@ document.addEventListener('DOMContentLoaded', function () {
   serviceItems.forEach((item) => {
     observer.observe(item);
   });
-
-  // ----------------------------------------
-  // Handle scroll events (example: log scroll events)
-  // ----------------------------------------
-  function handleScroll(event) {
-    console.log('Scroll event detected');
-  }
-
-  document.addEventListener('wheel', handleScroll, { passive: false });
-
-  // ----------------------------------------
-  // Sidebar touch-based scrolling for mobile
-  // ----------------------------------------
-  let touchStartY = 0;
-  const sidebarContent = document.querySelector('.sidebar-content');
-  const mainContent = document.querySelector('.main-content');
-
-  if (sidebarContent && mainContent) {
-    sidebarContent.addEventListener(
-      'touchstart',
-      function (event) {
-        touchStartY = event.touches[0].clientY;
-      },
-      { passive: true }
-    );
-
-    sidebarContent.addEventListener(
-      'touchmove',
-      function (event) {
-        const touchEndY = event.touches[0].clientY;
-        const deltaY = touchStartY - touchEndY;
-
-        mainContent.scrollBy({
-          top: deltaY,
-          behavior: 'auto',
-        });
-
-        touchStartY = touchEndY;
-      },
-      { passive: true }
-    );
-  }
-
-  // ----------------------------------------
-  // Handle resize events (remove or re-add scroll events)
-  // ----------------------------------------
-  function handleResize() {
-    if (window.innerWidth <= 935) {
-      document.removeEventListener('wheel', handleScroll);
-    } else {
-      document.addEventListener('wheel', handleScroll, { passive: false });
-    }
-  }
-
-  handleResize();
-  window.addEventListener('resize', handleResize, { passive: true });
 });
-// ----------------------------------------
+
+// ==========================================================================
+// 2. NAVBAR & NAVIGATION
+// ==========================================================================
+
 // Smooth scroll for navbar link clicks
-// ----------------------------------------
 document.querySelectorAll('.navbar-links a').forEach((anchor) => {
   anchor.addEventListener('click', function (e) {
     if (this.getAttribute('href').startsWith('#')) {
@@ -141,9 +113,7 @@ document.querySelectorAll('.navbar-links a').forEach((anchor) => {
   });
 });
 
-// ----------------------------------------
 // Navbar dropdown functionality
-// ----------------------------------------
 document.querySelectorAll('.navbar-dropdown > a').forEach((dropdownLink) => {
   dropdownLink.addEventListener('click', function (e) {
     e.preventDefault(); // Prevent default link behavior
@@ -163,9 +133,7 @@ document.querySelectorAll('.navbar-dropdown > a').forEach((dropdownLink) => {
   });
 });
 
-// ----------------------------------------
 // Navbar scroll effect (runs only after navbar loads)
-// ----------------------------------------
 function navbarScrollEffect() {
   const navbar = document.querySelector('.navbar');
 
@@ -192,10 +160,65 @@ function navbarScrollEffect() {
   window.addEventListener('scroll', handleScroll);
 }
 
-// /////////////////////////////////////////////////////////////////
-// WEBSITE GUIDE / JOURNEY SECTION /////////////////////////////////
-// Journey elements sliding in and out
+// ==========================================================================
+// 3. SCROLL EFFECTS & ANIMATIONS
+// ==========================================================================
 
+// Handle scroll events
+function handleScroll(event) {
+  console.log('Scroll event detected');
+}
+
+document.addEventListener('wheel', handleScroll, { passive: false });
+
+// Sidebar touch-based scrolling for mobile
+let touchStartY = 0;
+const sidebarContent = document.querySelector('.sidebar-content');
+const mainContent = document.querySelector('.main-content');
+
+if (sidebarContent && mainContent) {
+  sidebarContent.addEventListener(
+    'touchstart',
+    function (event) {
+      touchStartY = event.touches[0].clientY;
+    },
+    { passive: true }
+  );
+
+  sidebarContent.addEventListener(
+    'touchmove',
+    function (event) {
+      const touchEndY = event.touches[0].clientY;
+      const deltaY = touchStartY - touchEndY;
+
+      mainContent.scrollBy({
+        top: deltaY,
+        behavior: 'auto',
+      });
+
+      touchStartY = touchEndY;
+    },
+    { passive: true }
+  );
+}
+
+// Handle resize events (remove or re-add scroll events)
+function handleResize() {
+  if (window.innerWidth <= 935) {
+    document.removeEventListener('wheel', handleScroll);
+  } else {
+    document.addEventListener('wheel', handleScroll, { passive: false });
+  }
+}
+
+handleResize();
+window.addEventListener('resize', handleResize, { passive: true });
+
+// ==========================================================================
+// 4. SECTION-SPECIFIC ANIMATIONS
+// ==========================================================================
+
+// JOURNEY SECTION - Elements sliding in and out
 document.addEventListener('DOMContentLoaded', () => {
   const journeyElements = document.querySelectorAll(
     '.journey-heading, .journey-subheading, .journey-description, .card-1, .card-2'
@@ -220,8 +243,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   journeyElements.forEach((element) => observer.observe(element));
 });
-// //////////////////////////////////////////////
-// PRICING SECTION //////////////////////////////
+
+// PRICING SECTION - Heading and description animations (only fade in, no fade out)
 document.addEventListener('DOMContentLoaded', () => {
   const pricingElements = document.querySelectorAll(
     '.pricing-heading, .pricing-description'
@@ -229,39 +252,38 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const observerOptions = {
     root: null,
-    threshold: 0.2, // Adjusted threshold for smoother detection
+    threshold: 0.2, // Trigger when 20% visible
   };
 
-  const observerCallback = (entries, observer) => {
+  const observerCallback = (entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
         entry.target.classList.add('visible');
-      } else {
-        entry.target.classList.remove('visible'); // Ensures fade-out when scrolled out
+        // Once the animation is applied, unobserve the element
+        observer.unobserve(entry.target);
       }
     });
   };
 
   const observer = new IntersectionObserver(observerCallback, observerOptions);
-
   pricingElements.forEach((element) => observer.observe(element));
 });
 
-// Pricing cards transition
+// PRICING SECTION - Pricing cards transition (only fade in, no fade out)
 document.addEventListener('DOMContentLoaded', () => {
   const pricingCards = document.querySelectorAll('.pricing-card');
 
   const observerOptions = {
     root: null,
-    threshold: [0, 0.3], // 0 = fully off-screen, 0.30 = 30% visible
+    threshold: 0.3, // Trigger when 30% visible
   };
 
   const observerCallback = (entries) => {
     entries.forEach((entry) => {
-      if (entry.intersectionRatio >= 0.3) {
-        entry.target.classList.add('fade-in'); // Fade in when 30% visible
-      } else if (entry.intersectionRatio === 0) {
-        entry.target.classList.remove('fade-in'); // Fade out only when fully off-screen
+      if (entry.isIntersecting) {
+        entry.target.classList.add('fade-in'); // Fade in when visible
+        // Once the animation is applied, unobserve the element
+        observer.unobserve(entry.target);
       }
     });
   };
@@ -270,8 +292,7 @@ document.addEventListener('DOMContentLoaded', () => {
   pricingCards.forEach((card) => observer.observe(card));
 });
 
-// /////////////////////////////////////////////////////////////////
-// FEES SECTION - Animations ///////////////////////////////////////
+// FEES SECTION - Animations (only fade in, no fade out)
 document.addEventListener('DOMContentLoaded', () => {
   const feeItems = document.querySelectorAll(
     '.fee-item-1, .fee-item-2, .fee-item-3'
@@ -286,19 +307,17 @@ document.addEventListener('DOMContentLoaded', () => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
         entry.target.classList.add('visible');
-      } else {
-        entry.target.classList.remove('visible');
+        // Once the animation is applied, unobserve the element
+        observer.unobserve(entry.target);
       }
     });
   };
 
   const observer = new IntersectionObserver(observerCallback, observerOptions);
-
   feeItems.forEach((item) => observer.observe(item));
 });
 
-// //////////////////////////////////////////////
-// QUOTE SECTION //////////////////////////
+// QUOTE SECTION - Animations
 document.addEventListener('DOMContentLoaded', () => {
   const quoteElements = document.querySelectorAll(
     '.quote-section-heading, .quote-card'
@@ -326,22 +345,42 @@ document.addEventListener('DOMContentLoaded', () => {
 
   quoteElements.forEach((element) => quoteObserver.observe(element));
 });
-// //////////////////////////////////////////////
-// FIXED INTRO BACKGROUND UNTIL JOURNEY SECTION //////////////////////////
+
+// ==========================================================================
+// 5. BACKGROUND EFFECTS
+// ==========================================================================
+
+// FIXED INTRO BACKGROUND UNTIL JOURNEY SECTION
 document.addEventListener('scroll', () => {
   const mainContent = document.querySelector('.main-content');
   const journeySection = document.querySelector('.journey-section');
-  const journeyPosition = journeySection.getBoundingClientRect().top;
 
-  if (journeyPosition <= 0) {
-    mainContent.style.backgroundAttachment = 'scroll'; // Change to normal scroll
-  } else {
-    mainContent.style.backgroundAttachment = 'fixed'; // Keep it fixed
+  if (mainContent && journeySection) {
+    const journeyPosition = journeySection.getBoundingClientRect().top;
+
+    if (journeyPosition <= 0) {
+      mainContent.style.backgroundAttachment = 'scroll'; // Change to normal scroll
+    } else {
+      mainContent.style.backgroundAttachment = 'fixed'; // Keep it fixed
+    }
   }
 });
 
-// //////////////////////////////////////////////
-// PAGESPEED SCORE CIRCLES //////////////////////////
+// STANDALONE LOGO
+document.addEventListener('scroll', () => {
+  const logo = document.querySelector('.standalone-logo');
+  if (window.scrollY > 0) {
+    document.body.classList.add('scrolled');
+  } else {
+    document.body.classList.remove('scrolled');
+  }
+});
+
+// ==========================================================================
+// 6. VISUAL ELEMENTS
+// ==========================================================================
+
+// PAGESPEED SCORE CIRCLES
 document.querySelectorAll('.circle .counter').forEach((counter) => {
   let currentNumber = 0;
   const targetNumber = 100; // Final number
@@ -374,28 +413,8 @@ document.querySelectorAll('.circle .counter').forEach((counter) => {
 
   observer.observe(counter);
 });
-// //////////////////////////////////////////////
-// POPUP //////////////////////////
-document.addEventListener('DOMContentLoaded', function () {
-  let basePath = window.location.pathname.includes('/')
-    ? '../nav.html'
-    : 'nav.html';
 
-  fetch(basePath)
-    .then((response) => response.text())
-    .then((data) => {
-      document.querySelector('#navbar-container').innerHTML = data;
-
-      // ✅ Ensure all interactive elements are initialized AFTER `nav.html` loads
-      requestAnimationFrame(() => {
-        initializeProgressBar();
-        initializePopup();
-      });
-    })
-    .catch((error) => console.error('⚠ Error loading navbar:', error));
-});
-
-// ✅ Initialize Progress Bar (Scroll-Based)
+// PROGRESS BAR
 function initializeProgressBar() {
   const progressBar = document.getElementById('progressBar');
 
@@ -416,7 +435,11 @@ function initializeProgressBar() {
   console.log('✅ Progress Bar initialized.');
 }
 
-// ✅ Initialize Popup with 5-Minute Delay on Reappearance
+// ==========================================================================
+// 7. INTERACTIVE COMPONENTS
+// ==========================================================================
+
+// POPUP SYSTEM
 function initializePopup() {
   const popup = document.getElementById('popup');
   const closePopup = document.getElementById('close-popup');
@@ -487,46 +510,35 @@ function initializePopup() {
 
   console.log('✅ Popup initialized.');
 }
-// //////////////////////////////////////////////
-// STANDALONE LOGO //////////////////////////////
-document.addEventListener('scroll', () => {
-  const logo = document.querySelector('.standalone-logo');
-  if (window.scrollY > 0) {
-    document.body.classList.add('scrolled');
-  } else {
-    document.body.classList.remove('scrolled');
-  }
-});
 
-// //////////////////////////////////////////////
-// FAQ ACCORDION //////////////////////////////
-// Accordion functionality
-document.addEventListener('click', (event) => {
-  const allFaqs = document.querySelectorAll('.faq-item');
-  let clickedInsideFaq = false;
+// FAQ ACCORDION
+document.addEventListener('DOMContentLoaded', () => {
+  // Accordion functionality
+  document.addEventListener('click', (event) => {
+    const allFaqs = document.querySelectorAll('.faq-item');
+    let clickedInsideFaq = false;
 
-  allFaqs.forEach((faq) => {
-    const question = faq.querySelector('.faq-question');
-    if (faq.contains(event.target)) {
-      // Toggle the clicked FAQ item
-      if (event.target === question) {
-        faq.classList.toggle('open');
+    allFaqs.forEach((faq) => {
+      const question = faq.querySelector('.faq-question');
+      if (faq.contains(event.target)) {
+        // Toggle the clicked FAQ item
+        if (event.target === question) {
+          faq.classList.toggle('open');
+        }
+        clickedInsideFaq = true;
+      } else {
+        // Close any other open FAQ item
+        faq.classList.remove('open');
       }
-      clickedInsideFaq = true;
-    } else {
-      // Close any other open FAQ item
-      faq.classList.remove('open');
+    });
+
+    // If the click was outside any FAQ, close all FAQs
+    if (!clickedInsideFaq) {
+      allFaqs.forEach((faq) => faq.classList.remove('open'));
     }
   });
 
-  // If the click was outside any FAQ, close all FAQs
-  if (!clickedInsideFaq) {
-    allFaqs.forEach((faq) => faq.classList.remove('open'));
-  }
-});
-
-// Slide in from sides animation
-document.addEventListener('DOMContentLoaded', () => {
+  // Slide in from sides animation
   const faqItems = document.querySelectorAll('.faq-item');
 
   faqItems.forEach((item, index) => {
@@ -536,9 +548,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-// //////////////////////////////////////////////
-// MAIN CONTENT /////////////////////////////////
-
+// MAIN CONTENT CARD SYSTEM
 document.addEventListener('DOMContentLoaded', function () {
   const navItems = document.querySelectorAll('.nav-item');
   const cards = document.querySelectorAll('.card');
@@ -594,19 +604,22 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 
-// line graph /////////////////////////////
+// ==========================================================================
+// 8. UTILITY FUNCTIONS
+// ==========================================================================
 
-// BACK TO TOP /////////////////////////////////
-// Show button when scrolling down
+// BACK TO TOP BUTTON
 window.onscroll = function () {
   let button = document.getElementById('backToTop');
-  if (
-    document.body.scrollTop > 300 ||
-    document.documentElement.scrollTop > 300
-  ) {
-    button.classList.add('show');
-  } else {
-    button.classList.remove('show');
+  if (button) {
+    if (
+      document.body.scrollTop > 300 ||
+      document.documentElement.scrollTop > 300
+    ) {
+      button.classList.add('show');
+    } else {
+      button.classList.remove('show');
+    }
   }
 };
 
@@ -614,9 +627,8 @@ window.onscroll = function () {
 function scrollToTop() {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
-// //////////////////////////////////////////////
-// //////////////////////////////////////////////
-// //////////////////////////////////////////////
+
+// DYNAMIC CONTENT LOADING
 document.addEventListener('DOMContentLoaded', function () {
   // ✅ Determine the correct path to `nav.html` dynamically
   let basePath = window.location.pathname.includes('/')
@@ -634,38 +646,17 @@ document.addEventListener('DOMContentLoaded', function () {
     .then((data) => {
       document.querySelector('#navbar-container').innerHTML = data;
 
-      // ✅ Run progress bar initialization AFTER navbar loads
+      // ✅ Run initialization AFTER navbar loads
       requestAnimationFrame(() => {
         initializeProgressBar();
+        initializePopup();
+        navbarScrollEffect();
       });
     })
     .catch((error) => console.error('Error loading navbar:', error));
 });
 
-// ✅ Function to Initialize the Progress Bar
-function initializeProgressBar() {
-  const progressBar = document.getElementById('progressBar');
-
-  if (!progressBar) {
-    console.error('⚠ Progress Bar not found in the DOM!');
-    return;
-  }
-
-  window.addEventListener('scroll', function () {
-    const scrollPosition = window.scrollY;
-    const documentHeight =
-      document.documentElement.scrollHeight - window.innerHeight;
-    const scrollPercentage = (scrollPosition / documentHeight) * 100;
-    progressBar.style.width = scrollPercentage + '%';
-  });
-
-  console.log('✅ Progress Bar initialized successfully.');
-}
-
-// ----------------------------------------
-// ----------------------------------------
-// ----------------------------------------
-// ----------------------------------------
+// ANIMATED SUBHEADINGS
 document.addEventListener('DOMContentLoaded', () => {
   const subheadings = document.querySelectorAll('.subheading');
   let index = 0;
@@ -684,6 +675,6 @@ document.addEventListener('DOMContentLoaded', () => {
   // Show first subheading immediately
   showNextSubheading();
 
-  // Set interval to change subheading every 3 seconds
+  // Set interval to change subheading every second
   setInterval(showNextSubheading, 1000);
 });
