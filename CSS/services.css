@@ -14,7 +14,7 @@ html {
   --headline-font-size: 5rem;
   --headline-font-weight: 900;
   --headline-text-shadow: 2px 2px 1px black;
-  --headline-letter-spacing: 3px;
+  --headline-letter-spacing: 3pxx;
   --primary-color: #5dade2;
   --secondary-color: #d3d3d3;
 }
@@ -405,7 +405,7 @@ html {
 }
 
 /* Card title */
-.card-title {
+.info-card .card-title {
   font-size: 1.5rem;
   font-weight: bold;
   margin-bottom: 1rem;

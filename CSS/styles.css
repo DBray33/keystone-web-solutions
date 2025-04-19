@@ -1724,7 +1724,7 @@ label {
   transform: translateX(0);
 }
 
-.card-title {
+.journey-section .card-title {
   font-size: 1.25rem;
   color: #eee; /* Changed from black to #eee (very light gray) */
 }
