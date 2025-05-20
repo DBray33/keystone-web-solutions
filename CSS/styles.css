@@ -1,3 +1,6 @@
+/* -----------------------------------
+   Reset & Base Styles
+   ----------------------------------- */
 *,
 body,
 html {
@@ -11,7 +14,7 @@ html {
 
 body {
   font-family: 'Exo', sans-serif;
-  font-display: swap; /* Ensures smoother font loading */
+  font-display: swap;
   overflow-x: hidden;
 }
 
@@ -24,9 +27,12 @@ html {
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 130px; /* Matches the fixed header height */
+  scroll-padding-top: 130px;
 }
 
+/* -----------------------------------
+      Variables
+      ----------------------------------- */
 :root {
   --headline-font-family: 'Bebas Neue', sans-serif;
   --headline-font-size: 5rem;
@@ -36,17 +42,25 @@ html {
   --secondary-color: #d3d3d3;
 }
 
+/* -----------------------------------
+      Form Elements
+      ----------------------------------- */
 input::placeholder,
 textarea::placeholder {
   font-size: 14px;
 }
 
+/* -----------------------------------
+      Layout
+      ----------------------------------- */
 .container {
   display: flex;
   height: 100%;
 }
 
-/* BUTTON STYLING */
+/* -----------------------------------
+      Button Styling
+      ----------------------------------- */
 .navbar .submit-button a::before,
 .pricing-button::before,
 .quote-section .submit-button::before {
@@ -67,18 +81,24 @@ textarea::placeholder {
 .quote-section .submit-button:hover::before {
   transform: translateX(100%) skewX(-45deg);
 }
+
 .navbar .submit-button a:hover {
   color: var(--primary-color);
   border-color: #5dade2;
 }
-/* End Button Styling */
 
+/* -----------------------------------
+      Component Animations
+      ----------------------------------- */
 .service-item-back,
 .service-item-inner.rotate,
 .service-item:hover .service-item-inner {
   transform: rotatex(180deg);
 }
 
+/* -----------------------------------
+      Card & Form Styling
+      ----------------------------------- */
 .journey-card,
 .pricing-card,
 .submission-form {
@@ -89,6 +109,9 @@ textarea::placeholder {
   color: #000;
 }
 
+/* -----------------------------------
+      Font Faces
+      ----------------------------------- */
 /* Bebas Neue */
 @font-face {
   font-family: 'Bebas Neue';
@@ -146,16 +169,17 @@ textarea::placeholder {
   font-display: swap;
 }
 
-.more-info-button {
-  /* text-transform: uppercase; */
-}
-
+/* -----------------------------------
+      Mobile Background
+      ----------------------------------- */
 /* Hide the mobile background by default */
 .mobile-background {
   display: none;
 }
 
-/* Responsive Phone Number Styling */
+/* -----------------------------------
+      Responsive Phone Number
+      ----------------------------------- */
 .responsive-phone-num {
   position: fixed;
   left: 20px;
@@ -167,7 +191,7 @@ textarea::placeholder {
   font-size: 18px !important;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   z-index: 1000;
-  display: block !important; /* Always display instead of none */
+  display: block !important;
 }
 
 .responsive-phone-num a {
@@ -182,7 +206,23 @@ textarea::placeholder {
   margin-right: 4px;
 }
 
-/* Position for mobile and smaller screens (below 936px) */
+/* Optional hover effect for better user experience */
+.responsive-phone-num:hover {
+  color: black;
+  background-color: var(--primary-color);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+  transform: translateY(-1px);
+  transition: all 0.2s ease;
+}
+
+.responsive-phone-num:hover a {
+  color: black;
+}
+
+/* -----------------------------------
+      Media Queries
+      ----------------------------------- */
+/* Position for mobile and smaller screens (below 500px) */
 @media screen and (max-width: 500px) {
   .responsive-phone-num {
     left: 10px;
@@ -203,21 +243,9 @@ textarea::placeholder {
   }
 }
 
-/* Optional hover effect for better user experience */
-.responsive-phone-num:hover {
-  color: black;
-  background-color: var(--primary-color);
-  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
-  transform: translateY(-1px);
-  transition: all 0.2s ease;
-}
-
-.responsive-phone-num:hover a {
-  color: black; /* This targets the actual text */
-}
-
-/* ///////////////////////////////////// */
-/* SIDEBAR ///////////////////////////// */
+/* ===================================
+   SIDEBAR (CURRENTLY NOT IN USE)
+   =================================== */
 @media (max-width: 935px) {
   .fixed-sidebar {
     display: none;
@@ -252,6 +280,9 @@ textarea::placeholder {
   background: rgba(0, 0, 0, 0.7);
 }
 
+/* ------------------------------------
+     Logo Animation
+     ------------------------------------ */
 /* Apply Animation to Logo */
 .responsive-logo {
   margin-top: 5rem;
@@ -260,16 +291,6 @@ textarea::placeholder {
   display: block;
   animation: fadeIn 1s ease-in-out forwards;
   filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.9));
-}
-
-/* Mobile Adjustments */
-@media (max-width: 500px) {
-  .responsive-logo {
-    margin-top: 1rem;
-    max-width: 300px;
-    height: auto;
-    margin-bottom: 2rem;
-  }
 }
 
 /* Fade-In Keyframes */
@@ -284,6 +305,9 @@ textarea::placeholder {
   }
 }
 
+/* ------------------------------------
+     Sidebar Content
+     ------------------------------------ */
 .phone-number a::before,
 .sidebar-video {
   position: absolute;
@@ -317,35 +341,6 @@ textarea::placeholder {
   text-align: center;
 }
 
-/* Adjustments for smaller screens */
-@media (max-width: 935px) {
-  .sidebar {
-    position: relative;
-    width: 100%;
-    padding: 4rem 1rem;
-    min-height: 120vh;
-    box-sizing: border-box;
-  }
-
-  .sidebar-content {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    padding: 4rem 1rem;
-  }
-
-  .phone-number {
-    padding-bottom: 4rem;
-    text-align: center;
-  }
-
-  .phone-number a {
-    font-size: 1.8rem;
-  }
-}
-
 .call-now,
 .sidebar-content > :last-child {
   margin-bottom: 0;
@@ -366,12 +361,6 @@ textarea::placeholder {
   margin: 0 2rem;
 }
 
-@media (max-width: 1100px) {
-  .sidebar-content .company-name {
-    font-size: 5rem;
-  }
-}
-
 .sidebar-content .subheading {
   margin: -15rem 0 auto;
   font-size: 2rem;
@@ -387,31 +376,6 @@ textarea::placeholder {
   transform: translateY(0);
 }
 
-@media screen and (max-width: 768px) {
-  .sidebar-content .subheading {
-    font-size: 1.5rem;
-    top: 22rem;
-  }
-}
-@media screen and (max-width: 1100px) {
-  .sidebar-content .subheading {
-    font-size: 1.5rem;
-    top: 22rem;
-  }
-}
-@media screen and (max-width: 935px) {
-  .sidebar-content .subheading {
-    font-size: 1.5rem;
-    top: 26rem;
-  }
-}
-@media screen and (max-width: 500px) {
-  .sidebar-content .subheading {
-    font-size: 1.5rem;
-    top: 22rem;
-  }
-}
-
 .description {
   margin: 4rem 2rem 2rem;
   font-size: 1rem;
@@ -419,6 +383,9 @@ textarea::placeholder {
   letter-spacing: 2px;
 }
 
+/* ------------------------------------
+     Phone Number
+     ------------------------------------ */
 .phone-number {
   position: relative;
   display: inline-block;
@@ -463,7 +430,85 @@ textarea::placeholder {
   animation: 0.3s forwards showBackground;
 }
 
-/* MAIN CONTENT */
+/* ------------------------------------
+     Media Queries
+     ------------------------------------ */
+/* Mobile Adjustments */
+@media (max-width: 500px) {
+  .responsive-logo {
+    margin-top: 1rem;
+    max-width: 300px;
+    height: auto;
+    margin-bottom: 2rem;
+  }
+}
+
+/* Adjustments for smaller screens */
+@media (max-width: 935px) {
+  .sidebar {
+    position: relative;
+    width: 100%;
+    padding: 4rem 1rem;
+    min-height: 120vh;
+    box-sizing: border-box;
+  }
+
+  .sidebar-content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 4rem 1rem;
+  }
+
+  .phone-number {
+    padding-bottom: 4rem;
+    text-align: center;
+  }
+
+  .phone-number a {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 1100px) {
+  .sidebar-content .company-name {
+    font-size: 5rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .sidebar-content .subheading {
+    font-size: 1.5rem;
+    top: 22rem;
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .sidebar-content .subheading {
+    font-size: 1.5rem;
+    top: 22rem;
+  }
+}
+
+@media screen and (max-width: 935px) {
+  .sidebar-content .subheading {
+    font-size: 1.5rem;
+    top: 26rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .sidebar-content .subheading {
+    font-size: 1.5rem;
+    top: 22rem;
+  }
+}
+
+/* ===================================
+  MAIN CONTENT
+  =================================== */
 .main-content {
   width: 100%;
   padding: 0;
@@ -516,6 +561,9 @@ textarea::placeholder {
   box-sizing: border-box;
 }
 
+/* ------------------------------------
+     Line Graph Elements
+     ------------------------------------ */
 /* Line Graph Container - Updated z-index */
 .line-graph-container {
   position: absolute;
@@ -523,23 +571,22 @@ textarea::placeholder {
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 0; /* This places it behind content but in front of background */
-  pointer-events: all; /* Enables mouse interaction */
-  overflow: hidden; /* Prevent scrolling caused by SVG */
+  z-index: 0;
+  pointer-events: all;
+  overflow: hidden;
 }
 
 /* Line style */
 .chart-line {
   fill: none;
-  stroke: rgba(93, 173, 226, 0.3); /* Light blue to match your design theme */
+  stroke: rgba(93, 173, 226, 0.3);
   stroke-width: 2;
 }
 
 /* Tracking dot style */
 .tracking-dot {
   fill: #5dade2;
-  opacity: 0.9; /* Added opacity to fade the dot */
-  /* stroke: white; */
+  opacity: 0.9;
   stroke-width: 1;
   filter: drop-shadow(0 0 5px rgba(93, 173, 226, 0.4));
 }
@@ -556,6 +603,9 @@ textarea::placeholder {
   z-index: 1; /* Same as main-content to appear above line graph */
 }
 
+/* ------------------------------------
+     Section Styling
+     ------------------------------------ */
 .main-content .section .title-wrapper {
   display: flex;
   flex-direction: column;
@@ -571,7 +621,7 @@ textarea::placeholder {
   background-clip: text;
   text-fill-color: transparent;
   font-family: 'Geist Sans', sans-serif;
-  /* text-transform: uppercase; */
+
   font-weight: 800;
   font-size: 4rem;
   margin: 0 16px 10px;
@@ -589,7 +639,6 @@ textarea::placeholder {
   background-clip: text;
   text-fill-color: transparent;
   font-family: 'Geist Sans', sans-serif;
-  /* text-transform: uppercase; */
   font-weight: 800;
   font-size: 4rem;
   display: inline-block;
@@ -598,27 +647,6 @@ textarea::placeholder {
   width: 100%;
   position: relative;
   animation: float 3s ease-in-out infinite, slide 5s linear infinite;
-}
-
-@keyframes slide {
-  0% {
-    background-position: 0% 50%;
-  }
-  100% {
-    background-position: 200% 50%;
-  }
-}
-
-@keyframes float {
-  0% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-  100% {
-    transform: translateY(0px);
-  }
 }
 
 .main-content .section {
@@ -658,87 +686,9 @@ textarea::placeholder {
   font-size: 50px;
 }
 
-@media (max-width: 730px) {
-  .main-content .section h2,
-  .main-content .section .title-wrapper .web-dev {
-    font-size: 3rem;
-  }
-}
-
-@media (max-width: 570px) {
-  .main-content .section h2,
-  .main-content .section .title-wrapper .web-dev {
-    font-size: 2.5rem;
-  }
-}
-
-@media (max-width: 512px) {
-  .main-content .section h2,
-  .main-content .section .title-wrapper .web-dev {
-    font-size: 2rem;
-    margin: 0 8px 10px;
-  }
-}
-
-@media (max-width: 935px) {
-  .mobile-background {
-    display: block;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url('https://storage.googleapis.com/background-vid/Main%20Content/gridbg3.webp');
-    background-size: cover;
-    background-position: top center;
-    background-repeat: no-repeat;
-    z-index: -2; /* Updated to be below the line graph */
-    pointer-events: none;
-  }
-
-  .main-content {
-    margin-left: 0;
-    width: 100%;
-    background: none;
-    position: relative;
-    z-index: 1;
-  }
-
-  .main-content::before {
-    display: none;
-  }
-
-  .main-content .section {
-    text-align: center;
-    margin-top: 4rem;
-  }
-
-  .main-content .mobile-header {
-    display: block;
-    font-size: smaller;
-  }
-
-  .main-content .desktop-header {
-    display: none;
-  }
-}
-
-.main-content .section-2 .about-us h2 {
-  font-size: 2rem;
-  margin-bottom: 10px;
-  font-weight: 200;
-}
-
-.main-content .logos {
-  display: flex;
-  justify-content: space-between;
-}
-
-.main-content .logos i {
-  font-size: 50px;
-}
-
-/* cards menu */
+/* ------------------------------------
+     Card Navigation
+     ------------------------------------ */
 /* Navigation Menu Styling */
 .card-navigation {
   display: flex;
@@ -755,7 +705,7 @@ textarea::placeholder {
   padding: 1rem;
   position: relative; /* Added to position the line properly */
   padding-top: 1.5rem; /* Increased top padding to make room for the line */
-  overflow: visible; /* Ensure overflow doesn't cut off the glow */
+  overflow: visible;
 }
 
 /* Dividing line that spans the entire menu */
@@ -782,7 +732,7 @@ textarea::placeholder {
 .nav-item::after {
   content: '';
   position: absolute;
-  top: -1.5rem; /* Adjusted to match the nav-menu padding-top */
+  top: -1.5rem;
   left: 0;
   width: 0;
   height: 1px;
@@ -804,48 +754,19 @@ textarea::placeholder {
 .nav-item.active::after {
   width: 100%;
 }
-/* Main Content Cards */
+
+/* ------------------------------------
+     Section Cards
+     ------------------------------------ */
 .section-cards {
   display: flex;
-  flex-direction: column; /* Stack cards vertically */
-  justify-content: flex-start; /* Align cards to the top */
-  gap: 2rem; /* Space between cards */
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 2rem;
   padding: 2rem;
-  text-align: left; /* Align text inside cards to the left */
+  text-align: left;
 }
 
-/* Shimmer animation keyframes */
-@keyframes shimmer {
-  0% {
-    transform: translateX(-100%);
-  }
-  100% {
-    transform: translateX(100%);
-  }
-}
-
-/* Circuit trace animation */
-@keyframes circuit-flow {
-  0% {
-    background-position: 0 0;
-  }
-  100% {
-    background-position: 200px 200px;
-  }
-}
-
-/* Flash animation for circuit lines */
-@keyframes circuit-flash {
-  0%,
-  100% {
-    filter: brightness(1);
-  }
-  50% {
-    filter: brightness(2.5);
-  }
-}
-
-/* card styles */
 /* Card base styles with navigation show/hide */
 .card {
   display: none; /* Hide all cards by default */
@@ -856,11 +777,7 @@ textarea::placeholder {
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 0.5s ease, transform 0.5s ease, background 0.3s ease;
-  background: linear-gradient(
-    to bottom,
-    #121827,
-    #010101
-  ); /* Gradient background */
+  background: linear-gradient(to bottom, #121827, #010101);
   position: relative; /* Required for absolute positioning of shimmer */
 }
 
@@ -926,8 +843,6 @@ textarea::placeholder {
   animation: circuit-flash 1.3s infinite 0.5s;
 }
 
-/* Removed media queries that were conditionally showing circuits based on hover/screen size */
-
 .card.active {
   display: flex; /* Show only active card */
   flex-direction: column; /* Changed to column for card-4 with standards-row */
@@ -980,6 +895,7 @@ textarea::placeholder {
   left: 40%;
   transform: rotate(60deg);
 }
+
 /* Ensure content stays above the shimmer effect */
 .card h2,
 .card p,
@@ -1012,41 +928,9 @@ textarea::placeholder {
   padding: 0.75rem 1.5rem 1.5rem 1.5rem;
 }
 
-/* Responsive styling for navigation */
-@media (max-width: 768px) {
-  .nav-menu {
-    gap: 1rem;
-  }
-
-  .nav-item {
-    padding: 0.5rem;
-    font-size: 0.9rem;
-    text-align: center;
-  }
-}
-
-/* Responsive cards */
-@media (max-width: 500px) {
-  .card {
-    flex-direction: column; /* Stack h2 and p vertically */
-    border-radius: 8px; /* Updated border radius */
-  }
-
-  .card h2 {
-    font-size: 1.2rem;
-    border-radius: 8px 8px 0 0; /* Updated border radius */
-    width: 100%; /* Ensure full width */
-    background: transparent; /* Allow gradient to show */
-  }
-
-  .card p {
-    font-size: 0.8rem;
-    text-align: center;
-    border-radius: 0 0 8px 8px; /* Updated border radius */
-    width: 100%; /* Ensure full width */
-  }
-}
-
+/* ------------------------------------
+     Page Speed Scores
+     ------------------------------------ */
 /* pagespeed scores card */
 .pagespeed-scores {
   width: 99%; /* Set width to 99% of the container */
@@ -1124,6 +1008,63 @@ textarea::placeholder {
   margin: 0; /* Remove default margin */
 }
 
+/* ------------------------------------
+     Animations
+     ------------------------------------ */
+/* Shimmer animation keyframes */
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* Circuit trace animation */
+@keyframes circuit-flow {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 200px 200px;
+  }
+}
+
+/* Flash animation for circuit lines */
+@keyframes circuit-flash {
+  0%,
+  100% {
+    filter: brightness(1);
+  }
+  50% {
+    filter: brightness(2.5);
+  }
+}
+
+/* Slide animation for web-dev text */
+@keyframes slide {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 200% 50%;
+  }
+}
+
+/* Float animation for web-dev text */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
 /* Rotate Border Keyframes */
 @keyframes rotate-border {
   0% {
@@ -1131,6 +1072,109 @@ textarea::placeholder {
   }
   100% {
     transform: rotate(360deg);
+  }
+}
+
+/* ------------------------------------
+     Media Queries
+     ------------------------------------ */
+@media (max-width: 730px) {
+  .main-content .section h2,
+  .main-content .section .title-wrapper .web-dev {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 570px) {
+  .main-content .section h2,
+  .main-content .section .title-wrapper .web-dev {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 512px) {
+  .main-content .section h2,
+  .main-content .section .title-wrapper .web-dev {
+    font-size: 2rem;
+    margin: 0 8px 10px;
+  }
+}
+
+@media (max-width: 935px) {
+  .mobile-background {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://storage.googleapis.com/background-vid/Main%20Content/gridbg3.webp');
+    background-size: cover;
+    background-position: top center;
+    background-repeat: no-repeat;
+    z-index: -2; /* Updated to be below the line graph */
+    pointer-events: none;
+  }
+
+  .main-content {
+    margin-left: 0;
+    width: 100%;
+    background: none;
+    position: relative;
+    z-index: 1;
+  }
+
+  .main-content::before {
+    display: none;
+  }
+
+  .main-content .section {
+    text-align: center;
+    margin-top: 4rem;
+  }
+
+  .main-content .mobile-header {
+    display: block;
+    font-size: smaller;
+  }
+
+  .main-content .desktop-header {
+    display: none;
+  }
+}
+
+/* Responsive styling for navigation */
+@media (max-width: 768px) {
+  .nav-menu {
+    gap: 1rem;
+  }
+
+  .nav-item {
+    padding: 0.5rem;
+    font-size: 0.9rem;
+    text-align: center;
+  }
+}
+
+/* Responsive cards */
+@media (max-width: 500px) {
+  .card {
+    flex-direction: column; /* Stack h2 and p vertically */
+    border-radius: 8px; /* Updated border radius */
+  }
+
+  .card h2 {
+    font-size: 1.2rem;
+    border-radius: 8px 8px 0 0; /* Updated border radius */
+    width: 100%; /* Ensure full width */
+    background: transparent; /* Allow gradient to show */
+  }
+
+  .card p {
+    font-size: 0.8rem;
+    text-align: center;
+    border-radius: 0 0 8px 8px; /* Updated border radius */
+    width: 100%; /* Ensure full width */
   }
 }
 
@@ -1156,8 +1200,9 @@ textarea::placeholder {
     font-size: 1rem;
   }
 }
-/* ///////////////////////////////////////////////// */
-/* SERVICES //////////////////////////////////////// */
+/* ===================================
+  SERVICES
+  =================================== */
 /* Heading */
 .services-heading {
   font-size: 2rem;
@@ -1174,19 +1219,6 @@ textarea::placeholder {
 
 .p-mobile {
   display: none; /* Hide by default */
-}
-
-@media (max-width: 500px) {
-  .p-mobile {
-    display: block; /* Show only on small screens */
-    color: white;
-    display: block; /* Show by default */
-    text-align: center;
-    margin-bottom: 1rem;
-  }
-  .p-hover {
-    display: none;
-  }
 }
 
 .services-section {
@@ -1208,6 +1240,9 @@ textarea::placeholder {
   overflow: visible; /* Keep this as visible to allow the full 3D effect */
 }
 
+/* ------------------------------------
+   Service Items
+   ------------------------------------ */
 /* The key part that fixes the border radius issue */
 .service-item {
   flex: 1 1 calc(50% - 20px);
@@ -1303,20 +1338,6 @@ textarea::placeholder {
   z-index: 2;
 }
 
-@media (max-width: 700px) {
-  .service-item {
-    /* margin: 0; */
-    border-radius: 0; /* Remove border radius at 700px viewport width */
-  }
-
-  .service-item-back,
-  .service-item-front,
-  .service-item-back::before,
-  .service-item-front::before {
-    border-radius: 0; /* Remove border radius from all elements at 700px */
-  }
-}
-
 .service-item-front h2 {
   font-size: 1rem;
   font-weight: 700;
@@ -1351,12 +1372,182 @@ textarea::placeholder {
   background: rgba(0, 0, 0, 0.75);
 }
 
-/* Keep all the rest of your media queries and background image styles */
+/* ------------------------------------
+   Service Item Backgrounds
+   ------------------------------------ */
+.service-item:first-child .service-item-back,
+.service-item:first-child .service-item-front {
+  background-image: url('https://storage.googleapis.com/background-vid/services-design.webp?v=1');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-origin: border-box; /* Ensures the background extends to the edge of the border */
+  background-clip: border-box; /* Ensures the background extends to the edge of the border */
+}
+.service-item:nth-child(2) .service-item-back,
+.service-item:nth-child(2) .service-item-front {
+  background-image: url('https://storage.googleapis.com/background-vid/services-responsive.webp?v=1');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-origin: border-box;
+  background-clip: border-box;
+}
+.service-item:nth-child(3) .service-item-back,
+.service-item:nth-child(3) .service-item-front {
+  background-image: url('https://storage.googleapis.com/background-vid/services-ecommerce.webp?v=1');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-origin: border-box;
+  background-clip: border-box;
+}
+.service-item:nth-child(4) .service-item-back,
+.service-item:nth-child(4) .service-item-front {
+  background-image: url('https://storage.googleapis.com/background-vid/services-seo.webp?v=1');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-origin: border-box;
+  background-clip: border-box;
+}
+.service-item:nth-child(5) .service-item-back,
+.service-item:nth-child(5) .service-item-front {
+  background-image: url('https://storage.googleapis.com/background-vid/services-digital-marketing.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-origin: border-box;
+  background-clip: border-box;
+}
+.service-item:nth-child(6) .service-item-back,
+.service-item:nth-child(6) .service-item-front {
+  background-image: url('https://storage.googleapis.com/background-vid/services-pagespeed.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-origin: border-box;
+  background-clip: border-box;
+}
+
+/* ------------------------------------
+   Buttons
+   ------------------------------------ */
+.more-info-button {
+  display: inline-block;
+  padding: 0.5rem 0.3rem;
+  margin: 0 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  color: #000;
+  background-color: var(--primary-color);
+  border-radius: 4px;
+  transition: background-color 0.3s, color 0.3s;
+  z-index: 2;
+}
+.more-info-button:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+/* ------------------------------------
+   Animations
+   ------------------------------------ */
+/* Animation styles for service items - UPDATED FOR FASTER ANIMATIONS */
+/* Base styles for the slide animations */
+.service-item {
+  opacity: 0;
+  transition: transform 0.5s ease-out, opacity 0.5s ease-out; /* Changed from 0.8s to 0.5s */
+  will-change: transform, opacity;
+}
+
+/* Slide from left animation (1st, 3rd, 5th) */
+.slide-from-left {
+  transform: translateX(
+    -70px
+  ); /* Reduced from -100px for faster visual effect */
+}
+
+/* Slide from right animation (2nd, 4th, 6th) */
+.slide-from-right {
+  transform: translateX(70px); /* Reduced from 100px for faster visual effect */
+}
+
+/* Animation triggered by Intersection Observer */
+.service-item.animate {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Reduced staggered delay based on item position */
+.service-item:nth-child(1) {
+  transition-delay: 0.05s; /* Changed from 0.1s */
+}
+
+.service-item:nth-child(2) {
+  transition-delay: 0.1s; /* Changed from 0.2s */
+}
+
+.service-item:nth-child(3) {
+  transition-delay: 0.15s; /* Changed from 0.3s */
+}
+
+.service-item:nth-child(4) {
+  transition-delay: 0.2s; /* Changed from 0.4s */
+}
+
+.service-item:nth-child(5) {
+  transition-delay: 0.25s; /* Changed from 0.5s */
+}
+
+.service-item:nth-child(6) {
+  transition-delay: 0.3s; /* Changed from 0.6s */
+}
+
+/* Ensure animations don't interfere with card flipping */
+.service-item.animate .service-item-inner,
+.service-item.animate .service-item-back,
+.service-item.animate .service-item-front {
+  transition: transform 0.5s;
+}
+
+/* ------------------------------------
+   Media Queries
+   ------------------------------------ */
+@media (max-width: 500px) {
+  .p-mobile {
+    display: block; /* Show only on small screens */
+    color: white;
+    display: block; /* Show by default */
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  .p-hover {
+    display: none;
+  }
+}
+
+@media (max-width: 700px) {
+  .service-item {
+    /* margin: 0; */
+    border-radius: 0; /* Remove border radius at 700px viewport width */
+  }
+
+  .service-item-back,
+  .service-item-front,
+  .service-item-back::before,
+  .service-item-front::before {
+    border-radius: 0; /* Remove border radius from all elements at 700px */
+  }
+}
+
 @media (max-width: 1136px) and (min-width: 936px) {
   .services-section .service-item .service-item-back p {
     font-size: 0.9rem;
   }
 }
+
 @media (max-width: 935px) {
   .services-section {
     width: 100%;
@@ -1412,6 +1603,7 @@ textarea::placeholder {
     height: auto;
   }
 }
+
 @media (max-width: 592px) {
   .services-section .service-item .service-item-back p {
     font-size: 0.9rem;
@@ -1421,11 +1613,13 @@ textarea::placeholder {
     margin: -0.8rem 1rem 0;
   }
 }
+
 @media (max-width: 430px) {
   .services-section .service-item .service-item-back p {
     font-size: 0.84rem;
   }
 }
+
 @media (max-height: 765px) {
   .services-section .service-item .service-item-back p {
     font-size: 0.8rem;
@@ -1435,6 +1629,7 @@ textarea::placeholder {
     margin-top: -1.5rem;
   }
 }
+
 @media (max-height: 525px) {
   .services-section .service-item {
     height: 100vh;
@@ -1446,6 +1641,7 @@ textarea::placeholder {
     font-size: 0.7rem;
   }
 }
+
 @media (max-width: 430px) and (max-height: 932px) and (orientation: portrait) {
   .services-section .service-item {
     height: 40vh;
@@ -1461,129 +1657,6 @@ textarea::placeholder {
   }
 }
 
-.service-item:first-child .service-item-back,
-.service-item:first-child .service-item-front {
-  background-image: url('https://storage.googleapis.com/background-vid/services-design.webp?v=1');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-origin: border-box; /* Ensures the background extends to the edge of the border */
-  background-clip: border-box; /* Ensures the background extends to the edge of the border */
-}
-.service-item:nth-child(2) .service-item-back,
-.service-item:nth-child(2) .service-item-front {
-  background-image: url('https://storage.googleapis.com/background-vid/services-responsive.webp?v=1');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-origin: border-box;
-  background-clip: border-box;
-}
-.service-item:nth-child(3) .service-item-back,
-.service-item:nth-child(3) .service-item-front {
-  background-image: url('https://storage.googleapis.com/background-vid/services-ecommerce.webp?v=1');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-origin: border-box;
-  background-clip: border-box;
-}
-.service-item:nth-child(4) .service-item-back,
-.service-item:nth-child(4) .service-item-front {
-  background-image: url('https://storage.googleapis.com/background-vid/services-seo.webp?v=1');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-origin: border-box;
-  background-clip: border-box;
-}
-.service-item:nth-child(5) .service-item-back,
-.service-item:nth-child(5) .service-item-front {
-  background-image: url('https://storage.googleapis.com/background-vid/services-digital-marketing.webp');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-origin: border-box;
-  background-clip: border-box;
-}
-.service-item:nth-child(6) .service-item-back,
-.service-item:nth-child(6) .service-item-front {
-  background-image: url('https://storage.googleapis.com/background-vid/services-pagespeed.webp');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-origin: border-box;
-  background-clip: border-box;
-}
-.more-info-button {
-  display: inline-block;
-  padding: 0.5rem 0.3rem;
-  margin: 0 1rem;
-  font-size: 1rem;
-  font-weight: 600;
-  letter-spacing: 1.5px;
-  color: #000;
-  background-color: var(--primary-color);
-  border-radius: 4px;
-  transition: background-color 0.3s, color 0.3s;
-  z-index: 2;
-}
-.more-info-button:hover {
-  background-color: #fff;
-  color: #000;
-}
-
-/* Animation styles for service items - UPDATED FOR FASTER ANIMATIONS */
-/* Base styles for the slide animations */
-.service-item {
-  opacity: 0;
-  transition: transform 0.5s ease-out, opacity 0.5s ease-out; /* Changed from 0.8s to 0.5s */
-  will-change: transform, opacity;
-}
-
-/* Slide from left animation (1st, 3rd, 5th) */
-.slide-from-left {
-  transform: translateX(
-    -70px
-  ); /* Reduced from -100px for faster visual effect */
-}
-
-/* Slide from right animation (2nd, 4th, 6th) */
-.slide-from-right {
-  transform: translateX(70px); /* Reduced from 100px for faster visual effect */
-}
-
-/* Animation triggered by Intersection Observer */
-.service-item.animate {
-  opacity: 1;
-  transform: translateX(0);
-}
-
-/* Reduced staggered delay based on item position */
-.service-item:nth-child(1) {
-  transition-delay: 0.05s; /* Changed from 0.1s */
-}
-
-.service-item:nth-child(2) {
-  transition-delay: 0.1s; /* Changed from 0.2s */
-}
-
-.service-item:nth-child(3) {
-  transition-delay: 0.15s; /* Changed from 0.3s */
-}
-
-.service-item:nth-child(4) {
-  transition-delay: 0.2s; /* Changed from 0.4s */
-}
-
-.service-item:nth-child(5) {
-  transition-delay: 0.25s; /* Changed from 0.5s */
-}
-
-.service-item:nth-child(6) {
-  transition-delay: 0.3s; /* Changed from 0.6s */
-}
-
 /* Disable animations for users who prefer reduced motion */
 @media (prefers-reduced-motion: reduce) {
   .service-item {
@@ -1592,17 +1665,9 @@ textarea::placeholder {
     transition: none;
   }
 }
-
-/* Ensure animations don't interfere with card flipping */
-.service-item.animate .service-item-inner,
-.service-item.animate .service-item-back,
-.service-item.animate .service-item-front {
-  transition: transform 0.5s;
-}
-
-/* -------------------------------- */
-/* JOURNEY SECTION */
-/* -------------------------------- */
+/* ===================================
+  JOURNEY SECTION
+  =================================== */
 .journey-section {
   z-index: 20;
   position: relative;
@@ -1617,12 +1682,6 @@ textarea::placeholder {
 
 .journey-section h1 {
   color: white;
-}
-
-@media (max-width: 619px) {
-  .journey-section h1 {
-    font-size: 1rem; /* Adjusted for smaller screens */
-  }
 }
 
 .journey-divider {
@@ -1653,6 +1712,9 @@ label {
   gap: 1.5rem;
 }
 
+/* ------------------------------------
+     Headings & Text
+     ------------------------------------ */
 /* Heading */
 .journey-heading {
   font-size: 2rem;
@@ -1684,6 +1746,9 @@ label {
   transition: transform 0.6s ease-out, opacity 0.6s ease-out;
 }
 
+/* ------------------------------------
+     Journey Cards
+     ------------------------------------ */
 /* Cards */
 .journey-card {
   background-color: #222; /* Changed from var(--secondary-color) to #222 (dark gray) */
@@ -1726,7 +1791,7 @@ label {
 
 .journey-section .card-title {
   font-size: 1.25rem;
-  color: #eee; /* Changed from black to #eee (very light gray) */
+  color: #eee;
 }
 
 .card-description {
@@ -1734,6 +1799,9 @@ label {
   color: #ccc; /* Changed from black to #ccc (light gray) */
 }
 
+/* ------------------------------------
+     Links
+     ------------------------------------ */
 .page-link {
   color: #5dade2; /* Changed from inherit to #5dade2 (light blue) */
   text-decoration: underline;
@@ -1746,8 +1814,18 @@ label {
   text-decoration: none;
   text-shadow: none; /* Removed text shadow as it's less needed on dark background */
 }
-/* /////////////////////////////////////// */
-/* PRICING SECTION /////////////////////// */
+
+/* ------------------------------------
+     Media Queries
+     ------------------------------------ */
+@media (max-width: 619px) {
+  .journey-section h1 {
+    font-size: 1rem; /* Adjusted for smaller screens */
+  }
+}
+/* ===================================
+  PRICING SECTION
+  =================================== */
 .pricing-section {
   position: relative;
   text-align: center;
@@ -1760,12 +1838,18 @@ label {
   overflow: hidden;
 }
 
+/* ------------------------------------
+     Headings & Text
+     ------------------------------------ */
 /* Heading */
 .pricing-heading {
   font-size: 3rem;
   font-weight: 700;
   margin-bottom: 1rem;
   color: black;
+  opacity: 0;
+  transform: translateY(100px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 
 /* Description */
@@ -1778,44 +1862,6 @@ label {
   text-align: center;
   margin-left: auto;
   margin-right: auto;
-}
-
-/* /////////////////////////////////////// */
-/* PRICING SECTION /////////////////////// */
-.pricing-section {
-  position: relative;
-  text-align: center;
-  padding: 2rem;
-  background-color: #fff;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  z-index: 15;
-}
-
-/* Heading */
-.pricing-heading {
-  font-size: 3rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
-  color: black;
-}
-
-/* Description */
-.pricing-description {
-  font-size: 1rem;
-  margin-bottom: 2rem;
-  color: black;
-  width: 1000px;
-  max-width: 100%;
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/* Heading, Description, and Cards - Initial State */
-.pricing-heading,
-.pricing-description {
   opacity: 0;
   transform: translateY(100px);
   transition: opacity 0.8s ease-out, transform 0.8s ease-out;
@@ -1835,6 +1881,9 @@ label {
   transform: translateY(100px);
 }
 
+/* ------------------------------------
+     Pricing Cards
+     ------------------------------------ */
 /* Pricing Cards Container */
 .pricing-cards-container {
   display: flex;
@@ -1881,6 +1930,49 @@ label {
   z-index: 1;
 }
 
+/* Ensure text remains above slivers */
+.checklist li,
+.pricing-card-1 h2,
+.pricing-card-1 h3,
+.pricing-card-1 h4,
+.pricing-card-1 ul,
+.pricing-card-2 h2,
+.pricing-card-2 h3,
+.pricing-card-2 h4,
+.pricing-card-2 ul {
+  position: relative;
+  z-index: 2;
+}
+
+/* Card Titles */
+.pricing-section .pricing-card h2 {
+  font-size: 2.5rem;
+  color: #000;
+  margin-top: 1rem;
+}
+
+.pricing-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  margin-top: 0.5rem;
+  color: #333;
+}
+
+.pricing-card h4 {
+  margin-bottom: 0.35rem;
+}
+
+/* List Styling */
+.pricing-card ul,
+.quote-card .info-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* ------------------------------------
+     Hover Effects
+     ------------------------------------ */
 /* Pricing Cards Hover */
 /* First Sliver */
 .pricing-card-1::before,
@@ -1956,46 +2048,9 @@ label {
   transform: translate(90%, 90%) rotate(45deg);
 }
 
-/* Ensure text remains above slivers */
-.checklist li,
-.pricing-card-1 h2,
-.pricing-card-1 h3,
-.pricing-card-1 h4,
-.pricing-card-1 ul,
-.pricing-card-2 h2,
-.pricing-card-2 h3,
-.pricing-card-2 h4,
-.pricing-card-2 ul {
-  position: relative;
-  z-index: 2;
-}
-
-/* Card Titles */
-.pricing-section .pricing-card h2 {
-  font-size: 2.5rem;
-  color: #000;
-  margin-top: 1rem;
-}
-
-.pricing-card h3 {
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
-  margin-top: 0.5rem;
-  color: #333;
-}
-
-.pricing-card h4 {
-  margin-bottom: 0.35rem;
-}
-
-/* List Styling */
-.pricing-card ul,
-.quote-card .info-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
+/* ------------------------------------
+     Buttons
+     ------------------------------------ */
 /* Button Styling */
 .pricing-button,
 .quote-section .submit-button {
@@ -2011,25 +2066,6 @@ label {
   text-transform: uppercase;
 }
 
-/* List Items */
-.pricing-card ul li {
-  font-size: 1rem;
-  color: #555;
-}
-
-/* Responsive Adjustments */
-@media (max-width: 1024px) {
-  .pricing-card {
-    width: 45%;
-  }
-}
-
-@media (max-width: 768px) {
-  .pricing-card {
-    width: 100%;
-  }
-}
-
 /* Pricing Button */
 .pricing-button {
   position: relative;
@@ -2038,6 +2074,15 @@ label {
   border: 4px solid #000;
   text-align: center;
   text-decoration: none;
+}
+
+/* ------------------------------------
+     Checklist Styling
+     ------------------------------------ */
+/* List Items */
+.pricing-card ul li {
+  font-size: 1rem;
+  color: #555;
 }
 
 /* Checklist Styling with Checkmarks */
@@ -2075,22 +2120,9 @@ label {
   font-weight: bold; /* Match weight with the checkmarks */
 }
 
-/* Media Query Adjustments for Checklist */
-@media (max-width: 768px) {
-  .checklist li {
-    font-size: 0.9rem; /* Adjust font size for smaller screens */
-  }
-
-  .checklist li::before {
-    font-size: 1rem; /* Adjust checkmark size for smaller screens */
-  }
-
-  .checklist .no-symbol::before {
-    font-size: 1rem; /* Adjust no symbol size for smaller screens */
-  }
-}
-
-/* Additional fees */
+/* ------------------------------------
+     Additional Fees
+     ------------------------------------ */
 /* Additional Fees Section */
 .added-fees {
   /* padding: 2rem; */
@@ -2129,10 +2161,6 @@ label {
   padding: 1.5rem;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s, box-shadow 0.3s;
-}
-
-/* Transition Effects for Fee Items */
-.fee-item {
   opacity: 0;
   transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
@@ -2198,113 +2226,39 @@ label {
   color: #000; /* Black */
 }
 
+/* ------------------------------------
+     Media Queries
+     ------------------------------------ */
+@media (max-width: 1024px) {
+  .pricing-card {
+    width: 45%;
+  }
+}
+
 @media (max-width: 768px) {
+  .pricing-card {
+    width: 100%;
+  }
+
   .fees-grid {
     grid-template-columns: 1fr;
   }
-}
-/* ---------------------------------- */
-/* QUOTE SECTION */
-/* ---------------------------------- */
-.contact-info li,
-.contact-info li span,
-.form-group,
-.form-row,
-.quote-card-list,
-.quote-card-list li,
-.quote-cards-container,
-.submission-form {
-  display: flex;
-  display: flex;
-}
 
-.quote-section-heading {
-  font-size: 3rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
-  color: white;
-}
-.pricing-button:hover,
-.quote-section .submit-button:hover {
-  color: #fff;
-  border-color: #5dade2;
-}
-.pricing-card .pricing-button {
-  position: absolute;
-  bottom: 15px;
-  right: 15px;
-  margin: 0;
-}
-.submission-form {
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 1.5rem;
-  background-color: transparent;
-  border-radius: 8px;
-  width: 100%;
-  box-sizing: border-box;
-  overflow: hidden;
-}
-.form-row {
-  justify-content: space-between;
-  gap: 1rem;
-  width: 100%;
-  justify-content: space-between;
-  flex-wrap: wrap;
-}
-label {
-  font-size: 1rem;
-  color: #fff;
-}
-input,
-select {
-  width: 100%;
-  padding: 0.75rem;
-  font-size: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-}
-#budget {
-  font-size: 0.75rem;
-}
-#budget option {
-  font-size: inherit;
-}
-.form-group {
-  flex: 1;
-  flex-direction: column;
-  min-width: 0;
-}
-textarea {
-  width: 100%;
-  padding: 0.75rem;
-  font-size: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  min-height: 120px;
-  box-sizing: border-box;
-}
-@media (max-width: 580px) {
-  textarea {
-    min-height: 150px;
+  .checklist li {
+    font-size: 0.9rem; /* Adjust font size for smaller screens */
+  }
+
+  .checklist li::before {
+    font-size: 1rem; /* Adjust checkmark size for smaller screens */
+  }
+
+  .checklist .no-symbol::before {
+    font-size: 1rem; /* Adjust no symbol size for smaller screens */
   }
 }
-@media (max-width: 730px) {
-  .form-row {
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-}
-.quote-section .submit-button {
-  position: relative;
-  border-radius: 50px;
-  background-color: #000;
-  border: 4px solid #000;
-}
+/* ===================================
+  QUOTE SECTION
+  =================================== */
 .quote-section {
   position: relative;
   z-index: 15;
@@ -2317,16 +2271,15 @@ textarea {
   text-align: center;
   overflow-x: hidden;
 }
+
 .quote-section p {
   color: #fff;
   margin-bottom: 1rem;
 }
 
-.quote-card-heading,
-.quote-card-list li:hover {
-  color: var(--primary-color);
-}
-/* Quote Section Heading */
+/* ------------------------------------
+     Headings
+     ------------------------------------ */
 .quote-section-heading {
   font-size: 3rem;
   font-weight: 700;
@@ -2337,8 +2290,25 @@ textarea {
   transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
+/* Fade-in effect when element becomes visible */
+.fade-in-quote {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Fade-out effect when element is fully off-screen */
+.quote-section-heading:not(.fade-in-quote),
+.quote-card:not(.fade-in-quote) {
+  opacity: 0;
+  transform: translateY(80px);
+}
+
+/* ------------------------------------
+     Quote Cards
+     ------------------------------------ */
 /* Quote Cards Container */
 .quote-cards-container {
+  display: flex;
   justify-content: center;
   gap: 1rem;
   flex-wrap: wrap;
@@ -2359,32 +2329,11 @@ textarea {
   transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
-/* Fade-in effect when element becomes visible */
-.fade-in-quote {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Fade-out effect when element is fully off-screen */
-.quote-section-heading:not(.fade-in-quote),
-.quote-card:not(.fade-in-quote) {
-  opacity: 0;
-  transform: translateY(80px);
-}
-@media (max-width: 1118px) {
-  .quote-cards-container {
-    flex-direction: column;
-    align-items: center;
-  }
-  .quote-card {
-    width: 80vw;
-    max-width: none;
-  }
-}
 .quote-card:hover {
   box-shadow: 0 0 20px var(--primary-color);
   background-color: rgba(0, 0, 0, 0.2);
 }
+
 .quote-card-heading {
   text-transform: uppercase;
   font-size: 2rem;
@@ -2392,61 +2341,9 @@ textarea {
   text-transform: uppercase;
   font-weight: 700;
   margin: 0 0 1rem;
+  color: var(--primary-color);
 }
-.quote-card-list {
-  flex-direction: column;
-  align-items: center;
-}
-.contact-info .icon {
-  display: inline-block;
-  flex-shrink: 0;
-  vertical-align: middle;
-}
-.quote-card-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
-}
-.quote-card-list li {
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  font-size: 1rem;
-  color: #333;
-  transition: color 0.3s;
-}
-.icon {
-  width: 1.5rem;
-  height: auto;
-  fill: #5dade2;
-  transition: fill 0.3s;
-}
-.quote-card-list li:hover .icon {
-  fill: white;
-}
-.contact-info {
-  text-align: center;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-.contact-info li {
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  font-size: 1rem;
-  color: #fff;
-}
-.contact-info .icon {
-  flex-shrink: 0;
-}
-.contact-info li span {
-  line-height: 1.5;
-  align-items: center;
-}
+
 .quote-card .info-list h4 {
   text-decoration: underline 3px solid var(--primary-color);
   margin: 0;
@@ -2457,16 +2354,206 @@ textarea {
   color: #fff;
   text-transform: uppercase;
 }
+
 .quote-card .info-list p {
   font-size: 1rem;
   color: #fff;
   margin: 0 0 2rem;
 }
 
-/* --------------------------------------- */
-/* PORTFOLIO SECTION */
-/* --------------------------------------- */
+/* ------------------------------------
+     Lists
+     ------------------------------------ */
+.quote-card-list {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
 
+.quote-card-list li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-size: 1rem;
+  color: #333;
+  transition: color 0.3s;
+}
+
+.quote-card-list li:hover {
+  color: var(--primary-color);
+}
+
+.icon {
+  width: 1.5rem;
+  height: auto;
+  fill: #5dade2;
+  transition: fill 0.3s;
+}
+
+.quote-card-list li:hover .icon {
+  fill: white;
+}
+
+.contact-info {
+  text-align: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.contact-info li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-size: 1rem;
+  color: #fff;
+}
+
+.contact-info .icon {
+  display: inline-block;
+  flex-shrink: 0;
+  vertical-align: middle;
+}
+
+.contact-info li span {
+  display: flex;
+  line-height: 1.5;
+  align-items: center;
+}
+
+/* ------------------------------------
+     Form Elements
+     ------------------------------------ */
+.submission-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 1.5rem;
+  background-color: transparent;
+  border-radius: 8px;
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.form-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  width: 100%;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+label {
+  font-size: 1rem;
+  color: #fff;
+}
+
+input,
+select {
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+#budget {
+  font-size: 0.75rem;
+}
+
+#budget option {
+  font-size: inherit;
+}
+
+.form-group {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-width: 0;
+}
+
+textarea {
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  min-height: 120px;
+  box-sizing: border-box;
+}
+
+.quote-section .submit-button {
+  position: relative;
+  border-radius: 50px;
+  background-color: #000;
+  border: 4px solid #000;
+  padding: 0.5rem 1rem;
+  font-weight: 700;
+  z-index: 1;
+  transition: color 0.3s, border-color 0.8s;
+  color: #fff;
+  display: inline-block;
+  font-size: 1.2rem;
+  overflow: hidden;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.pricing-button:hover,
+.quote-section .submit-button:hover {
+  color: #fff;
+  border-color: #5dade2;
+}
+
+.pricing-card .pricing-button {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  margin: 0;
+}
+
+/* ------------------------------------
+     Media Queries
+     ------------------------------------ */
+@media (max-width: 1118px) {
+  .quote-cards-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .quote-card {
+    width: 80vw;
+    max-width: none;
+  }
+}
+
+@media (max-width: 730px) {
+  .form-row {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
+
+@media (max-width: 580px) {
+  textarea {
+    min-height: 150px;
+  }
+}
+
+/* ===================================
+  PORTFOLIO SECTION
+  =================================== */
 .portfolio-section {
   position: relative;
   max-width: 100%;
@@ -2475,6 +2562,7 @@ textarea {
   background-color: #d3d3d3;
   text-align: center;
 }
+
 .portfolio-section h2 {
   font-family: exo;
   font-size: 3rem;
@@ -2482,6 +2570,15 @@ textarea {
   color: #000;
 }
 
+.portfolio p {
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 2rem;
+}
+
+/* ------------------------------------
+     Desktop & Mobile Messages
+     ------------------------------------ */
 .portfolio-section .desktop-message {
   display: block;
   font-size: 0.9rem;
@@ -2492,47 +2589,20 @@ textarea {
 .portfolio-section .mobile-message {
   display: none;
 }
-@media (max-width: 935px) {
-  .portfolio-section .mobile-message {
-    display: block;
-    font-size: 0.9rem;
-    color: #555;
-    margin-bottom: 0.5rem;
-  }
-  .portfolio-section .desktop-message {
-    display: none;
-  }
-}
-.portfolio p {
-  font-size: 1.2rem;
-  color: #555;
-  margin-bottom: 2rem;
-}
-/* === Responsive Portfolio Grid === */
 
+/* ------------------------------------
+     Portfolio Grid
+     ------------------------------------ */
 /* Default: 3 items per row */
 .portfolio-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-
   justify-content: center;
 }
 
-/* 2 items per row at 935px */
-@media (max-width: 1175px) {
-  .portfolio-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-/* 1 item per row at 620px */
-@media (max-width: 750px) {
-  .portfolio-grid {
-    grid-template-columns: repeat(1, 1fr);
-    max-width: 500px;
-    margin: 0 auto; /* Keeps it centered */
-  }
-}
+/* ------------------------------------
+     Portfolio Items
+     ------------------------------------ */
 .portfolio-item {
   position: relative;
   aspect-ratio: 1/1;
@@ -2543,9 +2613,14 @@ textarea {
   cursor: pointer;
   transition: transform 0.3s, box-shadow 0.3s;
 }
+
 .portfolio-item:hover {
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
 }
+
+/* ------------------------------------
+     Portfolio Overlays
+     ------------------------------------ */
 .portfolio-overlay-1 {
   position: absolute;
   top: 0;
@@ -2564,6 +2639,7 @@ textarea {
   text-align: center;
   padding: 1rem;
 }
+
 .portfolio-overlay-2 {
   position: absolute;
   top: 0;
@@ -2582,6 +2658,7 @@ textarea {
   text-align: center;
   padding: 1rem;
 }
+
 .portfolio-overlay-3 {
   position: absolute;
   top: 0;
@@ -2600,6 +2677,7 @@ textarea {
   text-align: center;
   padding: 1rem;
 }
+
 .portfolio-overlay-4 {
   position: absolute;
   top: 0;
@@ -2624,6 +2702,9 @@ textarea {
   transform: scale(1); /* Grows to full size */
 }
 
+/* ------------------------------------
+     Overlay Content
+     ------------------------------------ */
 /* Animating the Text */
 .portfolio-overlay h3,
 .portfolio-overlay p {
@@ -2635,6 +2716,7 @@ textarea {
 .portfolio-item:hover .portfolio-overlay p {
   transform: scale(1); /* Expand to normal size */
 }
+
 .portfolio-overlay h3 {
   border-radius: 4px;
   padding: 0.2rem 0.5rem;
@@ -2663,6 +2745,37 @@ textarea {
   transition: background-color 0.3s, transform 0.2s;
 }
 
+/* ------------------------------------
+     Media Queries
+     ------------------------------------ */
+/* 2 items per row at 1175px */
+@media (max-width: 1175px) {
+  .portfolio-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* 1 item per row at 750px */
+@media (max-width: 750px) {
+  .portfolio-grid {
+    grid-template-columns: repeat(1, 1fr);
+    max-width: 500px;
+    margin: 0 auto; /* Keeps it centered */
+  }
+}
+
+@media (max-width: 935px) {
+  .portfolio-section .mobile-message {
+    display: block;
+    font-size: 0.9rem;
+    color: #555;
+    margin-bottom: 0.5rem;
+  }
+  .portfolio-section .desktop-message {
+    display: none;
+  }
+}
+
 @media (max-width: 1300px) and (min-width: 1176px) {
   .portfolio-overlay h3 {
     font-size: 1.2rem; /* Adjust as needed */
@@ -2686,6 +2799,7 @@ textarea {
     font-size: 0.7rem; /* Smaller button text */
   }
 }
+
 @media (max-width: 1029px) and (min-width: 851px) {
   .portfolio-overlay p {
     font-size: 0.9rem; /* Adjust for readability */
@@ -2740,8 +2854,9 @@ textarea {
   }
 }
 
-/* //////////////////////////////////////// */
-/* POPUP ////////////////////////////////// */
+/* ===================================
+  POPUP
+  =================================== */
 /* Popup styling */
 .popup {
   position: fixed;
@@ -2761,18 +2876,6 @@ textarea {
   animation: popup-intro 0.5s ease-in-out forwards; /* Add intro animation */
 }
 
-/* Keyframes for the intro animation */
-@keyframes popup-intro {
-  0% {
-    opacity: 0; /* Fully transparent */
-    transform: translate(-50%, -50%) scale(0); /* Start small */
-  }
-  100% {
-    opacity: 1; /* Fully visible */
-    transform: translate(-50%, -50%) scale(1); /* Expand to full size */
-  }
-}
-
 .popup.show {
   display: block; /* Ensure it's visible */
 }
@@ -2782,6 +2885,9 @@ textarea {
   font-size: 1.1rem;
 }
 
+/* ------------------------------------
+   Form Elements
+   ------------------------------------ */
 .popup form {
   display: flex;
   flex-direction: column;
@@ -2839,12 +2945,27 @@ textarea {
   background-color: #990000;
 }
 
+/* ------------------------------------
+   Animations
+   ------------------------------------ */
+/* Keyframes for the intro animation */
+@keyframes popup-intro {
+  0% {
+    opacity: 0; /* Fully transparent */
+    transform: translate(-50%, -50%) scale(0); /* Start small */
+  }
+  100% {
+    opacity: 1; /* Fully visible */
+    transform: translate(-50%, -50%) scale(1); /* Expand to full size */
+  }
+}
+
 /* //////////////////////////////////////// */
 /* Testimonials Section */
 
-/* -------------------------------------- */
-/* Back to top button */
-/* -------------------------------------- */
+/* ===================================
+  BACK TO TOP BUTTON
+  =================================== */
 .back-to-top {
   position: fixed;
   bottom: 20px;
@@ -2862,7 +2983,9 @@ textarea {
   z-index: 9999;
 }
 
-/* SVG Icon Styling */
+/* ------------------------------------
+     SVG Icon
+     ------------------------------------ */
 .back-to-top svg {
   width: 24px; /* Adjust size as needed */
   height: 24px;
@@ -2870,6 +2993,9 @@ textarea {
   transition: transform 0.2s ease-in-out;
 }
 
+/* ------------------------------------
+     Hover & Active States
+     ------------------------------------ */
 /* Hover Effect */
 .back-to-top:hover svg {
   transform: scale(1.4);
@@ -2882,6 +3008,9 @@ textarea {
   transform: translateY(0);
 }
 
+/* ------------------------------------
+     Media Queries
+     ------------------------------------ */
 /* Adjust for Smaller Screens */
 @media (max-width: 620px) {
   .back-to-top {

@@ -418,8 +418,8 @@
 /* Standalone Logo Section */
 .standalone-logo {
   position: fixed;
-  top: 15px;
-  left: 1.6rem; /* Adjust spacing from the left */
+  top: -25px;
+  left: 0rem; /* Adjust spacing from the left */
   z-index: 9999; /* Ensure it stays above other elements */
   display: flex; /* Align logo image and text horizontally */
   align-items: center; /* Vertically center-align the logo and text */
@@ -435,7 +435,7 @@
 }
 
 .logo-image {
-  height: 4rem; /* Match the height of "KEYSTONE" */
+  height: 10rem; /* Match the height of "KEYSTONE" */
   width: auto; /* Maintain aspect ratio */
 }
 
@@ -443,8 +443,8 @@
   display: flex;
   flex-direction: column; /* Stack "KEYSTONE" and "WEB SOLUTIONS" vertically */
   line-height: 1; /* Tighten vertical spacing */
-  margin-top: 0.3rem;
-  margin-left: 0.8rem;
+  margin-top: 0.1rem;
+  /* margin-left: 0.8rem; */
 }
 
 .logo-primary {
