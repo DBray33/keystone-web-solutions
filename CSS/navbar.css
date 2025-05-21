@@ -465,7 +465,7 @@
 
 /* Shrink and reposition the logo when scrolling */
 .scrolled .standalone-logo {
-  transform: translate(10px, 5px);
+  transform: translate(10px, -2px);
 }
 
 /* ----------------------------------------- */
@@ -485,9 +485,7 @@
     display: none;
   }
   .standalone-logo {
-    height: 70px;
-    display: flex;
-    align-items: center; /* Keeps image vertically centered */
+    height: 159px;
   }
 }
 @media (max-width: 950px) {
@@ -495,12 +493,7 @@
     display: none; /* Hide on smaller screens */
   }
 }
-@media (max-width: 1415px) {
-  .standalone-logo {
-    top: 11px;
-    left: 1.6rem;
-  }
-}
+
 /* End Logo------------------------------------ */
 
 /* Navbar Desktop Menu ------------------------ */
