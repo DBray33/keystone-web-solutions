@@ -2257,13 +2257,12 @@ label {
   }
 }
 /* ===================================
-  QUOTE SECTION
+  QUOTE SECTION - FIXED VERSION
   =================================== */
 .quote-section {
   position: relative;
   z-index: 15;
   padding: 2rem;
-  /* background-image: url('https://storage.googleapis.com/background-vid/quote-bg.webp'); */
   background-color: black;
   background-size: cover;
   background-repeat: no-repeat;
@@ -2278,35 +2277,33 @@ label {
 }
 
 /* ------------------------------------
-     Headings
-     ------------------------------------ */
+       Headings - FIXED
+       ------------------------------------ */
 .quote-section-heading {
   font-size: 3rem;
   font-weight: 700;
   margin-bottom: 1rem;
   color: white;
-  opacity: 0; /* Initially hidden */
-  transform: translateY(80px); /* Moves further down before appearing */
+  /* Default state - visible */
+  opacity: 1;
+  transform: translateY(0);
   transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
-/* Fade-in effect when element becomes visible */
-.fade-in-quote {
+/* Animation states */
+.quote-section-heading.fade-in-quote {
   opacity: 1;
   transform: translateY(0);
 }
 
-/* Fade-out effect when element is fully off-screen */
-.quote-section-heading:not(.fade-in-quote),
-.quote-card:not(.fade-in-quote) {
+.quote-section-heading.fade-out-quote {
   opacity: 0;
   transform: translateY(80px);
 }
 
 /* ------------------------------------
-     Quote Cards
-     ------------------------------------ */
-/* Quote Cards Container */
+       Quote Cards - FIXED
+       ------------------------------------ */
 .quote-cards-container {
   display: flex;
   justify-content: center;
@@ -2315,7 +2312,6 @@ label {
   margin-bottom: 5rem;
 }
 
-/* Quote Cards */
 .quote-card {
   margin: 1rem;
   background-color: #000;
@@ -2324,9 +2320,21 @@ label {
   width: 100%;
   max-width: 480px;
   box-sizing: border-box;
-  transform: translateY(80px); /* Moves further down before appearing */
-  opacity: 0; /* Initially hidden */
+  /* Default state - visible */
+  opacity: 1;
+  transform: translateY(0);
   transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* Animation states */
+.quote-card.fade-in-quote {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.quote-card.fade-out-quote {
+  opacity: 0;
+  transform: translateY(80px);
 }
 
 .quote-card:hover {
@@ -2338,7 +2346,6 @@ label {
   text-transform: uppercase;
   font-size: 2rem;
   text-align: center;
-  text-transform: uppercase;
   font-weight: 700;
   margin: 0 0 1rem;
   color: var(--primary-color);
@@ -2348,11 +2355,9 @@ label {
   text-decoration: underline 3px solid var(--primary-color);
   margin: 0;
   text-transform: uppercase;
-  text-decoration: underline 3px solid var(--primary-color);
   font-size: 1.2rem;
   font-weight: 700;
   color: #fff;
-  text-transform: uppercase;
 }
 
 .quote-card .info-list p {
@@ -2362,8 +2367,8 @@ label {
 }
 
 /* ------------------------------------
-     Lists
-     ------------------------------------ */
+       Lists
+       ------------------------------------ */
 .quote-card-list {
   display: flex;
   list-style: none;
@@ -2428,8 +2433,8 @@ label {
 }
 
 /* ------------------------------------
-     Form Elements
-     ------------------------------------ */
+       Form Elements
+       ------------------------------------ */
 .submission-form {
   display: flex;
   flex-direction: column;
@@ -2450,7 +2455,6 @@ label {
   justify-content: space-between;
   gap: 1rem;
   width: 100%;
-  justify-content: space-between;
   flex-wrap: wrap;
 }
 
@@ -2525,8 +2529,8 @@ textarea {
 }
 
 /* ------------------------------------
-     Media Queries
-     ------------------------------------ */
+       Media Queries
+       ------------------------------------ */
 @media (max-width: 1118px) {
   .quote-cards-container {
     flex-direction: column;
