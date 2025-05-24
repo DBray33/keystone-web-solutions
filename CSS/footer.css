@@ -1,11 +1,9 @@
-/* Footer Styles */
+/* ===================================
+   MAIN FOOTER STYLES
+   =================================== */
 .site-footer {
   clear: both;
   position: relative;
-  background: url('https://storage.googleapis.com/background-vid/footer-phillybg.webp?v=1')
-    no-repeat center center; /* Removed 'fixed' */
-  background-size: cover;
-  background-attachment: fixed; /* This will apply to desktop only */
   color: white;
   text-align: center;
   padding: 40px 20px;
@@ -14,28 +12,44 @@
   min-height: 300px;
 }
 
-/* Add this media query to handle mobile devices */
-@media (max-width: 768px), (pointer: coarse) {
-  .site-footer {
-    background-attachment: scroll; /* Change to scroll for mobile */
-    background-position: center bottom; /* Adjust background position for mobile */
-  }
-}
-
-/* Dark Blue Overlay Effect */
-.site-footer::before {
-  content: '';
+/* ===================================
+       FIXED BACKGROUND
+       =================================== */
+.footer-bg {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(10, 25, 50, 0.75); /* Dark blue overlay */
+  /* background: linear-gradient(rgba(10, 25, 50, 0.75), rgba(10, 25, 50, 0.75)),
+    url('https://storage.googleapis.com/background-vid/footer-phillybg.webp?v=1')
+      no-repeat center center; */
+  background-size: cover;
+  background-attachment: fixed;
   z-index: -1;
 }
 
+/* Mobile: Remove fixed attachment */
+@media (max-width: 768px) {
+  .footer-bg {
+    background-attachment: scroll;
+    background-position: center center;
+    background-size: cover;
+  }
+}
+
+/* iOS Safari specific fix */
+@supports (-webkit-touch-callout: none) {
+  .footer-bg {
+    background-attachment: scroll;
+  }
+}
+
+/* ===================================
+       OVERLAY EFFECTS
+       =================================== */
 /* Slightly Darker Bottom Gradient */
-.site-footer::after {
+/* .site-footer::after {
   content: '';
   position: absolute;
   bottom: 0;
@@ -44,22 +58,21 @@
   height: 50%;
   background: linear-gradient(to top, rgba(10, 25, 50, 1), rgba(10, 25, 50, 0));
   z-index: -1;
-}
+} */
 
-/* Footer Content Wrapper (ensures text scrolls over background) */
+/* ===================================
+       CONTENT WRAPPER
+       =================================== */
 .site-footer-content {
   position: relative;
-  z-index: 2; /* Ensures content appears above the background */
-  background: rgba(
-    10,
-    25,
-    50,
-    0.7
-  ); /* Slightly transparent background for readability */
+  z-index: 2;
+  background: rgba(10, 25, 50, 0.7);
   padding: 40px 20px;
 }
 
-/* Footer Container - Flexbox Layout */
+/* ===================================
+       MAIN CONTAINER LAYOUT
+       =================================== */
 .footer-container {
   display: flex;
   justify-content: space-between;
@@ -68,22 +81,12 @@
   padding-bottom: 20px;
 }
 
-/* Left Side - Business Info */
+/* ===================================
+       LEFT SIDE - BUSINESS INFO
+       =================================== */
 .footer-left {
   width: 50%;
   text-align: center;
-}
-
-.footer-logo-wrapper {
-  width: 100px; /* Ensures the correct width */
-  aspect-ratio: 2 / 1; /* Prevents layout shift */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.footer-left {
-  text-align: center; /* Centers inline elements */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -91,19 +94,42 @@
 
 .footer-logo-wrapper {
   display: flex;
-  justify-content: center; /* Centers the logo */
-  align-items: center; /* Centers vertically */
-  width: 100%; /* Ensures it spans the container */
-  height: auto; /* Prevents unwanted height expansion */
-  padding-bottom: 0; /* Ensures no extra padding */
-  margin-bottom: -10px; /* Slightly nudges the logo up */
+  align-items: center;
+  gap: 0.8rem;
+  justify-content: center;
+  margin-bottom: 1rem;
+  width: 100%;
+  height: auto;
+  padding-bottom: 0;
 }
 
 .footer-logo {
-  width: 200px; /* Adjust as needed */
-  height: auto;
-  display: block; /* Fixes inline spacing issues */
-  margin-bottom: 2rem; /* Adds space below the logo */
+  height: 10rem;
+  width: auto;
+}
+
+.footer-logo-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+  margin-top: 0.1rem;
+  text-align: left;
+}
+
+.footer-logo-primary {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 3rem;
+  font-weight: bold;
+  letter-spacing: 10px;
+  color: white;
+}
+
+.footer-logo-secondary {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1rem;
+  letter-spacing: 4px;
+  color: #ccc;
+  margin-top: -15px;
 }
 
 .footer-business-name {
@@ -117,7 +143,9 @@
   margin-bottom: 15px;
 }
 
-/* Footer Contact Styling - phone number and email */
+/* ===================================
+       CONTACT INFO STYLING
+       =================================== */
 .footer-contact a {
   font-size: 1rem;
   display: inline-flex;
@@ -131,26 +159,22 @@
   width: fit-content;
 }
 
-/* Adds spacing between the icon and the text */
 .footer-icon {
   width: 40px;
   margin-bottom: 5px;
   transition: fill 0.3s ease;
 }
 
-/* Hover effect - changes icon to white & text to #5dade2 */
 .footer-contact a:hover {
   color: #5dade2;
   font-weight: 600;
   text-decoration: underline;
 }
 
-/* Hide the white-circle icons by default */
 .hover-icon {
   display: none;
 }
 
-/* On hover, show white-circle icons & hide the regular ones */
 .footer-contact a:hover .default-icon {
   display: none;
 }
@@ -159,7 +183,9 @@
   display: inline-block;
 }
 
-/* Social Media Icons */
+/* ===================================
+       SOCIAL MEDIA ICONS
+       =================================== */
 .footer-social {
   margin-top: 15px;
 }
@@ -177,8 +203,20 @@
   opacity: 0.7;
 }
 
-/* --------------------------------------- */
-/* Right Side - Contact Form */
+.footer-social a img {
+  width: 40px;
+  height: 40px;
+  transition: filter 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.footer-social a:hover img {
+  filter: brightness(0) invert(1);
+  opacity: 1;
+}
+
+/* ===================================
+       RIGHT SIDE - CONTACT FORM
+       =================================== */
 .footer-right {
   width: 50%;
   text-align: center;
@@ -209,7 +247,9 @@
   height: 80px;
 }
 
-/* Footer Submit Button Styling */
+/* ===================================
+       SUBMIT BUTTON STYLING
+       =================================== */
 .footer-contact-form .submit-button {
   position: relative;
   overflow: hidden;
@@ -223,7 +263,6 @@
   transition: color 0.3s, border-color 0.3s;
 }
 
-/* Hover Effect */
 .footer-contact-form .submit-button:hover::before {
   transform: translateX(100%) skewX(-45deg);
 }
@@ -233,7 +272,61 @@
   border-color: #5dade2;
 }
 
-/* Divider Line Above Copyright */
+/* ===================================
+       FOOTER CARDS SECTION
+       =================================== */
+.footer-cards-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 20px;
+  text-align: center;
+}
+
+.footer-card {
+  background-color: #333;
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.footer-card:hover {
+  transform: translateY(-5px);
+}
+
+.footer-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.footer-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-card li {
+  font-size: 1rem;
+  margin-bottom: 8px;
+}
+
+.footer-card a {
+  color: #5dade2;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-card a:hover {
+  color: #ffffff;
+}
+
+/* ===================================
+       DIVIDER AND COPYRIGHT
+       =================================== */
 .footer-divider {
   width: 100%;
   height: 2px;
@@ -241,57 +334,46 @@
   margin: 30px 0;
 }
 
-/* Copyright Section */
 .footer-copyright {
   display: flex;
-  flex-direction: column; /* Stack elements vertically */
-  align-items: center; /* Center content horizontally */
-  justify-content: center; /* Ensure proper centering */
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   text-align: center;
-  width: 100%; /* Full width */
+  width: 100%;
   margin-top: 30px;
   padding: 15px 0;
   font-size: 14px;
   color: white;
 }
 
-/* Style the Privacy Policy and Terms of Use links */
 .footer-copyright p {
-  margin: 5px 0; /* Adds spacing between paragraphs */
+  margin: 5px 0;
   width: 100%;
 }
 
 .footer-copyright a {
   color: white;
-  text-decoration: underline; /* Ensures underline is always visible */
+  text-decoration: underline;
   font-weight: 500;
-  padding: 0 5px; /* Adds spacing between links */
+  padding: 0 5px;
   transition: color 0.3s ease-in-out;
 }
 
-/* Optional: Change color on hover */
 .footer-copyright a:hover {
   color: #5dade2;
   text-decoration: none;
 }
 
-/* Responsive Adjustment for Small Screens */
-@media (max-width: 600px) {
-  .footer-copyright {
-    font-size: 12px;
-    padding: 10px 0;
-  }
-
-  .footer-copyright p {
-    text-align: center; /* Ensure text is centered */
-  }
-
-  .footer-copyright a {
-    display: inline-block; /* Ensures links stay inline on mobile */
-    margin: 5px 0;
+/* ===================================
+       MOBILE RESPONSIVE STYLES
+       =================================== */
+@media (max-width: 900px) {
+  .footer-cards-container {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
-/* Responsive Design */
+
 @media (max-width: 768px) {
   .footer-container {
     flex-direction: column;
@@ -310,87 +392,39 @@
   }
 }
 
+@media (max-width: 600px) {
+  .footer-cards-container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .footer-copyright {
+    font-size: 12px;
+    padding: 10px 0;
+  }
+
+  .footer-copyright p {
+    text-align: center;
+  }
+
+  .footer-copyright a {
+    display: inline-block;
+    margin: 5px 0;
+  }
+}
+
+/* ===================================
+       MISCELLANEOUS STYLES
+       =================================== */
 .footer-contact svg {
   width: 30px;
   height: 30px;
   fill: white;
 }
 
-/* FOOTER CARDS SECTION */
-.footer-cards-container {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 4 cards per row */
-  gap: 20px;
-  max-width: 1200px;
-  margin: 40px auto;
-  padding: 20px;
-  text-align: center;
+.footer-left a {
+  text-decoration: none !important;
 }
 
-/* Individual Footer Card */
-.footer-card {
-  background-color: #333;
-  color: white;
-  padding: 20px;
-  border-radius: 10px;
-  transition: transform 0.3s ease;
-}
-
-.footer-card:hover {
-  transform: translateY(-5px);
-}
-
-/* Footer Card Headings */
-.footer-card h3 {
-  font-size: 1.3rem;
-  margin-bottom: 10px;
-  text-transform: uppercase;
-}
-
-/* Footer Card List */
-.footer-card ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.footer-card li {
-  font-size: 1rem;
-  margin-bottom: 8px;
-}
-
-/* Footer Card Links */
-.footer-card a {
-  color: #5dade2;
-  text-decoration: none;
-  transition: color 0.3s;
-}
-
-.footer-card a:hover {
-  color: #ffffff;
-}
-
-/* Responsive Layout */
-@media (max-width: 900px) {
-  .footer-cards-container {
-    grid-template-columns: repeat(2, 1fr); /* 2 cards per row */
-  }
-}
-
-@media (max-width: 600px) {
-  .footer-cards-container {
-    grid-template-columns: repeat(1, 1fr); /* 1 card per row */
-  }
-}
-
-.footer-social a img {
-  width: 40px; /* Adjust icon size */
-  height: 40px;
-  transition: filter 0.3s ease-in-out, opacity 0.3s ease-in-out;
-}
-
-/* White overlay effect on hover */
-.footer-social a:hover img {
-  filter: brightness(0) invert(1); /* Converts to white */
-  opacity: 1;
+.footer-left a:hover {
+  text-decoration: none !important;
 }

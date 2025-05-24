@@ -1905,7 +1905,7 @@ label {
   border: 1px solid #ddd;
   border-radius: 8px;
   padding: 0 1.5rem 4.5rem;
-  width: 40%;
+  width: 30%;
   text-align: left;
   position: relative;
   opacity: 0;
@@ -2261,7 +2261,7 @@ label {
 
 @media (max-width: 768px) {
   .pricing-card {
-    width: 100%;
+    width: 80%;
   }
 
   .fees-grid {
@@ -2278,6 +2278,12 @@ label {
 
   .checklist .no-symbol::before {
     font-size: 1rem; /* Adjust no symbol size for smaller screens */
+  }
+}
+
+@media (max-width: 500px) {
+  .pricing-card {
+    width: 100%;
   }
 }
 /* ===================================
