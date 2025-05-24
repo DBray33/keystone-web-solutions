@@ -1,3 +1,97 @@
+/* ===================================
+   MOBILE ROTATION PREVENTION (PHONES ONLY)
+   =================================== */
+
+/* Target only actual mobile devices in landscape */
+@media screen and (orientation: landscape) and (max-width: 932px) and (max-height: 600px) and (pointer: coarse) and (hover: none) {
+  body::before {
+    content: 'Please rotate your device to portrait mode for the best experience';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.99);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    text-align: center;
+    z-index: 99999;
+    padding: 2rem;
+    box-sizing: border-box;
+  }
+
+  /* Hide all content when in landscape on phones */
+  body > *:not(::before) {
+    display: none !important;
+  }
+}
+
+/* Target desktop browsers resized to small landscape dimensions */
+@media screen and (orientation: landscape) and (max-width: 932px) and (max-height: 600px) and (pointer: fine) and (hover: hover) {
+  body::before {
+    content: 'This website is optimized for larger screens or portrait mobile viewing';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.99);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    text-align: center;
+    z-index: 99999;
+    padding: 2rem;
+    box-sizing: border-box;
+  }
+
+  /* Hide all content when desktop window is too small */
+  body > *:not(::before) {
+    display: none !important;
+  }
+}
+
+/* Fallback for older mobile devices that might not support pointer/hover queries */
+@supports not (pointer: coarse) {
+  @media screen and (orientation: landscape) and (max-width: 932px) and (max-height: 600px) and (-webkit-touch-callout: none) {
+    body::before {
+      content: 'Please rotate your device to portrait mode for the best experience';
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.99);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      text-align: center;
+      z-index: 99999;
+      padding: 2rem;
+      box-sizing: border-box;
+    }
+
+    body > *:not(::before) {
+      display: none !important;
+    }
+  }
+}
+
+/* Additional viewport lock for mobile devices */
+@media screen and (max-width: 932px) and (pointer: coarse) {
+  html {
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+  }
+}
+
 /* -----------------------------------
    Reset & Base Styles
    ----------------------------------- */
@@ -2287,20 +2381,20 @@ label {
   }
 }
 /* ===================================
-  QUOTE SECTION - FIXED VERSION
-  =================================== */
+ QUOTE SECTION - FIXED VERSION
+ =================================== */
 .quote-section {
   position: relative;
   z-index: 15;
   padding: 2rem;
-  background: #000000; /* Fallback background */
+  /* background: #000000;  */
   background-repeat: no-repeat;
   background-position: center;
   text-align: center;
   overflow: hidden;
 }
 
-.quote-section::before {
+/* .quote-section::before {
   content: '';
   position: absolute;
   top: -75%;
@@ -2326,9 +2420,9 @@ label {
   z-index: -1;
   animation: vibrantFlow 35s ease-in-out infinite,
     spinGradient 30s linear infinite;
-}
-
-@keyframes vibrantFlow {
+ }
+ 
+ @keyframes vibrantFlow {
   0% {
     background-position: 0% 0%;
     background-size: 400% 400%;
@@ -2349,16 +2443,16 @@ label {
     background-position: 0% 0%;
     background-size: 400% 400%;
   }
-}
-
-@keyframes spinGradient {
+ }
+ 
+ @keyframes spinGradient {
   0% {
     transform: rotate(0deg);
   }
   100% {
     transform: rotate(360deg);
   }
-}
+ } */
 
 /* Mobile: Turn off spinning */
 @media (max-width: 768px) {
@@ -2410,7 +2504,7 @@ label {
 
 .quote-card {
   margin: 1rem;
-  background-color: #000;
+  background-color: transparent;
   border-radius: 8px;
   padding: 1rem;
   width: 100%;
@@ -2419,7 +2513,8 @@ label {
   /* Default state - visible */
   opacity: 1;
   transform: translateY(0);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out,
+    box-shadow 0.3s ease;
 }
 
 /* Animation states */
@@ -2435,7 +2530,7 @@ label {
 
 .quote-card:hover {
   box-shadow: 0 0 20px var(--primary-color);
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: #000;
 }
 
 .quote-card-heading {
