@@ -572,3 +572,45 @@
 }
 
 /* ---------------------------------- */
+/* Mobile Home Button */
+.mobile-home-button {
+  display: none;
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  left: 80%; /* Position on the left side */
+  transform: translateX(-50%);
+  background: white;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1001;
+  text-decoration: none;
+  border: 2px solid #000;
+  border-top: none;
+  transition: background-color 0.3s ease;
+}
+
+.mobile-home-button:hover {
+  background-color: #333;
+}
+
+.mobile-home-button svg {
+  width: 24px;
+  height: 24px;
+}
+
+/* Show mobile home button only when mobile menu is visible */
+@media (max-width: 935px) {
+  .mobile-home-button {
+    display: flex;
+  }
+}
+
+/* Hide on very short screens */
+@media (max-height: 675px) {
+  .mobile-home-button {
+    display: none !important;
+  }
+}
