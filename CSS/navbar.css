@@ -428,15 +428,15 @@
 }
 
 .standalone-logo a {
-  text-decoration: none; /* Remove underline */
-  color: inherit; /* Keep the text color */
+  text-decoration: none;
+  color: inherit;
   display: flex;
   align-items: center;
 }
 
 .logo-image {
-  height: 10rem; /* Match the height of "KEYSTONE" */
-  width: auto; /* Maintain aspect ratio */
+  height: 10rem;
+  width: auto;
 }
 
 .logo-text {
