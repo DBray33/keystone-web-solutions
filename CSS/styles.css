@@ -1759,7 +1759,9 @@ textarea::placeholder {
     transition: none;
   }
 }
-/* ===================================   JOURNEY SECTION   =================================== */
+/* ===================================
+   JOURNEY SECTION
+   =================================== */
 .journey-section {
   z-index: 20;
   position: relative;
@@ -1805,11 +1807,12 @@ label {
 }
 
 /* ------------------------------------
-     Headings & Text
-     ------------------------------------ */
+       Headings & Text
+       ------------------------------------ */
 /* Heading */
 .journey-heading {
-  font-size: 2rem;
+  font-family: 'Exo', sans-serif;
+  font-size: 1.75rem;
   margin-bottom: 1rem;
   color: white;
   transform: translateX(100px);
@@ -1819,7 +1822,7 @@ label {
 
 /* Subheading */
 .journey-subheading {
-  font-size: 1.2rem;
+  font-size: 1rem;
   margin-bottom: 1rem;
   color: #fff; /* Changed from #555 to #bbb (lighter gray) */
   transform: translateX(-100px); /* Moves in like card-1 */
@@ -1829,7 +1832,7 @@ label {
 
 /* Description */
 .journey-description {
-  font-size: 1rem;
+  font-size: 0.9rem;
   line-height: 1.6;
   color: #ddd; /* Changed from black to #ddd (light gray) */
   margin-bottom: 2rem;
@@ -1839,8 +1842,8 @@ label {
 }
 
 /* ------------------------------------
-     Journey Cards
-     ------------------------------------ */
+       Journey Cards
+       ------------------------------------ */
 /* Cards */
 .journey-card {
   background-color: #222; /* Changed from var(--secondary-color) to #222 (dark gray) */
@@ -1882,18 +1885,18 @@ label {
 }
 
 .journey-section .card-title {
-  font-size: 1.25rem;
+  font-size: 1.1rem;
   color: #eee;
 }
 
 .card-description {
-  font-size: 1rem;
+  font-size: 0.9rem;
   color: #ccc; /* Changed from black to #ccc (light gray) */
 }
 
 /* ------------------------------------
-     Links
-     ------------------------------------ */
+       Links
+       ------------------------------------ */
 .page-link {
   color: #5dade2; /* Changed from inherit to #5dade2 (light blue) */
   text-decoration: underline;
@@ -1908,20 +1911,25 @@ label {
 }
 
 /* ------------------------------------
-     Desktop-specific styles
-     ------------------------------------ */
-@media (min-width: 620px) {
-  .journey-section p {
-    font-size: 13px;
+       Media Queries - Mobile First Approach
+       ------------------------------------ */
+
+/* Tablet and up */
+@media (min-width: 768px) {
+  .journey-heading {
+    font-size: 32px; /* Match other section headers */
+  }
+
+  .journey-grid {
+    grid-template-columns: 1fr 1fr;
   }
 }
 
-/* ------------------------------------
-     Media Queries
-     ------------------------------------ */
-@media (max-width: 619px) {
-  .journey-section h1 {
-    font-size: 1rem; /* Adjusted for smaller screens */
+/* Desktop and up */
+@media (min-width: 1024px) {
+  /* Keep desktop fonts the same as tablet */
+  .journey-heading {
+    font-size: 32px; /* Consistent with other sections */
   }
 }
 /* ===================================
