@@ -191,6 +191,7 @@ html {
   }
 }
 .stuff-you-should-know {
+  max-width: 1200px;
   margin: 2rem auto;
   padding: 2rem;
   background-color: rgba(249, 249, 249, 0.7);
