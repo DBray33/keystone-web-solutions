@@ -1933,459 +1933,599 @@ label {
   }
 }
 /* ===================================
-  PRICING SECTION
+  PRICING SECTION - DARK THEME
   =================================== */
+
 .pricing-section {
   position: relative;
-  text-align: center;
-  padding: 2rem;
-  background-color: #fff;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  z-index: 15;
+  background: #0a0a0a;
+  padding: 100px 20px;
   overflow: hidden;
+  min-height: 100vh;
 }
 
-/* ------------------------------------
-         Headings & Text
-         ------------------------------------ */
-/* Heading */
-.pricing-heading {
-  font-size: 32px;
-  font-weight: 700;
-  margin-bottom: 1rem;
-  color: black;
-  opacity: 0;
-  transform: translateY(100px);
-  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+/* Animated Background */
+.pricing-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(
+      circle at 20% 30%,
+      rgba(93, 173, 226, 0.15) 0%,
+      transparent 40%
+    ),
+    radial-gradient(
+      circle at 80% 70%,
+      rgba(147, 51, 234, 0.1) 0%,
+      transparent 40%
+    ),
+    radial-gradient(
+      circle at 50% 50%,
+      rgba(236, 72, 153, 0.08) 0%,
+      transparent 50%
+    );
+  animation: backgroundShift 20s ease-in-out infinite;
+  pointer-events: none;
 }
 
-/* Description */
-.pricing-description {
-  font-size: 1rem;
-  margin-bottom: 2rem;
-  color: black;
-  width: 1000px; /* Set fixed width */
-  max-width: 100%; /* Prevent overflow on smaller screens */
+@keyframes backgroundShift {
+  0%,
+  100% {
+    transform: scale(1) rotate(0deg);
+  }
+  50% {
+    transform: scale(1.1) rotate(5deg);
+  }
+}
+
+.pricing-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+/* Header Styles */
+.pricing-header {
   text-align: center;
-  margin-left: auto;
-  margin-right: auto;
-  opacity: 0;
-  transform: translateY(100px);
-  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  margin-bottom: 60px;
+  animation: fadeInUp 0.8s ease-out;
 }
 
-/* Fade-in effect when element becomes visible */
-.pricing-heading.visible,
-.pricing-description.visible {
-  opacity: 1;
-  transform: translateY(0);
+.section-tag {
+  display: inline-block;
+  background: rgba(93, 173, 226, 0.1);
+  border: 1px solid rgba(93, 173, 226, 0.3);
+  color: #5dade2;
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 24px;
 }
 
-/* Fade-out effect when element is scrolled out of view */
-.pricing-heading:not(.visible),
-.pricing-description:not(.visible) {
-  opacity: 0;
-  transform: translateY(100px);
+.pricing-title {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: 800;
+  margin: 0 0 20px 0;
+  line-height: 1.1;
 }
 
-/* ------------------------------------
-         Pricing Cards
-         ------------------------------------ */
+.title-gradient {
+  display: block;
+  background: linear-gradient(135deg, #ffffff 0%, #5dade2 50%, #9333ea 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.pricing-subtitle {
+  font-size: 1.25rem;
+  color: #888;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
 /* Pricing Cards Container */
-.pricing-cards-container {
-  display: flex;
-  justify-content: center;
-  gap: 1.5rem;
-  flex-wrap: wrap;
+.pricing-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 40px;
+  margin-bottom: 80px;
+  align-items: stretch;
 }
 
-/* Individual Pricing Cards */
+/* Individual Pricing Card */
 .pricing-card {
-  background-color: #d3d3d3;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 0 1.5rem 4.5rem;
-  width: 30%;
-  text-align: left;
   position: relative;
+  background: rgba(17, 17, 17, 0.6);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 24px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  animation: fadeInUp 0.8s ease-out 0.4s backwards;
+}
+
+.pricing-card:hover {
+  transform: translateY(-10px);
+  border-color: rgba(93, 173, 226, 0.3);
+}
+
+/* Card Glow Effect */
+.card-glow {
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    circle,
+    rgba(93, 173, 226, 0.1) 0%,
+    transparent 70%
+  );
   opacity: 0;
-  transform: translateY(
-    120px
-  ); /* Increased movement for a more noticeable fade-in */
-  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
 }
 
-/* Fade-in when visible */
-.pricing-card.fade-in {
+.pricing-card:hover .card-glow {
   opacity: 1;
-  transform: translateY(0);
 }
 
-/* PRICING CARD 1 */
-.pricing-card-1 {
+/* Featured Card */
+.pricing-card.featured {
+  border-color: rgba(93, 173, 226, 0.3);
+  background: rgba(17, 17, 17, 0.8);
   position: relative;
-  overflow: hidden;
-  background: #d3d3d3;
-  z-index: 1;
 }
 
-/* PRICING CARD 2 */
-.pricing-card-2 {
-  position: relative;
-  overflow: hidden;
-  background: #e6be8a;
-  z-index: 1;
-}
-
-/* Ensure text remains above slivers */
-.checklist li,
-.pricing-card-1 h2,
-.pricing-card-1 h3,
-.pricing-card-1 h4,
-.pricing-card-1 ul,
-.pricing-card-2 h2,
-.pricing-card-2 h3,
-.pricing-card-2 h4,
-.pricing-card-2 ul {
-  position: relative;
+.featured-badge {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: linear-gradient(135deg, #5dade2 0%, #9333ea 100%);
+  color: white;
+  padding: 6px 16px;
+  border-radius: 50px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
   z-index: 2;
 }
 
-/* Card Titles */
-.pricing-section .pricing-card h2 {
-  font-size: 28px;
-  color: #000;
-  margin-top: 1rem;
+.pricing-card.featured .card-glow {
+  background: radial-gradient(
+    circle,
+    rgba(147, 51, 234, 0.2) 0%,
+    transparent 70%
+  );
 }
 
-.pricing-card h3 {
-  font-size: 20px;
-  margin-bottom: 1rem;
-  margin-top: 0.5rem;
-  color: #333;
-}
-
-.pricing-card h4 {
-  margin-bottom: 0.35rem;
-}
-
-/* List Styling */
-.pricing-card ul,
-.quote-card .info-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-/* ------------------------------------
-         Hover Effects
-         ------------------------------------ */
-/* Pricing Cards Hover */
-/* First Sliver */
-.pricing-card-1::before,
-.pricing-card-1::after {
-  content: '';
-  position: absolute;
-  width: 160%;
-  height: 85%;
-  background: rgba(255, 255, 255, 0.6);
-  transform: rotate(45deg);
-  transition: transform 0.15s ease-out;
-  z-index: 0;
-}
-
-/* Second Sliver */
-.pricing-card-2::before,
-.pricing-card-2::after {
-  content: '';
-  position: absolute;
-  width: 160%;
-  height: 85%;
-  background: rgba(255, 255, 255, 0.6);
-  transform: rotate(45deg);
-  transition: transform 0.15s ease-out;
-  z-index: 0;
-}
-
-/* First Sliver - Upper Part */
-.pricing-card-1::before {
-  top: -110%;
-  left: -100%;
-}
-
-/* First Sliver - Lower Part */
-.pricing-card-1::after {
-  top: -10%;
-  left: -100%;
-}
-
-/* Second Sliver - Upper Part */
-.pricing-card-2::before {
-  top: -110%;
-  left: -100%;
-}
-
-/* Second Sliver - Lower Part */
-.pricing-card-2::after {
-  top: -10%;
-  left: -100%;
-}
-
-.pricing-card-1:hover {
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-}
-
-.pricing-card-1:hover::before {
-  transform: translate(90%, 90%) rotate(45deg);
-}
-
-.pricing-card-1:hover::after {
-  transform: translate(90%, 90%) rotate(45deg);
-}
-
-.pricing-card-2:hover {
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-}
-
-.pricing-card-2:hover::before {
-  transform: translate(90%, 90%) rotate(45deg);
-}
-
-.pricing-card-2:hover::after {
-  transform: translate(90%, 90%) rotate(45deg);
-}
-
-/* ------------------------------------
-         Buttons
-         ------------------------------------ */
-/* Button Styling */
-.pricing-button,
-.quote-section .submit-button {
-  padding: 0.5rem 1rem;
-  font-weight: 700;
-  z-index: 1;
-  transition: color 0.3s, border-color 0.8s;
-  color: #fff;
-  display: inline-block;
-  font-size: 1.2rem;
-  overflow: hidden;
-  cursor: pointer;
-  text-transform: uppercase;
-}
-
-/* Pricing Button */
-.pricing-button {
+/* Card Content */
+.card-content {
+  padding: 40px;
   position: relative;
-  border-radius: 50px;
-  background-color: #000;
-  border: 4px solid #000;
-  text-align: center;
-  text-decoration: none;
+  z-index: 1;
 }
 
-/* ------------------------------------
-         Checklist Styling
-         ------------------------------------ */
-/* List Items */
-.pricing-card ul li {
+.card-header {
+  margin-bottom: 30px;
+}
+
+.package-name {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #fff;
+  margin: 0 0 8px 0;
+}
+
+.package-tagline {
+  color: #888;
   font-size: 1rem;
-  color: #555;
-}
-
-/* Checklist Styling with Checkmarks */
-.checklist {
-  list-style: none; /* Remove default bullets */
-  padding: 0; /* Remove default padding */
-  margin: 0; /* Remove default margin */
-}
-
-.checklist li {
-  position: relative; /* Enable pseudo-element positioning */
-  padding-left: 2rem; /* Add space for the checkmark */
-  margin-bottom: 0.75rem; /* Space between items */
-  font-size: 1rem; /* Adjust font size */
-  color: #333; /* Text color */
-  line-height: 1.5; /* Improve readability */
-}
-
-.checklist li::before {
-  content: '✔'; /* Checkmark symbol */
-  position: absolute; /* Position it in the padding space */
-  left: 0; /* Align it to the left edge */
-  top: 50%; /* Center it vertically */
-  transform: translateY(-50%); /* Center alignment adjustment */
-  color: #008800; /* Green color for the checkmark */
-  font-size: 1.2rem; /* Adjust checkmark size */
-  font-weight: bold; /* Make the checkmark bold */
-}
-
-/* No Symbol Styling */
-.checklist .no-symbol::before {
-  content: '🚫'; /* No symbol */
-  color: #cc0000; /* Red color for the no symbol */
-  font-size: 1.2rem; /* Match size with the checkmarks */
-  font-weight: bold; /* Match weight with the checkmarks */
-}
-
-/* ------------------------------------
-         Additional Fees
-         ------------------------------------ */
-/* Additional Fees Section */
-.added-fees {
-  /* padding: 2rem; */
-  border-radius: 8px;
-  margin-top: 2rem;
-}
-
-.added-fees h4 {
-  font-size: 1.8rem;
-  font-weight: bold;
-  margin-bottom: 1.5rem;
-  color: #000; /* Black */
-  text-transform: none;
-  text-align: center;
-}
-
-.added-fees h5 {
-  font-size: 1.4rem;
-  font-weight: bold;
-  margin: 2rem 0 1rem;
-  color: #000; /* Black */
-  border-bottom: 2px solid #ddd;
-  padding-bottom: 0.5rem;
-}
-
-.added-fees .fees-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 1.5rem;
-}
-
-.fee-item {
-  background-color: #d3d3d3;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 1.5rem;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s, box-shadow 0.3s;
-  opacity: 0;
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-}
-
-/* Fee Item 1 (Slide in from Left) */
-.fee-item-1 {
-  transform: translateX(-100px);
-}
-.fee-item-1.visible {
-  opacity: 1;
-  transform: translateX(0);
-}
-
-/* Fee Item 2 (Slide in from Right) */
-.fee-item-2 {
-  transform: translateX(100px);
-}
-.fee-item-2.visible {
-  opacity: 1;
-  transform: translateX(0);
-}
-
-/* Fee Item 3 (Slide in from Bottom) */
-.fee-item-3 {
-  transform: translateY(100px);
-}
-.fee-item-3.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.fee-item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-}
-
-.fee-item strong {
-  font-size: 1.1rem;
-  color: #000; /* Black */
-  display: block;
-  margin-bottom: 0.5rem;
-}
-
-.fee-item p {
-  font-size: 0.95rem;
-  color: #000; /* Black */
-  line-height: 1.5;
   margin: 0;
 }
 
-.fee-item ul {
-  padding-left: 1.5rem;
-  margin-top: 0.5rem;
+/* Price Display */
+.price-display {
+  margin-bottom: 40px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.fee-item ul li {
+.price-main {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.currency {
+  font-size: 1.5rem;
+  color: #5dade2;
+  margin-right: 4px;
+}
+
+.amount {
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: #fff;
+  line-height: 1;
+}
+
+.period {
+  font-size: 1.1rem;
+  color: #888;
+  margin-left: 8px;
+}
+
+.price-secondary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  color: #888;
+  font-size: 1rem;
+}
+
+.plus {
+  color: #5dade2;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.monthly {
+  font-weight: 500;
+}
+
+.commitment {
+  color: #888;
   font-size: 0.9rem;
-  color: #000; /* Black */
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
-.overages li {
-  list-style: none;
-  color: #000; /* Black */
+/* Features List */
+.features-list {
+  margin-bottom: 40px;
 }
 
-/* ------------------------------------
-         Desktop-specific styles
-         ------------------------------------ */
-@media (min-width: 450px) {
-  .pricing-section p {
-    font-size: 13px;
-  }
+.feature-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+  font-size: 0.95rem;
+  color: #b0b0b0;
+  transition: color 0.3s ease;
+}
 
-  .pricing-section ul li {
-    font-size: 13px;
-  }
+.feature-item.included {
+  color: #b0b0b0;
+}
 
-  .pricing-section .pricing-description {
-    font-size: 15px;
+.feature-item.excluded {
+  color: #666;
+  opacity: 0.6;
+}
+
+.feature-item.premium {
+  color: #5dade2;
+}
+
+.feature-icon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+.feature-item.included .feature-icon {
+  color: #4ade80;
+}
+
+.feature-item.excluded .feature-icon {
+  color: #ef4444;
+}
+
+.feature-item.premium .feature-icon {
+  color: #5dade2;
+}
+
+/* CTA Button */
+.cta-button {
+  width: 100%;
+  padding: 16px 32px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  border-radius: 50px;
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.cta-button:hover {
+  background: rgba(93, 173, 226, 0.1);
+  border-color: #5dade2;
+  transform: translateY(-2px);
+}
+
+.cta-button.featured {
+  background: linear-gradient(135deg, #5dade2 0%, #9333ea 100%);
+  border: none;
+}
+
+.cta-button.featured:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(93, 173, 226, 0.4);
+}
+
+.button-icon {
+  width: 20px;
+  height: 20px;
+  transition: transform 0.3s ease;
+}
+
+.cta-button:hover .button-icon {
+  transform: translateX(4px);
+}
+
+/* Additional Fees Section */
+.additional-fees {
+  margin-top: 100px;
+  padding-top: 80px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.fees-title {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 60px;
+  background: linear-gradient(to right, #fff 0%, #5dade2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.fees-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  gap: 60px;
+}
+
+.fees-category {
+  animation: fadeInUp 0.8s ease-out 0.6s backwards;
+}
+
+.category-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 30px;
+}
+
+.category-icon {
+  width: 28px;
+  height: 28px;
+  color: #5dade2;
+}
+
+/* Fee Cards */
+.fee-card {
+  background: rgba(17, 17, 17, 0.6);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 30px;
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+}
+
+.fee-card:hover {
+  border-color: rgba(93, 173, 226, 0.2);
+  transform: translateY(-4px);
+}
+
+.fee-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.fee-header h5 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #fff;
+  margin: 0;
+}
+
+.fee-badge {
+  padding: 4px 12px;
+  border-radius: 50px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  background: rgba(93, 173, 226, 0.1);
+  color: #5dade2;
+  border: 1px solid rgba(93, 173, 226, 0.3);
+}
+
+.fee-badge.optional {
+  background: rgba(147, 51, 234, 0.1);
+  color: #9333ea;
+  border-color: rgba(147, 51, 234, 0.3);
+}
+
+.fee-description {
+  color: #888;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.fee-details {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.detail-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.detail-item:last-child {
+  border-bottom: none;
+}
+
+.detail-label {
+  color: #b0b0b0;
+  font-size: 0.9rem;
+}
+
+.detail-value {
+  color: #5dade2;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+/* Trust Banner */
+.trust-banner {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  margin-top: 80px;
+  padding: 40px;
+  background: rgba(17, 17, 17, 0.4);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  animation: fadeInUp 0.8s ease-out 0.8s backwards;
+}
+
+.trust-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.trust-icon {
+  width: 24px;
+  height: 24px;
+  color: #5dade2;
+}
+
+.trust-text {
+  color: #b0b0b0;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
-/* ------------------------------------
-         Media Queries
-         ------------------------------------ */
+/* Responsive Design */
 @media (max-width: 1024px) {
-  .pricing-card {
-    width: 45%;
-  }
-}
-
-@media (max-width: 768px) {
-  .pricing-card {
-    width: 80%;
+  .pricing-cards {
+    grid-template-columns: 1fr;
+    max-width: 600px;
+    margin: 0 auto 80px;
   }
 
   .fees-grid {
     grid-template-columns: 1fr;
   }
 
-  .checklist li {
-    font-size: 0.9rem; /* Adjust font size for smaller screens */
-  }
-
-  .checklist li::before {
-    font-size: 1rem; /* Adjust checkmark size for smaller screens */
-  }
-
-  .checklist .no-symbol::before {
-    font-size: 1rem; /* Adjust no symbol size for smaller screens */
+  .trust-banner {
+    flex-wrap: wrap;
+    gap: 30px;
   }
 }
 
-@media (max-width: 500px) {
-  .pricing-card {
-    width: 100%;
+@media (max-width: 768px) {
+  .pricing-section {
+    padding: 60px 20px;
+  }
+
+  .pricing-title {
+    font-size: 2rem;
+  }
+
+  .pricing-subtitle {
+    font-size: 1rem;
+  }
+
+  .card-content {
+    padding: 30px 20px;
+  }
+
+  .amount {
+    font-size: 3rem;
+  }
+
+  .fees-title {
+    font-size: 2rem;
+  }
+
+  .trust-banner {
+    flex-direction: column;
+    gap: 20px;
+    padding: 30px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .pricing-cards {
+    gap: 30px;
+  }
+
+  .feature-item {
+    font-size: 0.85rem;
+  }
+
+  .fee-card {
+    padding: 20px;
+  }
+
+  .fee-description {
+    font-size: 0.85rem;
+  }
+
+  .detail-label,
+  .detail-value {
+    font-size: 0.85rem;
   }
 }
 /* ===================================
