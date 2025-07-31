@@ -880,19 +880,24 @@
     <!-- Mobile Background -->
     <div class="mobile-background"></div>
 
-    <!-- MAIN CONTENT -->
+    <!-- MAIN CONTENT HERO -->
     <section class="main-content" id="main-content">
       <div class="section-container">
         <!-- Line Graph Container added here -->
         <div id="line-graph-container" class="line-graph-container"></div>
 
         <!-- Welcome Header -->
-        <div class="section">
-          <div class="title-wrapper">
-            <h2>Your Partner in</h2>
-            <h2 class="web-dev" data-text="web development">Web Development</h2>
+        <div class="hero-header">
+          <div class="hero-tag-wrapper">
+            <span class="hero-tag">Welcome to the Future</span>
           </div>
-          <p>
+          <div class="title-wrapper">
+            <h2 class="hero-title-top">Your Partner in</h2>
+            <h2 class="hero-title-main web-dev" data-text="web development">
+              Web Development
+            </h2>
+          </div>
+          <p class="hero-subtitle">
             Join us in making the web a more visually enjoyable place. Let us
             help you create a strong, professional online presence.
           </p>
@@ -902,118 +907,206 @@
         <div class="card-navigation">
           <div class="nav-menu">
             <div class="nav-item active" data-target="nav-card-1">
-              Fast Websites
+              <svg
+                class="nav-icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2">
+                <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+              </svg>
+              <span class="nav-text">Fast Websites</span>
             </div>
             <div class="nav-item" data-target="nav-card-2">
-              Custom Solutions
+              <svg
+                class="nav-icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2">
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+              </svg>
+              <span class="nav-text">Custom Solutions</span>
             </div>
-            <div class="nav-item" data-target="nav-card-3">Business Focus</div>
-            <div class="nav-item" data-target="nav-card-4">Results</div>
+            <div class="nav-item" data-target="nav-card-3">
+              <svg
+                class="nav-icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2">
+                <circle cx="12" cy="12" r="10" />
+                <path d="M12 6v6l4 2" />
+              </svg>
+              <span class="nav-text">Business Focus</span>
+            </div>
+            <div class="nav-item" data-target="nav-card-4">
+              <svg
+                class="nav-icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2">
+                <path d="M3 3v18h18" />
+                <path d="M9 17V9" />
+                <path d="M13 17V5" />
+                <path d="M17 17V11" />
+              </svg>
+              <span class="nav-text">Results</span>
+            </div>
           </div>
 
           <div class="section-cards">
             <!-- Value Proposition -->
             <div class="card active" id="nav-card-1">
-              <h2>Fast-Loading Websites for Businesses</h2>
-              <p>
-                Navigating the digital landscape shouldn't be complicated or
-                expensive. We specialize in crafting user-friendly websites with
-                lightning-fast performance and flawless responsiveness. Let us
-                streamline your online presence, freeing you to focus on the
-                aspects of your business that matter most.
-              </p>
-              <!-- Site Health Gauges -->
-              <div class="site-health-container">
-                <h3 class="meter-title">Site Health (via Semrush)</h3>
-                <div class="gauges-wrapper">
-                  <div class="gauge-item">
-                    <div id="our-site-chart" class="gauge-chart"></div>
-                    <div class="gauge-label">Our Site</div>
-                  </div>
-                  <div class="gauge-item">
-                    <div id="competitor-chart" class="gauge-chart"></div>
-                    <div class="gauge-label">Top 10% of Semrush Sites</div>
+              <div class="card-glow"></div>
+              <div class="card-content">
+                <h2>Fast-Loading Websites for Businesses</h2>
+                <p>
+                  Navigating the digital landscape shouldn't be complicated or
+                  expensive. We specialize in crafting user-friendly websites
+                  with lightning-fast performance and flawless responsiveness.
+                  Let us streamline your online presence, freeing you to focus
+                  on the aspects of your business that matter most.
+                </p>
+                <!-- Site Health Gauges -->
+                <div class="site-health-container">
+                  <h3 class="meter-title">Site Health (via Semrush)</h3>
+                  <div class="gauges-wrapper">
+                    <div class="gauge-item">
+                      <div id="our-site-chart" class="gauge-chart"></div>
+                      <div class="gauge-label">Our Site</div>
+                    </div>
+                    <div class="gauge-item">
+                      <div id="competitor-chart" class="gauge-chart"></div>
+                      <div class="gauge-label">Top 10% of Semrush Sites</div>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
 
             <div class="card" id="nav-card-2">
-              <h2>Our Commitment to Custom Web Solutions</h2>
-              <p>
-                We are passionate about building websites that are as functional
-                as they are beautiful. Our mission is to empower businesses to
-                establish a strong online presence that withstands industry
-                changes and fosters long-term growth. A professionally designed
-                website is an investment that pays you back by attracting more
-                customers, boosting credibility, and driving measurable results.
-                Together, we will achieve your online ambitions and set your
-                business up for sustained success.
-              </p>
+              <div class="card-glow"></div>
+              <div class="card-content">
+                <h2>Our Commitment to Custom Web Solutions</h2>
+                <p>
+                  We are passionate about building websites that are as
+                  functional as they are beautiful. Our mission is to empower
+                  businesses to establish a strong online presence that
+                  withstands industry changes and fosters long-term growth. A
+                  professionally designed website is an investment that pays you
+                  back by attracting more customers, boosting credibility, and
+                  driving measurable results. Together, we will achieve your
+                  online ambitions and set your business up for sustained
+                  success.
+                </p>
+              </div>
             </div>
 
             <!-- Benefits for clients -->
             <div class="card" id="nav-card-3">
-              <h2>Focus on Your Business—We'll Handle the Website</h2>
-              <p>
-                Running a business is a full-time job—managing your website
-                doesn't have to be. In today's competitive online market, where
-                consumers increasingly depend on digital interactions, having a
-                strong online presence is not just an advantage—it's a
-                worthwhile investment in your business's success. From
-                eye-catching visuals to seamless functionality, we provide
-                end-to-end web solutions that align with your brand and deliver
-                an effortless user experience. Our affordable pricing ensures
-                your budget works as hard as you do.
-              </p>
+              <div class="card-glow"></div>
+              <div class="card-content">
+                <h2>Focus on Your Business—We'll Handle the Website</h2>
+                <p>
+                  Running a business is a full-time job—managing your website
+                  doesn't have to be. In today's competitive online market,
+                  where consumers increasingly depend on digital interactions,
+                  having a strong online presence is not just an advantage—it's
+                  a worthwhile investment in your business's success. From
+                  eye-catching visuals to seamless functionality, we provide
+                  end-to-end web solutions that align with your brand and
+                  deliver an effortless user experience. Our affordable pricing
+                  ensures your budget works as hard as you do.
+                </p>
+              </div>
             </div>
+
             <!-- Results and standards -->
             <div class="card" id="nav-card-4">
-              <h2>Flawless Websites That Drive Results</h2>
-              <p>
-                We don't just build websites—we create digital experiences that
-                generate measurable results. Whether it's increased engagement,
-                higher conversion rates, or better search engine rankings, our
-                designs are engineered to support your business goals and give
-                you a competitive edge. Quick load times are key to retaining
-                visitors, encouraging longer site visits, and turning them into
-                loyal return users. A fast-loading website not only improves
-                user satisfaction but also strengthens your brand's reputation.
-              </p>
+              <div class="card-glow"></div>
+              <div class="card-content">
+                <h2>Flawless Websites That Drive Results</h2>
+                <p>
+                  We don't just build websites—we create digital experiences
+                  that generate measurable results. Whether it's increased
+                  engagement, higher conversion rates, or better search engine
+                  rankings, our designs are engineered to support your business
+                  goals and give you a competitive edge. Quick load times are
+                  key to retaining visitors, encouraging longer site visits, and
+                  turning them into loyal return users. A fast-loading website
+                  not only improves user satisfaction but also strengthens your
+                  brand's reputation.
+                </p>
 
-              <!-- Numbers and Labels -->
-              <div class="standards-row">
-                <div class="standard-item">
-                  <div class="circle-container">
-                    <div class="circle">
-                      <span class="counter" data-target="100">0</span>
+                <!-- Numbers and Labels -->
+                <div class="standards-row">
+                  <div class="standard-item">
+                    <div class="circle-container">
+                      <div class="circle">
+                        <span class="counter" data-target="100">0</span>
+                      </div>
+                      <svg class="circle-svg" viewBox="0 0 60 60">
+                        <circle class="circle-bg" cx="30" cy="30" r="28" />
+                        <circle
+                          class="circle-progress"
+                          cx="30"
+                          cy="30"
+                          r="28" />
+                      </svg>
                     </div>
+                    <p>Performance</p>
                   </div>
-                  <p>Performance</p>
-                </div>
-                <div class="standard-item">
-                  <div class="circle-container">
-                    <div class="circle">
-                      <span class="counter" data-target="100">0</span>
+                  <div class="standard-item">
+                    <div class="circle-container">
+                      <div class="circle">
+                        <span class="counter" data-target="100">0</span>
+                      </div>
+                      <svg class="circle-svg" viewBox="0 0 60 60">
+                        <circle class="circle-bg" cx="30" cy="30" r="28" />
+                        <circle
+                          class="circle-progress"
+                          cx="30"
+                          cy="30"
+                          r="28" />
+                      </svg>
                     </div>
+                    <p>Accessibility</p>
                   </div>
-                  <p>Accessibility</p>
-                </div>
-                <div class="standard-item">
-                  <div class="circle-container">
-                    <div class="circle">
-                      <span class="counter" data-target="100">0</span>
+                  <div class="standard-item">
+                    <div class="circle-container">
+                      <div class="circle">
+                        <span class="counter" data-target="100">0</span>
+                      </div>
+                      <svg class="circle-svg" viewBox="0 0 60 60">
+                        <circle class="circle-bg" cx="30" cy="30" r="28" />
+                        <circle
+                          class="circle-progress"
+                          cx="30"
+                          cy="30"
+                          r="28" />
+                      </svg>
                     </div>
+                    <p>Best Practices</p>
                   </div>
-                  <p>Best Practices</p>
-                </div>
-                <div class="standard-item">
-                  <div class="circle-container">
-                    <div class="circle">
-                      <span class="counter" data-target="100">0</span>
+                  <div class="standard-item">
+                    <div class="circle-container">
+                      <div class="circle">
+                        <span class="counter" data-target="100">0</span>
+                      </div>
+                      <svg class="circle-svg" viewBox="0 0 60 60">
+                        <circle class="circle-bg" cx="30" cy="30" r="28" />
+                        <circle
+                          class="circle-progress"
+                          cx="30"
+                          cy="30"
+                          r="28" />
+                      </svg>
                     </div>
+                    <p>SEO</p>
                   </div>
-                  <p>SEO</p>
                 </div>
               </div>
             </div>
@@ -1021,65 +1114,68 @@
         </div>
 
         <style>
-          /* Gauge Styles */
+          /* Gauge Styles - Dark Theme Update */
           .site-health-container {
-            margin: 25px 0 0;
+            margin: 30px 0 0;
             text-align: center;
             width: 100%;
           }
 
           .meter-title {
-            font-size: 16px;
-            color: white;
-            font-weight: 400;
+            font-size: 1rem;
+            color: #818cf8;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 20px;
           }
 
           .gauges-wrapper {
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 30px;
+            gap: 40px;
             margin-bottom: 20px;
-            flex-wrap: nowrap; /* Prevent wrapping on any screen size */
-            min-width: 300px; /* Minimum width to keep gauges visible */
+            flex-wrap: nowrap;
+            min-width: 300px;
           }
 
           .gauge-item {
             display: flex;
             flex-direction: column;
             align-items: center;
-            position: relative; /* For absolute positioning of label */
-            min-width: 120px; /* Minimum width to prevent compression */
-            max-width: 160px; /* Maximum width to maintain consistency */
+            position: relative;
+            min-width: 120px;
+            max-width: 160px;
           }
 
           .gauge-chart {
             margin-top: 1rem;
-
             height: 90px;
             width: 160px;
+            filter: hue-rotate(45deg) saturate(1.5);
           }
 
           .gauge-label {
             position: absolute;
-            bottom: 5px;
+            bottom: -5px;
             width: 100%;
             text-align: center;
-            font-size: 14px;
-            color: #aaa;
+            font-size: 0.875rem;
+            color: #94a3b8;
             margin-top: 0;
-            white-space: nowrap; /* Prevents text from wrapping */
+            white-space: nowrap;
           }
 
-          /* Responsive styles - adjust size but maintain layout */
+          /* Responsive styles */
           @media (max-width: 600px) {
             .gauges-wrapper {
-              gap: 10px; /* Reduce gap on smaller screens */
+              gap: 20px;
             }
 
             .gauge-chart {
-              height: 90px;
-              width: 130px;
+              height: 80px;
+              width: 120px;
             }
 
             .gauge-item {
@@ -1087,15 +1183,14 @@
             }
 
             .gauge-label {
-              font-size: 12px;
+              font-size: 0.75rem;
             }
           }
 
-          /* For very small screens - scale down further but keep side by side */
           @media (max-width: 400px) {
             .gauge-chart {
-              height: 110px;
-              width: 110px;
+              height: 70px;
+              width: 100px;
             }
 
             .gauge-item {
@@ -1104,6 +1199,7 @@
           }
         </style>
       </div>
+
       <!-- Logo banner -->
       <div class="logo-banner-container">
         <div class="logo-banner">
@@ -1191,18 +1287,45 @@
       <style>
         .logo-banner-container {
           width: 100%;
-          background-color: rgba(0, 0, 0, 0.7);
+          background: linear-gradient(
+            90deg,
+            transparent,
+            rgba(129, 140, 248, 0.05),
+            transparent
+          );
           overflow: hidden;
-          padding: 20px 0;
-          margin-top: 20px;
-          border-top: 1px solid rgba(93, 173, 226, 0.3);
-          border-bottom: 1px solid rgba(93, 173, 226, 0.3);
+          padding: 30px 0;
+          margin-top: 60px;
+          border-top: 1px solid rgba(129, 140, 248, 0.2);
+          border-bottom: 1px solid rgba(129, 140, 248, 0.2);
           margin-bottom: 2rem;
+          position: relative;
+        }
+
+        .logo-banner-container::before,
+        .logo-banner-container::after {
+          content: '';
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          width: 100px;
+          z-index: 2;
+          pointer-events: none;
+        }
+
+        .logo-banner-container::before {
+          left: 0;
+          background: linear-gradient(90deg, #0a0a0a, transparent);
+        }
+
+        .logo-banner-container::after {
+          right: 0;
+          background: linear-gradient(90deg, transparent, #0a0a0a);
         }
 
         .logo-banner {
           display: flex;
-          animation: scroll 60s linear infinite;
+          animation: scroll 40s linear infinite;
           width: max-content;
         }
 
@@ -1212,20 +1335,24 @@
         }
 
         .logo-item {
-          padding: 0 30px;
+          padding: 0 40px;
           display: flex;
           align-items: center;
+          position: relative;
         }
 
         .logo-item img {
-          height: 40px;
+          height: 50px;
           object-fit: contain;
-          filter: grayscale(100%) brightness(1.5);
-          transition: filter 0.3s ease;
+          filter: grayscale(100%) brightness(0.8) contrast(1.2);
+          opacity: 0.7;
+          transition: all 0.3s ease;
         }
 
-        .logo-item img:hover {
-          filter: grayscale(0%) brightness(1.2);
+        .logo-item:hover img {
+          filter: grayscale(0%) brightness(1.1);
+          opacity: 1;
+          transform: scale(1.1);
         }
 
         @keyframes scroll {
@@ -1238,12 +1365,17 @@
         }
 
         @media (max-width: 768px) {
+          .logo-banner-container {
+            padding: 20px 0;
+            margin-top: 40px;
+          }
+
           .logo-item {
-            padding: 0 15px;
+            padding: 0 25px;
           }
 
           .logo-item img {
-            height: 30px;
+            height: 35px;
           }
         }
       </style>
