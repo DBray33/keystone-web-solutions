@@ -2596,6 +2596,11 @@ textarea::placeholder {
   transform: translateY(-2px);
 }
 
+.pricing-cta-link {
+  text-decoration: none;
+  display: inline-block;
+}
+
 .pricing-cta-button.pricing-cta-featured {
   background: linear-gradient(135deg, #5dade2 0%, #9333ea 100%);
   border: none;
