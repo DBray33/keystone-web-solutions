@@ -2092,38 +2092,62 @@ textarea::placeholder {
 
 @media (max-width: 768px) {
   .journey-section {
-    padding: 60px 20px;
+    padding: 60px 15px;
   }
 
-  .journey-heading {
-    font-size: 2rem;
-  }
-
-  .journey-subheading {
-    font-size: 1rem;
-  }
-
-  .journey-description {
-    font-size: 0.9375rem;
-    margin-bottom: 40px;
-  }
-
-  .journey-card-content {
-    padding: 30px 25px;
-  }
-
-  .journey-card-icon {
-    width: 40px;
-    height: 40px;
+  .journey-main-title {
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
     margin-bottom: 20px;
   }
 
+  .journey-heading {
+    font-size: 1.5rem;
+  }
+
+  .journey-subheading {
+    font-size: 0.875rem;
+    margin-bottom: 15px;
+  }
+
+  .journey-description {
+    font-size: 0.875rem;
+    margin-bottom: 40px;
+    line-height: 1.6;
+  }
+
+  .journey-card {
+    border-radius: 16px;
+  }
+
+  .journey-card-content {
+    padding: 25px 20px;
+  }
+
+  .journey-card-icon {
+    width: 35px;
+    height: 35px;
+    margin-bottom: 15px;
+  }
+
   .journey-card-title {
-    font-size: 1.125rem;
+    font-size: 1rem;
+    margin-bottom: 12px;
   }
 
   .journey-card-description {
-    font-size: 0.875rem;
+    font-size: 0.8125rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+  }
+
+  .journey-card-link {
+    font-size: 0.75rem;
+  }
+
+  .journey-card-link svg {
+    width: 14px;
+    height: 14px;
   }
 }
 
