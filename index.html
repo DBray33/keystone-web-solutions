@@ -2343,9 +2343,22 @@
             <div class="quote-card-content">
               <h3 class="quote-card-title">Request Your Quote</h3>
               <form
-                action="https://formspree.io/f/mnnnobvp"
-                method="post"
+                name="quote-request"
+                method="POST"
+                data-netlify="true"
+                data-netlify-honeypot="bot-field"
                 class="quote-contact-form">
+                <!-- Honeypot field for spam protection -->
+                <input type="hidden" name="form-name" value="quote-request" />
+                <input type="hidden" name="page-url" id="page-url" />
+                <input type="hidden" name="page-title" id="page-title" />
+                <p style="display: none">
+                  <label>
+                    Don't fill this out if you're human:
+                    <input name="bot-field" />
+                  </label>
+                </p>
+
                 <div class="quote-form-grid">
                   <div class="quote-form-group">
                     <label for="quote-name">Name</label>

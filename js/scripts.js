@@ -318,32 +318,57 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // QUOTE SECTION - Animations
-document.addEventListener('DOMContentLoaded', () => {
-  const quoteElements = document.querySelectorAll(
-    '.quote-section-heading, .quote-card'
-  );
+// Timeline scroll animation
+document.addEventListener('DOMContentLoaded', function () {
+  // Populate form hidden fields
+  const pageUrlField = document.getElementById('page-url');
+  if (pageUrlField) {
+    pageUrlField.value = window.location.href;
+  }
 
-  const quoteObserverOptions = {
-    root: null,
-    threshold: [0, 0.2], // 0 = fully off-screen, 0.20 = 20% visible
-  };
+  const pageTitleField = document.getElementById('page-title');
+  if (pageTitleField) {
+    pageTitleField.value = document.title;
+  }
 
-  const quoteObserverCallback = (entries) => {
-    entries.forEach((entry) => {
-      if (entry.intersectionRatio >= 0.2) {
-        entry.target.classList.add('fade-in-quote'); // Fade in when 20% visible
-      } else if (entry.intersectionRatio === 0) {
-        entry.target.classList.remove('fade-in-quote'); // Fade out only when fully off-screen
-      }
-    });
-  };
+  // Timeline scroll animation
+  const timelineContainer = document.querySelector('.quote-process-timeline');
+  const timelineItems = document.querySelectorAll('.quote-timeline-item');
 
-  const quoteObserver = new IntersectionObserver(
-    quoteObserverCallback,
-    quoteObserverOptions
-  );
+  if (timelineItems.length > 0 && timelineContainer) {
+    let hasAnimated = false;
 
-  quoteElements.forEach((element) => quoteObserver.observe(element));
+    const observerOptions = {
+      root: null,
+      rootMargin: '-20% 0px -20% 0px',
+      threshold: 0.1,
+    };
+
+    const timelineObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (
+          entry.isIntersecting &&
+          !hasAnimated &&
+          entry.target === timelineContainer
+        ) {
+          hasAnimated = true;
+
+          // Animate each item in sequence
+          timelineItems.forEach((item, index) => {
+            setTimeout(() => {
+              item.classList.add('timeline-visible');
+            }, index * 300); // 300ms delay between each item
+          });
+
+          // Unobserve after animation starts
+          timelineObserver.unobserve(timelineContainer);
+        }
+      });
+    }, observerOptions);
+
+    // Observe the timeline container instead of individual items
+    timelineObserver.observe(timelineContainer);
+  }
 });
 
 // ==========================================================================

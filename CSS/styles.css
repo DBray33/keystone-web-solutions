@@ -2562,6 +2562,12 @@ label {
   overflow: hidden;
 }
 
+@media (max-width: 768px) {
+  .quote-section {
+    padding: 80px 20px;
+  }
+}
+
 /* Animated Background */
 .quote-section::before {
   content: '';
@@ -2616,6 +2622,12 @@ label {
   animation: quote-fadeInUp 0.8s ease-out;
 }
 
+@media (max-width: 768px) {
+  .quote-header {
+    margin-bottom: 60px;
+  }
+}
+
 .quote-section-tag {
   display: inline-block;
   font-size: 0.875rem;
@@ -2635,6 +2647,12 @@ label {
   font-weight: 800;
   line-height: 1.1;
   margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+  .quote-section-title {
+    font-size: 2rem;
+  }
 }
 
 .quote-title-gradient {
@@ -2659,6 +2677,14 @@ label {
   grid-template-columns: 1fr 1fr;
   gap: 40px;
   margin-bottom: 60px;
+  align-items: start; /* Changed from stretch to start */
+}
+
+@media (max-width: 1024px) {
+  .quote-content-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
 }
 
 /* Card Styles */
@@ -2670,6 +2696,7 @@ label {
   backdrop-filter: blur(10px);
   overflow: hidden;
   transition: all 0.3s ease;
+  height: fit-content; /* Added to prevent stretching */
 }
 
 .quote-card:hover {
@@ -2703,6 +2730,12 @@ label {
   z-index: 1;
 }
 
+@media (max-width: 768px) {
+  .quote-card-content {
+    padding: 30px 20px;
+  }
+}
+
 .quote-card-title {
   font-size: 1.75rem;
   font-weight: 700;
@@ -2724,6 +2757,12 @@ label {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 20px;
+}
+
+@media (max-width: 768px) {
+  .quote-form-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 .quote-form-group {
@@ -2872,6 +2911,12 @@ label {
   gap: 15px;
 }
 
+@media (max-width: 768px) {
+  .quote-contact-methods {
+    gap: 10px;
+  }
+}
+
 .quote-contact-item {
   display: inline-flex;
   align-items: center;
@@ -2883,6 +2928,12 @@ label {
   padding: 10px;
   border-radius: 8px;
   background: rgba(255, 255, 255, 0.02);
+}
+
+@media (max-width: 768px) {
+  .quote-contact-item {
+    font-size: 0.875rem;
+  }
 }
 
 .quote-contact-item:hover {
@@ -2901,13 +2952,30 @@ label {
 .quote-process-timeline {
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 50px; /* Increased from 30px for better desktop spacing */
+}
+
+@media (max-width: 1024px) {
+  .quote-process-timeline {
+    gap: 30px; /* Reduced spacing on smaller screens */
+  }
 }
 
 .quote-timeline-item {
   display: flex;
   gap: 20px;
   position: relative;
+  opacity: 0.3;
+  transition: opacity 0.6s ease;
+}
+
+.quote-timeline-item.timeline-visible {
+  opacity: 1;
+}
+
+/* Adjust last item to not have extra space */
+.quote-timeline-item:last-child .quote-timeline-line {
+  display: none;
 }
 
 .quote-timeline-marker {
@@ -2921,13 +2989,19 @@ label {
   justify-content: center;
   width: 40px;
   height: 40px;
-  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  background: rgba(99, 102, 241, 0.2);
   color: #ffffff;
   font-weight: 700;
   border-radius: 50%;
   font-size: 1.125rem;
   position: relative;
   z-index: 2;
+  box-shadow: 0 4px 15px rgba(129, 140, 248, 0.1);
+  transition: all 0.6s ease;
+}
+
+.quote-timeline-item.timeline-visible .quote-marker-number {
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
   box-shadow: 0 4px 15px rgba(129, 140, 248, 0.3);
 }
 
@@ -2937,12 +3011,35 @@ label {
   left: 50%;
   transform: translateX(-50%);
   width: 2px;
-  height: calc(100% + 30px);
+  height: calc(100% + 50px); /* Adjusted to match gap spacing */
+  background: rgba(129, 140, 248, 0.1);
+  overflow: hidden;
+}
+
+.quote-timeline-line::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0%;
   background: linear-gradient(
     to bottom,
-    rgba(129, 140, 248, 0.5) 0%,
+    rgba(129, 140, 248, 0.8) 0%,
+    rgba(129, 140, 248, 0.4) 70%,
     transparent 100%
   );
+  transition: height 0.8s ease-out;
+}
+
+.quote-timeline-item.timeline-visible .quote-timeline-line::after {
+  height: 100%;
+}
+
+@media (max-width: 1024px) {
+  .quote-timeline-line {
+    height: calc(100% + 30px); /* Adjusted for smaller gap on mobile */
+  }
 }
 
 .quote-timeline-content h4 {
@@ -2952,10 +3049,22 @@ label {
   margin-bottom: 8px;
 }
 
+@media (max-width: 768px) {
+  .quote-timeline-content h4 {
+    font-size: 1rem;
+  }
+}
+
 .quote-timeline-content p {
   font-size: 0.9375rem;
   color: #94a3b8;
   line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .quote-timeline-content p {
+    font-size: 0.875rem;
+  }
 }
 
 /* Response Banner */
@@ -2971,10 +3080,24 @@ label {
   backdrop-filter: blur(10px);
 }
 
+@media (max-width: 1024px) {
+  .quote-response-banner {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+}
+
 .quote-response-item {
   display: flex;
   align-items: center;
   gap: 15px;
+}
+
+@media (max-width: 1024px) {
+  .quote-response-item {
+    justify-content: center;
+  }
 }
 
 .quote-response-icon {
@@ -2990,6 +3113,12 @@ label {
   color: #ffffff;
 }
 
+@media (max-width: 768px) {
+  .quote-response-text {
+    font-size: 1rem;
+  }
+}
+
 /* Animations */
 @keyframes quote-fadeInUp {
   from {
@@ -2999,66 +3128,6 @@ label {
   to {
     opacity: 1;
     transform: translateY(0);
-  }
-}
-
-/* Responsive Design */
-@media (max-width: 1024px) {
-  .quote-content-grid {
-    grid-template-columns: 1fr;
-    gap: 30px;
-  }
-
-  .quote-response-banner {
-    flex-direction: column;
-    gap: 20px;
-    text-align: center;
-  }
-
-  .quote-response-item {
-    justify-content: center;
-  }
-}
-
-@media (max-width: 768px) {
-  .quote-section {
-    padding: 80px 20px;
-  }
-
-  .quote-header {
-    margin-bottom: 60px;
-  }
-
-  .quote-section-title {
-    font-size: 2rem;
-  }
-
-  .quote-form-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .quote-card-content {
-    padding: 30px 20px;
-  }
-
-  .quote-contact-methods {
-    gap: 10px;
-  }
-
-  .quote-contact-item {
-    font-size: 0.875rem;
-  }
-
-  .quote-timeline-content h4 {
-    font-size: 1rem;
-  }
-
-  .quote-timeline-content p {
-    font-size: 0.875rem;
-  }
-
-  .quote-response-text {
-    font-size: 1rem;
   }
 }
 
