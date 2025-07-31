@@ -215,33 +215,92 @@ handleResize();
 window.addEventListener('resize', handleResize, { passive: true });
 
 // ==========================================================================
-// 4. SECTION-SPECIFIC ANIMATIONS
+// JOURNEY SECTION ANIMATIONS - DARK THEME
 // ==========================================================================
 
-// JOURNEY SECTION - Elements sliding in and out
 document.addEventListener('DOMContentLoaded', () => {
-  const journeyElements = document.querySelectorAll(
-    '.journey-heading, .journey-subheading, .journey-description, .card-1, .card-2'
+  // Journey Cards Animation
+  const journeyCards = document.querySelectorAll('.journey-card');
+
+  if (journeyCards.length > 0) {
+    const observerOptions = {
+      root: null,
+      threshold: 0.1,
+      rootMargin: '-50px 0px',
+    };
+
+    let animationDelay = 0;
+
+    const observerCallback = (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          // Add staggered animation delay
+          setTimeout(() => {
+            entry.target.classList.add('visible');
+          }, animationDelay);
+
+          animationDelay += 150; // 150ms delay between each card
+
+          // Don't observe this element anymore
+          journeyObserver.unobserve(entry.target);
+        }
+      });
+    };
+
+    const journeyObserver = new IntersectionObserver(
+      observerCallback,
+      observerOptions
+    );
+
+    // Reset delay when section comes into view
+    const sectionObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            animationDelay = 0;
+            sectionObserver.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    const journeySection = document.querySelector('.journey-section');
+    if (journeySection) {
+      sectionObserver.observe(journeySection);
+    }
+
+    journeyCards.forEach((card) => journeyObserver.observe(card));
+  }
+
+  // Smooth scroll for the pricing link
+  const pricingLink = document.querySelector(
+    '.journey-card-link[href="#pricing-section"]'
   );
-
-  const observerOptions = {
-    root: null,
-    threshold: 0.2, // 20% visibility to trigger animation
-  };
-
-  const observerCallback = (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-      } else {
-        entry.target.classList.remove('visible');
+  if (pricingLink) {
+    pricingLink.addEventListener('click', (e) => {
+      e.preventDefault();
+      const pricingSection = document.querySelector('#pricing-section');
+      if (pricingSection) {
+        pricingSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
     });
-  };
+  }
 
-  const observer = new IntersectionObserver(observerCallback, observerOptions);
+  // Optional: Add parallax effect to background
+  const journeySection = document.querySelector('.journey-section');
+  if (journeySection) {
+    window.addEventListener('scroll', () => {
+      const scrolled = window.pageYOffset;
+      const rect = journeySection.getBoundingClientRect();
+      const speed = 0.5;
 
-  journeyElements.forEach((element) => observer.observe(element));
+      if (rect.top < window.innerHeight && rect.bottom > 0) {
+        const yPos = -(scrolled * speed);
+        journeySection.style.backgroundPosition = `center ${yPos}px`;
+      }
+    });
+  }
 });
 
 // PRICING SECTION - Heading and description animations (only fade in, no fade out)
