@@ -577,25 +577,48 @@
                 <div class="seo-card-accent"></div>
               </div>
               <div class="seo-card-content">
-                <div class="seo-backlink-visual">
-                  <div class="seo-site-node main-site">Your Site</div>
-                  <div class="seo-link-lines">
-                    <div class="seo-link-line"></div>
-                    <div class="seo-link-line"></div>
-                    <div class="seo-link-line"></div>
-                  </div>
-                  <div class="seo-external-sites">
-                    <div class="seo-site-node">Authority Site</div>
-                    <div class="seo-site-node">Industry Blog</div>
-                    <div class="seo-site-node">News Portal</div>
-                  </div>
-                </div>
                 <p class="seo-backlink-intro">
                   A backlink is simply a link from one website to another. Think
                   of it like a recommendation – when another website links to
                   your site, it's as if they're saying, "This site has valuable
                   or trustworthy information."
                 </p>
+
+                <div class="seo-backlink-visual">
+                  <div class="seo-chart-container">
+                    <canvas id="backlinkChart"></canvas>
+                  </div>
+                  <div class="seo-backlink-legend">
+                    <div class="seo-legend-item">
+                      <span class="seo-legend-dot high-quality"></span>
+                      <span>High Authority Sites (DA 70+)</span>
+                    </div>
+                    <div class="seo-legend-item">
+                      <span class="seo-legend-dot medium-quality"></span>
+                      <span>Medium Authority Sites (DA 40-69)</span>
+                    </div>
+                    <div class="seo-legend-item">
+                      <span class="seo-legend-dot low-quality"></span>
+                      <span>Low Authority Sites (DA <40)</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="seo-backlink-metrics">
+                  <div class="seo-metric-card">
+                    <div class="seo-metric-icon">+47</div>
+                    <span>Total Backlinks</span>
+                  </div>
+                  <div class="seo-metric-card">
+                    <div class="seo-metric-icon">15</div>
+                    <span>High-Quality Links</span>
+                  </div>
+                  <div class="seo-metric-card">
+                    <div class="seo-metric-icon">↑ 45%</div>
+                    <span>Organic Traffic Increase</span>
+                  </div>
+                </div>
+
                 <ul class="seo-feature-list">
                   <li>
                     <span class="seo-feature-icon">→</span>
@@ -1042,6 +1065,147 @@
             chartObserver.observe(chart);
           }
         });
+      </script>
+
+      <!-- Backlink Chart Initialization -->
+      <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+      <script>
+        const initBacklinkChart = () => {
+          const chartElement = document.getElementById('backlinkChart');
+          if (!chartElement) return;
+
+          const ctx = chartElement.getContext('2d');
+
+          // Data for the chart
+          const data = {
+            labels: [
+              'News Sites',
+              'Industry Blogs',
+              'Directories',
+              'Forums',
+              'Guest Posts',
+              'Resource Pages',
+            ],
+            datasets: [
+              {
+                label: 'High Authority (DA 70+)',
+                data: [5, 4, 2, 1, 3, 0],
+                backgroundColor: '#00ffff',
+                borderColor: '#00ffff',
+                borderWidth: 2,
+                barPercentage: 0.8,
+                categoryPercentage: 0.9,
+              },
+              {
+                label: 'Medium Authority (DA 40-69)',
+                data: [3, 6, 8, 4, 2, 5],
+                backgroundColor: '#818cf8',
+                borderColor: '#818cf8',
+                borderWidth: 2,
+                barPercentage: 0.8,
+                categoryPercentage: 0.9,
+              },
+              {
+                label: 'Low Authority (DA <40)',
+                data: [1, 2, 3, 5, 1, 2],
+                backgroundColor: '#6b7280',
+                borderColor: '#6b7280',
+                borderWidth: 2,
+                barPercentage: 0.8,
+                categoryPercentage: 0.9,
+              },
+            ],
+          };
+
+          // Chart configuration
+          const config = {
+            type: 'bar',
+            data: data,
+            options: {
+              responsive: true,
+              maintainAspectRatio: false,
+              interaction: {
+                mode: 'index',
+                intersect: false,
+              },
+              plugins: {
+                legend: {
+                  display: false, // We're using custom legend
+                },
+                tooltip: {
+                  backgroundColor: 'rgba(0, 0, 0, 0.9)',
+                  titleColor: '#ffffff',
+                  bodyColor: '#b0b0b0',
+                  borderColor: '#00ffff',
+                  borderWidth: 1,
+                  padding: 12,
+                  displayColors: true,
+                  callbacks: {
+                    label: function (context) {
+                      return (
+                        context.dataset.label +
+                        ': ' +
+                        context.parsed.y +
+                        ' backlinks'
+                      );
+                    },
+                  },
+                },
+              },
+              scales: {
+                x: {
+                  stacked: true,
+                  grid: {
+                    display: false,
+                    drawBorder: false,
+                  },
+                  ticks: {
+                    color: '#b0b0b0',
+                    font: {
+                      size: 11,
+                    },
+                  },
+                },
+                y: {
+                  stacked: true,
+                  beginAtZero: true,
+                  grid: {
+                    color: 'rgba(255, 255, 255, 0.05)',
+                    drawBorder: false,
+                  },
+                  ticks: {
+                    color: '#b0b0b0',
+                    font: {
+                      size: 11,
+                    },
+                    stepSize: 5,
+                  },
+                },
+              },
+            },
+          };
+
+          // Create the chart
+          new Chart(ctx, config);
+        };
+
+        // Initialize chart when the backlink section becomes visible
+        const backlinkObserver = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                initBacklinkChart();
+                backlinkObserver.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.1 }
+        );
+
+        const backlinkCard = document.querySelector('.seo-card-backlinks');
+        if (backlinkCard) {
+          backlinkObserver.observe(backlinkCard);
+        }
       </script>
     </div>
   </body>
