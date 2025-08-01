@@ -2211,9 +2211,10 @@
   }
 }
 
+/* Hero Title - Matching RD page font sizes */
 .seo-hero-title {
   font-family: 'Exo', sans-serif;
-  font-size: clamp(3rem, 8vw, 7rem);
+  font-size: clamp(2.5rem, 6vw, 6rem);
   font-weight: 900;
   margin: 0 0 1.5rem 0;
   line-height: 0.9;
@@ -2233,7 +2234,21 @@
   animation: seoGradientShift 8s ease-in-out infinite,
     seoFloat 3s ease-in-out infinite;
   text-transform: uppercase;
-  letter-spacing: 4px;
+  letter-spacing: 3px;
+}
+
+@media (max-width: 768px) {
+  .seo-hero-title {
+    font-size: 2rem;
+    letter-spacing: 1px;
+  }
+}
+
+@media (max-width: 480px) {
+  .seo-hero-title {
+    font-size: 1.75rem;
+    letter-spacing: 0.5px;
+  }
 }
 
 @keyframes seoGradientShift {
@@ -2261,14 +2276,29 @@
   margin: 0.1em 0;
 }
 
+@media (max-width: 480px) {
+  .seo-hero-word {
+    margin: 0 0;
+    line-height: 1;
+  }
+}
+
 .seo-hero-divider {
-  width: 120px;
-  height: 4px;
+  width: 100px;
+  height: 3px;
   background: var(--seo-gradient-primary);
-  margin: 2rem auto;
+  margin: 1.5rem auto;
   border-radius: 2px;
   position: relative;
   overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  .seo-hero-divider {
+    width: 60px;
+    height: 2px;
+    margin: 0.75rem auto;
+  }
 }
 
 .seo-hero-divider::after {
@@ -2296,13 +2326,27 @@
   }
 }
 
+/* Hero Subheading - Matching RD page sizes */
 .seo-hero-subheading {
-  font-size: clamp(1.1rem, 2vw, 1.5rem);
+  font-size: 1.25rem;
   color: var(--seo-text-secondary);
   line-height: 1.6;
   max-width: 800px;
   margin: 0 auto;
   font-weight: 300;
+}
+
+@media (max-width: 768px) {
+  .seo-hero-subheading {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+}
+
+@media (max-width: 480px) {
+  .seo-hero-subheading {
+    font-size: 0.875rem;
+  }
 }
 
 /* Animated Background */
@@ -2395,6 +2439,12 @@
   position: relative;
 }
 
+@media (max-width: 768px) {
+  .seo-main-content {
+    padding: 3rem 0;
+  }
+}
+
 .seo-container {
   max-width: 1400px;
   margin: 0 auto;
@@ -2413,20 +2463,28 @@
   text-align: center;
 }
 
+@media (max-width: 768px) {
+  .seo-section-intro {
+    margin-bottom: 3rem;
+  }
+}
+
 .seo-intro-content {
   max-width: 900px;
   margin: 0 auto;
 }
 
+/* Intro Text - Matching RD page */
 .seo-intro-text {
-  font-size: 1.25rem;
+  font-size: 1.125rem;
   color: var(--seo-text-secondary);
   line-height: 1.8;
 }
 
 @media (max-width: 768px) {
   .seo-intro-text {
-    font-size: 1.1rem;
+    font-size: 1rem;
+    line-height: 1.6;
   }
 }
 
@@ -2435,14 +2493,29 @@
   margin-bottom: 6rem;
 }
 
+/* Section Title - Matching RD page */
 .seo-section-title {
   font-family: 'Exo', sans-serif;
-  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-size: clamp(1.75rem, 4vw, 3rem);
   font-weight: 800;
   text-align: center;
   margin-bottom: 3rem;
   text-transform: uppercase;
   letter-spacing: 2px;
+}
+
+@media (max-width: 768px) {
+  .seo-section-title {
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+  }
+}
+
+@media (max-width: 480px) {
+  .seo-section-title {
+    font-size: 1.25rem;
+    letter-spacing: 0.5px;
+  }
 }
 
 .seo-gradient-text {
@@ -2458,6 +2531,12 @@
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
   margin-bottom: 4rem;
+}
+
+@media (max-width: 768px) {
+  .seo-stats-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 .seo-stat-card {
@@ -2516,6 +2595,12 @@
   color: var(--seo-primary-neon);
   line-height: 1;
   margin-bottom: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .seo-stat-number {
+    font-size: 2.5rem;
+  }
 }
 
 .seo-stat-label {
@@ -2592,6 +2677,12 @@
   color: var(--seo-text-primary);
 }
 
+@media (max-width: 480px) {
+  .seo-card-title {
+    font-size: 1.5rem;
+  }
+}
+
 .seo-card-accent {
   width: 60px;
   height: 3px;
@@ -2628,6 +2719,12 @@
   gap: 2rem;
 }
 
+@media (max-width: 768px) {
+  .seo-process-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 .seo-process-item {
   text-align: center;
   padding: 1.5rem;
@@ -2650,6 +2747,12 @@
   margin-bottom: 0.5rem;
 }
 
+@media (max-width: 480px) {
+  .seo-process-number {
+    font-size: 2rem;
+  }
+}
+
 .seo-process-item h3 {
   font-size: 1.2rem;
   color: var(--seo-text-primary);
@@ -2670,6 +2773,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+@media (max-width: 1024px) {
+  .seo-backlink-visual {
+    display: none;
+  }
 }
 
 .seo-site-node {
@@ -2889,6 +2998,12 @@
   margin-top: 2rem;
 }
 
+@media (max-width: 1024px) {
+  .seo-speed-metrics {
+    gap: 2rem;
+  }
+}
+
 .seo-metric {
   display: flex;
   flex-direction: column;
@@ -2907,11 +3022,6 @@
   color: var(--seo-text-secondary);
   text-transform: uppercase;
   letter-spacing: 0.5px;
-}
-
-/* Add gradient definition for SVG */
-.seo-meter-svg defs {
-  display: block;
 }
 
 /* Analytics Visual */
@@ -2965,8 +3075,15 @@
   backdrop-filter: blur(10px);
 }
 
+@media (max-width: 768px) {
+  .seo-cta-content {
+    padding: 3rem 1.5rem;
+  }
+}
+
+/* CTA Title - Matching RD page */
 .seo-cta-title {
-  font-size: clamp(2rem, 4vw, 3rem);
+  font-size: clamp(1.75rem, 4vw, 3rem);
   font-weight: 800;
   margin-bottom: 1rem;
   background: var(--seo-gradient-accent);
@@ -2975,10 +3092,28 @@
   background-clip: text;
 }
 
+@media (max-width: 768px) {
+  .seo-cta-title {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .seo-cta-title {
+    font-size: 1.25rem;
+  }
+}
+
 .seo-cta-text {
-  font-size: 1.25rem;
+  font-size: 1.125rem;
   color: var(--seo-text-secondary);
   margin-bottom: 2rem;
+}
+
+@media (max-width: 768px) {
+  .seo-cta-text {
+    font-size: 1rem;
+  }
 }
 
 .seo-cta-button {
@@ -2992,6 +3127,13 @@
   border-radius: 50px;
   transition: all 0.3s ease;
   box-shadow: 0 10px 30px rgba(129, 140, 248, 0.3);
+}
+
+@media (max-width: 480px) {
+  .seo-cta-button {
+    padding: 0.8rem 2rem;
+    font-size: 1rem;
+  }
 }
 
 .seo-cta-button:hover {
@@ -3009,77 +3151,4 @@
 .seo-fade-in.visible {
   opacity: 1;
   transform: translateY(0);
-}
-
-/* Responsive Design */
-@media (max-width: 1024px) {
-  .seo-backlink-visual {
-    display: none;
-  }
-
-  .seo-speed-metrics {
-    gap: 2rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .seo-hero-title {
-    font-size: 3.5rem;
-  }
-
-  .seo-stats-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .seo-process-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .seo-stat-number {
-    font-size: 2.5rem;
-  }
-
-  .seo-section-title {
-    font-size: 2rem;
-  }
-
-  .seo-cta-content {
-    padding: 3rem 1.5rem;
-  }
-
-  .seo-cta-title {
-    font-size: 2rem;
-  }
-
-  .seo-cta-text {
-    font-size: 1.1rem;
-  }
-
-  .seo-main-content {
-    padding: 3rem 0;
-  }
-}
-
-@media (max-width: 480px) {
-  .seo-hero-title {
-    font-size: 2.5rem;
-    letter-spacing: 2px;
-  }
-
-  .seo-hero-subheading {
-    font-size: 1rem;
-  }
-
-  .seo-card-title {
-    font-size: 1.5rem;
-  }
-
-  .seo-process-number {
-    font-size: 2rem;
-  }
-
-  .seo-cta-button {
-    padding: 0.8rem 2rem;
-    font-size: 1rem;
-  }
 }
