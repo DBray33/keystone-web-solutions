@@ -68,7 +68,6 @@
       href="https://storage.googleapis.com/background-vid/Favicon/192x192.png" />
   </head>
 
-  <!-- BODY -->
   <body>
     <!-- BACK TO TOP BUTTON -->
     <button id="backToTop" class="back-to-top" onclick="scrollToTop()">
@@ -139,315 +138,735 @@
       <button id="close-popup">Close</button>
     </div>
 
-    <div class="page-content">
-      <!-- BLOG PAGE -->
-      <section class="blog">
-        <div class="container">
-          <header class="section-header">
-            <h1>Custom Coded Website Insights & Web Design Resources</h1>
-            <p>
+    <div class="page-content blog-page">
+      <!-- HERO SECTION -->
+      <section class="blog-hero-section">
+        <div class="blog-hero-overlay"></div>
+
+        <!-- Animated Background Elements -->
+        <div class="blog-animated-bg">
+          <div class="blog-particle" id="particle-1"></div>
+          <div class="blog-particle" id="particle-2"></div>
+          <div class="blog-particle" id="particle-3"></div>
+          <div class="blog-code-float" id="code-1">&lt;/&gt;</div>
+          <div class="blog-code-float" id="code-2">{...}</div>
+          <div class="blog-code-float" id="code-3">#</div>
+        </div>
+
+        <div class="blog-hero-content">
+          <div class="blog-hero-text-wrapper">
+            <h1 class="blog-hero-title">
+              <span class="blog-word-1">INSIGHTS</span>
+              <span class="blog-word-2">&</span>
+              <span class="blog-word-3">RESOURCES</span>
+            </h1>
+            <div class="blog-hero-divider"></div>
+            <p class="blog-hero-subtitle">
               Bringing Your Vision to Life: Expert Insights and Creative
               Solutions for Your Digital Journey.
             </p>
-          </header>
+            <div class="blog-scroll-indicator">
+              <span>Explore Articles</span>
+              <div class="blog-scroll-arrow"></div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-          <div class="blog-content-grid">
+      <!-- BLOG GRID SECTION -->
+      <section class="blog-grid-section">
+        <div class="blog-container">
+          <div class="blog-filter-tags">
+            <button class="blog-tag active" data-filter="all">
+              All Articles
+            </button>
+            <button class="blog-tag" data-filter="design">Design</button>
+            <button class="blog-tag" data-filter="development">
+              Development
+            </button>
+            <button class="blog-tag" data-filter="trends">Trends</button>
+            <button class="blog-tag" data-filter="business">Business</button>
+          </div>
+
+          <div class="blog-posts-grid">
             <!-- Blog Post 1 -->
-            <a
-              href="../blogs/custom-coded-website-benefits"
-              class="blog-preview-link">
-              <article class="blog-preview">
-                <img
-                  src="https://storage.googleapis.com/background-vid/blog%20photos/blog1.webp"
-                  alt="Code in text editor" />
-                <div class="blog-content">
-                  <h2>Why Choose Custom-Coded Web Design?</h2>
-                  <p class="date">Published: January 20, 2025</p>
-                  <p class="description">
+            <article class="blog-post-card" data-category="design development">
+              <a
+                href="../blogs/custom-coded-website-benefits"
+                class="blog-post-link">
+                <div class="blog-post-image">
+                  <img
+                    src="https://storage.googleapis.com/background-vid/blog%20photos/blog1.webp"
+                    alt="Code in text editor" />
+                  <div class="blog-post-overlay">
+                    <span class="read-more">Read Article</span>
+                  </div>
+                </div>
+                <div class="blog-post-content">
+                  <div class="blog-post-meta">
+                    <span class="blog-post-date">January 20, 2025</span>
+                    <span class="blog-post-category">Design</span>
+                  </div>
+                  <h3 class="blog-post-title">
+                    Why Choose Custom-Coded Web Design?
+                  </h3>
+                  <p class="blog-post-excerpt">
                     Discover the freedom, performance, and security benefits of
                     custom-coded websites, designed to stand out and deliver
                     unmatched SEO potential.
                   </p>
+                  <div class="blog-post-footer">
+                    <span class="read-time">5 min read</span>
+                    <svg
+                      class="arrow-icon"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor">
+                      <path
+                        d="M5 12h14m-7-7l7 7-7 7"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    </svg>
+                  </div>
                 </div>
-              </article>
-            </a>
+              </a>
+            </article>
 
             <!-- Blog Post 2 -->
-            <a
-              href="../blogs/cms-platform-limitations-performance-security"
-              class="blog-preview-link">
-              <article class="blog-preview">
-                <img
-                  src="https://storage.googleapis.com/background-vid/blog%20photos/blog2.webp?v=2"
-                  alt="Thumbs down icon highlighting CMS platform issues" />
-                <div class="blog-content">
-                  <h2>The Limitations of CMS Platforms</h2>
-                  <p class="date">Published: January 18, 2025</p>
-                  <p class="description">
+            <article class="blog-post-card" data-category="development">
+              <a
+                href="../blogs/cms-platform-limitations-performance-security"
+                class="blog-post-link">
+                <div class="blog-post-image">
+                  <img
+                    src="https://storage.googleapis.com/background-vid/blog%20photos/blog2.webp?v=2"
+                    alt="Thumbs down icon highlighting CMS platform issues" />
+                  <div class="blog-post-overlay">
+                    <span class="read-more">Read Article</span>
+                  </div>
+                </div>
+                <div class="blog-post-content">
+                  <div class="blog-post-meta">
+                    <span class="blog-post-date">January 18, 2025</span>
+                    <span class="blog-post-category">Development</span>
+                  </div>
+                  <h3 class="blog-post-title">
+                    The Limitations of CMS Platforms
+                  </h3>
+                  <p class="blog-post-excerpt">
                     Learn how Content Management Systems (CMS) like WordPress
                     and Wix fall short in delivering the customization,
                     performance, and security that your business needs.
                   </p>
+                  <div class="blog-post-footer">
+                    <span class="read-time">7 min read</span>
+                    <svg
+                      class="arrow-icon"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor">
+                      <path
+                        d="M5 12h14m-7-7l7 7-7 7"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    </svg>
+                  </div>
                 </div>
-              </article>
-            </a>
+              </a>
+            </article>
 
             <!-- Blog Post 3 -->
-            <a
-              href="../blogs/web-development-trends-2024-predictions-2025"
-              class="blog-preview-link">
-              <article class="blog-preview">
-                <img
-                  src="https://storage.googleapis.com/background-vid/blog%20photos/blog3.webp"
-                  alt="Robot and human hand touching, representing AI in web development trends" />
-                <div class="blog-content">
-                  <h2>2024 Web Development Trends and Predictions for 2025</h2>
-                  <p class="date">Published: January 15, 2025</p>
-                  <p class="description">
-                    A look back at 2024’s top web development trends, including
-                    AI, sustainability, and immersive experiences, and
-                    predictions for what’s ahead in 2025.
-                  </p>
+            <article class="blog-post-card" data-category="trends">
+              <a
+                href="../blogs/web-development-trends-2024-predictions-2025"
+                class="blog-post-link">
+                <div class="blog-post-image">
+                  <img
+                    src="https://storage.googleapis.com/background-vid/blog%20photos/blog3.webp"
+                    alt="Robot and human hand touching, representing AI in web development trends" />
+                  <div class="blog-post-overlay">
+                    <span class="read-more">Read Article</span>
+                  </div>
                 </div>
-              </article>
-            </a>
+                <div class="blog-post-content">
+                  <div class="blog-post-meta">
+                    <span class="blog-post-date">January 15, 2025</span>
+                    <span class="blog-post-category">Trends</span>
+                  </div>
+                  <h3 class="blog-post-title">
+                    2024 Web Development Trends and Predictions for 2025
+                  </h3>
+                  <p class="blog-post-excerpt">
+                    A look back at 2024's top web development trends, including
+                    AI, sustainability, and immersive experiences, and
+                    predictions for what's ahead in 2025.
+                  </p>
+                  <div class="blog-post-footer">
+                    <span class="read-time">8 min read</span>
+                    <svg
+                      class="arrow-icon"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor">
+                      <path
+                        d="M5 12h14m-7-7l7 7-7 7"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    </svg>
+                  </div>
+                </div>
+              </a>
+            </article>
 
             <!-- Blog Post 4 -->
-            <a
-              href="../blogs/small-business-website-design-principles"
-              class="blog-preview-link">
-              <article class="blog-preview">
-                <img
-                  src="https://storage.googleapis.com/background-vid/blog%20photos/blog4.webp"
-                  alt="Small busines restaurant" />
-                <div class="blog-content">
-                  <h2>
+            <article class="blog-post-card" data-category="business design">
+              <a
+                href="../blogs/small-business-website-design-principles"
+                class="blog-post-link">
+                <div class="blog-post-image">
+                  <img
+                    src="https://storage.googleapis.com/background-vid/blog%20photos/blog4.webp"
+                    alt="Small busines restaurant" />
+                  <div class="blog-post-overlay">
+                    <span class="read-more">Read Article</span>
+                  </div>
+                </div>
+                <div class="blog-post-content">
+                  <div class="blog-post-meta">
+                    <span class="blog-post-date">January 15, 2025</span>
+                    <span class="blog-post-category">Business</span>
+                  </div>
+                  <h3 class="blog-post-title">
                     Website Principles and Styling Keys for Small Businesses
-                  </h2>
-                  <p class="date">Published: January 15, 2025</p>
-                  <p class="description">
+                  </h3>
+                  <p class="blog-post-excerpt">
                     Create effective websites for small businesses by aligning
                     design, functionality, and styling with industry-specific
                     needs.
                   </p>
+                  <div class="blog-post-footer">
+                    <span class="read-time">6 min read</span>
+                    <svg
+                      class="arrow-icon"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor">
+                      <path
+                        d="M5 12h14m-7-7l7 7-7 7"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    </svg>
+                  </div>
                 </div>
-              </article>
-            </a>
+              </a>
+            </article>
 
             <!-- Blog Post 5 -->
-            <a
-              href="../blogs/responsive-design-benefits-modern-websites"
-              class="blog-preview-link">
-              <article class="blog-preview">
-                <img
-                  src="https://storage.googleapis.com/background-vid/blog%20photos/blog5.webp"
-                  alt="Multiple different devices with different screen sizes" />
-                <div class="blog-content">
-                  <h2>The Role of Responsive Design in Modern Websites</h2>
-                  <p class="date">Published: January 15, 2025</p>
-                  <p class="description">
+            <article class="blog-post-card" data-category="design development">
+              <a
+                href="../blogs/responsive-design-benefits-modern-websites"
+                class="blog-post-link">
+                <div class="blog-post-image">
+                  <img
+                    src="https://storage.googleapis.com/background-vid/blog%20photos/blog5.webp"
+                    alt="Multiple different devices with different screen sizes" />
+                  <div class="blog-post-overlay">
+                    <span class="read-more">Read Article</span>
+                  </div>
+                </div>
+                <div class="blog-post-content">
+                  <div class="blog-post-meta">
+                    <span class="blog-post-date">January 15, 2025</span>
+                    <span class="blog-post-category">Design</span>
+                  </div>
+                  <h3 class="blog-post-title">
+                    The Role of Responsive Design in Modern Websites
+                  </h3>
+                  <p class="blog-post-excerpt">
                     Discover how responsive design enhances accessibility, user
                     engagement, and future-proofs your website for all devices.
                   </p>
+                  <div class="blog-post-footer">
+                    <span class="read-time">5 min read</span>
+                    <svg
+                      class="arrow-icon"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor">
+                      <path
+                        d="M5 12h14m-7-7l7 7-7 7"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    </svg>
+                  </div>
                 </div>
-              </article>
-            </a>
+              </a>
+            </article>
 
             <!-- Blog Post 6 -->
-            <a
-              href="../blogs/professional-web-designer-business-benefits"
-              class="blog-preview-link">
-              <article class="blog-preview">
-                <img
-                  src="https://storage.googleapis.com/background-vid/blog%20photos/blog6.webp"
-                  alt="hand reaching out for handshake to make a deal" />
-                <div class="blog-content">
-                  <h2>
+            <article class="blog-post-card" data-category="business">
+              <a
+                href="../blogs/professional-web-designer-business-benefits"
+                class="blog-post-link">
+                <div class="blog-post-image">
+                  <img
+                    src="https://storage.googleapis.com/background-vid/blog%20photos/blog6.webp"
+                    alt="hand reaching out for handshake to make a deal" />
+                  <div class="blog-post-overlay">
+                    <span class="read-more">Read Article</span>
+                  </div>
+                </div>
+                <div class="blog-post-content">
+                  <div class="blog-post-meta">
+                    <span class="blog-post-date">January 22, 2025</span>
+                    <span class="blog-post-category">Business</span>
+                  </div>
+                  <h3 class="blog-post-title">
                     The Benefits of Partnering with a Professional Web Designer
-                  </h2>
-                  <p class="date">Published: January 22, 2025</p>
-                  <p class="description">
+                  </h3>
+                  <p class="blog-post-excerpt">
                     Discover how working with a professional web designer saves
                     time, enhances strategy, and drives long-term growth for
                     your business.
                   </p>
+                  <div class="blog-post-footer">
+                    <span class="read-time">6 min read</span>
+                    <svg
+                      class="arrow-icon"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor">
+                      <path
+                        d="M5 12h14m-7-7l7 7-7 7"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    </svg>
+                  </div>
                 </div>
-              </article>
-            </a>
+              </a>
+            </article>
+
             <!-- Blog Post 7 -->
-            <a
-              href="../blogs/improving-user-experience-for-local-searches"
-              class="blog-preview-link">
-              <article class="blog-preview">
-                <img
-                  src="https://storage.googleapis.com/background-vid/blog%20photos/local-seo.webp"
-                  alt="hand reaching out for handshake to make a deal" />
-                <div class="blog-content">
-                  <h2>Improving User Experience for Local Searches</h2>
-                  <p class="date">Published: April, 14 2025</p>
-                  <p class="description">
+            <article
+              class="blog-post-card"
+              data-category="development business">
+              <a
+                href="../blogs/improving-user-experience-for-local-searches"
+                class="blog-post-link">
+                <div class="blog-post-image">
+                  <img
+                    src="https://storage.googleapis.com/background-vid/blog%20photos/local-seo.webp"
+                    alt="Local SEO optimization" />
+                  <div class="blog-post-overlay">
+                    <span class="read-more">Read Article</span>
+                  </div>
+                </div>
+                <div class="blog-post-content">
+                  <div class="blog-post-meta">
+                    <span class="blog-post-date">April 14, 2025</span>
+                    <span class="blog-post-category">Development</span>
+                  </div>
+                  <h3 class="blog-post-title">
+                    Improving User Experience for Local Searches
+                  </h3>
+                  <p class="blog-post-excerpt">
                     Explore how to optimize your website to better serve local
                     searchers and convert them into customers.
                   </p>
+                  <div class="blog-post-footer">
+                    <span class="read-time">7 min read</span>
+                    <svg
+                      class="arrow-icon"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor">
+                      <path
+                        d="M5 12h14m-7-7l7 7-7 7"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    </svg>
+                  </div>
                 </div>
-              </article>
-            </a>
+              </a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- STUFF YOU SHOULD KNOW SECTION -->
+      <section class="blog-stats-section">
+        <div class="blog-stats-container">
+          <h2 class="blog-stats-title">
+            <span class="stats-gradient">Stuff You Should Know</span>
+          </h2>
+          <div class="blog-stats-subtitle">
+            Critical Website Performance Statistics
           </div>
 
-          <footer class="cta">
-            <p>Ready to create something unique?</p>
-            <a href="#footer-contact" class="cta-button">Contact Us</a>
-          </footer>
+          <div class="blog-stats-grid">
+            <!-- Stat Card 1 -->
+            <div class="blog-stat-card">
+              <div class="stat-icon">
+                <svg
+                  width="48"
+                  height="48"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="url(#gradient1)"
+                  stroke-width="2">
+                  <defs>
+                    <linearGradient
+                      id="gradient1"
+                      x1="0%"
+                      y1="0%"
+                      x2="100%"
+                      y2="100%">
+                      <stop
+                        offset="0%"
+                        style="stop-color: #00ffff; stop-opacity: 1" />
+                      <stop
+                        offset="100%"
+                        style="stop-color: #818cf8; stop-opacity: 1" />
+                    </linearGradient>
+                  </defs>
+                  <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+                </svg>
+              </div>
+              <div class="stat-number" data-target="53">0</div>
+              <div class="stat-label">
+                % of mobile users abandon sites that take &gt;3 seconds to load
+              </div>
+            </div>
+
+            <!-- Stat Card 2 -->
+            <div class="blog-stat-card">
+              <div class="stat-icon">
+                <svg
+                  width="48"
+                  height="48"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="url(#gradient2)"
+                  stroke-width="2">
+                  <defs>
+                    <linearGradient
+                      id="gradient2"
+                      x1="0%"
+                      y1="0%"
+                      x2="100%"
+                      y2="100%">
+                      <stop
+                        offset="0%"
+                        style="stop-color: #ec4899; stop-opacity: 1" />
+                      <stop
+                        offset="100%"
+                        style="stop-color: #818cf8; stop-opacity: 1" />
+                    </linearGradient>
+                  </defs>
+                  <path d="M3 3v18h18M7 12l4-4 4 4 5-5" />
+                </svg>
+              </div>
+              <div class="stat-number" data-target="38">0</div>
+              <div class="stat-label">
+                % bounce rate for sites taking 5+ seconds (vs 9% for 2-second
+                sites)
+              </div>
+            </div>
+
+            <!-- Stat Card 3 -->
+            <div class="blog-stat-card">
+              <div class="stat-icon">
+                <svg
+                  width="48"
+                  height="48"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="url(#gradient3)"
+                  stroke-width="2">
+                  <defs>
+                    <linearGradient
+                      id="gradient3"
+                      x1="0%"
+                      y1="0%"
+                      x2="100%"
+                      y2="100%">
+                      <stop
+                        offset="0%"
+                        style="stop-color: #10b981; stop-opacity: 1" />
+                      <stop
+                        offset="100%"
+                        style="stop-color: #00ffff; stop-opacity: 1" />
+                    </linearGradient>
+                  </defs>
+                  <circle cx="12" cy="12" r="10" />
+                  <path d="M12 6v6l4 2" />
+                </svg>
+              </div>
+              <div class="stat-number" data-target="7">0</div>
+              <div class="stat-label">
+                % conversion loss per 1-second delay in page load time
+              </div>
+            </div>
+
+            <!-- Stat Card 4 -->
+            <div class="blog-stat-card">
+              <div class="stat-icon">
+                <svg
+                  width="48"
+                  height="48"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="url(#gradient4)"
+                  stroke-width="2">
+                  <defs>
+                    <linearGradient
+                      id="gradient4"
+                      x1="0%"
+                      y1="0%"
+                      x2="100%"
+                      y2="100%">
+                      <stop
+                        offset="0%"
+                        style="stop-color: #ff00ff; stop-opacity: 1" />
+                      <stop
+                        offset="100%"
+                        style="stop-color: #ec4899; stop-opacity: 1" />
+                    </linearGradient>
+                  </defs>
+                  <path
+                    d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                </svg>
+              </div>
+              <div class="stat-number">$<span data-target="2.5">0</span>M</div>
+              <div class="stat-label">
+                potential yearly loss for sites making $100k/day with 1-second
+                delays
+              </div>
+            </div>
+          </div>
+
+          <div class="blog-stats-details">
+            <div class="stats-detail-card">
+              <h3>Key Performance Insights</h3>
+              <ul>
+                <li>
+                  <strong>User Expectations:</strong> 47% of users expect pages
+                  to load in 2 seconds or less
+                </li>
+                <li>
+                  <strong>Mobile Impact:</strong> Mobile users are 2x more
+                  likely to abandon slow sites than desktop users
+                </li>
+                <li>
+                  <strong>SEO Rankings:</strong> Page speed is a critical
+                  ranking factor in Google's algorithm
+                </li>
+                <li>
+                  <strong>Customer Retention:</strong> 79% of shoppers
+                  dissatisfied with site performance won't return
+                </li>
+              </ul>
+            </div>
+            <div class="stats-detail-card">
+              <h3>Performance Solutions</h3>
+              <ul>
+                <li>Custom-coded websites with optimized performance</li>
+                <li>Advanced image optimization and lazy loading</li>
+                <li>Efficient code structure and minimal dependencies</li>
+                <li>Strategic caching and content delivery networks</li>
+              </ul>
+            </div>
+          </div>
         </div>
       </section>
 
-      <!-- STUFF YOU SHOULD KNOW -->
-      <section class="stuff-you-should-know">
-        <div class="stuff-you-should-know-box">
-          <h2 class="stuff-you-should-know-heading">Stuff You Should Know</h2>
-          <h3 class="stuff-you-should-know-subheading">Please Read</h3>
-          <p>
-            Statistics about how users behave when websites take too long to
-            load highlight the critical importance of fast loading times for
-            user retention and conversion rates. Here are some key findings from
-            studies and surveys:
+      <!-- CTA SECTION -->
+      <section class="blog-cta-section">
+        <div class="blog-cta-container">
+          <h2 class="blog-cta-title">Ready to Create Something Unique?</h2>
+          <p class="blog-cta-text">
+            Let's build a website that not only looks amazing but performs
+            flawlessly
           </p>
-
-          <h3>Impact on User Behavior</h3>
-          <ul>
-            <li>
-              <strong>User Abandonment:</strong> 53% of mobile users will
-              abandon a website if it takes longer than 3 seconds (Google,
-              2021).
-            </li>
-            <li>
-              <strong>1-Second Delay:</strong> A 1-second delay in page load
-              time can reduce conversions by 7% (Akamai, 2022).
-            </li>
-            <li>
-              <strong>Bounce Rates:</strong> Websites that load within 2 seconds
-              experience a bounce rate (percentage of visitors leaving after
-              viewing only one page.) of 9%, while those taking 5 seconds or
-              more see bounce rates jump to 38% (Pingdom, 2023).
-            </li>
-            <li>
-              <strong>Customer Dissatisfaction:</strong> 79% of shoppers
-              dissatisfied with website performance are less likely to buy from
-              the same site again (Neil Patel, 2023).
-            </li>
-          </ul>
-
-          <h3>Revenue and Conversions</h3>
-          <ul>
-            <li>
-              <strong>Revenue Loss:</strong> A 2-second delay in load time
-              during a transaction can result in abandonment rates up to 87%
-              (Akamai, 2022).
-            </li>
-            <li>
-              <strong>eCommerce Impact:</strong> For a site making $100,000 per
-              day, a 1-second page delay could potentially cost $2.5 million in
-              lost sales per year (Kissmetrics, 2023).
-            </li>
-            <li>
-              <strong>Conversion Rates:</strong> Pages that load in 2 seconds or
-              less have an average conversion rate of 4.8%, compared to 2.4% for
-              slower pages (Portent, 2022).
-            </li>
-          </ul>
-
-          <h3>User Expectations</h3>
-          <ul>
-            <li>
-              <strong>Speed Expectations:</strong> 47% of users expect a webpage
-              to load in 2 seconds or less (Akamai, 2022).
-            </li>
-            <li>
-              <strong>Mobile vs. Desktop:</strong> Mobile users are 2x more
-              likely than desktop users to abandon a slow-loading site (Google,
-              2021).
-            </li>
-          </ul>
-
-          <h3>SEO and Search Rankings</h3>
-          <ul>
-            <li>
-              <strong>SEO Impact:</strong> Page speed is a ranking factor in
-              Google’s algorithm for desktop and mobile searches (Google, 2020).
-            </li>
-            <li>
-              <strong>Visibility:</strong> Slow-loading websites are penalized
-              in search rankings, reducing organic traffic.
-            </li>
-          </ul>
-
-          <h3>Key Takeaways</h3>
-          <ul>
-            <li>
-              Faster loading times lead to better user experience, higher
-              conversions, and improved retention.
-            </li>
-            <li>
-              Modern users expect speed, efficiency, and a seamless experience,
-              especially on mobile devices.
-            </li>
-            <li>
-              Investing in tools like PageSpeed Insights, lazy loading, and
-              image optimization significantly reduces loading times.
-            </li>
-          </ul>
+          <a href="#footer-contact" class="blog-cta-button">
+            <span>Contact Us</span>
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor">
+              <path
+                d="M5 12h14m-7-7l7 7-7 7"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </a>
         </div>
       </section>
 
-      <!-- New Footer -->
+      <!-- Footer -->
       <div id="footer-container"></div>
+    </div>
 
-      <script>
-        // Automatically update the year
-        document.getElementById('year').textContent = new Date().getFullYear();
-      </script>
-      <script src="../js/dynamic-path.js"></script>
+    <script src="../js/dynamic-path.js"></script>
+    <script src="../js/scripts.js" defer></script>
+    <script src="../js/mobile-menu.js" defer></script>
 
-      <script src="../js/scripts.js" defer></script>
-      <script src="../js/mobile-menu.js" defer></script>
-      <script>
-        document.addEventListener('DOMContentLoaded', function () {
-          // Get the container with all blog posts
-          const blogContainer = document.querySelector('.blog-content-grid');
+    <!-- Page Specific JS -->
+    <script>
+      // Sort blog posts by date on page load
+      document.addEventListener('DOMContentLoaded', function () {
+        // Filter functionality
+        const filterButtons = document.querySelectorAll('.blog-tag');
+        const blogPosts = document.querySelectorAll('.blog-post-card');
 
-          // Get all blog preview articles
-          const blogPosts = Array.from(
-            document.querySelectorAll('.blog-preview')
-          );
+        filterButtons.forEach((button) => {
+          button.addEventListener('click', () => {
+            // Update active state
+            filterButtons.forEach((btn) => btn.classList.remove('active'));
+            button.classList.add('active');
 
-          // Sort blog posts by date (most recent first)
-          blogPosts.sort(function (a, b) {
-            // Extract dates from each blog post
-            const dateA = new Date(
-              a.querySelector('.date').textContent.replace('Published: ', '')
-            );
-            const dateB = new Date(
-              b.querySelector('.date').textContent.replace('Published: ', '')
-            );
+            const filter = button.getAttribute('data-filter');
 
-            // Sort in descending order (newest first)
-            return dateB - dateA;
-          });
-
-          // Clear the container
-          blogContainer.innerHTML = '';
-
-          // Re-append the sorted blog posts
-          blogPosts.forEach(function (post) {
-            // We need to get the parent link element that wraps the article
-            const linkElement = post.parentElement;
-            // Clone the link with the post inside to avoid reference issues
-            const clonedLink = linkElement.cloneNode(true);
-            // Append the cloned link with post to the container
-            blogContainer.appendChild(clonedLink);
+            blogPosts.forEach((post) => {
+              if (
+                filter === 'all' ||
+                post.getAttribute('data-category').includes(filter)
+              ) {
+                post.style.display = 'block';
+                setTimeout(() => {
+                  post.style.opacity = '1';
+                  post.style.transform = 'translateY(0)';
+                }, 10);
+              } else {
+                post.style.opacity = '0';
+                post.style.transform = 'translateY(20px)';
+                setTimeout(() => {
+                  post.style.display = 'none';
+                }, 300);
+              }
+            });
           });
         });
-      </script>
-    </div>
+
+        // Sort posts by date
+        const postsGrid = document.querySelector('.blog-posts-grid');
+        const posts = Array.from(postsGrid.querySelectorAll('.blog-post-card'));
+
+        posts.sort((a, b) => {
+          const dateA = new Date(
+            a.querySelector('.blog-post-date').textContent
+          );
+          const dateB = new Date(
+            b.querySelector('.blog-post-date').textContent
+          );
+          return dateB - dateA;
+        });
+
+        posts.forEach((post) => postsGrid.appendChild(post));
+
+        // Animate stats on scroll
+        const observerOptions = {
+          threshold: 0.5,
+          rootMargin: '0px',
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              const statNumbers = entry.target.querySelectorAll('.stat-number');
+              statNumbers.forEach((stat) => {
+                const target =
+                  stat.getAttribute('data-target') ||
+                  stat.querySelector('span')?.getAttribute('data-target');
+                if (target) {
+                  animateValue(stat, 0, parseFloat(target), 2000);
+                }
+              });
+              observer.unobserve(entry.target);
+            }
+          });
+        }, observerOptions);
+
+        const statsSection = document.querySelector('.blog-stats-section');
+        if (statsSection) {
+          observer.observe(statsSection);
+        }
+
+        // Animate value function
+        function animateValue(element, start, end, duration) {
+          const isDecimal = end % 1 !== 0;
+          const hasPrefix = element.textContent.includes('$');
+          const range = end - start;
+          const startTime = performance.now();
+
+          function updateValue(currentTime) {
+            const elapsed = currentTime - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+
+            const easeOutQuart = 1 - Math.pow(1 - progress, 4);
+            const current = start + range * easeOutQuart;
+
+            if (hasPrefix) {
+              const span = element.querySelector('span');
+              if (span) {
+                span.textContent = isDecimal
+                  ? current.toFixed(1)
+                  : Math.floor(current);
+              }
+            } else {
+              element.textContent = isDecimal
+                ? current.toFixed(1)
+                : Math.floor(current);
+            }
+
+            if (progress < 1) {
+              requestAnimationFrame(updateValue);
+            }
+          }
+
+          requestAnimationFrame(updateValue);
+        }
+
+        // Fade in animation for blog posts
+        const fadeObserver = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+              }
+            });
+          },
+          { threshold: 0.1 }
+        );
+
+        blogPosts.forEach((post) => {
+          fadeObserver.observe(post);
+        });
+      });
+    </script>
   </body>
 </html>
