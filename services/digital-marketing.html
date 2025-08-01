@@ -278,402 +278,1213 @@
   </head>
 
   <!-- BODY -->
-  <!-- NAVBAR / MOBILE MENU PLACEHOLDER (dynamically loaded via Javascript) -->
-  <div id="navbar-container"></div>
+  <body class="dm-page">
+    <!-- NAVBAR / MOBILE MENU PLACEHOLDER (dynamically loaded via Javascript) -->
+    <div id="navbar-container"></div>
 
-  <!-- BACK TO TOP BUTTON -->
-  <button id="backToTop" class="back-to-top" onclick="scrollToTop()">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-      <!--!Font Awesome Free 6.7.2-->
-      <path
-        fill="#5dade2"
-        d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zm11.3-395.3l112 112c4.6 4.6 5.9 11.5 3.5 17.4s-8.3 9.9-14.8 9.9l-64 0 0 96c0 17.7-14.3 32-32 32l-32 0c-17.7 0-32-14.3-32-32l0-96-64 0c-6.5 0-12.3-3.9-14.8-9.9s-1.1-12.9 3.5-17.4l112-112c6.2-6.2 16.4-6.2 22.6 0z" />
-    </svg>
-  </button>
+    <!-- BACK TO TOP BUTTON -->
+    <button id="backToTop" class="back-to-top" onclick="scrollToTop()">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+        <!--!Font Awesome Free 6.7.2-->
+        <path
+          fill="#5dade2"
+          d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zm11.3-395.3l112 112c4.6 4.6 5.9 11.5 3.5 17.4s-8.3 9.9-14.8 9.9l-64 0 0 96c0 17.7-14.3 32-32 32l-32 0c-17.7 0-32-14.3-32-32l0-96-64 0c-6.5 0-12.3-3.9-14.8-9.9s-1.1-12.9 3.5-17.4l112-112c6.2-6.2 16.4-6.2 22.6 0z" />
+      </svg>
+    </button>
 
-  <!-- PROGRESS SCROLL BAR -->
-  <div class="progress-container">
-    <div class="progress-bar" id="progressBar"></div>
-  </div>
+    <!-- PROGRESS SCROLL BAR -->
+    <div class="progress-container">
+      <div class="progress-bar" id="progressBar"></div>
+    </div>
 
-  <!-- POPUP -->
-  <div class="popup" id="popup">
-    <p style="color: black">
-      Before you leave, be sure to submit your info for a free instant quote!
-    </p>
-    <form id="info-form" action="https://formspree.io/f/xbldynko" method="POST">
-      <!-- Name -->
-      <label for="name">Name:</label>
-      <input
-        type="text"
-        id="name"
-        name="name"
-        placeholder="Your Name"
-        required />
+    <!-- POPUP -->
+    <div class="popup" id="popup">
+      <p style="color: black">
+        Before you leave, be sure to submit your info for a free instant quote!
+      </p>
+      <form
+        id="info-form"
+        action="https://formspree.io/f/xbldynko"
+        method="POST">
+        <!-- Name -->
+        <label for="name">Name:</label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          placeholder="Your Name"
+          required />
 
-      <!-- Email -->
-      <label for="email">Email:</label>
-      <input
-        type="email"
-        id="email"
-        name="email"
-        placeholder="Your Email"
-        required />
+        <!-- Email -->
+        <label for="email">Email:</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="Your Email"
+          required />
 
-      <!-- Phone Number -->
-      <label for="phone">Phone Number:</label>
-      <input
-        type="tel"
-        id="phone"
-        name="phone"
-        placeholder="Your Phone Number"
-        required />
+        <!-- Phone Number -->
+        <label for="phone">Phone Number:</label>
+        <input
+          type="tel"
+          id="phone"
+          name="phone"
+          placeholder="Your Phone Number"
+          required />
 
-      <!-- Message -->
-      <label for="message">Message:</label>
-      <textarea
-        id="message"
-        name="message"
-        placeholder="Your Message"
-        rows="4"
-        required></textarea>
+        <!-- Message -->
+        <label for="message">Message:</label>
+        <textarea
+          id="message"
+          name="message"
+          placeholder="Your Message"
+          rows="4"
+          required></textarea>
 
-      <!-- Submit Button -->
-      <button type="submit">GET QUOTE</button>
-    </form>
-    <button id="close-popup">Close</button>
-  </div>
+        <!-- Submit Button -->
+        <button type="submit">GET QUOTE</button>
+      </form>
+      <button id="close-popup">Close</button>
+    </div>
 
-  <body class="responsive-design-page">
-    <div class="page-content">
-      <!-- SEO optimization Details -->
-      <section class="intro-section marketing-intro">
-        <!-- Hero Section -->
-        <div class="hero-content">
-          <h1 class="hero-title marketing-title">
-            <span class="hero-word top digital">DIGITAL</span>
-            <span class="hero-word bottom marketing">MARKETING</span>
-          </h1>
-          <p class="hero-subheading">
-            Driving results with targeted PPC (pay-per-click) campaigns, local
-            SEO, data-driven strategies, and optimized conversion tactics
-            tailored to your business.
-          </p>
+    <div class="dm-page-content">
+      <!-- Hero Section -->
+      <section class="dm-hero-section">
+        <div class="dm-hero-overlay"></div>
+        <div class="dm-animated-bg">
+          <div class="dm-float-element" id="dm-float-1"></div>
+          <div class="dm-float-element" id="dm-float-2"></div>
+          <div class="dm-float-element" id="dm-float-3"></div>
+        </div>
+
+        <div class="dm-hero-content">
+          <div class="dm-hero-text-wrapper">
+            <h1 class="dm-hero-title">
+              <span class="dm-hero-word">DIGITAL</span>
+              <span class="dm-hero-word">MARKETING</span>
+            </h1>
+            <div class="dm-hero-divider"></div>
+            <p class="dm-hero-subheading">
+              Driving results with targeted PPC (pay-per-click) campaigns, local
+              SEO, data-driven strategies, and optimized conversion tactics
+              tailored to your business.
+            </p>
+          </div>
         </div>
       </section>
 
-      <div class="detail-cards">
-        <!-- Details Section -->
-        <section class="subject-details">
-          <p class="details-description">
-            Digital marketing connects your business with the right audience
-            through targeted strategies like PPC campaigns, local SEO, and
-            conversion rate optimization. By leveraging precise ad targeting,
-            localized search visibility, and tailored user experiences, you can
-            attract engaged customers, boost website traffic, and achieve
-            measurable results that grow your business.
-          </p>
-        </section>
-        <!-- <section class="subject-details">
-          <p class="details-description">
-            <em
-              >Curious about how responsive design works?
-              <strong>Resize your browser</strong> or switch between devices
-              (desktop, tablet, and mobile) to see the elements on this page adapt
-              seamlessly!</em
-            >
-          </p>
-        </section> -->
+      <!-- Main Content -->
+      <main class="dm-main-content">
+        <div class="dm-container">
+          <!-- Introduction Section -->
+          <section class="dm-section-intro">
+            <div class="dm-intro-content">
+              <p class="dm-intro-text">
+                Digital marketing connects your business with the right audience
+                through targeted strategies like PPC campaigns, local SEO, and
+                conversion rate optimization. By leveraging precise ad
+                targeting, localized search visibility, and tailored user
+                experiences, you can attract engaged customers, boost website
+                traffic, and achieve measurable results that grow your business.
+              </p>
+            </div>
+          </section>
 
-        <div class="info-cards-container">
-          <!-- Card 1 -->
-          <section class="info-card">
-            <h2 class="card-title">
-              What is Digital Marketing and Why It Matters?
+          <!-- Service Showcase -->
+          <section class="dm-service-section">
+            <h2 class="dm-section-title">
+              <span class="dm-gradient-text"
+                >Our Digital Marketing Services</span
+              >
             </h2>
-            <ul class="card-list">
-              <li>
-                <strong>Connecting with Your Audience:</strong> Digital
-                marketing allows businesses to reach their target audience where
-                they spend most of their time—online.
-              </li>
-              <li>
-                <strong>Measurable Results:</strong> Unlike traditional
-                marketing, digital strategies provide data-driven insights to
-                track performance and refine campaigns.
-              </li>
-              <li>
-                <strong>Cost-Effective Solutions:</strong> From PPC to social
-                media advertising, digital marketing offers scalable and
-                budget-friendly options for businesses of all sizes.
-              </li>
-              <li>
-                <strong>Increased Visibility:</strong> By leveraging SEO, social
-                media, and paid ads, your business can stay front and center in
-                the digital landscape.
-              </li>
-            </ul>
+            <div class="dm-services-grid">
+              <div class="dm-service-card dm-fade-in">
+                <div class="dm-service-icon">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2">
+                    <rect
+                      x="3"
+                      y="3"
+                      width="18"
+                      height="18"
+                      rx="2"
+                      ry="2"></rect>
+                    <line x1="9" y1="9" x2="15" y2="9"></line>
+                    <line x1="9" y1="13" x2="15" y2="13"></line>
+                    <line x1="9" y1="17" x2="13" y2="17"></line>
+                  </svg>
+                </div>
+                <h3 class="dm-service-name">PPC Campaign Management</h3>
+                <p class="dm-service-desc">
+                  Maximize ROI with expertly managed pay-per-click campaigns
+                  across Google Ads, Bing, and social media platforms.
+                </p>
+              </div>
+
+              <div class="dm-service-card dm-fade-in">
+                <div class="dm-service-icon">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2">
+                    <path
+                      d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                  </svg>
+                </div>
+                <h3 class="dm-service-name">Local SEO Optimization</h3>
+                <p class="dm-service-desc">
+                  Dominate local search results and attract nearby customers
+                  with targeted local SEO strategies and Google My Business.
+                </p>
+              </div>
+
+              <div class="dm-service-card dm-fade-in">
+                <div class="dm-service-icon">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2">
+                    <polyline
+                      points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                  </svg>
+                </div>
+                <h3 class="dm-service-name">Conversion Rate Optimization</h3>
+                <p class="dm-service-desc">
+                  Turn more visitors into customers with data-driven CRO
+                  techniques, A/B testing, and user experience improvements.
+                </p>
+              </div>
+
+              <div class="dm-service-card dm-fade-in">
+                <div class="dm-service-icon">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2">
+                    <path
+                      d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                  </svg>
+                </div>
+                <h3 class="dm-service-name">Social Media Marketing</h3>
+                <p class="dm-service-desc">
+                  Build brand awareness and engage your audience across
+                  Facebook, Instagram, LinkedIn, and other social platforms.
+                </p>
+              </div>
+
+              <div class="dm-service-card dm-fade-in">
+                <div class="dm-service-icon">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2">
+                    <path
+                      d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                    <polyline points="22,6 12,13 2,6"></polyline>
+                  </svg>
+                </div>
+                <h3 class="dm-service-name">Email Marketing Automation</h3>
+                <p class="dm-service-desc">
+                  Nurture leads and retain customers with personalized email
+                  campaigns and automated marketing workflows.
+                </p>
+              </div>
+
+              <div class="dm-service-card dm-fade-in">
+                <div class="dm-service-icon">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2">
+                    <line x1="18" y1="20" x2="18" y2="10"></line>
+                    <line x1="12" y1="20" x2="12" y2="4"></line>
+                    <line x1="6" y1="20" x2="6" y2="14"></line>
+                  </svg>
+                </div>
+                <h3 class="dm-service-name">Analytics & Reporting</h3>
+                <p class="dm-service-desc">
+                  Track performance with comprehensive analytics dashboards and
+                  monthly reports that show real results.
+                </p>
+              </div>
+            </div>
           </section>
 
-          <!-- Card 2 -->
-          <section class="info-card">
-            <h2 class="card-title">Our Approach to Digital Marketing</h2>
-            <ul class="card-list">
-              <li>
-                <strong>Data-Driven Campaigns:</strong> We leverage analytics to
-                craft targeted strategies that align with your business goals
-                and ensure measurable results.
-              </li>
-              <li>
-                <strong>PPC Advertising:</strong> Drive immediate traffic and
-                conversions with highly targeted pay-per-click campaigns
-                tailored to your audience.
-              </li>
-              <li>
-                <strong>SEO Integration:</strong> We optimize your content and
-                website structure to ensure long-term visibility in organic
-                search results.
-              </li>
-              <li>
-                <strong>Content Marketing:</strong> Engaging, optimized content
-                that speaks directly to your audience and supports your overall
-                digital marketing strategy.
-              </li>
-              <li>
-                <strong>Email Marketing:</strong> Build stronger connections
-                with your audience through personalized and automated email
-                campaigns.
-              </li>
-              <li>
-                <strong>Analytics and Optimization:</strong> Continuous tracking
-                and analysis ensure your campaigns are performing efficiently
-                and generating the best ROI.
-              </li>
-            </ul>
+          <!-- Stats Counter Section -->
+          <section class="dm-stats-section">
+            <div class="dm-stats-container">
+              <div class="dm-stat-box">
+                <span class="dm-stat-number" data-target="70">0</span>
+                <span class="dm-stat-label">% of Clicks Go to Paid Ads</span>
+              </div>
+              <div class="dm-stat-box">
+                <span class="dm-stat-number" data-target="8">0</span>
+                <span class="dm-stat-label"
+                  >Average ROI for Email Marketing</span
+                >
+              </div>
+              <div class="dm-stat-box">
+                <span class="dm-stat-number" data-target="93">0</span>
+                <span class="dm-stat-label"
+                  >% of Online Experiences Begin with Search</span
+                >
+              </div>
+              <div class="dm-stat-box">
+                <span class="dm-stat-number" data-target="2.3">0</span>
+                <span class="dm-stat-label"
+                  >X More Likely to Convert with PPC</span
+                >
+              </div>
+            </div>
           </section>
 
-          <!-- Card 3 -->
-          <section class="info-card">
-            <h2 class="card-title">Maximizing Results with PPC Advertising</h2>
-            <ul class="card-list">
-              <li>
-                <strong>Targeted Campaigns:</strong> We create highly specific
-                campaigns to reach the right audience based on location,
-                demographics, and search intent.
-              </li>
-              <li>
-                <strong>Keyword Optimization:</strong> By selecting and bidding
-                on the most relevant keywords, we ensure your ads appear to
-                users searching for your products or services.
-              </li>
-              <li>
-                <strong>Immediate Visibility:</strong> Unlike organic SEO, PPC
-                provides instant exposure at the top of search engine results,
-                driving quick results.
-              </li>
-              <li>
-                <strong>Cost Efficiency:</strong> Our data-driven approach
-                ensures your budget is used effectively, focusing on
-                high-converting ads and eliminating wasted spend.
-              </li>
-              <li>
-                <strong>Custom Landing Pages:</strong> We design optimized
-                landing pages that align with your ads to maximize conversions
-                and ROI.
-              </li>
-              <li>
-                <strong>Performance Tracking:</strong> Comprehensive analytics
-                allow us to monitor and refine your campaigns for continuous
-                improvement.
-              </li>
-            </ul>
-          </section>
-
-          <!-- Card 4 -->
-          <section class="info-card">
-            <h2 class="card-title">
-              Boosting Sales with Conversion Rate Optimization (CRO)
+          <!-- Process Section -->
+          <section class="dm-process-section">
+            <h2 class="dm-section-title">
+              <span class="dm-gradient-text"
+                >Our Digital Marketing Process</span
+              >
             </h2>
-            <ul class="card-list">
-              <li>
-                <strong>Optimized User Journeys:</strong> We analyze how users
-                interact with your site and streamline their path to conversion,
-                reducing friction points.
-              </li>
-              <li>
-                <strong>Data-Driven Testing:</strong> A/B testing and heatmaps
-                help identify what works best, from button placement to
-                call-to-action designs.
-              </li>
-              <li>
-                <strong>Faster Load Times:</strong> Speed matters—quicker pages
-                keep users engaged and reduce bounce rates, boosting
-                conversions.
-              </li>
-              <li>
-                <strong>Clear CTAs:</strong> Attention-grabbing call-to-action
-                buttons guide visitors toward completing key actions like
-                purchases or inquiries.
-              </li>
-              <li>
-                <strong>Mobile-First Designs:</strong> Ensure seamless
-                experiences on mobile devices where a majority of users browse
-                and shop.
-              </li>
-              <li>
-                <strong>Ongoing Refinements:</strong> CRO is a continuous
-                process—we monitor, tweak, and improve your site to maximize
-                results over time.
-              </li>
-            </ul>
+            <div class="dm-process-grid">
+              <div class="dm-process-item">
+                <div class="dm-process-number">01</div>
+                <h3>Discovery & Audit</h3>
+                <p>
+                  We analyze your current digital presence, competitors, and
+                  market opportunities.
+                </p>
+              </div>
+              <div class="dm-process-item">
+                <div class="dm-process-number">02</div>
+                <h3>Strategy Development</h3>
+                <p>
+                  Create a comprehensive digital marketing plan tailored to your
+                  business goals.
+                </p>
+              </div>
+              <div class="dm-process-item">
+                <div class="dm-process-number">03</div>
+                <h3>Campaign Launch</h3>
+                <p>
+                  Execute multi-channel campaigns with precision targeting and
+                  compelling creative.
+                </p>
+              </div>
+              <div class="dm-process-item">
+                <div class="dm-process-number">04</div>
+                <h3>Monitor & Optimize</h3>
+                <p>
+                  Continuously track performance, test variations, and refine
+                  campaigns for ROI.
+                </p>
+              </div>
+              <div class="dm-process-item">
+                <div class="dm-process-number">05</div>
+                <h3>Scale & Grow</h3>
+                <p>
+                  Expand successful campaigns and explore new opportunities to
+                  accelerate growth.
+                </p>
+              </div>
+            </div>
           </section>
 
-          <!-- Card 5 -->
-          <section class="info-card">
-            <h2 class="card-title">Analytics and Continuous Improvement</h2>
-            <ul class="card-list">
-              <li>
-                <strong>In-Depth Analytics:</strong> Track website performance
-                with tools like Google Analytics to gain insights into user
-                behavior, traffic sources, and key metrics.
-              </li>
-              <li>
-                <strong>Data-Driven Decisions:</strong> Use real-time data to
-                identify areas for improvement, whether it's updating content,
-                refining strategies, or optimizing for specific goals.
-              </li>
-              <li>
-                <strong>Conversion Tracking:</strong> Monitor user actions like
-                form submissions, purchases, or downloads to measure campaign
-                success and ROI effectively.
-              </li>
-              <li>
-                <strong>Custom Reporting:</strong> Get tailored reports that
-                focus on the KPIs that matter most to your business goals.
-              </li>
-              <li>
-                <strong>Iterative Optimization:</strong> Continuous testing and
-                adjustments ensure your site evolves alongside user needs and
-                market trends.
-              </li>
-              <li>
-                <strong>Long-Term Growth:</strong> Analytics provide a clear
-                roadmap for scaling your digital marketing efforts and achieving
-                sustained success.
-              </li>
-            </ul>
+          <!-- Tools & Platforms -->
+          <section class="dm-tools-section">
+            <div class="dm-tools-container">
+              <h2 class="dm-section-title">
+                <span class="dm-gradient-text"
+                  >Tools & Platforms We Master</span
+                >
+              </h2>
+              <div class="dm-tools-grid">
+                <div class="dm-tool-item">
+                  <div class="dm-tool-icon">
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2">
+                      <circle cx="11" cy="11" r="8"></circle>
+                      <path d="m21 21-4.35-4.35"></path>
+                    </svg>
+                  </div>
+                  <div class="dm-tool-name">Google Ads</div>
+                </div>
+                <div class="dm-tool-item">
+                  <div class="dm-tool-icon">
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2">
+                      <path d="M3 3v18h18"></path>
+                      <path d="m19 9-5 5-4-4-3 3"></path>
+                    </svg>
+                  </div>
+                  <div class="dm-tool-name">Analytics</div>
+                </div>
+                <div class="dm-tool-item">
+                  <div class="dm-tool-icon">
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2">
+                      <rect
+                        x="2"
+                        y="2"
+                        width="20"
+                        height="20"
+                        rx="5"
+                        ry="5"></rect>
+                      <path
+                        d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                      <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                    </svg>
+                  </div>
+                  <div class="dm-tool-name">Instagram</div>
+                </div>
+                <div class="dm-tool-item">
+                  <div class="dm-tool-icon">
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2">
+                      <path
+                        d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                      <rect x="2" y="9" width="4" height="12"></rect>
+                      <circle cx="4" cy="4" r="2"></circle>
+                    </svg>
+                  </div>
+                  <div class="dm-tool-name">LinkedIn</div>
+                </div>
+                <div class="dm-tool-item">
+                  <div class="dm-tool-icon">
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2">
+                      <circle cx="12" cy="12" r="10"></circle>
+                      <polyline points="12 6 12 12 16 14"></polyline>
+                    </svg>
+                  </div>
+                  <div class="dm-tool-name">Facebook Ads</div>
+                </div>
+                <div class="dm-tool-item">
+                  <div class="dm-tool-icon">
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2">
+                      <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+                      <path d="M2 17l10 5 10-5"></path>
+                      <path d="M2 12l10 5 10-5"></path>
+                    </svg>
+                  </div>
+                  <div class="dm-tool-name">Mailchimp</div>
+                </div>
+                <div class="dm-tool-item">
+                  <div class="dm-tool-icon">
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2">
+                      <circle cx="12" cy="12" r="3"></circle>
+                      <path d="M12 1v6m0 6v6m11-7h-6m-6 0H1"></path>
+                    </svg>
+                  </div>
+                  <div class="dm-tool-name">HubSpot</div>
+                </div>
+                <div class="dm-tool-item">
+                  <div class="dm-tool-icon">
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2">
+                      <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                      <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                    </svg>
+                  </div>
+                  <div class="dm-tool-name">SEMrush</div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Why Digital Marketing Section - Interactive Grid -->
+          <section class="dm-why-section">
+            <div class="dm-container">
+              <h2 class="dm-section-title">
+                <span class="dm-gradient-text"
+                  >What is Digital Marketing and Why It Matters?</span
+                >
+              </h2>
+              <div class="dm-why-grid">
+                <div class="dm-why-card">
+                  <div class="dm-why-icon">
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2">
+                      <path
+                        d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                      <circle cx="9" cy="7" r="4"></circle>
+                      <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                      <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                    </svg>
+                  </div>
+                  <h3>Connecting with Your Audience</h3>
+                  <p>
+                    Digital marketing allows businesses to reach their target
+                    audience where they spend most of their time—online.
+                  </p>
+                </div>
+                <div class="dm-why-card">
+                  <div class="dm-why-icon">
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2">
+                      <path d="M3 3v18h18"></path>
+                      <path d="m19 9-5 5-4-4-3 3"></path>
+                    </svg>
+                  </div>
+                  <h3>Measurable Results</h3>
+                  <p>
+                    Unlike traditional marketing, digital strategies provide
+                    data-driven insights to track performance and refine
+                    campaigns.
+                  </p>
+                </div>
+                <div class="dm-why-card">
+                  <div class="dm-why-icon">
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2">
+                      <line x1="12" y1="1" x2="12" y2="23"></line>
+                      <path
+                        d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                    </svg>
+                  </div>
+                  <h3>Cost-Effective Solutions</h3>
+                  <p>
+                    From PPC to social media advertising, digital marketing
+                    offers scalable and budget-friendly options for businesses
+                    of all sizes.
+                  </p>
+                </div>
+                <div class="dm-why-card">
+                  <div class="dm-why-icon">
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2">
+                      <path
+                        d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"></path>
+                      <circle cx="12" cy="12" r="3"></circle>
+                    </svg>
+                  </div>
+                  <h3>Increased Visibility</h3>
+                  <p>
+                    By leveraging SEO, social media, and paid ads, your business
+                    can stay front and center in the digital landscape.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Our Approach Section - Timeline Style -->
+          <section class="dm-approach-section">
+            <div class="dm-container">
+              <h2 class="dm-section-title">
+                <span class="dm-gradient-text"
+                  >Our Approach to Digital Marketing</span
+                >
+              </h2>
+              <div class="dm-approach-timeline">
+                <div class="dm-approach-item">
+                  <div class="dm-approach-icon">
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2">
+                      <rect
+                        x="3"
+                        y="3"
+                        width="18"
+                        height="18"
+                        rx="2"
+                        ry="2"></rect>
+                      <line x1="9" y1="9" x2="15" y2="9"></line>
+                      <line x1="9" y1="13" x2="15" y2="13"></line>
+                    </svg>
+                  </div>
+                  <div class="dm-approach-content">
+                    <h3>Data-Driven Campaigns</h3>
+                    <p>
+                      We leverage analytics to craft targeted strategies that
+                      align with your business goals and ensure measurable
+                      results.
+                    </p>
+                  </div>
+                </div>
+                <div class="dm-approach-item">
+                  <div class="dm-approach-icon">
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2">
+                      <circle cx="11" cy="11" r="8"></circle>
+                      <path d="m21 21-4.35-4.35"></path>
+                    </svg>
+                  </div>
+                  <div class="dm-approach-content">
+                    <h3>PPC Advertising</h3>
+                    <p>
+                      Drive immediate traffic and conversions with highly
+                      targeted pay-per-click campaigns tailored to your
+                      audience.
+                    </p>
+                  </div>
+                </div>
+                <div class="dm-approach-item">
+                  <div class="dm-approach-icon">
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2">
+                      <polyline
+                        points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                    </svg>
+                  </div>
+                  <div class="dm-approach-content">
+                    <h3>SEO Integration</h3>
+                    <p>
+                      We optimize your content and website structure to ensure
+                      long-term visibility in organic search results.
+                    </p>
+                  </div>
+                </div>
+                <div class="dm-approach-item">
+                  <div class="dm-approach-icon">
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2">
+                      <path
+                        d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                      <polyline points="14 2 14 8 20 8"></polyline>
+                      <line x1="16" y1="13" x2="8" y2="13"></line>
+                      <line x1="16" y1="17" x2="8" y2="17"></line>
+                    </svg>
+                  </div>
+                  <div class="dm-approach-content">
+                    <h3>Content Marketing</h3>
+                    <p>
+                      Engaging, optimized content that speaks directly to your
+                      audience and supports your overall digital marketing
+                      strategy.
+                    </p>
+                  </div>
+                </div>
+                <div class="dm-approach-item">
+                  <div class="dm-approach-icon">
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2">
+                      <path
+                        d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                      <polyline points="22,6 12,13 2,6"></polyline>
+                    </svg>
+                  </div>
+                  <div class="dm-approach-content">
+                    <h3>Email Marketing</h3>
+                    <p>
+                      Build stronger connections with your audience through
+                      personalized and automated email campaigns.
+                    </p>
+                  </div>
+                </div>
+                <div class="dm-approach-item">
+                  <div class="dm-approach-icon">
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2">
+                      <line x1="18" y1="20" x2="18" y2="10"></line>
+                      <line x1="12" y1="20" x2="12" y2="4"></line>
+                      <line x1="6" y1="20" x2="6" y2="14"></line>
+                    </svg>
+                  </div>
+                  <div class="dm-approach-content">
+                    <h3>Analytics and Optimization</h3>
+                    <p>
+                      Continuous tracking and analysis ensure your campaigns are
+                      performing efficiently and generating the best ROI.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- PPC Section - Feature Showcase -->
+          <section class="dm-ppc-section">
+            <div class="dm-container">
+              <h2 class="dm-section-title">
+                <span class="dm-gradient-text"
+                  >Maximizing Results with PPC Advertising</span
+                >
+              </h2>
+              <div class="dm-ppc-showcase">
+                <div class="dm-ppc-visual">
+                  <div class="dm-ppc-mockup">
+                    <div class="dm-search-bar">
+                      <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.35-4.35"></path>
+                      </svg>
+                      <span>Your business keywords</span>
+                    </div>
+                    <div class="dm-ad-result">
+                      <span class="dm-ad-tag">Ad</span>
+                      <h4>Your Business - Top Result</h4>
+                      <p>
+                        Compelling ad copy that drives clicks and conversions...
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="dm-ppc-features">
+                  <div class="dm-ppc-feature">
+                    <h3>
+                      <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <circle cx="12" cy="12" r="3"></circle>
+                      </svg>
+                      Targeted Campaigns
+                    </h3>
+                    <p>
+                      We create highly specific campaigns to reach the right
+                      audience based on location, demographics, and search
+                      intent.
+                    </p>
+                  </div>
+                  <div class="dm-ppc-feature">
+                    <h3>
+                      <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2">
+                        <rect
+                          x="3"
+                          y="3"
+                          width="18"
+                          height="18"
+                          rx="2"
+                          ry="2"></rect>
+                        <line x1="9" y1="9" x2="15" y2="9"></line>
+                      </svg>
+                      Keyword Optimization
+                    </h3>
+                    <p>
+                      By selecting and bidding on the most relevant keywords, we
+                      ensure your ads appear to users searching for your
+                      products or services.
+                    </p>
+                  </div>
+                  <div class="dm-ppc-feature">
+                    <h3>
+                      <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2">
+                        <polyline points="23 6 13 16 8 11"></polyline>
+                        <path d="m1 13 5 5L22 2"></path>
+                      </svg>
+                      Immediate Visibility
+                    </h3>
+                    <p>
+                      Unlike organic SEO, PPC provides instant exposure at the
+                      top of search engine results, driving quick results.
+                    </p>
+                  </div>
+                  <div class="dm-ppc-feature">
+                    <h3>
+                      <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2">
+                        <line x1="12" y1="1" x2="12" y2="23"></line>
+                        <path
+                          d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                      </svg>
+                      Cost Efficiency
+                    </h3>
+                    <p>
+                      Our data-driven approach ensures your budget is used
+                      effectively, focusing on high-converting ads and
+                      eliminating wasted spend.
+                    </p>
+                  </div>
+                  <div class="dm-ppc-feature">
+                    <h3>
+                      <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2">
+                        <path
+                          d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                        <polyline points="14 2 14 8 20 8"></polyline>
+                      </svg>
+                      Custom Landing Pages
+                    </h3>
+                    <p>
+                      We design optimized landing pages that align with your ads
+                      to maximize conversions and ROI.
+                    </p>
+                  </div>
+                  <div class="dm-ppc-feature">
+                    <h3>
+                      <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2">
+                        <path d="M3 3v18h18"></path>
+                        <path d="m19 9-5 5-4-4-3 3"></path>
+                      </svg>
+                      Performance Tracking
+                    </h3>
+                    <p>
+                      Comprehensive analytics allow us to monitor and refine
+                      your campaigns for continuous improvement.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- CRO Section - Interactive Demo -->
+          <section class="dm-cro-section">
+            <div class="dm-container">
+              <h2 class="dm-section-title">
+                <span class="dm-gradient-text"
+                  >Boosting Sales with Conversion Rate Optimization</span
+                >
+              </h2>
+              <div class="dm-cro-demo">
+                <div class="dm-cro-cards">
+                  <div class="dm-cro-card" data-cro="journey">
+                    <div class="dm-cro-icon">
+                      <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2">
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                        <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                      </svg>
+                    </div>
+                    <h3>Optimized User Journeys</h3>
+                    <p>
+                      We analyze how users interact with your site and
+                      streamline their path to conversion, reducing friction
+                      points.
+                    </p>
+                  </div>
+                  <div class="dm-cro-card" data-cro="testing">
+                    <div class="dm-cro-icon">
+                      <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2">
+                        <rect x="3" y="3" width="7" height="7"></rect>
+                        <rect x="14" y="3" width="7" height="7"></rect>
+                        <rect x="14" y="14" width="7" height="7"></rect>
+                        <rect x="3" y="14" width="7" height="7"></rect>
+                      </svg>
+                    </div>
+                    <h3>Data-Driven Testing</h3>
+                    <p>
+                      A/B testing and heatmaps help identify what works best,
+                      from button placement to call-to-action designs.
+                    </p>
+                  </div>
+                  <div class="dm-cro-card" data-cro="speed">
+                    <div class="dm-cro-icon">
+                      <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2">
+                        <polygon
+                          points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                      </svg>
+                    </div>
+                    <h3>Faster Load Times</h3>
+                    <p>
+                      Speed matters—quicker pages keep users engaged and reduce
+                      bounce rates, boosting conversions.
+                    </p>
+                  </div>
+                  <div class="dm-cro-card" data-cro="cta">
+                    <div class="dm-cro-icon">
+                      <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2">
+                        <rect
+                          x="3"
+                          y="3"
+                          width="18"
+                          height="18"
+                          rx="2"
+                          ry="2"></rect>
+                        <path d="M12 8v8"></path>
+                        <path d="m8 12 4 4 4-4"></path>
+                      </svg>
+                    </div>
+                    <h3>Clear CTAs</h3>
+                    <p>
+                      Attention-grabbing call-to-action buttons guide visitors
+                      toward completing key actions like purchases or inquiries.
+                    </p>
+                  </div>
+                  <div class="dm-cro-card" data-cro="mobile">
+                    <div class="dm-cro-icon">
+                      <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2">
+                        <rect
+                          x="5"
+                          y="2"
+                          width="14"
+                          height="20"
+                          rx="2"
+                          ry="2"></rect>
+                        <line x1="12" y1="18" x2="12.01" y2="18"></line>
+                      </svg>
+                    </div>
+                    <h3>Mobile-First Designs</h3>
+                    <p>
+                      Ensure seamless experiences on mobile devices where a
+                      majority of users browse and shop.
+                    </p>
+                  </div>
+                  <div class="dm-cro-card" data-cro="refine">
+                    <div class="dm-cro-icon">
+                      <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2">
+                        <path d="M2 20h20"></path>
+                        <path d="m9 12 2 2 4-4"></path>
+                        <path d="M7.5 13.5A7.5 7.5 0 0 1 12 6"></path>
+                      </svg>
+                    </div>
+                    <h3>Ongoing Refinements</h3>
+                    <p>
+                      CRO is a continuous process—we monitor, tweak, and improve
+                      your site to maximize results over time.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Analytics Section - Dashboard Style -->
+          <section class="dm-analytics-section">
+            <div class="dm-container">
+              <h2 class="dm-section-title">
+                <span class="dm-gradient-text"
+                  >Analytics and Continuous Improvement</span
+                >
+              </h2>
+              <div class="dm-analytics-dashboard">
+                <div class="dm-dashboard-main">
+                  <div class="dm-metric-display">
+                    <div class="dm-metric-item">
+                      <span class="dm-metric-label">Traffic Growth</span>
+                      <span class="dm-metric-value">+247%</span>
+                      <div class="dm-metric-bar" style="width: 85%"></div>
+                    </div>
+                    <div class="dm-metric-item">
+                      <span class="dm-metric-label">Conversion Rate</span>
+                      <span class="dm-metric-value">4.2%</span>
+                      <div class="dm-metric-bar" style="width: 70%"></div>
+                    </div>
+                    <div class="dm-metric-item">
+                      <span class="dm-metric-label">ROI</span>
+                      <span class="dm-metric-value">312%</span>
+                      <div class="dm-metric-bar" style="width: 90%"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="dm-analytics-features">
+                  <div class="dm-analytics-feature">
+                    <h3>In-Depth Analytics</h3>
+                    <p>
+                      Track website performance with tools like Google Analytics
+                      to gain insights into user behavior, traffic sources, and
+                      key metrics.
+                    </p>
+                  </div>
+                  <div class="dm-analytics-feature">
+                    <h3>Data-Driven Decisions</h3>
+                    <p>
+                      Use real-time data to identify areas for improvement,
+                      whether it's updating content, refining strategies, or
+                      optimizing for specific goals.
+                    </p>
+                  </div>
+                  <div class="dm-analytics-feature">
+                    <h3>Conversion Tracking</h3>
+                    <p>
+                      Monitor user actions like form submissions, purchases, or
+                      downloads to measure campaign success and ROI effectively.
+                    </p>
+                  </div>
+                  <div class="dm-analytics-feature">
+                    <h3>Custom Reporting</h3>
+                    <p>
+                      Get tailored reports that focus on the KPIs that matter
+                      most to your business goals.
+                    </p>
+                  </div>
+                  <div class="dm-analytics-feature">
+                    <h3>Iterative Optimization</h3>
+                    <p>
+                      Continuous testing and adjustments ensure your site
+                      evolves alongside user needs and market trends.
+                    </p>
+                  </div>
+                  <div class="dm-analytics-feature">
+                    <h3>Long-Term Growth</h3>
+                    <p>
+                      Analytics provide a clear roadmap for scaling your digital
+                      marketing efforts and achieving sustained success.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- CTA Section -->
+          <section class="dm-cta-section">
+            <div class="dm-cta-content">
+              <h2 class="dm-cta-title">
+                Ready to Accelerate Your Digital Growth?
+              </h2>
+              <p class="dm-cta-text">
+                Let's create a data-driven digital marketing strategy that
+                delivers real results for your business.
+              </p>
+              <div class="dm-cta-buttons">
+                <a href="#popup" class="dm-cta-button"
+                  >Get Your Free Strategy Session</a
+                >
+                <a href="#" class="dm-cta-button dm-cta-button-secondary"
+                  >View Case Studies</a
+                >
+              </div>
+            </div>
           </section>
         </div>
-      </div>
+      </main>
 
-      <!-- STUFF YOU SHOULD KNOW -->
-      <!-- <section class="stuff-you-should-know">
-        <div class="stuff-you-should-know-box">
-          <h2 class="stuff-you-should-know-heading">Stuff You Should Know</h2>
-          <h3 class="stuff-you-should-know-subheading">Please Read</h3>
-          <p>
-            Statistics about how users behave when websites take too long to
-            load highlight the critical importance of fast loading times for
-            user retention and conversion rates. Here are some key findings from
-            studies and surveys:
-          </p>
-
-          <h3>Impact on User Behavior</h3>
-          <ul>
-            <li>
-              <strong>User Abandonment:</strong> 53% of mobile users will
-              abandon a website if it takes longer than 3 seconds (Google,
-              2021).
-            </li>
-            <li>
-              <strong>1-Second Delay:</strong> A 1-second delay in page load
-              time can reduce conversions by 7% (Akamai, 2022).
-            </li>
-            <li>
-              <strong>Bounce Rates:</strong> Websites that load within 2 seconds
-              experience a bounce rate (percentage of visitors leaving after
-              viewing only one page.) of 9%, while those taking 5 seconds or
-              more see bounce rates jump to 38% (Pingdom, 2023).
-            </li>
-            <li>
-              <strong>Customer Dissatisfaction:</strong> 79% of shoppers
-              dissatisfied with website performance are less likely to buy from
-              the same site again (Neil Patel, 2023).
-            </li>
-          </ul>
-
-          <h3>Revenue and Conversions</h3>
-          <ul>
-            <li>
-              <strong>Revenue Loss:</strong> A 2-second delay in load time
-              during a transaction can result in abandonment rates up to 87%
-              (Akamai, 2022).
-            </li>
-            <li>
-              <strong>eCommerce Impact:</strong> For a site making $100,000 per
-              day, a 1-second page delay could potentially cost $2.5 million in
-              lost sales per year (Kissmetrics, 2023).
-            </li>
-            <li>
-              <strong>Conversion Rates:</strong> Pages that load in 2 seconds or
-              less have an average conversion rate of 4.8%, compared to 2.4% for
-              slower pages (Portent, 2022).
-            </li>
-          </ul>
-
-          <h3>User Expectations</h3>
-          <ul>
-            <li>
-              <strong>Speed Expectations:</strong> 47% of users expect a webpage
-              to load in 2 seconds or less (Akamai, 2022).
-            </li>
-            <li>
-              <strong>Mobile vs. Desktop:</strong> Mobile users are 2x more
-              likely than desktop users to abandon a slow-loading site (Google,
-              2021).
-            </li>
-          </ul>
-
-          <h3>SEO and Search Rankings</h3>
-          <ul>
-            <li>
-              <strong>SEO Impact:</strong> Page speed is a ranking factor in
-              Google’s algorithm for desktop and mobile searches (Google, 2020).
-            </li>
-            <li>
-              <strong>Visibility:</strong> Slow-loading websites are penalized
-              in search rankings, reducing organic traffic.
-            </li>
-          </ul>
-
-          <h3>Key Takeaways</h3>
-          <ul>
-            <li>
-              Faster loading times lead to better user experience, higher
-              conversions, and improved retention.
-            </li>
-            <li>
-              Modern users expect speed, efficiency, and a seamless experience,
-              especially on mobile devices.
-            </li>
-            <li>
-              Investing in tools like PageSpeed Insights, lazy loading, and
-              image optimization significantly reduces loading times.
-            </li>
-          </ul>
-        </div>
-      </section> -->
-
-      <!-- New Footer -->
+      <!-- Footer -->
       <div id="footer-container"></div>
-
-      <script>
-        // Automatically update the year
-        document.getElementById('year').textContent = new Date().getFullYear();
-      </script>
-      <script src="../js/dynamic-path.js"></script>
-      <script src="../js/scripts.js" defer></script>
-      <script src="../js/mobile-menu.js" defer></script>
     </div>
+
+    <style>
+      /* Float element animations */
+      #dm-float-1 {
+        width: 200px;
+        height: 200px;
+        top: 10%;
+        left: 5%;
+        animation: dmFloat1 25s ease-in-out infinite;
+      }
+
+      #dm-float-2 {
+        width: 150px;
+        height: 300px;
+        top: 60%;
+        right: 10%;
+        animation: dmFloat2 30s ease-in-out infinite;
+      }
+
+      #dm-float-3 {
+        width: 250px;
+        height: 150px;
+        bottom: 20%;
+        left: 15%;
+        animation: dmFloat3 20s ease-in-out infinite;
+      }
+
+      @keyframes dmFloat1 {
+        0%,
+        100% {
+          transform: translate(0, 0) rotate(0deg);
+        }
+        33% {
+          transform: translate(50px, -30px) rotate(120deg);
+        }
+        66% {
+          transform: translate(-30px, 40px) rotate(240deg);
+        }
+      }
+
+      @keyframes dmFloat2 {
+        0%,
+        100% {
+          transform: translate(0, 0) rotate(0deg);
+        }
+        50% {
+          transform: translate(-40px, -50px) rotate(180deg);
+        }
+      }
+
+      @keyframes dmFloat3 {
+        0%,
+        100% {
+          transform: translate(0, 0) rotate(0deg);
+        }
+        25% {
+          transform: translate(30px, -20px) rotate(90deg);
+        }
+        75% {
+          transform: translate(-40px, 30px) rotate(270deg);
+        }
+      }
+    </style>
+
+    <script>
+      // Animated Counter for Stats
+      const counters = document.querySelectorAll('.dm-stat-number');
+
+      const animateCounters = () => {
+        counters.forEach((counter) => {
+          const target = parseFloat(counter.getAttribute('data-target'));
+          let current = 0;
+          const duration = 2000; // 2 seconds
+          const increment = target / (duration / 16); // 60fps
+
+          const updateCount = () => {
+            current += increment;
+
+            if (current < target) {
+              // Display current value with appropriate decimal places
+              if (target === 150) {
+                counter.innerText = Math.floor(current);
+              } else {
+                counter.innerText = current.toFixed(1);
+              }
+              requestAnimationFrame(updateCount);
+            } else {
+              // Set final value with suffixes
+              if (target === 70) {
+                counter.innerText = '70%';
+              } else if (target === 8) {
+                counter.innerText = '$8:$1';
+              } else if (target === 93) {
+                counter.innerText = '93%';
+              } else if (target === 2.3) {
+                counter.innerText = '2.3x';
+              }
+            }
+          };
+
+          updateCount();
+        });
+      };
+
+      // Trigger counter animation when stats section is in view
+      const statsSection = document.querySelector('.dm-stats-section');
+      if (statsSection) {
+        const statsObserver = new IntersectionObserver(
+          (entries) => {
+            if (entries[0].isIntersecting) {
+              animateCounters();
+              statsObserver.unobserve(statsSection);
+            }
+          },
+          { threshold: 0.3 }
+        );
+
+        statsObserver.observe(statsSection);
+      }
+
+      // Fade in animation for cards
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px',
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, observerOptions);
+
+      document.querySelectorAll('.dm-fade-in').forEach((el) => {
+        observer.observe(el);
+      });
+    </script>
+    <script src="../js/dynamic-path.js"></script>
+    <script src="../js/scripts.js" defer></script>
+    <script src="../js/mobile-menu.js" defer></script>
   </body>
 </html>
