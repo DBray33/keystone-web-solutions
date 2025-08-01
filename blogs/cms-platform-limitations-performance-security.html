@@ -141,228 +141,625 @@
     </div>
 
     <div class="page-content">
-      <!-- BLOG PAGE -->
-      <section class="blog">
-        <div class="container">
-          <div class="back-to-blog">
-            <a href="../about/blog" class="back-to-blog-button"
-              >&larr; Back to Blog</a
+      <!-- BLOG HERO SECTION -->
+      <section class="blog-hero-section">
+        <div class="blog-hero-overlay"></div>
+
+        <!-- Animated Background Elements -->
+        <div class="blog-animated-bg">
+          <div class="blog-particle" id="particle-1"></div>
+          <div class="blog-particle" id="particle-2"></div>
+          <div class="blog-particle" id="particle-3"></div>
+          <div class="blog-code-float" id="code-1">&lt;/&gt;</div>
+          <div class="blog-code-float" id="code-2">{...}</div>
+          <div class="blog-code-float" id="code-3">#</div>
+        </div>
+
+        <div class="blog-hero-content">
+          <div class="blog-breadcrumb">
+            <a href="../about/blog" class="breadcrumb-link">Blog</a>
+            <span class="breadcrumb-separator">/</span>
+            <span class="breadcrumb-current"
+              >The Limitations of CMS Platforms</span
             >
           </div>
 
-          <!-- Blog Post 2 -->
-          <article class="blog-post">
-            <img
-              src="https://storage.googleapis.com/background-vid/blog%20photos/Individual%20Blog%20Pages/blog2-large.webp"
-              alt="CMS Limitations"
-              class="blog-post-image" />
-            <div class="blog-post-content">
-              <h2 class="blog-post-title">The Limitations of CMS Platforms</h2>
-              <p class="blog-post-date">Published: January 18, 2025</p>
-              <p class="blog-post-description">
+          <h1 class="blog-hero-title">
+            <span class="blog-title-word-1">The Limitations of</span>
+            <span class="blog-title-word-2">CMS Platforms</span>
+          </h1>
+
+          <div class="blog-meta-info">
+            <span class="blog-date">
+              <svg
+                class="meta-icon"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                <line x1="16" y1="2" x2="16" y2="6"></line>
+                <line x1="8" y1="2" x2="8" y2="6"></line>
+                <line x1="3" y1="10" x2="21" y2="10"></line>
+              </svg>
+              January 18, 2025
+            </span>
+            <span class="blog-reading-time">
+              <svg
+                class="meta-icon"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
+              </svg>
+              5 min read
+            </span>
+            <span class="blog-category">Web Development</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- BLOG CONTENT SECTION -->
+      <article class="blog-content-section">
+        <div class="blog-container">
+          <div class="blog-main-content">
+            <!-- Featured Image -->
+            <div class="blog-featured-image">
+              <img
+                src="https://storage.googleapis.com/background-vid/blog%20photos/Individual%20Blog%20Pages/blog2-large.webp"
+                alt="CMS Limitations"
+                class="featured-img" />
+              <div class="image-overlay"></div>
+            </div>
+
+            <!-- Article Content -->
+            <div class="blog-article-content">
+              <p class="blog-lead">
                 Learn how CMS platforms like WordPress and Wix fall short in
                 delivering the customization, performance, and security that
                 your business needs.
               </p>
-              <h3 class="blog-post-subtitle">Generic Templates</h3>
-              <p class="blog-post-paragraph">
-                CMS platforms often rely on pre-built templates that limit your
-                ability to create a truly unique website. While templates offer
-                convenience, they fail to provide the flexibility required to
-                showcase your brand's identity and stand out in a crowded
-                market.
-              </p>
-              <h3 class="blog-post-subtitle">Performance Issues</h3>
-              <p class="blog-post-paragraph">
-                Performance is a critical factor for any website, influencing
-                both user experience and search engine rankings. Unfortunately,
-                many CMS platforms come with excessive features and plugins that
-                can bloat your website's code. This additional overhead not only
-                slows down load times but also makes your website less
-                efficient, especially during periods of high traffic.
-              </p>
-              <p class="blog-post-paragraph">
-                For example, plugins that add functionality often come with
-                unnecessary scripts and styles that load on every page, even
-                when they aren’t needed. This can result in slower page speeds,
-                which frustrates users and increases bounce rates. Additionally,
-                a bloated CMS website can hurt your search engine optimization
-                (SEO) efforts, as search engines prioritize fast-loading sites
-                in their rankings.
-              </p>
-              <h3 class="blog-post-subtitle">Plugin Dependencies</h3>
-              <p class="blog-post-paragraph">
-                One of the biggest selling points of CMS platforms is their
-                extensive plugin libraries, which allow users to add features
-                and functionality without custom development. However, heavy
-                reliance on plugins can lead to a host of problems, including:
-              </p>
-              <ul class="blog-post-list">
-                <li>
-                  Security vulnerabilities from outdated or poorly maintained
-                  plugins.
-                </li>
-                <li>
-                  Compatibility issues between plugins or with platform updates.
-                </li>
-                <li>
-                  Increased maintenance effort, as plugins need regular updates
-                  and oversight.
-                </li>
-              </ul>
-              <p class="blog-post-paragraph">
-                While plugins can provide short-term solutions, they can become
-                a long-term liability, increasing the complexity of your website
-                and making it harder to maintain.
-              </p>
-              <h3 class="blog-post-subtitle">Limited Customization</h3>
-              <p class="blog-post-paragraph">
-                While CMS platforms are designed to cater to a wide range of
-                users, they often fall short when it comes to providing advanced
-                customization options. Making substantial changes to the design
-                or functionality of a CMS website typically requires coding
-                knowledge or additional paid tools. Even then, there are
-                limitations to what you can achieve without fundamentally
-                altering the platform's core framework.
-              </p>
-              <h3 class="blog-post-subtitle">Scalability Challenges</h3>
-              <p class="blog-post-paragraph">
-                As your business grows, your website needs to grow with it. CMS
-                platforms are not always equipped to handle the demands of
-                larger-scale websites, such as those with complex e-commerce
-                systems, extensive multimedia libraries, or high levels of
-                traffic. Scaling a CMS website often requires additional
-                resources, such as premium hosting plans or specialized
-                development services, which can quickly drive up costs.
-              </p>
-              <h3 class="blog-post-subtitle">
-                Are CMS Platforms Right for You?
-              </h3>
-              <p class="blog-post-paragraph">
-                CMS platforms can be a practical choice for small-scale
-                projects, startups, or individuals looking for a quick and easy
-                way to establish an online presence. Their user-friendly
-                interfaces and pre-built features make them accessible to
-                non-technical users. However, for businesses that prioritize
-                customization, performance, scalability, and security, CMS
-                platforms often fall short of expectations.
-              </p>
-              <p class="blog-post-paragraph">
-                If you’re looking to build a website that reflects your brand’s
-                unique identity, delivers exceptional user experiences, and
-                adapts to your business’s evolving needs, exploring alternative
-                solutions like custom-coded web design may be the better choice.
-              </p>
-              <p class="blog-post-call-to-action">
-                Ready to go beyond the limitations of CMS platforms?
-                <a href="#contact" class="blog-post-link">Contact us today</a>
-                to discuss how we can create a website tailored to your needs.
-              </p>
-            </div>
-          </article>
 
-          <footer class="cta">
-            <p>Ready to create something unique?</p>
-            <a href="#footer-contact" class="cta-button">Contact Us</a>
-          </footer>
+              <div class="blog-section">
+                <h2 class="blog-section-title">
+                  <span class="section-number">01</span>
+                  Generic Templates
+                </h2>
+                <p class="blog-paragraph">
+                  CMS platforms often rely on pre-built templates that limit
+                  your ability to create a truly unique website. While templates
+                  offer convenience, they fail to provide the flexibility
+                  required to showcase your brand's identity and stand out in a
+                  crowded market.
+                </p>
+              </div>
+
+              <div class="blog-section">
+                <h2 class="blog-section-title">
+                  <span class="section-number">02</span>
+                  Performance Issues
+                </h2>
+                <p class="blog-paragraph">
+                  Performance is a critical factor for any website, influencing
+                  both user experience and search engine rankings.
+                  Unfortunately, many CMS platforms come with excessive features
+                  and plugins that can bloat your website's code. This
+                  additional overhead not only slows down load times but also
+                  makes your website less efficient, especially during periods
+                  of high traffic.
+                </p>
+                <p class="blog-paragraph">
+                  For example, plugins that add functionality often come with
+                  unnecessary scripts and styles that load on every page, even
+                  when they aren't needed. This can result in slower page
+                  speeds, which frustrates users and increases bounce rates.
+                  Additionally, a bloated CMS website can hurt your search
+                  engine optimization (SEO) efforts, as search engines
+                  prioritize fast-loading sites in their rankings.
+                </p>
+
+                <div class="blog-highlight-box">
+                  <div class="highlight-icon">
+                    <svg
+                      width="40"
+                      height="40"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2">
+                      <circle cx="12" cy="8" r="7"></circle>
+                      <polyline
+                        points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+                    </svg>
+                  </div>
+                  <div class="highlight-content">
+                    <h3>Key Insight</h3>
+                    <p>
+                      Every additional plugin adds potential performance
+                      overhead. A typical WordPress site with 20+ plugins can
+                      load 3-5x slower than a custom-coded alternative.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="blog-section">
+                <h2 class="blog-section-title">
+                  <span class="section-number">03</span>
+                  Plugin Dependencies
+                </h2>
+                <p class="blog-paragraph">
+                  One of the biggest selling points of CMS platforms is their
+                  extensive plugin libraries, which allow users to add features
+                  and functionality without custom development. However, heavy
+                  reliance on plugins can lead to a host of problems:
+                </p>
+
+                <ul class="blog-feature-list">
+                  <li>
+                    <span class="list-icon">
+                      <svg
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2">
+                        <path
+                          d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path>
+                        <line x1="12" y1="9" x2="12" y2="13"></line>
+                        <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                      </svg>
+                    </span>
+                    <div class="list-content">
+                      <strong>Security vulnerabilities</strong> from outdated or
+                      poorly maintained plugins.
+                    </div>
+                  </li>
+                  <li>
+                    <span class="list-icon">
+                      <svg
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2">
+                        <polyline
+                          points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                      </svg>
+                    </span>
+                    <div class="list-content">
+                      <strong>Compatibility issues</strong> between plugins or
+                      with platform updates.
+                    </div>
+                  </li>
+                  <li>
+                    <span class="list-icon">
+                      <svg
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2">
+                        <polyline points="3 17 9 11 13 15 21 7"></polyline>
+                        <polyline points="14 7 21 7 21 14"></polyline>
+                      </svg>
+                    </span>
+                    <div class="list-content">
+                      <strong>Increased maintenance effort</strong>, as plugins
+                      need regular updates and oversight.
+                    </div>
+                  </li>
+                </ul>
+
+                <p class="blog-paragraph">
+                  While plugins can provide short-term solutions, they can
+                  become a long-term liability, increasing the complexity of
+                  your website and making it harder to maintain.
+                </p>
+              </div>
+
+              <div class="blog-section">
+                <h2 class="blog-section-title">
+                  <span class="section-number">04</span>
+                  Limited Customization
+                </h2>
+                <p class="blog-paragraph">
+                  While CMS platforms are designed to cater to a wide range of
+                  users, they often fall short when it comes to providing
+                  advanced customization options. Making substantial changes to
+                  the design or functionality of a CMS website typically
+                  requires coding knowledge or additional paid tools. Even then,
+                  there are limitations to what you can achieve without
+                  fundamentally altering the platform's core framework.
+                </p>
+
+                <div class="blog-comparison">
+                  <div class="comparison-card cms-card">
+                    <h3>CMS Platforms</h3>
+                    <ul>
+                      <li>Limited by theme structure</li>
+                      <li>Restricted customization options</li>
+                      <li>Plugin-dependent features</li>
+                      <li>Generic user experiences</li>
+                    </ul>
+                  </div>
+                  <div class="comparison-card custom-card">
+                    <h3>Custom Development</h3>
+                    <ul>
+                      <li>Unlimited design possibilities</li>
+                      <li>Tailored functionality</li>
+                      <li>Built-in custom features</li>
+                      <li>Unique brand experiences</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div class="blog-section">
+                <h2 class="blog-section-title">
+                  <span class="section-number">05</span>
+                  Scalability Challenges
+                </h2>
+                <p class="blog-paragraph">
+                  As your business grows, your website needs to grow with it.
+                  CMS platforms are not always equipped to handle the demands of
+                  larger-scale websites, such as those with complex e-commerce
+                  systems, extensive multimedia libraries, or high levels of
+                  traffic. Scaling a CMS website often requires additional
+                  resources, such as premium hosting plans or specialized
+                  development services, which can quickly drive up costs.
+                </p>
+              </div>
+
+              <div class="blog-section">
+                <h2 class="blog-section-title">
+                  <span class="section-number">06</span>
+                  Are CMS Platforms Right for You?
+                </h2>
+                <p class="blog-paragraph">
+                  CMS platforms can be a practical choice for small-scale
+                  projects, startups, or individuals looking for a quick and
+                  easy way to establish an online presence. Their user-friendly
+                  interfaces and pre-built features make them accessible to
+                  non-technical users. However, for businesses that prioritize
+                  customization, performance, scalability, and security, CMS
+                  platforms often fall short of expectations.
+                </p>
+                <p class="blog-paragraph">
+                  If you're looking to build a website that reflects your
+                  brand's unique identity, delivers exceptional user
+                  experiences, and adapts to your business's evolving needs,
+                  exploring alternative solutions like custom-coded web design
+                  may be the better choice.
+                </p>
+              </div>
+
+              <!-- Call to Action -->
+              <div class="blog-cta-section">
+                <h2>Ready to go beyond the limitations of CMS platforms?</h2>
+                <p>Let's create a website tailored to your unique needs.</p>
+                <a href="#footer-contact" class="blog-cta-button">
+                  Get Started Today
+                  <svg
+                    class="cta-arrow"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Sidebar -->
+          <aside class="blog-sidebar">
+            <div class="sidebar-widget">
+              <h3 class="widget-title">Share This Article</h3>
+              <div class="social-share">
+                <a href="#" class="share-button twitter">
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="currentColor">
+                    <path
+                      d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
+                  </svg>
+                </a>
+                <a href="#" class="share-button linkedin">
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="currentColor">
+                    <path
+                      d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"></path>
+                    <circle cx="4" cy="4" r="2"></circle>
+                  </svg>
+                </a>
+                <a href="#" class="share-button facebook">
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="currentColor">
+                    <path
+                      d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            <div class="sidebar-widget">
+              <h3 class="widget-title">Related Articles</h3>
+              <div class="related-posts">
+                <a href="blog1" class="related-post">
+                  <h4>Custom vs. Template Websites</h4>
+                  <span class="related-date">January 17, 2025</span>
+                </a>
+                <a href="blog3" class="related-post">
+                  <h4>The Cost of a Slow Website</h4>
+                  <span class="related-date">January 19, 2025</span>
+                </a>
+                <a href="blog5" class="related-post">
+                  <h4>SEO Strategies for 2025</h4>
+                  <span class="related-date">January 21, 2025</span>
+                </a>
+              </div>
+            </div>
+
+            <div class="sidebar-widget sticky-widget">
+              <div class="newsletter-box">
+                <h3>Stay Updated</h3>
+                <p>
+                  Get the latest web design insights delivered to your inbox.
+                </p>
+                <form class="newsletter-form">
+                  <input type="email" placeholder="Your email" required />
+                  <button type="submit">Subscribe</button>
+                </form>
+              </div>
+            </div>
+          </aside>
         </div>
-      </section>
+      </article>
 
       <!-- STUFF YOU SHOULD KNOW -->
       <section class="stuff-you-should-know">
-        <div class="stuff-you-should-know-box">
-          <h2 class="stuff-you-should-know-heading">Stuff You Should Know</h2>
+        <div class="stuff-container">
+          <h2 class="stuff-title">
+            <span class="title-accent">Stuff</span> You Should Know
+          </h2>
 
-          <p>
-            Statistics about how users behave when websites take too long to
-            load highlight the critical importance of fast loading times for
-            user retention and conversion rates. Here are some key findings from
-            studies and surveys:
-          </p>
+          <div class="stuff-content">
+            <div class="stuff-intro">
+              <p>
+                Statistics about how users behave when websites take too long to
+                load highlight the critical importance of fast loading times for
+                user retention and conversion rates. Here are some key findings
+                from studies and surveys:
+              </p>
+            </div>
 
-          <h3>Impact on User Behavior</h3>
-          <ul>
-            <li>
-              <strong>User Abandonment:</strong> 53% of mobile users will
-              abandon a website if it takes longer than 3 seconds (Google,
-              2021).
-            </li>
-            <li>
-              <strong>1-Second Delay:</strong> A 1-second delay in page load
-              time can reduce conversions by 7% (Akamai, 2022).
-            </li>
-            <li>
-              <strong>Bounce Rates:</strong> Websites that load within 2 seconds
-              experience a bounce rate (percentage of visitors leaving after
-              viewing only one page.) of 9%, while those taking 5 seconds or
-              more see bounce rates jump to 38% (Pingdom, 2023).
-            </li>
-            <li>
-              <strong>Customer Dissatisfaction:</strong> 79% of shoppers
-              dissatisfied with website performance are less likely to buy from
-              the same site again (Neil Patel, 2023).
-            </li>
-          </ul>
+            <div class="stats-grid">
+              <div class="stat-card">
+                <div class="stat-icon">
+                  <svg
+                    width="48"
+                    height="48"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="var(--blog-accent-purple)"
+                    stroke-width="2">
+                    <rect
+                      x="2"
+                      y="7"
+                      width="20"
+                      height="14"
+                      rx="2"
+                      ry="2"></rect>
+                    <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                  </svg>
+                </div>
+                <h3>Impact on User Behavior</h3>
+                <ul>
+                  <li>
+                    <strong>User Abandonment:</strong> 53% of mobile users will
+                    abandon a website if it takes longer than 3 seconds (Google,
+                    2021).
+                  </li>
+                  <li>
+                    <strong>1-Second Delay:</strong> A 1-second delay in page
+                    load time can reduce conversions by 7% (Akamai, 2022).
+                  </li>
+                  <li>
+                    <strong>Bounce Rates:</strong> Websites that load within 2
+                    seconds experience a bounce rate of 9%, while those taking 5
+                    seconds or more see bounce rates jump to 38% (Pingdom,
+                    2023).
+                  </li>
+                  <li>
+                    <strong>Customer Dissatisfaction:</strong> 79% of shoppers
+                    dissatisfied with website performance are less likely to buy
+                    from the same site again (Neil Patel, 2023).
+                  </li>
+                </ul>
+              </div>
 
-          <h3>Revenue and Conversions</h3>
-          <ul>
-            <li>
-              <strong>Revenue Loss:</strong> A 2-second delay in load time
-              during a transaction can result in abandonment rates up to 87%
-              (Akamai, 2022).
-            </li>
-            <li>
-              <strong>eCommerce Impact:</strong> For a site making $100,000 per
-              day, a 1-second page delay could potentially cost $2.5 million in
-              lost sales per year (Kissmetrics, 2023).
-            </li>
-            <li>
-              <strong>Conversion Rates:</strong> Pages that load in 2 seconds or
-              less have an average conversion rate of 4.8%, compared to 2.4% for
-              slower pages (Portent, 2022).
-            </li>
-          </ul>
+              <div class="stat-card">
+                <div class="stat-icon">
+                  <svg
+                    width="48"
+                    height="48"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="var(--blog-accent-pink)"
+                    stroke-width="2">
+                    <line x1="12" y1="1" x2="12" y2="23"></line>
+                    <path
+                      d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                  </svg>
+                </div>
+                <h3>Revenue and Conversions</h3>
+                <ul>
+                  <li>
+                    <strong>Revenue Loss:</strong> A 2-second delay in load time
+                    during a transaction can result in abandonment rates up to
+                    87% (Akamai, 2022).
+                  </li>
+                  <li>
+                    <strong>eCommerce Impact:</strong> For a site making
+                    $100,000 per day, a 1-second page delay could potentially
+                    cost $2.5 million in lost sales per year (Kissmetrics,
+                    2023).
+                  </li>
+                  <li>
+                    <strong>Conversion Rates:</strong> Pages that load in 2
+                    seconds or less have an average conversion rate of 4.8%,
+                    compared to 2.4% for slower pages (Portent, 2022).
+                  </li>
+                </ul>
+              </div>
 
-          <h3>User Expectations</h3>
-          <ul>
-            <li>
-              <strong>Speed Expectations:</strong> 47% of users expect a webpage
-              to load in 2 seconds or less (Akamai, 2022).
-            </li>
-            <li>
-              <strong>Mobile vs. Desktop:</strong> Mobile users are 2x more
-              likely than desktop users to abandon a slow-loading site (Google,
-              2021).
-            </li>
-          </ul>
+              <div class="stat-card">
+                <div class="stat-icon">
+                  <svg
+                    width="48"
+                    height="48"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="var(--blog-primary-neon)"
+                    stroke-width="2">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polyline points="12 6 12 12 16 14"></polyline>
+                  </svg>
+                </div>
+                <h3>User Expectations</h3>
+                <ul>
+                  <li>
+                    <strong>Speed Expectations:</strong> 47% of users expect a
+                    webpage to load in 2 seconds or less (Akamai, 2022).
+                  </li>
+                  <li>
+                    <strong>Mobile vs. Desktop:</strong> Mobile users are 2x
+                    more likely than desktop users to abandon a slow-loading
+                    site (Google, 2021).
+                  </li>
+                </ul>
+              </div>
 
-          <h3>SEO and Search Rankings</h3>
-          <ul>
-            <li>
-              <strong>SEO Impact:</strong> Page speed is a ranking factor in
-              Google’s algorithm for desktop and mobile searches (Google, 2020).
-            </li>
-            <li>
-              <strong>Visibility:</strong> Slow-loading websites are penalized
-              in search rankings, reducing organic traffic.
-            </li>
-          </ul>
+              <div class="stat-card">
+                <div class="stat-icon">
+                  <svg
+                    width="48"
+                    height="48"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="var(--blog-accent-green)"
+                    stroke-width="2">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <path d="m21 21-4.35-4.35"></path>
+                  </svg>
+                </div>
+                <h3>SEO and Search Rankings</h3>
+                <ul>
+                  <li>
+                    <strong>SEO Impact:</strong> Page speed is a ranking factor
+                    in Google's algorithm for desktop and mobile searches
+                    (Google, 2020).
+                  </li>
+                  <li>
+                    <strong>Visibility:</strong> Slow-loading websites are
+                    penalized in search rankings, reducing organic traffic.
+                  </li>
+                </ul>
+              </div>
+            </div>
 
-          <h3>Key Takeaways</h3>
-          <ul>
-            <li>
-              Faster loading times lead to better user experience, higher
-              conversions, and improved retention.
-            </li>
-            <li>
-              Modern users expect speed, efficiency, and a seamless experience,
-              especially on mobile devices.
-            </li>
-            <li>
-              Investing in tools like PageSpeed Insights, lazy loading, and
-              image optimization significantly reduces loading times.
-            </li>
-          </ul>
+            <div class="key-takeaways">
+              <h3>Key Takeaways</h3>
+              <div class="takeaway-grid">
+                <div class="takeaway-item">
+                  <span class="takeaway-icon">
+                    <svg
+                      width="32"
+                      height="32"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="var(--blog-primary-neon)"
+                      stroke-width="2">
+                      <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path>
+                    </svg>
+                  </span>
+                  <p>
+                    Faster loading times lead to better user experience, higher
+                    conversions, and improved retention.
+                  </p>
+                </div>
+                <div class="takeaway-item">
+                  <span class="takeaway-icon">
+                    <svg
+                      width="32"
+                      height="32"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="var(--blog-accent-purple)"
+                      stroke-width="2">
+                      <rect
+                        x="2"
+                        y="7"
+                        width="20"
+                        height="14"
+                        rx="2"
+                        ry="2"></rect>
+                      <path
+                        d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                    </svg>
+                  </span>
+                  <p>
+                    Modern users expect speed, efficiency, and a seamless
+                    experience, especially on mobile devices.
+                  </p>
+                </div>
+                <div class="takeaway-item">
+                  <span class="takeaway-icon">
+                    <svg
+                      width="32"
+                      height="32"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="var(--blog-accent-pink)"
+                      stroke-width="2">
+                      <path
+                        d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                      <polyline points="14 2 14 8 20 8"></polyline>
+                      <line x1="16" y1="13" x2="8" y2="13"></line>
+                      <line x1="16" y1="17" x2="8" y2="17"></line>
+                      <polyline points="10 9 9 9 8 9"></polyline>
+                    </svg>
+                  </span>
+                  <p>
+                    Investing in tools like PageSpeed Insights, lazy loading,
+                    and image optimization significantly reduces loading times.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -377,6 +774,84 @@
       <script src="../js/dynamic-path.js"></script>
       <script src="../js/scripts.js" defer></script>
       <script src="../js/mobile-menu.js" defer></script>
+
+      <!-- Page Specific JS -->
+      <script>
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+          threshold: 0.1,
+          rootMargin: '0px 0px -50px 0px',
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+            }
+          });
+        }, observerOptions);
+
+        // Observe all blog sections
+        document.querySelectorAll('.blog-section').forEach((section) => {
+          observer.observe(section);
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+          anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+              target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start',
+              });
+            }
+          });
+        });
+
+        // Share button functionality
+        document.querySelectorAll('.share-button').forEach((button) => {
+          button.addEventListener('click', function (e) {
+            e.preventDefault();
+            const url = window.location.href;
+            const title = document.title;
+
+            if (this.classList.contains('twitter')) {
+              window.open(
+                `https://twitter.com/intent/tweet?text=${encodeURIComponent(
+                  title
+                )}&url=${encodeURIComponent(url)}`,
+                '_blank'
+              );
+            } else if (this.classList.contains('linkedin')) {
+              window.open(
+                `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(
+                  url
+                )}`,
+                '_blank'
+              );
+            } else if (this.classList.contains('facebook')) {
+              window.open(
+                `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
+                  url
+                )}`,
+                '_blank'
+              );
+            }
+          });
+        });
+
+        // Newsletter form
+        document
+          .querySelector('.newsletter-form')
+          .addEventListener('submit', function (e) {
+            e.preventDefault();
+            // Add your newsletter subscription logic here
+            alert('Thank you for subscribing!');
+            this.reset();
+          });
+      </script>
     </div>
   </body>
 </html>
