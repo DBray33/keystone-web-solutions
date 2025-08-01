@@ -1043,7 +1043,7 @@
     <script src="../js/scripts.js" defer></script>
     <script src="../js/mobile-menu.js" defer></script>
 
-    <!-- Page-specific JavaScript -->
+    <!-- PAGE SPECIFIC JAVASCRIPT -->
     <!-- Quote button to footer contact -->
     <script>
       // Smooth scroll to contact form in dynamically loaded footer
@@ -1100,8 +1100,8 @@
     </script>
     <!-- ROI Calcualtor -->
     <script>
-      // ROI Calculator
       document.addEventListener('DOMContentLoaded', function () {
+        // Get ROI calculator elements
         const visitorsInput = document.getElementById('visitors');
         const conversionInput = document.getElementById('conversion');
         const orderValueInput = document.getElementById('orderValue');
@@ -1151,8 +1151,75 @@
 
         // Initial calculation
         calculateROI();
+      });
+    </script>
+    <!-- Device Showcase Demo -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        // Find all device frames on the page
+        const deviceFrames = document.querySelectorAll('.rd-device-frame');
+        const resizeIntervals = new Map();
 
-        // Intersection Observer for animations
+        function simulateResize(deviceFrame) {
+          const sizes = ['mobile', 'tablet', 'desktop'];
+          let currentIndex = 0;
+
+          // Set initial size immediately to avoid the unstyled state
+          deviceFrame.className = 'rd-device-frame ' + sizes[currentIndex];
+
+          // Start the interval for cycling through sizes
+          const interval = setInterval(() => {
+            currentIndex = (currentIndex + 1) % sizes.length;
+            deviceFrame.className = 'rd-device-frame ' + sizes[currentIndex];
+          }, 3000);
+
+          return interval;
+        }
+
+        // Observer for device showcases
+        const deviceObserver = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              const showcase = entry.target;
+              const deviceFrame = showcase.querySelector('.rd-device-frame');
+
+              if (!deviceFrame) return;
+
+              if (entry.isIntersecting && !resizeIntervals.has(deviceFrame)) {
+                // Start animation when in view
+                const interval = simulateResize(deviceFrame);
+                resizeIntervals.set(deviceFrame, interval);
+              } else if (
+                !entry.isIntersecting &&
+                resizeIntervals.has(deviceFrame)
+              ) {
+                // Stop animation when out of view
+                clearInterval(resizeIntervals.get(deviceFrame));
+                resizeIntervals.delete(deviceFrame);
+              }
+            });
+          },
+          { threshold: 0.5 }
+        );
+
+        // Observe all device showcases
+        const deviceShowcases = document.querySelectorAll(
+          '.rd-device-showcase, .rd-hero-device-showcase'
+        );
+        deviceShowcases.forEach((showcase) => {
+          deviceObserver.observe(showcase);
+        });
+
+        // Also set initial state for all device frames immediately
+        deviceFrames.forEach((frame) => {
+          frame.className = 'rd-device-frame mobile'; // Start with mobile size
+        });
+      });
+    </script>
+    <!-- Intersection Ovserver For Animations -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        // Intersection Observer for fade-in animations
         const observerOptions = {
           threshold: 0.1,
           rootMargin: '0px 0px -100px 0px',
@@ -1167,54 +1234,13 @@
         }, observerOptions);
 
         // Observe all animated elements
-        document
-          .querySelectorAll('.rd-impact-card, .rd-benefit-card, .rd-tech-card')
-          .forEach((el) => {
-            observer.observe(el);
-          });
-
-        // Device showcase resize simulation
-        let deviceFrame = document.querySelector('.rd-device-frame');
-        let resizeInterval;
-
-        function simulateResize() {
-          const sizes = ['mobile', 'tablet', 'desktop'];
-          let currentIndex = 0;
-
-          resizeInterval = setInterval(() => {
-            deviceFrame.className = 'rd-device-frame ' + sizes[currentIndex];
-            currentIndex = (currentIndex + 1) % sizes.length;
-          }, 3000);
-        }
-
-        // Start resize simulation when device showcase is in view
-        const deviceObserver = new IntersectionObserver(
-          (entries) => {
-            entries.forEach((entry) => {
-              if (entry.isIntersecting && !resizeInterval) {
-                simulateResize();
-              } else if (!entry.isIntersecting && resizeInterval) {
-                clearInterval(resizeInterval);
-                resizeInterval = null;
-              }
-            });
-          },
-          { threshold: 0.5 }
+        const animatedElements = document.querySelectorAll(
+          '.rd-impact-card, .rd-benefit-card, .rd-tech-card'
         );
 
-        // Look for BOTH the standalone showcase AND the hero showcase
-        const deviceShowcase = document.querySelector('.rd-device-showcase');
-        const heroDeviceShowcase = document.querySelector(
-          '.rd-hero-device-showcase'
-        );
-
-        // Observe whichever one exists (or both if both exist)
-        if (deviceShowcase) {
-          deviceObserver.observe(deviceShowcase);
-        }
-        if (heroDeviceShowcase) {
-          deviceObserver.observe(heroDeviceShowcase);
-        }
+        animatedElements.forEach((el) => {
+          observer.observe(el);
+        });
       });
     </script>
   </body>

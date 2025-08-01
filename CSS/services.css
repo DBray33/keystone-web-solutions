@@ -888,14 +888,14 @@
 }
 
 .rd-hero-text-wrapper {
-  padding: 3rem 3rem 0 3rem;
+  padding: 0 3rem 0 3rem; /* Remove top padding by default (side-by-side layout) */
   border-radius: 20px;
 }
 
 @media (max-width: 1425px) {
   .rd-hero-text-wrapper {
     text-align: center;
-    padding: 2rem 2rem 0 2rem;
+    padding: 2rem 2rem 0 2rem; /* Add top padding back when stacked */
   }
 }
 
