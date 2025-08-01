@@ -578,15 +578,16 @@
   <body class="responsive-design-page">
     <!-- NAVBAR / MOBILE MENU PLACEHOLDER (dynamically loaded via Javascript) -->
     <div id="navbar-container"></div>
+
     <!-- BACK TO TOP BUTTON -->
     <button id="backToTop" class="back-to-top" onclick="scrollToTop()">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-        <!--!Font Awesome Free 6.7.2-->
         <path
-          fill="#5dade2"
+          fill="#00ffff"
           d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zm11.3-395.3l112 112c4.6 4.6 5.9 11.5 3.5 17.4s-8.3 9.9-14.8 9.9l-64 0 0 96c0 17.7-14.3 32-32 32l-32 0c-17.7 0-32-14.3-32-32l0-96-64 0c-6.5 0-12.3-3.9-14.8-9.9s-1.1-12.9 3.5-17.4l112-112c6.2-6.2 16.4-6.2 22.6 0z" />
       </svg>
     </button>
+
     <!-- PROGRESS SCROLL BAR -->
     <div class="progress-container">
       <div class="progress-bar" id="progressBar"></div>
@@ -643,310 +644,578 @@
       <button id="close-popup">Close</button>
     </div>
 
-    <div class="page-content">
-      <!-- RESPONSIVE Design Details -->
-      <section class="intro-section responsive-design-intro">
-        <!-- Hero Section -->
-        <div class="hero-content">
-          <h1 class="hero-title">
-            <span class="hero-word top">RESPONSIVE</span>
-            <span class="hero-word bottom">DESIGN</span>
-          </h1>
-          <p class="hero-subheading">
-            Crafting websites that adapt seamlessly to any screen size and
-            device.
-          </p>
-        </div>
-      </section>
+    <div class="rd-page-content">
+      <!-- Hero Section -->
+      <section class="rd-hero-section">
+        <div class="rd-hero-overlay"></div>
+        <div class="rd-hero-content">
+          <div class="rd-hero-layout">
+            <!-- Left side - Title and text -->
+            <div class="rd-hero-text-wrapper">
+              <h1 class="rd-hero-title">
+                <span class="rd-hero-word">RESPONSIVE</span>
+                <span class="rd-hero-word">DESIGN</span>
+              </h1>
+              <div class="rd-hero-divider"></div>
+              <p class="rd-hero-subheading">
+                Crafting websites that adapt seamlessly to any screen size and
+                device.
+              </p>
+              <p class="rd-hero-demo-hint">
+                Watch the live demo adapt in real-time →
+              </p>
+            </div>
 
-      <!-- Details Section -->
-      <section class="subject-details">
-        <p class="details-description">
-          In today’s digital age, users interact with websites on a wide range
-          of devices—from desktops and laptops to tablets and smartphones, in
-          both landscape and portrait orientations. Responsive web design
-          ensures your site looks stunning and functions flawlessly, no matter
-          the device. With mobile usage surpassing desktop, it’s more critical
-          than ever to prioritize a device-responsive approach to meet user
-          expectations.
-        </p>
-      </section>
-      <section class="subject-details">
-        <p class="details-description">
-          <em
-            >Curious about how responsive design works?
-            <strong>Resize your browser</strong> or switch between devices
-            (desktop, tablet, and mobile) to see the elements on this page adapt
-            seamlessly!</em
-          >
-        </p>
-      </section>
-
-      <div class="info-cards-container">
-        <!-- Card 1 -->
-        <section class="info-card">
-          <h2 class="card-title">Mobile Design: The New Priority</h2>
-          <ul class="card-list">
-            <li>
-              <strong>Over 60% of Web Traffic:</strong> With mobile devices
-              dominating traffic, mobile-first design is essential.
-            </li>
-            <li>
-              <strong>Streamlined Layouts:</strong> Prioritized content,
-              fast-loading images, and optimized code ensure seamless
-              performance.
-            </li>
-            <li>
-              <strong>Touch-Friendly Interactions:</strong> Navigation menus and
-              forms designed for easy finger interaction.
-            </li>
-            <li>
-              <strong>Portrait vs. Landscape:</strong> Portrait mode prioritizes
-              vertical scrolling, while landscape mode maximizes horizontal
-              space for richer layouts.
-            </li>
-          </ul>
-        </section>
-        <!-- Card 2 -->
-        <section class="info-card">
-          <h2 class="card-title">Why Device Responsiveness Matters</h2>
-          <ul class="card-list">
-            <li>
-              <strong>User Experience:</strong> A responsive design adapts to
-              different screen sizes, offering a seamless experience whether
-              users are on a 27-inch monitor or a 5.5-inch smartphone.
-            </li>
-            <li>
-              <strong>SEO Benefits:</strong> Search engines like Google
-              prioritize mobile-friendly websites, improving your site’s ranking
-              in search results.
-            </li>
-            <li>
-              <strong>Increased Engagement:</strong> By optimizing for various
-              devices, you reduce bounce rates and keep users exploring your
-              content.
-            </li>
-            <li>
-              <strong>Future-Proofing:</strong> New devices and screen sizes
-              emerge regularly. A responsive design ensures your website remains
-              accessible and relevant.
-            </li>
-          </ul>
-        </section>
-
-        <!-- Card 3 -->
-        <section class="info-card">
-          <h2 class="card-title">Devices We Optimize For</h2>
-          <ul class="card-list">
-            <li>
-              <strong>Desktop:</strong> Full-width layouts, high-resolution
-              images, and intuitive navigation.
-            </li>
-            <li>
-              <strong>Laptops:</strong> Optimized for smaller screen sizes
-              without sacrificing readability or usability.
-            </li>
-            <li>
-              <strong>Tablets:</strong> Fluid designs that adapt to both
-              portrait and landscape modes, offering touch-friendly navigation.
-            </li>
-            <li>
-              <strong>Smartphones:</strong> Prioritized content, simplified
-              menus, and fast load times tailored for smaller, portrait-oriented
-              screens.
-            </li>
-            <li>
-              <strong>Emerging Devices:</strong> From foldable phones to
-              ultra-wide monitors, we design with flexibility in mind.
-            </li>
-          </ul>
-        </section>
-
-        <!-- Card 4 -->
-        <section class="info-card">
-          <h2 class="card-title">How We Achieve Responsive Web Design</h2>
-          <ul class="card-list">
-            <li>
-              <strong>Fluid Grid Layouts:</strong> Instead of fixed widths, we
-              use percentages to create flexible grid systems that scale
-              proportionally based on the user’s screen size.
-            </li>
-            <li>
-              <strong>Media Queries:</strong> CSS media queries allow us to
-              apply specific styles based on the screen’s width, height,
-              orientation, and resolution. For example:
-              <div class="centered-image">
-                <img
-                  src="https://storage.googleapis.com/background-vid/Responsive%20Design%20Page/media-query-example.png?v=2"
-                  alt="Media Query Example" />
+            <!-- Right side - Interactive device preview -->
+            <div class="rd-hero-device-showcase">
+              <div class="rd-device-container">
+                <div class="rd-device-frame">
+                  <div class="rd-device-screen">
+                    <div class="rd-demo-content">
+                      <div class="rd-demo-header">Your Business</div>
+                      <div class="rd-demo-nav">
+                        <span></span><span></span><span></span>
+                      </div>
+                      <div class="rd-demo-hero">Hero Section</div>
+                      <div class="rd-demo-grid">
+                        <div class="rd-demo-card"></div>
+                        <div class="rd-demo-card"></div>
+                        <div class="rd-demo-card"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
-            </li>
-            <li>
-              <strong>Flexible Images and Media:</strong> Images and videos are
-              scaled using properties like <code>max-width: 100%</code> to
-              ensure they never overflow their containers or distort on smaller
-              screens.
-            </li>
-            <li>
-              <strong>Touch-Friendly Design:</strong> Buttons, links, and
-              interactive elements are sized and spaced appropriately for touch
-              interaction. We also account for swipe gestures on mobile.
-            </li>
-            <li>
-              <strong>Optimized Typography:</strong> Fonts are scaled
-              dynamically to ensure readability across all devices, with ample
-              line height and padding for smaller screens.
-            </li>
-            <li>
-              <strong>Simplified Navigation:</strong> Hamburger menus and
-              collapsible menus are implemented for smaller screens to save
-              space while maintaining usability.
-            </li>
-            <li>
-              <strong>Testing Across Devices:</strong> We rigorously live-test
-              your website using real devices to ensure a consistent experience
-              across all screen sizes and orientations.
-            </li>
-          </ul>
-        </section>
-
-        <!-- Card 5 -->
-        <section class="info-card">
-          <h2 class="card-title">
-            Benefits of Responsive Design for Your Business
-          </h2>
-          <ul class="card-list">
-            <li>
-              <strong>Cost Efficiency:</strong> A single responsive website is
-              more cost-effective to build and maintain than separate sites for
-              desktop and mobile.
-            </li>
-            <li>
-              <strong>Increased Reach:</strong> By catering to all devices, you
-              reach a broader audience and boost engagement.
-            </li>
-            <li>
-              <strong>Higher Conversion Rates:</strong> A seamless user
-              experience reduces friction, encouraging users to complete
-              purchases or inquiries.
-            </li>
-            <li>
-              <strong>Competitive Advantage:</strong> In an increasingly
-              mobile-first world, having a responsive site sets you apart from
-              competitors with outdated designs.
-            </li>
-          </ul>
-        </section>
-      </div>
-
-      <!-- STUFF YOU SHOULD KNOW -->
-      <!-- <section class="stuff-you-should-know">
-        <div class="stuff-you-should-know-box">
-          <h2 class="stuff-you-should-know-heading">Stuff You Should Know</h2>
-          <h3 class="stuff-you-should-know-subheading">Please Read</h3>
-          <p>
-            Statistics about how users behave when websites take too long to
-            load highlight the critical importance of fast loading times for
-            user retention and conversion rates. Here are some key findings from
-            studies and surveys:
-          </p>
-
-          <h3>Impact on User Behavior</h3>
-          <ul>
-            <li>
-              <strong>User Abandonment:</strong> 53% of mobile users will
-              abandon a website if it takes longer than 3 seconds (Google,
-              2021).
-            </li>
-            <li>
-              <strong>1-Second Delay:</strong> A 1-second delay in page load
-              time can reduce conversions by 7% (Akamai, 2022).
-            </li>
-            <li>
-              <strong>Bounce Rates:</strong> Websites that load within 2 seconds
-              experience a bounce rate (percentage of visitors leaving after
-              viewing only one page.) of 9%, while those taking 5 seconds or
-              more see bounce rates jump to 38% (Pingdom, 2023).
-            </li>
-            <li>
-              <strong>Customer Dissatisfaction:</strong> 79% of shoppers
-              dissatisfied with website performance are less likely to buy from
-              the same site again (Neil Patel, 2023).
-            </li>
-          </ul>
-
-          <h3>Revenue and Conversions</h3>
-          <ul>
-            <li>
-              <strong>Revenue Loss:</strong> A 2-second delay in load time
-              during a transaction can result in abandonment rates up to 87%
-              (Akamai, 2022).
-            </li>
-            <li>
-              <strong>eCommerce Impact:</strong> For a site making $100,000 per
-              day, a 1-second page delay could potentially cost $2.5 million in
-              lost sales per year (Kissmetrics, 2023).
-            </li>
-            <li>
-              <strong>Conversion Rates:</strong> Pages that load in 2 seconds or
-              less have an average conversion rate of 4.8%, compared to 2.4% for
-              slower pages (Portent, 2022).
-            </li>
-          </ul>
-
-          <h3>User Expectations</h3>
-          <ul>
-            <li>
-              <strong>Speed Expectations:</strong> 47% of users expect a webpage
-              to load in 2 seconds or less (Akamai, 2022).
-            </li>
-            <li>
-              <strong>Mobile vs. Desktop:</strong> Mobile users are 2x more
-              likely than desktop users to abandon a slow-loading site (Google,
-              2021).
-            </li>
-          </ul>
-
-          <h3>SEO and Search Rankings</h3>
-          <ul>
-            <li>
-              <strong>SEO Impact:</strong> Page speed is a ranking factor in
-              Google’s algorithm for desktop and mobile searches (Google, 2020).
-            </li>
-            <li>
-              <strong>Visibility:</strong> Slow-loading websites are penalized
-              in search rankings, reducing organic traffic.
-            </li>
-          </ul>
-
-          <h3>Key Takeaways</h3>
-          <ul>
-            <li>
-              Faster loading times lead to better user experience, higher
-              conversions, and improved retention.
-            </li>
-            <li>
-              Modern users expect speed, efficiency, and a seamless experience,
-              especially on mobile devices.
-            </li>
-            <li>
-              Investing in tools like PageSpeed Insights, lazy loading, and
-              image optimization significantly reduces loading times.
-            </li>
-          </ul>
+            </div>
+          </div>
         </div>
-      </section> -->
+        <div class="rd-animated-bg">
+          <div class="rd-device-float" id="device-1"></div>
+          <div class="rd-device-float" id="device-2"></div>
+          <div class="rd-device-float" id="device-3"></div>
+        </div>
+      </section>
 
-      <!-- New Footer -->
-      <div id="footer-container"></div>
+      <!-- Main Content Section -->
+      <section class="rd-main-content">
+        <div class="rd-container">
+          <!-- Section Introduction -->
+          <div class="rd-section-intro">
+            <div class="rd-intro-content">
+              <p class="rd-intro-text">
+                In today's digital landscape,
+                <span class="rd-highlight">90% of websites</span> have
+                implemented responsive design, and for good reason. With mobile
+                devices accounting for over
+                <span class="rd-highlight">60% of global web traffic</span>,
+                ensuring your site adapts perfectly to every screen isn't just
+                an option—it's a necessity for survival in the digital
+                marketplace.
+              </p>
+            </div>
+          </div>
 
-      <script>
-        // Automatically update the year
-        document.getElementById('year').textContent = new Date().getFullYear();
-      </script>
-      <script src="../js/dynamic-path.js"></script>
-      <script src="../js/scripts.js" defer></script>
-      <script src="../js/mobile-menu.js" defer></script>
+          <!-- The Cost of Poor Mobile Experience -->
+          <div class="rd-impact-section">
+            <h2 class="rd-section-title">
+              <span class="rd-gradient-text"
+                >The Hidden Cost of Poor Mobile Experience</span
+              >
+            </h2>
+            <div class="rd-impact-grid">
+              <div class="rd-impact-card">
+                <div class="rd-impact-number">57%</div>
+                <h3>Lost Recommendations</h3>
+                <p>
+                  of users won't recommend a business with a poorly designed
+                  mobile site
+                </p>
+              </div>
+              <div class="rd-impact-card">
+                <div class="rd-impact-number">$2.6B</div>
+                <h3>Annual Revenue Loss</h3>
+                <p>
+                  lost by retailers due to slow-loading, non-responsive websites
+                </p>
+              </div>
+              <div class="rd-impact-card">
+                <div class="rd-impact-number">61%</div>
+                <h3>Never Return</h3>
+                <p>
+                  of users are unlikely to return to a mobile site they had
+                  trouble accessing
+                </p>
+              </div>
+              <div class="rd-impact-card">
+                <div class="rd-impact-number">88%</div>
+                <h3>Lost Customers</h3>
+                <p>
+                  of online consumers are less likely to return after a bad
+                  mobile experience
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Mobile vs Desktop Traffic Visualization -->
+          <div class="rd-traffic-section">
+            <h2 class="rd-section-title">The Mobile Revolution is Here</h2>
+            <div class="rd-traffic-visualization">
+              <div class="rd-traffic-bar mobile" style="--percentage: 62%">
+                <span class="rd-traffic-label">Mobile Traffic</span>
+                <span class="rd-traffic-value">62%</span>
+              </div>
+              <div class="rd-traffic-bar desktop" style="--percentage: 38%">
+                <span class="rd-traffic-label">Desktop Traffic</span>
+                <span class="rd-traffic-value">38%</span>
+              </div>
+            </div>
+            <p class="rd-traffic-note">
+              Global website traffic distribution in 2024
+            </p>
+          </div>
+
+          <!-- Benefits Grid -->
+          <div class="rd-benefits-section">
+            <h2 class="rd-section-title">
+              Why Responsive Design Drives Results
+            </h2>
+            <div class="rd-benefits-grid">
+              <article class="rd-benefit-card">
+                <div class="rd-benefit-icon">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2">
+                    <rect
+                      x="2"
+                      y="3"
+                      width="20"
+                      height="14"
+                      rx="2"
+                      ry="2"></rect>
+                    <line x1="8" y1="21" x2="16" y2="21"></line>
+                    <line x1="12" y1="17" x2="12" y2="21"></line>
+                  </svg>
+                </div>
+                <h3>5x Higher Conversions</h3>
+                <p>
+                  Responsive design can increase mobile conversion rates by up
+                  to 500%, turning visitors into customers across all devices.
+                </p>
+              </article>
+
+              <article class="rd-benefit-card">
+                <div class="rd-benefit-icon">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polyline points="12 6 12 12 16 14"></polyline>
+                  </svg>
+                </div>
+                <h3>74% Return Rate</h3>
+                <p>
+                  Users are 74% more likely to return to mobile-friendly
+                  websites, building long-term customer relationships.
+                </p>
+              </article>
+
+              <article class="rd-benefit-card">
+                <div class="rd-benefit-icon">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2">
+                    <line x1="18" y1="20" x2="18" y2="10"></line>
+                    <line x1="12" y1="20" x2="12" y2="4"></line>
+                    <line x1="6" y1="20" x2="6" y2="14"></line>
+                  </svg>
+                </div>
+                <h3>Google Priority</h3>
+                <p>
+                  Google uses mobile-first indexing, meaning responsive sites
+                  rank higher in search results, driving more organic traffic.
+                </p>
+              </article>
+
+              <article class="rd-benefit-card">
+                <div class="rd-benefit-icon">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2">
+                    <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path>
+                  </svg>
+                </div>
+                <h3>Faster Load Times</h3>
+                <p>
+                  Optimized responsive sites load 50% faster on mobile, reducing
+                  bounce rates and keeping users engaged.
+                </p>
+              </article>
+            </div>
+          </div>
+
+          <!-- Technical Implementation -->
+          <div class="rd-technical-section">
+            <h2 class="rd-section-title">How We Build Responsive Excellence</h2>
+            <div class="rd-tech-grid">
+              <div class="rd-tech-card">
+                <div class="rd-tech-header">
+                  <span class="rd-tech-number">01</span>
+                  <h3>Fluid Grid Systems</h3>
+                </div>
+                <div class="rd-code-snippet">
+                  <pre><code>/* Flexible grid that adapts to any screen */
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}</code></pre>
+                </div>
+                <p>
+                  Dynamic layouts that automatically adjust to provide optimal
+                  viewing on any device.
+                </p>
+              </div>
+
+              <div class="rd-tech-card">
+                <div class="rd-tech-header">
+                  <span class="rd-tech-number">02</span>
+                  <h3>Smart Media Queries</h3>
+                </div>
+                <div class="rd-code-snippet">
+                  <pre><code>/* Tailored styles for every device */
+@media (max-width: 768px) {
+  .hero-title { font-size: 2rem; }
+  .navigation { transform: translateX(-100%); }
+}</code></pre>
+                </div>
+                <p>
+                  Precision breakpoints ensure perfect presentation from 4K
+                  monitors to compact smartphones.
+                </p>
+              </div>
+
+              <div class="rd-tech-card">
+                <div class="rd-tech-header">
+                  <span class="rd-tech-number">03</span>
+                  <h3>Touch-First Design</h3>
+                </div>
+                <div class="rd-code-snippet">
+                  <pre><code>/* Touch-optimized interactions */
+.button {
+  min-height: 44px;
+  padding: 12px 24px;
+  touch-action: manipulation;
+}</code></pre>
+                </div>
+                <p>
+                  Interfaces designed for fingers, not just cursors, with proper
+                  spacing and touch targets.
+                </p>
+              </div>
+
+              <div class="rd-tech-card">
+                <div class="rd-tech-header">
+                  <span class="rd-tech-number">04</span>
+                  <h3>Performance First</h3>
+                </div>
+                <div class="rd-code-snippet">
+                  <pre><code>/* Optimized image loading */
+<picture>
+  <source media="(max-width: 768px)" srcset="mobile.webp">
+  <img src="desktop.webp" loading="lazy" alt="">
+</picture></code></pre>
+                </div>
+                <p>
+                  Adaptive image loading and code splitting for lightning-fast
+                  performance on any connection.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- ROI Calculator -->
+          <div class="rd-roi-section">
+            <h2 class="rd-section-title">
+              Calculate Your Mobile Optimization ROI
+            </h2>
+
+            <!-- Added explanation -->
+            <p
+              class="rd-section-subtitle"
+              style="max-width: 800px; margin: 0 auto 3rem">
+              See how much revenue you're leaving on the table with poor mobile
+              experience. With 62% of web traffic coming from mobile devices,
+              and responsive design typically improving mobile conversion rates
+              by 5x, the impact on your bottom line can be substantial.
+            </p>
+
+            <div class="rd-roi-calculator">
+              <div class="rd-roi-inputs">
+                <div class="rd-roi-field">
+                  <label>Monthly Website Visitors</label>
+                  <input type="number" id="visitors" value="10000" min="0" />
+                </div>
+                <div class="rd-roi-field">
+                  <label>Current Conversion Rate (%)</label>
+                  <input
+                    type="number"
+                    id="conversion"
+                    value="2"
+                    min="0"
+                    max="100"
+                    step="0.1" />
+                </div>
+                <div class="rd-roi-field">
+                  <label>Average Order Value ($)</label>
+                  <input type="number" id="orderValue" value="100" min="0" />
+                </div>
+              </div>
+
+              <div class="rd-roi-results">
+                <div class="rd-roi-metric">
+                  <span class="rd-roi-label"
+                    >Potential Monthly Revenue Increase</span
+                  >
+                  <span class="rd-roi-value" id="revenueIncrease">$0</span>
+                </div>
+                <div class="rd-roi-metric">
+                  <span class="rd-roi-label">Annual Impact</span>
+                  <span class="rd-roi-value" id="annualImpact">$0</span>
+                </div>
+                <p class="rd-roi-note">
+                  This calculator estimates the additional revenue from
+                  improving your mobile conversion rate through responsive
+                  design. Based on industry averages: 62% of your traffic is
+                  mobile, and proper mobile optimization can improve conversions
+                  by 5x.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- CTA Section -->
+          <div class="rd-cta-section">
+            <div class="rd-cta-content">
+              <h2 class="rd-cta-title">Ready to Capture Every Customer?</h2>
+              <p class="rd-cta-text">
+                Don't let poor mobile experience cost you customers. Join the
+                businesses seeing
+                <span class="rd-highlight">65% sales increases</span> with
+                responsive design.
+              </p>
+              <a href="#contact" class="rd-cta-button">
+                Get Your Responsive Design Quote
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Floating Device Animation -->
+      <div class="rd-floating-devices">
+        <div class="rd-float-device phone"></div>
+        <div class="rd-float-device tablet"></div>
+        <div class="rd-float-device laptop"></div>
+      </div>
     </div>
+
+    <!-- Footer -->
+    <div id="footer-container"></div>
+
+    <script src="../js/dynamic-path.js"></script>
+    <script src="../js/scripts.js" defer></script>
+    <script src="../js/mobile-menu.js" defer></script>
+
+    <!-- Page-specific JavaScript -->
+    <!-- Quote button to footer contact -->
+    <script>
+      // Smooth scroll to contact form in dynamically loaded footer
+      document.addEventListener('DOMContentLoaded', function () {
+        // Find all links that point to #contact
+        const contactLinks = document.querySelectorAll('a[href="#contact"]');
+
+        contactLinks.forEach((link) => {
+          link.addEventListener('click', function (e) {
+            e.preventDefault();
+
+            // Function to scroll to contact form
+            const scrollToContact = () => {
+              const contactSection = document.getElementById('contact');
+              if (contactSection) {
+                // Adjust these values to control where it lands
+                const navbarHeight = 93; // Your fixed navbar height
+                const extraPadding = 50; // Additional space above the contact form
+
+                const elementPosition =
+                  contactSection.getBoundingClientRect().top;
+                const offsetPosition =
+                  elementPosition +
+                  window.pageYOffset -
+                  navbarHeight -
+                  extraPadding;
+
+                window.scrollTo({
+                  top: offsetPosition,
+                  behavior: 'smooth',
+                });
+                return true;
+              }
+              return false;
+            };
+
+            // Try to scroll immediately
+            if (!scrollToContact()) {
+              // If footer isn't loaded yet, wait for it
+              const checkInterval = setInterval(() => {
+                if (scrollToContact()) {
+                  clearInterval(checkInterval);
+                }
+              }, 100);
+
+              // Stop checking after 3 seconds
+              setTimeout(() => {
+                clearInterval(checkInterval);
+              }, 3000);
+            }
+          });
+        });
+      });
+    </script>
+    <!-- ROI Calcualtor -->
+    <script>
+      // ROI Calculator
+      document.addEventListener('DOMContentLoaded', function () {
+        const visitorsInput = document.getElementById('visitors');
+        const conversionInput = document.getElementById('conversion');
+        const orderValueInput = document.getElementById('orderValue');
+        const revenueIncreaseEl = document.getElementById('revenueIncrease');
+        const annualImpactEl = document.getElementById('annualImpact');
+
+        function calculateROI() {
+          const visitors = parseFloat(visitorsInput.value) || 0;
+          const conversionRate = parseFloat(conversionInput.value) || 0;
+          const orderValue = parseFloat(orderValueInput.value) || 0;
+
+          // Calculate current mobile visitors (62% of traffic)
+          const mobileVisitors = visitors * 0.62;
+
+          // Current mobile conversions
+          const currentMobileConversions =
+            mobileVisitors * (conversionRate / 100);
+
+          // Improved conversions with 5x improvement
+          const improvedConversions = currentMobileConversions * 5;
+
+          // Additional conversions
+          const additionalConversions =
+            improvedConversions - currentMobileConversions;
+
+          // Revenue increase
+          const monthlyIncrease = additionalConversions * orderValue;
+          const annualIncrease = monthlyIncrease * 12;
+
+          // Format and display
+          revenueIncreaseEl.textContent =
+            '$' +
+            monthlyIncrease.toLocaleString('en-US', {
+              maximumFractionDigits: 0,
+            });
+          annualImpactEl.textContent =
+            '$' +
+            annualIncrease.toLocaleString('en-US', {
+              maximumFractionDigits: 0,
+            });
+        }
+
+        // Calculate on input change
+        visitorsInput.addEventListener('input', calculateROI);
+        conversionInput.addEventListener('input', calculateROI);
+        orderValueInput.addEventListener('input', calculateROI);
+
+        // Initial calculation
+        calculateROI();
+
+        // Intersection Observer for animations
+        const observerOptions = {
+          threshold: 0.1,
+          rootMargin: '0px 0px -100px 0px',
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+            }
+          });
+        }, observerOptions);
+
+        // Observe all animated elements
+        document
+          .querySelectorAll('.rd-impact-card, .rd-benefit-card, .rd-tech-card')
+          .forEach((el) => {
+            observer.observe(el);
+          });
+
+        // Device showcase resize simulation
+        let deviceFrame = document.querySelector('.rd-device-frame');
+        let resizeInterval;
+
+        function simulateResize() {
+          const sizes = ['mobile', 'tablet', 'desktop'];
+          let currentIndex = 0;
+
+          resizeInterval = setInterval(() => {
+            deviceFrame.className = 'rd-device-frame ' + sizes[currentIndex];
+            currentIndex = (currentIndex + 1) % sizes.length;
+          }, 3000);
+        }
+
+        // Start resize simulation when device showcase is in view
+        const deviceObserver = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting && !resizeInterval) {
+                simulateResize();
+              } else if (!entry.isIntersecting && resizeInterval) {
+                clearInterval(resizeInterval);
+                resizeInterval = null;
+              }
+            });
+          },
+          { threshold: 0.5 }
+        );
+
+        // Look for BOTH the standalone showcase AND the hero showcase
+        const deviceShowcase = document.querySelector('.rd-device-showcase');
+        const heroDeviceShowcase = document.querySelector(
+          '.rd-hero-device-showcase'
+        );
+
+        // Observe whichever one exists (or both if both exist)
+        if (deviceShowcase) {
+          deviceObserver.observe(deviceShowcase);
+        }
+        if (heroDeviceShowcase) {
+          deviceObserver.observe(heroDeviceShowcase);
+        }
+      });
+    </script>
   </body>
 </html>

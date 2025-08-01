@@ -762,6 +762,7 @@
     <link rel="stylesheet" href="CSS/styles.css" />
     <link rel="stylesheet" href="CSS/navbar.css" />
     <link rel="stylesheet" href="CSS/mobile.css" />
+    <link rel="stylesheet" href="CSS/services.css" />
     <link rel="stylesheet" href="CSS/footer.css" />
 
     <!-- Fonts - Async Loading with Swap -->
@@ -1201,184 +1202,257 @@
       </div>
 
       <!-- Logo banner -->
-      <div class="logo-banner-container">
-        <div class="logo-banner">
-          <!-- Logos will be added by JavaScript -->
+<div class="logo-banner-container">
+  <div class="logo-banner">
+    <!-- Logos will be added by JavaScript -->
+  </div>
+</div>
+
+<!-- Infinitely scrolling banner -->
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    // Array of logo information
+    const logos = [
+      {
+        src: 'https://storage.googleapis.com/background-vid/Main%20Content/banner%20tools%20logos/gmp-logo.png',
+        alt: 'Google Marketing Platform',
+      },
+      {
+        src: 'https://storage.googleapis.com/background-vid/Main%20Content/banner%20tools%20logos/netlify.png',
+        alt: 'Netlify',
+      },
+      {
+        src: 'https://storage.googleapis.com/background-vid/Main%20Content/banner%20tools%20logos/semrushlogo.png?v=1',
+        alt: 'SEMrush',
+      },
+      {
+        src: 'https://storage.googleapis.com/background-vid/Main%20Content/banner%20tools%20logos/stripe.png',
+        alt: 'Stripe',
+      },
+    ];
+
+    const bannerElement = document.querySelector('.logo-banner');
+
+    // Function to create a logo group
+    function createLogoGroup() {
+      const logoGroup = document.createElement('div');
+      logoGroup.className = 'logo-group';
+
+      logos.forEach((logo) => {
+        const logoItem = document.createElement('div');
+        logoItem.className = 'logo-item';
+
+        const img = document.createElement('img');
+        img.src = logo.src;
+        img.alt = logo.alt;
+
+        logoItem.appendChild(img);
+        logoGroup.appendChild(logoItem);
+      });
+
+      return logoGroup;
+    }
+
+    // Calculate number of groups needed to fill the banner
+    // We need at least 2 copies for the infinite scrolling to work
+    const minGroups = 2;
+
+    // Add logo groups
+    for (let i = 0; i < minGroups; i++) {
+      bannerElement.appendChild(createLogoGroup());
+    }
+
+    // Check if we need more groups to fill the viewport width
+    function addMoreGroupsIfNeeded() {
+      const bannerWidth = bannerElement.offsetWidth;
+      const viewportWidth = window.innerWidth;
+
+      // If the banner is not wide enough to create a seamless scroll,
+      // add more logo groups
+      if (bannerWidth < viewportWidth * 2) {
+        bannerElement.appendChild(createLogoGroup());
+        // Recursively check if we need even more
+        addMoreGroupsIfNeeded();
+      }
+    }
+
+    // Initial check
+    addMoreGroupsIfNeeded();
+
+    // Also check when window is resized
+    window.addEventListener('resize', addMoreGroupsIfNeeded);
+  });
+</script>
+
+<!-- Logo Banner Styles -->
+<style>
+  .logo-banner-container {
+    width: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(129, 140, 248, 0.05),
+      transparent
+    );
+    overflow: hidden;
+    padding: 30px 0;
+    margin-top: 60px;
+    border-top: 1px solid rgba(129, 140, 248, 0.2);
+    border-bottom: 1px solid rgba(129, 140, 248, 0.2);
+    margin-bottom: 2rem;
+    position: relative;
+  }
+
+  .logo-banner-container::before,
+  .logo-banner-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100px;
+    z-index: 2;
+    pointer-events: none;
+  }
+
+  .logo-banner-container::before {
+    left: 0;
+    background: linear-gradient(90deg, #0a0a0a, transparent);
+  }
+
+  .logo-banner-container::after {
+    right: 0;
+    background: linear-gradient(90deg, transparent, #0a0a0a);
+  }
+
+  .logo-banner {
+    display: flex;
+    animation: scroll 40s linear infinite;
+    width: max-content;
+  }
+
+  .logo-group {
+    display: flex;
+    align-items: center;
+  }
+
+  .logo-item {
+    padding: 0 40px;
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+
+  .logo-item img {
+    height: 50px;
+    object-fit: contain;
+    filter: grayscale(100%) brightness(0.8) contrast(1.2);
+    opacity: 0.7;
+    transition: all 0.3s ease;
+  }
+
+  .logo-item:hover img {
+    filter: grayscale(0%) brightness(1.1);
+    opacity: 1;
+    transform: scale(1.1);
+  }
+
+  /* Special handling for Netlify logo to make it visible */
+  .logo-item img[alt="Netlify"] {
+    filter: grayscale(100%) brightness(2.5) contrast(0.8) invert(0.8);
+    opacity: 0.7;
+  }
+
+  .logo-item:hover img[alt="Netlify"] {
+    filter: grayscale(0%) brightness(1.5) invert(0);
+    opacity: 1;
+    transform: scale(1.1);
+  }
+
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .logo-banner-container {
+      padding: 20px 0;
+      margin-top: 40px;
+    }
+
+    .logo-item {
+      padding: 0 25px;
+    }
+
+    .logo-item img {
+      height: 35px;
+    }
+  }
+</style>
+
+    <!-- Device Demo Section -->
+    <section class="hp-device-demo-section">
+      <div class="hp-device-overlay"></div>
+      <div class="hp-device-content">
+        <!-- Section Header - Completely separate -->
+        <div class="hp-device-header">
+          <span class="hp-device-label">Responsive Design</span>
+          <h2 class="hp-device-title">
+            <span class="hp-device-word">See Your Site</span>
+            <span class="hp-device-word">Everywhere</span>
+          </h2>
+          <p class="hp-device-subtitle">
+            Where adaptability meets functionality
+          </p>
+        </div>
+
+        <!-- Device Demo - Independent from header -->
+        <div class="hp-device-showcase">
+          <div class="hp-showcase-container">
+            <div class="hp-showcase-frame">
+              <div class="hp-showcase-screen">
+                <div class="hp-preview-content">
+                  <div class="hp-preview-header">Keystone Web Solutions</div>
+                  <div class="hp-preview-nav">
+                    <span></span><span></span><span></span><span></span>
+                  </div>
+                  <div class="hp-preview-hero">
+                    <div class="hp-preview-title">Your Business Here</div>
+                    <div class="hp-preview-subtitle">
+                      Modern • Responsive • Fast
+                    </div>
+                  </div>
+                  <div class="hp-preview-features">
+                    <div class="hp-preview-feature">
+                      <div class="hp-feature-icon"></div>
+                      <div class="hp-feature-text">Custom Design</div>
+                    </div>
+                    <div class="hp-preview-feature">
+                      <div class="hp-feature-icon"></div>
+                      <div class="hp-feature-text">SEO Ready</div>
+                    </div>
+                    <div class="hp-preview-feature">
+                      <div class="hp-feature-icon"></div>
+                      <div class="hp-feature-text">Fast Loading</div>
+                    </div>
+                  </div>
+                  <div class="hp-preview-cta">
+                    <button class="hp-preview-button">Get Started</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-
-      <!-- Infinitely scrolling banner -->
-      <script>
-        document.addEventListener('DOMContentLoaded', function () {
-          // Array of logo information
-          const logos = [
-            {
-              src: 'https://storage.googleapis.com/background-vid/Main%20Content/banner%20tools%20logos/gmp-logo.png',
-              alt: 'Google Marketing Platform',
-            },
-            {
-              src: 'https://storage.googleapis.com/background-vid/Main%20Content/banner%20tools%20logos/netlify.png',
-              alt: 'Netlify',
-            },
-            {
-              src: 'https://storage.googleapis.com/background-vid/Main%20Content/banner%20tools%20logos/semrushlogo.png?v=1',
-              alt: 'SEMrush',
-            },
-            {
-              src: 'https://storage.googleapis.com/background-vid/Main%20Content/banner%20tools%20logos/stripe.png',
-              alt: 'Stripe',
-            },
-          ];
-
-          const bannerElement = document.querySelector('.logo-banner');
-
-          // Function to create a logo group
-          function createLogoGroup() {
-            const logoGroup = document.createElement('div');
-            logoGroup.className = 'logo-group';
-
-            logos.forEach((logo) => {
-              const logoItem = document.createElement('div');
-              logoItem.className = 'logo-item';
-
-              const img = document.createElement('img');
-              img.src = logo.src;
-              img.alt = logo.alt;
-
-              logoItem.appendChild(img);
-              logoGroup.appendChild(logoItem);
-            });
-
-            return logoGroup;
-          }
-
-          // Calculate number of groups needed to fill the banner
-          // We need at least 2 copies for the infinite scrolling to work
-          const minGroups = 2;
-
-          // Add logo groups
-          for (let i = 0; i < minGroups; i++) {
-            bannerElement.appendChild(createLogoGroup());
-          }
-
-          // Check if we need more groups to fill the viewport width
-          function addMoreGroupsIfNeeded() {
-            const bannerWidth = bannerElement.offsetWidth;
-            const viewportWidth = window.innerWidth;
-
-            // If the banner is not wide enough to create a seamless scroll,
-            // add more logo groups
-            if (bannerWidth < viewportWidth * 2) {
-              bannerElement.appendChild(createLogoGroup());
-              // Recursively check if we need even more
-              addMoreGroupsIfNeeded();
-            }
-          }
-
-          // Initial check
-          addMoreGroupsIfNeeded();
-
-          // Also check when window is resized
-          window.addEventListener('resize', addMoreGroupsIfNeeded);
-        });
-      </script>
-
-      <!-- Logo Banner Styles -->
-      <style>
-        .logo-banner-container {
-          width: 100%;
-          background: linear-gradient(
-            90deg,
-            transparent,
-            rgba(129, 140, 248, 0.05),
-            transparent
-          );
-          overflow: hidden;
-          padding: 30px 0;
-          margin-top: 60px;
-          border-top: 1px solid rgba(129, 140, 248, 0.2);
-          border-bottom: 1px solid rgba(129, 140, 248, 0.2);
-          margin-bottom: 2rem;
-          position: relative;
-        }
-
-        .logo-banner-container::before,
-        .logo-banner-container::after {
-          content: '';
-          position: absolute;
-          top: 0;
-          bottom: 0;
-          width: 100px;
-          z-index: 2;
-          pointer-events: none;
-        }
-
-        .logo-banner-container::before {
-          left: 0;
-          background: linear-gradient(90deg, #0a0a0a, transparent);
-        }
-
-        .logo-banner-container::after {
-          right: 0;
-          background: linear-gradient(90deg, transparent, #0a0a0a);
-        }
-
-        .logo-banner {
-          display: flex;
-          animation: scroll 40s linear infinite;
-          width: max-content;
-        }
-
-        .logo-group {
-          display: flex;
-          align-items: center;
-        }
-
-        .logo-item {
-          padding: 0 40px;
-          display: flex;
-          align-items: center;
-          position: relative;
-        }
-
-        .logo-item img {
-          height: 50px;
-          object-fit: contain;
-          filter: grayscale(100%) brightness(0.8) contrast(1.2);
-          opacity: 0.7;
-          transition: all 0.3s ease;
-        }
-
-        .logo-item:hover img {
-          filter: grayscale(0%) brightness(1.1);
-          opacity: 1;
-          transform: scale(1.1);
-        }
-
-        @keyframes scroll {
-          0% {
-            transform: translateX(0);
-          }
-          100% {
-            transform: translateX(-50%);
-          }
-        }
-
-        @media (max-width: 768px) {
-          .logo-banner-container {
-            padding: 20px 0;
-            margin-top: 40px;
-          }
-
-          .logo-item {
-            padding: 0 25px;
-          }
-
-          .logo-item img {
-            height: 35px;
-          }
-        }
-      </style>
+      <div class="hp-animated-bg">
+        <div class="hp-float-element" id="hp-float-1"></div>
+        <div class="hp-float-element" id="hp-float-2"></div>
+        <div class="hp-float-element" id="hp-float-3"></div>
+      </div>
     </section>
 
     <!-- SERVICES SECTION -->
@@ -3199,6 +3273,146 @@
           // Store the new data for tracking dot
           data.length = 0;
           newData.forEach((point) => data.push(point));
+        });
+      });
+    </script>
+    <!-- Responsive design example JS -->
+    <script>
+      // Homepage Device Demo Auto-Resize Functionality
+      document.addEventListener('DOMContentLoaded', function () {
+        // Get the device frame
+        const deviceFrame = document.querySelector('.hp-showcase-frame');
+        if (!deviceFrame) return;
+
+        // Device sizes configuration
+        const deviceSizes = [
+          { class: 'mobile', label: 'Mobile' },
+          { class: 'tablet', label: 'Tablet' },
+          { class: 'desktop', label: 'Desktop' },
+        ];
+
+        let currentSizeIndex = 0;
+        let resizeInterval;
+
+        // Function to cycle through device sizes
+        function cycleDeviceSize() {
+          // Remove all size classes
+          deviceFrame.classList.remove('mobile', 'tablet', 'desktop');
+
+          // Add a transitioning class to smooth the animation
+          deviceFrame.style.transition =
+            'all 0.8s cubic-bezier(0.4, 0, 0.2, 1)';
+
+          // Add the current size class
+          deviceFrame.classList.add(deviceSizes[currentSizeIndex].class);
+
+          // Move to next size
+          currentSizeIndex = (currentSizeIndex + 1) % deviceSizes.length;
+        }
+
+        // Start the auto-resize when section is in view
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                // Start cycling if not already started
+                if (!resizeInterval) {
+                  // Set initial size
+                  cycleDeviceSize();
+
+                  // Start interval for continuous cycling
+                  resizeInterval = setInterval(cycleDeviceSize, 3000);
+                }
+              } else {
+                // Stop cycling when out of view
+                if (resizeInterval) {
+                  clearInterval(resizeInterval);
+                  resizeInterval = null;
+                }
+              }
+            });
+          },
+          {
+            threshold: 0.3, // Trigger when 30% of section is visible
+          }
+        );
+
+        // Observe the device demo section
+        const demoSection = document.querySelector('.hp-device-demo-section');
+        if (demoSection) {
+          observer.observe(demoSection);
+        }
+
+        // Optional: Add manual controls if needed
+        const addManualControls = false; // Set to true if you want manual buttons
+
+        if (addManualControls) {
+          const controlsHTML = `
+            <div class="hp-device-controls">
+              <button class="hp-control-btn" data-size="mobile">Mobile</button>
+              <button class="hp-control-btn" data-size="tablet">Tablet</button>
+              <button class="hp-control-btn" data-size="desktop">Desktop</button>
+            </div>
+          `;
+
+          // Add controls after the device showcase
+          const showcaseContainer = document.querySelector(
+            '.hp-showcase-container'
+          );
+          if (showcaseContainer) {
+            showcaseContainer.insertAdjacentHTML('afterend', controlsHTML);
+
+            // Add click handlers
+            document.querySelectorAll('.hp-control-btn').forEach((btn) => {
+              btn.addEventListener('click', function () {
+                // Stop auto-resize
+                if (resizeInterval) {
+                  clearInterval(resizeInterval);
+                  resizeInterval = null;
+                }
+
+                // Apply selected size
+                deviceFrame.classList.remove('mobile', 'tablet', 'desktop');
+                deviceFrame.classList.add(this.dataset.size);
+
+                // Update active button
+                document
+                  .querySelectorAll('.hp-control-btn')
+                  .forEach((b) => b.classList.remove('active'));
+                this.classList.add('active');
+              });
+            });
+          }
+        }
+
+        // Add some dynamic content changes based on device size
+        const heroTitle = document.querySelector('.hp-preview-title');
+        const heroSubtitle = document.querySelector('.hp-preview-subtitle');
+
+        // Create a mutation observer to watch for class changes
+        const classMutationObserver = new MutationObserver((mutations) => {
+          mutations.forEach((mutation) => {
+            if (mutation.attributeName === 'class') {
+              // Update content based on current device
+              if (deviceFrame.classList.contains('mobile')) {
+                if (heroTitle) heroTitle.textContent = 'Mobile First';
+                if (heroSubtitle)
+                  heroSubtitle.textContent = 'Optimized for Touch';
+              } else if (deviceFrame.classList.contains('tablet')) {
+                if (heroTitle) heroTitle.textContent = 'Tablet Perfect';
+                if (heroSubtitle) heroSubtitle.textContent = 'Flexible Layouts';
+              } else if (deviceFrame.classList.contains('desktop')) {
+                if (heroTitle) heroTitle.textContent = 'Desktop Ready';
+                if (heroSubtitle) heroSubtitle.textContent = 'Full Experience';
+              }
+            }
+          });
+        });
+
+        // Start observing the device frame for class changes
+        classMutationObserver.observe(deviceFrame, {
+          attributes: true,
+          attributeFilter: ['class'],
         });
       });
     </script>

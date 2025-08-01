@@ -21,6 +21,7 @@
  *    - Back to Top Button
  *    - Dynamic Content Loading
  *    - Animated Subheadings
+ * 9. Custom Web Design Page Functions
  */
 
 // ==========================================================================
@@ -146,9 +147,9 @@ function navbarScrollEffect() {
   console.log('✅ Navbar detected, initializing scroll effect.');
 
   // Clear any previous scroll event listeners (prevents duplication)
-  window.removeEventListener('scroll', handleScroll);
+  window.removeEventListener('scroll', handleNavbarScroll);
 
-  function handleScroll() {
+  function handleNavbarScroll() {
     if (window.scrollY > 5) {
       navbar.classList.add('scrolled');
     } else {
@@ -157,7 +158,7 @@ function navbarScrollEffect() {
   }
 
   // Attach new scroll event listener
-  window.addEventListener('scroll', handleScroll);
+  window.addEventListener('scroll', handleNavbarScroll);
 }
 
 // ==========================================================================
@@ -762,3 +763,259 @@ document.addEventListener('DOMContentLoaded', () => {
   // Set interval to change subheading every second
   setInterval(showNextSubheading, 1000);
 });
+
+// ==========================================================================
+// 9. CUSTOM WEB DESIGN PAGE FUNCTIONS
+// ==========================================================================
+
+document.addEventListener('DOMContentLoaded', function () {
+  // Only run on custom web design page
+  if (!document.body.classList.contains('custom-web-design-page')) {
+    return;
+  }
+
+  // Fade-in animations for custom web design page
+  const cwdObserverOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -100px 0px',
+  };
+
+  const cwdObserver = new IntersectionObserver(function (entries) {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        cwdObserver.unobserve(entry.target);
+      }
+    });
+  }, cwdObserverOptions);
+
+  // Observe all fade-in elements with cwd prefix
+  document.querySelectorAll('.cwd-fade-in').forEach((el) => {
+    cwdObserver.observe(el);
+  });
+
+  // Animated counter for stats - custom web design page
+  const animateCwdCounters = () => {
+    const counters = document.querySelectorAll('.cwd-stat-number[data-count]');
+
+    counters.forEach((counter) => {
+      const target = parseInt(counter.getAttribute('data-count'));
+      const duration = 2000; // 2 seconds
+      const increment = target / (duration / 16); // 60fps
+      let current = 0;
+
+      const updateCounter = () => {
+        current += increment;
+        if (current < target) {
+          counter.textContent = Math.floor(current);
+          requestAnimationFrame(updateCounter);
+        } else {
+          counter.textContent = target;
+        }
+      };
+
+      // Start animation when element is visible
+      const counterObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              updateCounter();
+              counterObserver.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.5 }
+      );
+
+      counterObserver.observe(counter);
+    });
+  };
+
+  animateCwdCounters();
+
+  // Parallax effect for hero section - custom web design page
+  const cwdHeroSection = document.querySelector('.cwd-hero-section');
+  if (cwdHeroSection) {
+    window.addEventListener('scroll', () => {
+      const scrolled = window.pageYOffset;
+      const parallaxSpeed = 0.5;
+      cwdHeroSection.style.transform = `translateY(${
+        scrolled * parallaxSpeed
+      }px)`;
+    });
+  }
+
+  // Neon glow effect on mouse move - custom web design page
+  const cwdNeonElements = document.querySelectorAll(
+    '.cwd-neon-glow, .cwd-neon-glow-alt'
+  );
+
+  if (cwdNeonElements.length > 0) {
+    document.addEventListener('mousemove', (e) => {
+      const x = e.clientX / window.innerWidth;
+      const y = e.clientY / window.innerHeight;
+
+      cwdNeonElements.forEach((element) => {
+        const intensity = 40 + x * 20; // Dynamic intensity based on mouse position
+        const currentColor = window.getComputedStyle(element).color;
+
+        element.style.textShadow = `
+          0 0 ${intensity * 0.25}px ${currentColor},
+          0 0 ${intensity * 0.5}px ${currentColor},
+          0 0 ${intensity * 0.75}px ${currentColor},
+          0 0 ${intensity}px ${currentColor}
+        `;
+      });
+    });
+  }
+
+  // Card hover effects - custom web design page
+  const cwdCards = document.querySelectorAll('.cwd-content-card');
+
+  cwdCards.forEach((card) => {
+    card.addEventListener('mouseenter', function (e) {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+
+      card.style.setProperty('--mouse-x', `${x}px`);
+      card.style.setProperty('--mouse-y', `${y}px`);
+    });
+
+    card.addEventListener('mousemove', function (e) {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+
+      card.style.setProperty('--mouse-x', `${x}px`);
+      card.style.setProperty('--mouse-y', `${y}px`);
+    });
+  });
+
+  // Video optimization - custom web design page
+  const cwdVideos = document.querySelectorAll('.cwd-video-card video');
+  cwdVideos.forEach((video) => {
+    // Pause video when not in viewport
+    const videoObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            video.play();
+          } else {
+            video.pause();
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+
+    videoObserver.observe(video);
+  });
+
+  // Dynamic particle background (optional - requires particles.js)
+  if (
+    typeof particlesJS !== 'undefined' &&
+    document.getElementById('particles-js')
+  ) {
+    particlesJS('particles-js', {
+      particles: {
+        number: {
+          value: 50,
+          density: {
+            enable: true,
+            value_area: 800,
+          },
+        },
+        color: {
+          value: ['#00ffff', '#ff00ff', '#ffff00'],
+        },
+        shape: {
+          type: 'circle',
+        },
+        opacity: {
+          value: 0.5,
+          random: true,
+          anim: {
+            enable: true,
+            speed: 1,
+            opacity_min: 0.1,
+            sync: false,
+          },
+        },
+        size: {
+          value: 3,
+          random: true,
+          anim: {
+            enable: true,
+            speed: 2,
+            size_min: 0.1,
+            sync: false,
+          },
+        },
+        line_linked: {
+          enable: true,
+          distance: 150,
+          color: '#00ffff',
+          opacity: 0.2,
+          width: 1,
+        },
+        move: {
+          enable: true,
+          speed: 1,
+          direction: 'none',
+          random: true,
+          straight: false,
+          out_mode: 'out',
+          bounce: false,
+        },
+      },
+      interactivity: {
+        detect_on: 'canvas',
+        events: {
+          onhover: {
+            enable: true,
+            mode: 'grab',
+          },
+          onclick: {
+            enable: true,
+            mode: 'push',
+          },
+          resize: true,
+        },
+        modes: {
+          grab: {
+            distance: 140,
+            line_linked: {
+              opacity: 0.5,
+            },
+          },
+          push: {
+            particles_nb: 4,
+          },
+        },
+      },
+      retina_detect: true,
+    });
+  }
+});
+
+// Performance optimization: Debounce scroll events
+function debounce(func, wait) {
+  let timeout;
+  return function executedFunction(...args) {
+    const later = () => {
+      clearTimeout(timeout);
+      func(...args);
+    };
+    clearTimeout(timeout);
+    timeout = setTimeout(later, wait);
+  };
+}
+
+// Apply debouncing to scroll events
+window.addEventListener(
+  'scroll',
+  debounce(() => {
+    // Add any scroll-based animations here
+  }, 10)
+);
