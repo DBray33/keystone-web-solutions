@@ -1202,196 +1202,197 @@
       </div>
 
       <!-- Logo banner -->
-<div class="logo-banner-container">
-  <div class="logo-banner">
-    <!-- Logos will be added by JavaScript -->
-  </div>
-</div>
+      <div class="logo-banner-container">
+        <div class="logo-banner">
+          <!-- Logos will be added by JavaScript -->
+        </div>
+      </div>
 
-<!-- Infinitely scrolling banner -->
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    // Array of logo information
-    const logos = [
-      {
-        src: 'https://storage.googleapis.com/background-vid/Main%20Content/banner%20tools%20logos/gmp-logo.png',
-        alt: 'Google Marketing Platform',
-      },
-      {
-        src: 'https://storage.googleapis.com/background-vid/Main%20Content/banner%20tools%20logos/netlify.png',
-        alt: 'Netlify',
-      },
-      {
-        src: 'https://storage.googleapis.com/background-vid/Main%20Content/banner%20tools%20logos/semrushlogo.png?v=1',
-        alt: 'SEMrush',
-      },
-      {
-        src: 'https://storage.googleapis.com/background-vid/Main%20Content/banner%20tools%20logos/stripe.png',
-        alt: 'Stripe',
-      },
-    ];
+      <!-- Infinitely scrolling banner -->
+      <script>
+        document.addEventListener('DOMContentLoaded', function () {
+          // Array of logo information
+          const logos = [
+            {
+              src: 'https://storage.googleapis.com/background-vid/Main%20Content/banner%20tools%20logos/gmp-logo.png',
+              alt: 'Google Marketing Platform',
+            },
+            {
+              src: 'https://storage.googleapis.com/background-vid/Main%20Content/banner%20tools%20logos/netlify.png',
+              alt: 'Netlify',
+            },
+            {
+              src: 'https://storage.googleapis.com/background-vid/Main%20Content/banner%20tools%20logos/semrushlogo.png?v=1',
+              alt: 'SEMrush',
+            },
+            {
+              src: 'https://storage.googleapis.com/background-vid/Main%20Content/banner%20tools%20logos/stripe.png',
+              alt: 'Stripe',
+            },
+          ];
 
-    const bannerElement = document.querySelector('.logo-banner');
+          const bannerElement = document.querySelector('.logo-banner');
 
-    // Function to create a logo group
-    function createLogoGroup() {
-      const logoGroup = document.createElement('div');
-      logoGroup.className = 'logo-group';
+          // Function to create a logo group
+          function createLogoGroup() {
+            const logoGroup = document.createElement('div');
+            logoGroup.className = 'logo-group';
 
-      logos.forEach((logo) => {
-        const logoItem = document.createElement('div');
-        logoItem.className = 'logo-item';
+            logos.forEach((logo) => {
+              const logoItem = document.createElement('div');
+              logoItem.className = 'logo-item';
 
-        const img = document.createElement('img');
-        img.src = logo.src;
-        img.alt = logo.alt;
+              const img = document.createElement('img');
+              img.src = logo.src;
+              img.alt = logo.alt;
 
-        logoItem.appendChild(img);
-        logoGroup.appendChild(logoItem);
-      });
+              logoItem.appendChild(img);
+              logoGroup.appendChild(logoItem);
+            });
 
-      return logoGroup;
-    }
+            return logoGroup;
+          }
 
-    // Calculate number of groups needed to fill the banner
-    // We need at least 2 copies for the infinite scrolling to work
-    const minGroups = 2;
+          // Calculate number of groups needed to fill the banner
+          // We need at least 2 copies for the infinite scrolling to work
+          const minGroups = 2;
 
-    // Add logo groups
-    for (let i = 0; i < minGroups; i++) {
-      bannerElement.appendChild(createLogoGroup());
-    }
+          // Add logo groups
+          for (let i = 0; i < minGroups; i++) {
+            bannerElement.appendChild(createLogoGroup());
+          }
 
-    // Check if we need more groups to fill the viewport width
-    function addMoreGroupsIfNeeded() {
-      const bannerWidth = bannerElement.offsetWidth;
-      const viewportWidth = window.innerWidth;
+          // Check if we need more groups to fill the viewport width
+          function addMoreGroupsIfNeeded() {
+            const bannerWidth = bannerElement.offsetWidth;
+            const viewportWidth = window.innerWidth;
 
-      // If the banner is not wide enough to create a seamless scroll,
-      // add more logo groups
-      if (bannerWidth < viewportWidth * 2) {
-        bannerElement.appendChild(createLogoGroup());
-        // Recursively check if we need even more
-        addMoreGroupsIfNeeded();
-      }
-    }
+            // If the banner is not wide enough to create a seamless scroll,
+            // add more logo groups
+            if (bannerWidth < viewportWidth * 2) {
+              bannerElement.appendChild(createLogoGroup());
+              // Recursively check if we need even more
+              addMoreGroupsIfNeeded();
+            }
+          }
 
-    // Initial check
-    addMoreGroupsIfNeeded();
+          // Initial check
+          addMoreGroupsIfNeeded();
 
-    // Also check when window is resized
-    window.addEventListener('resize', addMoreGroupsIfNeeded);
-  });
-</script>
+          // Also check when window is resized
+          window.addEventListener('resize', addMoreGroupsIfNeeded);
+        });
+      </script>
 
-<!-- Logo Banner Styles -->
-<style>
-  .logo-banner-container {
-    width: 100%;
-    background: linear-gradient(
-      90deg,
-      transparent,
-      rgba(129, 140, 248, 0.05),
-      transparent
-    );
-    overflow: hidden;
-    padding: 30px 0;
-    margin-top: 60px;
-    border-top: 1px solid rgba(129, 140, 248, 0.2);
-    border-bottom: 1px solid rgba(129, 140, 248, 0.2);
-    margin-bottom: 2rem;
-    position: relative;
-  }
+      <!-- Logo Banner Styles -->
+      <style>
+        .logo-banner-container {
+          width: 100%;
+          background: linear-gradient(
+            90deg,
+            transparent,
+            rgba(129, 140, 248, 0.05),
+            transparent
+          );
+          overflow: hidden;
+          padding: 30px 0;
+          margin-top: 60px;
+          border-top: 1px solid rgba(129, 140, 248, 0.2);
+          border-bottom: 1px solid rgba(129, 140, 248, 0.2);
+          margin-bottom: 2rem;
+          position: relative;
+        }
 
-  .logo-banner-container::before,
-  .logo-banner-container::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    width: 100px;
-    z-index: 2;
-    pointer-events: none;
-  }
+        .logo-banner-container::before,
+        .logo-banner-container::after {
+          content: '';
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          width: 100px;
+          z-index: 2;
+          pointer-events: none;
+        }
 
-  .logo-banner-container::before {
-    left: 0;
-    background: linear-gradient(90deg, #0a0a0a, transparent);
-  }
+        .logo-banner-container::before {
+          left: 0;
+          background: linear-gradient(90deg, #0a0a0a, transparent);
+        }
 
-  .logo-banner-container::after {
-    right: 0;
-    background: linear-gradient(90deg, transparent, #0a0a0a);
-  }
+        .logo-banner-container::after {
+          right: 0;
+          background: linear-gradient(90deg, transparent, #0a0a0a);
+        }
 
-  .logo-banner {
-    display: flex;
-    animation: scroll 40s linear infinite;
-    width: max-content;
-  }
+        .logo-banner {
+          display: flex;
+          animation: scroll 40s linear infinite;
+          width: max-content;
+        }
 
-  .logo-group {
-    display: flex;
-    align-items: center;
-  }
+        .logo-group {
+          display: flex;
+          align-items: center;
+        }
 
-  .logo-item {
-    padding: 0 40px;
-    display: flex;
-    align-items: center;
-    position: relative;
-  }
+        .logo-item {
+          padding: 0 40px;
+          display: flex;
+          align-items: center;
+          position: relative;
+        }
 
-  .logo-item img {
-    height: 50px;
-    object-fit: contain;
-    filter: grayscale(100%) brightness(0.8) contrast(1.2);
-    opacity: 0.7;
-    transition: all 0.3s ease;
-  }
+        .logo-item img {
+          height: 50px;
+          object-fit: contain;
+          filter: grayscale(100%) brightness(0.8) contrast(1.2);
+          opacity: 0.7;
+          transition: all 0.3s ease;
+        }
 
-  .logo-item:hover img {
-    filter: grayscale(0%) brightness(1.1);
-    opacity: 1;
-    transform: scale(1.1);
-  }
+        .logo-item:hover img {
+          filter: grayscale(0%) brightness(1.1);
+          opacity: 1;
+          transform: scale(1.1);
+        }
 
-  /* Special handling for Netlify logo to make it visible */
-  .logo-item img[alt="Netlify"] {
-    filter: grayscale(100%) brightness(2.5) contrast(0.8) invert(0.8);
-    opacity: 0.7;
-  }
+        /* Special handling for Netlify logo to make it visible */
+        .logo-item img[alt='Netlify'] {
+          filter: grayscale(100%) brightness(2.5) contrast(0.8) invert(0.8);
+          opacity: 0.7;
+        }
 
-  .logo-item:hover img[alt="Netlify"] {
-    filter: grayscale(0%) brightness(1.5) invert(0);
-    opacity: 1;
-    transform: scale(1.1);
-  }
+        .logo-item:hover img[alt='Netlify'] {
+          filter: grayscale(0%) brightness(1.5) invert(0);
+          opacity: 1;
+          transform: scale(1.1);
+        }
 
-  @keyframes scroll {
-    0% {
-      transform: translateX(0);
-    }
-    100% {
-      transform: translateX(-50%);
-    }
-  }
+        @keyframes scroll {
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(-50%);
+          }
+        }
 
-  @media (max-width: 768px) {
-    .logo-banner-container {
-      padding: 20px 0;
-      margin-top: 40px;
-    }
+        @media (max-width: 768px) {
+          .logo-banner-container {
+            padding: 20px 0;
+            margin-top: 40px;
+          }
 
-    .logo-item {
-      padding: 0 25px;
-    }
+          .logo-item {
+            padding: 0 25px;
+          }
 
-    .logo-item img {
-      height: 35px;
-    }
-  }
-</style>
+          .logo-item img {
+            height: 35px;
+          }
+        }
+      </style>
+    </section>
 
     <!-- Device Demo Section -->
     <section class="hp-device-demo-section">
