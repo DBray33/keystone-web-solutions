@@ -143,333 +143,988 @@
     </div>
 
     <div class="page-content">
-      <!-- BLOG PAGE -->
-      <section class="blog">
-        <div class="container">
-          <div class="back-to-blog">
-            <a href="../about/blog" class="back-to-blog-button"
-              >&larr; Back to Blog</a
+      <!-- BLOG HERO SECTION -->
+      <section class="blog-hero-section">
+        <div class="blog-hero-overlay"></div>
+
+        <!-- Animated Background Elements -->
+        <div class="blog-animated-bg">
+          <div class="blog-particle" id="particle-1"></div>
+          <div class="blog-particle" id="particle-2"></div>
+          <div class="blog-particle" id="particle-3"></div>
+          <div class="blog-code-float" id="code-1">&lt;/&gt;</div>
+          <div class="blog-code-float" id="code-2">{...}</div>
+          <div class="blog-code-float" id="code-3">#</div>
+        </div>
+
+        <div class="blog-hero-content">
+          <div class="blog-breadcrumb">
+            <a href="../about/blog" class="breadcrumb-link">Blog</a>
+            <span class="breadcrumb-separator">/</span>
+            <span class="breadcrumb-current"
+              >The Role of Responsive Design in Modern Websites</span
             >
           </div>
 
-          <!-- Blog Post 5 -->
-          <article class="blog-post">
-            <img
-              src="https://storage.googleapis.com/background-vid/blog%20photos/Individual%20Blog%20Pages/blog5-large.webp"
-              alt=""
-              class="blog-post-image" />
-            <div class="blog-post-content">
-              <h2 class="blog-post-title">
-                The Role of Responsive Design in Modern Websites
-              </h2>
-              <p class="blog-post-date">Published: January 20, 2025</p>
-              <p class="blog-post-description">
-                Explore why responsive design is essential for modern websites
-                and how it enhances user experience and accessibility.
-              </p>
-              <h3 class="blog-post-subtitle">What Is Responsive Design?</h3>
-              <p class="blog-post-paragraph">
-                Responsive design is a web development approach aimed at
-                crafting websites that automatically adapt to the user’s device,
-                be it a desktop, tablet, or smartphone. Rather than creating
-                separate versions of a site for different devices, responsive
-                design allows a single site to adjust dynamically to the
-                device’s screen size and orientation.
-              </p>
-              <p class="blog-post-paragraph">
-                The concept gained prominence with the rise of mobile internet
-                usage and is now a standard practice in the industry. At its
-                core, responsive design eliminates the need for zooming,
-                scrolling horizontally, or viewing distorted layouts, ensuring a
-                seamless experience for all users.
-              </p>
-              <h3 class="blog-post-subtitle">
-                Why Is Responsive Design Important?
-              </h3>
-              <h4 class="blog-post-subheading">1. Mobile-First World:</h4>
-              <p class="blog-post-paragraph">
-                Mobile devices now account for more than half of global web
-                traffic. Responsive design caters to this growing audience,
-                ensuring websites look and function flawlessly on smaller
-                screens. A poorly designed mobile site risks alienating users,
-                leading to high bounce rates and lost opportunities.
-              </p>
-              <h4 class="blog-post-subheading">2. Improved User Experience:</h4>
-              <p class="blog-post-paragraph">
-                A responsive website adapts to the user’s device, delivering a
-                consistent and enjoyable browsing experience. Elements like
-                readable fonts, appropriately scaled images, and intuitive
-                navigation are crucial for keeping visitors engaged.
-              </p>
-              <h4 class="blog-post-subheading">
-                3. Search Engine Optimization (SEO):
-              </h4>
-              <p class="blog-post-paragraph">
-                Google prioritizes mobile-friendly websites in its search
-                rankings. A responsive design signals to search engines that
-                your site is optimized for all users, improving visibility and
-                driving organic traffic.
-              </p>
-              <h4 class="blog-post-subheading">4. Cost and Time Efficiency:</h4>
-              <p class="blog-post-paragraph">
-                Building and maintaining one responsive website is more
-                cost-effective and time-efficient than creating multiple
-                versions for different devices. This unified approach reduces
-                development effort and simplifies updates.
-              </p>
-              <h4 class="blog-post-subheading">5. Future-Proofing:</h4>
-              <p class="blog-post-paragraph">
-                Responsive design ensures compatibility with new devices and
-                screen sizes as they emerge, from foldable phones to ultra-wide
-                monitors. This adaptability extends the lifespan of a website.
-              </p>
-              <h3 class="blog-post-subtitle">
-                Key Principles of Responsive Design
-              </h3>
-              <h4 class="blog-post-subheading">1. Fluid Grid Layouts:</h4>
-              <p class="blog-post-paragraph">
-                A responsive website uses a flexible grid system based on
-                percentages rather than fixed units like pixels. This allows
-                elements to scale proportionally across devices, maintaining a
-                balanced layout.
-              </p>
-              <h4 class="blog-post-subheading">
-                2. Flexible Images and Media:
-              </h4>
-              <p class="blog-post-paragraph">
-                Responsive design ensures images, videos, and other media adjust
-                to fit the screen size without distortion. Techniques like CSS’s
-                <code>max-width: 100%</code> ensure visuals scale appropriately.
-              </p>
-              <h4 class="blog-post-subheading">3. Media Queries:</h4>
-              <p class="blog-post-paragraph">
-                Media queries in CSS allow developers to apply specific styles
-                based on the device’s screen size, resolution, and orientation.
-                For instance, a site might display a multi-column layout on
-                desktops but switch to a single-column layout on smaller
-                screens.
-              </p>
-              <h4 class="blog-post-subheading">4. Mobile-First Approach:</h4>
-              <p class="blog-post-paragraph">
-                Designing for mobile first and scaling up for larger screens
-                ensures the core user experience is optimized for the smallest,
-                most constrained devices. This strategy prioritizes essential
-                content and functionality.
-              </p>
-              <h4 class="blog-post-subheading">5. Touch-Friendly Elements:</h4>
-              <p class="blog-post-paragraph">
-                Responsive websites consider touch interactions by making
-                buttons, links, and other elements large enough to be easily
-                tapped on touchscreens.
-              </p>
-              <h4 class="blog-post-subheading">6. Performance Optimization:</h4>
-              <p class="blog-post-paragraph">
-                Responsive design includes optimizing load times on all devices.
-                Techniques like lazy loading, minified CSS and JavaScript, and
-                efficient caching are crucial for mobile users on slower
-                connections.
-              </p>
+          <h1 class="blog-hero-title">
+            <span class="blog-title-word-1">The Role of Responsive Design</span>
+            <span class="blog-title-word-2">in Modern Websites</span>
+          </h1>
 
-              <h3 class="blog-post-subtitle">Benefits for Businesses</h3>
-              <h4 class="blog-post-subheading">
-                1. Increased Conversion Rates:
-              </h4>
-              <p class="blog-post-paragraph">
-                A seamless browsing experience encourages users to stay on the
-                site longer, explore products or services, and complete desired
-                actions like making a purchase or filling out a contact form.
-              </p>
-              <h4 class="blog-post-subheading">
-                2. Enhanced Brand Reputation:
-              </h4>
-              <p class="blog-post-paragraph">
-                A professional and accessible website reflects positively on a
-                business. Responsive design shows customers that the brand
-                values their time and experience.
-              </p>
-              <h4 class="blog-post-subheading">3. Broader Audience Reach:</h4>
-              <p class="blog-post-paragraph">
-                By catering to users on all devices, businesses can attract and
-                retain a diverse audience, maximizing their reach and
-                engagement.
-              </p>
-              <h4 class="blog-post-subheading">4. Competitive Edge:</h4>
-              <p class="blog-post-paragraph">
-                In industries where user experience can make or break a
-                business, having a responsive website gives companies a
-                significant advantage over competitors with outdated designs.
-              </p>
-
-              <h3 class="blog-post-subtitle">
-                Tools and Technologies for Responsive Design
-              </h3>
-              <h4 class="blog-post-subheading">1. CSS Frameworks:</h4>
-              <p class="blog-post-paragraph">
-                Frameworks like Bootstrap, Foundation, and Tailwind CSS provide
-                pre-built responsive components and grid systems, speeding up
-                development.
-              </p>
-              <h4 class="blog-post-subheading">2. Responsive Testing Tools:</h4>
-              <p class="blog-post-paragraph">
-                Tools like BrowserStack, Responsinator, and Google’s
-                Mobile-Friendly Test help developers ensure their designs work
-                seamlessly across devices.
-              </p>
-              <h4 class="blog-post-subheading">3. Flexbox and Grid Layout:</h4>
-              <p class="blog-post-paragraph">
-                Modern CSS layout techniques like Flexbox and CSS Grid offer
-                powerful ways to create flexible and adaptable designs.
-              </p>
-              <h4 class="blog-post-subheading">
-                4. Scalable Vector Graphics (SVG):
-              </h4>
-              <p class="blog-post-paragraph">
-                SVGs are resolution-independent, making them ideal for
-                responsive designs. They look sharp on all devices, including
-                high-DPI screens.
-              </p>
-              <h3 class="blog-post-subtitle">
-                Common Challenges and Solutions
-              </h3>
-              <h4 class="blog-post-subheading">1. Performance Trade-Offs:</h4>
-              <p class="blog-post-paragraph">
-                Responsive websites can sometimes load unnecessary assets. Using
-                conditional loading and optimized media queries can mitigate
-                this issue.
-              </p>
-              <h4 class="blog-post-subheading">2. Complex Navigation:</h4>
-              <p class="blog-post-paragraph">
-                Adapting multi-level navigation menus for smaller screens can be
-                tricky. Solutions like collapsible menus or off-canvas
-                navigation improve usability.
-              </p>
-              <h4 class="blog-post-subheading">3. Testing Across Devices:</h4>
-              <p class="blog-post-paragraph">
-                With countless devices on the market, testing every
-                configuration is impossible. Focus on popular screen sizes and
-                use responsive testing tools.
-              </p>
-
-              <p class="blog-post-paragraph">
-                Responsive design is no longer optional; it’s a necessity in
-                today’s digital landscape. It ensures websites are accessible,
-                user-friendly, and future-proof, catering to the needs of
-                diverse audiences. For businesses, adopting responsive design
-                translates into improved user engagement, higher search
-                rankings, and long-term cost savings. As technology continues to
-                evolve, the principles of responsive design will remain central
-                to building websites that meet the demands of the modern web.
-              </p>
-              <p class="blog-post-call-to-action">
-                If you’re ready to enhance your website with responsive design,
-                <a href="#contact" class="blog-post-link">contact us today</a>
-                to future-proof your digital presence!
-              </p>
-            </div>
-          </article>
-
-          <footer class="cta">
-            <p>Ready to create something unique?</p>
-            <a href="#footer-contact" class="cta-button">Contact Us</a>
-          </footer>
+          <div class="blog-meta-info">
+            <span class="blog-date">
+              <svg
+                class="meta-icon"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                <line x1="16" y1="2" x2="16" y2="6"></line>
+                <line x1="8" y1="2" x2="8" y2="6"></line>
+                <line x1="3" y1="10" x2="21" y2="10"></line>
+              </svg>
+              January 20, 2025
+            </span>
+            <span class="blog-reading-time">
+              <svg
+                class="meta-icon"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
+              </svg>
+              10 min read
+            </span>
+            <span class="blog-category">Web Development</span>
+          </div>
         </div>
       </section>
 
+      <!-- BLOG CONTENT SECTION -->
+      <article class="blog-content-section">
+        <div class="blog-container">
+          <div class="blog-main-content">
+            <!-- Featured Image -->
+            <div class="blog-featured-image">
+              <img
+                src="https://storage.googleapis.com/background-vid/blog%20photos/Individual%20Blog%20Pages/blog5-large.webp"
+                alt="Responsive Design"
+                class="featured-img" />
+              <div class="image-overlay"></div>
+            </div>
+
+            <!-- Article Content -->
+            <div class="blog-article-content">
+              <p class="blog-lead">
+                Explore why responsive design is essential for modern websites
+                and how it enhances user experience and accessibility.
+              </p>
+
+              <div class="blog-section">
+                <h2 class="blog-section-title">
+                  <span class="section-number">01</span>
+                  What Is Responsive Design?
+                </h2>
+                <p class="blog-paragraph">
+                  Responsive design is a web development approach aimed at
+                  crafting websites that automatically adapt to the user's
+                  device, be it a desktop, tablet, or smartphone. Rather than
+                  creating separate versions of a site for different devices,
+                  responsive design allows a single site to adjust dynamically
+                  to the device's screen size and orientation.
+                </p>
+                <p class="blog-paragraph">
+                  The concept gained prominence with the rise of mobile internet
+                  usage and is now a standard practice in the industry. At its
+                  core, responsive design eliminates the need for zooming,
+                  scrolling horizontally, or viewing distorted layouts, ensuring
+                  a seamless experience for all users.
+                </p>
+              </div>
+
+              <div class="blog-section">
+                <h2 class="blog-section-title">
+                  <span class="section-number">02</span>
+                  Why Is Responsive Design Important?
+                </h2>
+
+                <ul class="blog-feature-list">
+                  <li>
+                    <span class="list-icon">
+                      <svg
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2">
+                        <rect
+                          x="5"
+                          y="2"
+                          width="14"
+                          height="20"
+                          rx="2"
+                          ry="2"></rect>
+                        <line x1="12" y1="18" x2="12.01" y2="18"></line>
+                      </svg>
+                    </span>
+                    <div class="list-content">
+                      <strong>Mobile-First World:</strong>
+                      Mobile devices now account for more than half of global
+                      web traffic. Responsive design caters to this growing
+                      audience, ensuring websites look and function flawlessly
+                      on smaller screens. A poorly designed mobile site risks
+                      alienating users, leading to high bounce rates and lost
+                      opportunities.
+                    </div>
+                  </li>
+                  <li>
+                    <span class="list-icon">
+                      <svg
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2">
+                        <path
+                          d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="8.5" cy="7" r="4"></circle>
+                        <polyline points="20 8 20 14 23 11 17 11"></polyline>
+                      </svg>
+                    </span>
+                    <div class="list-content">
+                      <strong>Improved User Experience:</strong>
+                      A responsive website adapts to the user's device,
+                      delivering a consistent and enjoyable browsing experience.
+                      Elements like readable fonts, appropriately scaled images,
+                      and intuitive navigation are crucial for keeping visitors
+                      engaged.
+                    </div>
+                  </li>
+                  <li>
+                    <span class="list-icon">
+                      <svg
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.35-4.35"></path>
+                      </svg>
+                    </span>
+                    <div class="list-content">
+                      <strong>Search Engine Optimization (SEO):</strong>
+                      Google prioritizes mobile-friendly websites in its search
+                      rankings. A responsive design signals to search engines
+                      that your site is optimized for all users, improving
+                      visibility and driving organic traffic.
+                    </div>
+                  </li>
+                  <li>
+                    <span class="list-icon">
+                      <svg
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2">
+                        <line x1="12" y1="1" x2="12" y2="23"></line>
+                        <path
+                          d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                      </svg>
+                    </span>
+                    <div class="list-content">
+                      <strong>Cost and Time Efficiency:</strong>
+                      Building and maintaining one responsive website is more
+                      cost-effective and time-efficient than creating multiple
+                      versions for different devices. This unified approach
+                      reduces development effort and simplifies updates.
+                    </div>
+                  </li>
+                  <li>
+                    <span class="list-icon">
+                      <svg
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2">
+                        <circle cx="12" cy="12" r="3"></circle>
+                        <path
+                          d="M12 1v6m0 6v6m11-7h-6m-6 0H1m20.5-6.5L17 7m-10 10L2.5 21.5m19-4L17 17m-10-10L2.5 2.5"></path>
+                      </svg>
+                    </span>
+                    <div class="list-content">
+                      <strong>Future-Proofing:</strong>
+                      Responsive design ensures compatibility with new devices
+                      and screen sizes as they emerge, from foldable phones to
+                      ultra-wide monitors. This adaptability extends the
+                      lifespan of a website.
+                    </div>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="blog-section">
+                <h2 class="blog-section-title">
+                  <span class="section-number">03</span>
+                  Key Principles of Responsive Design
+                </h2>
+
+                <div class="blog-highlight-box">
+                  <div class="highlight-icon">
+                    <svg
+                      width="40"
+                      height="40"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2">
+                      <rect x="3" y="3" width="7" height="7"></rect>
+                      <rect x="14" y="3" width="7" height="7"></rect>
+                      <rect x="14" y="14" width="7" height="7"></rect>
+                      <rect x="3" y="14" width="7" height="7"></rect>
+                    </svg>
+                  </div>
+                  <div class="highlight-content">
+                    <h3>Fluid Grid Systems</h3>
+                    <p>
+                      Modern responsive design uses flexible grids based on
+                      percentages rather than fixed pixels, allowing content to
+                      scale proportionally across all device sizes.
+                    </p>
+                  </div>
+                </div>
+
+                <ul class="blog-feature-list">
+                  <li>
+                    <span class="list-icon">
+                      <svg
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2">
+                        <rect
+                          x="3"
+                          y="3"
+                          width="18"
+                          height="18"
+                          rx="2"
+                          ry="2"></rect>
+                        <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                        <polyline points="21 15 16 10 5 21"></polyline>
+                      </svg>
+                    </span>
+                    <div class="list-content">
+                      <strong>Flexible Images and Media:</strong>
+                      Responsive design ensures images, videos, and other media
+                      adjust to fit the screen size without distortion.
+                      Techniques like CSS's
+                      <code>max-width: 100%</code> ensure visuals scale
+                      appropriately.
+                    </div>
+                  </li>
+                  <li>
+                    <span class="list-icon">
+                      <svg
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2">
+                        <polyline points="16 18 22 12 16 6"></polyline>
+                        <polyline points="8 6 2 12 8 18"></polyline>
+                      </svg>
+                    </span>
+                    <div class="list-content">
+                      <strong>Media Queries:</strong>
+                      Media queries in CSS allow developers to apply specific
+                      styles based on the device's screen size, resolution, and
+                      orientation. For instance, a site might display a
+                      multi-column layout on desktops but switch to a
+                      single-column layout on smaller screens.
+                    </div>
+                  </li>
+                  <li>
+                    <span class="list-icon">
+                      <svg
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2">
+                        <rect
+                          x="5"
+                          y="2"
+                          width="14"
+                          height="20"
+                          rx="2"
+                          ry="2"></rect>
+                        <line x1="12" y1="18" x2="12.01" y2="18"></line>
+                      </svg>
+                    </span>
+                    <div class="list-content">
+                      <strong>Mobile-First Approach:</strong>
+                      Designing for mobile first and scaling up for larger
+                      screens ensures the core user experience is optimized for
+                      the smallest, most constrained devices. This strategy
+                      prioritizes essential content and functionality.
+                    </div>
+                  </li>
+                  <li>
+                    <span class="list-icon">
+                      <svg
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2">
+                        <path d="M10 2v20M14 2v20M4 7h16M4 17h16"></path>
+                      </svg>
+                    </span>
+                    <div class="list-content">
+                      <strong>Touch-Friendly Elements:</strong>
+                      Responsive websites consider touch interactions by making
+                      buttons, links, and other elements large enough to be
+                      easily tapped on touchscreens.
+                    </div>
+                  </li>
+                  <li>
+                    <span class="list-icon">
+                      <svg
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2">
+                        <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path>
+                      </svg>
+                    </span>
+                    <div class="list-content">
+                      <strong>Performance Optimization:</strong>
+                      Responsive design includes optimizing load times on all
+                      devices. Techniques like lazy loading, minified CSS and
+                      JavaScript, and efficient caching are crucial for mobile
+                      users on slower connections.
+                    </div>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="blog-section">
+                <h2 class="blog-section-title">
+                  <span class="section-number">04</span>
+                  Benefits for Businesses
+                </h2>
+
+                <div class="blog-comparison">
+                  <div class="comparison-card cms-card">
+                    <h3>Without Responsive Design</h3>
+                    <ul>
+                      <li>High mobile bounce rates</li>
+                      <li>Poor search rankings</li>
+                      <li>Multiple site versions to maintain</li>
+                      <li>Lost revenue opportunities</li>
+                    </ul>
+                  </div>
+                  <div class="comparison-card custom-card">
+                    <h3>With Responsive Design</h3>
+                    <ul>
+                      <li>Seamless user experience</li>
+                      <li>Better SEO performance</li>
+                      <li>Single codebase efficiency</li>
+                      <li>Higher conversion rates</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <ul class="blog-feature-list">
+                  <li>
+                    <span class="list-icon">
+                      <svg
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2">
+                        <polyline
+                          points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                      </svg>
+                    </span>
+                    <div class="list-content">
+                      <strong>Increased Conversion Rates:</strong>
+                      A seamless browsing experience encourages users to stay on
+                      the site longer, explore products or services, and
+                      complete desired actions like making a purchase or filling
+                      out a contact form.
+                    </div>
+                  </li>
+                  <li>
+                    <span class="list-icon">
+                      <svg
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2">
+                        <polygon
+                          points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                      </svg>
+                    </span>
+                    <div class="list-content">
+                      <strong>Enhanced Brand Reputation:</strong>
+                      A professional and accessible website reflects positively
+                      on a business. Responsive design shows customers that the
+                      brand values their time and experience.
+                    </div>
+                  </li>
+                  <li>
+                    <span class="list-icon">
+                      <svg
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <path
+                          d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"></path>
+                        <circle cx="12" cy="12" r="3"></circle>
+                      </svg>
+                    </span>
+                    <div class="list-content">
+                      <strong>Broader Audience Reach:</strong>
+                      By catering to users on all devices, businesses can
+                      attract and retain a diverse audience, maximizing their
+                      reach and engagement.
+                    </div>
+                  </li>
+                  <li>
+                    <span class="list-icon">
+                      <svg
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2">
+                        <path
+                          d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="8.5" cy="7" r="4"></circle>
+                        <line x1="20" y1="8" x2="20" y2="14"></line>
+                        <line x1="23" y1="11" x2="17" y2="11"></line>
+                      </svg>
+                    </span>
+                    <div class="list-content">
+                      <strong>Competitive Edge:</strong>
+                      In industries where user experience can make or break a
+                      business, having a responsive website gives companies a
+                      significant advantage over competitors with outdated
+                      designs.
+                    </div>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="blog-section">
+                <h2 class="blog-section-title">
+                  <span class="section-number">05</span>
+                  Tools and Technologies for Responsive Design
+                </h2>
+
+                <div class="blog-highlight-box">
+                  <div class="highlight-icon">
+                    <svg
+                      width="40"
+                      height="40"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2">
+                      <path
+                        d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
+                    </svg>
+                  </div>
+                  <div class="highlight-content">
+                    <h3>Modern Development Tools</h3>
+                    <p>
+                      Today's responsive design ecosystem includes powerful
+                      frameworks like Bootstrap and Tailwind CSS, advanced CSS
+                      features like Grid and Flexbox, and comprehensive testing
+                      tools to ensure perfect cross-device compatibility.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="blog-section">
+                <h2 class="blog-section-title">
+                  <span class="section-number">06</span>
+                  Common Challenges and Solutions
+                </h2>
+
+                <ul class="blog-feature-list">
+                  <li>
+                    <span class="list-icon">
+                      <svg
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2">
+                        <path
+                          d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path>
+                        <line x1="12" y1="9" x2="12" y2="13"></line>
+                        <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                      </svg>
+                    </span>
+                    <div class="list-content">
+                      <strong>Performance Trade-Offs:</strong>
+                      Responsive websites can sometimes load unnecessary assets.
+                      Using conditional loading and optimized media queries can
+                      mitigate this issue.
+                    </div>
+                  </li>
+                  <li>
+                    <span class="list-icon">
+                      <svg
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2">
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                      </svg>
+                    </span>
+                    <div class="list-content">
+                      <strong>Complex Navigation:</strong>
+                      Adapting multi-level navigation menus for smaller screens
+                      can be tricky. Solutions like collapsible menus or
+                      off-canvas navigation improve usability.
+                    </div>
+                  </li>
+                  <li>
+                    <span class="list-icon">
+                      <svg
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2">
+                        <rect
+                          x="2"
+                          y="7"
+                          width="20"
+                          height="14"
+                          rx="2"
+                          ry="2"></rect>
+                        <path
+                          d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                      </svg>
+                    </span>
+                    <div class="list-content">
+                      <strong>Testing Across Devices:</strong>
+                      With countless devices on the market, testing every
+                      configuration is impossible. Focus on popular screen sizes
+                      and use responsive testing tools.
+                    </div>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="blog-section">
+                <h2 class="blog-section-title">
+                  <span class="section-number">07</span>
+                  Conclusion
+                </h2>
+                <p class="blog-paragraph">
+                  Responsive design is no longer optional; it's a necessity in
+                  today's digital landscape. It ensures websites are accessible,
+                  user-friendly, and future-proof, catering to the needs of
+                  diverse audiences. For businesses, adopting responsive design
+                  translates into improved user engagement, higher search
+                  rankings, and long-term cost savings. As technology continues
+                  to evolve, the principles of responsive design will remain
+                  central to building websites that meet the demands of the
+                  modern web.
+                </p>
+              </div>
+
+              <!-- Call to Action -->
+              <div class="blog-cta-section">
+                <h2>Ready to enhance your website with responsive design?</h2>
+                <p>
+                  Let's future-proof your digital presence with a website that
+                  works perfectly on every device.
+                </p>
+                <a href="#footer-contact" class="blog-cta-button">
+                  Contact Us Today
+                  <svg
+                    class="cta-arrow"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Sidebar -->
+          <aside class="blog-sidebar">
+            <div class="sidebar-widget">
+              <h3 class="widget-title">Share This Article</h3>
+              <div class="social-share">
+                <a href="#" class="share-button twitter">
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="currentColor">
+                    <path
+                      d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
+                  </svg>
+                </a>
+                <a href="#" class="share-button linkedin">
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="currentColor">
+                    <path
+                      d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"></path>
+                    <circle cx="4" cy="4" r="2"></circle>
+                  </svg>
+                </a>
+                <a href="#" class="share-button facebook">
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="currentColor">
+                    <path
+                      d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            <div class="sidebar-widget">
+              <h3 class="widget-title">Related Articles</h3>
+              <div class="related-posts">
+                <a href="blog3" class="related-post">
+                  <h4>The Cost of a Slow Website</h4>
+                  <span class="related-date">January 19, 2025</span>
+                </a>
+                <a href="blog9" class="related-post">
+                  <h4>Improving User Experience for Local Searches</h4>
+                  <span class="related-date">April 14, 2025</span>
+                </a>
+                <a href="blog1" class="related-post">
+                  <h4>Why Choose Custom-Coded Web Design?</h4>
+                  <span class="related-date">January 20, 2025</span>
+                </a>
+              </div>
+            </div>
+
+            <div class="sidebar-widget">
+              <div class="info-box">
+                <div class="info-icon">
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2">
+                    <rect
+                      x="2"
+                      y="7"
+                      width="20"
+                      height="14"
+                      rx="2"
+                      ry="2"></rect>
+                    <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                  </svg>
+                </div>
+                <h4>Mobile-First Design</h4>
+                <p>
+                  We build every website with responsive design at its core,
+                  ensuring perfect functionality across all devices.
+                </p>
+              </div>
+            </div>
+
+            <div class="sidebar-widget sticky-widget">
+              <div class="newsletter-box">
+                <h3>Stay Updated</h3>
+                <p>
+                  Get the latest web design insights delivered to your inbox.
+                </p>
+                <form class="newsletter-form">
+                  <input type="email" placeholder="Your email" required />
+                  <button type="submit">Subscribe</button>
+                </form>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </article>
+
       <!-- STUFF YOU SHOULD KNOW -->
       <section class="stuff-you-should-know">
-        <div class="stuff-you-should-know-box">
-          <h2 class="stuff-you-should-know-heading">Stuff You Should Know</h2>
+        <div class="stuff-container">
+          <h2 class="stuff-title">
+            <span class="title-accent">Stuff</span> You Should Know
+          </h2>
 
-          <p>
-            Statistics about how users behave when websites take too long to
-            load highlight the critical importance of fast loading times for
-            user retention and conversion rates. Here are some key findings from
-            studies and surveys:
-          </p>
+          <div class="stuff-content">
+            <div class="stuff-intro">
+              <p>
+                Statistics about how users behave when websites take too long to
+                load highlight the critical importance of fast loading times for
+                user retention and conversion rates. Here are some key findings
+                from studies and surveys:
+              </p>
+            </div>
 
-          <h3>Impact on User Behavior</h3>
-          <ul>
-            <li>
-              <strong>User Abandonment:</strong> 53% of mobile users will
-              abandon a website if it takes longer than 3 seconds (Google,
-              2021).
-            </li>
-            <li>
-              <strong>1-Second Delay:</strong> A 1-second delay in page load
-              time can reduce conversions by 7% (Akamai, 2022).
-            </li>
-            <li>
-              <strong>Bounce Rates:</strong> Websites that load within 2 seconds
-              experience a bounce rate (percentage of visitors leaving after
-              viewing only one page.) of 9%, while those taking 5 seconds or
-              more see bounce rates jump to 38% (Pingdom, 2023).
-            </li>
-            <li>
-              <strong>Customer Dissatisfaction:</strong> 79% of shoppers
-              dissatisfied with website performance are less likely to buy from
-              the same site again (Neil Patel, 2023).
-            </li>
-          </ul>
+            <div class="stats-grid">
+              <div class="stat-card">
+                <div class="stat-icon">
+                  <svg
+                    width="48"
+                    height="48"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="var(--blog-accent-purple)"
+                    stroke-width="2">
+                    <rect
+                      x="2"
+                      y="7"
+                      width="20"
+                      height="14"
+                      rx="2"
+                      ry="2"></rect>
+                    <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                  </svg>
+                </div>
+                <h3>Impact on User Behavior</h3>
+                <ul>
+                  <li>
+                    <strong>User Abandonment:</strong> 53% of mobile users will
+                    abandon a website if it takes longer than 3 seconds (Google,
+                    2021).
+                  </li>
+                  <li>
+                    <strong>1-Second Delay:</strong> A 1-second delay in page
+                    load time can reduce conversions by 7% (Akamai, 2022).
+                  </li>
+                  <li>
+                    <strong>Bounce Rates:</strong> Websites that load within 2
+                    seconds experience a bounce rate (percentage of visitors
+                    leaving after viewing only one page.) of 9%, while those
+                    taking 5 seconds or more see bounce rates jump to 38%
+                    (Pingdom, 2023).
+                  </li>
+                  <li>
+                    <strong>Customer Dissatisfaction:</strong> 79% of shoppers
+                    dissatisfied with website performance are less likely to buy
+                    from the same site again (Neil Patel, 2023).
+                  </li>
+                </ul>
+              </div>
 
-          <h3>Revenue and Conversions</h3>
-          <ul>
-            <li>
-              <strong>Revenue Loss:</strong> A 2-second delay in load time
-              during a transaction can result in abandonment rates up to 87%
-              (Akamai, 2022).
-            </li>
-            <li>
-              <strong>eCommerce Impact:</strong> For a site making $100,000 per
-              day, a 1-second page delay could potentially cost $2.5 million in
-              lost sales per year (Kissmetrics, 2023).
-            </li>
-            <li>
-              <strong>Conversion Rates:</strong> Pages that load in 2 seconds or
-              less have an average conversion rate of 4.8%, compared to 2.4% for
-              slower pages (Portent, 2022).
-            </li>
-          </ul>
+              <div class="stat-card">
+                <div class="stat-icon">
+                  <svg
+                    width="48"
+                    height="48"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="var(--blog-accent-pink)"
+                    stroke-width="2">
+                    <line x1="12" y1="1" x2="12" y2="23"></line>
+                    <path
+                      d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                  </svg>
+                </div>
+                <h3>Revenue and Conversions</h3>
+                <ul>
+                  <li>
+                    <strong>Revenue Loss:</strong> A 2-second delay in load time
+                    during a transaction can result in abandonment rates up to
+                    87% (Akamai, 2022).
+                  </li>
+                  <li>
+                    <strong>eCommerce Impact:</strong> For a site making
+                    $100,000 per day, a 1-second page delay could potentially
+                    cost $2.5 million in lost sales per year (Kissmetrics,
+                    2023).
+                  </li>
+                  <li>
+                    <strong>Conversion Rates:</strong> Pages that load in 2
+                    seconds or less have an average conversion rate of 4.8%,
+                    compared to 2.4% for slower pages (Portent, 2022).
+                  </li>
+                </ul>
+              </div>
 
-          <h3>User Expectations</h3>
-          <ul>
-            <li>
-              <strong>Speed Expectations:</strong> 47% of users expect a webpage
-              to load in 2 seconds or less (Akamai, 2022).
-            </li>
-            <li>
-              <strong>Mobile vs. Desktop:</strong> Mobile users are 2x more
-              likely than desktop users to abandon a slow-loading site (Google,
-              2021).
-            </li>
-          </ul>
+              <div class="stat-card">
+                <div class="stat-icon">
+                  <svg
+                    width="48"
+                    height="48"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="var(--blog-primary-neon)"
+                    stroke-width="2">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polyline points="12 6 12 12 16 14"></polyline>
+                  </svg>
+                </div>
+                <h3>User Expectations</h3>
+                <ul>
+                  <li>
+                    <strong>Speed Expectations:</strong> 47% of users expect a
+                    webpage to load in 2 seconds or less (Akamai, 2022).
+                  </li>
+                  <li>
+                    <strong>Mobile vs. Desktop:</strong> Mobile users are 2x
+                    more likely than desktop users to abandon a slow-loading
+                    site (Google, 2021).
+                  </li>
+                </ul>
+              </div>
 
-          <h3>SEO and Search Rankings</h3>
-          <ul>
-            <li>
-              <strong>SEO Impact:</strong> Page speed is a ranking factor in
-              Google’s algorithm for desktop and mobile searches (Google, 2020).
-            </li>
-            <li>
-              <strong>Visibility:</strong> Slow-loading websites are penalized
-              in search rankings, reducing organic traffic.
-            </li>
-          </ul>
+              <div class="stat-card">
+                <div class="stat-icon">
+                  <svg
+                    width="48"
+                    height="48"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="var(--blog-accent-green)"
+                    stroke-width="2">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <path d="m21 21-4.35-4.35"></path>
+                  </svg>
+                </div>
+                <h3>SEO and Search Rankings</h3>
+                <ul>
+                  <li>
+                    <strong>SEO Impact:</strong> Page speed is a ranking factor
+                    in Google's algorithm for desktop and mobile searches
+                    (Google, 2020).
+                  </li>
+                  <li>
+                    <strong>Visibility:</strong> Slow-loading websites are
+                    penalized in search rankings, reducing organic traffic.
+                  </li>
+                </ul>
+              </div>
+            </div>
 
-          <h3>Key Takeaways</h3>
-          <ul>
-            <li>
-              Faster loading times lead to better user experience, higher
-              conversions, and improved retention.
-            </li>
-            <li>
-              Modern users expect speed, efficiency, and a seamless experience,
-              especially on mobile devices.
-            </li>
-            <li>
-              Investing in tools like PageSpeed Insights, lazy loading, and
-              image optimization significantly reduces loading times.
-            </li>
-          </ul>
+            <div class="key-takeaways">
+              <h3>Key Takeaways</h3>
+              <div class="takeaway-grid">
+                <div class="takeaway-item">
+                  <span class="takeaway-icon">
+                    <svg
+                      width="32"
+                      height="32"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="var(--blog-primary-neon)"
+                      stroke-width="2">
+                      <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path>
+                    </svg>
+                  </span>
+                  <p>
+                    Faster loading times lead to better user experience, higher
+                    conversions, and improved retention.
+                  </p>
+                </div>
+                <div class="takeaway-item">
+                  <span class="takeaway-icon">
+                    <svg
+                      width="32"
+                      height="32"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="var(--blog-accent-purple)"
+                      stroke-width="2">
+                      <rect
+                        x="2"
+                        y="7"
+                        width="20"
+                        height="14"
+                        rx="2"
+                        ry="2"></rect>
+                      <path
+                        d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                    </svg>
+                  </span>
+                  <p>
+                    Modern users expect speed, efficiency, and a seamless
+                    experience, especially on mobile devices.
+                  </p>
+                </div>
+                <div class="takeaway-item">
+                  <span class="takeaway-icon">
+                    <svg
+                      width="32"
+                      height="32"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="var(--blog-accent-pink)"
+                      stroke-width="2">
+                      <path
+                        d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                      <polyline points="14 2 14 8 20 8"></polyline>
+                      <line x1="16" y1="13" x2="8" y2="13"></line>
+                      <line x1="16" y1="17" x2="8" y2="17"></line>
+                      <polyline points="10 9 9 9 8 9"></polyline>
+                    </svg>
+                  </span>
+                  <p>
+                    Investing in tools like PageSpeed Insights, lazy loading,
+                    and image optimization significantly reduces loading times.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -484,6 +1139,84 @@
       <script src="../js/dynamic-path.js"></script>
       <script src="../js/scripts.js" defer></script>
       <script src="../js/mobile-menu.js" defer></script>
+
+      <!-- Page Specific JS -->
+      <script>
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+          threshold: 0.1,
+          rootMargin: '0px 0px -50px 0px',
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+            }
+          });
+        }, observerOptions);
+
+        // Observe all blog sections
+        document.querySelectorAll('.blog-section').forEach((section) => {
+          observer.observe(section);
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+          anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+              target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start',
+              });
+            }
+          });
+        });
+
+        // Share button functionality
+        document.querySelectorAll('.share-button').forEach((button) => {
+          button.addEventListener('click', function (e) {
+            e.preventDefault();
+            const url = window.location.href;
+            const title = document.title;
+
+            if (this.classList.contains('twitter')) {
+              window.open(
+                `https://twitter.com/intent/tweet?text=${encodeURIComponent(
+                  title
+                )}&url=${encodeURIComponent(url)}`,
+                '_blank'
+              );
+            } else if (this.classList.contains('linkedin')) {
+              window.open(
+                `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(
+                  url
+                )}`,
+                '_blank'
+              );
+            } else if (this.classList.contains('facebook')) {
+              window.open(
+                `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
+                  url
+                )}`,
+                '_blank'
+              );
+            }
+          });
+        });
+
+        // Newsletter form
+        document
+          .querySelector('.newsletter-form')
+          .addEventListener('submit', function (e) {
+            e.preventDefault();
+            // Add your newsletter subscription logic here
+            alert('Thank you for subscribing!');
+            this.reset();
+          });
+      </script>
     </div>
   </body>
 </html>
