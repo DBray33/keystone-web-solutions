@@ -342,11 +342,15 @@
     grid-template-columns: 1fr;
     gap: 40px;
   }
+  .blog-main-content {
+    margin-left: 0 !important;
+  }
 }
 
 /* Main Content */
 .blog-main-content {
   max-width: 800px;
+  margin-left: 5rem;
 }
 
 /* Featured Image */
@@ -459,6 +463,7 @@
 }
 
 /* Links in Blog Content */
+
 .blog-article-content a {
   color: var(--blog-accent-purple);
   text-decoration: none;
@@ -672,7 +677,7 @@
   gap: 0.5rem;
   padding: 1rem 2.5rem;
   background: var(--blog-gradient-accent);
-  color: white;
+  color: white !important; /* Add !important to override any conflicting styles */
   text-decoration: none;
   font-weight: 600;
   font-size: 1.1rem;
@@ -684,10 +689,12 @@
 .blog-cta-button:hover {
   transform: translateY(-3px);
   box-shadow: 0 15px 40px rgba(129, 140, 248, 0.4);
+  color: white !important; /* Also add !important to hover state */
 }
 
 .cta-arrow {
   transition: transform 0.3s ease;
+  color: white; /* Ensure arrow is also white */
 }
 
 .blog-cta-button:hover .cta-arrow {
@@ -1406,7 +1413,7 @@
 .timeline::before {
   content: '';
   position: absolute;
-  left: 50%;
+  left: 30px; /* Always position line on the left */
   top: 0;
   bottom: 0;
   width: 2px;
@@ -1415,29 +1422,15 @@
     var(--blog-accent-pink) 0%,
     var(--blog-accent-purple) 100%
   );
-  transform: translateX(-50%);
-}
-
-@media (max-width: 768px) {
-  .timeline::before {
-    left: 30px;
-  }
 }
 
 .timeline-item {
   position: relative;
   margin-bottom: 3rem;
   display: grid;
-  grid-template-columns: 1fr auto 1fr;
+  grid-template-columns: auto 1fr; /* Always use mobile layout */
+  gap: 1rem;
   align-items: center;
-  gap: 2rem;
-}
-
-@media (max-width: 768px) {
-  .timeline-item {
-    grid-template-columns: auto 1fr;
-    gap: 1rem;
-  }
 }
 
 .timeline-marker {
@@ -1672,7 +1665,7 @@
 }
 
 .blog-sources h3 {
-  font-size: 1.5rem;
+  font-size: 1rem;
   margin-bottom: 1.5rem;
   color: var(--blog-accent-purple);
 }
@@ -1687,7 +1680,7 @@
   position: relative;
   padding-left: 2rem;
   margin-bottom: 0.75rem;
-  font-size: 0.9rem;
+  font-size: 0.6rem;
   color: var(--blog-text-secondary);
   line-height: 1.6;
   counter-increment: source-counter;
