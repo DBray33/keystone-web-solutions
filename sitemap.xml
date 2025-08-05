@@ -2,107 +2,132 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://keystonewebsolutions.com/</loc>
-    <lastmod>2025-02-26</lastmod>
+    <lastmod>2025-08-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <!-- Services Pages -->
   <url>
     <loc>https://keystonewebsolutions.com/services/content-creation</loc>
-    <lastmod>2025-02-26</lastmod>
+    <lastmod>2025-08-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://keystonewebsolutions.com/services/custom-web-design</loc>
-    <lastmod>2025-02-26</lastmod>
+    <lastmod>2025-08-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://keystonewebsolutions.com/services/digital-marketing</loc>
-    <lastmod>2025-02-26</lastmod>
+    <lastmod>2025-08-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://keystonewebsolutions.com/services/pagespeed</loc>
-    <lastmod>2025-02-26</lastmod>
+    <lastmod>2025-08-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://keystonewebsolutions.com/services/responsive-design</loc>
-    <lastmod>2025-02-26</lastmod>
+    <lastmod>2025-08-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://keystonewebsolutions.com/services/seo</loc>
-    <lastmod>2025-02-26</lastmod>
+    <lastmod>2025-08-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-    <!-- About Pages -->
+  <!-- About Pages -->
   <url>
     <loc>https://keystonewebsolutions.com/about/about-us</loc>
-    <lastmod>2025-02-26</lastmod>
+    <lastmod>2025-08-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://keystonewebsolutions.com/about/blog</loc>
-    <lastmod>2025-02-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2025-08-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://keystonewebsolutions.com/about/faq</loc>
-    <lastmod>2025-02-26</lastmod>
+    <lastmod>2025-08-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://keystonewebsolutions.com/about/jobs</loc>
-    <lastmod>2025-02-26</lastmod>
+    <lastmod>2025-08-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- Blog Pages - UPDATED WITH CORRECT URLs -->
+  <url>
+    <loc>https://keystonewebsolutions.com/blogs/website-cost-analysis-2025</loc>
+    <lastmod>2025-08-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://keystonewebsolutions.com/blogs/custom-coded-website-benefits</loc>
+    <lastmod>2025-08-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-    <!-- Blog Pages -->
   <url>
-    <loc>https://keystonewebsolutions.com/blogs/blog1</loc>
-    <lastmod>2025-02-26</lastmod>
+    <loc>https://keystonewebsolutions.com/blogs/cms-platform-limitations-performance-security</loc>
+    <lastmod>2025-08-04</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://keystonewebsolutions.com/blogs/blog2</loc>
-    <lastmod>2025-02-26</lastmod>
+    <loc>https://keystonewebsolutions.com/blogs/web-development-trends-2024-predictions-2025</loc>
+    <lastmod>2025-08-04</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://keystonewebsolutions.com/blogs/blog3</loc>
-    <lastmod>2025-02-26</lastmod>
+    <loc>https://keystonewebsolutions.com/blogs/small-business-website-design-principles</loc>
+    <lastmod>2025-08-04</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://keystonewebsolutions.com/blogs/blog4</loc>
-    <lastmod>2025-02-26</lastmod>
+    <loc>https://keystonewebsolutions.com/blogs/responsive-design-benefits-modern-websites</loc>
+    <lastmod>2025-08-04</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://keystonewebsolutions.com/blogs/blog5</loc>
-    <lastmod>2025-02-26</lastmod>
+    <loc>https://keystonewebsolutions.com/blogs/professional-web-designer-business-benefits</loc>
+    <lastmod>2025-08-04</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://keystonewebsolutions.com/blogs/blog6</loc>
-    <lastmod>2025-02-26</lastmod>
+    <loc>https://keystonewebsolutions.com/blogs/improving-user-experience-for-local-searches</loc>
+    <lastmod>2025-08-04</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
+  </url>
+  <!-- Footer Pages -->
+  <url>
+    <loc>https://keystonewebsolutions.com/footer/privacy</loc>
+    <lastmod>2025-08-04</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://keystonewebsolutions.com/footer/terms</loc>
+    <lastmod>2025-08-04</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
   </url>
 </urlset>
