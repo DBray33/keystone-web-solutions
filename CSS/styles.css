@@ -1114,6 +1114,10 @@ textarea::placeholder {
   filter: drop-shadow(0 0 10px rgba(16, 185, 129, 0.5));
 }
 
+.logo-banner-container {
+  margin-bottom: 0;
+}
+
 @keyframes fillCircle {
   to {
     stroke-dashoffset: 0;
@@ -1272,14 +1276,14 @@ textarea::placeholder {
   overflow: hidden;
   background: linear-gradient(180deg, #0a0a0a, #151515);
   padding: 5rem 0;
-  margin: 5rem 0;
+  /* margin: 5rem 0; */
 }
 
 @media (max-width: 768px) {
   .hp-device-demo-section {
     min-height: auto;
-    padding: 2rem 0; /* Reduced from 3rem */
-    margin: 2rem 0; /* Reduced from 3rem */
+    /* padding: 2rem 0; 
+    margin: 2rem 0;  */
   }
 }
 
