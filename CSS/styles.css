@@ -604,8 +604,8 @@ textarea::placeholder {
 }
 
 /* ===================================
-  MAIN CONTENT - DARK THEME
-  =================================== */
+ MAIN CONTENT - DARK THEME
+ =================================== */
 /* Screen reader only - for SEO */
 .sr-only {
   position: absolute;
@@ -772,14 +772,14 @@ textarea::placeholder {
   font-size: clamp(2rem, 5vw, 3.5rem);
   font-weight: 300;
   color: #94a3b8;
-  margin: 0 0 10px 0;
+  margin: 0 0 20px 0;
   letter-spacing: -0.02em;
 }
 
 .hero-title-main {
   font-size: clamp(3rem, 8vw, 6rem);
   font-weight: 800;
-  margin: 0;
+  margin: 10px 0 0 0;
   line-height: 0.9;
   position: relative;
   background: linear-gradient(
@@ -1533,7 +1533,7 @@ textarea::placeholder {
   }
 }
 
-/* FIX: Set initial scale and sizes */
+/* Set initial scale and sizes */
 .hp-showcase-frame {
   width: 320px;
   height: 480px;
