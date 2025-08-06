@@ -1539,7 +1539,7 @@
         <!-- Device Demo - Independent from header -->
         <div class="hp-device-showcase">
           <div class="hp-showcase-container">
-            <div class="hp-showcase-frame">
+            <div class="hp-showcase-frame mobile">
               <div class="hp-showcase-screen">
                 <div class="hp-preview-content">
                   <div class="hp-preview-header">Keystone Web Solutions</div>
@@ -3910,140 +3910,100 @@
     <script>
       // Homepage Device Demo Auto-Resize Functionality
       document.addEventListener('DOMContentLoaded', function () {
-        // Get the device frame
-        const deviceFrame = document.querySelector('.hp-showcase-frame');
-        if (!deviceFrame) return;
+        // Wait for elements to be ready
+        setTimeout(function () {
+          // Get the device frame
+          const deviceFrame = document.querySelector('.hp-showcase-frame');
+          if (!deviceFrame) return;
 
-        // Device sizes configuration
-        const deviceSizes = [
-          { class: 'mobile', label: 'Mobile' },
-          { class: 'tablet', label: 'Tablet' },
-          { class: 'desktop', label: 'Desktop' },
-        ];
+          // Device sizes configuration
+          const deviceSizes = [
+            { class: 'mobile', label: 'Mobile' },
+            { class: 'tablet', label: 'Tablet' },
+            { class: 'desktop', label: 'Desktop' },
+          ];
 
-        let currentSizeIndex = 0;
-        let resizeInterval;
+          // Start at index 1 since mobile is default in HTML
+          let currentSizeIndex = 1;
+          let resizeInterval;
 
-        // Function to cycle through device sizes
-        function cycleDeviceSize() {
-          // Remove all size classes
-          deviceFrame.classList.remove('mobile', 'tablet', 'desktop');
+          // Function to cycle through device sizes
+          function cycleDeviceSize() {
+            // Remove all size classes
+            deviceFrame.classList.remove('mobile', 'tablet', 'desktop');
 
-          // Add a transitioning class to smooth the animation
-          deviceFrame.style.transition =
-            'all 0.8s cubic-bezier(0.4, 0, 0.2, 1)';
+            // Add the current size class
+            deviceFrame.classList.add(deviceSizes[currentSizeIndex].class);
 
-          // Add the current size class
-          deviceFrame.classList.add(deviceSizes[currentSizeIndex].class);
-
-          // Move to next size
-          currentSizeIndex = (currentSizeIndex + 1) % deviceSizes.length;
-        }
-
-        // Start the auto-resize when section is in view
-        const observer = new IntersectionObserver(
-          (entries) => {
-            entries.forEach((entry) => {
-              if (entry.isIntersecting) {
-                // Start cycling if not already started
-                if (!resizeInterval) {
-                  // Set initial size
-                  cycleDeviceSize();
-
-                  // Start interval for continuous cycling
-                  resizeInterval = setInterval(cycleDeviceSize, 3000);
-                }
-              } else {
-                // Stop cycling when out of view
-                if (resizeInterval) {
-                  clearInterval(resizeInterval);
-                  resizeInterval = null;
-                }
-              }
-            });
-          },
-          {
-            threshold: 0.3, // Trigger when 30% of section is visible
+            // Move to next size
+            currentSizeIndex = (currentSizeIndex + 1) % deviceSizes.length;
           }
-        );
 
-        // Observe the device demo section
-        const demoSection = document.querySelector('.hp-device-demo-section');
-        if (demoSection) {
-          observer.observe(demoSection);
-        }
+          // Start the auto-resize when section is in view
+          const observer = new IntersectionObserver(
+            (entries) => {
+              entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                  // Start cycling if not already started
+                  if (!resizeInterval) {
+                    // Immediately transition to next size
+                    cycleDeviceSize();
 
-        // Optional: Add manual controls if needed
-        const addManualControls = false; // Set to true if you want manual buttons
-
-        if (addManualControls) {
-          const controlsHTML = `
-            <div class="hp-device-controls">
-              <button class="hp-control-btn" data-size="mobile">Mobile</button>
-              <button class="hp-control-btn" data-size="tablet">Tablet</button>
-              <button class="hp-control-btn" data-size="desktop">Desktop</button>
-            </div>
-          `;
-
-          // Add controls after the device showcase
-          const showcaseContainer = document.querySelector(
-            '.hp-showcase-container'
-          );
-          if (showcaseContainer) {
-            showcaseContainer.insertAdjacentHTML('afterend', controlsHTML);
-
-            // Add click handlers
-            document.querySelectorAll('.hp-control-btn').forEach((btn) => {
-              btn.addEventListener('click', function () {
-                // Stop auto-resize
-                if (resizeInterval) {
-                  clearInterval(resizeInterval);
-                  resizeInterval = null;
+                    // Then continue cycling every 2.5 seconds
+                    resizeInterval = setInterval(cycleDeviceSize, 2500);
+                  }
+                } else {
+                  // Stop cycling when out of view
+                  if (resizeInterval) {
+                    clearInterval(resizeInterval);
+                    resizeInterval = null;
+                  }
                 }
-
-                // Apply selected size
-                deviceFrame.classList.remove('mobile', 'tablet', 'desktop');
-                deviceFrame.classList.add(this.dataset.size);
-
-                // Update active button
-                document
-                  .querySelectorAll('.hp-control-btn')
-                  .forEach((b) => b.classList.remove('active'));
-                this.classList.add('active');
               });
-            });
-          }
-        }
-
-        // Add some dynamic content changes based on device size
-        const heroTitle = document.querySelector('.hp-preview-title');
-        const heroSubtitle = document.querySelector('.hp-preview-subtitle');
-
-        // Create a mutation observer to watch for class changes
-        const classMutationObserver = new MutationObserver((mutations) => {
-          mutations.forEach((mutation) => {
-            if (mutation.attributeName === 'class') {
-              // Update content based on current device
-              if (deviceFrame.classList.contains('mobile')) {
-                if (heroTitle) heroTitle.textContent = 'Mobile First';
-                if (heroSubtitle)
-                  heroSubtitle.textContent = 'Optimized for Touch';
-              } else if (deviceFrame.classList.contains('tablet')) {
-                if (heroTitle) heroTitle.textContent = 'Tablet Perfect';
-                if (heroSubtitle) heroSubtitle.textContent = 'Flexible Layouts';
-              } else if (deviceFrame.classList.contains('desktop')) {
-                if (heroTitle) heroTitle.textContent = 'Desktop Ready';
-                if (heroSubtitle) heroSubtitle.textContent = 'Full Experience';
-              }
+            },
+            {
+              threshold: 0.1, // Trigger when 10% visible
             }
-          });
-        });
+          );
 
-        // Start observing the device frame for class changes
-        classMutationObserver.observe(deviceFrame, {
-          attributes: true,
-          attributeFilter: ['class'],
-        });
+          // Observe the device demo section
+          const demoSection = document.querySelector('.hp-device-demo-section');
+          if (demoSection) {
+            observer.observe(demoSection);
+          }
+
+          // Add dynamic content changes based on device size
+          const heroTitle = document.querySelector('.hp-preview-title');
+          const heroSubtitle = document.querySelector('.hp-preview-subtitle');
+
+          // Create a mutation observer to watch for class changes
+          const classMutationObserver = new MutationObserver((mutations) => {
+            mutations.forEach((mutation) => {
+              if (mutation.attributeName === 'class') {
+                // Update content based on current device
+                if (deviceFrame.classList.contains('mobile')) {
+                  if (heroTitle) heroTitle.textContent = 'Mobile First';
+                  if (heroSubtitle)
+                    heroSubtitle.textContent = 'Optimized for Touch';
+                } else if (deviceFrame.classList.contains('tablet')) {
+                  if (heroTitle) heroTitle.textContent = 'Tablet Perfect';
+                  if (heroSubtitle)
+                    heroSubtitle.textContent = 'Flexible Layouts';
+                } else if (deviceFrame.classList.contains('desktop')) {
+                  if (heroTitle) heroTitle.textContent = 'Desktop Ready';
+                  if (heroSubtitle)
+                    heroSubtitle.textContent = 'Full Experience';
+                }
+              }
+            });
+          });
+
+          // Start observing the device frame for class changes
+          classMutationObserver.observe(deviceFrame, {
+            attributes: true,
+            attributeFilter: ['class'],
+          });
+        }, 100); // Small delay to ensure DOM is ready
       });
     </script>
     <!-- Apex Charts library & half gauge -->

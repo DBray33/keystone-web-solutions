@@ -1276,21 +1276,12 @@ textarea::placeholder {
   overflow: hidden;
   background: linear-gradient(180deg, #0a0a0a, #151515);
   padding: 5rem 0;
-  /* margin: 5rem 0; */
+  padding-top: 5rem;
 }
 
 @media (max-width: 768px) {
   .hp-device-demo-section {
     min-height: auto;
-    /* padding: 2rem 0; 
-    margin: 2rem 0;  */
-  }
-}
-
-@media (max-width: 480px) {
-  .hp-device-demo-section {
-    padding: 1rem 0; /* Even less padding on small screens */
-    margin: 1rem 0;
   }
 }
 
@@ -1507,12 +1498,6 @@ textarea::placeholder {
   width: 100%;
 }
 
-@media (max-width: 768px) {
-  .hp-device-showcase {
-    padding: 1rem 0; /* Reduced padding on mobile */
-  }
-}
-
 @media (max-width: 480px) {
   .hp-device-showcase {
     padding: 0; /* No padding on small mobile */
@@ -1540,21 +1525,41 @@ textarea::placeholder {
 @keyframes hp-device-entrance {
   from {
     opacity: 0;
-    transform: translateX(30px) scale(0.9);
+    transform: translateX(30px);
   }
   to {
     opacity: 1;
-    transform: translateX(0) scale(1);
+    transform: translateX(0);
   }
 }
 
-/* Responsive sizes - maintain aspect ratios */
+/* FIX: Set initial scale and sizes */
 .hp-showcase-frame {
   width: 320px;
   height: 480px;
   transform-origin: center center;
 }
 
+/* Apply scale immediately to prevent jump */
+@media (max-width: 1024px) {
+  .hp-showcase-frame {
+    transform: scale(0.8) !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .hp-showcase-frame {
+    transform: scale(0.6) !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .hp-showcase-frame {
+    transform: scale(0.45) !important;
+  }
+}
+
+/* Size variations - removed redundant scale rules */
 .hp-showcase-frame.tablet {
   width: 480px;
   height: 360px;
@@ -1563,31 +1568,6 @@ textarea::placeholder {
 .hp-showcase-frame.desktop {
   width: 600px;
   height: 400px;
-}
-
-/* Single scale for all device sizes on each breakpoint */
-@media (max-width: 1024px) {
-  .hp-showcase-frame,
-  .hp-showcase-frame.tablet,
-  .hp-showcase-frame.desktop {
-    transform: scale(0.8);
-  }
-}
-
-@media (max-width: 768px) {
-  .hp-showcase-frame,
-  .hp-showcase-frame.tablet,
-  .hp-showcase-frame.desktop {
-    transform: scale(0.6);
-  }
-}
-
-@media (max-width: 480px) {
-  .hp-showcase-frame,
-  .hp-showcase-frame.tablet,
-  .hp-showcase-frame.desktop {
-    transform: scale(0.45);
-  }
 }
 
 .hp-showcase-screen {
@@ -1737,6 +1717,20 @@ textarea::placeholder {
 .hp-showcase-frame.desktop .hp-preview-features {
   grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
+}
+
+/* Hide device frame initially on mobile to prevent size jump */
+@media (max-width: 768px) {
+  .hp-showcase-frame {
+    opacity: 0;
+    animation: hp-mobile-fade-in 0.5s ease-out 0.3s forwards;
+  }
+}
+
+@keyframes hp-mobile-fade-in {
+  to {
+    opacity: 1;
+  }
 }
 
 /* ===================================
