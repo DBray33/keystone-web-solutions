@@ -1,0 +1,8 @@
+# LLMs.txt - Guidelines for Large Language Models
+# See: https://llmspec.org/
+
+User-agent: *
+Policy: allow
+
+# Contact
+Contact: https://keystonewebsolutions.com/contact
