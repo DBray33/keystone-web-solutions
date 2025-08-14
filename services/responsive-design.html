@@ -862,66 +862,115 @@
             </div>
           </div>
 
-          <!-- Technical Implementation -->
-          <div class="rd-technical-section">
-            <h2 class="rd-section-title">How We Build Responsive Excellence</h2>
-            <div class="rd-tech-grid">
-              <div class="rd-tech-card">
-                <div class="rd-tech-header">
-                  <span class="rd-tech-number">01</span>
-                  <h3>Fluid Grid Systems</h3>
-                </div>
-                <div class="rd-code-snippet">
-                  <pre><code>/* Flexible grid that adapts to any screen */
-.container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-}</code></pre>
-                </div>
-                <p>
-                  Dynamic layouts that automatically adjust to provide optimal
-                  viewing on any device.
-                </p>
+          <div class="rd-tech-grid">
+            <!-- 01 -->
+            <article class="rd-tech-card">
+              <div class="rd-tech-header">
+                <span class="rd-tech-number">01</span>
+                <h3>Fluid Grid Systems</h3>
               </div>
+              <div class="rd-code-snippet">
+                <pre><code>/* Fluid grid that scales smoothly */
+          .grid {
+            display: grid;
+            grid-template-columns: repeat(
+              auto-fit,
+              minmax(clamp(16rem, 33vw, 22rem), 1fr)
+            );
+            gap: clamp(1rem, 2vw, 2rem);
+          }</code></pre>
+              </div>
+              <p>
+                Auto‑filling cards that grow/shrink with viewport, using
+                <code>minmax</code> + <code>clamp</code> for graceful scaling
+                and consistent gaps.
+              </p>
+            </article>
 
-              <div class="rd-tech-card">
-                <div class="rd-tech-header">
-                  <span class="rd-tech-number">02</span>
-                  <h3>Smart Media Queries</h3>
-                </div>
-                <div class="rd-code-snippet">
-                  <pre><code>/* Tailored styles for every device */
-@media (max-width: 768px) {
-  .hero-title { font-size: 2rem; }
-  .navigation { transform: translateX(-100%); }
-}</code></pre>
-                </div>
-                <p>
-                  Precision breakpoints ensure perfect presentation from 4K
-                  monitors to compact smartphones.
-                </p>
+            <!-- 02 -->
+            <article class="rd-tech-card">
+              <div class="rd-tech-header">
+                <span class="rd-tech-number">02</span>
+                <h3>Smart Media Queries</h3>
               </div>
+              <div class="rd-code-snippet">
+                <pre><code>/* Mobile-first type scale with clamp */
+          :root {
+            --step-0: clamp(1rem, 0.75rem + 1vw, 1.125rem);
+            --step-3: clamp(1.5rem, 1rem + 3vw, 2.5rem);
+          }
+          body { font-size: var(--step-0); }
+          h1   { font-size: var(--step-3); }
+          
+          /* Only add breakpoints where layout truly changes */
+          @media (min-width: 48rem) { .nav { grid-auto-flow: column; } }
+          @media (min-width: 80rem) { .layout { grid-template-columns: 1fr 60ch 1fr; } }</code></pre>
+              </div>
+              <p>
+                Use fluid type by default; sprinkle in breakpoints only for
+                structural changes, not cosmetic nudges.
+              </p>
+            </article>
 
-              <div class="rd-tech-card">
-                <div class="rd-tech-header">
-                  <span class="rd-tech-number">03</span>
-                  <h3>Touch-First Design</h3>
-                </div>
-                <div class="rd-code-snippet">
-                  <pre><code>/* Touch-optimized interactions */
-.button {
-  min-height: 44px;
-  padding: 12px 24px;
-  touch-action: manipulation;
-}</code></pre>
-                </div>
-                <p>
-                  Interfaces designed for fingers, not just cursors, with proper
-                  spacing and touch targets.
-                </p>
+            <!-- 03 -->
+            <article class="rd-tech-card">
+              <div class="rd-tech-header">
+                <span class="rd-tech-number">03</span>
+                <h3>Touch‑First Design</h3>
               </div>
-            </div>
+              <div class="rd-code-snippet">
+                <pre><code>/* Comfortable targets + input modality queries */
+          button, .btn, a[role="button"] {
+            min-height: 44px;
+            padding: 12px 18px;
+          }
+          
+          /* Desktop hover vs. touch focus */
+          @media (hover: hover) and (pointer: fine) {
+            .menu:hover .submenu { opacity: 1; }
+          }
+          @media (hover: none) {
+            .menu:focus-within .submenu { opacity: 1; }
+          }
+          
+          /* Smooth gestures, no scroll chaining issues */
+          html { touch-action: manipulation; }
+          body { overscroll-behavior: contain; }</code></pre>
+              </div>
+              <p>
+                We optimize interactions for fingers first, then enhance for
+                precise cursors without breaking touch UX.
+              </p>
+            </article>
+
+            <!-- 04 -->
+            <article class="rd-tech-card">
+              <div class="rd-tech-header">
+                <span class="rd-tech-number">04</span>
+                <h3>Performance First</h3>
+              </div>
+              <div class="rd-code-snippet">
+                <pre><code>/* Responsive image with zero CLS */
+          &lt;img
+            src="/assets/hero/home-1200.webp"
+            srcset="/assets/hero/home-800.webp 800w,
+                    /assets/hero/home-1200.webp 1200w,
+                    /assets/hero/home-1600.webp 1600w"
+            sizes="(max-width: 768px) 92vw, (max-width: 1200px) 50vw, 800px"
+            width="800" height="500"
+            loading="lazy" decoding="async"
+            alt="Hero section preview"&gt;
+          
+          /* Idle-load non-critical JS */
+          if ('requestIdleCallback' in window) {
+            requestIdleCallback(() =&gt; import('/js/roi-calculator.js'));
+          }</code></pre>
+              </div>
+              <p>
+                Adaptive images with explicit dimensions prevent layout shift;
+                non‑critical scripts are deferred to keep pages snappy.
+              </p>
+            </article>
           </div>
 
           <!-- ROI Calculator -->
