@@ -1,0 +1,95 @@
+# -----------------------------------------
+# Canonical: force HTTPS + apex (no-www)
+# -----------------------------------------
+http://keystonewebsolutions.com/*   https://keystonewebsolutions.com/:splat   301!
+http://www.keystonewebsolutions.com/*  https://keystonewebsolutions.com/:splat 301!
+https://www.keystonewebsolutions.com/* https://keystonewebsolutions.com/:splat 301!
+
+# -----------------------------------------
+# Fix old SERVICES root
+# -----------------------------------------
+/services        /services/custom-web-design   301
+/services/       /services/custom-web-design   301
+
+# -----------------------------------------
+# Blog placeholders -> correct slugs
+# (map any legacy /blogs/blogN links)
+# -----------------------------------------
+/blogs/blog1      /blogs/how-much-does-website-cost-2025                       301
+/blogs/blog1/     /blogs/how-much-does-website-cost-2025                       301
+/blogs/blog1.html /blogs/how-much-does-website-cost-2025                       301
+
+/blogs/blog2      /blogs/custom-coded-website-benefits                          301
+/blogs/blog2/     /blogs/custom-coded-website-benefits                          301
+/blogs/blog2.html /blogs/custom-coded-website-benefits                          301
+
+/blogs/blog3      /blogs/cms-platform-limitations-performance-security          301
+/blogs/blog3/     /blogs/cms-platform-limitations-performance-security          301
+/blogs/blog3.html /blogs/cms-platform-limitations-performance-security          301
+
+/blogs/blog4      /blogs/web-development-trends-2024-predictions-2025           301
+/blogs/blog4/     /blogs/web-development-trends-2024-predictions-2025           301
+/blogs/blog4.html /blogs/web-development-trends-2024-predictions-2025           301
+
+/blogs/blog5      /blogs/small-business-website-design-principles               301
+/blogs/blog5/     /blogs/small-business-website-design-principles               301
+/blogs/blog5.html /blogs/small-business-website-design-principles               301
+
+/blogs/blog6      /blogs/responsive-design-benefits-modern-websites             301
+/blogs/blog6/     /blogs/responsive-design-benefits-modern-websites             301
+/blogs/blog6.html /blogs/responsive-design-benefits-modern-websites             301
+
+/blogs/blog7      /blogs/professional-web-designer-business-benefits            301
+/blogs/blog7/     /blogs/professional-web-designer-business-benefits            301
+/blogs/blog7.html /blogs/professional-web-designer-business-benefits            301
+
+/blogs/blog8      /blogs/improving-user-experience-for-local-searches           301
+/blogs/blog8/     /blogs/improving-user-experience-for-local-searches           301
+/blogs/blog8.html /blogs/improving-user-experience-for-local-searches           301
+
+# Some crawls showed /blogs/blog9 — point to the blog hub
+/blogs/blog9      /about/blog                                                    301
+/blogs/blog9/     /about/blog                                                    301
+/blogs/blog9.html /about/blog                                                    301
+
+# Catch‑all for any other /blogs/blog* residue
+/blogs/blog*      /about/blog                                                    301
+
+# Convenience: /blogs (root) -> blog hub
+/blogs            /about/blog                                                    301
+/blogs/           /about/blog                                                    301
+
+# -----------------------------------------
+# .html -> extensionless (key public pages)
+# -----------------------------------------
+
+# Home
+/index.html                 /                                                  301
+
+# Pricing
+/pricing.html               /pricing                                           301
+
+# Services pages
+/services/content-creation.html    /services/content-creation                  301
+/services/custom-web-design.html   /services/custom-web-design                 301
+/services/digital-marketing.html   /services/digital-marketing                 301
+/services/pagespeed.html           /services/pagespeed                         301
+/services/responsive-design.html   /services/responsive-design                 301
+/services/seo.html                 /services/seo                               301
+
+# About pages
+/about/about-us.html               /about/about-us                             301
+/about/blog.html                   /about/blog                                 301
+/about/faq.html                    /about/faq                                  301
+/about/jobs.html                   /about/jobs                                 301
+
+# Footer pages
+/footer/privacy.html               /footer/privacy                             301
+/footer/terms.html                 /footer/terms                               301
+
+# -----------------------------------------
+# (Optional) Old ecommerce route is disallowed in robots.
+# If it ever gets hit, make it 410 Gone (or redirect where you want).
+# -----------------------------------------
+/services/ecommerce-solutions           /services/custom-web-design            301
+/services/ecommerce-solutions.html      /services/custom-web-design            301
