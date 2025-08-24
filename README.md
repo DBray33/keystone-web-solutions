@@ -179,16 +179,22 @@ No hidden fees. No surprises. Just honest, upfront pricing.
 
 ## Success Stories
 
-### Real Results for Pennsylvania Businesses
+### Real 5-Star Google Reviews from Pennsylvania Businesses
 
-> **"Our website loads 3x faster than our competitor's WordPress site. We've seen a 45% increase in online inquiries since launching."**  
-> — Sarah M., Reading Restaurant Owner
+> **"Dan did a fantastic job. Easy to work with, quick turnaround, and solid results. Highly satisfied with Keystone Web Solutions."**  
+> — Colton Campbell
 
-> **"Dan built us a beautiful, fast website for half the cost of other agencies. The monthly support is incredible."**  
-> — Mike T., Lancaster Law Firm
+> **"We were using Squarespace for our brewery's website, but it felt too limiting... Dan went above and beyond delivering a sleek, professional design that perfectly captured my vision."**  
+> — Joan Bray & Alex Jozwiak
 
-> **"PageSpeed score went from 34 to 96. Our bounce rate dropped 60% in the first month."**  
-> — Jennifer R., Allentown E-commerce
+> **"I couldn't be happier with the website Dan and his team built for our company. He was incredibly professional in all aspects."**  
+> — Ronnie Christ
+
+> **"Keystone Web Solutions exceeded our expectations with a modern, custom-coded website that perfectly reflects our brand."**  
+> — Brooke Ryan
+
+> **"Dan & co are awesome!! Helped redesign my website and restructured our on page content to rank higher. Highly recommend!"**  
+> — Alex Peek
 
 ---
 
