@@ -139,46 +139,7 @@
 .navbar-links > li > a:hover {
   color: var(--primary-neon);
   text-shadow: 0 0 10px var(--primary-neon);
-}
-
-/* Glitch effect on hover */
-.navbar-links a::before {
-  content: attr(data-text);
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  padding: 0.5rem 1rem;
-  color: var(--primary-neon);
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  transition: clip 0.3s;
-}
-
-.navbar-links a:hover::before {
-  animation: glitch 0.3s;
-}
-
-@keyframes glitch {
-  0% {
-    clip: rect(42px, 9999px, 44px, 0);
-  }
-  20% {
-    clip: rect(12px, 9999px, 59px, 0);
-  }
-  40% {
-    clip: rect(85px, 9999px, 90px, 0);
-  }
-  60% {
-    clip: rect(25px, 9999px, 90px, 0);
-  }
-  80% {
-    clip: rect(15px, 9999px, 60px, 0);
-  }
-  100% {
-    clip: rect(0, 9999px, 9999px, 0);
-  }
+  transform: translateY(-2px);
 }
 
 /* Nav underline animation */
@@ -911,7 +872,7 @@
 
 /* Scrolled Logo State */
 .scrolled .standalone-logo {
-  transform: translate(20px, 9px);
+  transform: translate(20px, 6px);
 }
 
 .scrolled .logo-image {
@@ -919,16 +880,6 @@
 }
 
 /* Media Queries for Logo */
-@media (max-width: 1415px) {
-  .standalone-logo {
-    top: 14px;
-  }
-
-  .scrolled .standalone-logo {
-    transform: translate(20px, 8px);
-  }
-}
-
 @media (max-width: 1180px) {
   .logo-primary,
   .logo-secondary {
@@ -939,13 +890,7 @@
     height: 4.5rem;
   }
 
-  .standalone-logo {
-    top: 16px;
-  }
-
-  .scrolled .standalone-logo {
-    transform: translate(20px, 7px);
-  }
+ */
 }
 
 @media (max-width: 935px) {
