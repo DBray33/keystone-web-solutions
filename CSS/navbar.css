@@ -591,6 +591,26 @@
   transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   z-index: 1001;
   overflow-y: auto;
+  overflow-x: hidden;
+}
+
+/* Hide scrollbar by default but keep functionality */
+.mobile-fullscreen-menu::-webkit-scrollbar {
+  width: 6px;
+}
+
+.mobile-fullscreen-menu::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.mobile-fullscreen-menu::-webkit-scrollbar-thumb {
+  background: var(--primary-neon);
+  border-radius: 3px;
+  opacity: 0.5;
+}
+
+.mobile-fullscreen-menu::-webkit-scrollbar-thumb:hover {
+  background: var(--secondary-neon);
 }
 
 .mobile-fullscreen-menu.active {
