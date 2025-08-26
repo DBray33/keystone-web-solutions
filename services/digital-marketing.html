@@ -687,7 +687,7 @@
                   </div>
                   <div class="dm-tool-name">Instagram</div>
                 </div>
-                <div class="dm-tool-item">
+                <!-- <div class="dm-tool-item">
                   <div class="dm-tool-icon">
                     <svg
                       viewBox="0 0 24 24"
@@ -701,7 +701,7 @@
                     </svg>
                   </div>
                   <div class="dm-tool-name">LinkedIn</div>
-                </div>
+                </div> -->
                 <div class="dm-tool-item">
                   <div class="dm-tool-icon">
                     <svg
@@ -715,7 +715,7 @@
                   </div>
                   <div class="dm-tool-name">Facebook Ads</div>
                 </div>
-                <div class="dm-tool-item">
+                <!-- <div class="dm-tool-item">
                   <div class="dm-tool-icon">
                     <svg
                       viewBox="0 0 24 24"
@@ -728,8 +728,8 @@
                     </svg>
                   </div>
                   <div class="dm-tool-name">Mailchimp</div>
-                </div>
-                <div class="dm-tool-item">
+                </div> -->
+                <!-- <div class="dm-tool-item">
                   <div class="dm-tool-icon">
                     <svg
                       viewBox="0 0 24 24"
@@ -741,7 +741,7 @@
                     </svg>
                   </div>
                   <div class="dm-tool-name">HubSpot</div>
-                </div>
+                </div> -->
                 <div class="dm-tool-item">
                   <div class="dm-tool-icon">
                     <svg
@@ -1365,9 +1365,9 @@
                 <a href="#popup" class="dm-cta-button"
                   >Get Your Free Strategy Session</a
                 >
-                <a href="#" class="dm-cta-button dm-cta-button-secondary"
+                <!-- <a href="#" class="dm-cta-button dm-cta-button-secondary"
                   >View Case Studies</a
-                >
+                > -->
               </div>
             </div>
           </section>
@@ -1481,20 +1481,65 @@
         });
       };
 
+      // Digital Marketing Stats Counter Animation
+      function animateDMStats() {
+        const dmCounters = document.querySelectorAll(
+          '.dm-stats-section .dm-stat-number'
+        );
+
+        dmCounters.forEach((counter) => {
+          const target = parseFloat(counter.getAttribute('data-target'));
+          const duration = 2500; // Increased to 2.5 seconds
+          const startTime = performance.now();
+
+          const easeOutQuad = (t) => t * (2 - t); // Smooth easing function
+
+          const updateDMCounter = (currentTime) => {
+            const elapsed = currentTime - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+
+            // Apply easing
+            const easedProgress = easeOutQuad(progress);
+            const current = easedProgress * target;
+
+            // Update display
+            if (target % 1 !== 0) {
+              counter.textContent = current.toFixed(1);
+            } else {
+              counter.textContent = Math.floor(current);
+            }
+
+            // Continue animation if not complete
+            if (progress < 1) {
+              requestAnimationFrame(updateDMCounter);
+            } else {
+              // Ensure final value is exact
+              if (target % 1 !== 0) {
+                counter.textContent = target.toFixed(1);
+              } else {
+                counter.textContent = target;
+              }
+            }
+          };
+
+          requestAnimationFrame(updateDMCounter);
+        });
+      }
+
       // Trigger counter animation when stats section is in view
-      const statsSection = document.querySelector('.dm-stats-section');
-      if (statsSection) {
-        const statsObserver = new IntersectionObserver(
+      const dmStatsSection = document.querySelector('.dm-stats-section');
+      if (dmStatsSection) {
+        const dmStatsObserver = new IntersectionObserver(
           (entries) => {
             if (entries[0].isIntersecting) {
-              animateCounters();
-              statsObserver.unobserve(statsSection);
+              animateDMStats();
+              dmStatsObserver.unobserve(dmStatsSection);
             }
           },
           { threshold: 0.3 }
         );
 
-        statsObserver.observe(statsSection);
+        dmStatsObserver.observe(dmStatsSection);
       }
 
       // Fade in animation for cards

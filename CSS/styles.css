@@ -2907,16 +2907,6 @@ textarea::placeholder {
   transform: scale(1.05);
 }
 
-.hp-blog-mag-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    to bottom,
-    transparent 0%,
-    rgba(0, 0, 0, 0.8) 100%
-  );
-}
-
 .hp-blog-mag-content {
   padding: 30px;
 }

@@ -4543,6 +4543,13 @@
   letter-spacing: 3px;
 }
 
+@media (max-width: 768px) {
+  .dm-hero-title {
+    font-size: 2rem;
+    letter-spacing: 1px;
+  }
+}
+
 @keyframes dmGradientShift {
   0%,
   100% {
@@ -4695,6 +4702,12 @@
   margin-bottom: 4rem;
 }
 
+@media (max-width: 768px) {
+  .dm-services-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 .dm-service-card {
   background: var(--dm-card-bg);
   border: 1px solid rgba(0, 255, 255, 0.2);
@@ -4797,6 +4810,12 @@
   z-index: 1;
 }
 
+@media (max-width: 768px) {
+  .dm-stats-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 .dm-stat-box {
   padding: 30px;
 }
@@ -4880,6 +4899,14 @@
   grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
   gap: 2rem;
   margin-top: 3rem;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .dm-tools-grid {
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  }
 }
 
 .dm-tool-item {
@@ -4890,6 +4917,10 @@
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .dm-tool-item:hover {
@@ -4904,6 +4935,9 @@
   margin: 0 auto 1rem;
   color: var(--dm-accent-purple);
   transition: color 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .dm-tool-item:hover .dm-tool-icon {
@@ -4919,6 +4953,7 @@
   font-size: 1rem;
   font-weight: 600;
   color: var(--dm-text-primary);
+  text-align: center;
 }
 
 /* Why Digital Marketing Section - Interactive Grid */
@@ -4933,6 +4968,12 @@
   gap: 2rem;
   max-width: 1200px;
   margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .dm-why-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 .dm-why-card {
@@ -5024,6 +5065,18 @@
   );
 }
 
+@media (max-width: 768px) {
+  .dm-approach-timeline::before {
+    left: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .dm-approach-timeline::before {
+    display: none;
+  }
+}
+
 .dm-approach-item {
   display: flex;
   align-items: center;
@@ -5079,6 +5132,20 @@
   z-index: 2;
 }
 
+@media (max-width: 768px) {
+  .dm-approach-icon {
+    width: 50px;
+    height: 50px;
+    margin-right: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .dm-approach-icon {
+    display: none;
+  }
+}
+
 .dm-approach-icon::after {
   content: '';
   position: absolute;
@@ -5104,6 +5171,18 @@
   padding: 1.5rem;
   flex: 1;
   transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .dm-approach-content {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .dm-approach-content {
+    margin-left: 0;
+  }
 }
 
 .dm-approach-content:hover {
@@ -5140,6 +5219,13 @@
   max-width: 1200px;
   margin: 0 auto;
   align-items: center;
+}
+
+@media (max-width: 768px) {
+  .dm-ppc-showcase {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
 }
 
 .dm-ppc-visual {
@@ -5212,6 +5298,12 @@
   gap: 2rem;
 }
 
+@media (max-width: 768px) {
+  .dm-ppc-features {
+    grid-template-columns: 1fr;
+  }
+}
+
 .dm-ppc-feature h3 {
   display: flex;
   align-items: center;
@@ -5250,6 +5342,12 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
+}
+
+@media (max-width: 768px) {
+  .dm-cro-cards {
+    grid-template-columns: 1fr;
+  }
 }
 
 .dm-cro-card {
@@ -5342,6 +5440,12 @@
   overflow: hidden;
 }
 
+@media (max-width: 480px) {
+  .dm-dashboard-main {
+    padding: 1.5rem;
+  }
+}
+
 .dm-dashboard-main::before {
   content: '';
   position: absolute;
@@ -5364,6 +5468,14 @@
   gap: 2rem;
 }
 
+@media (max-width: 768px) {
+  .dm-metric-item {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 1rem;
+  }
+}
+
 .dm-metric-label {
   color: var(--dm-text-secondary);
   font-size: 1rem;
@@ -5374,6 +5486,12 @@
   font-weight: 900;
   color: var(--dm-primary-neon);
   text-align: right;
+}
+
+@media (max-width: 768px) {
+  .dm-metric-value {
+    text-align: center;
+  }
 }
 
 .dm-metric-bar {
@@ -5413,6 +5531,12 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
+}
+
+@media (max-width: 768px) {
+  .dm-analytics-features {
+    grid-template-columns: 1fr;
+  }
 }
 
 .dm-analytics-feature {
@@ -5459,6 +5583,12 @@
   max-width: 800px;
   margin: 0 auto;
   backdrop-filter: blur(10px);
+}
+
+@media (max-width: 768px) {
+  .dm-cta-content {
+    padding: 3rem 1.5rem;
+  }
 }
 
 .dm-cta-title {
@@ -5523,98 +5653,6 @@
 .dm-fade-in.visible {
   opacity: 1;
   transform: translateY(0);
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  .dm-hero-title {
-    font-size: 2rem;
-    letter-spacing: 1px;
-  }
-
-  .dm-services-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .dm-stats-container {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .dm-tools-grid {
-    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-  }
-
-  .dm-cta-content {
-    padding: 3rem 1.5rem;
-  }
-
-  /* Why Section */
-  .dm-why-grid {
-    grid-template-columns: 1fr;
-  }
-
-  /* Approach Timeline */
-  .dm-approach-timeline::before {
-    left: 30px;
-  }
-
-  .dm-approach-icon {
-    width: 50px;
-    height: 50px;
-    margin-right: 1rem;
-  }
-
-  .dm-approach-content {
-    padding: 1rem;
-  }
-
-  /* PPC Section */
-  .dm-ppc-showcase {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
-
-  .dm-ppc-features {
-    grid-template-columns: 1fr;
-  }
-
-  /* CRO Cards */
-  .dm-cro-cards {
-    grid-template-columns: 1fr;
-  }
-
-  /* Analytics Dashboard */
-  .dm-metric-item {
-    grid-template-columns: 1fr;
-    text-align: center;
-    gap: 1rem;
-  }
-
-  .dm-metric-value {
-    text-align: center;
-  }
-
-  .dm-analytics-features {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width: 480px) {
-  .dm-approach-timeline::before {
-    display: none;
-  }
-
-  .dm-approach-icon {
-    display: none;
-  }
-
-  .dm-approach-content {
-    margin-left: 0;
-  }
-
-  .dm-dashboard-main {
-    padding: 1.5rem;
-  }
 }
 
 /* ================================
