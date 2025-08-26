@@ -21,6 +21,8 @@
 /* Base Navbar Styles */
 .navbar {
   position: fixed;
+  min-height: 100px;
+  height: 100px;
   top: 0;
   left: 0;
   z-index: 1000;
@@ -90,6 +92,8 @@
 .navbar.scrolled {
   top: 10px;
   left: auto;
+  min-height: 85px;
+  height: 85px;
   margin: 0 1rem;
   width: calc(100% - 2rem);
   border-radius: 15px;
