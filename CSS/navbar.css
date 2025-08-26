@@ -780,7 +780,7 @@
 /* Standalone Logo */
 .standalone-logo {
   position: fixed;
-  top: 16px;
+  top: 12px;
   left: 1rem;
   z-index: 9999;
   display: flex;
@@ -872,7 +872,7 @@
 
 /* Scrolled Logo State */
 .scrolled .standalone-logo {
-  transform: translate(20px, 6px);
+  transform: translate(20px, 9px);
 }
 
 .scrolled .logo-image {

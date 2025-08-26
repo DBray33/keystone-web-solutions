@@ -1011,14 +1011,14 @@
               Calculate Your Mobile Optimization ROI
             </h2>
 
-            <!-- Added explanation -->
+            <!-- Updated explanation with realistic numbers -->
             <p
               class="rd-section-subtitle"
               style="max-width: 800px; margin: 0 auto 3rem">
               See how much revenue you're leaving on the table with poor mobile
               experience. With 62% of web traffic coming from mobile devices,
               and responsive design typically improving mobile conversion rates
-              by 5x, the impact on your bottom line can be substantial.
+              by 20-50%, the impact on your bottom line can be substantial.
             </p>
 
             <div class="rd-roi-calculator">
@@ -1041,9 +1041,30 @@
                   <label>Average Order Value ($)</label>
                   <input type="number" id="orderValue" value="100" min="0" />
                 </div>
+                <div class="rd-roi-field">
+                  <label>Expected Mobile Improvement (%)</label>
+                  <select id="improvement">
+                    <option value="20">Conservative (20%)</option>
+                    <option value="35" selected>Moderate (35%)</option>
+                    <option value="50">Optimistic (50%)</option>
+                    <option value="100">Best Case (100%)</option>
+                  </select>
+                </div>
               </div>
 
               <div class="rd-roi-results">
+                <!-- Current Performance -->
+                <div class="rd-roi-current">
+                  <h4>Current Performance</h4>
+                  <div class="rd-roi-metric-small">
+                    <span class="rd-roi-label">Current Monthly Revenue</span>
+                    <span class="rd-roi-value-small" id="currentRevenue"
+                      >$0</span
+                    >
+                  </div>
+                </div>
+
+                <!-- Projected Improvement -->
                 <div class="rd-roi-metric">
                   <span class="rd-roi-label"
                     >Potential Monthly Revenue Increase</span
@@ -1054,12 +1075,19 @@
                   <span class="rd-roi-label">Annual Impact</span>
                   <span class="rd-roi-value" id="annualImpact">$0</span>
                 </div>
+
+                <!-- ROI Percentage -->
+                <div class="rd-roi-metric">
+                  <span class="rd-roi-label">Revenue Improvement</span>
+                  <span class="rd-roi-value" id="percentImprovement">0%</span>
+                </div>
+
                 <p class="rd-roi-note">
                   This calculator estimates the additional revenue from
                   improving your mobile conversion rate through responsive
-                  design. Based on industry averages: 62% of your traffic is
-                  mobile, and proper mobile optimization can improve conversions
-                  by 5x.
+                  design. Based on industry data: 62% of web traffic is mobile,
+                  where conversion rates typically lag behind desktop by 30-50%.
+                  Professional mobile optimization can close this gap.
                 </p>
               </div>
             </div>
@@ -1168,49 +1196,88 @@
         const visitorsInput = document.getElementById('visitors');
         const conversionInput = document.getElementById('conversion');
         const orderValueInput = document.getElementById('orderValue');
+        const improvementSelect = document.getElementById('improvement');
+        const currentRevenueEl = document.getElementById('currentRevenue');
         const revenueIncreaseEl = document.getElementById('revenueIncrease');
         const annualImpactEl = document.getElementById('annualImpact');
+        const percentImprovementEl =
+          document.getElementById('percentImprovement');
 
         function calculateROI() {
           const visitors = parseFloat(visitorsInput.value) || 0;
           const conversionRate = parseFloat(conversionInput.value) || 0;
           const orderValue = parseFloat(orderValueInput.value) || 0;
+          const improvementPercent = parseFloat(improvementSelect.value) || 35;
 
-          // Calculate current mobile visitors (62% of traffic)
-          const mobileVisitors = visitors * 0.62;
+          // Current state - simple calculation
+          const currentConversions = visitors * (conversionRate / 100);
+          const currentRevenue = currentConversions * orderValue;
 
-          // Current mobile conversions
+          // Traffic split
+          const mobileVisitors = visitors * 0.62; // 62% mobile traffic
+          const desktopVisitors = visitors * 0.38; // 38% desktop traffic
+
+          // Current conversions by channel
           const currentMobileConversions =
             mobileVisitors * (conversionRate / 100);
+          const currentDesktopConversions =
+            desktopVisitors * (conversionRate / 100);
 
-          // Improved conversions with 5x improvement
-          const improvedConversions = currentMobileConversions * 5;
+          // Improved state - only mobile improves
+          const improvedMobileRate =
+            conversionRate * (1 + improvementPercent / 100);
+          const improvedMobileConversions =
+            mobileVisitors * (improvedMobileRate / 100);
 
-          // Additional conversions
-          const additionalConversions =
-            improvedConversions - currentMobileConversions;
+          // Desktop stays the same
+          const totalImprovedConversions =
+            improvedMobileConversions + currentDesktopConversions;
+          const improvedRevenue = totalImprovedConversions * orderValue;
 
-          // Revenue increase
-          const monthlyIncrease = additionalConversions * orderValue;
+          // Calculate increases
+          const monthlyIncrease = improvedRevenue - currentRevenue;
           const annualIncrease = monthlyIncrease * 12;
+          const percentageImprovement =
+            (monthlyIncrease / currentRevenue) * 100;
 
-          // Format and display
+          // Format and display current revenue
+          currentRevenueEl.textContent =
+            '$' +
+            currentRevenue.toLocaleString('en-US', {
+              maximumFractionDigits: 0,
+            });
+
+          // Format and display improvements
           revenueIncreaseEl.textContent =
             '$' +
             monthlyIncrease.toLocaleString('en-US', {
               maximumFractionDigits: 0,
             });
+
           annualImpactEl.textContent =
             '$' +
             annualIncrease.toLocaleString('en-US', {
               maximumFractionDigits: 0,
             });
+
+          percentImprovementEl.textContent =
+            percentageImprovement.toFixed(1) + '%';
+
+          // Add color coding for impact
+          if (percentageImprovement > 20) {
+            percentImprovementEl.style.color = '#00ff00';
+          } else if (percentageImprovement > 10) {
+            percentImprovementEl.style.color = '#ffff00';
+          } else {
+            percentImprovementEl.style.color = '#ff9900';
+          }
         }
 
         // Calculate on input change
         visitorsInput.addEventListener('input', calculateROI);
         conversionInput.addEventListener('input', calculateROI);
         orderValueInput.addEventListener('input', calculateROI);
+        improvementSelect.addEventListener('change', calculateROI);
 
         // Initial calculation
         calculateROI();
