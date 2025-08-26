@@ -119,12 +119,7 @@ function mobileMenuInit() {
   console.log('✅ Mobile menu script initialized.');
 }
 
-// Run script when DOM is loaded
-document.addEventListener('DOMContentLoaded', () => {
-  mobileMenuInit();
-});
-
-// Also try to initialize immediately if DOM is already loaded
+// Initialize only once when DOM is ready
 if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', mobileMenuInit);
 } else {
