@@ -793,17 +793,17 @@
           <div class="rd-traffic-section">
             <h2 class="rd-section-title">The Mobile Revolution is Here</h2>
             <div class="rd-traffic-visualization">
-              <div class="rd-traffic-bar mobile" style="--percentage: 62%">
+              <div class="rd-traffic-bar mobile" style="--percentage: 64%">
                 <span class="rd-traffic-label">Mobile Traffic</span>
-                <span class="rd-traffic-value">62%</span>
+                <span class="rd-traffic-value">64%</span>
               </div>
-              <div class="rd-traffic-bar desktop" style="--percentage: 38%">
+              <div class="rd-traffic-bar desktop" style="--percentage: 36%">
                 <span class="rd-traffic-label">Desktop Traffic</span>
-                <span class="rd-traffic-value">38%</span>
+                <span class="rd-traffic-value">36%</span>
               </div>
             </div>
             <p class="rd-traffic-note">
-              Global website traffic distribution in 2024
+              Global website traffic distribution in 2025
             </p>
           </div>
 
@@ -831,10 +831,11 @@
                     <line x1="12" y1="17" x2="12" y2="21"></line>
                   </svg>
                 </div>
-                <h3>5x Higher Conversions</h3>
+                <h3>40% Higher Conversions</h3>
                 <p>
-                  Responsive design can increase mobile conversion rates by up
-                  to 500%, turning visitors into customers across all devices.
+                  Mobile-optimized sites see conversion rates increase by
+                  20-40%, with some businesses experiencing up to 2x improvement
+                  in mobile sales.
                 </p>
               </article>
 
@@ -849,10 +850,11 @@
                     <polyline points="12 6 12 12 16 14"></polyline>
                   </svg>
                 </div>
-                <h3>74% Return Rate</h3>
+                <h3>67% Lower Bounce Rate</h3>
                 <p>
-                  Users are 74% more likely to return to mobile-friendly
-                  websites, building long-term customer relationships.
+                  Mobile-friendly sites retain users 67% better than
+                  non-responsive sites, with users 5x more likely to leave if a
+                  site isn't mobile-optimized.
                 </p>
               </article>
 
@@ -868,10 +870,11 @@
                     <line x1="6" y1="20" x2="6" y2="14"></line>
                   </svg>
                 </div>
-                <h3>Google Priority</h3>
+                <h3>Mobile-First Indexing</h3>
                 <p>
-                  Google uses mobile-first indexing, meaning responsive sites
-                  rank higher in search results, driving more organic traffic.
+                  Google prioritizes mobile-responsive sites since 2019, with
+                  mobile-friendly pages receiving up to 30% better search
+                  visibility and ranking boosts.
                 </p>
               </article>
 
@@ -885,10 +888,11 @@
                     <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path>
                   </svg>
                 </div>
-                <h3>Faster Load Times</h3>
+                <h3>2-3 Second Load Time</h3>
                 <p>
-                  Optimized responsive sites load 50% faster on mobile, reducing
-                  bounce rates and keeping users engaged.
+                  Properly optimized responsive sites achieve 2-3 second mobile
+                  load times, meeting the threshold where 53% of users abandon
+                  slower sites.
                 </p>
               </article>
             </div>
@@ -1043,11 +1047,41 @@
                 </div>
                 <div class="rd-roi-field">
                   <label>Expected Mobile Improvement (%)</label>
-                  <select id="improvement">
-                    <option value="20">Conservative (20%)</option>
-                    <option value="35" selected>Moderate (35%)</option>
-                    <option value="50">Optimistic (50%)</option>
-                    <option value="100">Best Case (100%)</option>
+                  <select
+                    id="improvement"
+                    style="
+                      width: 100%;
+                      padding: 12px 15px;
+                      font-size: 16px;
+                      border: 2px solid #00ffff;
+                      border-radius: 8px;
+                      background: rgba(10, 10, 15, 0.9);
+                      color: #00ffff;
+                      cursor: pointer;
+                      transition: all 0.3s;
+                      appearance: none;
+                      background-image: url('data:image/svg+xml;charset=UTF-8,%3csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 24 24%27 fill=%27none%27 stroke=%27%2300ffff%27 stroke-width=%272%27 stroke-linecap=%27round%27 stroke-linejoin=%27round%27%3e%3cpolyline points=%276 9 12 15 18 9%27%3e%3c/polyline%3e%3c/svg%3e');
+                      background-repeat: no-repeat;
+                      background-position: right 10px center;
+                      background-size: 20px;
+                    ">
+                    <option value="20" style="background: #0a0a0f; color: #fff">
+                      Conservative (20%)
+                    </option>
+                    <option
+                      value="35"
+                      selected
+                      style="background: #0a0a0f; color: #fff">
+                      Moderate (35%)
+                    </option>
+                    <option value="50" style="background: #0a0a0f; color: #fff">
+                      Optimistic (50%)
+                    </option>
+                    <option
+                      value="100"
+                      style="background: #0a0a0f; color: #fff">
+                      Best Case (100%)
+                    </option>
                   </select>
                 </div>
               </div>
@@ -1086,8 +1120,9 @@
                   This calculator estimates the additional revenue from
                   improving your mobile conversion rate through responsive
                   design. Based on industry data: 62% of web traffic is mobile,
-                  where conversion rates typically lag behind desktop by 30-50%.
-                  Professional mobile optimization can close this gap.
+                  where conversion rates typically lag behind desktop.
+                  Professional mobile optimization can significantly improve
+                  these mobile conversion rates.
                 </p>
               </div>
             </div>
@@ -1204,66 +1239,54 @@
           document.getElementById('percentImprovement');
 
         function calculateROI() {
+          // Get input values
           const visitors = parseFloat(visitorsInput.value) || 0;
           const conversionRate = parseFloat(conversionInput.value) || 0;
           const orderValue = parseFloat(orderValueInput.value) || 0;
           const improvementPercent = parseFloat(improvementSelect.value) || 35;
 
-          // Current state - simple calculation
-          const currentConversions = visitors * (conversionRate / 100);
-          const currentRevenue = currentConversions * orderValue;
+          // CURRENT STATE - Simple calculation
+          const currentTotalConversions = visitors * (conversionRate / 100);
+          const currentRevenue = currentTotalConversions * orderValue;
 
-          // Traffic split
-          const mobileVisitors = visitors * 0.62; // 62% mobile traffic
-          const desktopVisitors = visitors * 0.38; // 38% desktop traffic
+          // IMPROVED STATE
+          // Only the 62% mobile traffic gets improved conversion rate
+          const mobileVisitors = visitors * 0.62;
+          const desktopVisitors = visitors * 0.38;
 
-          // Current conversions by channel
+          // Desktop conversions stay the same
+          const desktopConversions = desktopVisitors * (conversionRate / 100);
+
+          // Mobile conversions improve by the selected percentage
           const currentMobileConversions =
             mobileVisitors * (conversionRate / 100);
-          const currentDesktopConversions =
-            desktopVisitors * (conversionRate / 100);
-
-          // Improved state - only mobile improves
-          const improvedMobileRate =
-            conversionRate * (1 + improvementPercent / 100);
           const improvedMobileConversions =
-            mobileVisitors * (improvedMobileRate / 100);
+            currentMobileConversions * (1 + improvementPercent / 100);
 
-          // Desktop stays the same
+          // Total improved conversions
           const totalImprovedConversions =
-            improvedMobileConversions + currentDesktopConversions;
+            desktopConversions + improvedMobileConversions;
           const improvedRevenue = totalImprovedConversions * orderValue;
 
-          // Calculate increases
+          // CALCULATE THE DIFFERENCE
           const monthlyIncrease = improvedRevenue - currentRevenue;
           const annualIncrease = monthlyIncrease * 12;
           const percentageImprovement =
-            (monthlyIncrease / currentRevenue) * 100;
+            currentRevenue > 0 ? (monthlyIncrease / currentRevenue) * 100 : 0;
 
-          // Format and display current revenue
+          // Display current revenue
           currentRevenueEl.textContent =
-            '$' +
-            currentRevenue.toLocaleString('en-US', {
-              maximumFractionDigits: 0,
-            });
+            '$' + Math.round(currentRevenue).toLocaleString('en-US');
 
-          // Format and display improvements
+          // Display increases
           revenueIncreaseEl.textContent =
-            '$' +
-            monthlyIncrease.toLocaleString('en-US', {
-              maximumFractionDigits: 0,
-            });
-
+            '$' + Math.round(monthlyIncrease).toLocaleString('en-US');
           annualImpactEl.textContent =
-            '$' +
-            annualIncrease.toLocaleString('en-US', {
-              maximumFractionDigits: 0,
-            });
-
+            '$' + Math.round(annualIncrease).toLocaleString('en-US');
           percentImprovementEl.textContent =
             percentageImprovement.toFixed(1) + '%';
 
-          // Add color coding for impact
+          // Color code the percentage
           if (percentageImprovement > 20) {
             percentImprovementEl.style.color = '#00ff00';
           } else if (percentageImprovement > 10) {
@@ -1273,13 +1296,17 @@
           }
         }
 
-        // Calculate on input change
-        visitorsInput.addEventListener('input', calculateROI);
-        conversionInput.addEventListener('input', calculateROI);
-        orderValueInput.addEventListener('input', calculateROI);
-        improvementSelect.addEventListener('change', calculateROI);
+        // Add event listeners
+        if (visitorsInput)
+          visitorsInput.addEventListener('input', calculateROI);
+        if (conversionInput)
+          conversionInput.addEventListener('input', calculateROI);
+        if (orderValueInput)
+          orderValueInput.addEventListener('input', calculateROI);
+        if (improvementSelect)
+          improvementSelect.addEventListener('change', calculateROI);
 
-        // Initial calculation
+        // Run initial calculation
         calculateROI();
       });
     </script>
