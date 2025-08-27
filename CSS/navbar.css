@@ -1052,29 +1052,3 @@
     opacity: 0;
   }
 }
-
-/* ========================================= */
-/* PROGRESS BAR */
-/* ========================================= */
-
-.progress-container {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background-color: var(--dark-border);
-  z-index: 10000;
-}
-
-.progress-bar {
-  height: 100%;
-  width: 0%;
-  background: linear-gradient(
-    90deg,
-    var(--primary-neon),
-    var(--secondary-neon)
-  );
-  transition: width 0.1s linear;
-  box-shadow: 0 0 10px var(--primary-neon);
-}
