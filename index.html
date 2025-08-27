@@ -639,8 +639,16 @@
       </p>
       <form
         id="info-form"
-        action="https://formspree.io/f/xbldynko"
-        method="POST">
+        name="popup-quote-request"
+        method="POST"
+        data-netlify="true"
+        data-netlify-honeypot="bot-field">
+        <!-- Hidden honeypot field for spam protection -->
+        <input type="hidden" name="bot-field" />
+
+        <!-- Hidden field to capture page URL -->
+        <input type="hidden" name="page-url" id="page-url" />
+
         <!-- Name -->
         <label for="name">Name:</label>
         <input
@@ -682,6 +690,17 @@
       </form>
       <button id="close-popup">Close</button>
     </div>
+
+    <!-- Add this script right after the popup or in your main JS file -->
+    <script>
+      // Automatically set the page URL when the page loads
+      document.addEventListener('DOMContentLoaded', function () {
+        const pageUrlField = document.getElementById('page-url');
+        if (pageUrlField) {
+          pageUrlField.value = window.location.href;
+        }
+      });
+    </script>
 
     <!-- PHONE NUMBER FOR ALL SCREEN SIZES -->
     <a href="tel:7173069803" class="responsive-phone-num">
