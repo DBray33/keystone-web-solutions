@@ -468,22 +468,21 @@ document.addEventListener('scroll', () => {
 // PAGESPEED SCORE CIRCLES
 document.querySelectorAll('.circle .counter').forEach((counter) => {
   let currentNumber = 0;
-  const targetNumber = 100; // Final number
-  const duration = 4000; // Total duration in milliseconds
-  const interval = duration / targetNumber; // Time per increment
+  const targetNumber = 100;
+  const duration = 4000;
+  const interval = duration / targetNumber;
 
   const updateNumber = () => {
     if (currentNumber < targetNumber) {
       currentNumber++;
       counter.textContent = currentNumber;
 
-      // Update circle progress in sync
       const circleProgress = counter
         .closest('.standard-item')
         .querySelector('.circle-progress');
       if (circleProgress) {
-        const progress = (currentNumber - 1) / (targetNumber - 1); // Adjust for 0-based vs 1-based counting
-        const offset = 176 * (1 - progress);
+        const progress = currentNumber / targetNumber;
+        const offset = 175.93 * (1 - progress);
         circleProgress.style.strokeDashoffset = offset;
       }
 
@@ -491,20 +490,16 @@ document.querySelectorAll('.circle .counter').forEach((counter) => {
     }
   };
 
-  // Intersection Observer to detect when the counter is in view
   const observer = new IntersectionObserver(
     (entries, observer) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          // Trigger the counter animation when the element comes into view
           updateNumber();
-          observer.unobserve(counter); // Stop observing once the animation starts
+          observer.unobserve(counter);
         }
       });
     },
-    {
-      threshold: 0.5, // Trigger when 50% of the element is visible
-    }
+    { threshold: 0.5 }
   );
 
   observer.observe(counter);
