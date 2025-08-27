@@ -1099,18 +1099,12 @@ textarea::placeholder {
   stroke-dasharray: 176;
   stroke-dashoffset: 176;
   stroke-linecap: round;
-  animation: fillCircle 2s ease-out forwards;
+  animation: fillCircle 4s ease-out forwards;
   filter: drop-shadow(0 0 10px rgba(16, 185, 129, 0.5));
 }
 
 .logo-banner-container {
   margin-bottom: 0;
-}
-
-@keyframes fillCircle {
-  to {
-    stroke-dashoffset: 0;
-  }
 }
 
 .standard-item p {

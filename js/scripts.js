@@ -476,6 +476,17 @@ document.querySelectorAll('.circle .counter').forEach((counter) => {
     if (currentNumber < targetNumber) {
       currentNumber++;
       counter.textContent = currentNumber;
+
+      // Update circle progress in sync
+      const circleProgress = counter
+        .closest('.standard-item')
+        .querySelector('.circle-progress');
+      if (circleProgress) {
+        const progress = (currentNumber - 1) / (targetNumber - 1); // Adjust for 0-based vs 1-based counting
+        const offset = 176 * (1 - progress);
+        circleProgress.style.strokeDashoffset = offset;
+      }
+
       setTimeout(updateNumber, interval);
     }
   };
