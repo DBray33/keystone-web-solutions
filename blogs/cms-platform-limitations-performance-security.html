@@ -521,20 +521,28 @@
       <div class="progress-bar" id="progressBar"></div>
     </div>
 
-    <!-- POPUP -->
+    <!-- POPUP - Works on ALL pages without changes -->
     <div class="popup" id="popup">
       <p style="color: black">
         Before you leave, be sure to submit your info for a free instant quote!
       </p>
       <form
         id="info-form"
-        action="https://formspree.io/f/xbldynko"
-        method="POST">
+        name="popup-quote-request"
+        method="POST"
+        data-netlify="true"
+        data-netlify-honeypot="bot-field">
+        <!-- Hidden honeypot field for spam protection -->
+        <input type="hidden" name="bot-field" />
+
+        <!-- Hidden field to capture page URL - AUTOMATICALLY FILLED -->
+        <input type="hidden" name="page-url" id="page-url" />
+
         <!-- Name -->
         <label for="name">Name:</label>
         <input
           type="text"
-          id="name"
+          id="name-1"
           name="name"
           placeholder="Your Name"
           required />
@@ -543,7 +551,7 @@
         <label for="email">Email:</label>
         <input
           type="email"
-          id="email"
+          id="email-1"
           name="email"
           placeholder="Your Email"
           required />
@@ -552,7 +560,7 @@
         <label for="phone">Phone Number:</label>
         <input
           type="tel"
-          id="phone"
+          id="phone-1"
           name="phone"
           placeholder="Your Phone Number"
           required />
@@ -560,7 +568,7 @@
         <!-- Message -->
         <label for="message">Message:</label>
         <textarea
-          id="message"
+          id="message-1"
           name="message"
           placeholder="Your Message"
           rows="4"
@@ -571,6 +579,16 @@
       </form>
       <button id="close-popup">Close</button>
     </div>
+
+    <script>
+      // This script works on EVERY page - no changes needed!
+      document.addEventListener('DOMContentLoaded', function () {
+        const pageUrlField = document.getElementById('page-url');
+        if (pageUrlField) {
+          pageUrlField.value = window.location.href;
+        }
+      });
+    </script>
 
     <div class="page-content">
       <!-- BLOG HERO SECTION -->
