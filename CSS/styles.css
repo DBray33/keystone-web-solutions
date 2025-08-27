@@ -838,7 +838,8 @@ textarea::placeholder {
 .nav-menu {
   display: flex;
   justify-content: center;
-  gap: 0;
+  flex-wrap: wrap;
+  gap: 8px;
   margin-bottom: 40px;
   background: rgba(17, 17, 17, 0.6);
   backdrop-filter: blur(10px);
@@ -887,6 +888,7 @@ textarea::placeholder {
   align-items: center;
   gap: 8px;
   z-index: 1;
+  flex: 0 0 auto;
 }
 
 .nav-icon {
@@ -899,6 +901,7 @@ textarea::placeholder {
   font-size: 0.9rem;
   text-transform: uppercase;
   letter-spacing: 0.05em;
+  white-space: nowrap;
 }
 
 .nav-item:hover {
@@ -930,6 +933,60 @@ textarea::placeholder {
   height: 3px;
   background: linear-gradient(90deg, transparent, #818cf8, transparent);
   border-radius: 2px;
+}
+
+/* Responsive text sizing to prevent awkward wrapping */
+@media (max-width: 900px) {
+  .nav-text {
+    font-size: 0.8rem;
+  }
+
+  .nav-item {
+    padding: 14px 20px;
+  }
+}
+
+@media (max-width: 850px) {
+  .nav-text {
+    font-size: 0.75rem;
+  }
+
+  .nav-item {
+    padding: 12px 18px;
+  }
+}
+
+/* Force centering when items wrap */
+@media (max-width: 768px) {
+  .nav-menu {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, auto));
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .nav-item {
+    justify-self: center;
+    padding: 12px 16px;
+  }
+
+  .nav-text {
+    font-size: 0.7rem;
+  }
+}
+
+/* Force 2 per row at this breakpoint */
+@media (max-width: 664px) {
+  .nav-menu {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .nav-item {
+    justify-self: center;
+  }
 }
 
 /* Section Cards - Enhanced */
