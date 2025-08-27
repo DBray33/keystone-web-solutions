@@ -595,17 +595,16 @@
         <button type="submit">GET QUOTE</button>
       </form>
       <button id="close-popup">Close</button>
+      <script>
+        // This script works on EVERY page - no changes needed!
+        document.addEventListener('DOMContentLoaded', function () {
+          const pageUrlField = document.getElementById('page-url');
+          if (pageUrlField) {
+            pageUrlField.value = window.location.href;
+          }
+        });
+      </script>
     </div>
-
-    <script>
-      // This script works on EVERY page - no changes needed!
-      document.addEventListener('DOMContentLoaded', function () {
-        const pageUrlField = document.getElementById('page-url');
-        if (pageUrlField) {
-          pageUrlField.value = window.location.href;
-        }
-      });
-    </script>
 
     <div class="page-content">
       <!-- BLOG HERO SECTION -->
