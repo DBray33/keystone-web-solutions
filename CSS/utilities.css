@@ -226,5 +226,74 @@
 }
 
 /* ========================================= */
-/* OTHER UTILITIES */
+/* RESPONSIVE PHONE NUMBER */
 /* ========================================= */
+.responsive-phone-num {
+  position: fixed;
+  left: 20px;
+  height: 40px;
+  max-height: 40px;
+  background-color: rgba(18, 24, 39, 0.8);
+  color: white;
+  padding: 11px 12px 5px 12px; /* top right bottom left - moved top padding from 8px to 11px */
+  border-radius: 4px;
+  font-weight: 400;
+  font-size: 18px !important;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  z-index: 10000; /* Changed from 1000 to 10000 - higher than logo's 9999 */
+  display: block !important;
+  line-height: 1.2 !important;
+  vertical-align: top !important;
+}
+
+.responsive-phone-num a {
+  color: white;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  font-size: 18px !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  line-height: 1.2 !important;
+}
+
+.responsive-phone-num svg {
+  margin-right: 4px;
+}
+
+/* Optional hover effect for better user experience */
+.responsive-phone-num:hover {
+  color: black;
+  background-color: var(--primary-color);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+  transform: translateY(-1px);
+  transition: all 0.2s ease;
+}
+
+.responsive-phone-num:hover a {
+  color: black;
+}
+
+/* -----------------------------------
+            Media Queries
+            ----------------------------------- */
+/* Position for mobile and smaller screens (below 500px) */
+@media screen and (max-width: 500px) {
+  .responsive-phone-num {
+    left: 10px;
+  }
+}
+
+/* Position for mobile and smaller screens (below 936px) */
+@media screen and (max-width: 935px) {
+  .responsive-phone-num {
+    top: 10px;
+  }
+}
+
+/* Position for larger screens (936px and above) with navbar */
+@media screen and (min-width: 936px) {
+  .responsive-phone-num {
+    top: 110px;
+  }
+}
