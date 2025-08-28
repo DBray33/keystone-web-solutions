@@ -2366,10 +2366,13 @@ textarea::placeholder {
   width: 100px;
   height: 2px;
   margin: 30px auto;
+  display: block;
 }
 
 .divider-line {
   position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   background: linear-gradient(90deg, transparent, #818cf8, transparent);
@@ -2378,6 +2381,8 @@ textarea::placeholder {
 
 .divider-glow {
   position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   background: #818cf8;
