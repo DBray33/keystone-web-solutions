@@ -138,5 +138,27 @@
       </p>
       <p>Phone: 717-306-9803</p>
     </div>
+    <!-- Form Tracking Script - Sets page URL and title for all forms -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        // Footer form tracking
+        const footerPageUrl = document.getElementById('footer-page-url');
+        const footerPageTitle = document.getElementById('footer-page-title');
+
+        if (footerPageUrl) footerPageUrl.value = window.location.href;
+        if (footerPageTitle) footerPageTitle.value = document.title;
+
+        // Quote form tracking (if exists on page)
+        const pageUrl = document.getElementById('page-url');
+        const pageTitle = document.getElementById('page-title');
+
+        if (pageUrl) pageUrl.value = window.location.href;
+        if (pageTitle) pageTitle.value = document.title;
+
+        // Popup form tracking (if exists)
+        const popupPageUrl = document.getElementById('popup-page-url');
+        if (popupPageUrl) popupPageUrl.value = window.location.href;
+      });
+    </script>
   </body>
 </html>
