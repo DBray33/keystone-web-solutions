@@ -296,6 +296,15 @@
               <a href="https://unsplash.com">Unsplash</a>. Design:
               <a href="https://html5up.net">HTML5 UP</a>.
             </p>
+            <!-- ✅ Year Update Script -->
+            <script>
+              document.addEventListener('DOMContentLoaded', function () {
+                const yearElement = document.getElementById('year');
+                if (yearElement) {
+                  yearElement.textContent = new Date().getFullYear();
+                }
+              });
+            </script>
           </footer>
         </div>
       </div>

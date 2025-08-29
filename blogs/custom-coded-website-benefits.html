@@ -1337,36 +1337,6 @@
             }
           });
         </script>
-        <!-- 
-  NETLIFY FORM TRACKING SCRIPT
-  Purpose: Captures the page URL and title where the footer contact form was submitted
-  Sets values right before form submission to ensure Netlify receives them
--->
-        <script>
-          document.addEventListener('DOMContentLoaded', function () {
-            const footerForm = document.querySelector('.footer-contact-form');
-
-            if (footerForm) {
-              // Set values when form is submitted
-              footerForm.addEventListener('submit', function (e) {
-                const footerPageUrl =
-                  document.getElementById('footer-page-url');
-                const footerPageTitle =
-                  document.getElementById('footer-page-title');
-
-                if (footerPageUrl) {
-                  footerPageUrl.value = window.location.href;
-                }
-                if (footerPageTitle) {
-                  footerPageTitle.value = document.title;
-                }
-
-                console.log('Form submitted from:', window.location.href);
-                // Form will continue submitting normally
-              });
-            }
-          });
-        </script>
       </footer>
       <!-- Scripts -->
       <script>

@@ -284,6 +284,15 @@
             <li>Privacy Policy <a href=""></a></li>
           </ul>
         </div>
+        <!-- ✅ Year Update Script -->
+        <script>
+          document.addEventListener('DOMContentLoaded', function () {
+            const yearElement = document.getElementById('year');
+            if (yearElement) {
+              yearElement.textContent = new Date().getFullYear();
+            }
+          });
+        </script>
       </footer>
     </div>
 

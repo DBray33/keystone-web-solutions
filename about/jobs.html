@@ -602,40 +602,6 @@
           }
         });
       </script>
-      <!-- 
-  NETLIFY FORM TRACKING SCRIPT
-  Purpose: Captures the page URL and title where the footer contact form was submitted
-  Sets values right before form submission to ensure Netlify receives them
--->
-    </footer>
-    <script>
-      // Automatically update the year
-      document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
-    <script src="../js/dynamic-path.js"></script>
-    <script src="../js/scripts.js" defer></script>
-    <script src="../js/mobile-menu.js" defer></script>
-    <!-- Form Tracking Script - Sets page URL and title for all forms -->
-    <script>
-      document.addEventListener('DOMContentLoaded', function () {
-        // Footer form tracking
-        const footerPageUrl = document.getElementById('footer-page-url');
-        const footerPageTitle = document.getElementById('footer-page-title');
-
-        if (footerPageUrl) footerPageUrl.value = window.location.href;
-        if (footerPageTitle) footerPageTitle.value = document.title;
-
-        // Quote form tracking (if exists on page)
-        const pageUrl = document.getElementById('page-url');
-        const pageTitle = document.getElementById('page-title');
-
-        if (pageUrl) pageUrl.value = window.location.href;
-        if (pageTitle) pageTitle.value = document.title;
-
-        // Popup form tracking (if exists)
-        const popupPageUrl = document.getElementById('popup-page-url');
-        if (popupPageUrl) popupPageUrl.value = window.location.href;
-      });
-    </script>
+      
   </body>
 </html>

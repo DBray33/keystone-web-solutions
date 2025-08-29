@@ -781,6 +781,15 @@ print 'It took ' + i + ' iterations to sort the deck.';
             <li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
           </ul>
         </div>
+        <!-- ✅ Year Update Script -->
+        <script>
+          document.addEventListener('DOMContentLoaded', function () {
+            const yearElement = document.getElementById('year');
+            if (yearElement) {
+              yearElement.textContent = new Date().getFullYear();
+            }
+          });
+        </script>
       </footer>
     </div>
 
