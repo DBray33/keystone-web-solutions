@@ -214,28 +214,29 @@
   <!-- 
   NETLIFY FORM TRACKING SCRIPT
   Purpose: Captures the page URL and title where the footer contact form was submitted
-  This helps track which page generated the lead in Netlify form submissions
+  Sets values right before form submission to ensure Netlify receives them
 -->
   <script>
-    // Wait longer for dynamic content to fully load
-    setTimeout(function () {
-      const footerPageUrl = document.getElementById('footer-page-url');
-      const footerPageTitle = document.getElementById('footer-page-title');
+    document.addEventListener('DOMContentLoaded', function () {
+      const footerForm = document.querySelector('.footer-contact-form');
 
-      // Debug: Check if elements exist
-      console.log('Footer form tracking:', {
-        urlFieldFound: !!footerPageUrl,
-        titleFieldFound: !!footerPageTitle,
-        currentURL: window.location.href,
-        currentTitle: document.title,
-      });
+      if (footerForm) {
+        // Set values when form is submitted
+        footerForm.addEventListener('submit', function (e) {
+          const footerPageUrl = document.getElementById('footer-page-url');
+          const footerPageTitle = document.getElementById('footer-page-title');
 
-      if (footerPageUrl) {
-        footerPageUrl.value = window.location.href;
+          if (footerPageUrl) {
+            footerPageUrl.value = window.location.href;
+          }
+          if (footerPageTitle) {
+            footerPageTitle.value = document.title;
+          }
+
+          console.log('Form submitted from:', window.location.href);
+          // Form will continue submitting normally
+        });
       }
-      if (footerPageTitle) {
-        footerPageTitle.value = document.title;
-      }
-    }, 500); // Increased delay to 500ms
+    });
   </script>
 </footer>
