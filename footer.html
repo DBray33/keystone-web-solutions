@@ -64,9 +64,25 @@
     <div class="footer-right" id="contact">
       <h2>CONTACT US</h2>
       <form
-        class="footer-contact-form"
-        action="https://formspree.io/f/xbldynko"
-        method="post">
+        name="footer-contact"
+        method="POST"
+        data-netlify="true"
+        data-netlify-honeypot="bot-field"
+        class="footer-contact-form">
+        <!-- Hidden fields for Netlify -->
+        <input type="hidden" name="form-name" value="footer-contact" />
+        <input type="hidden" name="page-url" id="footer-page-url" />
+        <input type="hidden" name="page-title" id="footer-page-title" />
+
+        <!-- Honeypot for spam protection -->
+        <p style="display: none">
+          <label>
+            Don't fill this out if you're human:
+            <input name="bot-field" />
+          </label>
+        </p>
+
+        <!-- Your existing form fields -->
         <input type="text" name="name" placeholder="Name" required />
         <input type="email" name="email" placeholder="Email" required />
         <input type="tel" name="phone" placeholder="Phone" required />
@@ -190,5 +206,24 @@
         yearElement.textContent = new Date().getFullYear();
       }
     });
+  </script>
+  <!-- 
+  NETLIFY FORM TRACKING SCRIPT
+  Purpose: Captures the page URL and title where the footer contact form was submitted
+  This helps track which page generated the lead in Netlify form submissions
+  Must run after footer DOM is loaded, hence the setTimeout delay
+-->
+  <script>
+    setTimeout(function () {
+      const footerPageUrl = document.getElementById('footer-page-url');
+      const footerPageTitle = document.getElementById('footer-page-title');
+
+      if (footerPageUrl) {
+        footerPageUrl.value = window.location.href;
+      }
+      if (footerPageTitle) {
+        footerPageTitle.value = document.title;
+      }
+    }, 100);
   </script>
 </footer>
