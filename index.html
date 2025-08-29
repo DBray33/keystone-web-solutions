@@ -534,25 +534,6 @@
       }
     </script>
 
-    <!-- Google Tag Manager -->
-    <script>
-      // Defer GTM loading for better performance
-      window.addEventListener('load', function () {
-        setTimeout(function () {
-          (function (w, d, s, l, i) {
-            w[l] = w[l] || [];
-            w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
-            var f = d.getElementsByTagName(s)[0],
-              j = d.createElement(s),
-              dl = l != 'dataLayer' ? '&l=' + l : '';
-            j.async = true;
-            j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
-            f.parentNode.insertBefore(j, f);
-          })(window, document, 'script', 'dataLayer', 'GTM-MBN9LQQQ');
-        }, 2000);
-      });
-    </script>
-
     <!-- Critical CSS -->
     <style>
       /* Critical inline CSS for immediate render */
@@ -586,13 +567,23 @@
         height: auto;
       }
     </style>
+    <!-- Google Tag Manager -->
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != 'dataLayer' ? '&l=' + l : '';
+        j.async = true;
+        j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, 'script', 'dataLayer', 'GTM-MBN9LQQQ');
+    </script>
+    <!-- End Google Tag Manager -->
   </head>
 
   <body>
-    <!-- Add this after <body> and before your navbar -->
-    <h1 class="sr-only">
-      Web Design Reading PA - Custom Websites & SEO by Keystone Web Solutions
-    </h1>
     <!-- Google Tag Manager (noscript) -->
     <noscript>
       <iframe
@@ -602,6 +593,10 @@
         style="display: none; visibility: hidden"></iframe>
     </noscript>
     <!-- End Google Tag Manager -->
+    <!-- Add this after <body> and before your navbar -->
+    <h1 class="sr-only">
+      Web Design Reading PA - Custom Websites & SEO by Keystone Web Solutions
+    </h1>
 
     <!-- NAVBAR / MOBILE MENU PLACEHOLDER (dynamically loaded via Javascript) -->
     <div id="navbar-container"></div>
