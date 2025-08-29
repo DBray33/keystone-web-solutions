@@ -69,10 +69,14 @@
         data-netlify="true"
         data-netlify-honeypot="bot-field"
         class="footer-contact-form">
-        <!-- Hidden fields for Netlify -->
+        <!-- Hidden fields - make sure these IDs match -->
         <input type="hidden" name="form-name" value="footer-contact" />
-        <input type="hidden" name="page-url" id="footer-page-url" />
-        <input type="hidden" name="page-title" id="footer-page-title" />
+        <input type="hidden" name="page-url" id="footer-page-url" value="" />
+        <input
+          type="hidden"
+          name="page-title"
+          id="footer-page-title"
+          value="" />
 
         <!-- Honeypot for spam protection -->
         <p style="display: none">
@@ -211,12 +215,20 @@
   NETLIFY FORM TRACKING SCRIPT
   Purpose: Captures the page URL and title where the footer contact form was submitted
   This helps track which page generated the lead in Netlify form submissions
-  Must run after footer DOM is loaded, hence the setTimeout delay
 -->
   <script>
+    // Wait longer for dynamic content to fully load
     setTimeout(function () {
       const footerPageUrl = document.getElementById('footer-page-url');
       const footerPageTitle = document.getElementById('footer-page-title');
+
+      // Debug: Check if elements exist
+      console.log('Footer form tracking:', {
+        urlFieldFound: !!footerPageUrl,
+        titleFieldFound: !!footerPageTitle,
+        currentURL: window.location.href,
+        currentTitle: document.title,
+      });
 
       if (footerPageUrl) {
         footerPageUrl.value = window.location.href;
@@ -224,6 +236,6 @@
       if (footerPageTitle) {
         footerPageTitle.value = document.title;
       }
-    }, 100);
+    }, 500); // Increased delay to 500ms
   </script>
 </footer>
