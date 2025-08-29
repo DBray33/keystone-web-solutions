@@ -407,47 +407,6 @@
       }
     </script>
 
-    <!-- Google Tag Manager -->
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      window.dataLayer.push({
-        event: 'pageview',
-        page_url: window.location.href,
-        page_title: 'Improving User Experience for Local Searches',
-        content_type: 'article',
-        article_title: 'Improving User Experience for Local Searches',
-        article_author: 'Dan',
-        article_date: '2025-04-14',
-        article_category: 'SEO & Local Marketing',
-        article_tags: [
-          'local SEO',
-          'mobile optimization',
-          'user experience',
-          'near me searches',
-        ],
-        word_count: 3000,
-        reading_time: 12,
-      });
-
-      // Delayed GTM loading for performance
-      setTimeout(function () {
-        if (!window.gtmLoaded) {
-          (function (w, d, s, l, i) {
-            w[l] = w[l] || [];
-            w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
-            var f = d.getElementsByTagName(s)[0],
-              j = d.createElement(s),
-              dl = l != 'dataLayer' ? '&l=' + l : '';
-            j.async = true;
-            j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
-            f.parentNode.insertBefore(j, f);
-            window.gtmLoaded = true;
-          })(window, document, 'script', 'dataLayer', 'GTM-MBN9LQQQ');
-        }
-      }, 3000);
-    </script>
-    <!-- End Google Tag Manager -->
-
     <!-- Critical Inline CSS for FCP -->
     <style>
       /* Critical CSS for First Contentful Paint */
@@ -519,10 +478,33 @@
     <noscript>
       <link rel="stylesheet" href="" />
     </noscript>
+    <!-- Google Tag Manager -->
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != 'dataLayer' ? '&l=' + l : '';
+        j.async = true;
+        j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, 'script', 'dataLayer', 'GTM-MBN9LQQQ');
+    </script>
+    <!-- End Google Tag Manager -->
   </head>
 
   <!-- BODY -->
   <body class="blog-page">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-MBN9LQQQ"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"></iframe
+    ></noscript>
+    <!-- End Google Tag Manager (noscript) -->
     <!-- BACK TO TOP BUTTON -->
     <button id="backToTop" class="back-to-top" onclick="scrollToTop()">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
